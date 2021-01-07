@@ -328,3 +328,436 @@ return [
     ]
 ];
 ```
+
+
+
+
+
+
+
+
+
+## CMS TYPO3 Register a model (CRUD) in the system
+
+Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
+
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-crud.png)
+
+```php
+<?php
+namespace Mynamespace\Myext\Domain\[SubFolder]\Model;
+use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
+/**
+ * @AirTable\Label:<New table name>
+ * @AirTable\Description:<New table description>
+ */
+class NewTable extends AbstractModelCrud
+{
+    // use \Litovchenko\AirTable\Domain\Model\Traits\Pid; // A record can exist in any part of the site page tree
+    // use \Litovchenko\AirTable\Domain\Model\Traits\RType; // See the function "baseRTypes ()"
+    use \Litovchenko\AirTable\Domain\Model\Traits\Slug;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Title;
+    use \Litovchenko\AirTable\Domain\Model\Traits\AltTitle;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Sorting;
+    use \Litovchenko\AirTable\Domain\Model\Traits\DateCreate;
+    use \Litovchenko\AirTable\Domain\Model\Traits\DateUpdate;
+    use \Litovchenko\AirTable\Domain\Model\Traits\DateStart;
+    use \Litovchenko\AirTable\Domain\Model\Traits\DateEnd;
+    use \Litovchenko\AirTable\Domain\Model\Traits\ServiceNote;
+    use \Litovchenko\AirTable\Domain\Model\Traits\BeUserRow;
+    use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicPreview;
+    use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
+    use \Litovchenko\AirTable\Domain\Model\Traits\TtContentRows; // <f:content recordModel="Mynamespace\Myext\Domain\Model\NewTable" recordId="1" />
+    use \Litovchenko\AirTable\Domain\Model\Traits\Files;
+    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyForeignFields.php;
+    
+	// Categorization
+    // For this to work
+    // 1) create a category model (TestTableCategory.php) in the current directory
+    // 2) add trait "\Litovchenko\AirTable\Domain\Model\Traits\ParentRow" to model "NewTableCategory.php"
+    use \Litovchenko\AirTable\Domain\Model\Traits\CategoryRows; // OR \CategoryRow
+    
+    /**
+     * This is an optional feature.
+     * Record types similar to "doktype (pages)" and "CType (tt_content)"
+     * @return array
+     */
+    public static function baseRTypes()
+    {
+        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
+        // Example * @AirTable\Field\Position\1:<props,0> add to type "1"
+        // Example * @AirTable\Field\Position\2:<props,0> add to type "2"
+        return [
+            1 => 'Type 1',
+            2 => 'Type 2',
+            3 => 'Type 3'
+        ];
+    }
+
+    /**
+     * This is an optional feature.
+     * Tabs for the edit form
+     * @return array
+     */
+    public static function baseTabs()
+    {
+        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs
+        // BE -> debug -> true
+        // Example * @AirTable\Field\Position\<type>:<mytab,position>
+        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
+        // Example * @AirTable\Field\Position\1:<mytab,0> add to type "1"
+        $tabs = parent::baseTabs();
+        $tabs['mytab'] = 'MyTab (###COUNT###)';
+        return $tabs;
+    }
+
+    /**
+     * @AirTable\Field:<Input> || Input.Int || Input.Number || Input.Float || Input.Link || Input.Color || Input.Email || Input.Password || Input.InvisibleInt || Input.Invisible
+     * @AirTable\Field\Label:<Input>
+     * @AirTable\Field\LiveSearch:<1>
+     * @AirTable\Field\Max:<100>
+     * @AirTable\Field\Size:<24>
+     */
+    protected $example_field_input;
+
+    /**
+     * @AirTable\Field:<Text> || Text.Rte || Text.Code || Text.Table || Text.Invisible
+     * @AirTable\Field\Label:<Field text>
+     * @AirTable\Field\Format:<css || html || javascript || php || typoscript || xml> // Text.Code
+     */
+    protected $example_field_text;
+
+    /**
+     * @AirTable\Field:<Date> || Date.DateTime || Date.Time || Date.TimeSec || Date.Year
+     * @AirTable\Field\Label:<Field date>
+     */
+    protected $example_field_date;
+
+    /**
+     * @AirTable\Field:<Media> || Media.Image || Media.Mix
+     * @AirTable\Field\Label:<Media>
+     * @AirTable\Field\MaxItems:<10>
+     */
+    protected $example_field_media;
+
+    /**
+     * @AirTable\Field:<Flag>
+     * @AirTable\Field\Label:<Flag>
+     * @AirTable\Field\Items\1:<Checked>
+     */
+    protected $example_field_flag;
+
+    /**
+     * @AirTable\Field:<Switcher> || Switcher.Int
+     * @AirTable\Field\Label:<Switcher>
+     * @AirTable\Field\Items\0:<Zero>
+     * @AirTable\Field\Items\1:<One>
+     * @AirTable\Field\Items\2:<Two>
+     * @AirTable\Field\Items\3:<Three>
+     */
+    protected $example_field_switcher;
+
+    /**
+     * @AirTable\Field:<Enum>
+     * @AirTable\Field\Label:<Enum>
+     * @AirTable\Field\Items\1:<One>
+     * @AirTable\Field\Items\2:<Two>
+     * @AirTable\Field\Items\3:<Three>
+     */
+    protected $example_field_enum;
+
+    /**
+     * @AirTable\Field:<Rel_1To1>
+     * @AirTable\Field\Label:<Rel_1To1>
+     * @AirTable\Field\ForeignModel:<Litovchenko\AirTableExamples\Domain\Model\ExampleTable1>
+     * @AirTable\Field\ForeignKey:<***>
+     * @AirTable\Field\ForeignParentKey:<parent_id> // (Rel_MToM || Rel_MTo1).Tree
+     * @AirTable\Field\Show:<1>
+     */
+    #protected $[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
+    #protected $[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
+    #protected $[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
+    #protected $[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
+    #protected $[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
+    #protected $[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
+    
+    /**
+     * @AirTable\Field:<Input>
+     * @AirTable\Field\Label:<Additional options for customizing the field>
+     * @AirTable\Field\Description:<-------Description------->
+     * @AirTable\Field\Placeholder:<-------Placeholder------->
+     * @AirTable\Field\Default:<-------Default value------->
+     * @AirTable\Field\Required:<1> // Required to fill
+     * @AirTable\Field\Show:<1> // Show field in lists
+     * @AirTable\Field\OnChangeReload:<1> // Reload the form when the field value changes
+     * @AirTable\Field\DisplayCond\1:<FIELD:disabled:=:1>
+     * @AirTable\Field\DisplayCond\2:<FIELD:example_field_flag:=:1>
+     * @AirTable\Field\Exclude:<1> // Todo
+     */
+    protected $example_field_additional_options;
+
+    /**
+     * Changing the $TCA settings array
+     * @configuration (TCA array)
+     * @return &configuration
+     */
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+        //$configuration['ctrl']['...'] = ...;
+        //$configuration['columns']['field']['config'] = ...;
+    }
+
+    /**
+     * Debug content
+     * @return string
+     */
+    public static function userDebugСontent()
+    {
+        $content = 'User Debug Content';
+        return $content;
+    }
+
+    /**
+     * Insert record event (before / after) - // Todo
+     * @return '';
+     */
+    public static function cmdInsert($when, &$table, $id, &$fieldArray)
+    {
+        if ($when == 'before')
+        {
+            //
+        }
+        else
+        {
+            //
+        }
+    }
+
+    /**
+     * Record update event (before / after) - // Todo
+     * @return '';
+     */
+    public static function cmdUpdate($when, &$table, $id, &$fieldArray)
+    {
+        if ($when == 'before')
+        {
+            //
+        }
+        else
+        {
+            //
+        }
+    }
+
+    /**
+     * Record deletion event (before / after) - // Todo
+     * @return '';
+     */
+    public static function cmdDelete($when, &$table, $id, &$fieldArray)
+    {
+        if ($when == 'before')
+        {
+            //
+        }
+        else
+        {
+            //
+        }
+    }
+}
+```
+
+Step 2) If you need categorization, create a category model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTableCategory.php
+
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-crud-with-category.png)
+
+```php
+<?php
+namespace Mynamespace\Myext\Domain\[SubFolder]\Model;
+use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
+/**
+ * @AirTable\Label:<New table category name>
+ * @AirTable\Description:<New table category description>
+ */
+class NewTableCategory extends AbstractModelCrud
+{
+    use \Litovchenko\AirTable\Domain\Model\Traits\Title;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Sorting;
+    use \Litovchenko\AirTable\Domain\Model\Traits\ParentRow;
+}
+```
+
+Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
+
+Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
+
+## Standard CRUD-models registered in the system for working with records
+
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-standard-crud-models.png)
+
+```php
+// A static block of content on a page with the ability to edit
+// Step 1) Create an entry in the model "Marker"
+// Step 2) Display the created entry in the desired place in the template
+\Litovchenko\AirTable\Domain\Model\Content\Marker; // <f:marker id="5" /> 
+
+\Litovchenko\AirTable\Domain\Model\Content\Pages;
+\Litovchenko\AirTable\Domain\Model\Content\TtContent;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFile;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFileReference;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
+\Litovchenko\AirTable\Domain\Model\SysMm; // All links of type "Rel_MToM" are stored here
+\Litovchenko\AirTable\Domain\Model\SysNote;
+\Litovchenko\AirTable\Domain\Model\SysRedirect;
+\Litovchenko\AirTable\Domain\Model\Users\BeGroups;
+\Litovchenko\AirTable\Domain\Model\Users\BeUsers;
+\Litovchenko\AirTable\Domain\Model\Users\FeGroups;
+\Litovchenko\AirTable\Domain\Model\Users\FeUsers;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     
+     * @AirTable\Field\ForeignFilter\1\UserFunc:<Litovchenko\AirTable\Domain\Model\Tests\ExampleTable->doFilter>
+     * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPagePid:<10>
+     * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPageDoktype:<1>
+     
+public function doFilter(array $parameters, $parentObject)
+    {
+		$cleanValues = [];
+		$cleanValues[] = 'tx_air_table_tests_exampletable1_2';
+		$cleanValues[] = 'tx_air_table_tests_exampletable1_1';
+		$cleanValues[] = 'tx_air_table_tests_exampletable1_3';
+        return $cleanValues; // $parameters['values'];
+    }
+
+
+
+Step 2) Add properties and settings to the model
+
+
+
+
+```
+namespace Litovchenko\AirTable\Domain\Model\Tests;
+
+/**
+ * @AirTable\Label:<Расширяем моделя>
+ * @AirTable\Description:<Примеры полей расширения модели>
+ */
+ 
+class ExampleTableEx extends \Litovchenko\AirTable\Domain\Model\Tests\ExampleTable
+{
+	/**
+	* Типы записей по умолчанию
+	* @return array
+	*/
+    public static function baseRTypes()
+    {
+		$types = parent::baseRTypes();
+		$types[100] = 'Тип 100';
+		return $types;
+	}
+	
+	/**
+	* Табы по умолчанию
+	* @return array
+	*/
+    public static function baseTabs()
+    {
+		$tabs = parent::baseTabs();
+		$tabs['NewTab'] = 'New Tab (###COUNT###)';
+		return $tabs;
+	}
+	
+	/**
+	 * @AirTable\Field:<Text>
+	 * @AirTable\Field\Position\1:<NewTab,0>
+	 * @AirTable\Field\Label:<Тест Ex>
+	 */
+	protected $ex_air_table_test5w2;
+
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		//$configuration['ctrl']['...'] = 1;
+	}
+	
+	
+}
+?>```
+
+
+--
+Примеры выборок
+		// Выбрать записи (кол-во)
+		$rowsCount = ExampleTable::recSelect(null,'count'); // print $rowsCount;
+		
+		// Выбрать записи (v1)
+		$limit = 8;
+		$rows = ExampleTable::recSelect(function($q) use ($limit){
+			#$q->withoutGlobalScope('TestScope');
+			#$q->withoutGlobalScopes();
+			#$q->select('uid','title');
+			#$q->where('field', '=', 1)
+			#$q->orWhere('field', '>=', 100)
+			$q->orderByDesc('title');
+			$q->limit($limit);
+			$q->offset(1);
+			$q->with('exampletable1_row_func');
+			#$q->with();
+			#$q->has('comments');
+			#$q->whereHas('comments', function ($query) { $query->where('content', 'like', 'foo%'); }
+		});
+		
+		foreach ($rows as $row){
+			print $row['title'] . " // ";
+			print $row['exampletable1_row_func']['title'] . "<br />";
+		}
+		
+		$row = ExampleTable::recSelect(177); // Выбрать запись (v2) // print $row['uid'];
+		$insertId = ExampleTable::recInsert(['RType'=>'1','title'=>'regge']); // Создать запись // return $$insertId = ;
+		ExampleTable::recUpdate(177, ['title'=>'rrr']); // Обновить запись
+		ExampleTable::recDelete(175); // Удалить запись
+		
+		ExampleTable::refAttach('exampletable1_row_func',177,2);
+		ExampleTable::refDetach('exampletable1_row_func',177,2);
+		ExampleTable::refCollection('exampletable1_row_func',177);
+		
+		
+		
+
+    /**
+     * Пользовательские значения для полей типа Switch, Enum
+     * Возможно использовать выборку из БД
+     * @AirTable\Field\ItemsProcFunc:<Litovchenko\AirTable\Domain\Model\Tests\ExampleTable->doItems>
+     */
+    public static function doItems($config)
+    {
+        $itemList = [];
+        $config['items'][] = [100, 'New item 100'];
+        $config['items'][] = [200, 'New item 200'];
+        $config['items'][] = [300, 'New item 300'];
+        return $config;
+    }
+    
