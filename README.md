@@ -596,7 +596,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php\
 Step 2) Create class inherited from base model
 
-```
+```php
 <?php
 namespace Mynamespace\Myext\Domain\Model;
 use \Litovchenko\AirTable\Domain\Model\Content\Pages;
@@ -615,6 +615,7 @@ class PagesEx extends Pages
      */
     public static function baseRTypes()
     {
+        // This function is not supported for standard models!
         $types = parent::baseRTypes();
         $types[100] = 'New type 100';
         return $types;
@@ -627,6 +628,7 @@ class PagesEx extends Pages
      */
     public static function baseTabs()
     {
+        // This function is not supported for standard models!
         $tabs = parent::baseTabs();
         $tabs['newtab'] = 'NewTab (###COUNT###)';
         return $tabs;
@@ -634,8 +636,8 @@ class PagesEx extends Pages
 
     /**
      * @AirTable\Field:<Text>
-     * @AirTable\Field\Position\1:<NewTab,0>
-     * @AirTable\Field\Label:<Тест Ex>
+     * @AirTable\Field\Position\*:<newtab,0>
+     * @AirTable\Field\Label:<New field>
      */
     protected $ex_myext_new_field;
 
@@ -659,7 +661,7 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
 
---
+----------
 Примеры выборок
 		// Выбрать записи (кол-во)
 		$rowsCount = ExampleTable::recSelect(null,'count'); // print $rowsCount;
