@@ -2,6 +2,11 @@
 
 ```php
 
+// Select
+$pageId = 177;
+$row = ExampleTable::recSelect($pageId); // -> with scopes: FlagDeleted, FlagDisabled, DateStart, DateEnd
+var_export($row);
+
 // Insert
 $data = [];
 $data['title'] = '-- NEW PAGE --';
@@ -45,7 +50,6 @@ $pageId = 177;
 			print $row['exampletable1_row_func']['title'] . "<br />";
 		}
 		
-		$row = ExampleTable::recSelect(177); // Выбрать запись (v2) // print $row['uid'];
 
 		
 		ExampleTable::refAttach('exampletable1_row_func',177,2);
