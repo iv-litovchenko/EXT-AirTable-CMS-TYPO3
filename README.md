@@ -595,6 +595,8 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ## Extending an existing model
 
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/extending-an-existing-model.png)
+
 Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php\
 Step 2) Create class inherited from base model
 
@@ -640,6 +642,7 @@ class PagesEx extends Pages
 
     /**
      * @AirTable\Field:<Text>
+     * @AirTable\Field\Position\1:<extended,0>
      * @AirTable\Field\Label:<New field>
      */
     protected $ex_myext_new_field;
