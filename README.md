@@ -145,7 +145,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 
 Step 3) Create localling file:
 
-EXT:myext/Resources/Private/Language/Localling.Module-Section.Tabmyext.xlf
+EXT:myext/Resources/Private/Language/Localling.Module-Section.Tabmyext.xlf\
 EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
 
 ```xml
