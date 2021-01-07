@@ -574,17 +574,19 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 // Step 1) Create an entry in the model "Marker"
 // Step 2) Display the created entry in the desired place in the template
 \Litovchenko\AirTable\Domain\Model\Content\Marker; // <f:marker id="5" /> 
-
 \Litovchenko\AirTable\Domain\Model\Content\Pages;
 \Litovchenko\AirTable\Domain\Model\Content\TtContent;
+
 \Litovchenko\AirTable\Domain\Model\Fal\SysFile;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileReference;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
+
 \Litovchenko\AirTable\Domain\Model\SysMm; // All links of type "Rel_MToM" are stored here
 \Litovchenko\AirTable\Domain\Model\SysNote;
 \Litovchenko\AirTable\Domain\Model\SysRedirect;
+
 \Litovchenko\AirTable\Domain\Model\Users\BeGroups;
 \Litovchenko\AirTable\Domain\Model\Users\BeUsers;
 \Litovchenko\AirTable\Domain\Model\Users\FeGroups;
