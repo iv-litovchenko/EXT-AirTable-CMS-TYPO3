@@ -345,7 +345,7 @@ Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 
 ```php
 <?php
-namespace Mynamespace\Myext\Domain\[SubFolder]\Model;
+namespace Mynamespace\Myext\Domain\Model\[SubFolder];
 use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
 /**
  * @AirTable\Label:<New table name>
@@ -575,7 +575,7 @@ Step 2) If you need categorization, create a category model EXT:myext/Classes/Do
 
 ```php
 <?php
-namespace Mynamespace\Myext\Domain\[SubFolder]\Model;
+namespace Mynamespace\Myext\Domain\Model\[SubFolder];
 use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
 /**
  * @AirTable\Label:<New table category name>
@@ -621,48 +621,21 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Users\FeUsers;
 ```
 
+## Extending an existing model
 
-
-
-
-
-
-
-
-
-
-
-     
-     
-     * @AirTable\Field\ForeignFilter\1\UserFunc:<Litovchenko\AirTable\Domain\Model\Tests\ExampleTable->doFilter>
-     * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPagePid:<10>
-     * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPageDoktype:<1>
-     
-public function doFilter(array $parameters, $parentObject)
-    {
-		$cleanValues = [];
-		$cleanValues[] = 'tx_air_table_tests_exampletable1_2';
-		$cleanValues[] = 'tx_air_table_tests_exampletable1_1';
-		$cleanValues[] = 'tx_air_table_tests_exampletable1_3';
-        return $cleanValues; // $parameters['values'];
-    }
-
-
-
-Step 2) Add properties and settings to the model
-
-
-
+Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php\
+Step 2) Create class inherited from base model
 
 ```
-namespace Litovchenko\AirTable\Domain\Model\Tests;
+namespace Mynamespace\Myext\Domain\Model;
+use \Litovchenko\AirTable\Domain\Model\Content\Pages;
 
 /**
  * @AirTable\Label:<Расширяем моделя>
  * @AirTable\Description:<Примеры полей расширения модели>
  */
  
-class ExampleTableEx extends \Litovchenko\AirTable\Domain\Model\Tests\ExampleTable
+class PagesEx extends Pages
 {
 	/**
 	* Типы записей по умолчанию
@@ -705,7 +678,11 @@ class ExampleTableEx extends \Litovchenko\AirTable\Domain\Model\Tests\ExampleTab
 	
 	
 }
-?>```
+```
+
+Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
+
+Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
 
 --
