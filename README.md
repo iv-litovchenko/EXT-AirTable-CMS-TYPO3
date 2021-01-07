@@ -598,7 +598,7 @@ Step 2) Create class inherited from base model
 
 ```php
 <?php
-namespace Mynamespace\Myext\Domain\Model;
+namespace Mynamespace\Myext\Domain\Model\Ex;
 use \Litovchenko\AirTable\Domain\Model\Content\Pages;
 
 /**
@@ -650,7 +650,6 @@ class PagesEx extends Pages
     {
         //$configuration['ctrl']['...'] = ...;
         //$configuration['columns']['field']['config'] = ...;
-        
     }
 
 }
