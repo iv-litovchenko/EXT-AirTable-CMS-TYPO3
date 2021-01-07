@@ -597,7 +597,8 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/extending-an-existing-model.png)
 
-Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php\
+Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php
+
 Step 2) Create class inherited from base model
 
 ```php
