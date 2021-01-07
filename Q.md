@@ -24,7 +24,6 @@ $pageId = 177;
 
 		
 
-```
 		// Выбрать записи (кол-во)
 		$rowsCount = ExampleTable::recSelect(null,'count'); // print $rowsCount;
 		
@@ -70,7 +69,7 @@ foreach ($rows as $row)
 		ExampleTable::refCollection('exampletable1_row_func',177);
 		
 		
-		
+	```	
 
     /**
      * Пользовательские значения для полей типа Switch, Enum
