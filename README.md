@@ -664,61 +664,6 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-
-----------
-Примеры выборок
-		// Выбрать записи (кол-во)
-		$rowsCount = ExampleTable::recSelect(null,'count'); // print $rowsCount;
-		
-		// Выбрать записи (v1)
-		$limit = 8;
-		$rows = ExampleTable::recSelect(function($q) use ($limit){
-			#$q->withoutGlobalScope('TestScope');
-			#$q->withoutGlobalScopes();
-			#$q->select('uid','title');
-			#$q->where('field', '=', 1)
-			#$q->orWhere('field', '>=', 100)
-			$q->orderByDesc('title');
-			$q->limit($limit);
-			$q->offset(1);
-			$q->with('exampletable1_row_func');
-			#$q->with();
-			#$q->has('comments');
-			#$q->whereHas('comments', function ($query) { $query->where('content', 'like', 'foo%'); }
-		});
-		
-		foreach ($rows as $row){
-			print $row['title'] . " // ";
-			print $row['exampletable1_row_func']['title'] . "<br />";
-		}
-		
-		$row = ExampleTable::recSelect(177); // Выбрать запись (v2) // print $row['uid'];
-		$insertId = ExampleTable::recInsert(['RType'=>'1','title'=>'regge']); // Создать запись // return $$insertId = ;
-		ExampleTable::recUpdate(177, ['title'=>'rrr']); // Обновить запись
-		ExampleTable::recDelete(175); // Удалить запись
-		
-		ExampleTable::refAttach('exampletable1_row_func',177,2);
-		ExampleTable::refDetach('exampletable1_row_func',177,2);
-		ExampleTable::refCollection('exampletable1_row_func',177);
-		
-		
-		
-
-    /**
-     * Пользовательские значения для полей типа Switch, Enum
-     * Возможно использовать выборку из БД
-     * @AirTable\Field\ItemsProcFunc:<Litovchenko\AirTable\Domain\Model\Tests\ExampleTable->doItems>
-     */
-    public static function doItems($config)
-    {
-        $itemList = [];
-        $config['items'][] = [100, 'New item 100'];
-        $config['items'][] = [200, 'New item 200'];
-        $config['items'][] = [300, 'New item 300'];
-        return $config;
-    }
-    
-
 ## Useful settings in "typo3conf/LocalConfiguration.php"
 
 ```php
