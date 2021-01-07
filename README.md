@@ -307,36 +307,6 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 </div>
 ```
 
-## Useful settings in "typo3conf/LocalConfiguration.php"
-
-```php
-<?php
-return [
-    'BE' => [
-        'debug' => false
-    ],
-    'SYS' => [
-        'displayErrors' => 0,
-        'belogErrorReporting' => 0,
-        'errorHandlerErrors' => 0,
-        'exceptionalErrors' => 0,
-        'syslogErrorReporting' => 0,
-        'systemMaintainers' => [
-            1, // Users Administrators "Admin Tools"
-            3, // Users Administrators "Admin Tools"
-        ]
-    ]
-];
-```
-
-
-
-
-
-
-
-
-
 ## CMS TYPO3 Register a model (CRUD) in the system
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
@@ -627,56 +597,60 @@ Step 1) Create a file EXT:myext/Classes/Domain/Model/Ex/PagesEx.php\
 Step 2) Create class inherited from base model
 
 ```
+<?php
 namespace Mynamespace\Myext\Domain\Model;
 use \Litovchenko\AirTable\Domain\Model\Content\Pages;
 
 /**
- * @AirTable\Label:<Расширяем моделя>
- * @AirTable\Description:<Примеры полей расширения модели>
+ * @AirTable\Label:<From EXT:myext>
+ * @AirTable\Description:<Adding fields to the page model>
  */
- 
+
 class PagesEx extends Pages
 {
-	/**
-	* Типы записей по умолчанию
-	* @return array
-	*/
+    /**
+     * This is an optional feature.
+     * Record types similar to "doktype (pages)" and "CType (tt_content)"
+     * @return array
+     */
     public static function baseRTypes()
     {
-		$types = parent::baseRTypes();
-		$types[100] = 'Тип 100';
-		return $types;
-	}
-	
-	/**
-	* Табы по умолчанию
-	* @return array
-	*/
+        $types = parent::baseRTypes();
+        $types[100] = 'New type 100';
+        return $types;
+    }
+
+    /**
+     * This is an optional feature.
+     * Tabs for the edit form
+     * @return array
+     */
     public static function baseTabs()
     {
-		$tabs = parent::baseTabs();
-		$tabs['NewTab'] = 'New Tab (###COUNT###)';
-		return $tabs;
-	}
-	
-	/**
-	 * @AirTable\Field:<Text>
-	 * @AirTable\Field\Position\1:<NewTab,0>
-	 * @AirTable\Field\Label:<Тест Ex>
-	 */
-	protected $ex_air_table_test5w2;
+        $tabs = parent::baseTabs();
+        $tabs['newtab'] = 'NewTab (###COUNT###)';
+        return $tabs;
+    }
 
-	/**
-	* Переопределение массива настроек таблицы
-	* @configuration (TCA array)
-	* @return array
-	*/
+    /**
+     * @AirTable\Field:<Text>
+     * @AirTable\Field\Position\1:<NewTab,0>
+     * @AirTable\Field\Label:<Тест Ex>
+     */
+    protected $ex_myext_new_field;
+
+    /**
+     * Changing the $TCA settings array
+     * @configuration (TCA array)
+     * @return &configuration
+     */
     public static function postBuildConfiguration(&$configuration = [])
     {
-		//$configuration['ctrl']['...'] = 1;
-	}
-	
-	
+        //$configuration['ctrl']['...'] = ...;
+        //$configuration['columns']['field']['config'] = ...;
+        
+    }
+
 }
 ```
 
@@ -738,3 +712,25 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
         return $config;
     }
     
+
+## Useful settings in "typo3conf/LocalConfiguration.php"
+
+```php
+<?php
+return [
+    'BE' => [
+        'debug' => false
+    ],
+    'SYS' => [
+        'displayErrors' => 0,
+        'belogErrorReporting' => 0,
+        'errorHandlerErrors' => 0,
+        'exceptionalErrors' => 0,
+        'syslogErrorReporting' => 0,
+        'systemMaintainers' => [
+            1, // Users Administrators "Admin Tools"
+            3, // Users Administrators "Admin Tools"
+        ]
+    ]
+];
+```
