@@ -651,7 +651,6 @@ class PagesEx extends Pages
         //$configuration['ctrl']['...'] = ...;
         //$configuration['columns']['field']['config'] = ...;
     }
-
 }
 ```
 
