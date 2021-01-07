@@ -4,7 +4,7 @@
 
 // Select -> with Global Scope: FlagDeleted, FlagDisabled, DateStart, DateEnd
 $pageId = 177;
-$row = ExampleTable::recSelect($pageId);
+$row = \Litovchenko\AirTable\Domain\Model\Content\Pages::recSelect($pageId);
 var_export($row);
 
 // Insert
@@ -16,12 +16,17 @@ $insertId = \Litovchenko\AirTable\Domain\Model\Content\Pages::recInsert($data);
 $pageId = 177;
 $data = [];
 $data['title'] = '-- TITLE --';
-\Litovchenko\AirTable\Domain\Model\Content\Pages::recUpdate($pageId, $data); // ->withoutGlobalScopes()!!!
+$result = \Litovchenko\AirTable\Domain\Model\Content\Pages::recUpdate($pageId, $data); // ->withoutGlobalScopes()!!!
+if($result){
+    //
+}
 
 // Delete
 $pageId = 177;
-\Litovchenko\AirTable\Domain\Model\Content\Pages::recDelete($pageId); // ->withoutGlobalScopes()!!!
-
+$result = \Litovchenko\AirTable\Domain\Model\Content\Pages::recDelete($pageId); // ->withoutGlobalScopes()!!!
+if($result){
+    //
+}
 		
 
 		// Выбрать записи (кол-во)
