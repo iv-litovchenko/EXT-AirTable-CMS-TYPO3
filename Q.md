@@ -4,7 +4,7 @@
 
 // Insert
 $data = [];
-$data['title'] = '-- NEW PAGe --';
+$data['title'] = '-- NEW PAGE --';
 $insertId = \Litovchenko\AirTable\Domain\Model\Content\Pages::recInsert($data);
 
 // Update
