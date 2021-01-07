@@ -22,7 +22,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 5) Add ":: IncTypoScript (typo3temp/) :: (air_table)" as the last item to the page template.
 
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-add-template.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-add-template.png)
 
 If you are working in versions 7, 8 and you need "typo3/install.php" - for this you need to create a file "typo3conf/ENABLE_INSTALL_TOOL" with the content "KEEP_FILE".
 
@@ -71,7 +71,7 @@ EXT:myext/Resources/Public/Img/
 ```
 
 ## CMS TYPO3 Register a new admin module
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-admin-module.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
 
@@ -183,7 +183,7 @@ EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
 ```
 
 ## CMS TYPO3 Register a new page template
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-page-template-1.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
 
@@ -251,7 +251,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 ```
 
 ## CMS TYPO3 Register a new content element
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-content-element.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
 
@@ -341,7 +341,7 @@ return [
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-crud.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-crud.png)
 
 ```php
 <?php
@@ -571,7 +571,7 @@ class NewTable extends AbstractModelCrud
 
 Step 2) If you need categorization, create a category model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTableCategory.php
 
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-crud-with-category.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-crud-with-category.png)
 
 ```php
 <?php
@@ -597,7 +597,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ## Standard CRUD-models registered in the system for working with records
 
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-standard-crud-models.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-standard-crud-models.png)
 
 ```php
 // A static block of content on a page with the ability to edit
