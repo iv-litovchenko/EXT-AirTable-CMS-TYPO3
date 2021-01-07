@@ -2,9 +2,9 @@
 
 ```php
 
-// Select
+// Select -> with Global Scope: FlagDeleted, FlagDisabled, DateStart, DateEnd
 $pageId = 177;
-$row = ExampleTable::recSelect($pageId); // -> with scopes: FlagDeleted, FlagDisabled, DateStart, DateEnd
+$row = ExampleTable::recSelect($pageId);
 var_export($row);
 
 // Insert
