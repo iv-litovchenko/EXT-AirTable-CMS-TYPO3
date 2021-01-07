@@ -22,7 +22,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 5) Add ":: IncTypoScript (typo3temp/) :: (air_table)" as the last item to the page template.
 
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/typo3-add-template.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-add-template.png)
 
 If you are working in versions 7, 8 and you need "typo3/install.php" - for this you need to create a file "typo3conf/ENABLE_INSTALL_TOOL" with the content "KEEP_FILE".
 
@@ -71,7 +71,7 @@ EXT:myext/Resources/Public/Img/
 ```
 
 ## CMS TYPO3 Register a new admin module
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/typo3-register-a-new-admin-module.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-admin-module.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
 
@@ -183,7 +183,7 @@ EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
 ```
 
 ## CMS TYPO3 Register a new page template
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/typo3-register-a-new-page-template-1.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-page-template-1.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
 
@@ -251,7 +251,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 ```
 
 ## CMS TYPO3 Register a new content element
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/typo3-register-a-new-content-element.png)
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Imgtypo3-register-a-new-content-element.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
 
