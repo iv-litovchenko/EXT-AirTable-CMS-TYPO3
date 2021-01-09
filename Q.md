@@ -63,7 +63,7 @@ $insertId = NewTable::recInsert($data);
 $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
-$result = NewTable::recUpdate($recordId, $data); // ->withoutGlobalScopes()!!!
+$result = NewTable::recUpdate($recordId, $data);
 if ($result)
 {
     echo 'Successfully';
@@ -77,7 +77,7 @@ else
 // Delete
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
-$result = NewTable::recDelete($recordId); // ->withoutGlobalScopes()!!!
+$result = NewTable::recDelete($recordId);
 if ($result)
 {
     echo 'Successfully';
