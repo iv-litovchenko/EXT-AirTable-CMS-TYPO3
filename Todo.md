@@ -1,3 +1,7 @@
+## Внутренне виджеты состоят из собственного контроллера и представления.
+
+
+
 class ForViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 /**
 * Renders a loop
