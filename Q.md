@@ -13,7 +13,6 @@ $recordId = 15;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count, max, min, avg, and sum
 $rowsGet = NewTable::recSelect('get'); // All
-
 print "<pre>";
 print_r($rowsFirst);
 print_r($rowsCount);
@@ -65,9 +64,12 @@ $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
 $result = NewTable::recUpdate($recordId, $data); // ->withoutGlobalScopes()!!!
-if ($result) {
+if ($result)
+{
     echo 'Successfully';
-} else {
+}
+else
+{
     echo 'Not successful';
 }
 
@@ -76,9 +78,12 @@ if ($result) {
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $result = NewTable::recDelete($recordId); // ->withoutGlobalScopes()!!!
-if ($result) {
+if ($result)
+{
     echo 'Successfully';
-} else {
+}
+else
+{
     echo 'Not successful';
 }
 ```
