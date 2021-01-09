@@ -1,3 +1,13 @@
+
+
+		#Исходный текст
+		#• $this->arguments is an associative array where you will find the values for all arguments you registered previously.
+		#• $this->renderChildren() renders everything between the opening and closing tag of the view
+		#helper and returns the rendered result (as string).
+		#• $this->templateVariableContainer is an instance of TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer,
+		#with which you have access to all variables currently available in the template, and can modify the variables
+		#currently available in the template.
+
 # Register view helper
 
 Step 1) EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
