@@ -79,24 +79,4 @@ if ($result) {
 } else {
     echo 'Not successful';
 }
-```	
-	
-	
-	
-	
-	
-	
-
-    /**
-     * Пользовательские значения для полей типа Switch, Enum
-     * Возможно использовать выборку из БД
-     * @AirTable\Field\ItemsProcFunc:<Litovchenko\AirTable\Domain\Model\Tests\ExampleTable->doItems>
-     */
-    public static function doItems($config)
-    {
-        $itemList = [];
-        $config['items'][] = [100, 'New item 100'];
-        $config['items'][] = [200, 'New item 200'];
-        $config['items'][] = [300, 'New item 300'];
-        return $config;
-    }
+```
