@@ -354,7 +354,8 @@ class NewTable extends AbstractModelCrud
     use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
     use \Litovchenko\AirTable\Domain\Model\Traits\TtContentRows; // <f:content recordModel="Mynamespace\Myext\Domain\Model\NewTable" recordId="1" />
     use \Litovchenko\AirTable\Domain\Model\Traits\Files;
-    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyForeignFields.php;
+    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;
+    // use \Litovchenko\AirTable\Domain\Model\Traits\EavRows;
     
 	// Categorization
     // For this to work
