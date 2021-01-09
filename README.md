@@ -441,6 +441,7 @@ class NewTable extends AbstractModelCrud
     /**
      * @AirTable\Field:<Switcher> || Switcher.Int
      * @AirTable\Field\Label:<Switcher>
+     * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
      * @AirTable\Field\Items\0:<Zero>
      * @AirTable\Field\Items\1:<One>
      * @AirTable\Field\Items\2:<Two>
@@ -451,6 +452,7 @@ class NewTable extends AbstractModelCrud
     /**
      * @AirTable\Field:<Enum>
      * @AirTable\Field\Label:<Enum>
+     * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
      * @AirTable\Field\Items\1:<One>
      * @AirTable\Field\Items\2:<Two>
      * @AirTable\Field\Items\3:<Three>
@@ -460,9 +462,9 @@ class NewTable extends AbstractModelCrud
     /**
      * @AirTable\Field:<Rel_1To1>
      * @AirTable\Field\Label:<Rel_1To1>
-     * @AirTable\Field\ForeignModel:<Litovchenko\AirTableExamples\Domain\Model\ExampleTable1>
+     * @AirTable\Field\ForeignModel:<Mynamespace\Myext\Domain\Model\[SubFolder]\***>
      * @AirTable\Field\ForeignKey:<***>
-     * @AirTable\Field\ForeignParentKey:<parent_id> // (Rel_MToM || Rel_MTo1).Tree
+     * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\Show:<1>
      */
     #protected $[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
@@ -499,6 +501,20 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
+     * Custom value set (user func)
+     * It is possible to use a selection from the database
+     * return $config
+     */
+    public static function doItems($config)
+    {
+        $itemList = []; // If database
+        $config['items'][] = [100, 'New item 100'];
+        $config['items'][] = [200, 'New item 200'];
+        $config['items'][] = [300, 'New item 300'];
+        return $config;
+    }
+
+    /**
      * Debug content
      * @return string
      */
@@ -514,12 +530,9 @@ class NewTable extends AbstractModelCrud
      */
     public static function cmdInsert($when, &$table, $id, &$fieldArray)
     {
-        if ($when == 'before')
-        {
+        if ($when == 'before') {
             //
-        }
-        else
-        {
+        } else  {
             //
         }
     }
@@ -530,12 +543,9 @@ class NewTable extends AbstractModelCrud
      */
     public static function cmdUpdate($when, &$table, $id, &$fieldArray)
     {
-        if ($when == 'before')
-        {
+        if ($when == 'before') {
             //
-        }
-        else
-        {
+        }  else {
             //
         }
     }
@@ -546,12 +556,9 @@ class NewTable extends AbstractModelCrud
      */
     public static function cmdDelete($when, &$table, $id, &$fieldArray)
     {
-        if ($when == 'before')
-        {
+        if ($when == 'before')  {
             //
-        }
-        else
-        {
+        } else {
             //
         }
     }
