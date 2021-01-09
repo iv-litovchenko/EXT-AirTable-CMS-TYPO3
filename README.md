@@ -679,10 +679,20 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## Methods inside a class (extbase)
+## Methods inside a class (extbase) - Todo
 
 ```php
 ---
+cache
+render / assign
+requst respone
+log
+debug
+auth
+cookie
+flashmessage
+context
+controllerName
 ```
 
 ## Useful settings in "typo3conf/LocalConfiguration.php"
