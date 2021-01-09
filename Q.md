@@ -86,4 +86,49 @@ else
 {
     echo 'Not successful';
 }
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// Working with relationships between tables
+// ->refProvider()
+////////////////////////////////////////////////////////////////////////////////////////
+
+NewTable::refAttach('category_rows_func', 1, [3,4]); // $relationship, $parentId, $idsToAttach
+// NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
+#print $allCat;
+
+
+$countRecord = NewTable::recSelect('count', function ($q) use ($filter){
+    $q->with('category_rows_func');
+	$q->where('uid',1);
+});
+
+#print $countRecord;
+
+$r = NewTable::where('uid','=',1)->with('category_rows_func')->get();
+$r = $r->toArray();
+print_r($r[0]);
+
+
+
+withTrashed()
+withTrashed
+onlyTrashed
+
+restore
+forceDelete
+
+
+
+
+
+
+
+
+
 ```
