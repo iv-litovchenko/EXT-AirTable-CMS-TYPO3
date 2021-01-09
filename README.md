@@ -679,7 +679,7 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## Methods inside a class (extbase) - Todo
+## Methods inside a class (extbase)
 
 ```php
 ---
@@ -693,6 +693,7 @@ cookie
 flashmessage
 context
 controllerName
+link, redirect, forward
 ```
 
 ## Useful settings in "typo3conf/LocalConfiguration.php"
