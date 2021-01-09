@@ -1,3 +1,20 @@
+class ForViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+/**
+* Renders a loop
+*
+* @param array $each Array to iterate over
+* @param string $as Iteration variable
+*/
+public function render(array $each, $as) {
+$out = '';
+foreach ($each as $singleElement) {
+$this->variableContainer->add($as, $singleElement);
+$out .= $this->renderChildren();
+$this->variableContainer->remove($as);
+}
+return $out;
+}
+}
 
 
 		#Исходный текст
