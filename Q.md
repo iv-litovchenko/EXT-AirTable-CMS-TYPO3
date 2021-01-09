@@ -11,7 +11,7 @@ use \Mynamespace\Myext\Domain\Model\NewTable;
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 15;
 $rowsFirst = NewTable::recSelect('first', $recordId);
-$rowsCount = NewTable::recSelect('count'); // count, max, min, avg, and sum
+$rowsCount = NewTable::recSelect('count'); // count, max, min, avg, sum, exists, doesntExist
 $rowsGet = NewTable::recSelect('get'); // All
 print "<pre>";
 print_r($rowsFirst);
