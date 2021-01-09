@@ -315,7 +315,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 </div>
 ```
 
-## Register a model (CRUD) in the system
+## Register a new model (CRUD)
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 
