@@ -34,7 +34,7 @@ Step 5) Add ":: IncTypoScript (typo3temp/) :: (air_table)" as the last item to t
 
 If you are working in versions 7, 8 and you need "typo3/install.php" - for this you need to create a file "typo3conf/ENABLE_INSTALL_TOOL" with the content "KEEP_FILE".
 
-## CMS TYPO3 Extension structure
+## Extension structure
 
 ```
 EXT:myext/Classes/Controller/
@@ -78,7 +78,7 @@ EXT:myext/Resources/Public/Js/
 EXT:myext/Resources/Public/Img/
 ```
 
-## CMS TYPO3 Register a new admin module
+## Register a new admin module
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
@@ -190,7 +190,7 @@ EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
 </xliff>
 ```
 
-## CMS TYPO3 Register a new page template
+## Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
@@ -258,7 +258,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 <f:comment><!--<f:render partial="Footer" arguments="{_all}" />--></f:comment>
 ```
 
-## CMS TYPO3 Register a new content element
+## Register a new content element
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
 
 Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
@@ -315,7 +315,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 </div>
 ```
 
-## CMS TYPO3 Register a model (CRUD) in the system
+## Register a model (CRUD) in the system
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 
