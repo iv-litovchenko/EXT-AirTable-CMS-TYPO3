@@ -4,7 +4,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 
 ## Contents
 
-* [#contents](fewfew)
+* [fewfew](#contents)
 * ---------
 * ---------
 * ---------
