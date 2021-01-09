@@ -11,6 +11,7 @@ $recordId = 15;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count, max, min, avg, and sum
 $rowsGet = NewTable::recSelect('get'); // All
+
 print "<pre>";
 print_r($rowsFirst);
 print_r($rowsCount);
@@ -24,13 +25,13 @@ $rowsResult = NewTable::recSelect('count,get', function ($q) use ($filter)
 {
     #$q->withoutGlobalScopes();
     #$q->withoutGlobalScope('FlagDeleted'); // FlagDisabled, DateStart, DateEnd
-    $q->select('uid');
-    $q->addSelect('title');
+    #$q->select('uid');
+    #$q->addSelect('title');
     #$q->where('field', '=', 1);
     #$q->orWhere('field', '>=', 100);
     #$q->orderByDesc('field');
-    $q->limit($filter['limit']);
-    $q->offset($filter['offset']);
+    #$q->limit($filter['limit']);
+    #$q->offset($filter['offset']);
     #$q->with('[relname]_row(s)_func');
     #$q->has('[relname]_row(s)_func');
     #$q->whereHas('[relname]_row(s)_func', function ($q) {
@@ -62,12 +63,9 @@ $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
 $result = NewTable::recUpdate($recordId, $data); // ->withoutGlobalScopes()!!!
-if ($result)
-{
+if ($result) {
     echo 'Successfully';
-}
-else
-{
+} else {
     echo 'Not successful';
 }
 
@@ -76,12 +74,9 @@ else
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $result = NewTable::recDelete($recordId); // ->withoutGlobalScopes()!!!
-if ($result)
-{
+if ($result) {
     echo 'Successfully';
-}
-else
-{
+} else {
     echo 'Not successful';
 }
 ```	
