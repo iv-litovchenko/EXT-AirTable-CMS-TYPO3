@@ -673,8 +673,7 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## Extbase functions in controller
-
+## Methods inside a class (extbase)
 
 ```php
 ---
