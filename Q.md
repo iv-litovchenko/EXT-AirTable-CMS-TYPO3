@@ -1,4 +1,4 @@
-## Database queries - 4 simple functions, functions for creating relationships between tables. Eloquent ORM (Laravel)
+## Database queries - 4 simple functions (Select, Insert, Update, Delete), functions for creating relationships between tables. Eloquent ORM (Laravel)
 
 ```php
 
