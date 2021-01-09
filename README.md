@@ -11,6 +11,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Register a new content element](#register-a-new-content-element)
 * [Register a new model (CRUD)](#register-a-new-model-crud)
 * [Standard CRUD-models registered in the system for working with records](#standard-crud-models-registered-in-the-system-for-working-with-records)
+* [Extending an existing model](#extending-an-existing-model)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 
