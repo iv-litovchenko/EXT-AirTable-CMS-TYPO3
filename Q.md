@@ -1,80 +1,90 @@
 ## Database queries - 4 simple functions (Select, Insert, Update, Delete), functions for creating relationships between tables. Eloquent ORM (Laravel)
 
 ```php
-
-// Select -> with Global Scope: FlagDeleted, FlagDisabled, DateStart, DateEnd
-$pageId = 177;
-$row = \Litovchenko\AirTable\Domain\Model\Content\Pages::recSelect($pageId);
-var_export($row);
-
-// Insert
-$data = [];
-$data['title'] = '-- NEW PAGE --';
-$insertId = \Litovchenko\AirTable\Domain\Model\Content\Pages::recInsert($data);
-
-// Update
-$pageId = 177;
-$data = [];
-$data['title'] = '-- TITLE --';
-$result = \Litovchenko\AirTable\Domain\Model\Content\Pages::recUpdate($pageId, $data); // ->withoutGlobalScopes()!!!
-if($result){
-    //
-}
-
-// Delete
-$pageId = 177;
-$result = \Litovchenko\AirTable\Domain\Model\Content\Pages::recDelete($pageId); // ->withoutGlobalScopes()!!!
-if($result){
-    //
-}
-		
-
-		// Выбрать записи (кол-во)
-		$rowsCount = ExampleTable::recSelect(null,'count'); // print $rowsCount;
-		
 <?php
+use \Mynamespace\Myext\Domain\Model\NewTable;
+
+////////////////////////////////////////////////////////////////////////////////////////
+// Select
+////////////////////////////////////////////////////////////////////////////////////////
+$recordId = 15;
+$rowsFirst = NewTable::recSelect('first', $recordId);
+$rowsCount = NewTable::recSelect('count'); // count, max, min, avg, and sum
+$rowsGet = NewTable::recSelect('get'); // All
+print "<pre>";
+print_r($rowsFirst);
+print_r($rowsCount);
+print_r($rowsGet);
+print "</pre>";
 
 $filter = [];
-$filter['where_Pid'] = 'title';
-$filter['order'] = 'title';
-$filter['limit'] = 10;
-$filter['offset'] = 30;
-$rows = ExampleTable::recSelect(function ($q) use ($filter)
+$filter['limit'] = 5;
+$filter['offset'] = 2;
+$rowsResult = NewTable::recSelect('count,get', function ($q) use ($filter)
 {
-    #$q->withoutGlobalScope('FlagDeleted');
-    #$q->withoutGlobalScope('FlagDisabled');
-    #$q->withoutGlobalScope('DateStart');
-    #$q->withoutGlobalScope('DateEnd');
     #$q->withoutGlobalScopes();
-    #$q->select('uid','title');
-    #$q->where('field', '=', 1)
-    #$q->orWhere('field', '>=', 100)
-    $q->orderByDesc($filter['order']);
+    #$q->withoutGlobalScope('FlagDeleted'); // FlagDisabled, DateStart, DateEnd
+    $q->select('uid');
+    $q->addSelect('title');
+    #$q->where('field', '=', 1);
+    #$q->orWhere('field', '>=', 100);
+    #$q->orderByDesc('field');
     $q->limit($filter['limit']);
     $q->offset($filter['offset']);
-    $q->with('exampletable1_row_func');
-    #$q->with();
-    #$q->has('comments');
-    #$q->whereHas('comments', function ($query) { $query->where('content', 'like', 'foo%'); }
-    
+    #$q->with('[relname]_row(s)_func');
+    #$q->has('[relname]_row(s)_func');
+    #$q->whereHas('[relname]_row(s)_func', function ($q) {
+    #	$q->where('field', 'like', 'foo%');
+    #});
 });
 
-foreach ($rows as $row)
+print "<pre>";
+print_r($rowsResult);
+print "</pre>";
+
+foreach ($rowsResult['get'] as $row)
 {
     print $row['title'] . " // ";
-    print $row['exampletable1_row_func']['title'] . "<br />";
+    print $row['[relname]_row(s)_func']['title'] . "<br />";
 }
 
+////////////////////////////////////////////////////////////////////////////////////////
+// Insert
+////////////////////////////////////////////////////////////////////////////////////////
+$data = [];
+$data['title'] = '-- TITLE --';
+$insertId = NewTable::recInsert($data);
 
-		
+////////////////////////////////////////////////////////////////////////////////////////
+// Update
+////////////////////////////////////////////////////////////////////////////////////////
+$recordId = 7;
+$data = [];
+$data['title'] = '-- TITLE --';
+$result = NewTable::recUpdate($recordId, $data); // ->withoutGlobalScopes()!!!
+if ($result)
+{
+    echo 'Successfully';
+}
+else
+{
+    echo 'Not successful';
+}
 
-		
-		ExampleTable::refAttach('exampletable1_row_func',177,2);
-		ExampleTable::refDetach('exampletable1_row_func',177,2);
-		ExampleTable::refCollection('exampletable1_row_func',177);
-		
-		
-	```	
+////////////////////////////////////////////////////////////////////////////////////////
+// Delete
+////////////////////////////////////////////////////////////////////////////////////////
+$recordId = 7;
+$result = NewTable::recDelete($recordId); // ->withoutGlobalScopes()!!!
+if ($result)
+{
+    echo 'Successfully';
+}
+else
+{
+    echo 'Not successful';
+}
+```	
 	
 	
 	
