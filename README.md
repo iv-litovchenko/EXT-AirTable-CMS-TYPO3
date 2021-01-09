@@ -4,11 +4,11 @@ A set of tools for creating your site based on class annotations. Works in versi
 
 ## Table of contents
 
-..* ---------
-..* ---------
-..* ---------
-..* ---------
-..* ---------
+* ---------
+* ---------
+* ---------
+* ---------
+* ---------
 
 ## How to install?
 
