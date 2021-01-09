@@ -4,6 +4,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 
 ## Contents
 
+* [Demo site online](#demo-site-online)
 * [How to install?](#how-to-install)
 * [Extension structure](#extension-structure)
 * [Register a new admin module](#register-a-new-admin-module)
@@ -14,6 +15,10 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Extending an existing model](#extending-an-existing-model)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
+
+## Demo site online
+
+Coming soon!
 
 ## How to install?
 
