@@ -2,6 +2,14 @@
 
 A set of tools for creating your site based on class annotations. Works in versions 9 +, 10 +. The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. It does not work in versions 7 and 8 due to the termination of support for the "PATH_site" constants.
 
+## Table of contents
+
+..* ---------
+..* ---------
+..* ---------
+..* ---------
+..* ---------
+
 ## How to install?
 
 Step 1) If, when installing a new version of the CMS TYPO3 system, the error "@mysqli.reconnect=1@" pops up - comment out this message in the file: "typo3/sysext/install/Classes/SystemEnvironment/DatabaseCheck/Driver/Mysqli.php". Then proceed with the installation.
@@ -664,6 +672,13 @@ class PagesEx extends Pages
 Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
+
+## Extbase functions in controller
+
+
+```php
+---
+```
 
 ## Useful settings in "typo3conf/LocalConfiguration.php"
 
