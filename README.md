@@ -38,7 +38,7 @@ Step 3) Update the composer in the folder "typo3conf/ext/air_table/"
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
 
-Step 5) Add ":: IncTypoScript (typo3temp/) :: (air_table)" as the last item to the page template.
+Step 5) Add ":: IncTypoScript :: (air_table)" as the last item to the page template.
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-add-template.png)
 
