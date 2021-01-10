@@ -134,3 +134,18 @@ plugin - то что расширяет,
 module это составляющее (не отделимое). по моему очевидно
 виджет это видимый элемент, на сколько я понимаю, с внутренним функционалом, с точки зрения использования маленькая программка., 
 а хелпер это просто вспомогательная функуция strtoupper к примеру
+
+
+
+$view = $this->objectManager->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
+$view->setFormat('html');
+$view->setTemplatePathAndFileName(ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Templates/Email.html');
+$view->setLayoutRootPaths(array(
+  'default' => ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Layouts',
+  'specific' => ExtensionManagementUtility::extPath('myTemplateExt') . 'Resources/Private/Layouts/MyExt',
+));
+$view->setPartialRootPaths(array(
+  'default' => ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Partials',
+  'specific' => ExtensionManagementUtility::extPath('myTemplateExt') . 'Resources/Private/Layouts/MyExt',
+  'evenMoreSpecific' => 'fileAdmin/templates/myExt/Partials',
+));
