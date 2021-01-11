@@ -1,4 +1,4 @@
-<wgsExtAirTable:Test action="" TestArg1='String 1' TestArg2='String 2'  /></u> <hr />
+<wgsExtAirTable:Test action="" TestArg1='String 1' TestArg2='String 2'  />
 <vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' />
 
 ## Внутренне виджеты состоят из собственного контроллера и представления.
