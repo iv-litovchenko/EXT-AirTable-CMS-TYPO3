@@ -4,23 +4,7 @@
 
 
 
-class ForViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
-/**
-* Renders a loop
-*
-* @param array $each Array to iterate over
-* @param string $as Iteration variable
-*/
-public function render(array $each, $as) {
-$out = '';
-foreach ($each as $singleElement) {
-$this->variableContainer->add($as, $singleElement);
-$out .= $this->renderChildren();
-$this->variableContainer->remove($as);
-}
-return $out;
-}
-}
+
 
 
 		#Исходный текст
@@ -137,15 +121,4 @@ module это составляющее (не отделимое). по моем�
 
 
 
-$view = $this->objectManager->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
-$view->setFormat('html');
-$view->setTemplatePathAndFileName(ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Templates/Email.html');
-$view->setLayoutRootPaths(array(
-  'default' => ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Layouts',
-  'specific' => ExtensionManagementUtility::extPath('myTemplateExt') . 'Resources/Private/Layouts/MyExt',
-));
-$view->setPartialRootPaths(array(
-  'default' => ExtensionManagementUtility::extPath('myExt') . 'Resources/Private/Partials',
-  'specific' => ExtensionManagementUtility::extPath('myTemplateExt') . 'Resources/Private/Layouts/MyExt',
-  'evenMoreSpecific' => 'fileAdmin/templates/myExt/Partials',
-));
+
