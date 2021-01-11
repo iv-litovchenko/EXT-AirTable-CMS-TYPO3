@@ -1,6 +1,6 @@
 # EXT: AirTable (CMS TYPO3)
 
-A set of tools for creating your site based on class annotations. Works in versions 9 +, 10 +. The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. It does not work in versions 7 and 8 due to the termination of support for the "PATH_site" constants.
+A set of tools for creating your site based on class annotations. Works in versions TYPO3 v7, v8, v9, v10 and v11. The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway.
 
 ## Contents
 
