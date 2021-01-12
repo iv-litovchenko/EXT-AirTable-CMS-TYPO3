@@ -17,11 +17,13 @@ $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count
 $rowsGet = NewTable::recSelect('get'); // All
 $method  NewTable::recSelect('exists', $recordId); // count, max, min, avg, sum, exists, doesntExist
+$obj  NewTable::recSelect('obj', [])->...->get(); // return obj (to create subqueries)
 
 $limit = 10;
-$rowsResultCountAndGet = NewTable::recSelect('count,get', function ($q) use ($limit) { 
+$rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) { 
     $q->limit($limit); 
-}); 
+});
+print "Count: " . $rowsResult['count'];
 foreach ($rowsResult['get'] as $row){
     print $row['title'] . " // ";
     print $row['[relname]_row(s)_func']['title'] . "<br />";
