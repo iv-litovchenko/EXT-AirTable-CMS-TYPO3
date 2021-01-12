@@ -13,8 +13,8 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Register a new model (CRUD)](#register-a-new-model-crud)
 * [Standard CRUD-models registered in the system for working with records](#standard-crud-models-registered-in-the-system-for-working-with-records)
 * [Extending an existing model](#extending-an-existing-model)
-* [Export records (module)](#)
-* [Import records (module)](#)
+* [Export records (module)](#export-records-module)
+* [Import records (module)](#import-records-module)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 
@@ -692,6 +692,14 @@ class PagesEx extends Pages
 Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
+
+## Export records (module)
+
+- // todo
+
+## Import records (module)
+
+- // todo
 
 ## Methods inside a class (extbase)
 
