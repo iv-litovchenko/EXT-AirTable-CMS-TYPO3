@@ -124,7 +124,10 @@ print_r($r[0]);
 
 
 
-1 rel getCounty()
-2 custom func return rec
+// Todo
+// 1 custom relation function getCounty()
+// 2 custom static fanction GetById (recSelect userFunc)
+// 3 custom user global scope
+// 4 custom user local sope
 
 
