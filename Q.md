@@ -4,10 +4,15 @@ https://github.com/awes-io/repository
 
 ```php
 <?php
-use \Mynamespace\Myext\Domain\Model\NewTable;
+use Illuminate\Database\Capsule\Manager as DB;
+use Carbon\Carbon;
+use Litovchenko\AirTable\Domain\Model\Content\Pages;
+use Litovchenko\AirTableExamples\Domain\Model\ExampleTable;
+use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// Select
+// SELECT
+// NewTable::recSelect('medthod', $filter); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 15;
 $rowsFirst = NewTable::recSelect('first', $recordId);
@@ -51,40 +56,37 @@ foreach ($rowsResult['get'] as $row)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// Insert
+// INSERT
+// ModelName::recUpdate($data); // return last insert id
 ////////////////////////////////////////////////////////////////////////////////////////
 $data = [];
 $data['title'] = '-- TITLE --';
 $insertId = NewTable::recInsert($data);
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// Update
+// UPDATE
+// ModelName::recUpdate($id, $data); // return flag
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
 $result = NewTable::recUpdate($recordId, $data);
-if ($result)
-{
+if ($result) {
     echo 'Successfully';
-}
-else
-{
+} else {
     echo 'Not successful';
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// Delete
+// DELETE 
+// ModelName::recDelete($id, $destroy); // return flag
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
 $result = NewTable::recDelete($recordId, $destroy);
-if ($result)
-{
+if ($result) {
     echo 'Successfully';
-}
-else
-{
+} else {
     echo 'Not successful';
 }
 
