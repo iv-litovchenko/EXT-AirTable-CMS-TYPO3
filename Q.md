@@ -23,7 +23,8 @@ $limit = 10;
 $rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) { 
     $q->limit($limit); 
 });
-print "Count: " . $rowsResult['count'];
+
+print "Count: " . $rowsResult['count'] . "<hr />";
 foreach ($rowsResult['get'] as $row){
     print $row['title'] . " // ";
     print $row['[relname]_row(s)_func']['title'] . "<br />";
