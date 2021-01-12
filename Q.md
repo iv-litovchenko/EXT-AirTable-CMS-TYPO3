@@ -16,11 +16,6 @@ $recordId = 15;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count, max, min, avg, sum, exists, doesntExist
 $rowsGet = NewTable::recSelect('get'); // All
-print "<pre>";
-print_r($rowsFirst);
-print_r($rowsCount);
-print_r($rowsGet);
-print "</pre>";
 
 $filter = [];
 $filter['limit'] = 5;
@@ -36,11 +31,7 @@ $rowsResult = NewTable::recSelect('count,get', function ($q) use ($filter)
     #$q->orderByDesc('field');
     #$q->limit($filter['limit']);
     #$q->offset($filter['offset']);
-    #$q->with('[relname]_row(s)_func');
-    #$q->has('[relname]_row(s)_func');
-    #$q->whereHas('[relname]_row(s)_func', function ($q) {
-    #	$q->where('field', 'like', 'foo%');
-    #});
+
 });
 
 print "<pre>";
@@ -98,6 +89,12 @@ if ($result) {
 // Working with relationships between tables
 // ->refProvider()
 ////////////////////////////////////////////////////////////////////////////////////////
+
+    #$q->with('[relname]_row(s)_func');
+    #$q->has('[relname]_row(s)_func');
+    #$q->whereHas('[relname]_row(s)_func', function ($q) {
+    #	$q->where('field', 'like', 'foo%');
+    #});
 
 NewTable::refAttach('category_rows_func', 1, [3,4]); // $relationship, $parentId, $idsToAttach
 // NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
