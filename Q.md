@@ -120,6 +120,5 @@ print_r($r[0]);
 restore
 forceDelete
 isDeleted
-1 rel get
 2 custom func return rec
 ```
