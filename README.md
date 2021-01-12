@@ -21,7 +21,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 
 ## Demo site online
 
-Coming soon!
+Coming soon! // Todo
 
 ## How to install?
 
