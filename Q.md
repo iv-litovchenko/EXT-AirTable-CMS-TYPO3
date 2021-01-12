@@ -125,9 +125,9 @@ print_r($r[0]);
 
 
 // Todo
-// 1 custom relation function getCounty()
-// 2 custom static fanction GetById (recSelect userFunc)
-// 3 custom user global scope
-// 4 custom user local sope
+// 1 relation function getCounty( -> provider )
+// 2 static function GetById (recSelect('userFunc'))
+// 3 user function global scope register
+// 4 user function local scope register
 
 
