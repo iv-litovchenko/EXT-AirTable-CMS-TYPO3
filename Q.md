@@ -180,4 +180,4 @@ $countRecord = NewTable::recSelect('count', function ($q) use ()
 // 2 static function GetById (recSelect('userFunc'))
 // 3 user function global scope register
 // 4 user function local scope register
-// 5 sub $filter where
+// 5 sub $filter where & with
