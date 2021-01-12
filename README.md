@@ -951,8 +951,8 @@ return [
         'exceptionalErrors' => 0,
         'syslogErrorReporting' => 0,
         'systemMaintainers' => [
-            1, // Users Administrators "Admin Tools"
-            3, // Users Administrators "Admin Tools"
+            1, // User ID Administrator "Admin Tools"
+            3, // User ID Administrator "Admin Tools"
         ]
     ]
 ];
