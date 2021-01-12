@@ -934,6 +934,7 @@ $countRecord = NewTable::recSelect('count', function ($q) use () {
 // 3 user function global scope register
 // 4 user function local scope register
 // 5 sub $filter where & with (without callback function "function ($q) use ()")
+// 6 userLimit (userPaginator)
 ```
 
 ## Useful settings in "typo3conf/LocalConfiguration.php"
