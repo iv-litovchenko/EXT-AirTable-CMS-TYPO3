@@ -120,5 +120,7 @@ print_r($r[0]);
 restore
 forceDelete
 isDeleted
+
+1 rel getCounty()
 2 custom func return rec
 ```
