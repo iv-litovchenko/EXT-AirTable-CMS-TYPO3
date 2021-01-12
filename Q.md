@@ -116,9 +116,6 @@ print_r($r[0]);
 
 
 
-withTrashed()
-withTrashed
-onlyTrashed
 
 restore
 forceDelete
