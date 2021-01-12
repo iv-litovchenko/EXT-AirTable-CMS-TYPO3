@@ -31,7 +31,7 @@ foreach ($rowsResult['get'] as $row){
 }
 
 $recordId = 18;
-$is = NewTable::recIsDeleted($recordId);
+$is = NewTable::recIsDeleted($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
 if($is === true) {
     echo 'Yes';
 } else {
@@ -39,7 +39,7 @@ if($is === true) {
 }
 
 $recordId = 18;
-$is = NewTable::recIsDisabled($recordId);
+$is = NewTable::recIsDisabled($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
 if($is === true) {
     echo 'Yes';
 } else {
@@ -47,7 +47,7 @@ if($is === true) {
 }
 
 $recordId = 18;
-$is = NewTable::recIsPublished($recordId);
+$is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\DateStart and DateEnd;
 if($is === true) {
     echo 'Yes';
 } else {
