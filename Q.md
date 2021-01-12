@@ -64,8 +64,8 @@ $filter['where'][] = ['uid','>=',1];
 $filter['where'][] = ['uid','<=',10000];
 
 $filter['where'] = function($q) { 
-	$q->where('pid','>=',0); 
-	$q->orWhere('pid','<=',0);
+    $q->where('pid','>=',0); 
+    $q->orWhere('pid','<=',0);
 };
 
 $filter['whereIn']  ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
@@ -78,7 +78,7 @@ $filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%d') = 11"];
 $filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%m') = 01"];
 $filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%Y') = 2021"];
 $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
-	$q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
+    $q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
 };
 
 $filter['inRandomOrder'] = false; // true
@@ -93,11 +93,11 @@ $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 $filter['with'] = []; // has, whereHas
 $filter['with'][]  = [
-	'exampletable1_row_func' => function($q) {
-		$q->with('exampletable_row_id_func');
-		$q->where('uid','>',0);
-		$q->where('pid','>',0);
-	}
+    'exampletable1_row_func' => function($q) {
+        $q->with('exampletable_row_id_func');
+        $q->where('uid','>',0);
+        $q->where('pid','>',0);
+    }
 ];
 
 $filter['with'][] = ['exampletable2_rows_func.exampletable_row_id_func'];
@@ -123,7 +123,7 @@ $rows = NewTable::recSelect('get', $filter);
 
 print "Sql: " . $sql . "<hr />";
 print "Count: " . $count . "<hr />";
-foreach ($rows as $row){
+foreach ($rows as $row) {
     print $row['title'] . " // ";
     print $row['[relname]_row(s)_func']['title'] . "<br />";
 }
@@ -169,8 +169,7 @@ if ($result) {
 ////////////////////////////////////////////////////////////////////////////////////////
 NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach
 NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
-$countRecord = NewTable::recSelect('count', function ($q) use ()
-{
+$countRecord = NewTable::recSelect('count', function ($q) use () {
     $q->with('category_rows_func');
     $q->where('uid', 1);
 });
