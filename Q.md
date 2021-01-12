@@ -126,5 +126,5 @@ print_r($r[0]);
 
 1 rel getCounty()
 2 custom func return rec
-3 https://github.com/awes-io/repository
+
 
