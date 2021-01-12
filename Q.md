@@ -119,6 +119,7 @@ print_r($r[0]);
 
 restore
 forceDelete
+isDeleted
 ```
 
 getRestrictions(), setRestrictions(), resetRestrictions()
