@@ -30,6 +30,30 @@ foreach ($rowsResult['get'] as $row){
     print $row['[relname]_row(s)_func']['title'] . "<br />";
 }
 
+$recordId = 18;
+$is = NewTable::recIsDeleted($recordId);
+if($is === true) {
+    echo 'Yes';
+} else {
+    echo 'No';
+}
+
+$recordId = 18;
+$is = NewTable::recIsDisabled($recordId);
+if($is === true) {
+    echo 'Yes';
+} else {
+    echo 'No';
+}
+
+$recordId = 18;
+$is = NewTable::recIsPublished($recordId);
+if($is === true) {
+    echo 'Yes';
+} else {
+    echo 'No';
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // INSERT
 // ModelName::recInsert($data); // return last insert id
