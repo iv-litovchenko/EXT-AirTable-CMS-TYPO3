@@ -54,31 +54,30 @@ if($is === true) {
     echo 'No';
 }
 
-<hr />
-
 $filter = [];
-$filter['distinct']			= ['title'];
-$filter['select'] 			= ['uid','title', 'uid as aliasID'];
-$filter['addSelect'] 		= ['pid','date_create'];
+$filter['distinct'] = ['title'];
+$filter['select'] = ['uid','title', 'uid as aliasID'];
+$filter['addSelect'] = ['pid','date_create'];
 
 $filter['where'] = []; // orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
 $filter['where'][] = ['uid','>=',1];
 $filter['where'][] = ['uid','<=',10000];
+
 $filter['where'] = function($q) { 
 	$q->where('pid','>=',0); 
 	$q->orWhere('pid','<=',0);
 };
 
-$filter['whereIn'] 			= ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
-$filter['whereNull']		= ['keywords']; // orWhereNull, whereNotNull, orWhereNotNull 
-$filter['whereBetween']		= ['uid',[1,1000]]; // whereNotBetween
-$filter['whereColumn']		= ['uid','!=','title'];
-$filter['whereRaw']			= ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
-$filter['whereRaw'] 		= [];
-$filter['whereRaw'][] 		= ["FROM_UNIXTIME(date_create, '%d') = 11"];
-$filter['whereRaw'][]		= ["FROM_UNIXTIME(date_create, '%m') = 01"];
-$filter['whereRaw'][] 		= ["FROM_UNIXTIME(date_create, '%Y') = 2021"];
-$filter['whereExists']		= function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
+$filter['whereIn']  ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
+$filter['whereNull'] = ['keywords']; // orWhereNull, whereNotNull, orWhereNotNull 
+$filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
+$filter['whereColumn'] = ['uid','!=','title'];
+$filter['whereRaw'] = ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
+$filter['whereRaw'] = [];
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%d') = 11"];
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%m') = 01"];
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%Y') = 2021"];
+$filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
 	$q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
 };
 
