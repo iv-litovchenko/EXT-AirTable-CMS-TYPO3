@@ -555,7 +555,7 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
-     * Insert record event (before / after) - // Todo
+     * Insert record event (before / after) - // Todo https://laravel.ru/posts/338
      * @return '';
      */
     public static function cmdInsert($when, &$table, $id, &$fieldArray)
@@ -568,7 +568,7 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
-     * Record update event (before / after) - // Todo
+     * Record update event (before / after) - // Todo https://laravel.ru/posts/338
      * @return '';
      */
     public static function cmdUpdate($when, &$table, $id, &$fieldArray)
@@ -581,7 +581,7 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
-     * Record deletion event (before / after) - // Todo
+     * Record deletion event (before / after) - // Todo https://laravel.ru/posts/338
      * @return '';
      */
     public static function cmdDelete($when, &$table, $id, &$fieldArray)
