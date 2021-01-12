@@ -163,45 +163,21 @@ if ($result) {
     echo 'Not successful';
 }
 
-
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////
-// Working with relationships between tables
-// ->refProvider()
+// RELATIONSHIPS
+// Working with relationships between tables "[relname]_row(s)_func"
 ////////////////////////////////////////////////////////////////////////////////////////
-
-    #$q->with('[relname]_row(s)_func');
-    #$q->has('[relname]_row(s)_func');
-    #$q->whereHas('[relname]_row(s)_func', function ($q) {
-    #	$q->where('field', 'like', 'foo%');
-    #});
-
-NewTable::refAttach('category_rows_func', 1, [3,4]); // $relationship, $parentId, $idsToAttach
-// NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
-#print $allCat;
-
-
-$countRecord = NewTable::recSelect('count', function ($q) use ($filter){
+NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach
+NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
+$countRecord = NewTable::recSelect('count', function ($q) use ()
+{
     $q->with('category_rows_func');
-	$q->where('uid',1);
+    $q->where('uid', 1);
 });
 
-#print $countRecord;
-
-$r = NewTable::where('uid','=',1)->with('category_rows_func')->get();
-$r = $r->toArray();
-print_r($r[0]);
-
-
-
 // Todo
-// 1 relation function getCounty( -> provider )
+// 1 relation function getCounty( -> refProvider() )
 // 2 static function GetById (recSelect('userFunc'))
 // 3 user function global scope register
 // 4 user function local scope register
-
-
+// 5 sub $filter where
