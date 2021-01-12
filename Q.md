@@ -12,34 +12,16 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 // SELECT
 // NewTable::recSelect('medthod', $filter); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
-$recordId = 15;
+$recordId = 7;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count, max, min, avg, sum, exists, doesntExist
 $rowsGet = NewTable::recSelect('get'); // All
 
-$filter = [];
-$filter['limit'] = 5;
-$filter['offset'] = 2;
-$rowsResult = NewTable::recSelect('count,get', function ($q) use ($filter)
-{
-    #$q->withoutGlobalScopes();
-    #$q->withoutGlobalScope('FlagDeleted'); // FlagDisabled, DateStart, DateEnd
-    #$q->select('uid');
-    #$q->addSelect('title');
-    #$q->where('field', '=', 1);
-    #$q->orWhere('field', '>=', 100);
-    #$q->orderByDesc('field');
-    #$q->limit($filter['limit']);
-    #$q->offset($filter['offset']);
-
-});
-
-print "<pre>";
-print_r($rowsResult);
-print "</pre>";
-
-foreach ($rowsResult['get'] as $row)
-{
+$limit = 10;
+$rowsResultCountAndGet = NewTable::recSelect('count,get', function ($q) use ($limit) { 
+    $q->limit($limit); 
+}); 
+foreach ($rowsResult['get'] as $row){
     print $row['title'] . " // ";
     print $row['[relname]_row(s)_func']['title'] . "<br />";
 }
