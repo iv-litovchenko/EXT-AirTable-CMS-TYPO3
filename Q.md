@@ -10,7 +10,7 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // SELECT
-// NewTable::recSelect('medthod', $filter); // return result
+// NewTable::recSelect('medthod', $id || $filter || $callback); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $rowsFirst = NewTable::recSelect('first', $recordId);
@@ -81,15 +81,15 @@ $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists()
 	$q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
 };
 
-$filter['inRandomOrder']	= false; // true
-$filter['orderBy']			= [];
-$filter['orderBy'][] 		= ['uid','desc'];
-$filter['orderBy'][] 		= ['title','desc'];
-$filter['groupBy'] 			= 'title';
+$filter['inRandomOrder'] = false; // true
+$filter['orderBy'] = [];
+$filter['orderBy'][] = ['uid','desc'];
+$filter['orderBy'][] = ['title','desc'];
+$filter['groupBy'] = 'title';
 
-$filter['limit'] 			= 3;
-$filter['offset'] 			= 0;
-$filter['having'] 			= ['aliasID', '>', 0]; // orHaving, havingRaw
+$filter['limit'] = 3;
+$filter['offset'] = 0;
+$filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 $filter['with'] = []; // has, whereHas
 $filter['with'][]  = [
@@ -100,32 +100,33 @@ $filter['with'][]  = [
 	}
 ];
 
-$filter['with'][]			= ['exampletable2_rows_func.exampletable_row_id_func'];
-$filter['with'][]			= ['exampletable3_row_id_func'];
-$filter['with'][]			= ['exampletable4_rows_func'];
+$filter['with'][] = ['exampletable2_rows_func.exampletable_row_id_func'];
+$filter['with'][] = ['exampletable3_row_id_func'];
+$filter['with'][] = ['exampletable4_rows_func'];
 
-#$filter['union']			= ['']; // unionAll // $subQ = NewTable::recSelect('obj', $filter);
-#$filter['join']			= ['contacts', 'users.id', '=', 'contacts.user_id'];
-#$filter['leftJoin']		= ['posts', 'users.id', '=', 'posts.user_id'];
-#$filter['crossJoin']		= ['posts'];
+#$filter['union'] = ['']; // unionAll // $subQ = NewTable::recSelect('obj', $filter);
+#$filter['join'] = ['contacts', 'users.id', '=', 'contacts.user_id'];
+#$filter['leftJoin'] = ['posts', 'users.id', '=', 'posts.user_id'];
+#$filter['crossJoin'] = ['posts'];
 
 $filter['withoutGlobalScopes'] = false;
 $filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
 
-$filter['userWherePid'] 	= 10;
-$filter['userWhereUid'] 	= 4;
+$filter['userWherePid'] = 10;
+$filter['userWhereUid'] = 4;
 $filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
 $filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
 
-$toSql = NewTable::recSelect('toSql', $filter);
+$sql = NewTable::recSelect('toSql', $filter);
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
 
-return [
-	'sql'=>$toSql,
-	'count'=>$count,
-	'r'=>$rows,
-];
+print "Sql: " . $sql . "<hr />";
+print "Count: " . $count . "<hr />";
+foreach ($rows as $row){
+    print $row['title'] . " // ";
+    print $row['[relname]_row(s)_func']['title'] . "<br />";
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // INSERT
