@@ -88,6 +88,34 @@ EXT:myext/Resources/Public/
 EXT:myext/Resources/Public/Css/
 EXT:myext/Resources/Public/Js/
 EXT:myext/Resources/Public/Img/
+
+EXT:myext/ext_emconf.php
+```
+
+```php
+<?php
+
+/***************************************************************
+ * Web project Iv-Litovchenko.Ru
+ ***************************************************************/
+
+$EM_CONF[$_EXTKEY] = [
+  'title' => 'Myext',
+  'author' => 'Ivan Litovchenko',
+  'author_company' => '',
+  'constraints' => [
+    'depends' => [
+      'typo3' => '10.4.0-10.9.99',
+    ],
+    'conflicts' => [],
+    'suggests' => [],
+  ],
+  'autoload' => [
+    'psr-4' => [
+      'Mynamespace\\Myext\\' => 'Classes'
+    ]
+  ]
+];
 ```
 
 ## Register a new admin module
