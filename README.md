@@ -822,7 +822,7 @@ $filter['where'] = function($q) {
     $q->orWhere('pid','<=',0);
 };
 
-$filter['whereIn']  ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
+$filter['whereIn'] = ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
 $filter['whereNull'] = ['keywords']; // orWhereNull, whereNotNull, orWhereNotNull 
 $filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
 $filter['whereColumn'] = ['uid','!=','title'];
