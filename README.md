@@ -16,6 +16,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Export records (module)](#export-records-module)
 * [Import records (module)](#import-records-module)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
+* [Database queries - 4 simple functions (Select, Insert, Update, Delete), functions for creating relationships between tables. Eloquent ORM (Laravel)](#methods-inside-a-class-extbase)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 
 ## Demo site online
