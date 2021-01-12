@@ -77,7 +77,8 @@ else
 // Delete
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
-$result = NewTable::recDelete($recordId);
+$destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+$result = NewTable::recDelete($recordId, $destroy);
 if ($result)
 {
     echo 'Successfully';
@@ -118,7 +119,6 @@ print_r($r[0]);
 
 
 restore
-forceDelete
 isDeleted
 
 1 rel getCounty()
