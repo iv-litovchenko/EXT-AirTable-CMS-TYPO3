@@ -96,7 +96,7 @@ EXT:myext/ext_emconf.php
 <?php
 
 /***************************************************************
- * Web project Iv-Litovchenko.Ru
+ * Web project Iv-Litovchenko.Ru (ext_emconf.php)
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
@@ -105,7 +105,7 @@ $EM_CONF[$_EXTKEY] = [
   'author_company' => '',
   'constraints' => [
     'depends' => [
-      'typo3' => '10.4.0-10.9.99',
+      'typo3' => '10.0.0-10.9.99',
     ],
     'conflicts' => [],
     'suggests' => [],
