@@ -14,8 +14,9 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $rowsFirst = NewTable::recSelect('first', $recordId);
-$rowsCount = NewTable::recSelect('count'); // count, max, min, avg, sum, exists, doesntExist
+$rowsCount = NewTable::recSelect('count'); // count
 $rowsGet = NewTable::recSelect('get'); // All
+$method  NewTable::recSelect('exists', $recordId); // count, max, min, avg, sum, exists, doesntExist
 
 $limit = 10;
 $rowsResultCountAndGet = NewTable::recSelect('count,get', function ($q) use ($limit) { 
