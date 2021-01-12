@@ -122,20 +122,4 @@ onlyTrashed
 
 restore
 forceDelete
-
-
-
-
-
-    public function clearGlobalScopes()
-    {
-        static::$globalScopes = [];
-    }
-and then do following in your crud controller
-
-$this->crud->query = $this->crud->query->withoutGlobalScopes();
-$this->crud->model->clearGlobalScopes();
-
-
-
 ```
