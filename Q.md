@@ -109,7 +109,7 @@ $filter['with'][] = ['exampletable4_rows_func'];
 #$filter['leftJoin'] = ['posts', 'users.id', '=', 'posts.user_id'];
 #$filter['crossJoin'] = ['posts'];
 
-$filter['withoutGlobalScopes'] = false;
+$filter['withoutGlobalScopes'] = true;
 $filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
 
 $filter['userWherePid'] = 10;
