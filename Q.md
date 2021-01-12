@@ -54,6 +54,80 @@ if($is === true) {
     echo 'No';
 }
 
+<hr />
+
+$filter = [];
+$filter['distinct']			= ['title'];
+$filter['select'] 			= ['uid','title', 'uid as aliasID'];
+$filter['addSelect'] 		= ['pid','date_create'];
+
+$filter['where'] = []; // orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
+$filter['where'][] = ['uid','>=',1];
+$filter['where'][] = ['uid','<=',10000];
+$filter['where'] = function($q) { 
+	$q->where('pid','>=',0); 
+	$q->orWhere('pid','<=',0);
+};
+
+$filter['whereIn'] 			= ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
+$filter['whereNull']		= ['keywords']; // orWhereNull, whereNotNull, orWhereNotNull 
+$filter['whereBetween']		= ['uid',[1,1000]]; // whereNotBetween
+$filter['whereColumn']		= ['uid','!=','title'];
+$filter['whereRaw']			= ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
+$filter['whereRaw'] 		= [];
+$filter['whereRaw'][] 		= ["FROM_UNIXTIME(date_create, '%d') = 11"];
+$filter['whereRaw'][]		= ["FROM_UNIXTIME(date_create, '%m') = 01"];
+$filter['whereRaw'][] 		= ["FROM_UNIXTIME(date_create, '%Y') = 2021"];
+$filter['whereExists']		= function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
+	$q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
+};
+
+$filter['inRandomOrder']	= false; // true
+$filter['orderBy']			= [];
+$filter['orderBy'][] 		= ['uid','desc'];
+$filter['orderBy'][] 		= ['title','desc'];
+$filter['groupBy'] 			= 'title';
+
+$filter['limit'] 			= 3;
+$filter['offset'] 			= 0;
+$filter['having'] 			= ['aliasID', '>', 0]; // orHaving, havingRaw
+
+$filter['with'] = []; // has, whereHas
+$filter['with'][]  = [
+	'exampletable1_row_func' => function($q) {
+		$q->with('exampletable_row_id_func');
+		$q->where('uid','>',0);
+		$q->where('pid','>',0);
+	}
+];
+
+$filter['with'][]			= ['exampletable2_rows_func.exampletable_row_id_func'];
+$filter['with'][]			= ['exampletable3_row_id_func'];
+$filter['with'][]			= ['exampletable4_rows_func'];
+
+#$filter['union']			= ['']; // unionAll // $subQ = NewTable::recSelect('obj', $filter);
+#$filter['join']			= ['contacts', 'users.id', '=', 'contacts.user_id'];
+#$filter['leftJoin']		= ['posts', 'users.id', '=', 'posts.user_id'];
+#$filter['crossJoin']		= ['posts'];
+
+$filter['withoutGlobalScopes'] = false;
+$filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
+
+$filter['userWherePid'] 	= 10;
+$filter['userWhereUid'] 	= 4;
+$filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
+$filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
+
+$toSql = NewTable::recSelect('toSql', $filter);
+$count = NewTable::recSelect('count', $filter);
+$rows = NewTable::recSelect('get', $filter);
+
+return [
+	'sql'=>$toSql,
+	'count'=>$count,
+	'r'=>$rows,
+];
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // INSERT
 // ModelName::recInsert($data); // return last insert id
