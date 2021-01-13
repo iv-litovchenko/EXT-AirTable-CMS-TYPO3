@@ -185,9 +185,7 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // 2 static function GetById (recSelect('userFunc'))
 // 3 user function global scope register
 // 4 user function local scope register
-// 5 sub $filter where & with (without callback function "function ($q) use ()")
-// 6 userLimit (userPaginator)
+// -> 5 sub $filter where & with (without callback function "function ($q) use ()")
+// -> 6 userLimit (userPaginator)
 // 
-
-#2 sub
 ```
