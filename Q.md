@@ -131,6 +131,12 @@ $data = [];
 $data['title'] = '-- TITLE --';
 $insertId = NewTable::recInsert($data);
 
+$data = [];
+$data[]['title'] = '-- TITLE №1 --';
+$data[]['title'] = '-- TITLE №2 --';
+$data[]['title'] = '-- TITLE №3 --';
+$insertIds = NewTable::recInsertMultiple($data);
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // UPDATE
 // ModelName::recUpdate($id || $filter || $callback, $data); // return affectedCount
