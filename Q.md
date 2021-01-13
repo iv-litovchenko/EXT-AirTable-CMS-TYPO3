@@ -188,7 +188,10 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // D) LOCAL SCOPES (user function local scope register)
 ////////////////////////////////////////////////////////////////////////////////////////
 
+// C
+See example: 
 
+// D
 See example: scopeUserPagination($query, $limit, $pagePosition) // return $query->limit()...;
 
 // Todo
