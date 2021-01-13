@@ -202,8 +202,6 @@ See example: public function scopeUserPagination($query, $limit, $pagePosition){
 // E) Nested Set
 // Todo 
 
-// -> 5 sub $filter where & with (without callback function "function ($q) use ()")
-
 ////////////////////////////////////////////////////////////////////////////////////////
 
  * hasOne / hasMany (1-1, 1-M)
