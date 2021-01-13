@@ -136,29 +136,25 @@ $insertId = NewTable::recInsert($data);
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // UPDATE
-// ModelName::recUpdate($id || $filter || $callback, $data); // return flag
+// ModelName::recUpdate($id || $filter || $callback, $data); // return affectedCnt
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
-$result = NewTable::recUpdate($recordId, $data);
-if ($result) {
-    echo 'Successfully';
-} else {
-    echo 'Not successful';
+$affectedCnt = NewTable::recUpdate($recordId, $data);
+if ($affectedCnt > 0) {
+    echo 'Successfully ' . $affectedCnt;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // DELETE 
-// ModelName::recDelete($id || $filter || $callback, $destroy); // return flag
+// ModelName::recDelete($id || $filter || $callback, $destroy); // return affectedCnt
 ////////////////////////////////////////////////////////////////////////////////////////
 $recordId = 7;
 $destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
-$result = NewTable::recDelete($recordId, $destroy);
-if ($result) {
-    echo 'Successfully';
-} else {
-    echo 'Not successful';
+$affectedCnt = NewTable::recDelete($recordId, $destroy);
+if ($affectedCnt > 0) {
+    echo 'Successfully ' . $affectedCnt;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
