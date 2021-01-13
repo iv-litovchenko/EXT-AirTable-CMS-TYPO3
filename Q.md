@@ -174,8 +174,8 @@ $affectedCount = Pages::recDelete('full',$destroy); // Truncate
 $affectedCount = Pages::recDelete('full');
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// RELATIONSHIPS ->withoutGLobalScopes()!!!
-// Working with relationships between tables "[relname]_row(s)_func"
+// RELATIONSHIPS ->withoutGLobalScopes() always!!!
+// Create and remove links between table records "[relname]_row(s)_func"
 ////////////////////////////////////////////////////////////////////////////////////////
 
 NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes() always!!!
