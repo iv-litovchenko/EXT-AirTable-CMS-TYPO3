@@ -182,15 +182,18 @@ NewTable::refDetach('category_rows_func', 1); // detach all
 NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes()!!!
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// RELATIONSHIPS ->withoutGLobalScopes()!!!
-// Working with relationships between tables "[relname]_row(s)_func"
+// A) GLOBAL SCOPES
+// B) GLOBAL SCOPES
+// C) GLOBAL SCOPES (user function global scope register)
+// D) LOCAL SCOPES (user function local scope register)
 ////////////////////////////////////////////////////////////////////////////////////////
+
+
+See example: scopeUserPagination($query, $limit, $pagePosition) // return $query->limit()...;
 
 // Todo
 // 1 relation function getCounty( -> refProvider() )
 // 2 static function GetById (recSelect('userFunc'))
-// 3 user function global scope register
-// 4 user function local scope register
 // -> 5 sub $filter where & with (without callback function "function ($q) use ()")
 // 
 
