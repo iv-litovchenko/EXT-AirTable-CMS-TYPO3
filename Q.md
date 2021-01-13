@@ -177,4 +177,5 @@ $countRecord = NewTable::recSelect('count', function ($q) use () {
 // 4 user function local scope register
 // 5 sub $filter where & with (without callback function "function ($q) use ()")
 // 6 userLimit (userPaginator)
+// https://pineco.de/database-transactions-and-resource-locking-in-laravel/
 ```
