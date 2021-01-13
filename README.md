@@ -557,7 +557,7 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
-     * // Todo
+     * // Todo ext_tables_static+adt.sql
      * @return '';
      */
     public static function cmdDatabaseSeeder()
