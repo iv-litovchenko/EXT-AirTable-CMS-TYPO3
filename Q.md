@@ -177,6 +177,7 @@ $affectedCount = Pages::recDelete('full');
 
 NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes()!!!
 NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes()!!!
+NewTable::refDetach('category_rows_func', 1); // detach all
 NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes()!!!
 
 // Todo
