@@ -10,6 +10,7 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 // SELECT
 // NewTable::recSelect('medthod', $id || $filter || $callback); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
+
 $recordId = 7;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count
@@ -127,6 +128,7 @@ foreach ($rows as $row) {
 // INSERT
 // ModelName::recInsert($data); // return last insert id
 ////////////////////////////////////////////////////////////////////////////////////////
+
 $data = [];
 $data['title'] = '-- TITLE --';
 $insertId = NewTable::recInsert($data);
@@ -141,6 +143,7 @@ $insertIds = NewTable::recInsertMultiple($data);
 // UPDATE
 // ModelName::recUpdate($id || $filter || $callback, $data); // return affectedCount
 ////////////////////////////////////////////////////////////////////////////////////////
+
 $recordId = 7;
 $data = [];
 $data['title'] = '-- TITLE --';
@@ -153,6 +156,7 @@ if ($affectedCount > 0) {
 // DELETE 
 // ModelName::recDelete($id || $filter || $callback, $destroy); // return affectedCount
 ////////////////////////////////////////////////////////////////////////////////////////
+
 $recordId = 7;
 $destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
 $affectedCount = NewTable::recDelete($recordId, $destroy);
@@ -168,6 +172,7 @@ $affectedCount = Pages::recDelete('full');
 // RELATIONSHIPS
 // Working with relationships between tables "[relname]_row(s)_func"
 ////////////////////////////////////////////////////////////////////////////////////////
+
 NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach
 NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
 $countRecord = NewTable::recSelect('count', function ($q) use () {
