@@ -110,8 +110,6 @@ $filter['with'][] = ['exampletable4_rows_func'];
 $filter['withoutGlobalScopes'] = true;
 $filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
 
-$filter['userWherePid'] = 10;
-$filter['userWhereUid'] = 4;
 $filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
 $filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
 
