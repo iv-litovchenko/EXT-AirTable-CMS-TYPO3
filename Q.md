@@ -91,7 +91,7 @@ $filter['limit'] = 3;
 $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
-$filter['with'] = []; // has, whereHas
+$filter['with'] = []; // has, whereHas, doesntHave, whereDoesntHave, withCount
 $filter['with'][]  = [
     'exampletable1_row_func' => function($q) {
         $q->with('exampletable_row_id_func');
