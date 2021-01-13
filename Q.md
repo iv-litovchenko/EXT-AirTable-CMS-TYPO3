@@ -182,23 +182,25 @@ NewTable::refDetach('category_rows_func', 1); // detach all
 NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes()!!!
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// A) GLOBAL SCOPES
-// B) GLOBAL SCOPES
-// C) GLOBAL SCOPES (user function global scope register)
-// D) LOCAL SCOPES (user function local scope register)
+// ADDING FUNCTIONS TO THE MODEL
 ////////////////////////////////////////////////////////////////////////////////////////
 
-// C
+// A)
+// Todo relation function getCounty( -> refProvider() )
+
+// B)
+// Todo static function GetById (recSelect('userFunc'))
+
+// C) Global scope (user function global scope register)
 See example: 
 
-// D
+// D) Local scope (user function local scope register)
 See example: scopeUserPagination($query, $limit, $pagePosition) // return $query->limit()...;
 
-// Todo
-// 1 relation function getCounty( -> refProvider() )
-// 2 static function GetById (recSelect('userFunc'))
-// -> 5 sub $filter where & with (without callback function "function ($q) use ()")
-// 
+// E) Nested Set
+// Todo 
+
+////////////////////////////////////////////////////////////////////////////////////////
 
  * hasOne / hasMany (1-1, 1-M)
     -save(new or existing child)
