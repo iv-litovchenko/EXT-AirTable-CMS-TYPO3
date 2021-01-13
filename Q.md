@@ -74,9 +74,9 @@ $filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
 $filter['whereColumn'] = ['uid','!=','title'];
 $filter['whereRaw'] = ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
 $filter['whereRaw'] = [];
-$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%d') = 11"];
-$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%m') = 01"];
-$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%Y') = 2021"];
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
+$filter['whereRaw'][] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
 $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
     $q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
 };
