@@ -57,6 +57,10 @@ $filter['distinct'] = ['title'];
 $filter['select'] = ['uid','title', 'uid as aliasID'];
 $filter['addSelect'] = ['pid','date_create'];
 
+$filter['whereUid'] = 1;
+$filter['wherePid'] = 1;
+$filter['whereTitle'] = [];
+
 $filter['where'] = []; // orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
 $filter['where'][] = ['uid','>=',1];
 $filter['where'][] = ['uid','<=',10000];
