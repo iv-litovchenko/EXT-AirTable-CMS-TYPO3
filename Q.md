@@ -32,24 +32,18 @@ $recordId = 18;
 $is = NewTable::recIsDeleted($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
 if($is === true) {
     echo 'Yes';
-} else {
-    echo 'No';
 }
 
 $recordId = 18;
 $is = NewTable::recIsDisabled($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
 if($is === true) {
     echo 'Yes';
-} else {
-    echo 'No';
 }
 
 $recordId = 18;
 $is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\DateStart and DateEnd;
 if($is === true) {
     echo 'Yes';
-} else {
-    echo 'No';
 }
 
 $filter = [];
