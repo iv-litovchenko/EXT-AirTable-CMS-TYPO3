@@ -171,12 +171,12 @@ $affectedCount = Pages::recDelete('full',$destroy); // Truncate
 $affectedCount = Pages::recDelete('full');
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// RELATIONSHIPS
+// RELATIONSHIPS ->withoutGLobalScopes()!!!
 // Working with relationships between tables "[relname]_row(s)_func"
 ////////////////////////////////////////////////////////////////////////////////////////
 
-NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach
-NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach
+NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes()!
+NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes()!
 $countRecord = NewTable::recSelect('count', function ($q) use () {
     $q->with('category_rows_func');
     $q->where('uid', 1);
