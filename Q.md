@@ -187,8 +187,7 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // 4 user function local scope register
 // 5 sub $filter where & with (without callback function "function ($q) use ()")
 // 6 userLimit (userPaginator)
-// https://pineco.de/database-transactions-and-resource-locking-in-laravel/
+// 
 
 #2 sub
-#3 Nested
 ```
