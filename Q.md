@@ -181,6 +181,11 @@ NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $i
 NewTable::refDetach('category_rows_func', 1); // detach all
 NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes()!!!
 
+////////////////////////////////////////////////////////////////////////////////////////
+// RELATIONSHIPS ->withoutGLobalScopes()!!!
+// Working with relationships between tables "[relname]_row(s)_func"
+////////////////////////////////////////////////////////////////////////////////////////
+
 // Todo
 // 1 relation function getCounty( -> refProvider() )
 // 2 static function GetById (recSelect('userFunc'))
