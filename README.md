@@ -555,13 +555,14 @@ class NewTable extends AbstractModelCrud
         $content = 'User Debug Content';
         return $content;
     }
-    
+
     /**
      * // Todo
      * @return '';
      */
     public static function cmdDatabaseSeeder()
     {
+    
     }
 
     /**
