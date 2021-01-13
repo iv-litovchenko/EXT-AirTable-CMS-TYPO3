@@ -13,8 +13,9 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Register a new model (CRUD)](#register-a-new-model-crud)
 * [Standard CRUD-models registered in the system for working with records](#standard-crud-models-registered-in-the-system-for-working-with-records)
 * [Extending an existing model](#extending-an-existing-model)
-* [Export records (module)](#export-records-module)
-* [Import records (module)](#import-records-module)
+* [List records (module)](#export-records-module)
+* [Export records Xls|Csv (module)](#export-records-module)
+* [Import records Xls|Csv (module)](#import-records-module)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Database queries SELECT, INSERT, UPDATE, DELETE, relationships between tables - Eloquent ORM (Laravel)](#database-queries-select-insert-update-delete-relationships-between-tables---eloquent-orm-laravel)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
@@ -554,6 +555,14 @@ class NewTable extends AbstractModelCrud
         $content = 'User Debug Content';
         return $content;
     }
+    
+    /**
+     * // Todo
+     * @return '';
+     */
+    public static function cmdDatabaseSeeder()
+    {
+    }
 
     /**
      * Insert record event (before / after) - // Todo https://laravel.ru/posts/338
@@ -722,11 +731,15 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## Export records (module)
+## List records (module)
 
 - // todo
 
-## Import records (module)
+## Export records Xls|Csv (module)
+
+- // todo
+
+## Import records Xls|Csv (module)
 
 - // todo
 
