@@ -154,6 +154,10 @@ if ($affectedCount > 0) {
     echo 'Successfully ' . $affectedCount;
 }
 
+$destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+$affectedCount = Pages::recDelete('full',$destroy); // Truncate
+$affectedCount = Pages::recDelete('full');
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // RELATIONSHIPS
 // Working with relationships between tables "[relname]_row(s)_func"
