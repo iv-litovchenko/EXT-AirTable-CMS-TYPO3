@@ -112,6 +112,7 @@ $filter['with'][] = ['exampletable4_rows_func'];
 $filter['withoutGlobalScopes'] = true;
 $filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
 
+$filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
 $filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
 $filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
 
