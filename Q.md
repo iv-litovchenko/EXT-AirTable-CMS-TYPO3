@@ -14,7 +14,7 @@ $recordId = 7;
 $rowsFirst = NewTable::recSelect('first', $recordId);
 $rowsCount = NewTable::recSelect('count'); // count
 $rowsGet = NewTable::recSelect('get'); // all
-$method = NewTable::recSelect('exists', $recordId); // count, max, min, avg, sum, exists (if), doesntExist (if)
+$method = NewTable::recSelect('exists', $recordId); // obj, count, exists (if), doesntExist (if)
 $obj = NewTable::recSelect('obj', [])->...->get(); // return obj (to create subqueries)
 
 $limit = 10;
