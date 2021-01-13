@@ -189,9 +189,6 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // -> 6 userLimit (userPaginator)
 // 
 
-
-```
-
  * hasOne / hasMany (1-1, 1-M)
     -save(new or existing child)
     -saveMany(array of models new or existing)
@@ -223,3 +220,5 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 
  *  morphedToMany /morphedByMany (polymorphic M-M)
     // the same as belongsToMany
+```
+
