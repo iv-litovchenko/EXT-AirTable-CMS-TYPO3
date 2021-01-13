@@ -176,10 +176,10 @@ $affectedCount = Pages::recDelete('full');
 // Working with relationships between tables "[relname]_row(s)_func"
 ////////////////////////////////////////////////////////////////////////////////////////
 
-NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes()!!!
-NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes()!!!
-NewTable::refDetach('category_rows_func', 1); // detach all
-NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes()!!!
+NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('category_rows_func', 1); // detach all ->withoutGLobalScopes() always!!!
+NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes() always!!!
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // ADDING CUSTOM FUNCTIONS TO THE MODEL
@@ -192,13 +192,15 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // Todo static function GetById (recSelect('userFunc'))
 
 // C) Global scope (user function global scope register)
-See example: 
+See example: public static function userGlobalScopeFlagDeleted($builder){}
 
 // D) Local scope (user function local scope register)
-See example: scopeUserPagination($query, $limit, $pagePosition) // return $query->limit()...;
+See example: public function scopeUserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
 
 // E) Nested Set
 // Todo 
+
+// -> 5 sub $filter where & with (without callback function "function ($q) use ()")
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
