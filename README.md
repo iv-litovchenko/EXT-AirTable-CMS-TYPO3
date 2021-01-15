@@ -568,40 +568,15 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
-     * Insert record event (before / after) - // Todo https://laravel.ru/posts/338
+     * Record event (before / after) - // Todo https://laravel.ru/posts/338
      * @return '';
      */
-    public static function cmdInsert($when, &$table, $id, &$fieldArray)
+    public static function cmdEvent($command, $when, &$table, $id, &$fieldArray)
     {
+		$command = 'insert || update || delete';
         if ($when == 'before') {
             //
         } else  {
-            //
-        }
-    }
-
-    /**
-     * Record update event (before / after) - // Todo https://laravel.ru/posts/338
-     * @return '';
-     */
-    public static function cmdUpdate($when, &$table, $id, &$fieldArray)
-    {
-        if ($when == 'before') {
-            //
-        }  else {
-            //
-        }
-    }
-
-    /**
-     * Record deletion event (before / after) - // Todo https://laravel.ru/posts/338
-     * @return '';
-     */
-    public static function cmdDelete($when, &$table, $id, &$fieldArray)
-    {
-        if ($when == 'before')  {
-            //
-        } else {
             //
         }
     }
