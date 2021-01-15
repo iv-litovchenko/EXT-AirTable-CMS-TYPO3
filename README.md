@@ -573,7 +573,7 @@ class NewTable extends AbstractModelCrud
      */
     public static function cmdEvent($command, $when, &$table, $id, &$fieldArray)
     {
-		$command = 'insert || update || delete';
+        $command = 'insert || update || delete';
         if ($when == 'before') {
             //
         } else  {
