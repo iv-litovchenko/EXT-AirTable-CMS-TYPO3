@@ -2,7 +2,7 @@
 
 A set of tools for creating your site based on class annotations. Works in versions TYPO3 v7, v8, v9, v10 and v11. The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway.
 
-## Contents
+## Table of content
 
 * [Demo site online](#demo-site-online)
 * [How to install?](#how-to-install)
