@@ -142,7 +142,7 @@ $data = [];
 $data[]['title'] = '-- TITLE №1 --';
 $data[]['title'] = '-- TITLE №2 --';
 $data[]['title'] = '-- TITLE №3 --';
-$insertIds = NewTable::recInsertMultiple($data);
+$insertIds = NewTable::recInsertMultiple($data); // Inserted ID 99,9% authenticity :)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // UPDATE
@@ -156,6 +156,10 @@ $affectedCount = NewTable::recUpdate($recordId, $data);
 if ($affectedCount > 0) {
     echo 'Successfully ' . $affectedCount;
 }
+
+$data = [];
+$data['title'] = '-- TITLE --';
+$affectedCount = Pages::recUpdate('full'); // Update all
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // DELETE 
