@@ -457,7 +457,7 @@ class NewTable extends AbstractModelCrud
     protected $example_field_date;
 
     /**
-     * @AirTable\Field:<Media> || Media.Image || Media.Mix
+     * @AirTable\Field:<Media_1> || Media_1.Image || Media_1.Mix || Media_M...
      * @AirTable\Field\Label:<Media>
      * @AirTable\Field\MaxItems:<10>
      */
