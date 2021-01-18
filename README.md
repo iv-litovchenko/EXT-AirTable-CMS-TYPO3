@@ -232,6 +232,8 @@ EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
 </xliff>
 ```
 
+Step 4) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Cache". Click the button "Flush cache" (if changed or added new actions in the controller!).
+
 ## Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
