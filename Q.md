@@ -59,9 +59,9 @@ $filter['wherePid'] = 1; // Dynamic
 $filter['whereTitle'] = []; // Dynamic
 $filter['whereFieldName'] = []; // Dynamic
 
-$filter['where.Ar'] = []; // orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
-$filter['where.Ar'][] = ['uid','>=',1];
-$filter['where.Ar'][] = ['uid','<=',10000];
+// where, orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
+$filter['where.10'] = ['uid','>=',1];
+$filter['where.20'] = ['uid','<=',10000];
 
 $filter['where'] = function($q) { 
     $q->where('pid','>=',0); 
@@ -74,27 +74,25 @@ $filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
 $filter['whereColumn'] = ['uid','!=','title'];
 $filter['whereRaw'] = ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
 
-$filter['whereRaw.Ar'] = [];
-$filter['whereRaw.Ar'][] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
-$filter['whereRaw.Ar'][] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
-$filter['whereRaw.Ar'][] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
+$filter['whereRaw.10'][] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
+$filter['whereRaw.20'][] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
+$filter['whereRaw.30'][] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
 
 $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
     $q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
 };
 
 $filter['inRandomOrder'] = false; // true
-$filter['orderBy.Ar'] = [];
-$filter['orderBy.Ar'][] = ['uid','desc'];
-$filter['orderBy.Ar'][] = ['title','desc'];
+$filter['orderBy.10'] = ['uid','desc'];
+$filter['orderBy.20'] = ['title','desc'];
 $filter['groupBy'] = 'title';
 
 $filter['limit'] = 3;
 $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
-$filter['with.Ar'] = []; // has, whereHas, doesntHave, whereDoesntHave, withCount
-$filter['with.Ar'][]  = [
+// with, has, whereHas, doesntHave, whereDoesntHave, withCount
+$filter['with.10'][]  = [
     'exampletable1_row_func' => function($q) {
         $q->with('exampletable_row_id_func');
         $q->where('uid','>',0);
@@ -102,9 +100,9 @@ $filter['with.Ar'][]  = [
     }
 ];
 
-$filter['with.Ar'][] = 'exampletable2_rows_func.exampletable_row_id_func';
-$filter['with.Ar'][] = 'exampletable3_row_id_func';
-$filter['with.Ar'][] = 'exampletable4_rows_func';
+$filter['with.20'] = 'exampletable2_rows_func.exampletable_row_id_func';
+$filter['with.30'] = 'exampletable3_row_id_func';
+$filter['with.40'] = 'exampletable4_rows_func';
 
 #$filter['union'] = ['']; // unionAll // $subQ = NewTable::recSelect('obj', $filter);
 #$filter['join'] = ['contacts', 'users.id', '=', 'contacts.user_id'];
@@ -240,4 +238,3 @@ See example: public function scopeUserPagination($query, $limit, $pagePosition){
  *  morphedToMany /morphedByMany (polymorphic M-M)
     // the same as belongsToMany
 ```
-
