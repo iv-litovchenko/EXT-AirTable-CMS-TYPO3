@@ -54,10 +54,10 @@ $test = DB::table('table1 AS a')
 $filter = [];
 $filter['where'] = ['a.field6', 'LIKE', '%$bintara%'];
 $filter['orWhere'] = ['b.field2', 'LIKE', '%$bintara%'];
-$filter['orderBy.Ar'] = ['e.field1','Asc'];
-$filter['orderBy.Ar'] = ['b.field2','Asc'];
-$filter['orderBy.Ar'] = ['c.field3','Asc'];
-$filter['orderBy.Ar'] = ['ca.field5','Asc'];
+$filter['orderBy.10'] = ['e.field1','Asc'];
+$filter['orderBy.20'] = ['b.field2','Asc'];
+$filter['orderBy.30'] = ['c.field3','Asc'];
+$filter['orderBy.40'] = ['ca.field5','Asc'];
 
 $filter = [];
 $filter['select'] 								= ['id','title'];
