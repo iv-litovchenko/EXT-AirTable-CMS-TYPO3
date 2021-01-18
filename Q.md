@@ -189,11 +189,13 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // ADDING CUSTOM FUNCTIONS TO THE MODEL
 ////////////////////////////////////////////////////////////////////////////////////////
 
-// A)
-// Todo relation function getCounty( -> refProvider() )
+// A) ------------
+// todo, static function GetById (recSelect('userFunc getBy***'))
+$rows1 = Pages::recSelect('getById',230,'title'); // $id, $fields
+$rows2 = Pages::recSelect('getByList','title'); // $id, $fields
 
-// B)
-// Todo static function GetById (recSelect('userFunc'))
+// B) ------------
+// Todo relation function getCounty( -> refProvider() )
 
 // C) Global scope (user function global scope register)
 See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
