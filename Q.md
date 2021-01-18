@@ -74,9 +74,9 @@ $filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
 $filter['whereColumn'] = ['uid','!=','title'];
 $filter['whereRaw'] = ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
 
-$filter['whereRaw.10'][] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
-$filter['whereRaw.20'][] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
-$filter['whereRaw.30'][] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
+$filter['whereRaw.10'] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
+$filter['whereRaw.20'] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
+$filter['whereRaw.30'] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
 
 $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
     $q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
@@ -92,7 +92,7 @@ $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 // with, has, whereHas, doesntHave, whereDoesntHave, withCount
-$filter['with.10'][]  = [
+$filter['with.10']  = [
     'exampletable1_row_func' => function($q) {
         $q->with('exampletable_row_id_func');
         $q->where('uid','>',0);
