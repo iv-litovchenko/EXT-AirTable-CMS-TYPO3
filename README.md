@@ -193,46 +193,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 </f:link.action>
 ```
 
-Step 3) Create localling file:
-
-EXT:myext/Resources/Private/Language/Localling.Module-Section.Tabmyext.xlf\
-EXT:myext/Resources/Private/Language/Localling.Module.NewModule1.xlf
-
-```xml
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" product-name="myext">
-        <header/>
-        <body>
-            <trans-unit id="mlang_tabs_tab" xml:space="preserve">
-                <source>New section title</source>
-            </trans-unit>
-        </body>
-    </file>
-</xliff>
-
-------
-
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" product-name="myext">
-        <header/>
-        <body>
-            <trans-unit id="mlang_tabs_tab" xml:space="preserve">
-                <source>New module 1 title</source>
-            </trans-unit>
-            <trans-unit id="mlang_labels_tablabel" xml:space="preserve">
-                <source>New module 1 subtitle</source>
-            </trans-unit>
-            <trans-unit id="mlang_labels_tabdescr" xml:space="preserve">
-                <source>New module 1 description</source>
-            </trans-unit>
-        </body>
-    </file>
-</xliff>
-```
-
-Step 4) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Cache". Click the button "Flush cache" (if changed or added new actions in the controller!).
+Step 3) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Cache". Click the button "Flush cache" (if changed or added new actions in the controller!).
 
 ## Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
