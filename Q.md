@@ -195,7 +195,7 @@ $rows1 = Pages::recSelect('getById',230,'title'); // $id, $fields
 $rows2 = Pages::recSelect('getByList','title'); // $id, $fields
 
 // B) ------------
-// Todo relation function getCounty( -> refProvider() )
+// Todo relation function getCounty( -> refProvider('Rel_1To1','Rel_1ToM'....) )
 
 // C) Global scope (user function global scope register)
 See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
