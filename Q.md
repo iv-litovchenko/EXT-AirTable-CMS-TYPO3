@@ -196,7 +196,7 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 // Todo static function GetById (recSelect('userFunc'))
 
 // C) Global scope (user function global scope register)
-See example: public static function userGlobalScopeFlagDeleted($builder){}
+See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
 
 // D) Local scope (user function local scope register)
 See example: public function scopeUserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
