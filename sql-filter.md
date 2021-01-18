@@ -52,12 +52,16 @@ $test = DB::table('table1 AS a')
         ->get();
 		
 $filter = [];
+$filter['leftJoin.10'] = ['table2 AS b', 'a.field2', '=', 'b.field2'];
+$filter['leftJoin.20']['table3 AS c']['on'];
+$filter['leftJoin.20']['table3 AS c'];
 $filter['where'] = ['a.field6', 'LIKE', '%$bintara%'];
 $filter['orWhere'] = ['b.field2', 'LIKE', '%$bintara%'];
 $filter['orderBy.10'] = ['e.field1','Asc'];
 $filter['orderBy.20'] = ['b.field2','Asc'];
 $filter['orderBy.30'] = ['c.field3','Asc'];
 $filter['orderBy.40'] = ['ca.field5','Asc'];
+
 
 $filter = [];
 $filter['select'] 								= ['id','title'];
