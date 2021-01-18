@@ -692,7 +692,7 @@ class PagesEx extends Pages
      * @AirTable\Field\Position\1:<extended,0>
      * @AirTable\Field\Label:<New field>
      */
-    protected $ex_myext_new_field;
+    protected $ext_myext_new_field;
 
     /**
      * Changing the $TCA settings array
