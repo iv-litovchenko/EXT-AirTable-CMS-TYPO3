@@ -240,3 +240,4 @@ if($is === true) {
  *  morphedToMany /morphedByMany (polymorphic M-M)
     // the same as belongsToMany
 
+```
