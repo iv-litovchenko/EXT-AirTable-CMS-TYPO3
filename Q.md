@@ -169,12 +169,19 @@ NewTable::refSort(); // todo
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // A) Global scope (user function global scope register)
-See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
+// $rows = NewTable::get(); // Results sorted by default by uid field
+// $rows = NewTable::withoutGlobalScope('customNameGlobalCondition')->get(); // No sorting by default
+public function builderGsCustomNameGlobalCondition($builder) { // builderUserGlobalScope[Name]()
+    $builder->orderBy('uid','Desc');
+}
 
 // B) Local scope (user function local scope register)
-See example: public function гserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
+// $rows = NewTable::customNameCondition(1,2)->get();
+public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUserLocalScope[Name]()
+    return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
+}
 
-// C) ------------
+// C) Relationship (user function global scope register)
 // builderUserRef[Name]()
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
