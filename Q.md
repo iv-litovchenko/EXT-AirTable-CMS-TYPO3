@@ -164,7 +164,6 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
-   ---------------------------------------------------------------------------
  * hasOne / hasMany (1-1, 1-M)
    ---------------------------------------------------------------------------
 
