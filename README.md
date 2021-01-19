@@ -147,7 +147,7 @@ use Litovchenko\AirTable\Utility\BaseUtility;
 /**
  * @AirTable\Label:<Module 1>
  * @AirTable\Description:<Module 1 description>
- * @AirTable\Group:<tabmyext || web || file || user || help || content || extension || tools> // Todo "invisible"
+ * @AirTable\Group:<web || file || user || help || content || extension || tools> // Todo "invisible"
  * @AirTable\Position:<100>
  */
 class NewModule1Controller extends AbstractModuleController
@@ -183,10 +183,10 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 <f:be.link route="web_ts" parameters="{id: 92}">Go to web_ts</f:be.link><br />
 
 <!--Pay attention to the route - not "tabmyext_MyextNewModule2", but "tabmyext_MyextNewmodule2"-->
-<f:be.link route="tabmyext_MyextNewmodule2" parameters="{arg: 'val'}">Go to Module 2</f:be.link><br />
+<f:be.link route="extension_MyextNewmodule2" parameters="{arg: 'val'}">Go to Module 2</f:be.link><br />
 
 <!--Pay attention to the route - not "tabmyext_MyextNewModule3", but "tabmyext_MyextNewmodule3"-->
-<f:be.link route="tabmyext_MyextNewmodule3" parameters="{arg: 'val'}">Go to Module 3</f:be.link><br />
+<f:be.link route="extension_MyextNewmodule3" parameters="{arg: 'val'}">Go to Module 3</f:be.link><br />
 
 <f:link.action action="edit" class="btn btn-default btn-sm">
 	Module 1 (action "Edit")
