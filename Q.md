@@ -1,3 +1,4 @@
+```php
 <?php
 use Illuminate\Database\Capsule\Manager as DB;
 use Litovchenko\AirTable\Domain\Model\Content\Pages;
@@ -240,4 +241,3 @@ if($is === true) {
  *  morphedToMany /morphedByMany (polymorphic M-M)
     // the same as belongsToMany
 
-```
