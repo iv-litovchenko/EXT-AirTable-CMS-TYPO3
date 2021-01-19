@@ -164,13 +164,16 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
- * hasOne / hasMany (1-1, 1-M) = Rel_1To1, Rel_1ToM
+ * hasOne / hasMany (1-1, 1-M)
+   Rel_1To1, Rel_1ToM
    -------------------------------------------------------------------------------------------
 
- * belongsTo (M-1, 1-1(inv), 1-M(inv)) = Rel_MTo1, Rel_1To1_Inverse, Rel_1ToM_Inverse
+ * belongsTo (M-1, 1-1(inv), 1-M(inv))
+   Rel_MTo1, Rel_1To1_Inverse, Rel_1ToM_Inverse
    -------------------------------------------------------------------------------------------
 
- * belongsToMany (M-M) = Rel_MToM, Rel_MToM_Inverse
+ * belongsToMany (M-M)
+   Rel_MToM, Rel_MToM_Inverse
    -------------------------------------------------------------------------------------------
 
  * morphOne / morphMany (polymorphic 1-1, polymorphic 1-M)
