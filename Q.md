@@ -17,8 +17,8 @@ $rowsCount = NewTable::recSelect('count'); // count
 $rowsGet = NewTable::recSelect('get'); // all
 $method = NewTable::recSelect('exists', $recordId); // obj, count, exists (if), doesntExist (if)
 $obj = NewTable::recSelect('obj', [])->...->get(); // return obj (to create subqueries)
-$dd = Pages::recSelect('obj',8)->dd(); // debugging
-$dump = Pages::recSelect('obj',8)->dump(); // debugging
+$dd = Pages::recSelect('obj',[])->dd(); // debugging
+$dump = Pages::recSelect('obj',[])->dump(); // debugging
 
 $limit = 10;
 $rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) { 
