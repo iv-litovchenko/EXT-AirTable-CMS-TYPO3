@@ -184,6 +184,8 @@ NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentI
 NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes() always!!!
 NewTable::refDetach('category_rows_func', 1, []); // detach all ->withoutGLobalScopes() always!!!
 NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes() always!!!
+NewTable::refUpdatePivot(); // todo
+NewTable::refSort(); // todo
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // ADDING CUSTOM FUNCTIONS TO THE MODEL
