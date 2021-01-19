@@ -147,7 +147,7 @@ use Litovchenko\AirTable\Utility\BaseUtility;
 /**
  * @AirTable\Label:<Module 1>
  * @AirTable\Description:<Module 1 description>
- * @AirTable\Group:<web || file || user || help || content || extension || tools> // Todo "invisible"
+ * @AirTable\Group:<web || file || user || help || content || tools || ext> // Todo "invisible"
  * @AirTable\Position:<100>
  */
 class NewModule1Controller extends AbstractModuleController
