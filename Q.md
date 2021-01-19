@@ -172,20 +172,21 @@ NewTable::refSort(); // todo
 // $rows = NewTable::get(); // Results sorted by default by uid field
 // $rows = NewTable::withoutGlobalScope('customNameGlobalCondition')->get(); // No sorting by default
 public function builderGsCustomNameGlobalCondition($builder) { // builderUserGlobalScope[Name]()
+    // See example: builderGsCustomFlagDeleted();
     $builder->orderBy('uid','Desc');
 }
 
 // B) Local scope (user function local scope register)
 // $rows = NewTable::customNameCondition(1,2)->get();
 public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUserLocalScope[Name]()
+    // See example: builderLsCustomPagination();
     return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
 // C) Relationship (user function global scope register)
-// builderUserRef[Name]()
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
-    return $this->refProvider('exampletable4_rows');
+    return $this->refProvider('exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) ------------
