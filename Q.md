@@ -90,10 +90,10 @@ $filter['with.40'] = 'exampletable4_rows_func';
 #$filter['leftJoin'] = ['posts', 'users.id', '=', 'posts.user_id'];
 #$filter['crossJoin'] = 'posts';
 
-$filter['userSelectMinimize'] = true; // or false
-$filter['userWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
-$filter['userWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
-$filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
+$filter['customSelectMinimize'] = true; // or false
+$filter['customWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
+$filter['customWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
+$filter['customPagination'] = [30,1]; // $pageLimit, $pageNumber
 
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
