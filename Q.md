@@ -201,7 +201,7 @@ $rows2 = Pages::recSelect('getByList','title'); // $id, $fields
 See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
 
 // D) Local scope (user function local scope register)
----------- FILTER FUNC (USER FILTER | USER CONDITION) ---------- 
+---------- FILTER FUNC (USER FILTER | USER CONDITIONS) ---------- 
 See example: public function scopeUserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
 
 // E) Nested Set
