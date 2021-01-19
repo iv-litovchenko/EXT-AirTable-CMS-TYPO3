@@ -91,8 +91,8 @@ $filter['with.40'] = 'exampletable4_rows_func';
 #$filter['crossJoin'] = 'posts';
 
 $filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
-$filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
-$filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
+$filter['userWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
+$filter['userWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
 
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
