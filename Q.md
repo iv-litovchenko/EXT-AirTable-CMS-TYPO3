@@ -168,20 +168,24 @@ NewTable::refSort(); // todo
 // ADDING CUSTOM FUNCTIONS TO THE MODEL
 ////////////////////////////////////////////////////////////////////////////////////////
 
-// A) ------------
+// A) Global scope (user function global scope register)
+See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
+
+// B) Local scope (user function local scope register)
+See example: public function гserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
+
+// C) ------------
+// builderUserRef[Name]()
+// $rows = NewTable::with('customNameRelationship')->get();
+public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
+    return $this->refProvider('exampletable4_rows');
+}
+
+// D) ------------
 // todo, static function GetById (recSelect('userFunc getBy***'))
 $rows1 = NewTable::recSelect('getById',230,'title'); // $id, $fields
 $rows2 = NewTable::recSelect('getByList','title'); // $id, $fields
 
-// B) ------------
-// Todo relation function getCounty( -> refProvider('Rel_1To1','Rel_1ToM'....) )
-
-// C) Global scope (user function global scope register)
-See example: public static function globalScopeFlagDeleted($builder){} // $builder->where()...;
-
-// D) Local scope (user function local scope register)
----------- FILTER FUNC (USER FILTER | USER CONDITIONS) ---------- 
-See example: public function scopeUserPagination($query, $limit, $pagePosition){} // return $query->limit()...;
 
 // E) Nested Set
 // Todo 
