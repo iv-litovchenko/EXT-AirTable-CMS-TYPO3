@@ -243,5 +243,3 @@ $is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domai
 if($is === true) {
     echo 'Yes';
 }
-
-////////////////////////////////////////////////////////////////////////////////////////
