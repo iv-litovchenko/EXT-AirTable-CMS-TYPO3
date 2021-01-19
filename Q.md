@@ -1,9 +1,6 @@
-```php
 <?php
 use Illuminate\Database\Capsule\Manager as DB;
-use Carbon\Carbon;
 use Litovchenko\AirTable\Domain\Model\Content\Pages;
-use Litovchenko\AirTableExamples\Domain\Model\ExampleTable;
 use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -12,13 +9,14 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 ////////////////////////////////////////////////////////////////////////////////////////
 
 $recordId = 7;
-$rowsFirst = NewTable::recSelect('first', $recordId);
+$rowFirst = NewTable::recSelect('first', $recordId);
+$rowExists = NewTable::recSelect('exists', $recordId); // ->exists() (if), ->doesntExist() (if)
 $rowsCount = NewTable::recSelect('count'); // count
 $rowsGet = NewTable::recSelect('get'); // all
-$method = NewTable::recSelect('exists', $recordId); // obj, count, exists (if), doesntExist (if)
-$obj = NewTable::recSelect('obj', [])->...->get(); // return obj (to create subqueries)
-$dd = Pages::recSelect('obj',[])->dd(); // debugging
-$dump = Pages::recSelect('obj',[])->dump(); // debugging
+$obj = NewTable::recSelect('obj',[])->...->get(); // return obj (to create subqueries)
+$sql = NewTable::recSelect('obj',[])->toSql();
+$dd = NewTable::recSelect('obj',[])->dd(); // debugging
+$dump = NewTable::recSelect('obj',[])->dump(); // debugging
 
 $limit = 10;
 $rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) { 
@@ -31,55 +29,38 @@ foreach ($rowsResult['get'] as $row) {
     print $row['[relname]_row(s)_func']['title'] . "<br />";
 }
 
-$recordId = 18;
-$is = NewTable::recIsDeleted($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
-if($is === true) {
-    echo 'Yes';
-}
-
-$recordId = 18;
-$is = NewTable::recIsDisabled($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
-if($is === true) {
-    echo 'Yes';
-}
-
-$recordId = 18;
-$is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\DateStart and DateEnd;
-if($is === true) {
-    echo 'Yes';
-}
-
 $filter = [];
+$filter['withoutGlobalScopes'] = true;
+$filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
+
 $filter['distinct'] = 'title';
 $filter['select'] = ['uid','title', 'uid as aliasID'];
 $filter['addSelect'] = ['pid','date_create'];
 
-$filter['whereUid'] = 1; // Dynamic
-$filter['wherePid'] = 1; // Dynamic
-$filter['whereTitle'] = []; // Dynamic
-$filter['whereFieldName'] = []; // Dynamic
+$filter['whereUid'] = 1; // dynamic field name
+$filter['wherePid'] = 1; // dynamic field name
+$filter['whereTitle'] = []; // dynamic field name
+$filter['whereFieldName'] = []; // dynamic field name
 
-// where, orWhere, =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
-$filter['where.10'] = ['uid','>=',1];
-$filter['where.20'] = ['uid','<=',10000];
-
+$filter['where.10'] = []; // ...
+$filter['where.20'] = []; // ...
+$filter['where'] = ['uid','>=',1]; // ->orWhere() =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, ILIKE
 $filter['where'] = function($q) { 
     $q->where('pid','>=',0); 
     $q->orWhere('pid','<=',0);
 };
 
-$filter['whereIn'] = ['uid',[1,2,3,4,5,6,7,8,9,10]]; // orWhereIn, whereNotIn, orWhereNotIn
-$filter['whereNull'] = 'keywords'; // orWhereNull, whereNotNull, orWhereNotNull 
-$filter['whereBetween'] = ['uid',[1,1000]]; // whereNotBetween
+$filter['whereIn'] = ['uid',[1,2,3,4,5,6,7,8,9,10]]; // ->orWhereIn(), ->whereNotIn(), ->orWhereNotIn()
+$filter['whereNull'] = 'keywords'; // ->orWhereNull(), ->whereNotNull(), ->orWhereNotNull()
+$filter['whereBetween'] = ['uid',[1,1000]]; // ->whereNotBetween()
 $filter['whereColumn'] = ['uid','!=','title'];
+
 $filter['whereRaw'] = ['(uid > ? and uid < ?)', [1,1000]]; // DB::raw(1)
-
-$filter['whereRaw.10'] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
-$filter['whereRaw.20'] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
-$filter['whereRaw.30'] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
-
+$filter['whereRaw'] = ["FROM_UNIXTIME(date_create, '%j') = ?", 11]; // %d -> with zero
+$filter['whereRaw'] = ["FROM_UNIXTIME(date_create, '%n') = ?", 1]; // %m -> with zero
+$filter['whereRaw'] = ["FROM_UNIXTIME(date_create, '%Y') = ?", 2021];
 $filter['whereExists'] = function($q) { // ->orWhereExists(), ->whereNotExists(), ->orWhereNotExists()
-    $q->select(DB::raw(1))->from('pages')->whereRaw('uid > 0'); 
+    $q->select(DB::raw(1))->from('tablename')->whereRaw('uid > 0'); 
 };
 
 $filter['inRandomOrder'] = false; // true
@@ -91,7 +72,7 @@ $filter['limit'] = 3;
 $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
-// with, has, whereHas, doesntHave, whereDoesntHave, withCount
+// ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
 $filter['with.10']  = [
     'exampletable1_row_func' => function($q) {
         $q->with('exampletable_row_id_func');
@@ -99,28 +80,22 @@ $filter['with.10']  = [
         $q->where('pid','>',0);
     }
 ];
-
 $filter['with.20'] = 'exampletable2_rows_func.exampletable_row_id_func';
 $filter['with.30'] = 'exampletable3_row_id_func';
 $filter['with.40'] = 'exampletable4_rows_func';
 
-#$filter['union'] = ['']; // unionAll // $subQ = NewTable::recSelect('obj', $filter);
+#$filter['union'] = ['']; // ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
 #$filter['join'] = ['contacts', 'users.id', '=', 'contacts.user_id'];
 #$filter['leftJoin'] = ['posts', 'users.id', '=', 'posts.user_id'];
 #$filter['crossJoin'] = 'posts';
-
-$filter['withoutGlobalScopes'] = true;
-$filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
 
 $filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
 $filter['userWhereFlagDeleted'] = [0,1]; // 0, 1, [0,1]
 $filter['userWhereFlagDisabled'] = [0,1]; // 0, 1, [0,1]
 
-$sql = NewTable::recSelect('toSql', $filter);
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
 
-print "Sql: " . $sql . "<hr />";
 print "Count: " . $count . "<hr />";
 foreach ($rows as $row) {
     print $row['title'] . " // ";
@@ -157,7 +132,7 @@ if ($affectedCount > 0) {
 
 $data = [];
 $data['title'] = '-- TITLE --';
-$affectedCount = Pages::recUpdate('full'); // Update all
+$affectedCount = NewTable::recUpdate('full'); // Update all
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // DELETE 
@@ -172,8 +147,8 @@ if ($affectedCount > 0) {
 }
 
 $destroy = true; // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
-$affectedCount = Pages::recDelete('full',$destroy); // Truncate
-$affectedCount = Pages::recDelete('full');
+$affectedCount = NewTable::recDelete('full',$destroy); // Truncate
+$affectedCount = NewTable::recDelete('full');
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // RELATIONSHIPS ->withoutGLobalScopes() always!!!
@@ -193,8 +168,8 @@ NewTable::refSort(); // todo
 
 // A) ------------
 // todo, static function GetById (recSelect('userFunc getBy***'))
-$rows1 = Pages::recSelect('getById',230,'title'); // $id, $fields
-$rows2 = Pages::recSelect('getByList','title'); // $id, $fields
+$rows1 = NewTable::recSelect('getById',230,'title'); // $id, $fields
+$rows2 = NewTable::recSelect('getByList','title'); // $id, $fields
 
 // B) ------------
 // Todo relation function getCounty( -> refProvider('Rel_1To1','Rel_1ToM'....) )
@@ -208,6 +183,28 @@ See example: public function scopeUserPagination($query, $limit, $pagePosition){
 
 // E) Nested Set
 // Todo 
+
+////////////////////////////////////////////////////////////////////////////////////////
+// OTHER
+////////////////////////////////////////////////////////////////////////////////////////
+
+$recordId = 18;
+$is = NewTable::recIsDeleted($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+if($is === true) {
+    echo 'Yes';
+}
+
+$recordId = 18;
+$is = NewTable::recIsDisabled($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
+if($is === true) {
+    echo 'Yes';
+}
+
+$recordId = 18;
+$is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\DateStart and DateEnd;
+if($is === true) {
+    echo 'Yes';
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -242,4 +239,4 @@ See example: public function scopeUserPagination($query, $limit, $pagePosition){
 
  *  morphedToMany /morphedByMany (polymorphic M-M)
     // the same as belongsToMany
-```
+
