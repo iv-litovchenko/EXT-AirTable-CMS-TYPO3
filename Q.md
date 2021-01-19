@@ -169,17 +169,17 @@ NewTable::refSort(); // todo
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // A) Global scope (user function global scope register)
+// See example: builderGsCustomFlagDeleted();
 // $rows = NewTable::get(); // Results sorted by default by uid field
 // $rows = NewTable::withoutGlobalScope('customNameGlobalCondition')->get(); // No sorting by default
 public function builderGsCustomNameGlobalCondition($builder) { // builderUserGlobalScope[Name]()
-    // See example: builderGsCustomFlagDeleted();
     $builder->orderBy('uid','Desc');
 }
 
 // B) Local scope (user function local scope register)
+// See example: builderLsCustomPagination();
 // $rows = NewTable::customNameCondition(1,2)->get();
 public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUserLocalScope[Name]()
-    // See example: builderLsCustomPagination();
     return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
