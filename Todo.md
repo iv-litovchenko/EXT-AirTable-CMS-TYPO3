@@ -1,3 +1,9 @@
+Сниппет — выделенная часть шаблона, пригодная для повторного использования. Классические примеры сниппетов — это “шапка” и “подвал”, которые подключаются во всех шаблонах почтовых уведомлений. Сниппеты не имеют своего контекста и переменных, контекст и переменные наследуются от шаблона, вызывающего сниппет.
+
+New Chunk Chunk code (html ):
+New Snippet Snippet code (php): <?php
+
+
 <wgsExtAirTable:Test action="" TestArg1='String 1' TestArg2='String 2'  />
 <vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' />
 
