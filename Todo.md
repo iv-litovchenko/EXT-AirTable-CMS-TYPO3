@@ -4,6 +4,13 @@
 Вариант названия №1 Component 
 Вариант названия №2 New Chunk Chunk code (html ):
 Вариант названия №3 New Snippet Snippet code (php): <?php
+
+
+<f:debug>{_all}</f:debug>
+<h2>Woohoo! My First TYPO3 Custom Element</h2>
+<div class=”container”>
+{data.bodytext -> f:format.html()}
+</div>
 ```
 
 
