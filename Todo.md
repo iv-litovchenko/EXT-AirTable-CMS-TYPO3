@@ -1,5 +1,6 @@
 ``` 
 ReadOnly:<1> поменять на Validator...
+Доработать поля ServerSelectFiles (выбрать файл из папки на сервере), ServerSelectFolders (выбрать папку на сервере)
 
 
 
