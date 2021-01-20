@@ -31,8 +31,9 @@ foreach ($rowsResult['get'] as $row) {
 }
 
 $filter = [];
-$filter['withoutGlobalScopes'] = true;
-$filter['withoutGlobalScope'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
+$filter['withoutGlobalScopes'] = true; // or false
+$filter['withoutGlobalScopes'] = ['FlagDeleted','FlagDeleted','DateStart', 'DateEnd'];
+$filter['withoutGlobalScope'] = 'FlagDeleted';
 
 $filter['distinct'] = 'title';
 $filter['select'] = ['uid','title', 'uid as aliasID'];
