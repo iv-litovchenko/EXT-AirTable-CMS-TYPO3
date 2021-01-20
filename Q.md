@@ -212,15 +212,16 @@ public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUs
     return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
-// C) Relationship (user function global scope register)
+// C) Relationship (user function register)
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
     return $this->refProvider('exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) Repository Pattern (getBy***)
-// $rows1 = NewTable::getById(230,'title'); // $id, $fields
-// $rows2 = NewTable::getByList('title'); // $fields...
+// Todo 
+// $result_1 = NewTable::getById(230,'title'); // $id, $fields
+// $result_2 = NewTable::getByList('title'); // $fields...
 
 // E) Nested Set
 // Todo 
