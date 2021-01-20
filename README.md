@@ -704,7 +704,7 @@ $this->crud->model->clearGlobalScopes();
 
 ```
 
-## Database queries SELECT, INSERT, UPDATE, DELETE, relationships between tables - Eloquent ORM (Laravel)
+## Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)
 
 ```php
 <?php
