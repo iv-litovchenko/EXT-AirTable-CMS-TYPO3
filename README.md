@@ -351,6 +351,7 @@ class NewTable extends AbstractModelCrud
     use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicPreview;
     use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
     use \Litovchenko\AirTable\Domain\Model\Traits\TtContentRows; // <f:content table="tx_myext_newtable" uid="1" />
+    use \Litovchenko\AirTable\Domain\Model\Traits\Thumbnail; // Image associated with the recording
     use \Litovchenko\AirTable\Domain\Model\Traits\Files;
     // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;
     // use \Litovchenko\AirTable\Domain\Model\Traits\EavRows;
