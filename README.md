@@ -17,7 +17,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Export records Xls|Csv (module)](#export-records-xlscsv-module)
 * [Import records Xls|Csv (module)](#import-records-xlscsv-module)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
-* [Database queries SELECT, INSERT, UPDATE, DELETE, relationships between tables - Eloquent ORM (Laravel)](#database-queries-select-insert-update-delete-relationships-between-tables---eloquent-orm-laravel)
+* [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-eloquent-orm)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 
 ## Demo site online
