@@ -43,9 +43,17 @@ $filter['wherePid'] = 1; // dynamic field name
 $filter['whereTitle'] = []; // dynamic field name
 $filter['whereFieldName'] = []; // dynamic field name
 
+// Allowed operator parameter
+// '=', '<', '>', '<=', '>=', '<>', '!=',
+// 'like', 'like binary', 'not like', 'between', 'ilike',
+// '&', '|', '^', '<<', '>>',
+// 'rlike', 'regexp', 'not regexp',
+// '~', '~*', '!~', '!~*', 'similar to',
+// 'not similar to'
+
 $filter['where.10'] = []; // ...
 $filter['where.20'] = []; // ...
-$filter['where'] = ['uid','>=',1]; // ->orWhere() =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, ILIKE
+$filter['where'] = ['uid','>=',1]; // ->orWhere()
 $filter['where'] = function($q) { 
     $q->where('pid','>=',0); 
     $q->orWhere('pid','<=',0);
