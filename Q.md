@@ -93,10 +93,11 @@ $filter['with.20'] = 'exampletable2_rows_func.exampletable_row_id_func';
 $filter['with.30'] = 'exampletable3_row_id_func';
 $filter['with.40'] = 'exampletable4_rows_func';
 
-#$filter['union'] = ['']; // ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
-#$filter['join'] = ['contacts', 'users.id', '=', 'contacts.user_id'];
-#$filter['leftJoin'] = ['posts', 'users.id', '=', 'posts.user_id'];
-#$filter['crossJoin'] = 'posts';
+// ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
+$filter['union'] = ...;
+$filter['join'] = ...;
+$filter['leftJoin'] = ...;
+$filter['crossJoin'] = ...;
 
 $filter['customSelectMinimize'] = true; // or false
 $filter['customWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
