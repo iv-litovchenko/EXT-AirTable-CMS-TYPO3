@@ -460,12 +460,12 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\Show:<1>
      */
-    #protected $[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
-    #protected $[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
-    #protected $[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
-    #protected $[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
-    #protected $[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
-    #protected $[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
+    protected $[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
+    protected $[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
+    protected $[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
+    protected $[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
+    protected $[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
+    protected $[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
     
     /**
      * @AirTable\Field:<Input>
