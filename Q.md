@@ -171,28 +171,26 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
- * hasOne / hasMany (1-1, 1-M)
-   Rel_1To1, Rel_1ToM
+ * Rel_1To1 / hasOne() / $[prefix]_tablename_row;
+ * Rel_1ToM / hasMany() / $[prefix]_tablename_rows;
    -------------------------------------------------------------------------------------------
 
- * belongsTo (M-1, 1-1(inv), 1-M(inv))
-   Rel_MTo1, Rel_1To1_Inverse, Rel_1ToM_Inverse
+ * Rel_MTo1 / belongsTo() / $[prefix]_tablename_row_id;
+ * Rel_1To1_Inverse / belongsTo() / $[prefix]_tablename_row_id;
+ * Rel_1ToM_Inverse / belongsTo() / $[prefix]_tablename_row_id;
    -------------------------------------------------------------------------------------------
 
- * belongsToMany (M-M)
-   Rel_MToM, Rel_MToM_Inverse
+ * Rel_MToM / belongsToMany() / $[prefix]_tablename_rows;
+ * Rel_MToM_Inverse / belongsToMany() / $[prefix]_tablename_rows;
+ * Pivot model: [Litovchenko\AirTable\Domain\Model\SysMm], pivot table: [sys_mm]
    -------------------------------------------------------------------------------------------
 
- * morphOne / morphMany (polymorphic 1-1, polymorphic 1-M)
-   // the same as hasOne / hasMany
-   -------------------------------------------------------------------------------------------
-
- * morphTo (polymorphic M-1)
-   // the same as belongsTo
-   -------------------------------------------------------------------------------------------
-
- * morphedToMany /morphedByMany (polymorphic M-M)
-   // the same as belongsToMany
+ * Rel_Poly_1To1 / morphOne() / $[prefix]_tablename_row;
+ * Rel_Poly_1ToM / morphMany() / $[prefix]_tablename_rows;
+ * Rel_Poly_MToM // todo
+ * Rel_Poly_1To1_Inverse // todo
+ * Rel_Poly_1ToM_Inverse // todo
+ * Rel_Poly_MToM_Inverse // todo
    -------------------------------------------------------------------------------------------
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -250,3 +248,4 @@ $is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domai
 if($is === true) {
     echo 'Yes';
 }
+```
