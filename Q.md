@@ -218,11 +218,9 @@ public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
     return $this->refProvider('exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
-// D) ------------
-// todo, static function GetById (recSelect('userFunc getBy***'))
-$rows1 = NewTable::recSelect('getById',230,'title'); // $id, $fields
-$rows2 = NewTable::recSelect('getByList','title'); // $id, $fields
-
+// D) Repository Pattern (getBy***)
+// $rows1 = NewTable::getById(230,'title'); // $id, $fields
+// $rows2 = NewTable::getByList('title'); // $fields...
 
 // E) Nested Set
 // Todo 
