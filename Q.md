@@ -50,7 +50,6 @@ $filter['whereFieldName'] = []; // dynamic field name
 // 'rlike', 'regexp', 'not regexp',
 // '~', '~*', '!~', '!~*', 'similar to',
 // 'not similar to'
-
 $filter['where.10'] = []; // ...
 $filter['where.20'] = []; // ...
 $filter['where'] = ['uid','>=',1]; // ->orWhere()
