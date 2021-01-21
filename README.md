@@ -64,10 +64,10 @@ EXT:myext/Classes/Domain/Model/OneModelCategory.php // Model categorization
 EXT:myext/Classes/Domain/Model/[SubFolder]/_.txt // Name subfolder
 EXT:myext/Classes/Domain/Model/[SubFolder]/ModelInSubfolder.php // Name subfolder
 
-EXT:myext/Classes/Domain/Model/Ex/
-EXT:myext/Classes/Domain/Model/Ex/PagesEx.php // Мodify model
-EXT:myext/Classes/Domain/Model/Ex/TtContentEx.php // Мodify model
-EXT:myext/Classes/Domain/Model/Ex/OneModelEx.php // Мodify model
+EXT:myext/Classes/Domain/Model/Ext/
+EXT:myext/Classes/Domain/Model/Ext/ExtPages.php // Мodify model
+EXT:myext/Classes/Domain/Model/Ext/ExtTtContent.php // Мodify model
+EXT:myext/Classes/Domain/Model/Ext/ExtOneModel.php // Мodify model
 
 EXT:myext/Configuration/TypoScript/IncBackend/PageConfig.ts
 EXT:myext/Configuration/TypoScript/IncBackend/UserConfig.ts
