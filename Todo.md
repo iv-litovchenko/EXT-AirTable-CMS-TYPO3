@@ -64,7 +64,8 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * @AirTable\RegisterArguments\TestArg1:<integer || string || mixed, 1 (Required  True || False)>
  * @AirTable\RegisterArguments\TestArg2:<string,0>
  */
-class HelloWorldViewHelper extends \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper
+class HelloWorldViewHelper extends Наследуемся от Litovchenko
+--- \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper - в ТАЙПО 3 поменялось в каких-то версиях сделать class_alias!
 {
     public function render()
     {
