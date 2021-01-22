@@ -28,7 +28,7 @@ Coming soon! // Todo
 
 Step 1) If, when installing a new version of the CMS TYPO3 system, the error "@mysqli.reconnect=1@" pops up - comment out this message in the file: "typo3/sysext/install/Classes/SystemEnvironment/DatabaseCheck/Driver/Mysqli.php". Then proceed with the installation.
 
-Step 2) Install extension "air_table" via extension manager (https://extensions.typo3.org/extension/air_table/).
+Step 2) Install extension "air_table" via extension manager (https://extensions.typo3.org/extension/air_table/). The current version is under development!
 
 Step 3) Update the composer in the folder "typo3conf/ext/air_table/"
 
