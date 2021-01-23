@@ -475,8 +475,8 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Placeholder:<-------Placeholder------->
      * @AirTable\Field\Default:<-------Default value------->
      * @AirTable\Field\Required:<1> // Required to fill
-     * @AirTable\Field\ValidationRules\Required:<1> // Todo
-     * @AirTable\Field\ValidationRules\[Rule Name]:<1> // Todo
+     * @AirTable\Field\ValidationRules\Required:<1> // Todo Validator
+     * @AirTable\Field\ValidationRules\[Rule Name]:<1> // Todo Validator
      * @AirTable\Field\Show:<1> // Show field in lists
      * @AirTable\Field\OnChangeReload:<1> // Reload the form when the field value changes
      * @AirTable\Field\DisplayCond\1:<FIELD:disabled:=:1>
