@@ -60,8 +60,8 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 /**
  * @AirTable\Label:<Пример хелпера Hellow world>
  * @AirTable\Description:<Вывод тектовой строки>
- * @AirTable\RegisterArguments\TestArg1:<integer || string || mixed, 1 (Required  True || False)>
- * @AirTable\RegisterArguments\TestArg2:<string,0>
+ * @AirTable\RegisterArguments\TestArg1:<integer || string || mixed, req (Required  True || False)>
+ * @AirTable\RegisterArguments\TestArg2:<string,req>
  */
 class HelloWorldViewHelper extends Наследуемся от Litovchenko
 --- \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper - в ТАЙПО 3 поменялось в каких-то версиях сделать class_alias!
@@ -106,9 +106,9 @@ use Litovchenko\AirTable\Controller\Widgets\AbstractWidgetController;
  * @AirTable\Description:<Виджет в отличие от хелпера имеет собственное представление>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
  * @AirTable\EidAjaxActions:<indexAction> // Todo http://your-site.com/ajax/ext/[controller]/[action]/
- * @AirTable\RegisterArguments\TestArg1:<integer,1>
- * @AirTable\RegisterArguments\TestArg2:<integer,0>
- * @AirTable\RegisterArguments\TestArg3:<integer,1>
+ * @AirTable\RegisterArguments\TestArg1:<integer,req>
+ * @AirTable\RegisterArguments\TestArg2:<integer>
+ * @AirTable\RegisterArguments\TestArg3:<integer,req>
  */
 class TestWidgetController extends AbstractWidgetController 
 {
