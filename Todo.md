@@ -43,7 +43,7 @@ https://github.com/spatie/macroable
 		#with which you have access to all variables currently available in the template, and can modify the variables
 		#currently available in the template.
 
-# Register view helper
+## Register View Helper
 
 Step 1) EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
 
@@ -91,7 +91,7 @@ String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u
 ```
 
 
-# Register view helper
+## Register Widget (view helper with controller and template)
 
 Step 1) EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
 
