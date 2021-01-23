@@ -53,17 +53,18 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 /**
  * @AirTable\Label:<Пример хелпера Hellow world>
  * @AirTable\Description:<Вывод тектовой строки>
- * @AirTable\RegisterArguments\TestArg1:<integer || string || mixed, req (Required  True || False)>
- * @AirTable\RegisterArguments\TestArg2:<string,req>
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed, req (Required  True || False)>
+ * @AirTable\RegisterArguments\testArg2:<string,req>
+ * @AirTable\RegisterArguments\testArg3:<string>
  */
 class HelloWorldViewHelper extends Наследуемся от Litovchenko
 --- \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper - в ТАЙПО 3 поменялось в каких-то версиях сделать class_alias!
 {
     public function render()
     {
-        $TestArg1 = $this->arguments['TestArg1'];
-        $TestArg2 = $this->arguments['TestArg2'];
-        return 'Hello world - ' . $TestArg1 . ',' . $TestArg2;
+        $testArg1 = $this->arguments['testArg1'];
+        $testArg2 = $this->arguments['testArg2'];
+        return 'Hello world - ' . $testArg1 . ',' . $testArg2;
     }
 }
 ```
@@ -99,17 +100,17 @@ use Litovchenko\AirTable\Controller\Widgets\AbstractWidgetController;
  * @AirTable\Description:<Виджет в отличие от хелпера имеет собственное представление>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
  * @AirTable\EidAjaxActions:<indexAction> // Todo http://your-site.com/ajax/ext/[controller]/[action]/
- * @AirTable\RegisterArguments\TestArg1:<integer,req>
- * @AirTable\RegisterArguments\TestArg2:<integer>
- * @AirTable\RegisterArguments\TestArg3:<integer,req>
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed, req (Required  True || False)>
+ * @AirTable\RegisterArguments\testArg2:<string,req>
+ * @AirTable\RegisterArguments\testArg3:<string>
  */
 class TestWidgetController extends AbstractWidgetController 
 {
     public function indexAction() 
 	{
-		$this->view->assign('TestArg1', $this->settings['TestArg1']);
-		$this->view->assign('TestArg2', $this->settings['TestArg2']);
-		$this->view->assign('TestArg3', $this->settings['TestArg3']);
+		$this->view->assign('testArg1', $this->settings['testArg1']);
+		$this->view->assign('testArg2', $this->settings['testArg2']);
+		$this->view->assign('testArg3', $this->settings['testArg3']);
     }
 }
 ```
@@ -126,7 +127,8 @@ Step 3) How to use
 ```html
 <h3>Include widget</h3>
 
-My widget: <u><f:widget extension="AirTable" name="TestWidget" settings="{TestArg1:'A', TestArg2:'B'}" /></u> <hr />
+My widget: <u><wgsExtAirTableExamples:Test testArg1='305' testArg2='301' /></u> <hr />
+
 
 
 
