@@ -318,6 +318,103 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 </div>
 ```
 
+## Register View Helper
+
+Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
+
+```php
+<?php
+namespace Mynamespace\Myext\ViewHelpers;
+use Litovchenko\AirTable\ViewHelpers\AbstractViewHelper;
+/**
+ * @AirTable\Label:<Test Helper>
+ * @AirTable\Description:<String output based on arguments >
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed,req>
+ * @AirTable\RegisterArguments\testArg2:<string,req>
+ */
+class HelloWorldViewHelper extends AbstractViewHelper
+{
+    public function render()
+    {
+        $testArg1 = $this->arguments['testArg1'];
+        $testArg2 = $this->arguments['testArg2'];
+        return 'Hello world - ' . $testArg1 . ',' . $testArg2;
+    }
+}
+```
+
+Step 2) How to use?
+
+```html
+...
+...
+...
+<h3>My View Helper</h3>
+<h4>String:</h4>
+<u>
+   <vhsExtMyext:HelloWorld testArg1='100' testArg2='200' />
+</u>
+<h4>Condition:</h4>
+<f:if condition="{vhsExtMyext:HelloWorld(testArg1:'100', testArg2:'200')}">
+   <f:then>YES</f:then>
+   <f:else>NO</f:else>
+</f:if>
+...
+...
+...
+```
+
+
+## Register Widget (View Helper with controller and template)
+
+Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
+
+```php
+<?php
+namespace Mynamespace\Myext\Controller\Widgets;
+use Litovchenko\AirTable\Controller\AbstractWidgetController;
+/**
+ * @AirTable\Label:<Test widget>
+ * @AirTable\Description:<The widget has a controller and a template>
+ * @AirTable\NonСachedActions:<indexAction> // USER_INT
+ * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed,req>
+ * @AirTable\RegisterArguments\testArg2:<string,req>
+ * @AirTable\RegisterArguments\testArg3:<string,req>
+ */
+class TestWidgetController extends AbstractWidgetController
+{
+    public function indexAction()
+    {
+        $this->view->assign('testArg1', $this->settings['testArg1']);
+        $this->view->assign('testArg2', $this->settings['testArg2']);
+        $this->view->assign('testArg3', $this->settings['testArg3']);
+    }
+}
+```
+
+Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/TestWidget/Index.html
+
+```html
+My Widget (Result): <br />
+{testArg1}, {testArg2}, {testArg3}
+```
+
+Step 3) How to use?
+
+```html
+...
+...
+...
+<h3>My Widget (Initialization):</h3>
+<u>
+   <wgsExtMyext:Test testArg1="100" testArg2="200" testArg3="300" />
+</u>
+...
+...
+...
+```
+
 ## Register a new model (CRUD)
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
