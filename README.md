@@ -10,6 +10,8 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Register a new admin module](#register-a-new-admin-module)
 * [Register a new page template](#register-a-new-page-template)
 * [Register a new content element](#register-a-new-content-element)
+* [Register View Helper](#register-view-helper)
+* [Register Widget (View Helper with controller and template)](#register-widget-view-helper-with-controller-and-template)
 * [Register a new model (CRUD)](#register-a-new-model-crud)
 * [Standard CRUD-models registered in the system for working with records](#standard-crud-models-registered-in-the-system-for-working-with-records)
 * [Extending an existing model](#extending-an-existing-model)
