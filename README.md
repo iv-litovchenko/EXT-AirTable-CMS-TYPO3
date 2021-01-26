@@ -37,7 +37,9 @@ Step 3) Update the composer in the folder "typo3conf/ext/air_table/"
 ```yaml
 // command /usr/local/php-cgi/7.0/bin/php -d memory_limit=-1 /usr/local/bin/composer update --ignore-platform-reqs
 "require-dev": {
-    "illuminate/database": "^5.0",
+    "illuminate/database": "^5.8.36",
+    "illuminate/hashing": "^5.7",
+    "javoscript/laravel-macroable-models": "1.0.4",
     "rap2hpoutre/fast-excel": "^1.5.0"
 }
 ```
