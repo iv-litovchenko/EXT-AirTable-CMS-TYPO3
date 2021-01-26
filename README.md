@@ -123,7 +123,7 @@ $EM_CONF[$_EXTKEY] = [
 ## Register a new admin module
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
 
-Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
+Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
 
 ```php
 <?php
@@ -196,7 +196,7 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Ca
 ## Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
-Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
+Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
 
 ```php
 <?php
@@ -264,7 +264,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 ## Register a new content element
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
 
-Step 1) Create controller EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
+Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
 
 ```php
 <?php
