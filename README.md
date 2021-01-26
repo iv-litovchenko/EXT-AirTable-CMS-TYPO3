@@ -1082,3 +1082,9 @@ return [
     ]
 ];
 ```
+
+## Functional development plans 
+
+- Routing
+- Ajax
+- Splitting records into storages (analogous to folders in the tree of pages) 
