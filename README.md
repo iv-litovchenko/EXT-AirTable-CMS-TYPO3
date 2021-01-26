@@ -21,6 +21,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-eloquent-orm)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
+* [Functional development plans](#functional-development-plans)
 
 ## Demo site online
 
@@ -1085,6 +1086,6 @@ return [
 
 ## Functional development plans 
 
-- Routing
-- Ajax
-- Splitting records into storages (analogous to folders in the tree of pages) 
+* Routing
+* Ajax
+* Splitting records into storages (analogous to folders in the tree of pages) 
