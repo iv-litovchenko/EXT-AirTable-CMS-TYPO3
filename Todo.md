@@ -80,25 +80,23 @@ Step 1) Create controller EXT:myext/Classes/Controller/Widgets/TestWidgetControl
 ```php
 <?php
 namespace Mynamespace\Myext\Controller\Widgets;
-
-use Litovchenko\AirTable\Controller\Widgets\AbstractWidgetController;
-
+use Litovchenko\AirTable\Controller\AbstractWidgetController;
 /**
- * @AirTable\Label:<Тестовый виджет>
- * @AirTable\Description:<Виджет в отличие от хелпера имеет собственное представление>
+ * @AirTable\Label:<Test widget>
+ * @AirTable\Description:<The widget has a controller and a template>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\EidAjaxActions:<indexAction> // Todo http://your-site.com/ajax/ext/[controller]/[action]/
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed, req (Required  True || False)>
+ * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed,req>
  * @AirTable\RegisterArguments\testArg2:<string,req>
- * @AirTable\RegisterArguments\testArg3:<string>
+ * @AirTable\RegisterArguments\testArg3:<string,req>
  */
-class TestWidgetController extends AbstractWidgetController 
+class TestWidgetController extends AbstractWidgetController
 {
-    public function indexAction() 
-	{
-		$this->view->assign('testArg1', $this->settings['testArg1']);
-		$this->view->assign('testArg2', $this->settings['testArg2']);
-		$this->view->assign('testArg3', $this->settings['testArg3']);
+    public function indexAction()
+    {
+        $this->view->assign('testArg1', $this->settings['testArg1']);
+        $this->view->assign('testArg2', $this->settings['testArg2']);
+        $this->view->assign('testArg3', $this->settings['testArg3']);
     }
 }
 ```
@@ -106,20 +104,17 @@ class TestWidgetController extends AbstractWidgetController
 Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/TestWidget/Index.html
 
 ```html
-TestWidget<br />
-{TestArg1}, {TestArg2}, {TestArg3}
+My widget (Result): <br />
+{testArg1}, {testArg2}, {testArg3}
 ```
 
 Step 3) How to use
 
 ```html
-<h3>Include widget</h3>
-
-My widget: <u><wgsExtAirTableExamples:Test testArg1='305' testArg2='301' /></u> <hr />
-
-
-
-
+<h3>My widget (Initialization):</h3>
+<u>
+   <wgsExtMyext:Test testArg1="100" testArg2="200" testArg3="300" />
+</u>
 ```
 
 
