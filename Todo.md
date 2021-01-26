@@ -73,7 +73,7 @@ String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u
 ```
 
 
-## Register Widget (view helper with controller and template)
+## Register Widget (View Helper with controller and template)
 
 Step 1) Create controller EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
 
