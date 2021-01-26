@@ -26,7 +26,7 @@
 
 ## Register View Helper
 
-Step 1) EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
+Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
 
 ```php
 <?php
@@ -79,7 +79,7 @@ String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u
 
 ## Register Widget (View Helper with controller and template)
 
-Step 1) Create controller EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
+Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
 
 ```php
 <?php
