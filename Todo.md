@@ -59,6 +59,9 @@ class HelloWorldViewHelper extends \Litovchenko\AirTable\ViewHelpers\AbstractVie
 Step 2) How to use?
 
 ```html
+...
+...
+...
 <h3>My ViewHelper</h3>
 
 String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u> <hr />
@@ -68,7 +71,9 @@ String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u
     <f:then>YES</f:then>
     <f:else>NO</f:else>
 </f:if>
-
+...
+...
+...
 ```
 
 
