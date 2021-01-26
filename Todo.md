@@ -108,7 +108,7 @@ class TestWidgetController extends AbstractWidgetController
 Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/TestWidget/Index.html
 
 ```html
-My widget (Result): <br />
+My Widget (Result): <br />
 {testArg1}, {testArg2}, {testArg3}
 ```
 
@@ -118,7 +118,7 @@ Step 3) How to use?
 ...
 ...
 ...
-<h3>My widget (Initialization):</h3>
+<h3>My Widget (Initialization):</h3>
 <u>
    <wgsExtMyext:Test testArg1="100" testArg2="200" testArg3="300" />
 </u>
