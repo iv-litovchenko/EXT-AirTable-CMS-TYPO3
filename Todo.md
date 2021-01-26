@@ -45,8 +45,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * @AirTable\RegisterArguments\testArg2:<string,req>
  * @AirTable\RegisterArguments\testArg3:<string>
  */
-class HelloWorldViewHelper extends Наследуемся от Litovchenko
---- \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper - в ТАЙПО 3 поменялось в каких-то версиях сделать class_alias!
+class HelloWorldViewHelper extends \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper
 {
     public function render()
     {
@@ -57,7 +56,7 @@ class HelloWorldViewHelper extends Наследуемся от Litovchenko
 }
 ```
 
-Step 2) How to use
+Step 2) How to use?
 
 ```html
 <h3>My ViewHelper</h3>
