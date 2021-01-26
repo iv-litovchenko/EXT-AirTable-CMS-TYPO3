@@ -108,7 +108,7 @@ My widget (Result): <br />
 {testArg1}, {testArg2}, {testArg3}
 ```
 
-Step 3) How to use
+Step 3) How to use?
 
 ```html
 ...
