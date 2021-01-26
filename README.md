@@ -207,7 +207,7 @@ use Litovchenko\AirTable\Controller\AbstractPageController;
  * @AirTable\Description:<Page description>
  * @AirTable\DisableAllHeaderCode:<0 || 1>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\EidAjaxActions:<indexAction> // Todo http://your-site.com/ajax/ext/[controller]/[action]/
+ * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
  * @AirTable\SubtypesExcludelist:<field1,field2,field3...> // Todo
  * @AirTable\SubtypesAddlist:<field1,field2,field3...> // Todo
  * @AirTable\Cols:<0,1|2,3,4|5>
@@ -274,7 +274,7 @@ use Litovchenko\AirTable\Controller\AbstractPageElementController;
  * @AirTable\Label:<Content element name>
  * @AirTable\Description:<Content element description>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\EidAjaxActions:<indexAction> // Todo http://your-site.com/ajax/ext/[controller]/[action]/
+ * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
  * @AirTable\Type:<Element || GridElement || Plugin> // Todo "Plugin routing support")
  * @AirTable\SubtypesExcludelist:<field1,field2,field3...> // Todo
  * @AirTable\SubtypesAddlist:<field1,field2,field3...> // Todo
