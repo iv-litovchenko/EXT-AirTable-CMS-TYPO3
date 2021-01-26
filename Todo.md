@@ -31,21 +31,14 @@ Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
 ```php
 <?php
 namespace Mynamespace\Myext\ViewHelpers;
-
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
-
+use Litovchenko\AirTable\ViewHelpers\AbstractViewHelper;
 /**
- * @AirTable\Label:<Пример хелпера Hellow world>
- * @AirTable\Description:<Вывод тектовой строки>
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed, req (Required  True || False)>
+ * @AirTable\Label:<Test Helper>
+ * @AirTable\Description:<String output based on arguments >
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed,req>
  * @AirTable\RegisterArguments\testArg2:<string,req>
- * @AirTable\RegisterArguments\testArg3:<string>
  */
-class HelloWorldViewHelper extends \Litovchenko\AirTable\ViewHelpers\AbstractViewHelper
+class HelloWorldViewHelper extends AbstractViewHelper
 {
     public function render()
     {
@@ -62,14 +55,15 @@ Step 2) How to use?
 ...
 ...
 ...
-<h3>My ViewHelper</h3>
-
-String: <u><vhsExtMyext:HelloWorld TestArg1='String 1' TestArg2='String 2' /></u> <hr />
-
-(if condition): 
-<f:if condition="{vhsExtMyext:HellowCondition(TestArg1:'1', TestArg3:'5')}"> 
-    <f:then>YES</f:then>
-    <f:else>NO</f:else>
+<h3>My View Helper</h3>
+<h4>String:</h4>
+<u>
+   <vhsExtMyext:HelloWorld testArg1='100' testArg2='200' />
+</u>
+<h4>Condition:</h4>
+<f:if condition="{vhsExtMyext:HelloWorld(testArg1:'100', testArg2:'200')}">
+   <f:then>YES</f:then>
+   <f:else>NO</f:else>
 </f:if>
 ...
 ...
