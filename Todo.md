@@ -41,9 +41,6 @@ EXT: cewrap и все что там есть!
 		#with which you have access to all variables currently available in the template, and can modify the variables
 		#currently available in the template.
 
-11
-
-
 
 180, 210, 253 (aspect), 257 auth
 
