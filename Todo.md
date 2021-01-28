@@ -22,6 +22,7 @@
 ```
 Модуль список: Для типа пмкиограм просмотреть инфо show action
 Если не заполнено поле Thumbnail Image Not Found
+Перевести на \'Thumbnail\
 
 EXT: cewrap и все что там есть!
 ```
