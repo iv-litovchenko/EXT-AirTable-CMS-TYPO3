@@ -433,6 +433,7 @@ use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
 /**
  * @AirTable\Label:<New table name>
  * @AirTable\Description:<New table description>
+ * @AirTable\DefaultListTypeRender:<0 || 1 || 2 || 3>
  */
 class NewTable extends AbstractModelCrud
 {
