@@ -18,13 +18,6 @@
 5 [page_SOBAKA_ext_SUB_air_SUB_table_SOBAKA_prop_SUB_m1_SUB_tx_SUB_marker_SUB_row_SUB_id]
 ```
 
-----------------
-```
-EXT: cewrap и все что там есть!
-```
-
-----------------
-
 
 		#Исходный текст
 		#• $this->arguments is an associative array where you will find the values for all arguments you registered previously.
