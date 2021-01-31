@@ -1090,3 +1090,6 @@ return [
 * Overriding templates of standard content elements (using the "layout" field) 
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
 * Add injection for file (picture) fields (@var \TYPO3\CMS\Extbase\Domain\Model\FileReference) - https://coderoad.ru/30414173/%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-FAL-%D0%B2-Extbase-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE
+* TYPO3 v7
+class_alias('TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper', 'TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper');
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']
