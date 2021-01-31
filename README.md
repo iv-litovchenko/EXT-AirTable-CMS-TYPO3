@@ -1088,3 +1088,5 @@ return [
 * Splitting records into storages (analogous to folders in the tree of pages) 
 * Wrapper-controller for content elements 
 * Overriding templates of standard content elements (using the "layout" field) 
+* Add a status field (off - in the cart, inactive, on - active, review, draft) 
+* Add injection for file (picture) fields (@var \TYPO3\CMS\Extbase\Domain\Model\FileReference)
