@@ -1094,3 +1094,4 @@ return [
 class_alias('TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper', 'TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper');\
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']
 * Container for the menu in the tree of pages of the site 
+* Permissions backend user (non admin!) for root page id=0;
