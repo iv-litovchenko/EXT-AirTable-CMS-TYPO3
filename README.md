@@ -353,10 +353,10 @@ Step 2) How to use?
 <h3>My View Helper</h3>
 <h4>String:</h4>
 <u>
-   <vhsExtMyext:HelloWorld testArg1='100' testArg2='200' />
+   <f:vhsExtMyext.HelloWorld testArg1='100' testArg2='200' />
 </u>
 <h4>Condition:</h4>
-<f:if condition="{vhsExtMyext:HelloWorld(testArg1:'100', testArg2:'200')}">
+<f:if condition="{f:vhsExtMyext.HelloWorld(testArg1:'100', testArg2:'200')}">
    <f:then>YES</f:then>
    <f:else>NO</f:else>
 </f:if>
@@ -409,7 +409,7 @@ Step 3) How to use?
 ...
 <h3>My Widget (Initialization):</h3>
 <u>
-   <wgsExtMyext:Test testArg1="100" testArg2="200" testArg3="300" />
+   <f:wgsExtMyext.Test testArg1="100" testArg2="200" testArg3="300" />
 </u>
 ...
 ...
