@@ -57,3 +57,41 @@ $categories = Category::whereHas('CategoryAttributes', function ($query) {
 })->get();
 https://www.digitalocean.com/community/tutorials/working-with-json-in-mysql
 ```
+
+```
+<?php
+return [
+	/*
+	'page@ext-air-table-example@prop-room-count' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Количество комнат',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'page@ext-air-table-example@prop-type_house' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Серия дома',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'page@ext-air-table-example@prop-additionally' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Дополнительно',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'node@ext-air-table-example@prop-1' => [
+		'@AirTable\Field' => 'Input',
+		'@irTable\Field\Label' => 'Название №1 (EXT ATE)',
+			'@AirTable\Field\ReadOnly' => 0
+	],
+	'node@ext-air-table-example@prop-2' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Название №2 (EXT ATE)',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'node@ext-air-table-example@prop-3' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Название №3 (EXT ATE)',
+		'@AirTable\Field\ReadOnly' => 0
+	]
+	*/
+];
+```
