@@ -55,6 +55,7 @@ $categories = Category::whereHas('CategoryAttributes', function ($query) {
     $query->where('key', '=', 'color');
     $query->where('value','=', 'blue');
 })->get();
+$entities = Entity::with('attributes.values')->get()
 https://www.digitalocean.com/community/tutorials/working-with-json-in-mysql
 ```
 
