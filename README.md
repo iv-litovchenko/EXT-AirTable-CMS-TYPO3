@@ -1095,4 +1095,4 @@ return [
 * Container for the menu in the tree of pages of the site 
 * Permissions backend user (non admin!) for root page id=0;
 * RTypeSub for "tx_data"(news > news, news > link, news > article);
-* Template, path and page for tx_data 
+* Page template (with controller), url-path (LinkHandler) for tx_data 
