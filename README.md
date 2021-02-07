@@ -560,12 +560,12 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\Show:<1>
      */
-    protected $[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
-    protected $[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
-    protected $[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
-    protected $[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
-    protected $[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
-    protected $[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
+    protected $tblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
+    protected $tblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
+    protected $tblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
+    protected $tblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
+    protected $tblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
+    protected $tblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
     
     /**
      * @AirTable\Field:<Input>
@@ -983,22 +983,22 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
- * Rel_1To1 / hasOne() / $[prefix]_tablename_row;
- * Rel_1ToM / hasMany() / $[prefix]_tablename_rows;
+ * Rel_1To1 / hasOne() / $tblref_[prefix]_tablename_row;
+ * Rel_1ToM / hasMany() / $tblref_[prefix]_tablename_rows;
    -------------------------------------------------------------------------------------------
 
- * Rel_MTo1 / belongsTo() / $[prefix]_tablename_row_id;
- * Rel_1To1_Inverse / belongsTo() / $[prefix]_tablename_row_id;
- * Rel_1ToM_Inverse / belongsTo() / $[prefix]_tablename_row_id;
+ * Rel_MTo1 / belongsTo() / $tblref_[prefix]_tablename_row_id;
+ * Rel_1To1_Inverse / belongsTo() / $tblref_[prefix]_tablename_row_id;
+ * Rel_1ToM_Inverse / belongsTo() / $tblref_[prefix]_tablename_row_id;
    -------------------------------------------------------------------------------------------
 
- * Rel_MToM / belongsToMany() / $[prefix]_tablename_rows;
- * Rel_MToM_Inverse / belongsToMany() / $[prefix]_tablename_rows;
+ * Rel_MToM / belongsToMany() / $tblref_[prefix]_tablename_rows;
+ * Rel_MToM_Inverse / belongsToMany() / $tblref_[prefix]_tablename_rows;
  * Pivot model: [Litovchenko\AirTable\Domain\Model\SysMm], pivot table: [sys_mm]
    -------------------------------------------------------------------------------------------
 
- * Rel_Poly_1To1 / morphOne() / $[prefix]_tablename_row;
- * Rel_Poly_1ToM / morphMany() / $[prefix]_tablename_rows;
+ * Rel_Poly_1To1 / morphOne() / $tblref_[prefix]_tablename_row;
+ * Rel_Poly_1ToM / morphMany() / $tblref_[prefix]_tablename_rows;
  * Rel_Poly_MToM // todo
  * Rel_Poly_1To1_Inverse // todo
  * Rel_Poly_1ToM_Inverse // todo
@@ -1027,7 +1027,7 @@ public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUs
 // C) Relationship (user function register)
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
-    return $this->refProvider('exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
+    return $this->refProvider('tblref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) Repository Pattern (getBy***)
