@@ -1091,7 +1091,6 @@ return [
 * Wrapper-controller for content elements 
 * Overriding templates of standard content elements (using the "layout" field) 
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
-* Container for the menu in the tree of pages of the site 
 * Permissions backend user (non admin!) for root page id=0;
 * RTypeSub for "tx_data"(news > news, news > link, news > article);
 * Page template (with controller), url-path (LinkHandler) for tx_data 
