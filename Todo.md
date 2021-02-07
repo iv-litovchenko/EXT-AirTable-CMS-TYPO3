@@ -28,6 +28,8 @@
 1) Названия колонок - props, attrs, tbl_, field....??
       Атрибуты относятся к дополнительной информации об объекте. 
       Свойства описывают характеристики объекта. 
+          Свойства (внутреннее). 
+	Атрибуты (внешние). 
 2) Выборка + keyBy???
 https://progi.pro/laravel-eloquent-relationship-keyby-3889587
 https://github.com/hulkur/laravel-hasmany-keyby
