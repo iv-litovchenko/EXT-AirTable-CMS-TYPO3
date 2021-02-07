@@ -502,34 +502,34 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Max:<100>
      * @AirTable\Field\Size:<24>
      */
-    protected $example_field_input;
+    protected $prop_example_field_input;
 
     /**
      * @AirTable\Field:<Text> || Text.Rte || Text.Code || Text.Table || Text.Invisible
      * @AirTable\Field\Label:<Field text>
      * @AirTable\Field\Format:<css || html || javascript || php || typoscript || xml> // Text.Code
      */
-    protected $example_field_text;
+    protected $prop_example_field_text;
 
     /**
      * @AirTable\Field:<Date> || Date.DateTime || Date.Time || Date.TimeSec || Date.Year
      * @AirTable\Field\Label:<Field date>
      */
-    protected $example_field_date;
+    protected $prop_example_field_date;
 
     /**
      * @AirTable\Field:<Media_1> || Media_1.Image || Media_1.Mix || Media_M...
      * @AirTable\Field\Label:<Media>
      * @AirTable\Field\MaxItems:<10>
      */
-    protected $example_field_media;
+    protected $prop_example_field_media;
 
     /**
      * @AirTable\Field:<Flag>
      * @AirTable\Field\Label:<Flag>
      * @AirTable\Field\Items\1:<Checked>
      */
-    protected $example_field_flag;
+    protected $prop_example_field_flag;
 
     /**
      * @AirTable\Field:<Switcher> || Switcher.Int
@@ -540,7 +540,7 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Items\2:<Two>
      * @AirTable\Field\Items\3:<Three>
      */
-    protected $example_field_switcher;
+    protected $prop_example_field_switcher;
 
     /**
      * @AirTable\Field:<Enum>
@@ -550,7 +550,7 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Items\2:<Two>
      * @AirTable\Field\Items\3:<Three>
      */
-    protected $example_field_enum;
+    protected $prop_example_field_enum;
 
     /**
      * @AirTable\Field:<Rel_1To1>
@@ -579,12 +579,12 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Show:<1> // Show field in lists
      * @AirTable\Field\OnChangeReload:<1> // Reload the form when the field value changes
      * @AirTable\Field\DisplayCondAnd\1:<FIELD:disabled:=:1>
-     * @AirTable\Field\DisplayCondAnd\2:<FIELD:example_field_flag:=:1>
+     * @AirTable\Field\DisplayCondAnd\2:<FIELD:prop_example_field_flag:=:1>
      * @AirTable\Field\DisplayCondOr\1:<FIELD:disabled:=:1>
-     * @AirTable\Field\DisplayCondOr\2:<FIELD:example_field_flag:=:1>
+     * @AirTable\Field\DisplayCondOr\2:<FIELD:prop_example_field_flag:=:1>
      * @AirTable\Field\Exclude:<1> // Todo
      */
-    protected $example_field_additional_options;
+    protected $prop_example_field_additional_options;
 
     /**
      * Changing the $TCA settings array
@@ -753,7 +753,7 @@ class ExtPages extends Pages
      * @AirTable\Field\Position\1:<extended,0>
      * @AirTable\Field\Label:<New field>
      */
-    protected $ext_myext_new_field;
+    protected $prop_ext_myext_new_field;
 
     /**
      * Changing the $TCA settings array
