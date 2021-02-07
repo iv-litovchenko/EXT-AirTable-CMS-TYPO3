@@ -42,7 +42,4 @@ public function search(Request $request){
     ])->get();
     return view('product.camera.search', ['cameras' => $cameras]);
 }
-
-
-3) Когда делаем две связи на одну и туже таблицу нужно создавать разные FK-ключи... на примере 
 ```
