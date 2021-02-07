@@ -1093,4 +1093,5 @@ return [
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
 * Permissions backend user (non admin!) for root page id=0;
 * RTypeSub for "tx_data"(news > news, news > link, news > article);
-* Page template (with controller), url-path (LinkHandler) for tx_data 
+* Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WordPress post templates)
+* Pages VS TxData (Maybe it's kindred spirits like in WordPress)???
