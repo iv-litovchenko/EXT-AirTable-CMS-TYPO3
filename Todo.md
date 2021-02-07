@@ -58,7 +58,7 @@ public function search(Request $request){
 
 
 6) Когда делаем две связи на одну и туже таблицу нужно создавать разные FK-ключи... на примере tx_marker_rows
-
+7) TYPO3 8
 ```
 
 ```
