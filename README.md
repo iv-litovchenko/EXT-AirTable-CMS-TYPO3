@@ -560,12 +560,12 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\Show:<1>
      */
-    protected $tblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": exampletable_row_id
-    protected $tblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": exampletable_row_id
-    protected $tblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": exampletable_rows
-    protected $tblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": exampletable_rows
-    protected $tblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": exampletable_row
-    protected $tblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": exampletable_row
+    protected $tblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": tblref_exampletable_row_id
+    protected $tblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": tblref_exampletable_row_id
+    protected $tblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": tblref_exampletable_rows
+    protected $tblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": tblref_exampletable_rows
+    protected $tblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": tblref_exampletable_row
+    protected $tblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": tblref_exampletable_row
     
     /**
      * @AirTable\Field:<Input>
@@ -893,15 +893,15 @@ $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 // ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
 $filter['with.10']  = [
-    'exampletable1_row_func' => function($q) {
-        $q->with('exampletable_row_id_func');
+    'tblref_exampletable1_row_func' => function($q) {
+        $q->with('tblref_exampletable_row_id_func');
         $q->where('uid','>',0);
         $q->where('pid','>',0);
     }
 ];
-$filter['with.20'] = 'exampletable2_rows_func.exampletable_row_id_func';
-$filter['with.30'] = 'exampletable3_row_id_func';
-$filter['with.40'] = 'exampletable4_rows_func';
+$filter['with.20'] = 'tblref_exampletable2_rows_func.tblref_exampletable_row_id_func';
+$filter['with.30'] = 'tblref_exampletable3_row_id_func';
+$filter['with.40'] = 'tblref_exampletable4_rows_func';
 
 // ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
 $filter['union'] = ...;
