@@ -522,7 +522,7 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Label:<Media>
      * @AirTable\Field\MaxItems:<10>
      */
-    protected $prop_example_field_media;
+    protected $propmedia_example_field_media;
 
     /**
      * @AirTable\Field:<Flag>
