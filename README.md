@@ -1091,7 +1091,8 @@ return [
 * Wrapper-controller for content elements 
 * Overriding templates of standard content elements (using the "layout" field) 
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
-* Permissions backend user (non admin!) for root page id=0;
+* Permissions backend user (non admin!) for root page id(pid)=0;
+* Create new content element "WizardItems" for root page id(pid)=0; 
 * RTypeSub for "tx_data"(news > news, news > link, news > article);
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WordPress post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WordPress)???
