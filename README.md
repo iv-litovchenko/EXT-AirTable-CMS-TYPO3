@@ -560,12 +560,12 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\Show:<1>
      */
-    protected $tblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": tblref_exampletable_row_id
-    protected $tblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": tblref_exampletable_row_id
-    protected $tblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": tblref_exampletable_rows
-    protected $tblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": tblref_exampletable_rows
-    protected $tblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": tblref_exampletable_row
-    protected $tblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": tblref_exampletable_row
+    protected $proptblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": proptblref_exampletable_row_id
+    protected $proptblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": proptblref_exampletable_row_id
+    protected $proptblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": proptblref_exampletable_rows
+    protected $proptblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": proptblref_exampletable_rows
+    protected $proptblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": proptblref_exampletable_row
+    protected $proptblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": proptblref_exampletable_row
     
     /**
      * @AirTable\Field:<Input>
@@ -893,15 +893,15 @@ $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 // ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
 $filter['with.10']  = [
-    'tblref_exampletable1_row_func' => function($q) {
-        $q->with('tblref_exampletable_row_id_func');
+    'proptblref_exampletable1_row_func' => function($q) {
+        $q->with('proptblref_exampletable_row_id_func');
         $q->where('uid','>',0);
         $q->where('pid','>',0);
     }
 ];
-$filter['with.20'] = 'tblref_exampletable2_rows_func.tblref_exampletable_row_id_func';
-$filter['with.30'] = 'tblref_exampletable3_row_id_func';
-$filter['with.40'] = 'tblref_exampletable4_rows_func';
+$filter['with.20'] = 'proptblref_exampletable2_rows_func.proptblref_exampletable_row_id_func';
+$filter['with.30'] = 'proptblref_exampletable3_row_id_func';
+$filter['with.40'] = 'proptblref_exampletable4_rows_func';
 
 // ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
 $filter['union'] = ...;
@@ -983,22 +983,22 @@ NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
- * Rel_1To1 / hasOne() / $tblref_[prefix]_tablename_row;
- * Rel_1ToM / hasMany() / $tblref_[prefix]_tablename_rows;
+ * Rel_1To1 / hasOne() / $proptblref_[prefix]_tablename_row;
+ * Rel_1ToM / hasMany() / $proptblref_[prefix]_tablename_rows;
    -------------------------------------------------------------------------------------------
 
- * Rel_MTo1 / belongsTo() / $tblref_[prefix]_tablename_row_id;
- * Rel_1To1_Inverse / belongsTo() / $tblref_[prefix]_tablename_row_id;
- * Rel_1ToM_Inverse / belongsTo() / $tblref_[prefix]_tablename_row_id;
+ * Rel_MTo1 / belongsTo() / $proptblref_[prefix]_tablename_row_id;
+ * Rel_1To1_Inverse / belongsTo() / $proptblref_[prefix]_tablename_row_id;
+ * Rel_1ToM_Inverse / belongsTo() / $proptblref_[prefix]_tablename_row_id;
    -------------------------------------------------------------------------------------------
 
- * Rel_MToM / belongsToMany() / $tblref_[prefix]_tablename_rows;
- * Rel_MToM_Inverse / belongsToMany() / $tblref_[prefix]_tablename_rows;
+ * Rel_MToM / belongsToMany() / $proptblref_[prefix]_tablename_rows;
+ * Rel_MToM_Inverse / belongsToMany() / $proptblref_[prefix]_tablename_rows;
  * Pivot model: [Litovchenko\AirTable\Domain\Model\SysMm], pivot table: [sys_mm]
    -------------------------------------------------------------------------------------------
 
- * Rel_Poly_1To1 / morphOne() / $tblref_[prefix]_tablename_row;
- * Rel_Poly_1ToM / morphMany() / $tblref_[prefix]_tablename_rows;
+ * Rel_Poly_1To1 / morphOne() / $proptblref_[prefix]_tablename_row;
+ * Rel_Poly_1ToM / morphMany() / $proptblref_[prefix]_tablename_rows;
  * Rel_Poly_MToM // todo
  * Rel_Poly_1To1_Inverse // todo
  * Rel_Poly_1ToM_Inverse // todo
@@ -1027,7 +1027,7 @@ public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUs
 // C) Relationship (user function register)
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
-    return $this->refProvider('tblref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
+    return $this->refProvider('proptblref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) Repository Pattern (getBy***)
