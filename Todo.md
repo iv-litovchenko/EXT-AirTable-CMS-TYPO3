@@ -25,7 +25,19 @@
 <f:vhsExtAirTable.EditIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
 <f:vhsExtAirTable.EditIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
 <f:vhsExtAirTable.EditIconCenter model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
-<f:vhsExtAirTable.EditIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit
+<f:vhsExtAirTable.EditIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit />
+
+	// 'defaultFieldsForNewRecord'=>['title'=>'New record']
+	// 'copyFieldsForNewRecord'=>['header']
+	// 'editFieldsOnly'=>['header','hidden','CType']
+	// 'hideNewIcon'=>1
+	// 'hideDisableIcon'=>1
+	// 'hideDeletedIcon'=>1
+	// 'hideBufferIcon'=>1
+	// 'styleLeft'=>10
+	// 'styleTop'=>10
+	// 'styleRight'=>10
+	// 'styleBottom'=>10
 
 <f:vhsExtAirTable.NewIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
 <f:vhsExtAirTable.NewIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
