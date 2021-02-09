@@ -84,3 +84,16 @@ public function search(Request $request){
     return view('product.camera.search', ['cameras' => $cameras]);
 }
 ```
+
+```
+\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName() 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath()
+if (TYPO3_MODE === 'BE')
+
+\TYPO3\CMS\Core\Configuration\ExtensionConfiguration
+$temporaryDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)
+   ->get('my_extension_key', 'myVariable');
+   
+   \TYPO3\CMS\Core\Authentication\BackendUserAuthentication 
+   \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
+   ```
