@@ -1096,3 +1096,4 @@ return [
 * RTypeSub for "tx_data"(news > news, news > link, news > article);
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WordPress post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WordPress)???
+* Modify attributes (tx_data fields TCA)
