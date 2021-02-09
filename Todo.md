@@ -46,6 +46,8 @@
 
 <f:vhsExtAirTable.AdminPanel addToFooter="1" />
 <f:vhsExtAirTable.AdminPanelNotepad />
+<f:vhsExtAirTable.VhsInfo msg="v:menu" />
+<f:vhsExtAirTable.VhsInfo msg="v:page.breadCrumb" />
 ```
 
 
