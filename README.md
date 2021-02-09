@@ -20,6 +20,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Import records Xls|Csv (module)](#import-records-xlscsv-module)
 * [Methods inside a class (extbase)](#methods-inside-a-class-extbase)
 * [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-eloquent-orm)
+* [Frontend editing](#frontend-editing)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 * [Functional development plans](#functional-development-plans)
 
@@ -558,6 +559,7 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignModel:<Mynamespace\Myext\Domain\Model\[SubFolder]\***>
      * @AirTable\Field\ForeignKey:<***>
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
+     * @AirTable\Field\ForeignWhere:< AND tx_data_category.RType=###REC_FIELD_RType### > // See "foreign_table_where"
      * @AirTable\Field\Show:<1>
      */
     protected $proptblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": proptblref_exampletable_row_id
@@ -1060,6 +1062,10 @@ if($is === true) {
     echo 'Yes';
 }
 ```
+
+## Frontend editing
+
+--
 
 ## Useful settings in "typo3conf/LocalConfiguration.php"
 
