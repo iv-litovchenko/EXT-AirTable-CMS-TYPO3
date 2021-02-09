@@ -2,7 +2,7 @@
 <?php
 
 Проверить и перенести это в документацию - новый шаблон страницы, новый элемент содержимого...
-<f:debug>{_all}</f:debug>
+<f:debug>{_all} {data.uid}</f:debug>
 <h2>Woohoo! My First TYPO3 Custom Element</h2>
 <div class=”container”>
 {data.bodytext -> f:format.html()}
