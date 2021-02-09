@@ -7,6 +7,33 @@
 <div class=”container”>
 {data.bodytext -> f:format.html()}
 </div>
+
+<f:content colPos="2" /> <!--Page content-->
+<f:content gridContainerId="{gridId}" gridColumn="1" /> <!--Gridelements content-->
+<f:content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
+
+<f:object setup="lib.tx_myext_key.test" />
+<f:marker uid="3" />
+
+<f:vhsExtAirTable.AdminPanel />
+<f:vhsExtAirTable.AdminBlockInfo text="12332" />
+
+<f:vhsExtAirTable.EditWrapStart />
+	-- content	
+<f:vhsExtAirTable.EditWrapEnd />
+
+<f:vhsExtAirTable.EditIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
+<f:vhsExtAirTable.EditIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
+<f:vhsExtAirTable.EditIconCenter model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
+<f:vhsExtAirTable.EditIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit
+
+<f:vhsExtAirTable.NewIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
+<f:vhsExtAirTable.NewIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
+<f:vhsExtAirTable.NewIconCenter model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
+<f:vhsExtAirTable.NewIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />" />
+
+<f:vhsExtAirTable.AdminPanel addToFooter="1" />
+<f:vhsExtAirTable.AdminPanelNotepad />
 ```
 
 
