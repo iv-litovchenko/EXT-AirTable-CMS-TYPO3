@@ -560,6 +560,7 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\ForeignKey:<***>
      * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
      * @AirTable\Field\ForeignWhere:< AND tx_data_category.RType=###REC_FIELD_RType### > // See "foreign_table_where"
+     * @AirTable\Field\ForeignDefaults\CType:<image> // See "foreign_record_defaults"
      * @AirTable\Field\Show:<1>
      */
     protected $proptblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": proptblref_exampletable_row_id
