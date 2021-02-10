@@ -110,4 +110,7 @@ $temporaryDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Exten
    
    \TYPO3\CMS\Core\Authentication\BackendUserAuthentication 
    \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
+   
+$GLOBALS['TSFE']->sL(); // Зависит от языка выбранного пользователем на переключателе языков во Frontend.
+$GLOBALS['LANG']->sL(); // Зависит от выбранного языка у пользователя в административной панели (и если Backend-пользователь авторизован).
    ```
