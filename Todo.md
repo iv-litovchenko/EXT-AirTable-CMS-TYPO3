@@ -1,3 +1,24 @@
+```
+1) Названия колонок - prop (+), attrs, tbl_(+), field(-)....??
+      Атрибуты относятся к дополнительной информации об объекте. 
+      Свойства описывают характеристики объекта. 
+          Свойства (внутреннее). 
+	Атрибуты (внешние). 
+2) Выборка + keyBy???
+https://progi.pro/laravel-eloquent-relationship-keyby-3889587
+https://github.com/hulkur/laravel-hasmany-keyby
+
+// searches cameras by user provided specifications
+public function search(Request $request){
+    $cameras = \App\Product::where([
+        ['attributes->processor', 'like', $request->processor],
+        ['attributes->sensor_type', 'like', $request->sensor_type],
+        ['attributes->monitor_type', 'like', $request->monitor_type],
+        ['attributes->scanning_system', 'like', $request->scanning_system]
+    ])->get();
+    return view('product.camera.search', ['cameras' => $cameras]);
+}
+
 1. -> Добавил LIKE // Проверить работу связи EAV когда убрал where (будул ли свойства правильно выводится если у сущностей одинаковые ID)
 2. Выборка Data + атрибуты + фильтрация
 3. Поля (атрибуты) в контроллерах...
@@ -7,6 +28,8 @@
 // ForeignDefaults (сделать только для tx_data!)
 
 ``` 
+
+
 <?php
 
 Проверить и перенести это в документацию - новый шаблон страницы, новый элемент содержимого...
@@ -73,27 +96,7 @@
 
 
 
-```
-1) Названия колонок - prop (+), attrs, tbl_(+), field(-)....??
-      Атрибуты относятся к дополнительной информации об объекте. 
-      Свойства описывают характеристики объекта. 
-          Свойства (внутреннее). 
-	Атрибуты (внешние). 
-2) Выборка + keyBy???
-https://progi.pro/laravel-eloquent-relationship-keyby-3889587
-https://github.com/hulkur/laravel-hasmany-keyby
 
-// searches cameras by user provided specifications
-public function search(Request $request){
-    $cameras = \App\Product::where([
-        ['attributes->processor', 'like', $request->processor],
-        ['attributes->sensor_type', 'like', $request->sensor_type],
-        ['attributes->monitor_type', 'like', $request->monitor_type],
-        ['attributes->scanning_system', 'like', $request->scanning_system]
-    ])->get();
-    return view('product.camera.search', ['cameras' => $cameras]);
-}
-```
 
 ```
 \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName() 
