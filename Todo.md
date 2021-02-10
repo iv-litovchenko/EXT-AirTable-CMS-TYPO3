@@ -27,7 +27,7 @@ public function search(Request $request){
 // ForeignWhere (сделать только для tx_data!)
 // ForeignDefaults (сделать только для tx_data!)
 
-``` 
+
 
 
 <?php
