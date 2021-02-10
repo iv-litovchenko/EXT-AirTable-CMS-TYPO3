@@ -113,4 +113,8 @@ $temporaryDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Exten
    
 $GLOBALS['TSFE']->sL(); // Зависит от языка выбранного пользователем на переключателе языков во Frontend.
 $GLOBALS['LANG']->sL(); // Зависит от выбранного языка у пользователя в административной панели (и если Backend-пользователь авторизован).
+
+https://somethingphp.com/debugging-typo3/
+\TYPO3\CMS\Core\Utility\DebugUtility::debug('VAR','HEADER','Debug');
+\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('VAR', 'FormObject:');
    ```
