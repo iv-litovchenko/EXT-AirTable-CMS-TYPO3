@@ -12,6 +12,10 @@
 // ForeignWhere (сделать только для tx_data!)
 // ForeignDefaults (сделать только для tx_data!)
 
+----------
+Как быть с TT_Content 3 типа содержимых?
+----------
+
 
 
 
