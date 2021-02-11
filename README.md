@@ -536,6 +536,8 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field:<Switcher> || Switcher.Int
      * @AirTable\Field\Label:<Switcher>
      * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
+     * @AirTable\Field\ItemsModel:<Litovchenko\AirTable\Domain\Model\Eav\SysAttributeOption>
+     * @AirTable\Field\ItemsWhere:< AND sys_attribute_option.sys_attribute_row_id=5 >
      * @AirTable\Field\Items\0:<Zero>
      * @AirTable\Field\Items\1:<One>
      * @AirTable\Field\Items\2:<Two>
@@ -547,6 +549,8 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field:<Enum>
      * @AirTable\Field\Label:<Enum>
      * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
+     * @AirTable\Field\ItemsModel:<Litovchenko\AirTable\Domain\Model\Eav\SysAttributeOption>
+     * @AirTable\Field\ItemsWhere:< AND sys_attribute_option.sys_attribute_row_id=5 >
      * @AirTable\Field\Items\1:<One>
      * @AirTable\Field\Items\2:<Two>
      * @AirTable\Field\Items\3:<Three>
