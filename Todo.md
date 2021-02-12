@@ -1,4 +1,7 @@
 ```
+shortCode // Snippet (chunk) ???
+insert varibles, insert widget
+
 https://sunel.github.io/eav/master/er.html#eav
 entities
 attributes
