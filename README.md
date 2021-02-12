@@ -916,6 +916,7 @@ $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
 // ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
+// ->wherePivot(), wherePivotIn()
 $filter['with.10']  = [
     'proptblref_exampletable1_row_func' => function($q) {
         $q->with('proptblref_exampletable_row_id_func');
