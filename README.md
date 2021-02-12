@@ -216,6 +216,14 @@ use Litovchenko\AirTable\Controller\AbstractPageController;
  */
 class NewPageController extends AbstractPageController
 {
+    /**
+     * @AirTable\Field:<Input>
+     * @AirTable\Field\Label:<The field for this page element>
+     * @AirTable\Field\Max:<100>
+     * @AirTable\Field\Size:<24>
+     */
+    protected $attr_input;
+	
     public function indexAction()
     {
         $this->view->assign('var', rand(1, 1000));
@@ -284,6 +292,14 @@ use Litovchenko\AirTable\Controller\AbstractPageElementController;
  */
 class NewElementController extends AbstractPageElementController
 {
+    /**
+     * @AirTable\Field:<Input>
+     * @AirTable\Field\Label:<The field for this content element>
+     * @AirTable\Field\Max:<100>
+     * @AirTable\Field\Size:<24>
+     */
+    protected $attr_input;
+	
     public function indexAction()
     {
         $this->view->assign('var', rand(1, 1000));
