@@ -1,6 +1,8 @@
 ```
 shortCode // Snippet (chunk) ???
 insert varibles, insert widget
+asside (include Aria)
+tx_data vs tx_page?
 
 https://sunel.github.io/eav/master/er.html#eav
 entities
