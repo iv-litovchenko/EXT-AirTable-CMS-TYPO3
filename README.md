@@ -893,6 +893,13 @@ $filter['where'] = function($q) {
     $q->orWhere('pid','<=',0);
 };
 
+$values = [
+    ['type_a', 1],
+    ['type_a', 2],
+    ['type_b', 1],
+    ['type_c', 1],
+];
+$filter['whereInMultiple'] = ['morphable_type', 'morphable_id'], $values]; // ->whereNotInMultiple()
 $filter['whereIn'] = ['uid',[1,2,3,4,5,6,7,8,9,10]]; // ->orWhereIn(), ->whereNotIn(), ->orWhereNotIn()
 $filter['whereNull'] = 'keywords'; // ->orWhereNull(), ->whereNotNull(), ->orWhereNotNull()
 $filter['whereBetween'] = ['uid',[1,1000]]; // ->whereNotBetween()
