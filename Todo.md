@@ -3,6 +3,11 @@ shortCode // Snippet (chunk) ???
 insert varibles, insert widget
 asside (include Aria)
 tx_data vs tx_page?
+https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
+https://stackoverflow.com/questions/26393581/ckeditor-4-dropdown-button-to-insert-placeholder
+https://www.abidibo.net/blog/2017/06/14/add-apps-contents-inside-ckeditor-django-resckeditor/
+https://ckeditor.com/docs/ckeditor4/latest/examples/placeholder.html#!/guide/dev_placeholder
+https://ckeditor.com/cke4/addon/placeholder_select
 
 https://sunel.github.io/eav/master/er.html#eav
 entities
