@@ -111,3 +111,142 @@ if (TYPO3_MODE === 'BE') {
    $renderer->addJsFile('EXT:my_ext_key/Resources/Public/Backend/Js/.js?'.time(), 'text/javascript');
 }
    ```
+
+
+## Зарезервированные переменные 
+Данные переменные регистрируются автоматически при каждом создании (выполнении) объекта Smarty_Cobj и поставляются в шаблон – другие любые данные можно извлечь, к примеру, через 1) {mysql_exec - поддержка исключена}, 2) создание и подключение мини-контроллера, 3) разработку дополнительного самостоятельного плагина под Smarty, 4) указание рабочей области контроллера ({controllerload} {dataload}).
+
+Примечание! Данные переменные всегда поставляются в шаблон (не зависимо от того, кэширован он или нет). Даже если у нас user_INT-плагин (условно говоря) – то данные переменные все равно будут доступны.
+
+Постоянные переменные:
+
+```
+// Дата страницы 
+{$t3_page.uid} – содержит данные о текущей странице (оставлено – и есть альтернатива {data source="page:title"}) {$t3_page.title}... {$t3_page.nav_title}... 
+
+// Дата элемента контента 
+{$t3_data.header} – содержит данные текущей выборки  
+{$t3_data.bodytext|format:"lib.myParseFunc"} 
+
+// Если вывод идет в режиме "eIdAjax" if (TYPO3_MODE_eIdAjax == 1) { return 1; } else { return 0; } 
+{$t3_mode_eIdAjax} - 1 - да, 0 - нет (в основном нужно для создания <div>-оберток, хотя лучше это делать на основе jQuery  
+```
+
+## Получить значения доступные во Fronend - аналог .data в TS 
+```
+{data source="page:title"} // – получить название страницы     
+{data source="DB:tt_content_gallery:1:title"} // – получиь из таблицы     
+{data source="DB:TSFE:lang"} // – получить из масива 
+```
+## TYPO3-константы
+```
+{env name="TYPO3_SITE_URL"} // Получить значение TYPO3-константы - (в примере обычно для используется для <base href="">)
+```
+## Подгрузка данных в шаблон
+```
+Подгрузка данных в шаблон
+[поддержка исключена] Запуск контроллера с поставкой готовых данных (рекомендуется не более 1 контроллера на шаблон)
+ 
+						<!--Подключаем контроллер-->
+						{controllerload action="form_thisSitePoworedTypo3->main" assign="result"}
+						<form id="form_thisSitePoworedTypo3" class="box style fp-form clearfix" method="post">
+							<h3 class="module-title">Проверить, работает ли этот сайт на TYPO3?</h3>
+							{if $result.powered_Yes == 1}
+								<span style="color: green;">Сайт работает на<br /> CMS TYPO3!</span>
+								<p><input id="elem_thisSitePoworedTypo3" type="submit" value="Проверить еще..."></p>
+							{elseif $result.powered_Yes == 2}
+								<span style="color: red;">Признаков использования CMS TYPO3 не найдено (возможно сайт не доступен)!</span>
+								<p><input id="elem_thisSitePoworedTypo3" type="submit" value="Проверить еще..."></p>
+							{else}
+								{if $result.error.urlAdress == 1} 
+									<p><input id="elem_thisSitePoworedTypo3_value" name="urlAdress" type="text" style="border-color: red;" placeholder="http://site-name.com/"></p>
+								{else}
+									<p><input id="elem_thisSitePoworedTypo3_value" name="urlAdress" type="text" placeholder="http://site-name.com/"></p>
+								{/if}
+								<p><input id="elem_thisSitePoworedTypo3" type="submit" value="Проверить"></p>
+							{/if}
+						</form>
+						
+						
+						
+<?php
+/**
+ *
+ * Контроллеры (по мере необходимости)
+ *
+ */
+
+class form_thisSitePoworedTypo3 {
+
+	/**
+	 * Проверка работы данного сайта на TYPO3?
+	 * Для Ajax
+	*/
+	function main($content, $conf){
+		if (isset($GLOBALS['_POST']['urlAdress'])){
+			if ($GLOBALS['_POST']['urlAdress'] == null){
+				$assignContent['error']['urlAdress'] = 1;
+			} else {
+				////////////////////////////////////////////////
+				// Делаем запрос к сайту по указанному адресу
+				////////////////////////////////////////////////
+				$urlExternal = $GLOBALS['_POST']['urlAdress'];
+				$pageContent = DBTOOLS::file_get_content($urlExternal, 3);
+				if (strstr($pageContent, "This website is powered by TYPO3 - inspiring people to share!")){
+					$assignContent['powered_Yes'] = 1;
+					
+					////////////////////////////////////////////////
+					// заносим в БД
+					////////////////////////////////////////////////
+					$insertId = DB::run()->table("tt_infoblock_content_powored_by_typo3")->insert(array(
+						"pid"		=> 44,
+						"title"		=> $urlExternal,
+						"crdate"	=> time(),
+					))->exec();
+					
+					////////////////////////////////////////////////
+					// отпраляем письмо мне на почту
+					////////////////////////////////////////////////
+					$emailAdmin = DB::run()->table("tx_web_settings")->select("email_admin")->whereIdRecord(1)->exec();
+					$emailAdmin = $emailAdmin[0]['email_admin'];
+					
+						$mail = DBTOOLS::mail("THIS_WEB_SITE_POWERED_BY_TYPO3");
+						$mail->setMarker(array("urlAdress" => $GLOBALS['_POST']['urlAdress']));
+						$mail->setTo($emailAdmin);
+						$mail->send();
+					
+				} else {
+						// Если сайт не удалось получить
+					$assignContent['powered_Yes'] = 2;
+				}
+			}
+		}
+		return $assignContent;
+	}
+	
+} 
+?> 
+[поддержка исключена] Подгрузка чистых данных
+ 
+				<!--Подгружка поставщика (мои расширения)-->
+				{dataload model="tt_infoblock_content_myext_projects->getAllExt" assign="dbArray"}
+				{foreach from=$dbArray item=myExt key=i}
+						
+						{$myExt.title}
+						
+				{/foreach}
+
+
+class tt_infoblock_content_myext_projects {
+
+		// Получить список всех проектов
+	function getAllExt($content, $conf){
+		return DB::run()->table("tt_infoblock_content_myext_projects")
+						->select('*')
+						->orderASC("sorting")
+						->exec();
+	}
+
+} 
+
+```
