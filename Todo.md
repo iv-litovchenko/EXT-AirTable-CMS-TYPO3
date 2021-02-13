@@ -62,7 +62,7 @@ attribute_options
 <f:vhsExtAirTable.NewIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />" />
 
 <f:vhsExtAirTable.AdminPanel addToFooter="1" />
-<f:vhsExtAirTable.AdminPanelNotepad />
+<f:vhsExtAirTable.AdminPanelTools />
 <f:vhsExtAirTable.VhsInfo msg="v:menu" />
 <f:vhsExtAirTable.VhsInfo msg="v:page.breadCrumb" />
 ```
