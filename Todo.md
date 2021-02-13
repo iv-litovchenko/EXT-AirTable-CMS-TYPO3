@@ -251,3 +251,20 @@ class tt_infoblock_content_myext_projects {
 ```
 
 ##2. smarty.configLoad для Smarty (нужен ли он?);
+```
+	$("div.sc_UserComment_wrap").wrap( "<div class='sc_UserComment_wrap_Ajax' style='background: url(ajax-loader.gif) no-repeat;'></div>" );
+	$('form#sc_UserComment').live('submit', function(){
+		$("input#sc_UserComment_Submit").attr("disabled", true); // input submit
+		$("div.sc_UserComment_wrap_Ajax").fadeTo( "fast" , 0.5 );
+			$.ajax({  
+				type: "POST",
+				data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
+				url: window.location.href + ((window.location.href.indexOf('?') == -1) ? '?' : '&') + "eIdAjax=100", // что добавить "?" или "&"
+				success: function(html){ 
+                    $("div.sc_UserComment_wrap").replaceWith(html);   // wrapper form
+					$("div.sc_UserComment_wrap_Ajax").stop(true,true).fadeTo( "fast" , 1 );
+                }  
+            });
+		return false;
+	}); 
+```
