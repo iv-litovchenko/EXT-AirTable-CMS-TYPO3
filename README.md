@@ -155,6 +155,13 @@ use Litovchenko\AirTable\Utility\BaseUtility;
 class NewModule1Controller extends AbstractModuleController
 {
     /**
+     * Backend Template Container
+     *
+     * @var BackendTemplateView
+     */
+    protected $defaultViewObjectName = BackendTemplateView::class;
+
+    /**
      * Main action for administration
      */
     public function indexAction()
