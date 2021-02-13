@@ -1129,7 +1129,7 @@ return [
 * Routing
 * Ajax
 * Splitting records into storages (analogous to folders in the tree of pages) 
-* Wrapper-controller for content elements 
+* Wrapper-controller for content elements (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/)
 * Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
 * Permissions backend user (non admin!) for root page id(pid)=0;
