@@ -33,7 +33,9 @@ attribute_options
 <f:marker uid="3" />
 
 <f:vhsExtAirTable.AdminPanel />
-<f:vhsExtAirTable.AdminBlockInfo text="12332" />
+<f:vhsExtAirTable.AdminBlockInfo type="warning" title="# message="#" />
+<f:vhsExtAirTable.AdminBlockInfo type="info" title="# message="#" />
+<f:vhsExtAirTable.AdminBlockInfo type="error" title="# message="#" />
 
 <f:vhsExtAirTable.EditWrapStart />
 	-- content	
