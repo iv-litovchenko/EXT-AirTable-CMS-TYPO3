@@ -248,5 +248,6 @@ class tt_infoblock_content_myext_projects {
 	}
 
 } 
-
 ```
+
+##2. smarty.configLoad для Smarty (нужен ли он?);
