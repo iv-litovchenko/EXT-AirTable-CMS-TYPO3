@@ -28,9 +28,9 @@ https://ckeditor.com/cke4/addon/placeholder_select
 <f:marker uid="3" />
 
 <f:vhsExtAirTable.AdminPanel />
-<f:vhsExtAirTable.AdminBlockInfo type="warning" title="# message="#" />
-<f:vhsExtAirTable.AdminBlockInfo type="info" title="# message="#" />
-<f:vhsExtAirTable.AdminBlockInfo type="error" title="# message="#" />
+<f:vhsExtAirTable.AdminInfobox type="warning" title="# message="#" />
+<f:vhsExtAirTable.AdminInfobox type="info" title="# message="#" />
+<f:vhsExtAirTable.AdminInfobox type="error" title="# message="#" />
 
 <f:vhsExtAirTable.EditWrapStart />
 	-- content	
