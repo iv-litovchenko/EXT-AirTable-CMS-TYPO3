@@ -9,11 +9,6 @@ https://www.abidibo.net/blog/2017/06/14/add-apps-contents-inside-ckeditor-django
 https://ckeditor.com/docs/ckeditor4/latest/examples/placeholder.html#!/guide/dev_placeholder
 https://ckeditor.com/cke4/addon/placeholder_select
 
-https://sunel.github.io/eav/master/er.html#eav
-entities
-attributes
-default_int
-attribute_options
 
 
 <?php
