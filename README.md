@@ -354,7 +354,7 @@ use Litovchenko\AirTable\ViewHelpers\AbstractViewHelper;
 /**
  * @AirTable\Label:<Test Helper>
  * @AirTable\Description:<String output based on arguments >
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || bool || array>
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || boolean || array>
  * @AirTable\RegisterArguments\testArg2:<integer,req>
  */
 class HelloWorldViewHelper extends AbstractViewHelper
@@ -403,7 +403,7 @@ use Litovchenko\AirTable\Controller\AbstractWidgetController;
  * @AirTable\Description:<The widget has a controller and a template>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
  * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || bool || array>
+ * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || boolean || array>
  * @AirTable\RegisterArguments\testArg2:<string,req>
  * @AirTable\RegisterArguments\testArg3:<string,req>
  */
