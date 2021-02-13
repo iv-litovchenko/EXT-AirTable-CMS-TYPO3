@@ -107,8 +107,8 @@ https://somethingphp.com/debugging-typo3/
 // Backend (CSS, JAVSCRIPT)
 if (TYPO3_MODE === 'BE') {
    $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-   $renderer->addCssFile('EXT:my_ext_key/Resources/Public/Backend/Css/.css?'.time());
-   $renderer->addJsFile('EXT:my_ext_key/Resources/Public/Backend/Js/.js?'.time(), 'text/javascript');
+   $renderer->addCssFile('EXT:my_ext_key/Resources/Public/Backend/Css/.css');
+   $renderer->addJsFile('EXT:my_ext_key/Resources/Public/Backend/Js/.js', 'text/javascript');
 }
    ```
 
