@@ -714,6 +714,8 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Content\Marker; // <f:marker id="5" /> 
 \Litovchenko\AirTable\Domain\Model\Content\Pages;
 \Litovchenko\AirTable\Domain\Model\Content\TtContent;
+\Litovchenko\AirTable\Domain\Model\Content\Data;
+\Litovchenko\AirTable\Domain\Model\Content\DataCategory;
 
 \Litovchenko\AirTable\Domain\Model\Fal\SysFile;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
