@@ -531,7 +531,8 @@ class NewTable extends AbstractModelCrud
     /**
      * @AirTable\Field:<Text> || Text.Rte || Text.Code || Text.Table || Text.Invisible
      * @AirTable\Field\Label:<Field text>
-     * @AirTable\Field\Format:<css || html || javascript || php || typoscript || xml> // Text.Code
+     * @AirTable\Field\Format:<css || html || javascript || php || typoscript || xml> // Text.Rte
+     * @AirTable\Field\Preset:<default || full || default || ext_myext_preset> // Text.Code
      */
     protected $prop_example_field_text;
 
