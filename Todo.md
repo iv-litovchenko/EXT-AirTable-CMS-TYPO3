@@ -26,7 +26,27 @@ https://ckeditor.com/cke4/addon/placeholder_select
 <f:content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
 
 <f:object setup="lib.tx_myext_key.test" />
+
 <f:marker uid="3" />
+<f:markerFal uid="42" as="row">
+	
+	<a href="<f:uri.image src='{row.uid_local}' />">
+		One image: <f:image src="{row.uid_local}" alt="alt text" width="100" />
+	</a>
+	
+</f:markerFal>
+
+<hr />
+
+<f:markerFal uid="45" as="rows">
+	
+	<f:for each="{rows}" as="row" key="itemkey">
+		<a href="<f:uri.image src='{row.uid_local}' />">
+			{itemkey+1}.<f:image src="{row.uid_local}" alt="alt text" width="100" /><br />
+		</a>
+	</f:for>
+	
+</f:markerFal>
 
 <f:vhsExtAirTable.AdminPanel />
 <f:vhsExtAirTable.AdminInfobox type="warning" title="#" message="#" />
