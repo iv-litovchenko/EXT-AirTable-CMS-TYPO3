@@ -217,8 +217,8 @@ use Litovchenko\AirTable\Controller\AbstractPageController;
  * @AirTable\DisableAllHeaderCode:<0 || 1>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
  * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
- * @AirTable\SubtypesExcludelist:<field1,field2,field3...> // Todo
- * @AirTable\SubtypesAddlist:<field1,field2,field3...> // Todo
+ * @AirTable\FieldsExcludeList:<subtitle,nav_title>
+ * @AirTable\FieldsAddList:<subtitle,nav_title>
  * @AirTable\Cols:<0,1|2,3,4|5>
  */
 class NewPageController extends AbstractPageController
@@ -292,9 +292,9 @@ use Litovchenko\AirTable\Controller\AbstractPageElementController;
  * @AirTable\Description:<Content element description>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
  * @AirTable\AjaxActions:<indexAction> // Todo http://your-site.com/ajax/[ext]/[controller]/[action]/ (type?=888)
+ * @AirTable\FieldsExcludeList:<header_position,date>
+ * @AirTable\FieldsAddList:<imageorient>
  * @AirTable\Type:<Element || GridElement || Plugin> // Todo "Plugin routing support")
- * @AirTable\SubtypesExcludelist:<field1,field2,field3...> // Todo
- * @AirTable\SubtypesAddlist:<field1,field2,field3...> // Todo
  * @AirTable\Cols:<1,2,3|4,5> // If @AirTable\Type:<GridElement> // EXT:gridelements
  */
 class NewElementController extends AbstractPageElementController
@@ -1157,10 +1157,6 @@ return [
 * Add a status field (off - in the cart, inactive, on - active, review, draft) 
 * Permissions backend user (non admin!) for root page id(pid)=0;
 * Create new content element "WizardItems" for root page id(pid)=0; 
-* RTypeSub for "tx_data"(news > news, news > link, news > article);
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WordPress post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WordPress)???
 * Modify attributes postBuildConfiguration() tx_data fields TCA)
-subtype_value_field
-subtypes_addlist
-subtypes_excludelist
