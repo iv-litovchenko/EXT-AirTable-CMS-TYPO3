@@ -543,10 +543,12 @@ class NewTable extends AbstractModelCrud
 
     /**
      * @AirTable\Field:<Media_1> || Media_1.Image || Media_1.Mix || Media_M...
+     * @AirTable\Field:<Fal_1> || Fal_1.Image || Fal_1.Mix || Fal_M... // Todo rename 
      * @AirTable\Field\Label:<Media>
      * @AirTable\Field\MaxItems:<10>
      */
     protected $propmedia_example_field_media;
+    protected $propfal_example_field_media; // Todo rename 
 
     /**
      * @AirTable\Field:<Flag>
