@@ -968,6 +968,24 @@ foreach ($rows as $row) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
+// SELECT EAV 
+// Entity–attribute–value
+////////////////////////////////////////////////////////////////////////////////////////
+
+$filter = [];
+$filter['select'] = ['title','RType'];
+$filter['selectAttributeAll'] = true; // attr.*' // Todo
+$filter['selectAttribute.10'] = ['attr_color'];
+$filter['selectAttribute.20'] = ['attr_email'];
+$filter['where'] = ['RType',6]; // tx_data type
+$filter['whereAttribute'] = ['attr_color', '#000000'];
+$filter['orWhereAttribute'] = ['attr_color', '#eeeeee'];
+$filter['orWhereAttribute'] = ['attr_color', '#3d0d0d'];
+$filter['orderByAttribute'] = ['attr_color', 'desc'];
+
+$rows = \Litovchenko\AirTable\Domain\Model\Content\Data::recSelect('get',$filter);
+
+////////////////////////////////////////////////////////////////////////////////////////
 // INSERT
 // ModelName::recInsert($data); // return last insert id
 ////////////////////////////////////////////////////////////////////////////////////////
