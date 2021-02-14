@@ -708,14 +708,10 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-standard-crud-models.png)
 
 ```php
-// A static block of content on a page with the ability to edit
-// Step 1) Create an entry in the model "Marker"
-// Step 2) Display the created entry in the desired place in the template
-\Litovchenko\AirTable\Domain\Model\Content\Marker; // <f:marker id="5" /> 
-\Litovchenko\AirTable\Domain\Model\Content\Pages;
-\Litovchenko\AirTable\Domain\Model\Content\TtContent;
 \Litovchenko\AirTable\Domain\Model\Content\Data;
 \Litovchenko\AirTable\Domain\Model\Content\DataCategory;
+\Litovchenko\AirTable\Domain\Model\Content\Pages;
+\Litovchenko\AirTable\Domain\Model\Content\TtContent;
 
 \Litovchenko\AirTable\Domain\Model\Fal\SysFile;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
