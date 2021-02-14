@@ -3,8 +3,10 @@
 2) insert widget  (magento)
 3) asside (include Aria)
 4) tx_data vs tx_page?
+5) WW маршрутизация
 
 https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
+https://akilli.github.io/ckeditor4-build-classic/demo/
 
 
 
