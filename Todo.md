@@ -11,6 +11,48 @@ https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
 https://akilli.github.io/ckeditor4-build-classic/demo/
 
 
+lib.trainingMenuCategoryTourism = USER
+lib.trainingMenuCategoryTourism {
+userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+extensionName = Ccitrainings
+pluginName = Ccitrainings
+vendorName = T3Dev
+switchableControllerActions {
+Training {
+// menuAction
+1 = menu
+}
+}
+settings < plugin.tx_ccitrainings
+settings {
+category = 4
+detailPage = 67
+pid = 70
+}
+}
+
+<f:for each="{mainnavigation}" as="mainnavigationItem">
+<f:cObject typoscriptObjectPath="lib.trainingMenuCategoryTourism" />
+</f:for>
+ 
+Это выводить пункты меню из любых таблиц
+ 
+В экстешне делаешь menuAction и темплейт к нему
+ 
+и выводишь что тебе надо
+ 
+<ul>
+<f:for each="{trainings}" as="training">
+<li>
+<f:link.action action="show" controller="Training" arguments="{training: '{training}' }" pageUid="{detailPage}" title="{training.title}">
+{training.title}
+</f:link.action>
+</li>
+</f:for>
+</ul>
+
+https://stackoverflow.com/questions/40706825/typo3-sys-category-menu
+
 
 <?php
 
