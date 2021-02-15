@@ -149,6 +149,7 @@ use Litovchenko\AirTable\Utility\BaseUtility;
 /**
  * @AirTable\Label:<Module 1>
  * @AirTable\Description:<Module 1 description>
+ * @AirTable\AjaxActions:<indexAction> // Todo
  * @AirTable\Group:<web || file || user || help || content || tools || ext> // Todo "invisible"
  * @AirTable\Position:<100>
  */
@@ -191,9 +192,9 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 
 <f:be.link route="web_ts" parameters="{id: 92}">Go to web_ts</f:be.link><br />
 
-<f:be.link route="ext_MyextNewm(!lower case)odule2" parameters="{arg: 'val'}">Go to Module 2</f:be.link><br />
+<f:be.link route="routeExtMyext.NewModule2.Index" parameters="{test: 92}">Go to Module 2</f:be.link><br />
 
-<f:be.link route="ext_MyextNewm(!lower case)odule3" parameters="{arg: 'val'}">Go to Module 3</f:be.link><br />
+<f:be.link route="routeExtMyext.NewModule3.Index" parameters="{test: 92}">Go to Module 3</f:be.link><br />
 
 <f:link.action action="edit" class="btn btn-default btn-sm">
 	Module 1 (action "Edit")
