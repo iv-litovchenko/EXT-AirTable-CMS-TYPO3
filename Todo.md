@@ -9,6 +9,9 @@
 5) Dru paragrahs
 6) WW маршрутизация
 
+https://www.youtube.com/c/IvanAbramenko/featured
+https://www.youtube.com/watch?v=kIjepXxLjQM
+
 
 https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
 https://akilli.github.io/ckeditor4-build-classic/demo/
