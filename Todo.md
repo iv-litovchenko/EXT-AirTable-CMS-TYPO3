@@ -1,6 +1,7 @@
 ```
 6) WW маршрутизация
 https://viewhelpers.fluidtypo3.org/
+https://extensions.typo3.org/extension/nsb_cat2menu/
 
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
