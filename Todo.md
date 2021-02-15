@@ -1,11 +1,14 @@
 ```
 1) shortCode // Snippet (chunk) // insert varibles (magento)
 1.1) insert varible pages [[###count1###]]p
+1.2) insert block id (block template)
+1.3) регионы
 2) insert widget  (magento)
 3) asside (include Aria)
 4) tx_data vs tx_page?
 5) Dru paragrahs
 6) WW маршрутизация
+
 
 https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
 https://akilli.github.io/ckeditor4-build-classic/demo/
