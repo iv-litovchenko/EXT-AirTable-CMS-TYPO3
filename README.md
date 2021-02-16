@@ -80,6 +80,11 @@ EXT:myext/Resources/Private/
 EXT:myext/Resources/Private/Language/Localling.Module.[Name].xlf
 EXT:myext/Resources/Private/Language/Localling.Module-Section.[Name].xlf
 
+// Todo
+// Rename template path to -> 
+// EXT:myext/Resources/Private/Templates/_Partial/
+// EXT:myext/Resources/Private/Templates/Pages.Page404.Index.html
+// EXT:myext/Resources/Private/Templates/Pages.PageDefault.Index.html
 EXT:myext/Resources/Private/Partials/[*].html
 EXT:myext/Resources/Private/Partials/Footer.html
 EXT:myext/Resources/Private/Partials/Header.html
