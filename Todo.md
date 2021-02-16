@@ -60,6 +60,14 @@ pid = 70
 {data.bodytext -> f:format.html()}
 </div>
 
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:if condition="{v:page.info(field: 'uid')} == '21'">
+    <f:then>
+        Shows only if page ID equals 21.
+    </f:then>
+</f:if>
+
 <f:content colPos="2" /> <!--Page content-->
 <f:content gridContainerId="{gridId}" gridColumn="1" /> <!--Gridelements content-->
 <f:content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
