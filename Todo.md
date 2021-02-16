@@ -1,7 +1,7 @@
 ```
 6) WW маршрутизация
 https://viewhelpers.fluidtypo3.org/
-https://extensions.typo3.org/extension/nsb_cat2menu/
+
 
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
@@ -51,7 +51,7 @@ pid = 70
 </f:for>
 </ul>
 
-https://stackoverflow.com/questions/40706825/typo3-sys-category-menu
+
 
 
 <?php
