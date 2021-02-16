@@ -1173,3 +1173,4 @@ return [
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Modify attributes postBuildConfiguration() TxData fields TCA)
+* Компоненты Laravel
