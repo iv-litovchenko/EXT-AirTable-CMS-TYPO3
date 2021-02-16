@@ -1173,4 +1173,5 @@ return [
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Modify attributes postBuildConfiguration() TxData fields TCA)
+* http://www.typo3blog.ru/blog/kak-sozdat-fal-filereference-v-kontrollere-i-dobavit-ee-v-extbase-model/
 * Компоненты Laravel
