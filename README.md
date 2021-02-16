@@ -1175,3 +1175,6 @@ return [
 * Modify attributes postBuildConfiguration() TxData fields TCA)
 * http://www.typo3blog.ru/blog/kak-sozdat-fal-filereference-v-kontrollere-i-dobavit-ee-v-extbase-model/
 * Компоненты Laravel
+* EXT:gridelements
+  * https://extensions.typo3.org/extension/t3ddy/ 
+  * https://extensions.typo3.org/extension/container/
