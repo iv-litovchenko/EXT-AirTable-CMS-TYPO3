@@ -1178,7 +1178,7 @@ return [
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * http://www.typo3blog.ru/blog/kak-sozdat-fal-filereference-v-kontrollere-i-dobavit-ee-v-extbase-model/
 * Компоненты Laravel
-* Категоризация файлов (идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц)
+* Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * EXT:gridelements
   * https://extensions.typo3.org/extension/t3ddy/ 
   * https://extensions.typo3.org/extension/container/
