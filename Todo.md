@@ -143,9 +143,6 @@ pid = 70
 		#currently available in the template.
 
 
-180, 210, 253 (aspect), 257 auth
-
-
 
 
 
