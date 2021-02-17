@@ -243,3 +243,43 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
             'storeLastActiveTab' => $storeLastActiveTab,
         ]);
 ```
+
+## Mail
+```
+$email = GeneralUtility::makeInstance(MailMessage::class)
+->to(new Address('kasperYYYY@typo3.org'), new Address('benni@typo3.org', 'Benni Mack'))
+->subject('This is an example email')
+->text('This is the plain-text variant')
+->html('Hello Benni.
+Enjoy a HTML-readable email. We love TYPO3.');
+
+$email->send();
+
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][700] = 'EXT:my_site_extension/Resources/Private/Templates/Email';
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths'][700] = 'EXT:my_site_extension/Resources/Private/Layouts';
+
+$email
+    ->to('contact@acme.com')
+    ->from(new Address('jeremy@acme.com', 'Jeremy'))
+    ->subject('TYPO3 loves you - here is why')
+    ->setFormat('html') // only HTML mail
+    ->setTemplate('TipsAndTricks')
+    ->assign('mySecretIngredient', 'Tomato and TypoScript');
+GeneralUtility::makeInstance(Mailer::class)->send($email);
+
+<f:section name="Subject"> New Login at "{typo3.sitename}"</f:section>
+
+
+<f:asset.css identifier="identifier123" href="EXT:my_ext/Resources/Public/Css/foo.css" />
+<f:asset.css identifier="identifier123">
+    .foo { color: black; }
+</f:asset.css>
+
+<f:asset.script identifier="identifier123" src="EXT:my_ext/Resources/Public/JavaScript/foo.js" />
+<f:asset.script identifier="identifier123">
+    alert('hello world');
+</f:asset.script>
+
+GeneralUtility::makeInstance(AssetCollector::class)
+->addJavaScript('my_ext_foo', 'EXT:my_ext/Resources/Public/JavaScript/foo.js', ['data
+```
