@@ -297,13 +297,18 @@ GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
 ```
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
-
+https://www.motions-media.de/2013/01/21/typo3-extbase-additionalheaderdata/
+https://t3terminal.com/
 https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
 https://www.typo3lexikon.de/typo3-tutorials/core/pagerenderer.html
 https://gist.github.com/hhoechtl/c1e22caf82e79b026d35
+https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
+https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
+https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
+https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
 
 // Log message
 $logMessage = 'Everything went fine.';
