@@ -81,12 +81,10 @@ EXT:myext/Resources/Private/
 
 // Todo
 // Rename template path to -> 
-// EXT:myext/Resources/Private/Templates/_Partial/
 // EXT:myext/Resources/Private/Templates/Pages.Page404.Index.html
 // EXT:myext/Resources/Private/Templates/Pages.PageDefault.Index.html
-EXT:myext/Resources/Private/Partials/[*].html
-EXT:myext/Resources/Private/Partials/Footer.html
-EXT:myext/Resources/Private/Partials/Header.html
+EXT:myext/Resources/Private/Templates/_Layouts/
+EXT:myext/Resources/Private/Templates/_Partial/
 EXT:myext/Resources/Private/Templates/Modules/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Pages/[*]/Index.html
 EXT:myext/Resources/Private/Templates/PagesElements/[*]/Index.html
