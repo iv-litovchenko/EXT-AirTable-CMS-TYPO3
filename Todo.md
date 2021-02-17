@@ -1,6 +1,7 @@
 ```
 https://viewhelpers.fluidtypo3.org/
 
+https://speakerdeck.com/s2b/fluid-components-in-production?slide=13
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
 
