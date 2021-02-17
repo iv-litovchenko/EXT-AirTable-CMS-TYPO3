@@ -226,3 +226,20 @@ if (TYPO3_MODE === 'BE') {
 		return false;
 	}); 
 ```
+
+```
+
+use TYPO3\CMS\Fluid\View\StandaloneView;
+        $templatePath = ExtensionManagementUtility::extPath('backend')
+            . 'Resources/Private/Templates/DocumentTemplate/';
+        $view = GeneralUtility::makeInstance(StandaloneView::class);
+        $view->setTemplatePathAndFilename($templatePath . ($collapsible ? 'Collapse.html' : 'Tabs.html'));
+        $view->setPartialRootPaths([$templatePath . 'Partials']);
+        $view->assignMultiple([
+            'id' => 'DTM-' . GeneralUtility::shortMD5($domId),
+            'items' => $menuItems,
+            'defaultTabIndex' => $defaultTabIndex,
+            'wrapContent' => $wrapContent,
+            'storeLastActiveTab' => $storeLastActiveTab,
+        ]);
+```
