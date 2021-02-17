@@ -54,6 +54,7 @@ If you are working in versions 7, 8 and you need "typo3/install.php" - for this 
 
 ```
 EXT:myext/Classes/Controller/
+EXT:myext/Classes/Controller/Modules/_.txt // Name section
 EXT:myext/Classes/Controller/Modules/[*]Controller.php
 EXT:myext/Classes/Controller/Pages/[*]Controller.php
 EXT:myext/Classes/Controller/PagesElements/[*]Controller.php
@@ -77,8 +78,6 @@ EXT:myext/Configuration/TypoScript/IncFrontend/constants.ts
 EXT:myext/Configuration/TypoScript/IncFrontend/setup.ts
 
 EXT:myext/Resources/Private/
-EXT:myext/Resources/Private/Language/Localling.Module.[Name].xlf
-EXT:myext/Resources/Private/Language/Localling.Module-Section.[Name].xlf
 
 // Todo
 // Rename template path to -> 
