@@ -280,3 +280,23 @@ GeneralUtility::makeInstance(Mailer::class)->send($email);
 GeneralUtility::makeInstance(AssetCollector::class)
 ->addJavaScript('my_ext_foo', 'EXT:my_ext/Resources/Public/JavaScript/foo.js', ['data
 ```
+
+```
+$cacheManager = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class);
+$cacheManager->flushCachesInGroupByTags('pages', [ 'pageId_'.$pid ]);
+
+$cacheManager = $this->objectManager->get(\TYPO3\CMS\Extbase\Service\CacheService::class);
+$cacheManager->clearPageCache([1,2,3]);
+
+$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Extbase\Object\ObjectManager::class );
+GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
+    ->flushCachesInGroupByTags('pages', [ 'pageId_'.$id ]);
+    
+    
+    $this->cacheService->clearPageCache([$pageIds]);
+```
+
+https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
+https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
+https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
+https://gist.github.com/hhoechtl/c1e22caf82e79b026d35
