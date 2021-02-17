@@ -301,6 +301,7 @@ https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
 https://www.motions-media.de/2013/01/21/typo3-extbase-additionalheaderdata/
 https://t3terminal.com/
 https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
+https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
