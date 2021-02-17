@@ -302,3 +302,12 @@ https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
 https://www.typo3lexikon.de/typo3-tutorials/core/pagerenderer.html
 https://gist.github.com/hhoechtl/c1e22caf82e79b026d35
+
+// Log message
+$logMessage = 'Everything went fine.';
+// Option extension key / module name
+$extKey = 'my_extension';
+// Error-level: 0 = message, 1 = error (user problem), 2 = System Error (which should not happen), 3 = security notice (admin)
+$errorLevel = 0;
+// Write sys_log using \TYPO3\CMS\Core\Utility\GeneralUtility::sysLog
+$GLOBALS['BE_USER']->simplelog($logMessage, $extKey, $errorLevel);
