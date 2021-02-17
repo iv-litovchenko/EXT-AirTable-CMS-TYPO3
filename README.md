@@ -1181,7 +1181,7 @@ return [
 * EXT:gridelements
   * https://extensions.typo3.org/extension/t3ddy/ 
   * https://extensions.typo3.org/extension/container/
-* EditIcons для меню "lib.custommenu = HMENU"
+* EditIcons для меню "lib.custommenu = HMENU" (будет еще 1 класс <f:EditIconOnlyHover(Abs)> - показать кнопки только при наведении на объект)
 # ************************
 # CUSTOM MENU
 # ************************
