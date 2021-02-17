@@ -295,6 +295,8 @@ GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
     
     $this->cacheService->clearPageCache([$pageIds]);
 ```
+https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
+https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
 
 https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
