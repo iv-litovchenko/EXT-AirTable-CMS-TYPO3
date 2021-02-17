@@ -297,6 +297,7 @@ GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
 ```
 
 https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
 https://gist.github.com/hhoechtl/c1e22caf82e79b026d35
