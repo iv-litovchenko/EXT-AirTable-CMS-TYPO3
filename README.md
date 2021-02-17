@@ -156,7 +156,7 @@ use Litovchenko\AirTable\Utility\BaseUtility;
  * @AirTable\Description:<Module 1 description>
  * @AirTable\AjaxActions:<indexAction> // Todo
  * @AirTable\Access:<user,group,admin,systemMaintainer>
- * @AirTable\Section:<web || file || user || help || content || tools || ext> // Todo "invisible"
+ * @AirTable\Section:<web || file || user || help || content || tools || ext || sec_ext_myext> // Todo "invisible"
  * @AirTable\Position:<100>
  */
 class NewModule1Controller extends AbstractModuleController
