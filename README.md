@@ -1181,3 +1181,20 @@ return [
 * EXT:gridelements
   * https://extensions.typo3.org/extension/t3ddy/ 
   * https://extensions.typo3.org/extension/container/
+* EditIcons для меню "lib.custommenu = HMENU"
+# ************************
+# CUSTOM MENU
+# ************************
+lib.custommenu = HMENU
+lib.custommenu {
+   # special = userfunction
+   # special.userFunc = Vendor\MyExtension\Userfuncs\CustomMenu->makeMenuArray
+
+   1 = TMENU
+   1.wrap = <ul class="level-1">|</ul>
+   1.NO = 1
+   1.NO {
+      wrapItemAndSub = <li>|</li>
+	  wrapItemAndSub.stdWrap.editPanel = 1
+	  wrapItemAndSub.stdWrap.editPanel.tableName = pages
+   }
