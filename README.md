@@ -469,6 +469,7 @@ class NewTable extends AbstractModelCrud
     use \Litovchenko\AirTable\Domain\Model\Traits\AltTitle;
     use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
     use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
+    use \Litovchenko\AirTable\Domain\Model\Traits\Status; // Or "Disabled, Deleted"
     use \Litovchenko\AirTable\Domain\Model\Traits\Sorting;
     use \Litovchenko\AirTable\Domain\Model\Traits\DateCreate;
     use \Litovchenko\AirTable\Domain\Model\Traits\DateUpdate;
