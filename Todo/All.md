@@ -1,6 +1,7 @@
 ```
 Просмотреть библиотеки и функции в репозиториях для Extbase...
 
+https://usetypo3.com/
 https://viewhelpers.fluidtypo3.org/
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
@@ -23,14 +24,6 @@ https://akilli.github.io/ckeditor4-build-classic/demo/
 	#• $this->templateVariableContainer is an instance of TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer,
 	#with which you have access to all variables currently available in the template, and can modify the variables
 	#currently available in the template.
-
-
-
-   
-
-
-
-
 
 Зарезервированные переменные
 
@@ -78,26 +71,7 @@ TYPO3-константы
 		return false;
 	}); 
 
-
-use TYPO3\CMS\Fluid\View\StandaloneView;
-        $templatePath = ExtensionManagementUtility::extPath('backend')
-            . 'Resources/Private/Templates/DocumentTemplate/';
-        $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setTemplatePathAndFilename($templatePath . ($collapsible ? 'Collapse.html' : 'Tabs.html'));
-        $view->setPartialRootPaths([$templatePath . 'Partials']);
-        $view->assignMultiple([
-            'id' => 'DTM-' . GeneralUtility::shortMD5($domId),
-            'items' => $menuItems,
-            'defaultTabIndex' => $defaultTabIndex,
-            'wrapContent' => $wrapContent,
-            'storeLastActiveTab' => $storeLastActiveTab,
-        ]);
-
-
 <f:section name="Subject"> New Login at "{typo3.sitename}"</f:section>
-
-
-
 
 https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
 https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
@@ -107,19 +81,10 @@ https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
 https://tmp.daniel-siepmann.de/events/t3cv19/workshop-extension/index.html#
 https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/extbase-flashmessages
-
-
 https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
 https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
 https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
 https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
-
-
-
-
-
-
-
 
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 use Spatie\RouteAttributes\Attributes\Get;
