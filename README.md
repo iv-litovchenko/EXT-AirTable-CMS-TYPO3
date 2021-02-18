@@ -1258,6 +1258,7 @@ return [
   * https://extensions.typo3.org/extension/t3ddy/ 
   * https://extensions.typo3.org/extension/container/
 * EditIcons для меню "lib.custommenu = HMENU" (будет еще 1 класс <f:EditIconOnlyHover(Abs)> - показать кнопки только при наведении на объект)
+```
 # ************************
 # CUSTOM MENU
 # ************************
@@ -1274,3 +1275,4 @@ lib.custommenu {
 	  wrapItemAndSub.stdWrap.editPanel = 1
 	  wrapItemAndSub.stdWrap.editPanel.tableName = pages
    }
+```
