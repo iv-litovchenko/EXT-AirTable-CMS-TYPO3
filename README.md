@@ -354,8 +354,67 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 
 ## Additional View Helper
 
+### Content
 ```
----
+<f:vhsExtAirTable.content colPos="2" /> <!--Page content-->
+<f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" /> <!--Gridelements content-->
+<f:vhsExtAirTable.content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
+```
+
+### Object
+```
+<f:vhsExtAirTable.object setup="lib.tx_myext.menu" />
+<f:vhsExtAirTable.object setup="lib.tx_myext.breadCrumb" />
+```
+
+### Marker
+```
+<f:vhsExtAirTable.marker uid="3" /> <!--Input, Text, Text.Rte-->
+
+<f:vhsExtAirTable.markerMedia uid="45" as="row || rows">
+  <f:for each="{rows}" as="row" key="itemkey">
+    <a href="<f:uri.image src='{row.uid_local}' />">
+      {itemkey+1}.<f:image src="{row.uid_local}" alt="alt text" width="100" /><br />
+    </a>
+  </f:for>
+</f:vhsExtAirTable.markerMedia>
+```
+
+### For administrator 
+```
+<f:vhsExtAirTable.adminPanel isFooter="0 || 1" />
+<f:vhsExtAirTable.adminPanelTools />
+
+<f:vhsExtAirTable.adminInfobox title="Infobox" type="warning || info || error"> --- site admin content  --- </f:vhsExtAirTable.adminInfobox>
+<f:vhsExtAirTable.editWrap> --- site content --- </f:vhsExtAirTable.editWrap>
+
+<f:vhsExtAirTable.vhsInfo msg="v:menu" />
+<f:vhsExtAirTable.vhsInfo msg="v:page.breadCrumb" />
+```
+
+### For administrator (editor buttons)
+```
+<f:vhsExtAirTable.editIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
+<f:vhsExtAirTable.editIconInline model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
+<f:vhsExtAirTable.editIconCenter model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
+<f:vhsExtAirTable.editIconAbs model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
+
+	// 'defaultFieldsForNewRecord'=>['title'=>'New record']
+	// 'copyFieldsForNewRecord'=>['header']
+	// 'editFieldsOnly'=>['header','hidden','CType']
+	// 'hideNewIcon'=>1
+	// 'hideDisableIcon'=>1
+	// 'hideDeletedIcon'=>1
+	// 'hideBufferIcon'=>1
+	// 'styleLeft'=>10
+	// 'styleTop'=>10
+	// 'styleRight'=>10
+	// 'styleBottom'=>10
+
+<f:vhsExtAirTable.newIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="200" title="New" />
+<f:vhsExtAirTable.newIconInline model="Pages || TtContent || Data || Model" pid="200" title="New" />
+<f:vhsExtAirTable.newIconCenter model="Pages || TtContent || Data || Model" pid="200" title="New" />
+<f:vhsExtAirTable.newIconAbs model="Pages || TtContent || Data || Model" pid="200" title="New" />
 ```
 
 ## Register View Helper
