@@ -62,61 +62,6 @@ pid = 70
     </f:then>
 </f:if>
 
-<f:content colPos="2" /> <!--Page content-->
-<f:content gridContainerId="{gridId}" gridColumn="1" /> <!--Gridelements content-->
-<f:content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
-
-<f:object setup="lib.tx_myext_key.test" />
-
-
-<hr />
-<f:marker uid="3" /> <!--Input, Text, Text.Rte-->
-<f:markerMedia uid="45" as="row || rows">
-	
-	<f:for each="{rows}" as="row" key="itemkey">
-		<a href="<f:uri.image src='{row.uid_local}' />">
-			{itemkey+1}.<f:image src="{row.uid_local}" alt="alt text" width="100" /><br />
-		</a>
-	</f:for>
-	
-</f:markerMedia>
-
-<f:vhsExtAirTable.AdminPanel />
-
-<f:vhsExtAirTable.AdminInfobox title="AdminInfobox" type="warning || info || error">
---- site admin content  ---
-</f:vhsExtAirTable.AdminInfobox> 
-
-<f:vhsExtAirTable.EditWrap>
---- site content ---
-</f:vhsExtAirTable.EditWrap>
-
-<f:vhsExtAirTable.EditIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
-<f:vhsExtAirTable.EditIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
-<f:vhsExtAirTable.EditIconCenter model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
-<f:vhsExtAirTable.EditIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
-
-	// 'defaultFieldsForNewRecord'=>['title'=>'New record']
-	// 'copyFieldsForNewRecord'=>['header']
-	// 'editFieldsOnly'=>['header','hidden','CType']
-	// 'hideNewIcon'=>1
-	// 'hideDisableIcon'=>1
-	// 'hideDeletedIcon'=>1
-	// 'hideBufferIcon'=>1
-	// 'styleLeft'=>10
-	// 'styleTop'=>10
-	// 'styleRight'=>10
-	// 'styleBottom'=>10
-
-<f:vhsExtAirTable.NewIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
-<f:vhsExtAirTable.NewIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
-<f:vhsExtAirTable.NewIconCenter model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
-<f:vhsExtAirTable.NewIconAbs model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="186" title="195" />
-
-<f:vhsExtAirTable.AdminPanel addToFooter="1" />
-<f:vhsExtAirTable.AdminPanelTools />
-<f:vhsExtAirTable.VhsInfo msg="v:menu" />
-<f:vhsExtAirTable.VhsInfo msg="v:page.breadCrumb" />
 ```
 
 
