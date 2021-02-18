@@ -903,6 +903,9 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 ```php
 https://extensions.typo3.org/extension/t3helpers/
 
+class ExtbaseApi{}
+
+mail()
 runHelper
 getSiteConfig, getTsConfig, getExtConfig
 getData, getPage
