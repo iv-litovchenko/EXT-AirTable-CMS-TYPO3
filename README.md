@@ -369,8 +369,11 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 
 ### Marker
 ```
-<f:vhsExtAirTable.marker uid="3" /> <!--Input, Text, Text.Rte-->
+<!--Input, Text, Text.Rte, Text.Code.Html, Text.Code.TypoScript-->
+<f:vhsExtAirTable.marker uid="3" />
 
+
+<!--Media_1, Media_M-->
 <f:vhsExtAirTable.markerMedia uid="45" as="row || rows">
   <f:for each="{rows}" as="row" key="itemkey">
     <a href="<f:uri.image src='{row.uid_local}' />">
@@ -390,31 +393,31 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 
 <f:vhsExtAirTable.vhsInfo msg="v:menu" />
 <f:vhsExtAirTable.vhsInfo msg="v:page.breadCrumb" />
-```
 
-### For administrator (editor buttons)
-```
-<f:vhsExtAirTable.editIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
+<f:vhsExtAirTable.editIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="100" title="Edit" />
 <f:vhsExtAirTable.editIconInline model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
 <f:vhsExtAirTable.editIconCenter model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
 <f:vhsExtAirTable.editIconAbs model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
-
-	// 'defaultFieldsForNewRecord'=>['title'=>'New record']
-	// 'copyFieldsForNewRecord'=>['header']
-	// 'editFieldsOnly'=>['header','hidden','CType']
-	// 'hideNewIcon'=>1
-	// 'hideDisableIcon'=>1
-	// 'hideDeletedIcon'=>1
-	// 'hideBufferIcon'=>1
-	// 'styleLeft'=>10
-	// 'styleTop'=>10
-	// 'styleRight'=>10
-	// 'styleBottom'=>10
 
 <f:vhsExtAirTable.newIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="200" title="New" />
 <f:vhsExtAirTable.newIconInline model="Pages || TtContent || Data || Model" pid="200" title="New" />
 <f:vhsExtAirTable.newIconCenter model="Pages || TtContent || Data || Model" pid="200" title="New" />
 <f:vhsExtAirTable.newIconAbs model="Pages || TtContent || Data || Model" pid="200" title="New" />
+
+<!--editIcon & newIcon options-->
+<f:vhsExtAirTable.editIcon ...
+  defaultFieldsForNewRecord="{title:'New record',nav_title:'New record'}"
+  copyFieldsForNewRecord="header,CType"
+  editFieldsOnly="header,CType"
+  hideNewIcon="10"
+  hideDisableIcon="10"
+  hideDeletedIcon="10"
+  hideBufferIcon="10"
+  styleLeft="10" <!--only for newIconAbs-->
+  styleTop="10" <!--only for newIconAbs-->
+  styleRight="10" <!--only for newIconAbs-->
+  styleBottom="10" <!--only for newIconAbs-->
+/>
 ```
 
 ## Register View Helper
