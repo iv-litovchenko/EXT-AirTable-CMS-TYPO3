@@ -54,13 +54,6 @@ pid = 70
 
 <?php
 
-Проверить и перенести это в документацию - новый шаблон страницы, новый элемент содержимого...
-<f:debug title="My Title" inline="true">{_all || data}</f:debug>
-<h2>Woohoo! My First TYPO3 Custom Element</h2>
-<div class="container">
-{data.bodytext -> f:format.html()}
-</div>
-
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <f:if condition="{v:page.info(field: 'uid')} == '21'">
