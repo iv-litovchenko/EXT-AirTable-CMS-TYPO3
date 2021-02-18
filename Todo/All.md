@@ -1,6 +1,7 @@
 ```
 Просмотреть библиотеки и функции в репозиториях для Extbase...
 
+https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
 https://usetypo3.com/
 https://viewhelpers.fluidtypo3.org/
 https://www.youtube.com/c/IvanAbramenko/featured
