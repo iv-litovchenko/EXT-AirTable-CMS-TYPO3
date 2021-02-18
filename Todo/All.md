@@ -174,8 +174,8 @@ https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
-https://www.typo3lexikon.de/typo3-tutorials/core/pagerenderer.html
-https://gist.github.com/hhoechtl/c1e22caf82e79b026d35
+
+
 https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
 https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
 https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
