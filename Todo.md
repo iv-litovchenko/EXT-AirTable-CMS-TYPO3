@@ -84,16 +84,12 @@ pid = 70
 <f:vhsExtAirTable.AdminPanel />
 
 <f:vhsExtAirTable.AdminInfobox title="AdminInfobox" type="warning || info || error">
-
 --- site admin content  ---
-
 </f:vhsExtAirTable.AdminInfobox> 
 
-<f:vhsExtAirTable.EditWrapStart />
-
--- content --
-
-<f:vhsExtAirTable.EditWrapEnd />
+<f:vhsExtAirTable.EditWrap>
+--- site content ---
+</f:vhsExtAirTable.EditWrap>
 
 <f:vhsExtAirTable.EditIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
 <f:vhsExtAirTable.EditIconInline model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="#" title="Edit" />
