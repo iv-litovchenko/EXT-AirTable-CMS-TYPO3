@@ -226,7 +226,7 @@ GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
     
     
     $this->cacheService->clearPageCache([$pageIds]);
-```
+
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
 https://www.motions-media.de/2013/01/21/typo3-extbase-additionalheaderdata/
@@ -251,3 +251,4 @@ $extKey = 'my_extension';
 $errorLevel = 0;
 // Write sys_log using \TYPO3\CMS\Core\Utility\GeneralUtility::sysLog
 $GLOBALS['BE_USER']->simplelog($logMessage, $extKey, $errorLevel);
+```
