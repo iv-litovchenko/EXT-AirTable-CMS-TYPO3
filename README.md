@@ -410,10 +410,10 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
   defaultFieldsForNewRecord="{title:'New record',nav_title:'New record'}"
   copyFieldsForNewRecord="header,CType"
   editFieldsOnly="header,CType"
-  hideNewIcon="10"
-  hideDisableIcon="10"
-  hideDeletedIcon="10"
-  hideBufferIcon="10"
+  hideNewIcon="1"
+  hideDisableIcon="1"
+  hideDeletedIcon="1"
+  hideBufferIcon="1"
   styleLeft="10" <!--only for newIconAbs-->
   styleTop="10" <!--only for newIconAbs-->
   styleRight="10" <!--only for newIconAbs-->
