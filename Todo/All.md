@@ -3,11 +3,9 @@
 
 https://viewhelpers.fluidtypo3.org/
 
-https://speakerdeck.com/s2b/fluid-components-in-production?slide=13
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
 
-https://ckeditor.com/docs/ckeditor4/latest/guide/widget_sdk_tutorial_2.html
 https://akilli.github.io/ckeditor4-build-classic/demo/
 
 <?php
