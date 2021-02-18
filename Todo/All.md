@@ -2,10 +2,8 @@
 Просмотреть библиотеки и функции в репозиториях для Extbase...
 
 https://viewhelpers.fluidtypo3.org/
-
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
-
 https://akilli.github.io/ckeditor4-build-classic/demo/
 
 <?php
@@ -26,31 +24,13 @@ https://akilli.github.io/ckeditor4-build-classic/demo/
 	#with which you have access to all variables currently available in the template, and can modify the variables
 	#currently available in the template.
 
-\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName() 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath()
-if (TYPO3_MODE === 'BE')
 
-\TYPO3\CMS\Core\Configuration\ExtensionConfiguration
-$temporaryDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)
-   ->get('my_extension_key', 'myVariable');
+
    
-   \TYPO3\CMS\Core\Authentication\BackendUserAuthentication 
-   \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
-   
-$GLOBALS['TSFE']->sL(); // Зависит от языка выбранного пользователем на переключателе языков во Frontend.
-$GLOBALS['LANG']->sL(); // Зависит от выбранного языка у пользователя в административной панели (и если Backend-пользователь авторизован).
 
-// Debug
-https://somethingphp.com/debugging-typo3/
-\TYPO3\CMS\Core\Utility\DebugUtility::debug('VAR','HEADER','Debug');
-\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('VAR', 'FormObject:');
 
-// Backend (CSS, JAVSCRIPT)
-if (TYPO3_MODE === 'BE') {
-   $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-   $renderer->addCssFile('EXT:my_ext_key/Resources/Public/Backend/Css/.css');
-   $renderer->addJsFile('EXT:my_ext_key/Resources/Public/Backend/Js/.js', 'text/javascript');
-}
+
+
 
 Зарезервированные переменные
 
@@ -113,67 +93,20 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
             'storeLastActiveTab' => $storeLastActiveTab,
         ]);
 
-Mail
-
-$email = GeneralUtility::makeInstance(MailMessage::class)
-->to(new Address('kasperYYYY@typo3.org'), new Address('benni@typo3.org', 'Benni Mack'))
-->subject('This is an example email')
-->text('This is the plain-text variant')
-->html('Hello Benni.
-Enjoy a HTML-readable email. We love TYPO3.');
-
-$email->send();
-
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][700] = 'EXT:my_site_extension/Resources/Private/Templates/Email';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths'][700] = 'EXT:my_site_extension/Resources/Private/Layouts';
-
-$email
-    ->to('contact@acme.com')
-    ->from(new Address('jeremy@acme.com', 'Jeremy'))
-    ->subject('TYPO3 loves you - here is why')
-    ->setFormat('html') // only HTML mail
-    ->setTemplate('TipsAndTricks')
-    ->assign('mySecretIngredient', 'Tomato and TypoScript');
-GeneralUtility::makeInstance(Mailer::class)->send($email);
 
 <f:section name="Subject"> New Login at "{typo3.sitename}"</f:section>
 
 
-<f:asset.css identifier="identifier123" href="EXT:my_ext/Resources/Public/Css/foo.css" />
-<f:asset.css identifier="identifier123">
-    .foo { color: black; }
-</f:asset.css>
-
-<f:asset.script identifier="identifier123" src="EXT:my_ext/Resources/Public/JavaScript/foo.js" />
-<f:asset.script identifier="identifier123">
-    alert('hello world');
-</f:asset.script>
-
-GeneralUtility::makeInstance(AssetCollector::class)
-->addJavaScript('my_ext_foo', 'EXT:my_ext/Resources/Public/JavaScript/foo.js', ['data
-
-$cacheManager = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class);
-$cacheManager->flushCachesInGroupByTags('pages', [ 'pageId_'.$pid ]);
-
-$cacheManager = $this->objectManager->get(\TYPO3\CMS\Extbase\Service\CacheService::class);
-$cacheManager->clearPageCache([1,2,3]);
-
-$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Extbase\Object\ObjectManager::class );
-GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)
-    ->flushCachesInGroupByTags('pages', [ 'pageId_'.$id ]);
-    
-    
-    $this->cacheService->clearPageCache([$pageIds]);
 
 
 https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
-https://www.motions-media.de/2013/01/21/typo3-extbase-additionalheaderdata/
+https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
+
 https://t3terminal.com/
-https://github.com/sabbelasichon/typo3-rector/blob/master/docs/all_rectors_overview.md
 https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
-https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/Index.html
-https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/Index.html
+https://tmp.daniel-siepmann.de/events/t3cv19/workshop-extension/index.html#
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/extbase-flashmessages
 
 
 https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
@@ -181,14 +114,6 @@ https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
 https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
 https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
 
-// Log message
-$logMessage = 'Everything went fine.';
-// Option extension key / module name
-$extKey = 'my_extension';
-// Error-level: 0 = message, 1 = error (user problem), 2 = System Error (which should not happen), 3 = security notice (admin)
-$errorLevel = 0;
-// Write sys_log using \TYPO3\CMS\Core\Utility\GeneralUtility::sysLog
-$GLOBALS['BE_USER']->simplelog($logMessage, $extKey, $errorLevel);
 
 
 
@@ -196,8 +121,6 @@ $GLOBALS['BE_USER']->simplelog($logMessage, $extKey, $errorLevel);
 
 
 
-https://typo3blogger.de/hook-contentpostproc-vs-cache/
-https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 use Spatie\RouteAttributes\Attributes\Get;
 use Spatie\RouteAttributes\Attributes\Post;
