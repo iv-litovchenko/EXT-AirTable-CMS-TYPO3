@@ -68,18 +68,10 @@ pid = 70
 
 <f:object setup="lib.tx_myext_key.test" />
 
-<f:marker uid="3" />
-<f:markerFal uid="42" as="row">
-	
-	<a href="<f:uri.image src='{row.uid_local}' />">
-		One image: <f:image src="{row.uid_local}" alt="alt text" width="100" />
-	</a>
-	
-</f:markerFal>
 
 <hr />
-
-<f:markerMedia uid="45" as="rows">
+<f:marker uid="3" /> <!--Input, Text, Text.Rte-->
+<f:markerMedia uid="45" as="row || rows">
 	
 	<f:for each="{rows}" as="row" key="itemkey">
 		<a href="<f:uri.image src='{row.uid_local}' />">
