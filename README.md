@@ -189,6 +189,7 @@ class NewModule1Controller extends AbstractModuleController
 Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1/Index.html
 
 ```html
+<f:debug title="Debug" inline="true">{_all}</f:debug>
 <h1>Module 1</h1>
 
 <h2>Hellow word {var}!</h2>
@@ -251,6 +252,7 @@ class NewPageController extends AbstractPageController
 Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Index.html
 
 ```html
+<f:debug title="Debug" inline="true">{_all}</f:debug>
 <f:asset.script identifier="jQuery" src="https://code.jquery.com/jquery-3.1.1.min.js" />
 <f:asset.script identifier="Bootstrap" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 <f:asset.css identifier="Bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
@@ -329,6 +331,7 @@ class NewElementController extends AbstractPageElementController
 Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewElement/Index.html
 
 ```html
+<f:debug title="Debug" inline="true">{_all}</f:debug>
 <div style="padding: 25px; background: wheat; text-align: center;">
 	<h3>Hellow word "Element || GridElement || Plugin" {var}!</h3>
 	
@@ -376,6 +379,7 @@ class HelloWorldViewHelper extends AbstractViewHelper
 Step 2) How to use?
 
 ```html
+<f:debug title="Debug" inline="true">{_all}</f:debug>
 ...
 ...
 ...
@@ -426,6 +430,8 @@ class TestWidgetController extends AbstractWidgetController
 Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/TestWidget/Index.html
 
 ```html
+<f:debug title="Debug" inline="true">{_all}</f:debug>
+
 My Widget (Result): <br />
 {testArg1}, {testArg2}, {testArg3}
 ```
