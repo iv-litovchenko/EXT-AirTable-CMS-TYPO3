@@ -260,6 +260,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 <f:asset.css identifier="Main" href="EXT:myext/Resources/Public/Css/Main.css"  />
 
 <!--Include header page template-->
+<f:vhsExtAirTable.adminPanel />
 <f:comment><!--<f:render partial="Header" arguments="{_all}" />--></f:comment>
 
 	<!--Get page content-->
@@ -284,6 +285,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 
 <!--Include footer page template-->
 <f:comment><!--<f:render partial="Footer" arguments="{_all}" />--></f:comment>
+<f:vhsExtAirTable.adminPanelTools />
 ```
 
 ## Register a new content element
@@ -371,7 +373,6 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 ```
 <!--Input, Text, Text.Rte, Text.Code.Html, Text.Code.TypoScript-->
 <f:vhsExtAirTable.marker uid="3" />
-
 
 <!--Media_1, Media_M-->
 <f:vhsExtAirTable.markerMedia uid="45" as="row || rows">
