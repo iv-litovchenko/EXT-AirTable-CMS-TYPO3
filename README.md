@@ -35,7 +35,8 @@ Step 1) If, when installing a new version of the CMS TYPO3 system, the error "@m
 
 Step 2) Install extension "air_table" via extension manager (https://extensions.typo3.org/extension/air_table/). The current version is under development!
 
-Step 3) Update the composer in the folder "typo3conf/ext/air_table/"
+~~Step 3) Update the composer in the folder "typo3conf/ext/air_table/"~~
+You can skip this step - everything is already in the "typo3conf/ext/air_table/Vendor/" folder 
 
 ```yaml
 // command /usr/local/php-cgi/7.0/bin/php -d memory_limit=-1 /usr/local/bin/composer update --ignore-platform-reqs
@@ -48,6 +49,8 @@ Step 3) Update the composer in the folder "typo3conf/ext/air_table/"
 ```
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
+
+Step 5) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
 If you are working in versions 7, 8 and you need "typo3/install.php" - for this you need to create a file "typo3conf/ENABLE_INSTALL_TOOL" with the content "KEEP_FILE".
 
