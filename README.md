@@ -65,6 +65,7 @@ EXT:myext/Classes/Controller/PagesElements/[*]Controller.php
 EXT:myext/Classes/Controller/Widgets/[*]WidgetController.php
 EXT:myext/Classes/ViewHelpers/[*]ViewHelper.php
 
+EXT:myext/Classes/Domain/Form/[*]Form.php
 EXT:myext/Classes/Domain/Model/
 EXT:myext/Classes/Domain/Model/OneModel.php
 EXT:myext/Classes/Domain/Model/OneModelCategory.php // Model categorization
