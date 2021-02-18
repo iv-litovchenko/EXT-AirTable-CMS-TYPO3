@@ -192,29 +192,6 @@ https://www.qbus.de/qblog/psr-15-middlewares-fuer-typo3-cms-v9/
 ];
 */
 
-- вопрос кэширвоания
-- вопрос роутера и тесты на:
-Vorot pdf каталог
-typo3.org экстеншены (фильтр)
-kv-design фильтр
-
-	&$vpCache = 0 && КЭШ ID && СБРОС КЭША (разрешение на сохранение вертиальной страниицы вроде cHash - типа идентификатор вирт. страницы)
-
-	    Возможно как-то сделаем - в страницу пишем, что не разрешаем кэшировать и все и потом через strst проверяем данную метку
-	
-	
-
-	// не обязательный параметры в маршруте
-	// роутер для плагинов
-	// как быть с параметрами которые слоожео проверить вроде page? из-за них можно завалить кэшами
-	// 404 и данные не найдены
-	// ссылки между блоками и плагинами и страницами.
-	// breadcrumb убери _INT объекты со страницы и хлебки пропадут < ?=\Typo3Helpers::RunController('sitet3club\controllers\BlockContactController');? >
--------------------------------------------------------------
-
-----------------
-
-cache_check
 
 
  routeEnhancers:
@@ -238,73 +215,29 @@ cache_check
       b_action: ''
       c_step: ''
       f_sort: ''
-	  
-	  
-	 
-TypoScriptFrontendController->addCacheTags()
 
 
-
-
-
-
-
-
-
-
-	
-
-	
-	
-	
-	$myRouteForPage = new Route(
+$myRouteForPage = new Route(
 '/test2/test3/test/{ttww}',
 array('_controller' => 'MyController')
-
 );
 
 $pageCollection->add('default2', $myRouteForPage);
 $fullCollection->addCollection($pageCollection);
 
-
-Available Tokens
-
-The following tokens are available to the URI setting:
-
-    * – Any string of characters, except for a forward slash (/)
-    day – Day of a month (1-31 or 01-31)
-    month – Numeric representation of a month (1-12 or 01-12)
-    number – Any positive integer
-    page – Any positive integer
-    uid – A v4 compatible UUID (universally unique ID)
-    slug – Any string of characters, except for a forward slash (/)
-    tag – Any string of characters, except for a forward slash (/)
-    year – Four consecutive digits
-
-#
-Advanced Routing with URL Rules
-
-In addition to routes, you can define URL rules
-
-(opens new window) in config/routes.php.
-
 return [
     // Route blog/archive/YYYY to a controller action
     'blog/archive/<year:\d{4}>' => 'controller/action/path',
-
     // Route blog/archive/YYYY to a template
     'blog/archive/<year:\d{4}>' => ['template' => 'blog/_archive'],
 ];
 
 If your Craft installation has multiple sites, you can create site-specific URL rules by placing them in a sub-array, and set the key to the site’s handle.
-
 return [
     'siteHandle' => [
         'blog/archive/<year:\d{4}>' => 'controller/action/path',
     ],
 ];
-
-
 
 
 <?php
@@ -314,10 +247,6 @@ class FabricController extends Typo3Controller
 {
 	
 	/*
-	
-Ajax<br />
-КЭШ ID (разрешение на сохранение вертиальной страниицы вроде cHash - типа идентификатор вирт. страницы)<br />
-Возможно как-то сделаем - в страницу пишем, что не разрешаем кэшировать и все и потом через strst проверяем данную метку
 
 <s>Layout</s><br />
 
@@ -327,7 +256,10 @@ Ajax<br />
 // 4 Смена действия толко для нужного контроллера, а не для всех.
 // 5 BreadCrumb перестали работать!
 
-	Vorot pdf каталог
+
+- вопрос роутера и тесты на:
+// ссылки между блоками и плагинами и страницами.
+Vorot pdf каталог
 typo3.org экстеншены (фильтр)
 kv-design фильтр
 
