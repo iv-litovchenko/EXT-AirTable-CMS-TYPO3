@@ -906,6 +906,8 @@ https://extensions.typo3.org/extension/t3helpers/
 class ExtbaseApi{}
 
 mail()
+xml,
+typoscript
 runHelper
 getSiteConfig, getTsConfig, getExtConfig
 getData, getPage
