@@ -916,25 +916,25 @@ https://extensions.typo3.org/extension/t3helpers/
 
 class ExtbaseApi{}
 
-mail()
++ mail()
 xml,
 typoscript
 runHelper
-getSiteConfig, getTsConfig, getExtConfig
-getData, getPage
++ getSiteConfig, getTsConfig, getExtConfig
++ getData, getPage
 utility (ar, other)
 file
 cache
-render, assign
-requst, respone
-log
-debug
++ render, assign
++ requst, respone
++ log
++ debug
 auth
 cookie
 forms
-flashmessage
-context (controllerName, actionName, extenstionName)
-link, redirect, forward
++ flashmessage
++ context (controllerName, actionName, extenstionName)
++ link, redirect, forward
 
 $this->database->;
 $this->crud->query = $this->crud->query->withoutGlobalScopes();
