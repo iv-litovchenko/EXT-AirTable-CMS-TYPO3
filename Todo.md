@@ -79,7 +79,7 @@ pid = 70
 
 <hr />
 
-<f:markerFal uid="45" as="rows">
+<f:markerMedia uid="45" as="rows">
 	
 	<f:for each="{rows}" as="row" key="itemkey">
 		<a href="<f:uri.image src='{row.uid_local}' />">
@@ -87,7 +87,7 @@ pid = 70
 		</a>
 	</f:for>
 	
-</f:markerFal>
+</f:markerMedia>
 
 <f:vhsExtAirTable.AdminPanel />
 <f:vhsExtAirTable.AdminInfobox type="warning" title="#" message="#" />
