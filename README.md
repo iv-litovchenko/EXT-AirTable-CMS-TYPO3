@@ -10,6 +10,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Register a new admin module](#register-a-new-admin-module)
 * [Register a new page template](#register-a-new-page-template)
 * [Register a new content element](#register-a-new-content-element)
+* [Additional View Helper](#additional-view-helper)
 * [Register View Helper](#register-view-helper)
 * [Register Widget (View Helper with controller and template)](#register-widget-view-helper-with-controller-and-template)
 * [Register a new model (CRUD)](#register-a-new-model-crud)
@@ -349,6 +350,12 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 	<!--If @AirTable\Type:<Plugin>-->
 	<f:link.action action="detail">Show me what's there!</f:link.action>
 </div>
+```
+
+## Additional View Helper
+
+```
+---
 ```
 
 ## Register View Helper
