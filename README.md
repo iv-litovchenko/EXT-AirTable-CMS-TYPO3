@@ -901,20 +901,26 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 ## Methods inside a class (extbase)
 
 ```php
+https://extensions.typo3.org/extension/t3helpers/
 
-// todo
+runHelper
+getSiteConfig, getTsConfig, getExtConfig
+getData, getPage
+utility (ar, other)
+file
 cache
-render / assign
-requst respone
+render, assign
+requst, respone
 log
 debug
 auth
 cookie
+forms
 flashmessage
-context
-controllerName
+context (controllerName, actionName, extenstionName)
 link, redirect, forward
 
+$this->database->;
 $this->crud->query = $this->crud->query->withoutGlobalScopes();
 $this->crud->model->clearGlobalScopes();
 
