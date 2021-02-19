@@ -1492,4 +1492,25 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/UserSett
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Yaml/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalValues/Constants/Index.html
 
-
+// TCEFORM.tx_examples_haiku.reference_page.PAGE_TSCONFIG_STR = image
+ 'foreign_table_where' => "AND pages.title LIKE '%###PAGE_TSCONFIG_STR###%'",
+ 
+ 'related_records' => [
+            'label' => 'LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:tx_examples_haiku.related_records',
+            'config' => [
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'pages, tt_content',
+                'size' => 5,
+                'minitems' => 0,
+                'maxitems' => 10,
+                'suggestOptions' => [
+                    'default' => [
+                        'searchWholePhrase' => 1,
+                    ],
+                    'pages' => [
+                        'searchCondition' => 'doktype = 1',
+                    ],
+                ],
+            ],
+        ],
