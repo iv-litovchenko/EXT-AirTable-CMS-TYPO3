@@ -1,4 +1,4 @@
-
+```
 найти маппинг по моделям...
 
 https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
