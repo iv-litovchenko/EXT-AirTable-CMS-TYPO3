@@ -1,68 +1,36 @@
-```
-Просмотреть библиотеки и функции в репозиториях для Extbase...
 
-https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
-https://usetypo3.com/
-https://viewhelpers.fluidtypo3.org/
+найти маппинг по моделям...
+
+https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
+https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
+https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
+https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
 https://akilli.github.io/ckeditor4-build-classic/demo/
 
-<?php
 
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
-
-<f:if condition="{v:page.info(field: 'uid')} == '21'">
-    <f:then>
-        Shows only if page ID equals 21.
-    </f:then>
-</f:if>
-
-	#Исходный текст
-	#• $this->arguments is an associative array where you will find the values for all arguments you registered previously.
-	#• $this->renderChildren() renders everything between the opening and closing tag of the view
-	#helper and returns the rendered result (as string).
-	#• $this->templateVariableContainer is an instance of TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer,
-	#with which you have access to all variables currently available in the template, and can modify the variables
-	#currently available in the template.
-
-Зарезервированные переменные
-
-Данные переменные регистрируются автоматически при каждом создании (выполнении) объекта Smarty_Cobj и поставляются в шаблон – другие любые данные можно извлечь, к примеру, через 1) {mysql_exec - поддержка исключена}, 2) создание и подключение мини-контроллера, 3) разработку дополнительного самостоятельного плагина под Smarty, 4) указание рабочей области контроллера ({controllerload} {dataload}).
-
+Зарезервированные постоянные переменные:
 Примечание! Данные переменные всегда поставляются в шаблон (не зависимо от того, кэширован он или нет). Даже если у нас user_INT-плагин (условно говоря) – то данные переменные все равно будут доступны.
-
 Постоянные переменные:
 
 // Дата страницы 
-{$t3_page.uid} – содержит данные о текущей странице (оставлено – и есть альтернатива {data source="page:title"}) {$t3_page.title}... {$t3_page.nav_title}... 
-
-// Дата элемента контента 
-{$t3_data.header} – содержит данные текущей выборки  
-{$t3_data.bodytext|format:"lib.myParseFunc"} 
-
-{typo3.sitename}
-contains the sitename as defined in $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename']
-{typo3.formats.date}
-contains the configured date format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy']
-{typo3.formats.time}
-contains the configured time format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm']
-{typo3.systemConfiguration}
-contains the extension configuration array $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']
-{typo3.information}
-
 // Если вывод идет в режиме "eIdAjax" if (TYPO3_MODE_eIdAjax == 1) { return 1; } else { return 0; } 
 {$t3_mode_eIdAjax} - 1 - да, 0 - нет (в основном нужно для создания <div>-оберток, хотя лучше это делать на основе jQuery  
-
-Получить значения доступные во Fronend - аналог .data в TS
-
+{env name="TYPO3_SITE_URL"} // Получить значение TYPO3-константы - (в примере обычно для используется для <base href="">)
 {data source="page:title"} // – получить название страницы     
 {data source="DB:tt_content_gallery:1:title"} // – получиь из таблицы     
 {data source="DB:TSFE:lang"} // – получить из масива 
+{$t3_page.uid} – содержит данные о текущей странице (оставлено – и есть альтернатива {data source="page:title"}) {$t3_page.title}... {$t3_page.nav_title}... 
+{$t3_data.header} // Дата элемента контента  – содержит данные текущей выборки  
+{$t3_data.bodytext|format:"lib.myParseFunc"} 
 
-TYPO3-константы
-
-{env name="TYPO3_SITE_URL"} // Получить значение TYPO3-константы - (в примере обычно для используется для <base href="">)
+{TM_FILENAME_BASE}
+{typo3.sitename} contains the sitename as defined in $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename']
+{typo3.formats.date} contains the configured date format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy']
+{typo3.formats.time} contains the configured time format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm']
+{typo3.systemConfiguration} contains the extension configuration array $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']
+{typo3.information}
 
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
@@ -82,20 +50,7 @@ TYPO3-константы
 		return false;
 	}); 
 
-<f:section name="Subject"> New Login at "{typo3.sitename}"</f:section>
 
-https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
-https://marketplace.visualstudio.com/items?itemName=ralffreit.typo3snippets
-
-https://t3terminal.com/
-https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Index.html
-https://tmp.daniel-siepmann.de/events/t3cv19/workshop-extension/index.html#
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/extbase-flashmessages
-https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
-https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
-https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
-https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
 
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 use Spatie\RouteAttributes\Attributes\Get;
@@ -118,9 +73,15 @@ class MyController
 }
 
 
-magento
-craftcms
-craftcms.com clientbase.ru Laravel nova Orchid pyrocms instantcms clientbase ORCHARD evacms docs.laravel-enso.com/ fork-cms mv-framework.ru
+clientbase.ru  
+pyrocms
+ instantcms 
+clientbase 
+ORCHARD
+ evacms 
+docs.laravel-enso.com/ 
+fork-cms 
+mv-framework.ru
 
 [GLOBAL]
 	fluidAjaxWidgetResponse = PAGE
@@ -1014,6 +975,10 @@ class CustomPage extends \TYPO3\CMS\Core\Routing\Enhancer\PluginEnhancer
 --------------------------------------------------------------------------------------------------------------------
 Описание функции парсинга атрибутов "postUserFunc=" для "lib.parseFunc_RTE"
 --------------------------------------------------------------------------------------------------------------------
+https://gist.github.com/ogrosko/5126ebe7249066b26007b46970327475
+https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/HtmlparserTags.html
+
+
 	wrap | Создать обертку для тэга (только для блочных элементов)
 	allowedAttribs	| Разрешенные атрибуты для тэга
 	disallowAttribs	| Запрещенные атрибуты для тэга
@@ -1023,3 +988,520 @@ class CustomPage extends \TYPO3\CMS\Core\Routing\Enhancer\PluginEnhancer
 		fixed (=value) - фиксированное значение (добавляется всегда в начало)
 		list (=value1, value2 , value3) - разрешенные значений
 		unset (=1) - удалить атрибут
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+$configuration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+$view = $this->objectManager->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
+$view->getRequest()->setControllerExtensionName($this->extensionName);
+$view->setFormat('txt');
+$view->setLayoutRootPaths($configuration['view']['layoutRootPaths']);
+$view->setPartialRootPaths($configuration['view']['partialRootPaths']);
+$view->setTemplateRootPaths($configuration['view']['templateRootPaths']);
+$view->setTemplate('Mail/MyTemplate');
+$view->assign('myParam', $myParam);
+$result = $view->render();
+
+$templateRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($configuration['view']['templateRootPath']);
+$view->setTemplatePathAndFilename($templateRootPath . 'Mail/MyTemplate.txt');
+
+$standaloneView = $this->objectManager->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
+$extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+$templateRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($extbaseFrameworkConfiguration['view']['templateRootPath']);
+$templatePathAndFilename = $templateRootPath . 'StandAloneViews/StandAloneView.html';
+$extensionName = $this->request->getControllerExtensionName();
+$standaloneView->getRequest()->setControllerExtensionName($extensionName);
+$standaloneView->setTemplatePathAndFilename($templatePathAndFilename);
+$standaloneView->assignMultiple(array(
+'foo' => 'bar',
+'foo2' => 'bar2'
+));
+$result = $standaloneView->render();
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+<!-- Default values when partial/section not found -->
+<f:render partial="Missing" optional="1" default="Partial 1 not found" />
+
+<f:render partial="AlsoMissing" optional="1">
+  Partial 2 not found
+</f:render>
+
+<!-- Outputs: -->
+Partial 1 not found Partial 2 not found
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+3. Disable Parsing
+--------------------------------------------------------------------------------------------------------------------
+<!-- Parsing enabled modifier -->
+{parsing off}
+
+This is a {{ mustache }}, <custom:xml>xml</custom:xml>
+or other template which uses syntax that could be
+confused with Fluid syntax. So we use {parsing off}
+to completely disable Fluid in this particular file.
+
+The template will not get parsed as Fluid even
+when you render it with <f:render />. You can use
+this to "include" a piece of such code into your
+main Fluid template. 
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+<!-- Disabling HTML escaping for an entire file -->
+{escaping off}
+
+Any variables you render will not need to use f:format.raw
+even if they contain special HTML entities. Useful when
+you render formats other than HTML; or when you completely
+trust (read: escaped before assigning to view) all your
+variables that get output.
+
+Use with care - caveat emptor!
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+9. Dynamic and optional Sections and Partials
+You can render sections and partials with dynamic names and make it optional, to create different representations for objects that can have multiple types. When used with partials it is a lot easier to customise than a big template with switch/conditions!
+--------------------------------------------------------------------------------------------------------------------
+<!-- Rendering sections or partials with dynamic names -->
+A common use case is to switch the rendering of an object
+based on the type the object has. Fluid supports using
+f:render to render a section or partial where the name,
+or part of the name, is taken from a variable or other
+ViewHelper call. Useful when combined with a default
+value in f:render to output when for example no type is
+selected yet in the object.
+
+<f:variable name="myType" value="Text" />
+<!-- Switching {myType} to Image changes rendering -->
+
+<f:section name="RenderAsText">
+  Text version of object
+</f:section>
+
+<f:section name="RenderAsImage">
+  Image version of object
+</f:section>
+<!-- Rendering section with partially dynamic name -->
+
+<f:render section="RenderAs{myType}" optional="1" /> 
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+\TYPO3\CMS\Core\Core\Environment::getContext() // Since TYPO3 9LTS
+\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext() // Prior to TYPO3 9LTS
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+/**
+ * @param Context $context optional context to fetch data from
+ */
+public function __construct(Context $context = null)
+{
+  $this->context = $context ?? GeneralUtility::makeInstance(Context::class);
+                                                            $this->rootline = $this->determineRootline();
+                                                            $tree = new \stdClass();
+  $tree->level = $this->rootline ? count($this->rootline) - 1 : 0;
+  $tree->rootLine = $this->rootline;
+  $tree->rootLineIds = array_column($this->rootline, 'uid');
+  
+  $frontendUserAspect = $this->context->getAspect('frontend.user');
+  $frontend = new \stdClass();
+  $frontend->user = new \stdClass();
+  $frontend->user->isLoggedIn = $frontendUserAspect->get('isLoggedIn') ?? false;
+  $frontend->user->userId = $frontendUserAspect->get('id') ?? 0;
+  $frontend->user->userGroupList = implode(',', $frontendUserAspect->get('groupIds'));
+  
+  $this->expressionLanguageResolver = GeneralUtility::makeInstance(
+    Resolver::class,
+    'typoscript',
+    [
+    'tree' => $tree,
+    'frontend' => $frontend,
+    'page' => $this->getPage(),
+    ]
+  );
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+----------------------FLUID 						-----------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+
+*********************
+* {v:page.info(field: 'uid')}
+*********************
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:if condition="{v:page.info(field: 'uid')} == '21'">
+    <f:then>
+        Shows only if page ID equals 21.
+    </f:then>
+</f:if>
+
+*********************
+* <f:render
+*********************
+
+<!-- Default values when partial/section not found -->
+<f:render partial="Missing" optional="1" default="Partial 1 not found" />
+
+<f:render partial="AlsoMissing" optional="1">
+  Partial 2 not found
+</f:render>
+
+*********************
+* Elseif
+*********************
+<f:if condition="{var} > 100">
+  <f:then> Overflow! </f:then>
+  <f:else if="{var} > 90"> Danger! </f:else>
+  <f:else if="{var} > 50"> Careful now. </f:else>
+  <f:else> All good! </f:else>
+</f:if>
+
+*********************
+* Case
+*********************
+<f:switch expression="{person.gender}"> 
+  <f:case value="male">Mr.</f:case> 
+  <f:case value="female">Mrs.</f:case> 
+  <f:defaultCase>Mr. / Mrs.</f:defaultCase> 
+</f:switch> 
+
+*********************
+* For
+*********************
+<f:for each="{rows}" as="row" key="itemkey">
+  <a href="<f:uri.image src='{row.uid_local}' />">
+    {itemkey+1}.<f:image src="{row.uid_local}" alt="alt text" width="100" /><br />
+  </a>
+</f:for>
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+The API
+\TYPO3\CMS\Core\Page\AssetCollector::addJavaScript(string $identifier, string $source, array $attributes, array $options = []): self
+\TYPO3\CMS\Core\Page\AssetCollector::addInlineJavaScript(string $identifier, string $source, array $attributes, array $options = []): self
+\TYPO3\CMS\Core\Page\AssetCollector::addStyleSheet(string $identifier, string $source, array $attributes, array $options = []): self
+\TYPO3\CMS\Core\Page\AssetCollector::addInlineStyleSheet(string $identifier, string $source, array $attributes, array $options = []): self
+\TYPO3\CMS\Core\Page\AssetCollector::addMedia(string $fileName, array $additionalInformation): self
+\TYPO3\CMS\Core\Page\AssetCollector::removeJavaScript(string $identifier): self
+\TYPO3\CMS\Core\Page\AssetCollector::removeInlineJavaScript(string $identifier): self
+\TYPO3\CMS\Core\Page\AssetCollector::removeStyleSheet(string $identifier): self
+\TYPO3\CMS\Core\Page\AssetCollector::removeInlineStyleSheet(string $identifier): self
+\TYPO3\CMS\Core\Page\AssetCollector::removeMedia(string $identifier): self
+\TYPO3\CMS\Core\Page\AssetCollector::getJavaScripts(?bool $priority = null): array
+\TYPO3\CMS\Core\Page\AssetCollector::getInlineJavaScripts(?bool $priority = null): array
+\TYPO3\CMS\Core\Page\AssetCollector::getStyleSheets(?bool $priority = null): array
+\TYPO3\CMS\Core\Page\AssetCollector::getInlineStyleSheets(?bool $priority = null): array
+\TYPO3\CMS\Core\Page\AssetCollector::getMedia(): array
+
+GeneralUtility::makeInstance(AssetCollector::class)
+   ->addJavaScript('my_ext_foo', 'EXT:my_ext/Resources/Public/JavaScript/foo.js', ['data-foo' => 'bar'], ['priority' => true]);
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+/**
+ * Set up the doc header properly here
+ *
+ * @param ViewInterface $view
+ * @return void
+ */
+protected function initializeView(ViewInterface $view)
+{
+    /** @var BackendTemplateView $view */
+    parent::initializeView($view);
+    if ($this->actionMethodName == 'indexAction'
+        || $this->actionMethodName == 'onlineAction'
+        || $this->actionMethodName == 'compareAction') {
+        $this->generateMenu();
+        $this->registerDocheaderButtons();
+        $view->getModuleTemplate()->setFlashMessageQueue($this->controllerContext->getFlashMessageQueue());
+    }
+    if ($view instanceof BackendTemplateView) {
+        $view->getModuleTemplate()->getPageRenderer()->loadRequireJsModule('TYPO3/CMS/Backend/Modal');
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+$GLOBALS['BE_USER']->modAccess($MCONF);
+$GLOBALS['BE_USER']->check('modules', 'web_list');
+$GLOBALS['BE_USER']->check('tables_modify', 'pages');
+$GLOBALS['BE_USER']->check('tables_select', 'tt_content');
+$GLOBALS['BE_USER']->check('non_exclude_fields', $table . ':' . $field);
+$GLOBALS['BE_USER']->isAdmin();
+$GLOBALS['BE_USER']->doesUserHaveAccess($pageRec, 1);
+$GLOBALS['BE_USER']->isInWebMount($id)
+$GLOBALS['BE_USER']->getPagePermsClause(1);
+
+$compareFlags = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('compareFlags');
+$GLOBALS['BE_USER']->pushModuleData('tools_beuser/index.php/compare', $compareFlags);
+$compareFlags = $GLOBALS['BE_USER']->getModuleData('tools_beuser/index.php/compare', 'ses');
+
+$tsconfig = $GLOBALS['BE_USER']->getTSConfig();
+$clipboardNumberPads = $tsconfig['options.']['clipboardNumberPads'] ?? '';
+
+$GLOBALS['BE_USER']->user['username']
+$GLOBALS['BE_USER']->uc['emailMeAtLogin']
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+\TYPO3\CMS\Core\Database\Query\QueryBuilder
+TYPO3\CMS\Core\Database\ConnectionPool
+$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tablename');
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
+
+class MyClass
+{
+    /**
+     * @var FrontendInterface
+     */
+    private $cache;
+
+    public function __construct(FrontendInterface $cache)
+    {
+        $this->cache = $cache;
+    }
+
+    protected function getCachedValue()
+    {
+        $cacheIdentifier = /* ... logic to determine the cache identifier ... */;
+
+        // If $entry is false, it hasn't been cached. Calculate the value and store it in the cache:
+        if (($value = $this->cache->get($cacheIdentifier)) === false) {
+            $value = /* ... Logic to calculate value ... */;
+            $tags = /* ... Tags for the cache entry ... */
+            $lifetime = /* ... Calculate/Define cache entry lifetime ... */
+
+            // Save value in cache
+            $this->cache->set($cacheIdentifier, $value, $tags, $lifetime);
+        }
+
+        return $value;
+    }
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+TYPO3\CMS\Core\Information\Typo3Information getCopyrightYear()
+TYPO3\CMS\Core\Information\Typo3Information getHtmlGeneratorTagContent()
+TYPO3\CMS\Core\Information\Typo3Information getInlineHeaderComment()
+TYPO3\CMS\Core\Information\Typo3Information getCopyrightNotice()
+
+TYPO3\CMS\Core\Information\Typo3Version getVersion()
+TYPO3\CMS\Core\Information\Typo3Version getBranch()
+TYPO3\CMS\Core\Information\Typo3Version getMajorVersion()
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+
+Vendor\Example\Domain\Validator\BlogValidator
+use Vendor\Example\Domain\Model\Blog;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
+class BlogController extends ActionController
+{
+    /**
+    * @Extbase\Validate(param="blog", validator="Vendor\Example\Domain\Validator\BlogValidator")
+    */
+
+    public function showAction(Blog $blog)
+    {
+        // ...
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+TYPO3\CMS\Core\Configuration\Loader\PageTsConfigLoader
+TYPO3\CMS\Core\Configuration\Parser\PageTsConfigParser
+Usage for fetching all available PageTS in one large string (not parsed yet):
+
+$loader = GeneralUtility::makeInstance(PageTsConfigLoader::class);
+$tsConfigString = $loader->load($rootLine);
+The string can then be put in proper TSconfig array syntax:
+
+$parser = GeneralUtility::makeInstance(
+   PageTsConfigParser::class,
+   $typoScriptParser,
+   $hashCache
+);
+$pagesTSconfig = $parser->parse(
+   $tsConfigString,
+   $conditionMatcher
+);
+
+$TSparserObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\TypoScript\Parser\TypoScriptParser::class);
+$TSparserObject->parse($tsString);
+
+echo '<pre>';
+print_r($TSparserObject->setup);
+echo '</pre>';
+
+$TS['asdf.']['zxcvbnm'] = 'uiop';
+$TS['asdf.']['backgroundColor'] = 'blue';
+$TS['asdf.']['backgroundColor.']['transparency'] = '95%';
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+$flexFormArray = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($flexFormString);
+In order to convert an PHP array into an Flexform, the :php`flexArray2Xml` method can be used:
+
+$flexFormTools = new \TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools();
+$flexFormString = $flexFormTools->flexArray2Xml($flexFormArray, true);
+
+
+namespace Your\Ext\DataProcessing;
+
+use TYPO3\CMS\Core\Service\FlexFormService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
+
+class FlexFormProcessor implements DataProcessorInterface
+{
+    /**
+     * @var FlexFormService
+     */
+    protected $flexFormService;
+
+    public function __construct(FlexFormService $flexFormService) {
+        $this->flexFormService = $flexFormService;
+    }
+
+    public function process(
+        ContentObjectRenderer $cObj,
+        array $contentObjectConfiguration,
+        array $processorConfiguration,
+        array $processedData
+    ): array {
+        $originalValue = $processedData['data']['pi_flexform'];
+        if (!is_string($originalValue)) {
+            return $processedData;
+        }
+
+        $flexformData = $this->flexFormService->convertFlexFormContentToArray($originalValue);
+        $processedData['flexform'] = $flexformData;
+        return $processedData;
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
+https://usetypo3.com/json-view.html
+https://usetypo3.com/custom-fsc-element.html
+https://blog.sbtheke.de/web-development/typo3/typo3-t3d-importexport
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/fluid-paginator-ohne-widget-paginate
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-be-modul-mit-persistenten-menue
+https://blog.sbtheke.de/web-development/typo3/datensatze-ueber-backend-modul-anlegen
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-konforme-sql-anweisungen-in-ext_tables-sql
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-extbase-fluid-im-be-modul
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-datumsfeld-fuer-be-modul
+https://stackoverflow.com/questions/58071356/render-typo3-content-elements-as-hmenu-with-dataprocessors
+https://daniel-siepmann.de/posts/2019/typo3-plugins-as-content-elements.html
+https://daniel-siepmann.de/posts/2017/typo3-extbase-injection.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/FeatureToggles/Index.html
+
+https://usetypo3.com/psr-14-events.html
+https://usetypo3.com/psr15-middleware-in-typo3.html
+https://usetypo3.com/9lts-api-classes.html
+https://usetypo3.com/dependency-injection.html
+https://usetypo3.com/psr-14-events.html
+https://usetypo3.com/bounded-contexts-in-extbase.html
+https://usetypo3.com/dtos-in-extbase.html
+https://t3terminal.com/blog/typo3-cookie/
+
+https://t3terminal.com/blog/typo3-community/
+https://t3terminal.com/blog/typo3-blogger/
+https://t3terminal.com/blog/free-typo3-support/
+https://github.com/bueroparallel/bp_pagetree
+https://t3terminal.com/blog/earn-typo3/
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html#request-handling-configuring-middlewares
+https://t3terminal.com/blog/typo3-site-configuration/
+https://t3terminal.com/blog/typo3-routing/
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/UserSettingsConfiguration/Extending.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Yaml/Index.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalValues/Constants/Index.html
+
+
+---> Остановился здесь
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Context/Index.html
