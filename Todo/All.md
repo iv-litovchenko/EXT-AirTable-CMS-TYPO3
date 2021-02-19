@@ -1533,3 +1533,12 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalVa
 		</f:if>
 	</v:content.get>
 	222
+	
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Database/Introduction/Index.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/DependencyInjection/Index.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Rte/Transformations/CustomApi.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SiteHandling/AccessingSiteConfiguration.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SiteHandling/ExtendingSiteConfig.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SymfonyExpressionLanguage/Index.html
