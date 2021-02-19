@@ -158,6 +158,9 @@ use Litovchenko\AirTable\Utility\BaseUtility;
  * @AirTable\Description:<Module 1 description>
  * @AirTable\AjaxActions:<indexAction> // Todo
  * @AirTable\Access:<user,group,admin,systemMaintainer>
+ * @AirTable\AccessCustomPermOptions\Key1:<Name One> // Todo -> $GLOBALS['TYPO3_CONF_VARS']['BE']['customPermOptions']
+ * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
+ * @AirTable\AccessCustomPermOptions\Key3:<Name Three>
  * @AirTable\Section:<web || file || user || help || content || tools || ext || sec_ext_myext> // Todo "invisible"
  * @AirTable\Position:<100>
  */
