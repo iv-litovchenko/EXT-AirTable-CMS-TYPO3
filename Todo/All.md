@@ -41,6 +41,16 @@ https://akilli.github.io/ckeditor4-build-classic/demo/
 {$t3_data.header} – содержит данные текущей выборки  
 {$t3_data.bodytext|format:"lib.myParseFunc"} 
 
+{typo3.sitename}
+contains the sitename as defined in $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename']
+{typo3.formats.date}
+contains the configured date format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy']
+{typo3.formats.time}
+contains the configured time format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm']
+{typo3.systemConfiguration}
+contains the extension configuration array $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']
+{typo3.information}
+
 // Если вывод идет в режиме "eIdAjax" if (TYPO3_MODE_eIdAjax == 1) { return 1; } else { return 0; } 
 {$t3_mode_eIdAjax} - 1 - да, 0 - нет (в основном нужно для создания <div>-оберток, хотя лучше это делать на основе jQuery  
 
