@@ -1493,5 +1493,3 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Yaml/Ind
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalValues/Constants/Index.html
 
 
----> Остановился здесь
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Context/Index.html
