@@ -331,6 +331,12 @@ class NewElementController extends AbstractPageElementController
      */
     protected $attr_input;
 	
+    public function contentElementPreview()
+    {
+        // Todo - Litovchenko\AirTable\Hooks\PageLayoutView\NewContentElementPreviewRenderer;
+		$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
+    }
+	
     public function indexAction()
     {
         $this->view->assign('var', rand(1, 1000));
