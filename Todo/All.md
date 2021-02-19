@@ -1514,3 +1514,22 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalVa
                 ],
             ],
         ],
+
+
+???
+
+
+	<!-- hero unit, optional content elements from colPos 1 (one) -->
+	111
+	{v:var.typoscript(path:'PIDS.ROOT')}
+	<v:content.get column="0" as="heroUnitContentElements">
+		!!!
+		<f:if condition="{heroUnitContentElements}">
+			<div class="hero-unit">
+				<f:for each="{heroUnitContentElements}" as="heroContentElement">
+					<v:raw>{heroContentElement}</v:raw>
+				</f:for>
+			</div>
+		</f:if>
+	</v:content.get>
+	222
