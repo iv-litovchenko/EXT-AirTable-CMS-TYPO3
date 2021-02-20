@@ -1,5 +1,4 @@
 ```
-найти маппинг по моделям...
 
 https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
 https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
