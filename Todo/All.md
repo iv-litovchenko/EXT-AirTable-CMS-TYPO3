@@ -1,3 +1,4 @@
+```
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
 	$("div.sc_UserComment_wrap").wrap( "<div class='sc_UserComment_wrap_Ajax' style='background: url(ajax-loader.gif) no-repeat;'></div>" );
