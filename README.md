@@ -418,9 +418,6 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 <f:vhsExtAirTable.adminInfobox title="Infobox" type="warning || info || error"> --- site admin content  --- </f:vhsExtAirTable.adminInfobox>
 <f:vhsExtAirTable.editWrap> --- site content --- </f:vhsExtAirTable.editWrap>
 
-<f:vhsExtAirTable.vhsInfo msg="v:menu" />
-<f:vhsExtAirTable.vhsInfo msg="v:page.breadCrumb" />
-
 <f:vhsExtAirTable.editIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="100" title="Edit" />
 <f:vhsExtAirTable.editIconInline model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
 <f:vhsExtAirTable.editIconCenter model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
@@ -493,7 +490,6 @@ Step 2) How to use?
 ...
 ...
 ```
-
 
 ## Register Widget (Component - View Helper with controller and template)
 
@@ -925,6 +921,26 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 - // todo
 
 ## Methods inside a class (extbase)
+
+### Useful notes - Extbase Controller
+```
+
+ ---
+
+ ```
+
+### Useful notes - Fluid
+```
+
+ ---
+
+```
+
+### Useful notes - TypoScript
+```
+
+ ---
+
 
 ```php
 https://extensions.typo3.org/extension/t3helpers/
