@@ -1,9 +1,4 @@
 ```
-
-https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin
-https://www.slideshare.net/punktde/experiences-with-backend-user-rights-in-typo3
-https://www.slideshare.net/pk77/get-happy-editors-with-a-suitable-typo3-backend-configuration
-https://www.slideshare.net/nitsanindia/typo3-ckeditor-heaven-for-typo3-developer-editor
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
 https://akilli.github.io/ckeditor4-build-classic/demo/
