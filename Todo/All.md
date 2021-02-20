@@ -1064,6 +1064,16 @@ selected yet in the object.
 
 <f:render section="RenderAs{myType}" optional="1" /> 
 
+
+
+<f:link.action
+        pageUid="{f:cObject(typoscriptObjectPath: 'lib.nav.pid.registration')}"
+        controller="StandardRegistration"
+        action="oneClickRegistration"
+        arguments="{occurrenceId: conductingEvent.id}">
+    <f:translate key="registration.label.register"/>
+</f:link.action>
+
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
