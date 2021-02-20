@@ -41,15 +41,6 @@ class MyController
 }
 
 
-clientbase.ru  
-pyrocms
- instantcms 
-clientbase 
-ORCHARD
- evacms 
-docs.laravel-enso.com/ 
-fork-cms 
-mv-framework.ru
 
 [GLOBAL]
 	fluidAjaxWidgetResponse = PAGE
