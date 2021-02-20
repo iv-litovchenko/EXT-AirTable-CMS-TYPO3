@@ -920,7 +920,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 - // todo
 
-## Methods inside a class (extbase)
+## Useful functions (Extbase, Fluid, TS) 
 
 ### Useful notes - Extbase Controller
 ```
@@ -1339,10 +1339,10 @@ return [
 * Маршрутизация на основе аннотаций (WW)
 * Маршрутизация для Ajax на основе аннотаций
 * Блоки настроек (Craf Settings)
-* RTE
+* RTE https://akilli.github.io/ckeditor4-build-classic/demo/
   * (Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])
   * (Mag) InsertWidgets
-  * InsertBlockTemplate (template ID)
+  * InsertBlockTemplate (template ID) 
 * Регионы в шаблоны (показ определенных блоков по условиям)
 * Параграфы (Dr) – текст, картинка, файлы (матричные поля Craf), либо более удобный Wizzard
 * <v:page.breadCrumb>, <v:menu expandAll="0" levels="2" /> для а) таблицы категорий (tx_data_category), для массива данных (аналоги: https://extensions.typo3.org/extension/nsb_cat2menu/, https://stackoverflow.com/questions/40706825/typo3-sys-category-menu
