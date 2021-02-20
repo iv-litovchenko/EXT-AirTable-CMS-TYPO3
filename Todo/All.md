@@ -994,51 +994,6 @@ $TS['asdf.']['backgroundColor'] = 'blue';
 $TS['asdf.']['backgroundColor.']['transparency'] = '95%';
 
 
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
-
-$flexFormArray = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($flexFormString);
-In order to convert an PHP array into an Flexform, the :php`flexArray2Xml` method can be used:
-
-$flexFormTools = new \TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools();
-$flexFormString = $flexFormTools->flexArray2Xml($flexFormArray, true);
-
-
-namespace Your\Ext\DataProcessing;
-
-use TYPO3\CMS\Core\Service\FlexFormService;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-
-class FlexFormProcessor implements DataProcessorInterface
-{
-    /**
-     * @var FlexFormService
-     */
-    protected $flexFormService;
-
-    public function __construct(FlexFormService $flexFormService) {
-        $this->flexFormService = $flexFormService;
-    }
-
-    public function process(
-        ContentObjectRenderer $cObj,
-        array $contentObjectConfiguration,
-        array $processorConfiguration,
-        array $processedData
-    ): array {
-        $originalValue = $processedData['data']['pi_flexform'];
-        if (!is_string($originalValue)) {
-            return $processedData;
-        }
-
-        $flexformData = $this->flexFormService->convertFlexFormContentToArray($originalValue);
-        $processedData['flexform'] = $flexformData;
-        return $processedData;
-    }
-}
 
 
 --------------------------------------------------------------------------------------------------------------------
