@@ -1426,19 +1426,8 @@ class FlexFormProcessor implements DataProcessorInterface
 --------------------------------------------------------------------------------------------------------------------
 
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
-https://usetypo3.com/json-view.html
-https://usetypo3.com/custom-fsc-element.html
-https://blog.sbtheke.de/web-development/typo3/typo3-t3d-importexport
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/fluid-paginator-ohne-widget-paginate
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-be-modul-mit-persistenten-menue
-https://blog.sbtheke.de/web-development/typo3/datensatze-ueber-backend-modul-anlegen
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-konforme-sql-anweisungen-in-ext_tables-sql
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-extbase-fluid-im-be-modul
-https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-datumsfeld-fuer-be-modul
-https://stackoverflow.com/questions/58071356/render-typo3-content-elements-as-hmenu-with-dataprocessors
-https://daniel-siepmann.de/posts/2019/typo3-plugins-as-content-elements.html
-https://daniel-siepmann.de/posts/2017/typo3-extbase-injection.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/FeatureToggles/Index.html
+
+
 
 https://usetypo3.com/psr-14-events.html
 https://usetypo3.com/psr15-middleware-in-typo3.html
