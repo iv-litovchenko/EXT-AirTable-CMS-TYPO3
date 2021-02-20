@@ -931,13 +931,6 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ### Useful notes - Fluid
 ```
-
- ---
-
-```
-
-### Useful notes - TypoScript
-```
 *********************
 * Info
 *********************
@@ -989,6 +982,13 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
       <br />
    </a>
 </f:for>
+```
+
+### Useful notes - TypoScript
+```
+
+--
+
 ```
 
 ```php
