@@ -1,6 +1,4 @@
 ```
-https://www.youtube.com/c/IvanAbramenko/featured
-https://www.youtube.com/watch?v=kIjepXxLjQM
 
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
