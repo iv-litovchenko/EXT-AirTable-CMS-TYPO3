@@ -1,7 +1,6 @@
 ```
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
-https://akilli.github.io/ckeditor4-build-classic/demo/
 
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
