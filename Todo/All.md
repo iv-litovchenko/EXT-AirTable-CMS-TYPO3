@@ -147,28 +147,6 @@ https://www.qbus.de/qblog/psr-15-middlewares-fuer-typo3-cms-v9/
       f_sort: ''
 
 
-$myRouteForPage = new Route(
-'/test2/test3/test/{ttww}',
-array('_controller' => 'MyController')
-);
-
-$pageCollection->add('default2', $myRouteForPage);
-$fullCollection->addCollection($pageCollection);
-
-return [
-    // Route blog/archive/YYYY to a controller action
-    'blog/archive/<year:\d{4}>' => 'controller/action/path',
-    // Route blog/archive/YYYY to a template
-    'blog/archive/<year:\d{4}>' => ['template' => 'blog/_archive'],
-];
-
-If your Craft installation has multiple sites, you can create site-specific URL rules by placing them in a sub-array, and set the key to the site’s handle.
-return [
-    'siteHandle' => [
-        'blog/archive/<year:\d{4}>' => 'controller/action/path',
-    ],
-];
-
 
 <?php
 namespace eleshlenkinasite\controllers;
@@ -178,14 +156,16 @@ class FabricController extends Typo3Controller
 	
 	/*
 
-<s>Layout</s><br />
 
 // 1 &$vpCache = 0
 // 2 нексоклько маршрутов на 1 действие
 // 3 http://site2.t3club.com/3d-modeli/fabric.24/cat.13/page.3/model.3194/
 // 4 Смена действия толко для нужного контроллера, а не для всех.
-// 5 BreadCrumb перестали работать!
 
+	// не обязательный параметры в маршруте
+	// роутер для плагинов
+	// как быть с параметрами которые слоожео проверить вроде page? из-за них можно завалить кэшами
+	// 404 и данные не найдены
 
 - вопрос роутера и тесты на:
 // ссылки между блоками и плагинами и страницами.
@@ -200,12 +180,6 @@ kv-design фильтр
 	Layout
 
 
-	// не обязательный параметры в маршруте
-	// роутер для плагинов
-	// как быть с параметрами которые слоожео проверить вроде page? из-за них можно завалить кэшами
-	// 404 и данные не найдены
-	// ссылки между блоками и плагинами и страницами.
-	// breadcrumb убери _INT объекты со страницы и хлебки пропадут < ?=\Typo3Helpers::RunController('sitet3club\controllers\BlockContactController');? >
 	*/
 	
 	
