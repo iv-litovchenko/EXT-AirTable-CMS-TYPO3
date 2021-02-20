@@ -445,3 +445,36 @@ https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view
 https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
+
+
+---
+https://laravel.demiart.ru/ways-of-laravel-validation/
+	$validator = \Illuminate\Support\Facades\Validator::make(
+    array(
+        'name' => 'Dayle',
+        'password' => 'lamepassword',
+        'email' => 'email@example.com'
+    ),
+    array(
+        'name' => 'required',
+        'password' => 'required|min:8',
+        'email' => 'required|email|unique:users'
+    )
+);
+	
+		// return \Illuminate\Support\Facades\Validator::make($values,$rules);
+		$custom_validation_messages = array(
+		  'password.min' => "Password can not be less than 6 characters.",
+		  'password.required' => "Password is required"
+		);
+
+		   $validator = \Illuminate\Support\Facades\Validator::make($request, [
+			'email'          => ['required','unique:users,email','email','max:255'],
+		   'email'          => ['required','email','max:255'],
+		   'password'       => 'required|min:6|confirmed'
+
+		 ],$custom_validation_messages);
+		 
+		         if ($validator->fails()) {
+		}
+		
