@@ -911,16 +911,6 @@ $clipboardNumberPads = $tsconfig['options.']['clipboardNumberPads'] ?? '';
 $GLOBALS['BE_USER']->user['username']
 $GLOBALS['BE_USER']->uc['emailMeAtLogin']
 
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
-
-\TYPO3\CMS\Core\Database\Query\QueryBuilder
-TYPO3\CMS\Core\Database\ConnectionPool
-$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tablename');
-
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -958,43 +948,6 @@ class MyClass
 
         return $value;
     }
-
-
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
-TYPO3\CMS\Core\Configuration\Loader\PageTsConfigLoader
-TYPO3\CMS\Core\Configuration\Parser\PageTsConfigParser
-Usage for fetching all available PageTS in one large string (not parsed yet):
-
-$loader = GeneralUtility::makeInstance(PageTsConfigLoader::class);
-$tsConfigString = $loader->load($rootLine);
-The string can then be put in proper TSconfig array syntax:
-
-$parser = GeneralUtility::makeInstance(
-   PageTsConfigParser::class,
-   $typoScriptParser,
-   $hashCache
-);
-$pagesTSconfig = $parser->parse(
-   $tsConfigString,
-   $conditionMatcher
-);
-
-$TSparserObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\TypoScript\Parser\TypoScriptParser::class);
-$TSparserObject->parse($tsString);
-
-echo '<pre>';
-print_r($TSparserObject->setup);
-echo '</pre>';
-
-$TS['asdf.']['zxcvbnm'] = 'uiop';
-$TS['asdf.']['backgroundColor'] = 'blue';
-$TS['asdf.']['backgroundColor.']['transparency'] = '95%';
-
-
-
 
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
