@@ -3,29 +3,6 @@ https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
 https://akilli.github.io/ckeditor4-build-classic/demo/
 
-
-Зарезервированные постоянные переменные:
-Примечание! Данные переменные всегда поставляются в шаблон (не зависимо от того, кэширован он или нет). Даже если у нас user_INT-плагин (условно говоря) – то данные переменные все равно будут доступны.
-Постоянные переменные:
-
-// Дата страницы 
-// Если вывод идет в режиме "eIdAjax" if (TYPO3_MODE_eIdAjax == 1) { return 1; } else { return 0; } 
-{$t3_mode_eIdAjax} - 1 - да, 0 - нет (в основном нужно для создания <div>-оберток, хотя лучше это делать на основе jQuery  
-{env name="TYPO3_SITE_URL"} // Получить значение TYPO3-константы - (в примере обычно для используется для <base href="">)
-{data source="page:title"} // – получить название страницы     
-{data source="DB:tt_content_gallery:1:title"} // – получиь из таблицы     
-{data source="DB:TSFE:lang"} // – получить из масива 
-{$t3_page.uid} – содержит данные о текущей странице (оставлено – и есть альтернатива {data source="page:title"}) {$t3_page.title}... {$t3_page.nav_title}... 
-{$t3_data.header} // Дата элемента контента  – содержит данные текущей выборки  
-{$t3_data.bodytext|format:"lib.myParseFunc"} 
-
-{TM_FILENAME_BASE}
-{typo3.sitename} contains the sitename as defined in $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename']
-{typo3.formats.date} contains the configured date format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy']
-{typo3.formats.time} contains the configured time format from $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm']
-{typo3.systemConfiguration} contains the extension configuration array $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']
-{typo3.information}
-
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
 	$("div.sc_UserComment_wrap").wrap( "<div class='sc_UserComment_wrap_Ajax' style='background: url(ajax-loader.gif) no-repeat;'></div>" );
@@ -43,8 +20,6 @@ https://akilli.github.io/ckeditor4-build-classic/demo/
             });
 		return false;
 	}); 
-
-
 
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 use Spatie\RouteAttributes\Attributes\Get;
