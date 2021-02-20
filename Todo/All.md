@@ -954,3 +954,5 @@ https://t3terminal.com/blog/typo3-routing/
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view-for-a-controller-action/
 https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
+https://www.youtube.com/c/IvanAbramenko/featured
+https://www.youtube.com/watch?v=kIjepXxLjQM
