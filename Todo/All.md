@@ -68,10 +68,7 @@ class MyController
 1518: }
 1519: 
 
-https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
-https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view-for-a-controller-action/
-https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
-https://www.qbus.de/qblog/psr-15-middlewares-fuer-typo3-cms-v9/
+
 
 		https://github.com/b13/uniquealiasmapper
 
@@ -956,3 +953,6 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestH
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
 https://t3terminal.com/blog/typo3-site-configuration/
 https://t3terminal.com/blog/typo3-routing/
+https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
+https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view-for-a-controller-action/
+https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
