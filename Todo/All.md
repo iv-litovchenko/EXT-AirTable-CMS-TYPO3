@@ -829,31 +829,6 @@ public function __construct(Context $context = null)
   );
 }
 
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
-The API
-\TYPO3\CMS\Core\Page\AssetCollector::addJavaScript(string $identifier, string $source, array $attributes, array $options = []): self
-\TYPO3\CMS\Core\Page\AssetCollector::addInlineJavaScript(string $identifier, string $source, array $attributes, array $options = []): self
-\TYPO3\CMS\Core\Page\AssetCollector::addStyleSheet(string $identifier, string $source, array $attributes, array $options = []): self
-\TYPO3\CMS\Core\Page\AssetCollector::addInlineStyleSheet(string $identifier, string $source, array $attributes, array $options = []): self
-\TYPO3\CMS\Core\Page\AssetCollector::addMedia(string $fileName, array $additionalInformation): self
-\TYPO3\CMS\Core\Page\AssetCollector::removeJavaScript(string $identifier): self
-\TYPO3\CMS\Core\Page\AssetCollector::removeInlineJavaScript(string $identifier): self
-\TYPO3\CMS\Core\Page\AssetCollector::removeStyleSheet(string $identifier): self
-\TYPO3\CMS\Core\Page\AssetCollector::removeInlineStyleSheet(string $identifier): self
-\TYPO3\CMS\Core\Page\AssetCollector::removeMedia(string $identifier): self
-\TYPO3\CMS\Core\Page\AssetCollector::getJavaScripts(?bool $priority = null): array
-\TYPO3\CMS\Core\Page\AssetCollector::getInlineJavaScripts(?bool $priority = null): array
-\TYPO3\CMS\Core\Page\AssetCollector::getStyleSheets(?bool $priority = null): array
-\TYPO3\CMS\Core\Page\AssetCollector::getInlineStyleSheets(?bool $priority = null): array
-\TYPO3\CMS\Core\Page\AssetCollector::getMedia(): array
-
-GeneralUtility::makeInstance(AssetCollector::class)
-   ->addJavaScript('my_ext_foo', 'EXT:my_ext/Resources/Public/JavaScript/foo.js', ['data-foo' => 'bar'], ['priority' => true]);
-
 
 
 --------------------------------------------------------------------------------------------------------------------
