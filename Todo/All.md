@@ -976,3 +976,4 @@ https://scrutinizer-ci.com/g/TYPO3/TYPO3.CMS/code-structure/master/operation/TYP
 https://docs.typo3.org/typo3cms/extensions/formz/stable/02-Usage/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html
+https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
