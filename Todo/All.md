@@ -928,17 +928,6 @@ class MyClass
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
-https://t3terminal.com/blog/typo3-community/
-https://t3terminal.com/blog/typo3-blogger/
-https://t3terminal.com/blog/free-typo3-support/
-https://github.com/bueroparallel/bp_pagetree
-https://t3terminal.com/blog/earn-typo3/
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html#request-handling-configuring-middlewares
-https://t3terminal.com/blog/typo3-site-configuration/
-https://t3terminal.com/blog/typo3-routing/
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/UserSettingsConfiguration/Extending.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Yaml/Index.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalValues/Constants/Index.html
 
 // TCEFORM.tx_examples_haiku.reference_page.PAGE_TSCONFIG_STR = image
  'foreign_table_where' => "AND pages.title LIKE '%###PAGE_TSCONFIG_STR###%'",
@@ -966,14 +955,13 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalVa
 
 ???
 
-
-
-
-[!!!]
-
-https://github.com/NeoBlack/TYPO3.Extension.laravel/blob/master/Classes/Http/Controller/AbstractPluginController.php
-https://scrutinizer-ci.com/g/TYPO3/TYPO3.CMS/code-structure/master/operation/TYPO3%5CCMS%5CBackend%5CView%5CBackendTemplateView::setTemplateRootPaths
+https://t3terminal.com/blog/typo3-community/
+https://t3terminal.com/blog/typo3-blogger/
+https://t3terminal.com/blog/free-typo3-support/
+https://t3terminal.com/blog/earn-typo3/
 https://docs.typo3.org/typo3cms/extensions/formz/stable/02-Usage/Index.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
 https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html
 https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
+https://t3terminal.com/blog/typo3-site-configuration/
+https://t3terminal.com/blog/typo3-routing/
