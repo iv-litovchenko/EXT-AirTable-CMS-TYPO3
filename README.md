@@ -938,9 +938,57 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ### Useful notes - TypoScript
 ```
+*********************
+* Info
+*********************
 
- ---
+<f:if condition="{v:page.info(field: 'uid')} == '21'">
+   <f:then>
+      Shows only if page ID equals 21.
+   </f:then>
+</f:if>
 
+*********************
+* Partial
+*********************
+
+<f:render partial="Missing" optional="1" default="Partial 1 not found" />
+<f:render partial="AlsoMissing" optional="1">
+   Partial 2 not found
+</f:render>
+
+*********************
+* If-elseif-else
+*********************
+
+<f:if condition="{var} > 100">
+   <f:then> Overflow! </f:then>
+   <f:else if="{var} > 90"> Danger! </f:else>
+   <f:else if="{var} > 50"> Careful now. </f:else>
+   <f:else> All good! </f:else>
+</f:if>
+
+*********************
+* Case
+*********************
+
+<f:switch expression="{person.gender}">
+   <f:case value="male">Mr.</f:case>
+   <f:case value="female">Mrs.</f:case>
+   <f:defaultCase>Mr. / Mrs.</f:defaultCase>
+</f:switch>
+
+*********************
+* For
+*********************
+
+<f:for each="{rows}" as="row" key="itemkey">
+   <a href="<f:uri.image src='{row.uid_local}' />">
+      {itemkey+1}.
+      <f:image src="{row.uid_local}" alt="alt text" width="100" />
+      <br />
+   </a>
+</f:for>
 ```
 
 ```php
