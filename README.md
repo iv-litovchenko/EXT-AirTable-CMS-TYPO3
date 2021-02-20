@@ -244,6 +244,12 @@ class NewPageController extends AbstractPageController
      * @AirTable\Field\Size:<24>
      */
     protected $attr_input;
+    
+    public function contentPagePreview()
+    {
+        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeaderHook
+        $itemContent .= '<p class="text-center"><span title="' . $row['title'] . '" class="btn btn-default">' . $row['title'] . '</span></p>';
+    }
 	
     public function indexAction()
     {
@@ -334,7 +340,7 @@ class NewElementController extends AbstractPageElementController
     public function contentElementPreview()
     {
         // Todo - Litovchenko\AirTable\Hooks\PageLayoutView\NewContentElementPreviewRenderer;
-		$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
+	$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
     }
 	
     public function indexAction()
