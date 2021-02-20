@@ -1005,14 +1005,13 @@ https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/GlobalVa
 
 ???
 
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Rte/Transformations/CustomApi.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SiteHandling/AccessingSiteConfiguration.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SiteHandling/ExtendingSiteConfig.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/SymfonyExpressionLanguage/Index.html
+
+
 
 [!!!]
+
 https://github.com/NeoBlack/TYPO3.Extension.laravel/blob/master/Classes/Http/Controller/AbstractPluginController.php
 https://scrutinizer-ci.com/g/TYPO3/TYPO3.CMS/code-structure/master/operation/TYPO3%5CCMS%5CBackend%5CView%5CBackendTemplateView::setTemplateRootPaths
 https://docs.typo3.org/typo3cms/extensions/formz/stable/02-Usage/Index.html
-FED FLUX 
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html
