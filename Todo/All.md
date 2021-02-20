@@ -956,3 +956,9 @@ https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view
 https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
 https://www.youtube.com/c/IvanAbramenko/featured
 https://www.youtube.com/watch?v=kIjepXxLjQM
+
+https://blog.sbtheke.de/web-development/typo3/datensatze-ueber-backend-modul-anlegen
+https://blog.sbtheke.de/web-development/typo3/typo3-programmierung/typo3-extbase-fluid-im-be-modul
+https://stackoverflow.com/questions/58071356/render-typo3-content-elements-as-hmenu-with-dataprocessors
+https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/FeatureToggles/Index.html
+https://usetypo3.com/psr-14-events.html
