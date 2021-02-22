@@ -402,3 +402,4 @@ https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insph
 
 https://kronova.net/tutorials/typo3/extbase-fluid/use-middlewares-with-multilanguage.html
 https://living-sun.com/ajax/3683-render-partial-templateview-in-typo3-using-extbase-ajax-typo3-extbase.html
+https://webcoast.dk/en/blog/typoscript-fluid-in-eid-scripts
