@@ -1346,7 +1346,7 @@ return [
 * Параграфы (Dr) – текст, картинка, файлы (матричные поля Craf), либо более удобный Wizzard
 * <v:page.breadCrumb>, <v:menu expandAll="0" levels="2" /> для а) таблицы категорий (tx_data_category), для массива данных (аналоги: https://extensions.typo3.org/extension/nsb_cat2menu/, https://stackoverflow.com/questions/40706825/typo3-sys-category-menu
 * (Wrapper) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/)
-* (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core)
+* (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html)
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
