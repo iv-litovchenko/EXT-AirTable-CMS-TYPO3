@@ -1,5 +1,6 @@
 ```
 ##2. smarty.configLoad для Smarty (нужен ли он?);
+https://kronova.net/tutorials/typo3/extbase-fluid/get-all-constants-with-extbase-extension.html
 Constants: 	plugin.myext.settings.detailPid = 123
 Setup: 		plugin.myext.settings.detailPid = {$plugin.myext.settings.detailPid}
 			$this->settings['detailPid']
