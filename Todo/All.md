@@ -1,21 +1,7 @@
 ```
 ##2. smarty.configLoad для Smarty (нужен ли он?);
 
-	$("div.sc_UserComment_wrap").wrap( "<div class='sc_UserComment_wrap_Ajax' style='background: url(ajax-loader.gif) no-repeat;'></div>" );
-	$('form#sc_UserComment').live('submit', function(){
-		$("input#sc_UserComment_Submit").attr("disabled", true); // input submit
-		$("div.sc_UserComment_wrap_Ajax").fadeTo( "fast" , 0.5 );
-			$.ajax({  
-				type: "POST",
-				data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
-				url: window.location.href + ((window.location.href.indexOf('?') == -1) ? '?' : '&') + "eIdAjax=100", // что добавить "?" или "&"
-				success: function(html){ 
-                    $("div.sc_UserComment_wrap").replaceWith(html);   // wrapper form
-					$("div.sc_UserComment_wrap_Ajax").stop(true,true).fadeTo( "fast" , 1 );
-                }  
-            });
-		return false;
-	}); 
+	
 
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 use Spatie\RouteAttributes\Attributes\Get;
