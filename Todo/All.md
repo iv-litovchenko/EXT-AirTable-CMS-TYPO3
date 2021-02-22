@@ -276,24 +276,6 @@ class ContactForm extends Model
 	\Typo3Helpers::IsEditMode();
 	\Typo3Helpers::IsAjaxMode();
 	
-##########################################################################################################################
-# Если это специальная страница - eIdAjax - кэширование страницы выключается
-# Пример "page.html?eIdAjax=controller/action"
-# См. "class.tx_yii2_configArrayPostProc.php"
-##########################################################################################################################
-	
-[globalVar = GP:eIdAjax = 1]
-					
-	config {
-		no_cache 					= 1
-		disableAllHeaderCode 		= 1
-		disablePrefixComment 		= 1
-	}
-					
-[global]
-
-
-
 	
 	/**
 		Работа по сценарию Ajax
@@ -349,21 +331,6 @@ class ContactForm extends Model
 	}
 
 
---------------------------------------------------------------------------------------------------------------------
-Запуск страницы eIdAjax
---------------------------------------------------------------------------------------------------------------------
-
-	http://site-name.ru/ajaxrun/sitet3club.controllers.MainController->actionAjaxTest/
-	?eIdAjax=1&controller=MyTestController&action=actionForm&param1=100&param2=***
-	
-	// Настройка поведения действий
-	public $TYPO3 = [
-		'disableAllHeaderCodeActions' =&gt; [], // Без секции &lt;html&gt;&lt;head&gt;
-		'nonСachedActions' =&gt; ['*'], // Не кэшируемые экшены
-		'eIdAjaxActions' =&gt; ['actionDefault'], // Доступно как eIdAjax
-		'realurlActions' =&gt; ['actionDefault'] // Действия в которых генерировать ссылки через EXT:realurl
-	];
-	
 	
 --------------------------------------------------------------------------------------------------------------------
 Описание функции парсинга атрибутов "postUserFunc=" для "lib.parseFunc_RTE"
