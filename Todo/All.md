@@ -398,3 +398,6 @@ https://www.slideshare.net/skurfuerst?utm_campaign=profiletracking&utm_medium=ss
 
 Просмотреть все функции Extbase
 https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insphpect.com/report/class/5e6b1e6a6c364/TYPO3%255CCMS%255CExtbase%255CService%255CExtensionService+&cd=13&hl=ru&ct=clnk&gl=ru
+
+
+https://kronova.net/tutorials/typo3/extbase-fluid/use-middlewares-with-multilanguage.html
