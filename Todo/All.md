@@ -396,3 +396,4 @@ https://laravel.demiart.ru/ways-of-laravel-validation/
 https://www.typo3.net/forum/thematik/zeige/thema/120062/
 http://wikicode1111d.blogspot.com/2013/08/validation-create-and-validate.html
 https://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/PartIII/Validation.html
+https://www.slideshare.net/skurfuerst?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview
