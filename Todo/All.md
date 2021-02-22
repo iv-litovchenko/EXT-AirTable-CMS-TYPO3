@@ -289,46 +289,6 @@ class ContactForm extends Model
 			return false;
 		}
 	}
-	/**
-		Генератор ссылки (EIdAjax)
-	*/
-	static function UriAjax($parameter = false, $controller = 'self', $action = false, $additionalParams = [])
-	{
-		$additionalParamsDefault = [];
-		
-		// page id
-		if ($parameter == "self") {
-			$additionalParamsDefault['id'] = $GLOBALS['TSFE']->id;
-		}elseif($parameter != false){
-			$additionalParamsDefault['id'] = $parameter;
-		}
-		
-		// controller
-		if($controller == "self"){
-			$additionalParamsDefault['controller'] = Typo3Helpers::String2Controller(Yii::$app->params['typo3']['conf']['controller']);
-		}elseif(!empty($controller) != false){
-			$additionalParamsDefault['controller'] = $controller;
-		}
-		
-		// action
-		if($action != false){
-			$additionalParamsDefault['action'] = $action;
-		}
-		
-		// merge
-		$additionalParams = $additionalParamsDefault+$additionalParams;
-		
-		$additionalParamsResult = '';
-		if (count($additionalParams) > 0) {
-			foreach ($additionalParams as $key => $value) {
-				if ($value != null) {
-					$additionalParamsResult .= "&" . $key . "=" . rawurlencode($value);
-				}
-			}
-		}
-
-		return '?eIdAjax=1'.$additionalParamsResult;
-	}
 
 
 	
