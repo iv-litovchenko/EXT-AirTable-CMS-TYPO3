@@ -287,27 +287,6 @@ class ContactForm extends Model
 	\Typo3Helpers::GetData('title'); // массив или данные текущей записи (строка)
 	\Typo3Helpers::GetConf(); // переданные настройки для текущего контроллера и действия (массив)
 	\Typo3Helpers::GetExtParams('sitet3club'); // PHP-настройки расширения (массив)
-	
---------------------------------------------------------------------------------------------------------------------
-Другие хелперы
---------------------------------------------------------------------------------------------------------------------
-
-	\Typo3Helpers::IsEditMode();
-	\Typo3Helpers::IsAjaxMode();
-	
-	
-	/**
-		Работа по сценарию Ajax
-	**/
-	static function IsAjaxMode()
-    {
-		$eIdAjax = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('eIdAjax');
-		if(!empty($eIdAjax)){
-			return true;
-		}else{
-			return false;
-		}
-	}
 
 
 	
