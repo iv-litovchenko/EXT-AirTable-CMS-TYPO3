@@ -1,5 +1,23 @@
 ```
 ##2. smarty.configLoad для Smarty (нужен ли он?);
+Constants: 	plugin.myext.settings.detailPid = 123
+Setup: 		plugin.myext.settings.detailPid = {$plugin.myext.settings.detailPid}
+			$this->settings['detailPid']
+			{settings.detailPid}
+			
+	
+vhs:		{v:variable.typoscript(path: 'settings.pageUid')}
+<v:variable.set name="userLoginPID" value="{v:variable.typoscript(path: 'site.pid.userLogin')}"/>
+<v:variable.set name="userRegisterPID" value="{v:variable.typoscript(path: 'site.pid.userRegister')}"/>
+
+plugin.tx_yourplugin {
+  ...
+  settings{
+    somePage = {$PID_SOME_PAGE}
+  }
+  ...
+}
+--------------------
 
 	
 
