@@ -1132,6 +1132,14 @@ $filter['with.20'] = 'proptblref_exampletable2_rows_func.proptblref_exampletable
 $filter['with.30'] = 'proptblref_exampletable3_row_id_func';
 $filter['with.40'] = 'proptblref_exampletable4_rows_func';
 
+// Todo -> https://github.com/Waavi/model
+// $posts = Post::whereNotRelated('author', 'name', '=', 'John')->get();
+// $comments = Comment::whereRelated('post.author', 'name', '=', 'John')->get();
+// WaaviModel::whereRelated($relationshipName, $column, $operator, $value);
+// WaaviModel::orWhereRelated($relationshipName, $column, $operator, $value);
+// WaaviModel::whereNotRelated($relationshipName, $column, $operator, $value);
+// WaaviModel::orWhereNotRelated($relationshipName, $column, $operator, $value);
+
 // ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
 $filter['union'] = ...;
 $filter['join'] = ...;
