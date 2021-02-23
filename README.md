@@ -62,7 +62,7 @@ EXT:myext/Classes/Controller/Modules/_.txt // Name section
 EXT:myext/Classes/Controller/Modules/[*]Controller.php
 EXT:myext/Classes/Controller/Pages/[*]Controller.php
 EXT:myext/Classes/Controller/PagesElements/[*]Controller.php
-EXT:myext/Classes/Controller/Widgets/[*]WidgetController.php
+EXT:myext/Classes/Controller/Widgets/[*]Controller.php
 EXT:myext/Classes/ViewHelpers/[*]ViewHelper.php
 
 EXT:myext/Classes/Domain/Form/[*]Form.php
@@ -93,7 +93,7 @@ EXT:myext/Resources/Private/Templates/_Partial/
 EXT:myext/Resources/Private/Templates/Modules/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Pages/[*]/Index.html
 EXT:myext/Resources/Private/Templates/PagesElements/[*]/Index.html
-EXT:myext/Resources/Private/Templates/Widgets/[*]Widget/Index.html
+EXT:myext/Resources/Private/Templates/Widgets/[*]/Index.html
 
 EXT:myext/Resources/Public/
 EXT:myext/Resources/Public/Css/
@@ -508,7 +508,7 @@ use Litovchenko\AirTable\Controller\AbstractWidgetController;
  * @AirTable\RegisterArguments\testArg2:<string,req>
  * @AirTable\RegisterArguments\testArg3:<string,req>
  */
-class TestWidgetController extends AbstractWidgetController
+class TestController extends AbstractWidgetController
 {
     public function indexAction()
     {
@@ -519,7 +519,7 @@ class TestWidgetController extends AbstractWidgetController
 }
 ```
 
-Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/TestWidget/Index.html
+Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/Test/Index.html
 
 ```html
 <f:debug title="Debug" inline="true">{_all}</f:debug>
