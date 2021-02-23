@@ -1,3 +1,6 @@
+if(TYPO3_AJAX_MODE === true) {
+}
+
 ###_GET
 1
 
