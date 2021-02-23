@@ -1,4 +1,5 @@
-# FormRequest - почему все от этого класса наследуются?
+# FormRequest - почему все от этого класса наследуются? https://www.itsolutionstuff.com/post/laravel-form-validation-request-class-exampleexample.html
+https://www.slideshare.net/pritamkumbhar/process-validation-of-capsules
 
 if(TYPO3_AJAX_MODE === true) {
 }
