@@ -40,65 +40,11 @@ https://laravel.demiart.ru/ways-of-laravel-validation/
 
 
 ```
-1 $this->validate($request, [
-2 'title' => 'required|unique:posts|max:255',
-3 'author.name' => 'required',
-4 'author.description' => 'required',
-5 ]);
-
-return $validator->errors()->all();
-
-1 $validator = Validator::make($request->all(), [
-2 'person.*.email' => 'email|unique:users',
-3 'person.*.first_name' => 'required_with:person.*.last_name',
-4 ]);
-
-1 'custom' => [
-2 'person.*.email' => [
-3 'unique' => 'Each person must have a unique e-mail address',
-4 ]
-5 ],
 
 
 
 
- {{ $errors->login->first('email') }}
- 
-$validator = Validator::make(...);
 
- 		$validator->after(function($validator) {
- 		if ($this->somethingElseIsInvalid()) {
- 			$validator->errors()->add('field', 'Something is wrong with this field!'\
- 		);
- 		}
- 		});
-
-		if ($validator->fails()) {
-1 //
- }
-
-
- /**
- * Get the validation rules that apply to the request.
-3 *
-4 * @return array
-5 */
-6 public function rules()
-7 {
-8 return [
-9 'title' => 'required|unique:posts|max:255',
-10 'body' => 'required',
-11 ];
-12 }
-
-
-6 public function messages()
-7 {
-8 return [
-9 'title.required' => 'A title is required',
-10 'body.required' => 'A message is required',
-11 ];
-12 }
 
 
  $messages = $validator->errors();
@@ -199,35 +145,7 @@ class ContactForm extends Model
 ```
 
 ```
-https://laravel.demiart.ru/ways-of-laravel-validation/
-	$validator = \Illuminate\Support\Facades\Validator::make(
-    array(
-        'name' => 'Dayle',
-        'password' => 'lamepassword',
-        'email' => 'email@example.com'
-    ),
-    array(
-        'name' => 'required',
-        'password' => 'required|min:8',
-        'email' => 'required|email|unique:users'
-    )
-);
-	
-		// return \Illuminate\Support\Facades\Validator::make($values,$rules);
-		$custom_validation_messages = array(
-		  'password.min' => "Password can not be less than 6 characters.",
-		  'password.required' => "Password is required"
-		);
 
-		   $validator = \Illuminate\Support\Facades\Validator::make($request, [
-			'email'          => ['required','unique:users,email','email','max:255'],
-		   'email'          => ['required','email','max:255'],
-		   'password'       => 'required|min:6|confirmed'
-
-		 ],$custom_validation_messages);
-		 
-		         if ($validator->fails()) {
-		}
 		
 
 ```
