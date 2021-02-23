@@ -493,7 +493,7 @@ Step 2) How to use?
 
 ## Register Widget (Component - View Helper with controller and template)
 
-Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestWidgetController.php
+Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestController.php
 
 ```php
 <?php
