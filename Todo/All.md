@@ -396,7 +396,7 @@ http://wikicode1111d.blogspot.com/2013/08/validation-create-and-validate.html
 https://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/PartIII/Validation.html
 https://www.slideshare.net/skurfuerst?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview
 
-Просмотреть все функции Extbase
+Просмотреть все функции Extbase и расширений core в папке typo3/sysext/
 https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insphpect.com/report/class/5e6b1e6a6c364/TYPO3%255CCMS%255CExtbase%255CService%255CExtensionService+&cd=13&hl=ru&ct=clnk&gl=ru
 
 
