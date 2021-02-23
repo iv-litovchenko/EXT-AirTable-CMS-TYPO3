@@ -11,8 +11,9 @@
 7) // Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
 
 
-https://www.yiiframework.com/doc/guide/2.0/en/input-validation
-https://laravel.com/docs/5.1/validation#available-validation-rules
+https://www.yiiframework.com/doc/guide/2.0/en/input-validation\
+https://laravel.com/docs/5.1/validation#available-validation-rules\
+https://laravel.demiart.ru/ways-of-laravel-validation/
 
 ```
 --------------------------------------------------------------------------------------------------------------------
