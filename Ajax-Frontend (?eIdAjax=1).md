@@ -1,4 +1,4 @@
-# FormRequest?
+# FormRequest - почему все от этого класса наследуются?
 
 if(TYPO3_AJAX_MODE === true) {
 }
@@ -9,7 +9,9 @@ if(TYPO3_AJAX_MODE === true) {
 ###_POST
 1
 
-
+1) Заполнение формы данными
+2) Показ ошибок
+3) Ajax-решить как передавать // data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
 4) if (посмотреть проверки VHS) isAjax...
 5) Формы _AJAX _POST
 7) // Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
