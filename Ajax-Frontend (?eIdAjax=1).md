@@ -5,9 +5,8 @@
 1
 
 
-4) if (посмотреть проверки VHS)
+4) if (посмотреть проверки VHS) isAjax...
 5) Формы _AJAX _POST
-6) Обновить Laravel ORM до полседней
 7) // Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
 
 
