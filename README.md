@@ -340,7 +340,7 @@ class NewElementController extends AbstractPageElementController
     public function contentElementPreview()
     {
         // Todo - Litovchenko\AirTable\Hooks\PageLayoutView\NewContentElementPreviewRenderer;
-	$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
+        $itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
     }
 	
     public function indexAction()
@@ -1325,7 +1325,7 @@ $context = 'checkInsert';
 $data = [];
 $data['title'] = 'My Title';
 
-$validator = \Litovchenko\AirTable\Domain\Model\Content\Data::validationDataWithContext($data,$context);
+$validator = NewTable::validationDataWithContext($data,$context);
 if ($validator->fails()) {
 	$messages = $validator->messages()->toArray();
 	$errors = $validator->errors();
@@ -1351,7 +1351,7 @@ $rules = [
 	]
 ];
 
-$validator = \Litovchenko\AirTable\Domain\Model\Content\Data::validationDataWithRules($data,$rules);
+$validator = NewTable::validationDataWithRules($data,$rules);
 if ($validator->fails()) {
 	$messages = $validator->messages()->toArray();
 	$errors = $validator->errors();
