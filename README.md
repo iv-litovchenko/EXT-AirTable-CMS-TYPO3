@@ -20,7 +20,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * [Export records Xls|Csv (module)](#export-records-xlscsv-module)
 * [Import records Xls|Csv (module)](#import-records-xlscsv-module)
 * [Useful functions (Extbase, Fluid, TS)](#useful-functions-extbase-fluid-ts)
-* [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-eloquent-orm)
+* [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-validation-eloquent-orm)
 * [Frontend editing](#frontend-editing)
 * [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 * [Functional development plans](#functional-development-plans)
@@ -1022,7 +1022,7 @@ $this->crud->model->clearGlobalScopes();
 
 ```
 
-## Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)
+## Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)
 
 ```php
 <?php
@@ -1313,6 +1313,54 @@ $recordId = 18;
 $is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domain\Model\Traits\DateStart and DateEnd;
 if($is === true) {
     echo 'Yes';
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// VALIDATION
+// ModelName::validationDataWithContext($data,$context)
+// ModelName::validationDataWithRules($data,$rules)
+////////////////////////////////////////////////////////////////////////////////////////
+
+$context = 'checkInsert';
+$data = [];
+$data['title'] = 'My Title';
+
+$validator = \Litovchenko\AirTable\Domain\Model\Content\Data::validationDataWithContext($data,$context);
+if ($validator->fails()) {
+	$messages = $validator->messages()->toArray();
+	$errors = $validator->errors();
+	$errorsAll = $validator->errors()->all();
+	print "<pre>";
+	print_r($messages);
+	print_r($errorsAll);
+	print_r($errors);
+	print "</pre>";
+}
+
+print '<hr >';
+
+$data = [];
+$data['title'] = 'My Title';
+
+$rules = [];
+$rules = [
+	'title' => [
+		'required' => 'MSG ERROR - required',
+		'min:1' => 'MSG ERROR - min',
+		'max:5' => 'MSG ERROR - max',
+	]
+];
+
+$validator = \Litovchenko\AirTable\Domain\Model\Content\Data::validationDataWithRules($data,$rules);
+if ($validator->fails()) {
+	$messages = $validator->messages()->toArray();
+	$errors = $validator->errors();
+	$errorsAll = $validator->errors()->all();
+	print "<pre>";
+	print_r($messages);
+	print_r($errorsAll);
+	print_r($errors);
+	print "</pre>";
 }
 ```
 
