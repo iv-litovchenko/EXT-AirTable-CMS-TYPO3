@@ -624,6 +624,38 @@ class NewTable extends AbstractModelCrud
     }
 
     /**
+     * A set of rules for context-aware validation
+     * @return array
+     */
+    public static function validationRules()
+    {
+        $rules = [
+            'checkInsert' => [
+                'title' => [
+                    'required' => 'MSG "required"', 
+                    'string' => 'MSG "string"', 
+                    'max:2' => 'MSG "max"',
+                    #function ($attribute, $value, $fail) {
+                    #	if ($value === 'foo') {
+                    #		$fail('The '.$attribute.' is invalid.');
+                    #	}
+                    #}
+                ]
+            ],
+            'checkUpdate' => [
+                // context update...
+            ],
+            'checkDelete' => [
+                // context delete...
+            ],
+            'checkOther' => [
+                // ...
+            ]
+        ];
+        return $rules;
+    }
+
+    /**
      * @AirTable\Field:<Input> || Input.Int || Input.Number || Input.Float || Input.Link || Input.Color || Input.Email || Input.Password || Input.InvisibleInt || Input.Invisible
      * @AirTable\Field\Label:<Input>
      * @AirTable\Field\LiveSearch:<1>
