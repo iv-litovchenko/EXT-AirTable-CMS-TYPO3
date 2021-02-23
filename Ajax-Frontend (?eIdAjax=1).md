@@ -36,44 +36,7 @@ https://laravel.demiart.ru/ways-of-laravel-validation/
 			return false;
 		}
 	}
-```
 
-
-```
-
-
-
-
-
-
-
- $messages = $validator->errors();
- echo $messages->first('email');
- 
-foreach ($messages->get('email') as $message) {}
-foreach ($messages->all() as $message) {}
-
-if ($messages->has('email')) {}
- 
- echo $messages->first('email', '<p>:message</p>');
-foreach ($messages->all('<li>:message</li>') as $message) {}
-
-
-$messages = [ 'required' => 'The :attribute field is required.', ];
-$validator = Validator::make($input, $rules, $messages);
-
-$messages = [
- 'same' => 'The :attribute and :other must match.',
- 'size' => 'The :attribute must be exactly :size.',
- 'between' => 'The :attribute must be between :min - :max.',
-'in' => 'The :attribute must be one of the following types: :values',
- ];
- 
- 
- ```
- 
- 
- ```
  
 <?php
 namespace sitet3club\models;
@@ -141,11 +104,5 @@ class ContactForm extends Model
         return false;
     }
 }
-
-```
-
-```
-
-		
 
 ```
