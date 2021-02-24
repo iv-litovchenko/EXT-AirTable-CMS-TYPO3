@@ -1,4 +1,4 @@
-## Working with Ajax in the frontend (?eIdAjax=1)
+## Ajax-Frontend (?eIdAjax=1)
 
 ### eIdAjax _GET
 
