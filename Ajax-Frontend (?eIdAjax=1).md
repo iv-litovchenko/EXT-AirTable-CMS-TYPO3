@@ -3,6 +3,8 @@ https://www.slideshare.net/pritamkumbhar/process-validation-of-capsules\
 https://codereview.stackexchange.com/questions/249068/improvements-on-laravels-base-model-and-formrequest\
 https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http-methods-961740b7f630\
 
+```
+
 if(TYPO3_AJAX_MODE === true) {
 }
 
@@ -15,9 +17,6 @@ if(TYPO3_AJAX_MODE === true) {
 1) Заполнение формы данными
 2) Показ ошибок
 4) if (посмотреть проверки VHS) isAjax...
-+ Формы _AJAX _POST
-+ Ajax-решить как передавать // data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
-+ Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
 
 https://www.yiiframework.com/doc/guide/2.0/en/input-validation\
 https://laravel.com/docs/5.1/validation#available-validation-rules\
