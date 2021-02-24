@@ -14,10 +14,10 @@ if(TYPO3_AJAX_MODE === true) {
 
 1) Заполнение формы данными
 2) Показ ошибок
-3) Ajax-решить как передавать // data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
 4) if (посмотреть проверки VHS) isAjax...
-5) Формы _AJAX _POST
-7) // Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
+!!! 5) Формы _AJAX _POST
+!!! 3) Ajax-решить как передавать // data: $("form#sc_UserComment").serializeArray(), // data: ({username : 123, password : 123}),
+!!! 7) // Здесь неправильные названия переменных! additionalParams="{eIdAjax:1,ext:'projiv',controller:'RandPhotoController',action:'index'}"
 
 https://www.yiiframework.com/doc/guide/2.0/en/input-validation\
 https://laravel.com/docs/5.1/validation#available-validation-rules\
