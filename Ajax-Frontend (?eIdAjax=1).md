@@ -64,19 +64,8 @@ $(function() {
 
 });
 ```
-$request = $this->getRequest();
-         if ($request->isPost()) {
-             $form->setData($request->getPost());
-
-             if ($form->isValid()) {
-                 var_dump($product);
-             }
-         }   
 
 
-
-		 $request = $this->getRequest(); 
-    if($request->isPost()) 
 
 
 
@@ -86,8 +75,6 @@ $request = $this->getRequest();
 if(TYPO3_AJAX_MODE === true) {
 }
 
-$validator = new phptemplate_plugin_class_formValidator;
-		if($validator->is_submit()){
 		
 1) Заполнение формы данными
 2) Показ ошибок
