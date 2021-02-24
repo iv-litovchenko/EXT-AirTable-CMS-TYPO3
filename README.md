@@ -230,7 +230,7 @@ use Litovchenko\AirTable\Controller\AbstractPageController;
  * @AirTable\Description:<Page description>
  * @AirTable\DisableAllHeaderCode:<0 || 1>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&controller=***&action=*** - See Ajax frontend
+ * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
  * @AirTable\FieldsExcludeList:<subtitle,nav_title>
  * @AirTable\FieldsAddList:<subtitle,nav_title>
  * @AirTable\Cols:<0,1|2,3,4|5>
@@ -321,7 +321,7 @@ use Litovchenko\AirTable\Controller\AbstractPageElementController;
  * @AirTable\Label:<Content element name>
  * @AirTable\Description:<Content element description>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&controller=***&action=*** - See Ajax frontend
+ * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
  * @AirTable\FieldsExcludeList:<header_position,date>
  * @AirTable\FieldsAddList:<imageorient>
  * @AirTable\Type:<Element || GridElement || Plugin> // Todo "Plugin routing support")
@@ -503,7 +503,7 @@ use Litovchenko\AirTable\Controller\AbstractWidgetController;
  * @AirTable\Label:<Test widget>
  * @AirTable\Description:<The widget has a controller and a template>
  * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&controller=***&action=*** - See Ajax frontend
+ * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
  * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || boolean || array>
  * @AirTable\RegisterArguments\testArg2:<string,req>
  * @AirTable\RegisterArguments\testArg3:<string,req>
