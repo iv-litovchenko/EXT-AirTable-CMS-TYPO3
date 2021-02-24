@@ -1,13 +1,3 @@
-# FormRequest - почему все от этого класса наследуются? https://www.itsolutionstuff.com/post/laravel-form-validation-request-class-exampleexample.html
-https://www.slideshare.net/pritamkumbhar/process-validation-of-capsules\
-https://codereview.stackexchange.com/questions/249068/improvements-on-laravels-base-model-and-formrequest\
-https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http-methods-961740b7f630\
-
-```
-
-if(TYPO3_AJAX_MODE === true) {
-}
-
 ###_GET
 ```js script
 $(function() {
@@ -70,6 +60,15 @@ $(function() {
 
 });
 ```
+# FormRequest - почему все от этого класса наследуются? https://www.itsolutionstuff.com/post/laravel-form-validation-request-class-exampleexample.html
+https://www.slideshare.net/pritamkumbhar/process-validation-of-capsules\
+https://codereview.stackexchange.com/questions/249068/improvements-on-laravels-base-model-and-formrequest\
+https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http-methods-961740b7f630\
+
+```
+
+if(TYPO3_AJAX_MODE === true) {
+}
 
 
 1) Заполнение формы данными
