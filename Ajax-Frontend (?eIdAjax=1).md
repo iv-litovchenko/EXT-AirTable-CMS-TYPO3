@@ -75,9 +75,7 @@ $(function() {
 if(TYPO3_AJAX_MODE === true) {
 }
 
-		
-1) Заполнение формы данными
-2) Показ ошибок
+
 4) if (посмотреть проверки VHS) isAjax...
 5) Убрать лишнуюю функцию @validationDataWithRules@
 
