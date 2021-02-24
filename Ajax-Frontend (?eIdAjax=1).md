@@ -64,10 +64,27 @@ $(function() {
 
 });
 ```
-# FormRequest - почему все от этого класса наследуются? https://www.itsolutionstuff.com/post/laravel-form-validation-request-class-exampleexample.html
-https://www.slideshare.net/pritamkumbhar/process-validation-of-capsules\
-https://codereview.stackexchange.com/questions/249068/improvements-on-laravels-base-model-and-formrequest\
-https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http-methods-961740b7f630\
+# FormRequest - почему все от этого класса наследуются? 
+https://www.itsolutionstuff.com/post/laravel-form-validation-request-class-exampleexample.html
+
+https://codereview.stackexchange.com/questions/249068/improvements-on-laravels-base-model-and-formrequest
+https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http-methods-961740b7f630
+
+$request = $this->getRequest();
+         if ($request->isPost()) {
+             $form->setData($request->getPost());
+
+             if ($form->isValid()) {
+                 var_dump($product);
+             }
+         }   
+
+
+
+		 $request = $this->getRequest(); 
+    if($request->isPost()) 
+
+
 
 ```
 
