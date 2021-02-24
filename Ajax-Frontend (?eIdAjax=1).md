@@ -74,7 +74,9 @@ https://medium.com/@elishaukpongson/one-laravel-form-request-class-multiple-http
 if(TYPO3_AJAX_MODE === true) {
 }
 
-
+$validator = new phptemplate_plugin_class_formValidator;
+		if($validator->is_submit()){
+		
 1) Заполнение формы данными
 2) Показ ошибок
 4) if (посмотреть проверки VHS) isAjax...
