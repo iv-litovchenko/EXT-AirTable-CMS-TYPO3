@@ -1,4 +1,5 @@
-###_GET
+### eIdAjax _GET
+
 ```js script
 $(function() {
 
@@ -30,7 +31,8 @@ $(function() {
 });
 ```
 
-###_POST
+### eIdAjax _POST
+
 ```js script
 $(function() {
 
