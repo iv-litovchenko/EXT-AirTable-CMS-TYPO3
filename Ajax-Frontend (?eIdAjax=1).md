@@ -9,10 +9,68 @@ if(TYPO3_AJAX_MODE === true) {
 }
 
 ###_GET
-1
+```js script
+$(function() {
+
+    //*****************************************************************//
+    // _GET Ajax (обновить фотографию)
+    // <f:uri.action
+    //		noCacheHash="true" 
+    //		additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|RandPhotoController|index'}"
+    // >
+    //*****************************************************************//
+    $('body').on('click', '#ext_projiv_randphotocontroller_a', function() {
+        $('#ext_projiv_randphotocontroller_wrap').fadeTo("fast", 0.5);
+        $.ajax({
+            type: 'GET',
+            url: "/?eIdAjax=1&eIdAjaxPath=projiv|RandPhotoController|index", //  EXT:projiv | Classes/Controllers/... | indexAction()
+            data: {
+                eIdAjaxSettings: {
+                    imgWidthBig: 640,
+                    imgWidthSmall: 300
+                }
+            },
+            success: function(html) {
+                $('#ext_projiv_randphotocontroller_wrap').replaceWith(html);
+            }
+        });
+        return false;
+    });
+
+});
+```
 
 ###_POST
-1
+```js script
+$(function() {
+
+    //*****************************************************************//
+    // _POST Ajax (форма оставить сообщение)
+    // <f:form 
+    //		name="FeedBackForm" 
+    //		object="{FeedBackForm}" 
+    //		noCacheHash="true" 
+    //		additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|index',settings:{}}"
+    // >
+    // <f:form.hidden name="eIdAjaxSettings[imgWidthBig]" value="640" />
+    // <f:form.hidden name="eIdAjaxSettings[imgWidthSmall]" value="300" />
+    //*****************************************************************//
+    $('body').on('submit', 'form#ext_projiv_feedbackformcontroller', function() {
+        $(this).find(':submit').attr("disabled", true); // input submit
+        $.ajax({
+            type: 'POST',
+            url: "/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|index", //  EXT:projiv | Classes/Controllers/... | indexAction()
+            data: $(this).serializeArray(),
+            success: function(html) {
+                $('#ext_projiv_feedbackformcontroller_wrap').replaceWith(html);
+            }
+        });
+        return false;
+    });
+
+});
+```
+
 
 1) Заполнение формы данными
 2) Показ ошибок
