@@ -1440,7 +1440,13 @@ return [
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
-* http://www.typo3blog.ru/blog/kak-sozdat-fal-filereference-v-kontrollere-i-dobavit-ee-v-extbase-model/
+* FAL
+  * http://www.typo3blog.ru/blog/kak-sozdat-fal-filereference-v-kontrollere-i-dobavit-ee-v-extbase-model/
+  * https://www.koller-webprogramming.ch/tipps-tricks/typo3-extension-extbase/dateien-und-bilder-mit-extbase-61-uploaddownload-via-fal-file-abstraction-layer/
+  * https://blog.scwebs.in/typo3-fal-file-abstraction-layer-in-extbasefluid-extension/
+  * https://typo3blogger.de/extbase-file-upload/
+  * https://gist.github.com/xperseguers/9076406
+  * https://stackoverflow.com/questions/59719142/how-to-upload-a-file-with-typo3-fluid-form-upload-and-pass-it-to-extbase-control
 * Компоненты Laravel
 * Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * EXT:gridelements
