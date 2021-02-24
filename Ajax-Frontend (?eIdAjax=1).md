@@ -80,6 +80,7 @@ $request = $this->getRequest();
 
 
 
+
 ```
 
 if(TYPO3_AJAX_MODE === true) {
@@ -91,6 +92,7 @@ $validator = new phptemplate_plugin_class_formValidator;
 1) Заполнение формы данными
 2) Показ ошибок
 4) if (посмотреть проверки VHS) isAjax...
+5) Убрать лишнуюю функцию @validationDataWithRules@
 
 https://www.yiiframework.com/doc/guide/2.0/en/input-validation\
 https://laravel.com/docs/5.1/validation#available-validation-rules\
