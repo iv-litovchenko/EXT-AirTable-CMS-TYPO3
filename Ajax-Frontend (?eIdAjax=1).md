@@ -1,4 +1,4 @@
-## Ajax-Frontend (?eIdAjax=1)
+## Ajax-Frontend (http://your-seite.com/?eIdAjax=1)
 
 ### eIdAjax _GET
 
