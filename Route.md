@@ -1,0 +1,12 @@
+https://github.com/SvenJuergens/miniredirect/
+https://extensions.typo3.org/extension/language_router/
+https://extensions.typo3.org/extension/routing/
+https://extensions.typo3.org/extension/my_configurable_routes/
+https://extensions.typo3.org/extension/routes/
+https://extensions.typo3.org/extension/cc_routing/
+https://extensions.typo3.org/extension/sl_cycleroutes/
+https://extensions.typo3.org/extension/sg_routes/
+https://extensions.typo3.org/extension/st_routeplanner/
+https://extensions.typo3.org/extension/naviki_routing_request/
+https://extensions.typo3.org/extension/extbase_realurl/
+https://extensions.typo3.org/extension/slug_extbase/
