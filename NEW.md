@@ -45,3 +45,7 @@ class ElementServiceController extends AbstractPageElementController
 
 }
 ```
+1) Загрузка классов и их анализ 1 раз
+2) Типизация "thisIs"
+3) Table-name
+4) Как быть с трейтами в моделях?
