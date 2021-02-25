@@ -14,5 +14,34 @@ class DebugController extends AbstractModuleController
 		'section'		=> 'content',
 		'position'		=> '100'
 	];
-  
+
+class PageDefaultController extends AbstractPageController
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 		=> 'frontendPage',
+		'name' 			=> 'Шаблон по умолчанию',
+		'description' 	=> 'Шаблон по умолчанию'
+	];
+
+class ElementServiceController extends AbstractPageElementController 
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 		=> 'frontendNewContentElement', ->>>>>>>>>Переименовать! Зделать здесь разбивку на типы...
+		'name' 			=> 'Услуги',
+		'description' 	=> 'Вывод элементов услуг',
+		'type' 			=> 'Element',   ->>>>>>>>>Переименовать!
+	];
+	
+
+}
 ```
