@@ -51,3 +51,4 @@ class ElementServiceController extends AbstractPageElementController
 4) Table-name
 5) Как быть с трейтами в моделях?
 6) Убрать абстрактыне классы
+7) Просмотреть везде где идет обработка ublic static function parameterClassDescription explode Например...
