@@ -46,7 +46,8 @@ class ElementServiceController extends AbstractPageElementController
 }
 ```
 1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
-1) Загрузка классов и их анализ 1 раз
-2) Типизация "thisIs"
-3) Table-name
-4) Как быть с трейтами в моделях?
+2) Загрузка классов и их анализ 1 раз
+3) Типизация "thisIs"
+4) Table-name
+5) Как быть с трейтами в моделях?
+6) Убрать абстрактыне классы
