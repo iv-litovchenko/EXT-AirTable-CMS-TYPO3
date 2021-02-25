@@ -45,6 +45,7 @@ class ElementServiceController extends AbstractPageElementController
 
 }
 ```
+1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
 1) Загрузка классов и их анализ 1 раз
 2) Типизация "thisIs"
 3) Table-name
