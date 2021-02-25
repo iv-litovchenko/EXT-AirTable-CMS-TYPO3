@@ -39,7 +39,7 @@ class ElementServiceController extends AbstractPageElementController
 		'thisIs' 		=> 'frontendNewContentElement', ->>>>>>>>>Переименовать! Зделать здесь разбивку на типы...
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
-		'type' 			=> 'Element',   ->>>>>>>>>Переименовать!
+		'type' 			=> 'Element',   ->>>>>>>>>Убрать этот параметр!
 	];
 	
 
