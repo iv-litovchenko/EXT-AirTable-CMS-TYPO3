@@ -51,7 +51,14 @@ class ElementServiceController extends AbstractPageElementController
 4) Table-name
 5) Как быть с трейтами в моделях?
 6) Убрать абстрактыне классы
-7) Просмотреть везде где идет обработка ublic static function parameterClassDescription explode Например...
+7) Просмотреть везде где идет обработка ublic static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
+     * @return array
+     */
+    public static function parameterPosition($class, $property, $keyAnnotation, $value)
+    {
+		$keyRealName = end(explode('\\',$keyAnnotation));
+        return [$keyRealName => $value];
+    }
 8)
 Убрать функции:     /**
      * @return string
