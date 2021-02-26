@@ -36,7 +36,7 @@ class ElementServiceController extends AbstractPageElementController
      * @var array
      */
 	public static $TYPO3 = [
-		'thisIs' 		=> 'frontendNewContentElement', ->>>>>>>>>Переименовать! Зделать здесь разбивку на типы...
+		'thisIs' 		=> 'frontendContentElement', 
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
 		'type' 			=> 'Element',   ->>>>>>>>>Убрать этот параметр!
