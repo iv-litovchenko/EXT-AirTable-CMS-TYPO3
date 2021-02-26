@@ -1014,6 +1014,15 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
       <br />
    </a>
 </f:for>
+
+*********************
+* Comment
+*********************
+
+<f:comment>
+   ---
+</f:comment>
+
 ```
 
 ### Useful notes - TypoScript
