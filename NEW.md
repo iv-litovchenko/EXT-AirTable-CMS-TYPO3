@@ -86,3 +86,5 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 	
 	9) Решить как быть с EXT-моделей
 	10) После можно будет поудалять аннотации
+	11) 11 TYPO3 для элементов содержимого
+	12) Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
