@@ -82,3 +82,5 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
     {
         return $value;
     }
+	
+	9) После можно будет поудалять аннотации
