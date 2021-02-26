@@ -104,9 +104,9 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 3 Остановился на типе элемента контента 
 
-### 
-Что искать в классах?
-function parameterClass
+### Что искать в классах что все вырезал?
+А) "function parameterClass"
+Б) " * @AirTable\"
 
 /**
  * @AirTable\Label:<Название модуля>
