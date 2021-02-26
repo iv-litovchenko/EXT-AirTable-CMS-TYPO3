@@ -61,7 +61,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 	];
 ```
 1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
-2) Загрузка классов и их анализ 1 раз
+2) Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
 3) Типизация "thisIs"
 4) Table-name
 5) Как быть с трейтами в моделях?
