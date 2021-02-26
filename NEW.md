@@ -60,7 +60,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		'defaultListTypeRender' => 3
 	];
 ```
-1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
+# Остановился на функции "getClassAnnotationValueNew"
+1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two> их обработчик
 2) Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
 3) Типизация "thisIs"
 4) Table-name
