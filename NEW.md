@@ -106,3 +106,11 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 
 ### 
 Что искать в классах?
+function parameterClass
+
+/**
+ * @AirTable\Label:<Название модуля>
+ * @AirTable\Description:<Название модуля (описание)>
+ * @AirTable\Section:<web || file || user || help || content || extension>
+ * @AirTable\Position:<50>
+ */
