@@ -44,6 +44,21 @@ class ElementServiceController extends AbstractPageElementController
 	
 
 }
+
+
+class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverride
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 				=> 'backendModelCrudOverride', || backendModelCrud
+		'name' 					=> 'Файл',
+		'description' 			=> 'Регистрация модели в системе',
+		'defaultListTypeRender' => 3
+	];
 ```
 1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
 2) Загрузка классов и их анализ 1 раз
