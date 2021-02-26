@@ -88,3 +88,17 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 	10) После можно будет поудалять аннотации
 	11) 11 TYPO3 для элементов содержимого
 	12) Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
+
+```
+    /**
+     * @return string
+     */
+    public static function parameterClassLabel($class, $keyAnnotation, $value)
+    {
+		if(strstr($class,'Domain\Model\Ext\Ext')){
+			$class_parents = class_parents($class);
+			return BaseUtility::getClassAnnotationValueNew(current($class_parents),'AirTable\Label') . '. '.$value;
+		} else {
+			return $value;
+		}
+    }
