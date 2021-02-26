@@ -61,11 +61,10 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 	];
 ```
 
-1) Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
-2) Table-name
-3) Как быть с трейтами в моделях?
-4) Убрать абстрактыне классы
-5) Просмотреть везде где идет обработка ublic static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
+
+1) Как быть с трейтами в моделях?
+2) Убрать абстрактыне классы
+3) Просмотреть везде где идет обработка public static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
      * @return array
      */
     public static function parameterPosition($class, $property, $keyAnnotation, $value)
@@ -73,7 +72,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		$keyRealName = end(explode('\\',$keyAnnotation));
         return [$keyRealName => $value];
     }
-6)
+4)
 Убрать функции:     /**
      * @return string
      */
@@ -82,8 +81,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
         return $value;
     }
 	
-	7) Решить как быть с EXT-моделей
-	8) После можно будет поудалять аннотации
+	
+	5) После можно будет поудалять аннотации
 
 ```
     /**
@@ -103,6 +102,9 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 3 Остановился на типе элемента контента 
+4 Table-name (возможно переведем на генератор TYPO3 - в т.ч. сегменты именования элементов содержимого и названий таблиц в БД MySQL
+5 Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
+6 Решить как быть с EXT-моделей
 
 ### Что искать в классах что все вырезал?
 А) "function parameterClass"
