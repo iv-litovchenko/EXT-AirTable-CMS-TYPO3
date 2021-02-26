@@ -60,14 +60,12 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		'defaultListTypeRender' => 3
 	];
 ```
-# Остановился на функции "getClassAnnotationValueNew"
-1) Вот такие аннотации:  * @AirTable\AccessCustomPermOptions\Key2:<Name Two> их обработчик
-2) Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
-3) Типизация "thisIs"
-4) Table-name
-5) Как быть с трейтами в моделях?
-6) Убрать абстрактыне классы
-7) Просмотреть везде где идет обработка ublic static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
+
+1) Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
+2) Table-name
+3) Как быть с трейтами в моделях?
+4) Убрать абстрактыне классы
+5) Просмотреть везде где идет обработка ublic static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
      * @return array
      */
     public static function parameterPosition($class, $property, $keyAnnotation, $value)
@@ -75,7 +73,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		$keyRealName = end(explode('\\',$keyAnnotation));
         return [$keyRealName => $value];
     }
-8)
+6)
 Убрать функции:     /**
      * @return string
      */
@@ -84,10 +82,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
         return $value;
     }
 	
-	9) Решить как быть с EXT-моделей
-	10) После можно будет поудалять аннотации
-	11) 11 TYPO3 для элементов содержимого
-	12) Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
+	7) Решить как быть с EXT-моделей
+	8) После можно будет поудалять аннотации
 
 ```
     /**
@@ -104,6 +100,6 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
     }
 
 
-1 Остановился на виджетах
-2 Остановился на хелперах
-3 Остановился на типе элемента контента
+1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
+2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
+3 Остановился на типе элемента контента 
