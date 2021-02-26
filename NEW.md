@@ -102,3 +102,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 			return $value;
 		}
     }
+
+
+1 Остановился на виджетах
+2 Остановился на хелперах
+3 Остановился на типе элемента контента
