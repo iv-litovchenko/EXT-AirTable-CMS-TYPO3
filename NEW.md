@@ -122,3 +122,9 @@ AbstractPageElementController
 							|| in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
 								|| in_array('Litovchenko\AirTable\Domain\Model\AbstractModel',$class_parents)
 									|| in_array('Litovchenko\AirTable\Domain\Model\Fields\AbstractField',$class_parents)){
+									
+									
+									
+									Element  - поставить с маленькой буквы
+									Gridelements  - поставить с маленькой буквы и переименовать!
+									Plugin  - поставить с маленькой буквы
