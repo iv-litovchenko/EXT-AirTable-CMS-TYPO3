@@ -39,7 +39,7 @@ class ElementServiceController extends AbstractPageElementController
 		'thisIs' 		=> 'frontendContentElement', 
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
-		'type' 			=> 'Element',   ->>>>>>>>>Убрать этот параметр!
+		'type' 			=> 'Element', 
 	];
 	
 
@@ -90,7 +90,6 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-3 Остановился на типе элемента контента 
 4 Table-name (возможно переведем на генератор TYPO3 - в т.ч. сегменты именования элементов содержимого и названий таблиц в БД MySQL
 5 Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
 6 if(strstr($v,'Domain\Model\Ext\Ext')){
