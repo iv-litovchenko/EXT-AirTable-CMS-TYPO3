@@ -93,7 +93,6 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 3 Остановился на типе элемента контента 
 4 Table-name (возможно переведем на генератор TYPO3 - в т.ч. сегменты именования элементов содержимого и названий таблиц в БД MySQL
 5 Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
-6 Решить как быть с EXT-моделей
 
 ### Что искать в классах что все вырезал?
 А) "function parameterClass"
