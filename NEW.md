@@ -1,3 +1,4 @@
+### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
 class DebugController extends AbstractModuleController
 {
