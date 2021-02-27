@@ -91,7 +91,6 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-3 Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
 4 if(strstr($v,'Domain\Model\Ext\Ext')){
 5 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 6 Оптимизировать функцию: getTableNameFromClass\
