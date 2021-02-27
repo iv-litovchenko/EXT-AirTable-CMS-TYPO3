@@ -40,7 +40,7 @@ class ElementServiceController extends AbstractPageElementController
 		'thisIs' 		=> 'frontendContentElement', 
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
-		'type' 			=> 'Element', 
+		'type' 			=> 'element || gridelement || plugin', 
 	];
 	
 
@@ -125,6 +125,4 @@ AbstractPageElementController
 									
 									
 									
-									Element  - поставить с маленькой буквы
-									Gridelements  - поставить с маленькой буквы и переименовать!
-									Plugin  - поставить с маленькой буквы
+									
