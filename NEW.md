@@ -92,7 +92,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 3 Загрузка классов и их анализ сделаем 1 раз в глобальную переменную с разбивкой по "thisIs"
 4 if(strstr($v,'Domain\Model\Ext\Ext')){
-5) Оптимизировать функцию: getTableNameFromClass
+5) Оптимизировать функцию: getTableNameFromClass\
+https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
 ### Что искать в классах что все вырезал?
 А) "function parameterClass"
