@@ -95,6 +95,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 5 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 6 Оптимизировать функцию: getTableNameFromClass\
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
+И вообще все функции утилиты...
 
 ### Что искать в классах что все вырезал?
 А) "function parameterClass"
