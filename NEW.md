@@ -107,3 +107,18 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
  * @AirTable\Section:<web || file || user || help || content || extension>
  * @AirTable\Position:<50>
  */
+
+
+
+	/** EAV!!! AbstractPageController
+AbstractPageElementController
+	/**
+	* Табы по умолчанию (для атрибутов)
+	* @return array
+	*/
+    public static function baseTabs()
+    {
+		return [
+			0 => 'Основное',
+		];
+	}
