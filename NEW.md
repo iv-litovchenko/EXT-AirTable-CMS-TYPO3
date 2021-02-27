@@ -85,18 +85,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 	5) После можно будет поудалять аннотации
 
 ```
-    /**
-     * @return string
-     */
-    public static function parameterClassLabel($class, $keyAnnotation, $value)
-    {
-		if(strstr($class,'Domain\Model\Ext\Ext')){
-			$class_parents = class_parents($class);
-			return BaseUtility::getClassAnnotationValueNew(current($class_parents),'AirTable\Label') . '. '.$value;
-		} else {
-			return $value;
-		}
-    }
+
 
 
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
