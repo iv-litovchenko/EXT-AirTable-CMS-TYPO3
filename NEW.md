@@ -81,9 +81,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-4 if(strstr($v,'Domain\Model\Ext\Ext')){
-5 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
-6 Оптимизировать функцию: getTableNameFromClass\
+3 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
+4 Оптимизировать функцию: getTableNameFromClass\
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 И вообще все функции утилиты...
 
@@ -114,6 +113,7 @@ AbstractPageElementController
 	}
 
 
+ if(strstr($v,'Domain\Model\Ext\Ext')){
 
 			+if(in_array('Litovchenko\AirTable\Controller\AbstractModuleController',$class_parents)
 				+|| in_array('Litovchenko\AirTable\Controller\AbstractPageController',$class_parents)
