@@ -1,6 +1,6 @@
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
-class DebugController extends AbstractModuleController
+class DebugController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * The magic variable TYPO3 
@@ -16,7 +16,7 @@ class DebugController extends AbstractModuleController
 		'position'		=> '100'
 	];
 
-class PageDefaultController extends AbstractPageController
+class PageDefaultController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * The magic variable TYPO3 
@@ -29,7 +29,7 @@ class PageDefaultController extends AbstractPageController
 		'description' 	=> 'Шаблон по умолчанию'
 	];
 
-class ElementServiceController extends AbstractPageElementController 
+class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 {
     /**
      * The magic variable TYPO3 
