@@ -73,17 +73,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		$keyRealName = end(explode('\\',$keyAnnotation));
         return [$keyRealName => $value];
     }
-4)
-Убрать функции:     /**
-     * @return string
-     */
-    public static function parameterClassDescription($class, $keyAnnotation, $value)
-    {
-        return $value;
-    }
-	
-	
-	5) После можно будет поудалять аннотации
+
 
 ```
 
