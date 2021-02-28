@@ -65,14 +65,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 
 1) Как быть с трейтами в моделях?
 2) Убрать абстрактыне классы
-3) Просмотреть везде где идет обработка public static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...      /**
-     * @return array
-     */
-    public static function parameterPosition($class, $property, $keyAnnotation, $value)
-    {
-		$keyRealName = end(explode('\\',$keyAnnotation));
-        return [$keyRealName => $value];
-    }
+3) Просмотреть везде где идет обработка public static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...
 
 
 ```
