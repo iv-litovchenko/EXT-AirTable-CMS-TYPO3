@@ -123,4 +123,4 @@ AbstractPageElementController
 									
 1) parameterPosition && parameterItems
 2) Input Text Сделать с маленькой?
-	
+3) Сравнить TCA до и после!
