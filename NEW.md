@@ -10,7 +10,7 @@ Fields/Ok /Оставшиекся
 									
 1) parameterPosition && parameterItems
 2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
-Проверить также что все начинается с маленькой буквы!!
+Проверить также что все начинается с маленькой буквы "doNotSqlAnalyze", "selectMinimizeInc"!!
 
 ```
 
