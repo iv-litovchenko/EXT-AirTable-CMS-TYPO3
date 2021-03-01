@@ -122,5 +122,5 @@ AbstractPageElementController
 									
 									
 1) parameterPosition && parameterItems
-2) Input Text Сделать с маленькой?
+2) thisIs Сделать с большой буквы?
 3) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
