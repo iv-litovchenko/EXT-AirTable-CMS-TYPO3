@@ -1,8 +1,6 @@
 ```
 1. Удалить аннотации...  * @AirTable\Field:
 2. Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
-3. air_table_examples тоже перевести...
-
 
 ====
 if(strstr($v,'Domain\Model\Ext\Ext') 		// ,$allClasses['BackendModelExtending']
