@@ -7,8 +7,11 @@
 air_table_examples тоже перевести...
 
 
+====
+if(strstr($v,'Domain\Model\Ext\Ext') 		// ,$allClasses['BackendModelExtending']
+		$temp = array_merge($allClasses['BackendModelCrud'],$allClasses['BackendModelCrudOverride']);
+====
 
-if(strstr($v,'Domain\Model\Ext\Ext')
 BaseRTypes
 BaseTabs
 Fields/Ok /Оставшиекся
