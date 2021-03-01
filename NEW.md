@@ -13,7 +13,12 @@ Fields/Ok /Оставшиекся
 Трайты
 Подумать насчет названия propmedia, propref...
 Название таблиц tx_airtable_domainmodel_...
-Пересмотреть 			displayCond и все что массивы & 'item's & 'position' => [
+Пересмотреть 		
+				'items:1' => 'Отмечен',
+				'items:2' => 'Отмечен',
+				'items:3' => 'Отмечен',
+				'position[*]' => 'props,0'
+displayCond и все что массивы & 'item's & 'position' => [
 					'Marker.Text.Rte|main|5'
 				]
 									
