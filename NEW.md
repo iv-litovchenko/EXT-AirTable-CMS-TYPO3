@@ -8,7 +8,7 @@ class DebugController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @var array
      */
 	public static $TYPO3 = [
-		'thisIs' 		=> 'backendModule',
+		'thisIs' 		=> 'BackendModule',
 		'name' 			=> 'Отладка кода',
 		'description' 	=> 'Модуль для просмотра результатов работы кода написанного в файле: "typo3conf/UserDebug.php"',
 		'access' 		=> 'admin',
@@ -24,7 +24,7 @@ class PageDefaultController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      * @var array
      */
 	public static $TYPO3 = [
-		'thisIs' 		=> 'frontendPage',
+		'thisIs' 		=> 'FrontendPage',
 		'name' 			=> 'Шаблон по умолчанию',
 		'description' 	=> 'Шаблон по умолчанию'
 	];
@@ -37,10 +37,10 @@ class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
      * @var array
      */
 	public static $TYPO3 = [
-		'thisIs' 		=> 'frontendContentElement', 
+		'thisIs' 		=> 'FrontendContentElement', 
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
-		'type' 			=> 'element || gridelement || plugin', 
+		'type' 			=> 'Element || Gridelement || Plugin', 
 	];
 	
 
@@ -55,7 +55,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
      * @var array
      */
 	public static $TYPO3 = [
-		'thisIs' 				=> 'backendModelCrudOverride', || backendModelCrud
+		'thisIs' 				=> 'BackendModelCrudOverride', || BackendModelCrud
 		'name' 					=> 'Файл',
 		'description' 			=> 'Регистрация модели в системе',
 		'defaultListTypeRender' => 3
@@ -122,5 +122,4 @@ AbstractPageElementController
 									
 									
 1) parameterPosition && parameterItems
-2) thisIs Сделать с большой буквы?
-3) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
+2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
