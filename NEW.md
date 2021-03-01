@@ -1,3 +1,12 @@
+```
+BaseRTypes
+BaseTabs
+Fields/Ok /Оставшиекся
+Трайты
+Подумать насчет названия propmedia, propref...
+Название таблиц tx_airtable_domainmodel_...
+```
+
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
 class DebugController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
