@@ -1,10 +1,17 @@
 ```
+if(strstr($v,'Domain\Model\Ext\Ext')
 BaseRTypes
 BaseTabs
 Fields/Ok /Оставшиекся
 Трайты
 Подумать насчет названия propmedia, propref...
 Название таблиц tx_airtable_domainmodel_...
+
+									
+1) parameterPosition && parameterItems
+2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
+Проверить также что все начинается с маленькой буквы!!
+
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
@@ -129,6 +136,4 @@ AbstractPageElementController
 									|| in_array('Litovchenko\AirTable\Domain\Model\Fields\AbstractField',$class_parents)){
 									
 									
-									
-1) parameterPosition && parameterItems
-2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
+
