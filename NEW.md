@@ -112,7 +112,7 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 
 ### Что искать в классах что все вырезал?
 А) "function parameterClass"
-Б) "function parameterClass"
+Б) "function parameter"
 В) " * @AirTable\"
 
 /**
