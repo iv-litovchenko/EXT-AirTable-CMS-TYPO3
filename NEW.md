@@ -15,7 +15,9 @@ Fields/Ok /Оставшиекся
 Трайты
 Подумать насчет названия propmedia, propref...
 Название таблиц tx_airtable_domainmodel_...
-
+Пересмотреть 			'item's & 'position' => [
+					'Marker.Text.Rte|main|5'
+				]
 									
 1) parameterPosition && parameterItems
 2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
