@@ -20,8 +20,11 @@ displayCond и все что массивы & 'item's & 'position' => [
 				]
 									
 1) parameterPosition && parameterItems
-2) Сравнить TCA до и после! (также лучше сверить значения аннотации и public static $TYPO3['fields']
-Проверить также что все начинается с маленькой буквы "doNotSqlAnalyze", "selectMinimizeInc"!!
+2) Сравнить TCA до и после! 
+3) Не забыть убрать 		sort($temp);
+		self::check1($temp);
+		self::check2($temp);
+		self::check3($temp);
 
 ```
 
