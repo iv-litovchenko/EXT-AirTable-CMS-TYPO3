@@ -1,7 +1,14 @@
 ```
-1. Удалить аннотации...  * @AirTable\Field:
-2. Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
+1) Доперевести air_table_examples
+2) 
+	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPagePid:<10>
+	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPageDoktype:<1>
+	 * 
 
+3) Удалить аннотации...  * @AirTable\Field:
+4) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
+
+5) 
 ====
 if(strstr($v,'Domain\Model\Ext\Ext') 		// ,$allClasses['BackendModelExtending']
 		$temp = array_merge($allClasses['BackendModelCrud'],$allClasses['BackendModelCrudOverride']);
