@@ -1,12 +1,7 @@
 ```
-
-2) 
-	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPagePid:<10>
-	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPageDoktype:<1>
-	 * 
-
-3) Удалить аннотации...  * @AirTable\Field:
-4) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
+1) Как быть с ExtPages например static::TYPO3 не наследуется...
+2) Удалить аннотации...  * @AirTable\Field:
+3) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
 
 BaseRTypes
 BaseTabs
