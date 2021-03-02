@@ -8,11 +8,6 @@
 3) Удалить аннотации...  * @AirTable\Field:
 4) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
 
-5) 
-====
-if(strstr($v,'Domain\Model\Ext\Ext') 	
-====
-
 BaseRTypes
 BaseTabs
 Fields/Ok /Оставшиекся
