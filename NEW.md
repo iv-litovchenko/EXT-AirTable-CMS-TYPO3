@@ -93,7 +93,8 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 ```
 
 1) Убрать абстрактыне классы
-2) Просмотреть везде где идет обработка public static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...
+2) убрать рефликсию класслов
+3) Просмотреть везде где идет обработка public static function parameterClassDescription  Например explode (особенно уделить POSITION полей)...
 
 
 ```
