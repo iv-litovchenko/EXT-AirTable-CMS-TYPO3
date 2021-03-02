@@ -75,9 +75,9 @@ class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
      */
 	public static $TYPO3 = [
 		'thisIs' 		=> 'FrontendContentElement', 
+		'type' 			=> 'Element || Gridelement || Plugin', 
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
-		'type' 			=> 'Element || Gridelement || Plugin', 
 	];
 	
 
