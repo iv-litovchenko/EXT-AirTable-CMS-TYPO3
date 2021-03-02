@@ -1,5 +1,5 @@
 ```
-1) Доперевести air_table_examples
+
 2) 
 	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPagePid:<10>
 	 * @AirTable\Field\ForeignFilter\1\UserFunc\Parameter\AllowedPageDoktype:<1>
