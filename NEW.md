@@ -10,8 +10,7 @@
 
 5) 
 ====
-if(strstr($v,'Domain\Model\Ext\Ext') 		// ,$allClasses['BackendModelExtending']
-		$temp = array_merge($allClasses['BackendModelCrud'],$allClasses['BackendModelCrudOverride']);
+if(strstr($v,'Domain\Model\Ext\Ext') 	
 ====
 
 BaseRTypes
