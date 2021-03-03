@@ -1,4 +1,75 @@
 ```
+class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
+{
+
+	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
+	#use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicPreview;
+	#use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
+    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;	
+	
+	/**
+	 * @AirTable\Field:<Input.Slug>
+	 * @AirTable\Field\Position\*:<main,4>
+	 * @AirTable\Field\Label:<Сегмент URL>
+	 * @AirTable\Field\DoNotCheck:<1>
+	 * @AirTable\Field\SelectMinimizeInc:<1>
+	 * @AirTable\Field\DataTypeConditionUse:<tx_data,tx_data_category>
+	 */
+	#protected $slug;
+
+
+	/**
+	 * @AirTable\Field:<SpecialUid>
+	 * @AirTable\Field\Show:<1>
+	 * @AirTable\Field\Position\*:<main,0>
+	 * @AirTable\Field\Label:<ID>
+	 * @AirTable\Field\LiveSearch:<1>
+	 * @AirTable\Field\DoNotCheck:<1>
+	 * @AirTable\Field\DoNotSqlAnalyze:<1>
+	 * @AirTable\Field\ReadOnly:<1>
+	 * @AirTable\Field\SelectMinimizeInc:<1>
+	 */
+	protected $uid;
+	
+	/**
+	 * @AirTable\Field:<Input.PassthroughInt>
+	 * @AirTable\Field\Show:<0>
+	 * @AirTable\Field\Position\*:<extended,1000>
+	 * @AirTable\Field\Label:<[IMPORT] PROCESS>
+	 * @AirTable\Field\DoNotCheck:<1>
+	 * @AirTable\Field\DoNotSqlAnalyze:<1>
+	 * @AirTable\Field\ReadOnly:<1>
+	 * @AirTable\Field\SelectMinimizeInc:<1>
+	 */
+	protected $importprocess;
+
+	/**
+	 * @AirTable\Field:<Input.PassthroughInt>
+	 * @AirTable\Field\Show:<0>
+	 * @AirTable\Field\Position\*:<extended,1000>
+	 * @AirTable\Field\Label:<[IMPORT] OLD ID>
+	 * @AirTable\Field\DoNotCheck:<1>
+	 * @AirTable\Field\DoNotSqlAnalyze:<1>
+	 * @AirTable\Field\ReadOnly:<1>
+	 * @AirTable\Field\SelectMinimizeInc:<1>
+	 */	
+	protected $importolduid;
+
+	/**
+	 * @AirTable\Field:<Input.PassthroughInt>
+	 * @AirTable\Field\Show:<0>
+	 * @AirTable\Field\Position\*:<extended,1000>
+	 * @AirTable\Field\Label:<recInsertMultipleHash>
+	 * @AirTable\Field\DoNotCheck:<1>
+	 * @AirTable\Field\DoNotSqlAnalyze:<1>
+	 * @AirTable\Field\ReadOnly:<1>
+	 * @AirTable\Field\SelectMinimizeInc:<1>
+	 */	
+	protected $lastinsertuidshash;
+
+
+
+
 2) Трайты 
 2.2 (продумать их реализцию для моделей Crud CrudOvveride)
 2.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
