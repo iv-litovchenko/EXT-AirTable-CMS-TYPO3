@@ -75,13 +75,16 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 Также переименуются! protected $prop_ext_air_table_modelname;
 
 1) BaseUtility HasTrait!
-2) Трайты 
-2.2 (продумать их реализцию для моделей Crud CrudOvveride)
-2.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
-4) Передумать название "CrudOvveride")
-5) EX (сверить)
-7) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
-8) Проверить глобальные скоупы .... в буилдере! 
+BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
+https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
+
+3) Трайты 
+4.2 (продумать их реализцию для моделей Crud CrudOvveride)
+5.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
+6) Передумать название "CrudOvveride")
+7) EX (сверить)
+8) Посмотреть SQL Анализер (запустить и посмотреть будут ли изменения в БД?)
+9) Проверить глобальные скоупы .... в буилдере! 
 
 BaseRTypes
 BaseTabs
@@ -151,18 +154,7 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 		'description' 			=> 'Регистрация модели в системе',
 		'defaultListTypeRender' => 3
 	];
-```
 
-1) Убрать абстрактыне классы
-2) BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
-https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
-
-```
-
-
-
-1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 
 
 
@@ -180,7 +172,10 @@ AbstractPageElementController
 	}
 
 
-
+1) Убрать абстрактыне классы 
+2) Сделать Fix-для классов моделей, виджетов и хелперов (sql_autoload_register)
+Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
+Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 
 			+ if(in_array('Litovchenko\AirTable\Controller\AbstractModuleController',$class_parents)
 				+|| in_array('Litovchenko\AirTable\Controller\AbstractPageController',$class_parents)
