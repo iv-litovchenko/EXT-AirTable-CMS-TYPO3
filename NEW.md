@@ -74,7 +74,7 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
-1) BaseUtility
+1) BaseUtility HasTrait!
 2) Трайты 
 2.2 (продумать их реализцию для моделей Crud CrudOvveride)
 2.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
