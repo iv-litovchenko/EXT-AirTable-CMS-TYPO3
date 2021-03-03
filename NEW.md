@@ -92,12 +92,8 @@ displayCond и все что массивы & 'item's & 'position' => [
 					'Marker.Text.Rte|main|5'
 				]
 									
-1) parameterPosition && parameterItems
 2) Сравнить TCA до и после! 
-3) Не забыть убрать 		sort($temp);
-		self::check1($temp);
-		self::check2($temp);
-		self::check3($temp);
+
 
 ```
 
