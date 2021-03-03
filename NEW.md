@@ -131,8 +131,8 @@ AbstractPageElementController
 			+ if(in_array('Litovchenko\AirTable\Controller\AbstractModuleController',$class_parents)
 				+|| in_array('Litovchenko\AirTable\Controller\AbstractPageController',$class_parents)
 					+|| in_array('Litovchenko\AirTable\Controller\AbstractPageElementController',$class_parents)
-						+ || in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
-							+ || in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
+						|| in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
+							| in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
 								
 								
 								Удалить абстрактный класс модели! Сделаем FIX-модели!
