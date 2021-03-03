@@ -1,4 +1,5 @@
 ```
+0) 
 class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 {
 
@@ -68,8 +69,12 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 	protected $lastinsertuidshash;
 
 
+Подумать насчет названия propmedia, propref...
+Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
+Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
+Также переименуются! protected $prop_ext_air_table_modelname;
 
-
+1) BaseUtility
 2) Трайты 
 2.2 (продумать их реализцию для моделей Crud CrudOvveride)
 2.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
@@ -80,21 +85,11 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 
 BaseRTypes
 BaseTabs
-Fields/Ok /Оставшиекся
-Подумать насчет названия propmedia, propref...
-Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
-Пересмотреть 		
-				'items:1' => 'Отмечен',
-				'items:2' => 'Отмечен',
-				'items:3' => 'Отмечен',
-				'position[*]' => 'props,0'
-displayCond и все что массивы & 'item's & 'position' => [
-					'Marker.Text.Rte|main|5'
-				]
-									
+Fields/Ok/Оставшиекся
+
+Пересмотреть параметр "position" => 'Marker.Text.Rte|main|5' -> Структура|Таб|Позиция
+Пересмотреть параметр "displayCond"					
 2) Сравнить TCA до и после! 
-
-
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
@@ -141,10 +136,7 @@ class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
 		'name' 			=> 'Услуги',
 		'description' 	=> 'Вывод элементов услуг',
 	];
-	
-
 }
-
 
 class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverride
 {
@@ -162,17 +154,16 @@ class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverri
 ```
 
 1) Убрать абстрактыне классы
-
 2) BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
+
 ```
 
 
 
 1 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 2 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-3 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
-Также переименуются! protected $prop_ext_air_table_modelname;
+
 
 
 	/** У EAV тоже были вкладки!!!! AbstractPageController
