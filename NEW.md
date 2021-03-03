@@ -156,4 +156,6 @@ AbstractPageElementController
 									|| in_array('Litovchenko\AirTable\Domain\Model\Fields\AbstractField',$class_parents)){
 									
 									
+```
+### $TYPO3 - наслоедование переменной?
 
