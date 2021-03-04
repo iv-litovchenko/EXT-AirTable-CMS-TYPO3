@@ -22,6 +22,9 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 	#protected $slug;
 
 
+SELECT backend_layout FROM `pages` GROUP BY backend_layout;
+#update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
+#update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
 
 Подумать насчет названия propmedia, propref...
 Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
