@@ -171,7 +171,7 @@ class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         ],
         'ajaxActions' => 'indexAction', // Todo
         'section' => 'web || file || user || help || content || tools || ext || sec_ext_myext', // Todo "invisible"
-        'position' => '100',
+        'position' => '100'
     ];
 
     /**
@@ -248,12 +248,12 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'fieldsExcludeList' => 'subtitle,nav_title',
         'fieldsAddList' => 'subtitle,nav_title',
-        'cols' => '0,1|2,3,4|5',
+        'cols' => '0,1|2,3,4|5'
     ];
 
-    public function contentPagePreview()
+    public function preview()
     {
-        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeadk
+        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeaderHook
         $itemContent .= '
         <p class="text-center">
         <span title="'.$row['title'] . '" class="btn btn-default">' . $row['title'] .'</span>
@@ -325,39 +325,45 @@ Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - PagesElements]/
 ```php
 <?php
 namespace Mynamespace\Myext\Controller\[SubFolder - PagesElements];
-use Litovchenko\AirTable\Controller\AbstractPageElementController;
-/**
- * @AirTable\Label:<Content element name>
- * @AirTable\Description:<Content element description>
- * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
- * @AirTable\FieldsExcludeList:<header_position,date>
- * @AirTable\FieldsAddList:<imageorient>
- * @AirTable\Type:<Element || GridElement || Plugin> // Todo "Plugin routing support")
- * @AirTable\Cols:<1,2,3|4,5> // If @AirTable\Type:<GridElement> // EXT:gridelements
- */
-class NewElementController extends AbstractPageElementController
+
+class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * @AirTable\Field:<Input>
-     * @AirTable\Field\Label:<The field for this content element>
-     * @AirTable\Field\Max:<100>
-     * @AirTable\Field\Size:<24>
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
      */
-    protected $attr_input;
-	
-    public function contentElementPreview()
+    public static $TYPO3 = [
+        'thisIs' => 'FrontendContentElement',
+        'name' => 'Content element name',
+        'description' => 'Content element description',
+        'disableAllHeaderCode' => '0 || 1',
+        'nonСachedActions' => 'indexAction', // USER_INT
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'fieldsExcludeList' => 'sheader_position,date',
+        'fieldsAddList' => 'imageorient',
+        'type' => 'Element || Gridelement || Plugin', // Todo "Plugin routing support"
+        'cols' => '1,2,3|4,5', // If type:<GridElement> // EXT:gridelements
+    ];
+
+    public function preview()
     {
         // Todo - Litovchenko\AirTable\Hooks\PageLayoutView\NewContentElementPreviewRenderer;
-        $itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
+        $itemContent .= '
+        <p class="text-center">
+        <span title="'.$row['header'] . '" class="btn btn-default">' . $row['header'] .'</span>
+        </p>';
     }
-	
+
     public function indexAction()
     {
         $this->view->assign('var', rand(1, 1000));
-        $this->view->assign('gridId', $this->configurationManager->getContentObject()->data['uid']); // If @AirTable\Type:<GridElement> // EXT:gridelements
+        $this->view->assign(
+            'gridId',
+            $this->configurationManager->getContentObject()->data['uid']
+        ); // If @AirTable\Type:<GridElement> // EXT:gridelements
     }
-    
+
     // If @AirTable\Type:<Plugin>
     public function detailAction()
     {
