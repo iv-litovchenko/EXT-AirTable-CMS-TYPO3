@@ -170,8 +170,7 @@ class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             'key3' => 'Name Three',
         ],
         'ajaxActions' => 'indexAction', // Todo
-        'section' =>
-            'web || file || user || help || content || tools || ext || sec_ext_myext', // Todo "invisible"
+        'section' => 'web || file || user || help || content || tools || ext || sec_ext_myext', // Todo "invisible"
         'position' => '100',
     ];
 
