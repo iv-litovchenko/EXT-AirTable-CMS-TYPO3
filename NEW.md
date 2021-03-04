@@ -19,55 +19,6 @@ class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 	#protected $slug;
 
 
-	/**
-	 * @AirTable\Field:<SpecialUid>
-	 * @AirTable\Field\Show:<1>
-	 * @AirTable\Field\Position\*:<main,0>
-	 * @AirTable\Field\Label:<ID>
-	 * @AirTable\Field\LiveSearch:<1>
-	 * @AirTable\Field\DoNotCheck:<1>
-	 * @AirTable\Field\DoNotSqlAnalyze:<1>
-	 * @AirTable\Field\ReadOnly:<1>
-	 * @AirTable\Field\SelectMinimizeInc:<1>
-	 */
-	protected $uid;
-	
-	/**
-	 * @AirTable\Field:<Input.PassthroughInt>
-	 * @AirTable\Field\Show:<0>
-	 * @AirTable\Field\Position\*:<extended,1000>
-	 * @AirTable\Field\Label:<[IMPORT] PROCESS>
-	 * @AirTable\Field\DoNotCheck:<1>
-	 * @AirTable\Field\DoNotSqlAnalyze:<1>
-	 * @AirTable\Field\ReadOnly:<1>
-	 * @AirTable\Field\SelectMinimizeInc:<1>
-	 */
-	protected $importprocess;
-
-	/**
-	 * @AirTable\Field:<Input.PassthroughInt>
-	 * @AirTable\Field\Show:<0>
-	 * @AirTable\Field\Position\*:<extended,1000>
-	 * @AirTable\Field\Label:<[IMPORT] OLD ID>
-	 * @AirTable\Field\DoNotCheck:<1>
-	 * @AirTable\Field\DoNotSqlAnalyze:<1>
-	 * @AirTable\Field\ReadOnly:<1>
-	 * @AirTable\Field\SelectMinimizeInc:<1>
-	 */	
-	protected $importolduid;
-
-	/**
-	 * @AirTable\Field:<Input.PassthroughInt>
-	 * @AirTable\Field\Show:<0>
-	 * @AirTable\Field\Position\*:<extended,1000>
-	 * @AirTable\Field\Label:<recInsertMultipleHash>
-	 * @AirTable\Field\DoNotCheck:<1>
-	 * @AirTable\Field\DoNotSqlAnalyze:<1>
-	 * @AirTable\Field\ReadOnly:<1>
-	 * @AirTable\Field\SelectMinimizeInc:<1>
-	 */	
-	protected $lastinsertuidshash;
-
 
 Подумать насчет названия propmedia, propref...
 Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
