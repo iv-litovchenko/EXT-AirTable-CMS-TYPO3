@@ -45,18 +45,6 @@ Fields/Ok/Оставшиекся
 ```php
 
 
-class PageDefaultController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-{
-    /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
-     * @var array
-     */
-	public static $TYPO3 = [
-		'thisIs' 		=> 'FrontendPage',
-		'name' 			=> 'Шаблон по умолчанию',
-		'description' 	=> 'Шаблон по умолчанию'
-	];
 
 class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 {
