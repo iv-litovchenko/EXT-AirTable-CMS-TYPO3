@@ -231,38 +231,40 @@ Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageC
 ```php
 <?php
 namespace Mynamespace\Myext\Controller\[SubFolder - Pages];
-use Litovchenko\AirTable\Controller\AbstractPageController;
-/**
- * @AirTable\Label:<Page name>
- * @AirTable\Description:<Page description>
- * @AirTable\DisableAllHeaderCode:<0 || 1>
- * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
- * @AirTable\FieldsExcludeList:<subtitle,nav_title>
- * @AirTable\FieldsAddList:<subtitle,nav_title>
- * @AirTable\Cols:<0,1|2,3,4|5>
- */
-class NewPageController extends AbstractPageController
+
+class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * @AirTable\Field:<Input>
-     * @AirTable\Field\Label:<The field for this page element>
-     * @AirTable\Field\Max:<100>
-     * @AirTable\Field\Size:<24>
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
      */
-    protected $attr_input;
-    
+    public static $TYPO3 = [
+        'thisIs' => 'FrontendPage',
+        'name' => 'Page name',
+        'description' => 'Page description',
+        'disableAllHeaderCode' => '0 || 1',
+        'nonСachedActions' => 'indexAction', // USER_INT
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'fieldsExcludeList' => 'subtitle,nav_title',
+        'fieldsAddList' => 'subtitle,nav_title',
+        'cols' => '0,1|2,3,4|5',
+    ];
+
     public function contentPagePreview()
     {
-        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeaderHook
-        $itemContent .= '<p class="text-center"><span title="' . $row['title'] . '" class="btn btn-default">' . $row['title'] . '</span></p>';
+        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeadk
+        $itemContent .= '
+        <p class="text-center">
+        <span title="'.$row['title'] . '" class="btn btn-default">' . $row['title'] .'</span>
+        </p>';
     }
-	
+
     public function indexAction()
     {
         $this->view->assign('var', rand(1, 1000));
     }
-    
+
     public function detailAction()
     {
         $this->view->assign('var', rand(1, 1000));
