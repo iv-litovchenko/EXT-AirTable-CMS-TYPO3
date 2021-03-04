@@ -1,4 +1,7 @@
 ```
+# Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt
+См. "position" & "DatabaseSchemaService.php"
+
 0) 
 class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 {
