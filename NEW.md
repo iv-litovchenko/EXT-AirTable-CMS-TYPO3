@@ -43,21 +43,7 @@ Fields/Ok/Оставшиекся
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
-class DebugController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-{
-    /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
-     * @var array
-     */
-	public static $TYPO3 = [
-		'thisIs' 		=> 'BackendModule',
-		'name' 			=> 'Отладка кода',
-		'description' 	=> 'Модуль для просмотра результатов работы кода написанного в файле: "typo3conf/UserDebug.php"',
-		'access' 		=> 'admin',
-		'section'		=> 'content',
-		'position'		=> '100'
-	];
+
 
 class PageDefaultController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
