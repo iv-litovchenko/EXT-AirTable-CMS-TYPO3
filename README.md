@@ -150,22 +150,29 @@ use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
-use Litovchenko\AirTable\Controller\AbstractModuleController;
-use Litovchenko\AirTable\Utility\BaseUtility;
 
-/**
- * @AirTable\Label:<Module 1>
- * @AirTable\Description:<Module 1 description>
- * @AirTable\AjaxActions:<indexAction> // Todo
- * @AirTable\Access:<user,group,admin,systemMaintainer>
- * @AirTable\AccessCustomPermOptions\Key1:<Name One> // Todo -> $GLOBALS['TYPO3_CONF_VARS']['BE']['customPermOptions']
- * @AirTable\AccessCustomPermOptions\Key2:<Name Two>
- * @AirTable\AccessCustomPermOptions\Key3:<Name Three>
- * @AirTable\Section:<web || file || user || help || content || tools || ext || sec_ext_myext> // Todo "invisible"
- * @AirTable\Position:<100>
- */
-class NewModule1Controller extends AbstractModuleController
+class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'BackendModule',
+		'name' => 'Module 1',
+		'description' => 'Module 1 description',
+		'access' => 'user,group || admin || systemMaintainer',
+		'accessCustomPermOptions' => [ // Todo -> $GLOBALS['TYPO3_CONF_VARS']['BE']['customPermOptions']
+			'key1' => 'Name One',
+			'key2' => 'Name Two',
+			'key3' => 'Name Three',
+		],
+		'ajaxActions' => 'indexAction', // Todo
+		'section' => 'web || file || user || help || content || tools || ext || sec_ext_myext',  // Todo "invisible"
+		'position' => '100'
+	];
+
     /**
      * Backend Template Container
      *
