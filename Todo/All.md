@@ -299,6 +299,41 @@ https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insph
 
 https://kronova.net/tutorials/typo3/extbase-fluid/use-middlewares-with-multilanguage.html
 https://living-sun.com/ajax/3683-render-partial-templateview-in-typo3-using-extbase-ajax-typo3-extbase.html
-https://webcoast.dk/en/blog/typoscript-fluid-in-eid-scripts
-https://www.dr-trossbach.de/typo3/sysext/extbase/ext_typoscript_setup.txt
-https://www.typo-script.de/typoscript/
+
+
+
+
+config.tx_extbase {
+	mvc {
+		requestHandlers {
+			TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler = TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler
+			TYPO3\CMS\Extbase\Mvc\Web\BackendRequestHandler = TYPO3\CMS\Extbase\Mvc\Web\BackendRequestHandler
+			TYPO3\CMS\Extbase\Mvc\Cli\RequestHandler = TYPO3\CMS\Extbase\Mvc\Cli\RequestHandler
+		}
+		throwPageNotFoundExceptionIfActionCantBeResolved = 0
+	}
+
+
+/**
+ * @return \TYPO3\CMS\Fluid\View\StandaloneView
+ */
+protected function getView()
+{
+    $pageRepository = GeneralUtility::makeInstance(PageRepository::class);
+    $templateService = GeneralUtility::makeInstance(TemplateService::class);
+    // get the rootline
+    $rootLine = $pageRepository->getRootLine($pageRepository->getDomainStartPage(GeneralUtility::getIndpEnv('TYPO3_HOST_ONLY')));
+    // initialize template service and generate typoscript configuration
+    $templateService->init();
+    $templateService->runThroughTemplates($rootLine);
+    $templateService->generateConfig();
+
+    $fluidView = new StandaloneView();
+    $fluidView->setLayoutRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['layoutRootPaths.']);
+    $fluidView->setTemplateRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['templateRootPaths.']);
+    $fluidView->setPartialRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['partialRootPaths.']);
+    $fluidView->getRequest()->setControllerExtensionName('YourExt');
+    $fluidView->setTemplate('index');
+
+    return $fluidView;
+}
