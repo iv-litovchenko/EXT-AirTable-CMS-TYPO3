@@ -42,6 +42,7 @@ Fields/Ok/Оставшиекся
 Пересмотреть параметр "position" => 'Marker.Text.Rte|main|5' -> Структура|Таб|Позиция
 Пересмотреть параметр "displayCond"					
 2) Сравнить TCA до и после! 
+3) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
