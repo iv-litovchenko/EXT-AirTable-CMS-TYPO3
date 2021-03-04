@@ -47,7 +47,7 @@ Fields/Ok/Оставшиекся
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
 
-
+https://codebeautify.org/php-beautifier
 
 class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 {
