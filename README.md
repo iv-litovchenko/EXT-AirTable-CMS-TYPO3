@@ -154,24 +154,26 @@ use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
+     * The magic variable TYPO3
+     * Parameters are described here
      * @var array
      */
-	public static $TYPO3 = [
-		'thisIs' => 'BackendModule',
-		'name' => 'Module 1',
-		'description' => 'Module 1 description',
-		'access' => 'user,group || admin || systemMaintainer',
-		'accessCustomPermOptions' => [ // Todo -> $GLOBALS['TYPO3_CONF_VARS']['BE']['customPermOptions']
-			'key1' => 'Name One',
-			'key2' => 'Name Two',
-			'key3' => 'Name Three',
-		],
-		'ajaxActions' => 'indexAction', // Todo
-		'section' => 'web || file || user || help || content || tools || ext || sec_ext_myext',  // Todo "invisible"
-		'position' => '100'
-	];
+    public static $TYPO3 = [
+        'thisIs' => 'BackendModule',
+        'name' => 'Module 1',
+        'description' => 'Module 1 description',
+        'access' => 'user,group || admin || systemMaintainer',
+        'accessCustomPermOptions' => [
+            // Todo -> $GLOBALS['TYPO3_CONF_VARS']['BE']['customPermOptions']
+            'key1' => 'Name One',
+            'key2' => 'Name Two',
+            'key3' => 'Name Three',
+        ],
+        'ajaxActions' => 'indexAction', // Todo
+        'section' =>
+            'web || file || user || help || content || tools || ext || sec_ext_myext', // Todo "invisible"
+        'position' => '100',
+    ];
 
     /**
      * Backend Template Container
@@ -197,7 +199,6 @@ class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         // $id = (int) (GeneralUtility::_GET('id') ?? 0);
         $this->view->assign('var', rand(1, 1000));
     }
-
 }
 ```
 
