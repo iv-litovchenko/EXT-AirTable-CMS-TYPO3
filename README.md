@@ -337,13 +337,12 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'thisIs' => 'FrontendContentElement',
         'name' => 'Content element name',
         'description' => 'Content element description',
-        'disableAllHeaderCode' => '0 || 1',
         'nonСachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
-        'fieldsExcludeList' => 'sheader_position,date',
+        'fieldsExcludeList' => 'header_position,date',
         'fieldsAddList' => 'imageorient',
-        'type' => 'Element || Gridelement || Plugin', // Todo "Plugin routing support"
-        'cols' => '1,2,3|4,5', // If type:<GridElement> // EXT:gridelements
+        'type' => 'Element || GridElement || Plugin', // Todo "Plugin routing support"
+        'cols' => '1,2,3|4,5', // If type "GridElement" // EXT:gridelements
     ];
 
     public function preview()
@@ -359,12 +358,12 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     {
         $this->view->assign('var', rand(1, 1000));
         $this->view->assign(
-            'gridId',
+            'gridId', // If type "GridElement" // EXT:gridelements
             $this->configurationManager->getContentObject()->data['uid']
-        ); // If @AirTable\Type:<GridElement> // EXT:gridelements
+        );
     }
 
-    // If @AirTable\Type:<Plugin>
+    // If type "Plugin"
     public function detailAction()
     {
         $this->view->assign('var', rand(1, 1000));
@@ -379,7 +378,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 <div style="padding: 25px; background: wheat; text-align: center;">
 	<h3>Hellow word "Element || GridElement || Plugin" {var}!</h3>
 	
-	<!--If @AirTable\Type:<GridElement> // EXT:gridelements-->
+	<!--If type "GridElement" // EXT:gridelements-->
 	<table border="1" width="100%">
 	<tr>
 		<td><f:content gridContainerId="{gridId}" gridColumn="1" /></td>
@@ -390,7 +389,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 	</tr>
 	</table>
 	
-	<!--If @AirTable\Type:<Plugin>-->
+	<!--If type "Plugin"-->
 	<f:link.action action="detail">Show me what's there!</f:link.action>
 </div>
 ```
