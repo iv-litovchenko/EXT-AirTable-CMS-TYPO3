@@ -748,10 +748,6 @@ class NewTable extends AbstractModelCrud
      * @AirTable\Field\Show:<1> // Show field in lists
      * @AirTable\Field\OnChangeReload:<1> // Reload the form when the field value changes
      * @AirTable\Field\DisplayCond:<USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data> // Example
-     * @AirTable\Field\DisplayCondAnd\1:<FIELD:disabled:=:1>
-     * @AirTable\Field\DisplayCondAnd\2:<FIELD:prop_example_field_flag:=:1>
-     * @AirTable\Field\DisplayCondOr\1:<FIELD:disabled:=:1>
-     * @AirTable\Field\DisplayCondOr\2:<FIELD:prop_example_field_flag:=:1>
      * @AirTable\Field\Exclude:<1> // Todo
      */
     protected $prop_example_field_additional_options;
