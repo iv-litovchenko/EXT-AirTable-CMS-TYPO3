@@ -74,36 +74,6 @@ https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Htmlp
 
 
 
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
-
-// TCEFORM.tx_examples_haiku.reference_page.PAGE_TSCONFIG_STR = image
- 'foreign_table_where' => "AND pages.title LIKE '%###PAGE_TSCONFIG_STR###%'",
- 
- 'related_records' => [
-            'label' => 'LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:tx_examples_haiku.related_records',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'pages, tt_content',
-                'size' => 5,
-                'minitems' => 0,
-                'maxitems' => 10,
-                'suggestOptions' => [
-                    'default' => [
-                        'searchWholePhrase' => 1,
-                    ],
-                    'pages' => [
-                        'searchCondition' => 'doktype = 1',
-                    ],
-                ],
-            ],
-        ],
-
-
-???
 
 https://t3terminal.com/blog/typo3-community/
 https://t3terminal.com/blog/typo3-blogger/
@@ -131,26 +101,3 @@ config.tx_extbase {
 	}
 
 
-/**
- * @return \TYPO3\CMS\Fluid\View\StandaloneView
- */
-protected function getView()
-{
-    $pageRepository = GeneralUtility::makeInstance(PageRepository::class);
-    $templateService = GeneralUtility::makeInstance(TemplateService::class);
-    // get the rootline
-    $rootLine = $pageRepository->getRootLine($pageRepository->getDomainStartPage(GeneralUtility::getIndpEnv('TYPO3_HOST_ONLY')));
-    // initialize template service and generate typoscript configuration
-    $templateService->init();
-    $templateService->runThroughTemplates($rootLine);
-    $templateService->generateConfig();
-
-    $fluidView = new StandaloneView();
-    $fluidView->setLayoutRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['layoutRootPaths.']);
-    $fluidView->setTemplateRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['templateRootPaths.']);
-    $fluidView->setPartialRootPaths($templateService->setup['plugin.']['tx_yourext.']['view.']['partialRootPaths.']);
-    $fluidView->getRequest()->setControllerExtensionName('YourExt');
-    $fluidView->setTemplate('index');
-
-    return $fluidView;
-}
