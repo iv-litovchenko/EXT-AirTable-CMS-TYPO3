@@ -1,19 +1,5 @@
 ## https://codebeautify.org/php-beautifier
 ```
-1) class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
-{
-
-	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
-	/**
-	 * @AirTable\Field:<Input.Slug>
-	 * @AirTable\Field\Position\*:<main,4>
-	 * @AirTable\Field\Label:<Сегмент URL>
-	 * @AirTable\Field\DoNotCheck:<1>
-	 * @AirTable\Field\SelectMinimizeInc:<1>
-	 * @AirTable\Field\DataTypeConditionUse:<tx_data,tx_data_category>
-	 */
-	#protected $slug;
-
 2) 
 SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 #update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
