@@ -4,8 +4,6 @@
 {
 
 	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
-	#use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicPreview;
-	#use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
     // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;	
 	
 	/**
