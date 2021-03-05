@@ -1,5 +1,5 @@
 ```
-0) class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
+1) class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 {
 
 	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
@@ -17,7 +17,7 @@
 	 */
 	#protected $slug;
 
-
+2) 
 SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 #update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
 #update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
@@ -27,23 +27,23 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
-1) BaseUtility
+3) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
-2) Трайты 
-2.1 (продумать их реализцию для моделей Crud CrudOvveride)
-2.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
+4) Трайты 
+4.1 (продумать их реализцию для моделей Crud CrudOvveride)
+4.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
 
-3) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
+5) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
 
-4) 
-4.1) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
-4.2) BaseRTypes
-4.3) BaseTabs
-4.4) Fields/Ok/Оставшиекся
+6) 
+6.1) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
+6.2) BaseRTypes
+6.3) BaseTabs
+6.4) Fields/Ok/Оставшиекся
 				
-5) Сравнить TCA до и после! 
+7) Сравнить TCA до и после! 
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
