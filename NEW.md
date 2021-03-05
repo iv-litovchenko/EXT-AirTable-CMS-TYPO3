@@ -77,8 +77,42 @@ AbstractPageElementController
 
 
 
-### Специальные поля (поля по умолчанию)
-First Header  | Second Header
+### "specialFields" Специальные поля (поля по умолчанию)
+Field key  | Field name | Field settings  
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+pid  | Content Cell
+RType  | Content Cell
+RTypeSub | 
+title
+
+
+			
+			'' => [
+				'required' => 1
+			],
+			'alt_title' => [
+				'required' => 1
+			],
+			'service_note',
+			'date_create',
+			'date_update',
+			'date_start',
+			'date_end',
+			'sorting',
+			'thumbnail',
+			'files',
+			'deleted',
+			'disabled',
+			'status',
+			'be_users_row_id',
+			'parent_row_id',
+			'category_rows', // category_row_id
+			'tt_content_rows',
+			'sys_attribute_rows',
+			'bodytext_preview',
+			'bodytext_detail',
+			'pic_preview',
+			'pic_detail',
+			'keywords',
+			'description',
+			'slug'
