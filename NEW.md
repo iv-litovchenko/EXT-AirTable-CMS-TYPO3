@@ -39,7 +39,6 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 4.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
 
 6) 
-6.1) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
 6.2) BaseRTypes
 6.3) BaseTabs
 6.4) Fields/Ok/Оставшиекся
