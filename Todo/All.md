@@ -277,17 +277,16 @@ https://t3terminal.com/blog/typo3-community/
 https://t3terminal.com/blog/typo3-blogger/
 https://t3terminal.com/blog/free-typo3-support/
 https://t3terminal.com/blog/earn-typo3/
-https://docs.typo3.org/typo3cms/extensions/formz/stable/02-Usage/Index.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Routing/AdvancedRoutingConfiguration.html
-https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/RequestHandling/Index.html
-https://docs.typo3.org/m/typo3/book-extbasefluid/9.5/en-us/10-Outlook/6-dispatching.html
+
+
+
 https://t3terminal.com/blog/typo3-site-configuration/
 https://t3terminal.com/blog/typo3-routing/
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view-for-a-controller-action/
 https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
 https://www.youtube.com/c/IvanAbramenko/featured
-https://www.youtube.com/watch?v=kIjepXxLjQM
+
 
 https://www.typo3.net/forum/thematik/zeige/thema/120062/
 http://wikicode1111d.blogspot.com/2013/08/validation-create-and-validate.html
