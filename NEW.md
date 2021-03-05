@@ -16,11 +16,6 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 
 5) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
 
-4) Трайты 
-4.1 (продумать их реализцию для моделей Crud CrudOvveride)
-
-
-6) 
 6.2) BaseRTypes
 6.3) BaseTabs
 6.4) Fields/Ok/Оставшиекся
