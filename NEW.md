@@ -52,20 +52,7 @@ Fields/Ok/Оставшиекся
 
 https://codebeautify.org/php-beautifier
 
-class ElementServiceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
-{
-    /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
-     * @var array
-     */
-	public static $TYPO3 = [
-		'thisIs' 		=> 'FrontendContentElement', 
-		'type' 			=> 'Element || Gridelement || Plugin', 
-		'name' 			=> 'Услуги',
-		'description' 	=> 'Вывод элементов услуг',
-	];
-}
+
 
 class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverride
 {
