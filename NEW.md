@@ -16,7 +16,6 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 
 5) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
 
-6.2) BaseRTypes
 6.4) Fields/Ok/Оставшиекся
 				
 7) Сравнить TCA до и после! 
