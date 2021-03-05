@@ -278,30 +278,15 @@ https://t3terminal.com/blog/typo3-blogger/
 https://t3terminal.com/blog/free-typo3-support/
 https://t3terminal.com/blog/earn-typo3/
 
-
-
 https://t3terminal.com/blog/typo3-site-configuration/
 https://t3terminal.com/blog/typo3-routing/
-https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
-https://typo3.sascha-ende.de/docs/development/extensions-general/standalone-view-for-a-controller-action/
-https://typo3.sascha-ende.de/docs/development/extensions-general/setup-routine-on-extension-installation-execute-script/
-https://www.youtube.com/c/IvanAbramenko/featured
-
-
-https://www.typo3.net/forum/thematik/zeige/thema/120062/
-http://wikicode1111d.blogspot.com/2013/08/validation-create-and-validate.html
-https://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/PartIII/Validation.html
-https://www.slideshare.net/skurfuerst?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview
+!!! https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 
 Просмотреть все функции Extbase и расширений core в папке typo3/sysext/
 https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insphpect.com/report/class/5e6b1e6a6c364/TYPO3%255CCMS%255CExtbase%255CService%255CExtensionService+&cd=13&hl=ru&ct=clnk&gl=ru
 
-
 https://kronova.net/tutorials/typo3/extbase-fluid/use-middlewares-with-multilanguage.html
 https://living-sun.com/ajax/3683-render-partial-templateview-in-typo3-using-extbase-ajax-typo3-extbase.html
-
-
-
 
 config.tx_extbase {
 	mvc {
