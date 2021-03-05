@@ -18,7 +18,7 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 
 4) Трайты 
 4.1 (продумать их реализцию для моделей Crud CrudOvveride)
-4.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
+
 
 6) 
 6.2) BaseRTypes
