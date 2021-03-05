@@ -4,8 +4,6 @@
 {
 
 	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
-    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;	
-	
 	/**
 	 * @AirTable\Field:<Input.Slug>
 	 * @AirTable\Field\Position\*:<main,4>
