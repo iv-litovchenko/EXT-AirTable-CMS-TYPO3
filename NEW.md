@@ -39,12 +39,12 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 4.2 (продумать их реализцию для моделей Crud CrudOvveride)
 5.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
 
+Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
 BaseRTypes
 BaseTabs
 Fields/Ok/Оставшиекся
 				
 2) Сравнить TCA до и после! 
-3) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
