@@ -85,10 +85,7 @@ https://t3terminal.com/blog/typo3-routing/
 !!! https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
 
 Просмотреть все функции Extbase и расширений core в папке typo3/sysext/
-https://webcache.googleusercontent.com/search?q=cache:zktHCt9zUckJ:https://insphpect.com/report/class/5e6b1e6a6c364/TYPO3%255CCMS%255CExtbase%255CService%255CExtensionService+&cd=13&hl=ru&ct=clnk&gl=ru
-
 https://kronova.net/tutorials/typo3/extbase-fluid/use-middlewares-with-multilanguage.html
-https://living-sun.com/ajax/3683-render-partial-templateview-in-typo3-using-extbase-ajax-typo3-extbase.html
 
 config.tx_extbase {
 	mvc {
