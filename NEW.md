@@ -72,3 +72,13 @@ AbstractPageElementController
 ```
 ### $TYPO3 - наслоедование переменной?
 ### Проверь ForeignWhere и другие аналогичные параметры - работают не првильно!
+
+
+
+
+
+### Специальные поля (поля по умолчанию)
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
