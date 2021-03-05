@@ -1,5 +1,4 @@
 ```
-https://extensions.typo3.org/extension/div2007
 
 https://kronova.net/tutorials/typo3/extbase-fluid/get-all-constants-with-extbase-extension.html
 Constants: 	plugin.myext.settings.detailPid = 123
