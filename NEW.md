@@ -1,9 +1,5 @@
 ```
-# Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt
-См. "position" & "DatabaseSchemaService.php"
-
-0) 
-class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
+0) class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 {
 
 	#use \Litovchenko\AirTable\Domain\Model\Traits\Slug;		// ???? (сделать в самостоятельную страницу!)
@@ -35,16 +31,19 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
-3) Трайты 
-4.2 (продумать их реализцию для моделей Crud CrudOvveride)
-5.3 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
+2) Трайты 
+2.1 (продумать их реализцию для моделей Crud CrudOvveride)
+2.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
 
-Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
-BaseRTypes
-BaseTabs
-Fields/Ok/Оставшиекся
+3) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
+
+4) 
+4.1) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
+4.2) BaseRTypes
+4.3) BaseTabs
+4.4) Fields/Ok/Оставшиекся
 				
-2) Сравнить TCA до и после! 
+5) Сравнить TCA до и после! 
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
