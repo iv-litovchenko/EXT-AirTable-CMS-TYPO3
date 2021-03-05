@@ -1,3 +1,4 @@
+## https://codebeautify.org/php-beautifier
 ```
 1) class ExampleTable extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrud
 {
@@ -31,11 +32,11 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
+5) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
+
 4) Трайты 
 4.1 (продумать их реализцию для моделей Crud CrudOvveride)
 4.2 (установка дефолтового конфика для специальных полей...) -их овверайд  'required' => 1, на примере $title
-
-5) # Баг с расширением моделей - не читаются поля с параметром position не создаются в анализаторе public_html\4.txt См. "position" & "DatabaseSchemaService.php"
 
 6) 
 6.1) Нужно ли разделение AbstractModelCrud и AbstractModelCrudOverride?
@@ -49,7 +50,6 @@ https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-cla
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
 
-https://codebeautify.org/php-beautifier
 
 
 
