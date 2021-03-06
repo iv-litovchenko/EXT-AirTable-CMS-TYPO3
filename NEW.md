@@ -2,7 +2,7 @@
 ```
 1.1 Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
 1.2 Ключи для расширения моделей tx_....
-1.3 Проверить префикс: ext_ (везде)
+1.3 Проверить префикс: ext_ (везде) - где он используется!
 2 Проверить TYPOSCRIPT settings... (сделать combine - параметров для Ajax)
 
 2) BaseUtility
