@@ -28,11 +28,6 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 			
 						|| in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
 							| in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
-								
-								
-								Удалить абстрактный класс модели! Сделаем FIX-модели!
-								 || in_array('Litovchenko\AirTable\Domain\Model\AbstractModel',$class_parents) -> Связать с  if(strstr($v,'Domain\Model\Ext\Ext')){ и не забудь их еще два подкласса: AbstractModelCrud & AbstractModelCrudOverride
-									
 									Отдельная песьня...
 									|| in_array('Litovchenko\AirTable\Domain\Model\Fields\AbstractField',$class_parents)){
 									
