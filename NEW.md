@@ -1,13 +1,9 @@
 ## https://codebeautify.org/php-beautifier
 ```
 1) 
-SELECT backend_layout FROM `pages` GROUP BY backend_layout;
-#update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
-#update pages set backend_layout = REPLACE(backend_layout, 'pagets__ext_projiv_pagedefaultcontroller', 'pagets__tx_projiv_pagedefaultcontroller');
-
 Подумать насчет названия propmedia, propref...
-Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
-Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
++ Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
++ Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
 2 Проверить префикс: ext_
