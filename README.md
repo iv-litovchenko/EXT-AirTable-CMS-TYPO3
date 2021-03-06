@@ -587,7 +587,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
         // Example * @AirTable\Field\Position\1:<mytab,0> add to type "1"
 		'tabs' => [
-			'mytab' => 'MyTab (###COUNT###)',
+			'mytab' => 'My Tab (###COUNT###)',
 			'tabKeyOne' => 'Tab 1 (###COUNT###)',
 			'tabKeyTwo' => 'Tab 2 (###COUNT###)',
 			'tabKeyTtree' => 'Tab 3 (###COUNT###)'
