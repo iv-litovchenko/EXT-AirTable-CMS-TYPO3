@@ -31,5 +31,6 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 ```
 ### $TYPO3 - наслоедование переменной?
 ### Проверь ForeignWhere и другие аналогичные параметры - работают не првильно!
+### Задокументировать!
 
 
