@@ -27,6 +27,10 @@ lib.ajax.'.$signature.'.className = '.$class.'
 
 6 Ajax-поправить
 
+7 Проверить TYPOSCRIPT
+
+8 Посмотреть ключи плагинова как они пишутся
+
 
 2) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
