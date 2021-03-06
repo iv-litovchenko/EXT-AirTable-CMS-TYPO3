@@ -569,28 +569,80 @@ namespace Mynamespace\Myext\Domain\Model\[SubFolder];
 
 class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
 {
-    // use \Litovchenko\AirTable\Domain\Model\Traits\Pid; // A record can exist in any part of the site page tree
-    // use \Litovchenko\AirTable\Domain\Model\Traits\RType; // See the function "baseRTypes ()"
-    use \Litovchenko\AirTable\Domain\Model\Traits\Slug;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Title;
-    use \Litovchenko\AirTable\Domain\Model\Traits\AltTitle;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Status; // Or "Disabled, Deleted"
-    use \Litovchenko\AirTable\Domain\Model\Traits\Sorting;
-    use \Litovchenko\AirTable\Domain\Model\Traits\DateCreate;
-    use \Litovchenko\AirTable\Domain\Model\Traits\DateUpdate;
-    use \Litovchenko\AirTable\Domain\Model\Traits\DateStart;
-    use \Litovchenko\AirTable\Domain\Model\Traits\DateEnd;
-    use \Litovchenko\AirTable\Domain\Model\Traits\ServiceNote;
-    use \Litovchenko\AirTable\Domain\Model\Traits\BeUserRow;
-    use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicPreview;
-    use \Litovchenko\AirTable\Domain\Model\Traits\TextAndPicDetail;
-    use \Litovchenko\AirTable\Domain\Model\Traits\TtContentRows; // <f:content table="tx_myext_newtable" uid="1" />
-    use \Litovchenko\AirTable\Domain\Model\Traits\Thumbnail; // Image associated with the recording
-    use \Litovchenko\AirTable\Domain\Model\Traits\Files;
-    // use \Litovchenko\AirTable\Domain\Model\Traits\RelPolyDisplayForeignFields;
-    // use \Litovchenko\AirTable\Domain\Model\Traits\EavRows;
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'BackendModelCrud',
+		'name' => 'New table name',
+		'description' => 'New table description',
+		'defaultListTypeRender' => '0 || 1 || 2 || 3',
+		
+		
+        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs
+        // BE -> debug -> true
+        // Example * @AirTable\Field\Position\<type>:<mytab,position>
+        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
+        // Example * @AirTable\Field\Position\1:<mytab,0> add to type "1"
+		'tabs' => [
+			'mytab' => 'MyTab (###COUNT###)',
+			'tabKeyOne' => 'Tab 1 (###COUNT###)',
+			'tabKeyTwo' => 'Tab 2 (###COUNT###)',
+			'tabKeyTtree' => 'Tab 3 (###COUNT###)'
+		],
+		'specialFields' => [
+			'pid', // A record can exist in any part of the site page tree
+			'RType' => [ // Record types similar to "doktype (pages)" and "CType (tt_content)"
+				'items' => [
+					'0' => 'Default', // ['fields']['prop_***']['position'][0] => 'tab,'; > position > 0 > props > num (structure | tab | position number) 
+					'news' => 'News',
+					'article' => 'Article',
+					'link' => 'External link'
+				]
+			],
+			#'RTypeSub', // Todo
+			'title' => [
+				'required' => 1
+			],
+			'alt_title' => [
+				'required' => 1
+			],
+			'service_note',
+			'date_create',
+			'date_update',
+			'date_start',
+			'date_end',
+			'sorting',
+			'files',
+			'thumbnail', // Image associated with the recording
+			'status', // Or 'deleted' && 'disabled',
+			'be_users_row_id', // M-1
+			'parent_row_id', // M-1
+			'category_row_id', // Categorization M-1: 
+			'category_rows', //  Categorization M-M: 
+			'tt_content_rows', // <f:content table="tx_myext_newtable" uid="1" />
+			'sys_attribute_rows',
+			'bodytext_preview',
+			'bodytext_detail',
+			'pic_preview',
+			'pic_detail',
+			'keywords',
+			'description',
+			'slug',
+			'foreign_table', // For polymorphic relations 
+			'foreign_field', // For polymorphic relations 
+			'foreign_uid', // For polymorphic relations 
+			'foreign_sortby' // For polymorphic relations 
+		],
+		'fields' => [
+			'prop_name' => [
+				'type' => 'Input',
+				'name' => 'Input',
+			]
+		]
+	];
     
 	// Categorization
     // For this to work
@@ -613,23 +665,6 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
             2 => 'Type 2',
             3 => 'Type 3'
         ];
-    }
-
-    /**
-     * This is an optional feature.
-     * Tabs for the edit form
-     * @return array
-     */
-    public static function baseTabs()
-    {
-        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs
-        // BE -> debug -> true
-        // Example * @AirTable\Field\Position\<type>:<mytab,position>
-        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
-        // Example * @AirTable\Field\Position\1:<mytab,0> add to type "1"
-        $tabs = parent::baseTabs();
-        $tabs['mytab'] = 'MyTab (###COUNT###)';
-        return $tabs;
     }
 
     /**
