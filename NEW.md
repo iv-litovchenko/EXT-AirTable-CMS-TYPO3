@@ -10,21 +10,15 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
--1 Очень длинное название! projiv_elementexperiencecontroller (как минимум можно убрать "ELEMENT")
-
 0 Нужно ли убрать постфикс "CONTROLLER"???? И Откуда он вообще береться?
 
 1 Убрать:
 $signatureLink!
 tt_content.list.20.' . $signature . ' < tt_content.list.20.'.$signatureLink.'
 
-2 Убрать:
-lib.ajax.'.$signature.' < tt_content.list.20.' . $signature . '
-lib.ajax.'.$signature.'.className = '.$class.'
-
 3 Проверить префикс: ext_
 
-4 БЕ-модули
+4 БЕ-модули Signature AnnotationRegistrationExtTables.php
 5 Проверить BE-модули где было в ручную генерировалось!
 
 6 Ajax-поправить и проверить, проверить также смену действия для Ajax
