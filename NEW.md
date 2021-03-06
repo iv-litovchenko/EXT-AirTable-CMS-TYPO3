@@ -10,6 +10,22 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
+
+
+1 Убрать:
+$signatureLink!
+tt_content.list.20.' . $signature . ' < tt_content.list.20.'.$signatureLink.'
+
+2 Убрать:
+lib.ajax.'.$signature.' < tt_content.list.20.' . $signature . '
+lib.ajax.'.$signature.'.className = '.$class.'
+
+3 БЕ-модули
+4 Проверить BE-модули где было в ручную генерировалось!
+
+5 Ajax-поправить
+
+
 2) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
