@@ -51,14 +51,6 @@ https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Htmlp
 		unset (=1) - удалить атрибут
 
 
-
-
-
-https://t3terminal.com/blog/typo3-community/
-https://t3terminal.com/blog/typo3-blogger/
-https://t3terminal.com/blog/free-typo3-support/
-https://t3terminal.com/blog/earn-typo3/
-
 https://t3terminal.com/blog/typo3-site-configuration/
 https://t3terminal.com/blog/typo3-routing/
 !!! https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
