@@ -10,7 +10,7 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
-
+0 Нужно ли убрать постфикс "CONTROLLER"????
 
 1 Убрать:
 $signatureLink!
