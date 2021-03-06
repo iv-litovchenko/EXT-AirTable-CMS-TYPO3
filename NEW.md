@@ -10,24 +10,12 @@ SELECT backend_layout FROM `pages` GROUP BY backend_layout;
 Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
 Также переименуются! protected $prop_ext_air_table_modelname;
 
-0 Нужно ли убрать постфикс "CONTROLLER"???? И Откуда он вообще береться?
-
-1 Убрать:
-$signatureLink!
-tt_content.list.20.' . $signature . ' < tt_content.list.20.'.$signatureLink.'
-
-3 Проверить префикс: ext_
-
-4 БЕ-модули Signature AnnotationRegistrationExtTables.php
-5 Проверить BE-модули где было в ручную генерировалось!
-
-6 Ajax-поправить и проверить, проверить также смену действия для Ajax
-
-7 Проверить TYPOSCRIPT
-
-8 Посмотреть ключи плагинова как они пишутся
-
-9 Проверить в других версиях тайпы...
+2 Проверить префикс: ext_
+3 БЕ-модули Signature AnnotationRegistrationExtTables.php
+4 Проверить BE-модули где было в ручную генерировалось для Путей перекидки на экспорт/импорт!
+5 Ajax-поправить и проверить, проверить также смену действия для Ajax
+6 Проверить TYPOSCRIPT
+7 Проверить в других версиях тайпы...
 
 2) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
