@@ -566,13 +566,8 @@ Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 ```php
 <?php
 namespace Mynamespace\Myext\Domain\Model\[SubFolder];
-use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
-/**
- * @AirTable\Label:<New table name>
- * @AirTable\Description:<New table description>
- * @AirTable\DefaultListTypeRender:<0 || 1 || 2 || 3>
- */
-class NewTable extends AbstractModelCrud
+
+class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
 {
     // use \Litovchenko\AirTable\Domain\Model\Traits\Pid; // A record can exist in any part of the site page tree
     // use \Litovchenko\AirTable\Domain\Model\Traits\RType; // See the function "baseRTypes ()"
