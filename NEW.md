@@ -20,41 +20,6 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
-
-
-
-
-class SysFile extends \Litovchenko\AirTable\Domain\Model\AbstractModelCrudOverride
-{
-    /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
-     * @var array
-     */
-	public static $TYPO3 = [
-		'thisIs' 				=> 'BackendModelCrudOverride', || BackendModelCrud
-		'name' 					=> 'Файл',
-		'description' 			=> 'Регистрация модели в системе',
-		'defaultListTypeRender' => 3
-	];
-
-
-
-
-	/** У EAV тоже были вкладки!!!! AbstractPageController
-AbstractPageElementController
-	/**
-	* Табы по умолчанию (для атрибутов)
-	* @return array
-	*/
-    public static function baseTabs()
-    {
-		return [
-			0 => 'Основное',
-		];
-	}
-
-
 1) Убрать абстрактыне классы 
 2) Сделать Fix-для классов моделей, виджетов и хелперов (sql_autoload_register)
 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
