@@ -20,10 +20,12 @@ tt_content.list.20.' . $signature . ' < tt_content.list.20.'.$signatureLink.'
 lib.ajax.'.$signature.' < tt_content.list.20.' . $signature . '
 lib.ajax.'.$signature.'.className = '.$class.'
 
-3 БЕ-модули
-4 Проверить BE-модули где было в ручную генерировалось!
+3 Проверить префикс: ext_
 
-5 Ajax-поправить
+4 БЕ-модули
+5 Проверить BE-модули где было в ручную генерировалось!
+
+6 Ajax-поправить
 
 
 2) BaseUtility
