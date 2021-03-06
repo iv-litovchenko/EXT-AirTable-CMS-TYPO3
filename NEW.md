@@ -1,11 +1,9 @@
 ## https://codebeautify.org/php-beautifier
 ```
-1) 
-Подумать насчет названия propmedia, propref...
-+ Название таблиц и ключей страниц и элементов контента TYPO3 правильное tx_airtable_domainmodel_...
-+ Переименовать MySQL-ключи (убрать пробелы) по аналогии с "tx_typo3dummyextension_domain_model_typo3dummyextension"
+1) Подумать насчет названия propmedia, propref...
 Также переименуются! protected $prop_ext_air_table_modelname;
 
+1) Ключи для расширения моделей tx_....
 2 Проверить префикс: ext_
 3 БЕ-модули Signature AnnotationRegistrationExtTables.php
 4 Проверить BE-модули где было в ручную генерировалось для Путей перекидки на экспорт/импорт!
