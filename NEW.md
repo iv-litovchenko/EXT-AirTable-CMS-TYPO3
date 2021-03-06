@@ -1,13 +1,12 @@
 ## https://codebeautify.org/php-beautifier
 ```
-1) Подумать насчет названия propmedia, propref...
+1 Подумать насчет названия propmedia, propref...
 Также переименуются! protected $prop_ext_air_table_modelname;
 
-1) Ключи для расширения моделей tx_....
-2 Проверить префикс: ext_
-3 БЕ-модули Signature AnnotationRegistrationExtTables.php
-4 Проверить BE-модули где было в ручную генерировалось для Путей перекидки на экспорт/импорт!
-5 Ajax-поправить и проверить, проверить также смену действия для Ajax
+2 Ключи для расширения моделей tx_....
+3 Проверить префикс: ext_
+4 БЕ-модули Signature AnnotationRegistrationExtTables.php
+5 Проверить BE-модули где было в ручную генерировалось для Путей перекидки на экспорт/импорт!
 6 Проверить TYPOSCRIPT
 7 Проверить в других версиях тайпы...
 
