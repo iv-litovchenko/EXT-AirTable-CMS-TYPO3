@@ -1,25 +1,5 @@
 ```
 
-https://kronova.net/tutorials/typo3/extbase-fluid/get-all-constants-with-extbase-extension.html
-Constants: 	plugin.myext.settings.detailPid = 123
-Setup: 		plugin.myext.settings.detailPid = {$plugin.myext.settings.detailPid}
-			$this->settings['detailPid']
-			{settings.detailPid}
-			
-	
-vhs:		{v:variable.typoscript(path: 'settings.pageUid')}
-<v:variable.set name="userLoginPID" value="{v:variable.typoscript(path: 'site.pid.userLogin')}"/>
-<v:variable.set name="userRegisterPID" value="{v:variable.typoscript(path: 'site.pid.userRegister')}"/>
-
-plugin.tx_yourplugin {
-  ...
-  settings{
-    somePage = {$PID_SOME_PAGE}
-  }
-  ...
-}
---------------------
-
 
 --------------------------------------------------------------------------------------------------------------------
 Получение настроек и данных о странице (элементе содержимого)
