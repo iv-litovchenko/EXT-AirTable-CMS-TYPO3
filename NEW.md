@@ -1,23 +1,20 @@
 ## https://codebeautify.org/php-beautifier
 ```
-Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
-
-Куда деть "propmedia_"
-
+0) Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 Validators
 	Usage
 	Built-in Validators
 	Custom Validator
 
-1.1 Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
+1.1 Куда деть "propmedia_" Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
 1.2 Ключи для расширения моделей tx_....
 1.3 Проверить префикс: ext_ (везде) - где он используется! Протестить модели EXT-расширений
 
-4) BaseUtility
+2) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
-5) Досравнить оставшиеся TCA
+3) Досравнить оставшиеся TCA
 typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 ```
 
@@ -42,7 +39,7 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 
 
 ```
-3) Проверить TYPOSCRIPT settings... (сделать combine - параметров для Ajax)
+5) Проверить TYPOSCRIPT settings... (сделать combine - параметров для Ajax)
 
 https://kronova.net/tutorials/typo3/extbase-fluid/get-all-constants-with-extbase-extension.html
 Constants: 	plugin.myext.settings.detailPid = 123
