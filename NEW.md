@@ -10,12 +10,7 @@ Validators
 1.2 Ключи для расширения моделей tx_....
 1.3 Проверить префикс: ext_ (везде) - где он используется! Протестить модели EXT-расширений
 
-2) BaseUtility
-BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
-https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
 
-3) Досравнить оставшиеся TCA
-typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
