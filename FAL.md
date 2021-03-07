@@ -1,5 +1,6 @@
 ```
-https://laravel.com/docs/8.x/eloquent-mutators
+Можно ли как-то преобразовать атрибут в объект FAL при выборке? https://laravel.com/docs/8.x/eloquent-mutators
+
 https://github.com/Kephson/fe_upload_example
 https://github.com/fabarea/media_upload
 https://github.com/philippjbauer/h5upldr
@@ -11,15 +12,7 @@ https://github.com/helhum/upload_example
   * https://blog.scwebs.in/typo3-fal-file-abstraction-layer-in-extbasefluid-extension/
   * https://typo3blogger.de/extbase-file-upload/
   * https://gist.github.com/xperseguers/9076406
-  * https://stackoverflow.com/questions/59719142/how-to-upload-a-file-with-typo3-fluid-form-upload-and-pass-it-to-extbase-control
 
-
-```
-
-
-
-```
-Можно ли как-то преобразовать атрибут в объект FAL при выборке?
 
 
 
