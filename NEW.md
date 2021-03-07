@@ -3,8 +3,6 @@
 https://demo.silverstripe.org/?_ga=2.144332469.1839754345.1615063527-1118461346.1615063527
 https://demo.silverstripe.org/admin/pages/edit/show/7205
 https://docs.silverstripe.org/en/4/developer_guides/forms/
-https://tortoise-orm.readthedocs.io/en/latest/reference.html#
-http://phpdatamapper.com/docs/events/
 Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 
 1.1 Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
