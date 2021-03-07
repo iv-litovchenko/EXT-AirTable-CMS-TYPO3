@@ -7,12 +7,8 @@ https://docs.silverstripe.org/en/4/developer_guides/forms/
 Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 
 
-+ baseFields
-+ dataFields
-+ relationalFields
 Можно ли как-то преобразовать атрибут в объект FAL при выборке?
 Куда деть "propmedia_"
-Special-Поля? Почему не везде префикс? - ОСТАЛИСЬ ТОЛЬКО ИЗОБРАЖЕНИЯ И СВЯЗИ...
 
 Validators
 	Usage
