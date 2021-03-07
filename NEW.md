@@ -20,13 +20,9 @@ Validators
 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 
-			
-						|| in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
-							| in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
-									Отдельная песьня...
-									|| in_array('Litovchenko\AirTable\Domain\Model\Fields\AbstractField',$class_parents)){
-									
-									
+|| in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
+|| in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
+
 ```
 ### $TYPO3 - наслоедование переменной?
 ### Проверь ForeignWhere и другие аналогичные параметры - работают не првильно!
