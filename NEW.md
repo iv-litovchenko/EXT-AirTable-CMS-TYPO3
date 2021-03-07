@@ -10,6 +10,25 @@ Validators
 1.3 Проверить префикс: ext_ (везде) - где он используется! Протестить модели EXT-расширений
 
 
+use Nextras\Orm\Relationships\OneHasMany;
+
+/**
+ * @property int                $id               {primary}
+ * @property OneHasMany|Book[]  $books            {1:m Book::$author}
+ * @property OneHasMany|Book[]  $translatedBooks  {1:m Book::$translator}
+ */
+class Author extends Nextras\Orm\Entity\Entity
+{}
+
+/**
+ * @property int     $id          {primary}
+ * @property Author  $author      {m:1 Author::$books}
+ * @property Author  $translator  {m:1 Author::$translatedBooks}
+ */
+class Book extends Nextras\Orm\Entity\Entity
+{}
+
+
 'realTableField' => [
     'relationType' => '\Namespace\ClassName',
 ],
