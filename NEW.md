@@ -1,12 +1,6 @@
 ## https://codebeautify.org/php-beautifier
 ```
-Интересуют формы и роутер API
-https://demo.silverstripe.org/?_ga=2.144332469.1839754345.1615063527-1118461346.1615063527
-https://demo.silverstripe.org/admin/pages/edit/show/7205
-https://docs.silverstripe.org/en/4/developer_guides/forms/
 Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
-
-
 Можно ли как-то преобразовать атрибут в объект FAL при выборке?
 Куда деть "propmedia_"
 
