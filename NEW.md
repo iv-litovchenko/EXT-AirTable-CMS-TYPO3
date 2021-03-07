@@ -13,8 +13,6 @@ Validators
 1.2 Ключи для расширения моделей tx_....
 1.3 Проверить префикс: ext_ (везде) - где он используется! Протестить модели EXT-расширений
 
-3) Проверить TYPOSCRIPT settings... (сделать combine - параметров для Ajax)
-
 4) BaseUtility
 BaseUtility.php - оптимизировать, убрать рефликсию класслов, передалть названия таблиц!
 https://stackoverflow.com/questions/3014254/how-to-get-the-path-of-a-derived-class-from-an-inherited-method/3014344
@@ -42,3 +40,26 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 ### Проверь ForeignWhere и другие аналогичные параметры - работают не првильно!
 ### Задокументировать!
 
+
+```
+3) Проверить TYPOSCRIPT settings... (сделать combine - параметров для Ajax)
+
+https://kronova.net/tutorials/typo3/extbase-fluid/get-all-constants-with-extbase-extension.html
+Constants: 	plugin.myext.settings.detailPid = 123
+Setup: 		plugin.myext.settings.detailPid = {$plugin.myext.settings.detailPid}
+			$this->settings['detailPid']
+			{settings.detailPid}
+			
+	
+vhs:		{v:variable.typoscript(path: 'settings.pageUid')}
+<v:variable.set name="userLoginPID" value="{v:variable.typoscript(path: 'site.pid.userLogin')}"/>
+<v:variable.set name="userRegisterPID" value="{v:variable.typoscript(path: 'site.pid.userRegister')}"/>
+
+plugin.tx_yourplugin {
+  ...
+  settings{
+    somePage = {$PID_SOME_PAGE}
+  }
+  ...
+}
+--------------------
