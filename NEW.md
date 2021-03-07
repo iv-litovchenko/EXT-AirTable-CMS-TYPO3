@@ -13,14 +13,10 @@ Validators
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
 ```php
-1) Убрать абстрактыне классы 
-2) Сделать Fix-для классов моделей, виджетов и хелперов (sql_autoload_register)
 Остановился на виджетах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
 Остановился на хелперах Как быть с абстрактными классами хелпера и виджета (из-за регистр.аргумент)?
-
 || in_array('Litovchenko\AirTable\Controller\AbstractWidgetController',$class_parents)
 || in_array('Litovchenko\AirTable\ViewHelpers\AbstractViewHelper',$class_parents)
-
 ```
 ### $TYPO3 - наслоедование переменной?
 ### Проверь ForeignWhere и другие аналогичные параметры - работают не првильно!
