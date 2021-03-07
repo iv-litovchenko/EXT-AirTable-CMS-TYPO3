@@ -9,6 +9,14 @@ Validators
 1.1 Куда деть "propmedia_" Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
 1.2 Ключи для расширения моделей tx_....
 1.3 Проверить префикс: ext_ (везде) - где он используется! Протестить модели EXT-расширений
+
+
+'realTableField' => [
+    'relationType' => '\Namespace\ClassName',
+],
+'virtualField' => [
+    'relationType' => ['\Namespace\ClassName','foreignKey'],
+],
 ```
 
 ### ВАЖНО - КЛАССЫ НЕ НАСЛЕДУЮТСЯ ОТ LITOVCHENKO!!!!
