@@ -262,8 +262,8 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
     public function indexAction()
     {
-        // typo3conf/ext/projiv/Configuration/TypoScript/IncFrontend/constants.ts
-        // typo3conf/ext/projiv/Configuration/TypoScript/IncFrontend/setup.ts
+        // typo3conf/ext/myext/Configuration/TypoScript/IncFrontend/constants.ts
+        // typo3conf/ext/myext/Configuration/TypoScript/IncFrontend/setup.ts
         // plugin.tx_myext.settings.myOneSetting = 100
         // plugin.tx_myext_newpagecontroller.settings.myTwoSetting = 100
         // print_r($this->settings);
@@ -361,8 +361,8 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
     public function indexAction()
     {
-        // typo3conf/ext/projiv/Configuration/TypoScript/IncFrontend/constants.ts
-        // typo3conf/ext/projiv/Configuration/TypoScript/IncFrontend/setup.ts
+        // typo3conf/ext/myext/Configuration/TypoScript/IncFrontend/constants.ts
+        // typo3conf/ext/myext/Configuration/TypoScript/IncFrontend/setup.ts
         // plugin.tx_myext.settings.myOneSetting = 100
         // plugin.tx_myext_newelementcontroller.settings.myTwoSetting = 100
         // print_r($this->settings);
