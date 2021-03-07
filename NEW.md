@@ -2,9 +2,8 @@
 ```
 0) Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 Validators
-	Usage
-	Built-in Validators
-	Custom Validator
+0.1 Стандартные валидаторы
+0.2 Кастомные валидаторы
 
 1.1 Куда деть "propmedia_" Подумать насчет названия propmedia, propref... Также переименуются! protected $prop_ext_air_table_modelname;
 1.2 Ключи для расширения моделей tx_....
