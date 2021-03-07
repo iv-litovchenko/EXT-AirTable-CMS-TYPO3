@@ -12,7 +12,7 @@ https://docs.silverstripe.org/en/4/developer_guides/forms/
 + relationalFields
 Можно ли как-то преобразовать атрибут в объект FAL?
 Куда деть "propmedia_"
-Special-Поля? Почему не везде префикс?
+Special-Поля? Почему не везде префикс? - ОСТАЛИСЬ ТОЛЬКО ИЗОБРАЖЕНИЯ И СВЯЗИ...
 
 Validators
 	Usage
