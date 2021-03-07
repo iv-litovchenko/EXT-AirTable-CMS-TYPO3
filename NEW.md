@@ -1,7 +1,7 @@
 ## https://codebeautify.org/php-beautifier
 ```
 Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
-Можно ли как-то преобразовать атрибут в объект FAL при выборке?
+
 Куда деть "propmedia_"
 
 Validators
@@ -43,3 +43,37 @@ typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD
 ### Задокументировать!
 
 
+```
+Можно ли как-то преобразовать атрибут в объект FAL при выборке?
+
+
+
+
+<?php declare(strict_types = 1);
+
+namespace App\Domain\Entities;
+
+use Dms\Core\Model\Object\ClassDefinition;
+use Dms\Core\Model\Object\Entity;
+
+class Vehicle extends Entity
+{
+    const ENGINE = 'engine';
+
+    /**
+     * @var Engine
+     */
+    public $engine;
+
+    /**
+     * Defines the structure of this entity.
+     *
+     * @param ClassDefinition $class
+     */
+    protected function defineEntity(ClassDefinition $class)
+    {
+        $class->property($this->engine)->asObject(Engine::class);
+    }
+}
+
+```
