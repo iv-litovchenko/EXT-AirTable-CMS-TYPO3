@@ -6,10 +6,10 @@ https://docs.silverstripe.org/en/4/developer_guides/forms/
 Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 
 
-baseFields
-dataFields
-relationalFields
-
++ baseFields
++ dataFields
++ relationalFields
++ Можно ли как-то преобразовать атрибут в объект FAL?
 
 Validators
 	Usage
