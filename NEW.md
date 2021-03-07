@@ -1,4 +1,3 @@
-## https://codebeautify.org/php-beautifier
 ```
 0) Посмотри отдельной Validator для Laravel Без таких сложностей - отдельной пакет!
 Validators
