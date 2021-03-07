@@ -14,3 +14,40 @@ https://github.com/helhum/upload_example
   * https://coderoad.ru/54051157/TYPO3-Extbase-%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D1%8B-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80%D0%B5
 
 ```
+
+
+
+```
+Можно ли как-то преобразовать атрибут в объект FAL при выборке?
+
+
+
+
+<?php declare(strict_types = 1);
+
+namespace App\Domain\Entities;
+
+use Dms\Core\Model\Object\ClassDefinition;
+use Dms\Core\Model\Object\Entity;
+
+class Vehicle extends Entity
+{
+    const ENGINE = 'engine';
+
+    /**
+     * @var Engine
+     */
+    public $engine;
+
+    /**
+     * Defines the structure of this entity.
+     *
+     * @param ClassDefinition $class
+     */
+    protected function defineEntity(ClassDefinition $class)
+    {
+        $class->property($this->engine)->asObject(Engine::class);
+    }
+}
+
+```
