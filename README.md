@@ -1006,14 +1006,36 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 ## 16 Useful functions (Extbase, Fluid, TS) 
 
 ### Useful notes - Extbase Controller
+```php
+class ExtbaseApi{}
+
++ mail()
+xml,
+typoscript
+runHelper
++ getSiteConfig, getTsConfig, getExtConfig
++ getData, getPage
+utility (ar, other)
+file
+cache
++ render, assign
++ requst, respone
++ log
++ debug
+auth
+cookie
+forms
++ flashmessage
++ context (controllerName, actionName, extenstionName)
++ link, redirect, forward
+
+$this->database->;
+$this->crud->query = $this->crud->query->withoutGlobalScopes();
+$this->crud->model->clearGlobalScopes();
 ```
-
- ---
-
- ```
 
 ### Useful notes - Fluid
-```
+```html
 *********************
 * Info
 *********************
@@ -1080,37 +1102,6 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 ```
 
 --
-
-```
-
-```php
-https://extensions.typo3.org/extension/t3helpers/
-
-class ExtbaseApi{}
-
-+ mail()
-xml,
-typoscript
-runHelper
-+ getSiteConfig, getTsConfig, getExtConfig
-+ getData, getPage
-utility (ar, other)
-file
-cache
-+ render, assign
-+ requst, respone
-+ log
-+ debug
-auth
-cookie
-forms
-+ flashmessage
-+ context (controllerName, actionName, extenstionName)
-+ link, redirect, forward
-
-$this->database->;
-$this->crud->query = $this->crud->query->withoutGlobalScopes();
-$this->crud->model->clearGlobalScopes();
 
 ```
 
