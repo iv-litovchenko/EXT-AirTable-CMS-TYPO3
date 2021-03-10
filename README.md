@@ -23,7 +23,8 @@ A set of tools for creating your site based on class annotations. Works in versi
 * 17 [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)](#database-queries-select-insert-update-delete-relationships-validation-eloquent-orm)
 * 18 [Frontend editing](#frontend-editing)
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
-* 20 [Functional development plans](#functional-development-plans)
+* 20 [Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)](#extbase-frontend-ajax-httpyour-sitecomeidajax1)
+* 21 [Functional development plans](#functional-development-plans)
 
 ## 01 Demo site online
 
@@ -515,7 +516,7 @@ Step 2) How to use?
 ...
 ```
 
-## Register Widget (Component - View Helper with controller and template)
+## 09 Register Widget (Component - View Helper with controller and template)
 
 Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestController.php
 
@@ -567,7 +568,7 @@ Step 3) How to use?
 ...
 ```
 
-## Register a new model (CRUD)
+## 10 Register a new model (CRUD)
 
 Step 1) Create a model EXT:myext/Classes/Domain/Model/[SubFolder]/NewTable.php
 
@@ -892,7 +893,7 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## Standard CRUD-models registered in the system for working with records
+## 11 Standard CRUD-models registered in the system for working with records
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-standard-crud-models.png)
 
@@ -918,7 +919,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Users\FeUsers;
 ```
 
-## Extending an existing model
+## 12 Extending an existing model
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/extending-an-existing-model.png)
 
@@ -990,19 +991,19 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload I
 
 Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Structure". Click the button "Analyze database".
 
-## List records (module)
+## 13 List records (module)
 
 - // todo
 
-## Export records Xls|Csv (module)
+## 14 Export records Xls|Csv (module)
 
 - // todo
 
-## Import records Xls|Csv (module)
+## 15 Import records Xls|Csv (module)
 
 - // todo
 
-## Useful functions (Extbase, Fluid, TS) 
+## 16 Useful functions (Extbase, Fluid, TS) 
 
 ### Useful notes - Extbase Controller
 ```
@@ -1113,7 +1114,7 @@ $this->crud->model->clearGlobalScopes();
 
 ```
 
-## Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)
+## 17 Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)
 
 ```php
 <?php
@@ -1455,11 +1456,11 @@ if ($validator->fails()) {
 }
 ```
 
-## Frontend editing
+## 18 Frontend editing
 
 --
 
-## Useful settings in "typo3conf/LocalConfiguration.php"
+## 19 Useful settings in "typo3conf/LocalConfiguration.php"
 
 ```php
 <?php
@@ -1481,7 +1482,7 @@ return [
 ];
 ```
 
-## Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)
+## 20 Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)
 
 ### eIdAjax: _GET
 ```
@@ -1491,7 +1492,7 @@ return [
 ```
 ```
 
-## Functional development plans 
+## 21 Functional development plans 
 
 * Маршрутизация на основе аннотаций (WW)
 * Блоки настроек (Craf Settings)
