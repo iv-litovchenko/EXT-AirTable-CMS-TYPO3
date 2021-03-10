@@ -1485,17 +1485,17 @@ $(function() {
     //*****************************************************************//
     // <f:link.action 
     //    noCacheHash="true" 
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'projiv|RandPhotoController|index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|RandPhotoController|index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
     // >
     //    Ajax link
     // </f:link.action>
     // <f:uri.action ... />
     //*****************************************************************//
-    $('body').on('click', '#ext_projiv_randphotocontroller_a', function() {
-        $('#ext_projiv_randphotocontroller_wrap').fadeTo("fast", 0.5);
+    $('body').on('click', '#ext_myext_randphotocontroller_a', function() {
+        $('#ext_myext_randphotocontroller_wrap').fadeTo("fast", 0.5);
         $.ajax({
             type: 'GET',
-            url: "/?eIdAjax=1&eIdAjaxPath=projiv|RandPhotoController|index", //  EXT:projiv | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=myext|RandPhotoController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: {
                 eIdAjaxSettings: {
                     imgWidthBig: 640,
@@ -1503,7 +1503,7 @@ $(function() {
                 }
             },
             success: function(html) {
-                $('#ext_projiv_randphotocontroller_wrap').replaceWith(html);
+                $('#ext_myext_randphotocontroller_wrap').replaceWith(html);
             }
         });
         return false;
@@ -1521,22 +1521,25 @@ $(function() {
     // _POST Ajax (feedback form)
     //*****************************************************************//
     // <f:form 
-    //		name="FeedBackForm" 
-    //		object="{FeedBackForm}" 
-    //		noCacheHash="true" 
-    //		additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|index',settings:{}}"
+    //    name="FeedBackForm" 
+    //    object="{FeedBackForm}" 
+    //    noCacheHash="true" 
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|FeedBackFormController|index', eIdAjaxSettings:{}}"
     // >
-    // <f:form.hidden name="eIdAjaxSettings[imgWidthBig]" value="640" />
-    // <f:form.hidden name="eIdAjaxSettings[imgWidthSmall]" value="300" />
+    //    <f:form.hidden name="eIdAjaxSettings[settingsOne]" value="1" />
+    //    <f:form.hidden name="eIdAjaxSettings[settingsTwo]" value="2" />
+    //    <f:form.hidden name="eIdAjaxSettings[settings...]" value="..." />
+    //    ...
+    // </f:form>
     //*****************************************************************//
-    $('body').on('submit', 'form#ext_projiv_feedbackformcontroller', function() {
+    $('body').on('submit', 'form#ext_myext_feedbackformcontroller', function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
             type: 'POST',
-            url: "/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|index", //  EXT:projiv | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=myext|FeedBackFormController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: $(this).serializeArray(),
             success: function(html) {
-                $('#ext_projiv_feedbackformcontroller_wrap').replaceWith(html);
+                $('#ext_myext_feedbackformcontroller_wrap').replaceWith(html);
             }
         });
         return false;
