@@ -27,7 +27,6 @@ public function actionSearch($name, $email)
         // validation succeeds
     }
 }
-```
 
 if(TYPO3_AJAX_MODE === true) {
 }
