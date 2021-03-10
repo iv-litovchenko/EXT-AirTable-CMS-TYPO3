@@ -1426,15 +1426,17 @@ if($is === true) {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // VALIDATION
-// ModelName::validationDataWithContext($data,$context)
-// ModelName::validationDataWithRules($data,$rules)
+// v1) ModelCrud::validation($context,$data); // see "public static function validationRules()"
+// v2) ModelForm::validation($context,$data); // see "public static function validationRules()"
+// v3) ModelDynamic::validation($rules,$data);
 ////////////////////////////////////////////////////////////////////////////////////////
 
 $context = 'checkInsert';
 $data = [];
 $data['title'] = 'My Title';
 
-$validator = NewTable::validationDataWithContext($data,$context);
+$validator = NewTable::validation($context,$data); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+// $validator = NewForm::validation($context,$data); // class NewForm extends \Litovchenko\AirTable\Domain\Model\ModelForm
 if ($validator->fails()) {
 	$messages = $validator->messages()->toArray();
 	$errors = $validator->errors();
@@ -1460,7 +1462,7 @@ $rules = [
 	]
 ];
 
-$validator = NewTable::validationDataWithRules($data,$rules);
+$validator = \Litovchenko\AirTable\Domain\Model\ModelDynamic::validation($rules,$data);
 if ($validator->fails()) {
 	$messages = $validator->messages()->toArray();
 	$errors = $validator->errors();
