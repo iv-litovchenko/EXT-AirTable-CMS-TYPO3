@@ -1490,8 +1490,15 @@ return [
 $(function() {
 
     //*****************************************************************//
-    // _GET Ajax (обновить фотографию)
-    // <a href="<f:uri.action noCacheHash="true" additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|RandPhotoController|index',eIdAjaxSettings:{imgWidthBig:640,imgWidthSmall:300}}" />">Ajax link</a>
+    // _GET Ajax (refresh random photo block)
+    //*****************************************************************//
+    // <f:link.action 
+    //    noCacheHash="true" 
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'projiv|RandPhotoController|index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
+    // >
+    //    Ajax link
+    // </f:link.action>
+    // <f:uri.action ... />
     //*****************************************************************//
     $('body').on('click', '#ext_projiv_randphotocontroller_a', function() {
         $('#ext_projiv_randphotocontroller_wrap').fadeTo("fast", 0.5);
@@ -1520,7 +1527,8 @@ $(function() {
 $(function() {
 
     //*****************************************************************//
-    // _POST Ajax (форма оставить сообщение)
+    // _POST Ajax (feedback form)
+    //*****************************************************************//
     // <f:form 
     //		name="FeedBackForm" 
     //		object="{FeedBackForm}" 
