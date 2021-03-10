@@ -25,11 +25,11 @@ A set of tools for creating your site based on class annotations. Works in versi
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#useful-settings-in-typo3conflocalconfigurationphp)
 * 20 [Functional development plans](#functional-development-plans)
 
-## Demo site online
+## 01 Demo site online
 
 Coming soon! // Todo
 
-## How to install?
+## 02 How to install?
 
 Step 1) If, when installing a new version of the CMS TYPO3 system, the error "@mysqli.reconnect=1@" pops up - comment out this message in the file: "typo3/sysext/install/Classes/SystemEnvironment/DatabaseCheck/Driver/Mysqli.php". Then proceed with the installation.
 
@@ -54,7 +54,7 @@ Step 5) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 If you are working in versions 7, 8 and you need "typo3/install.php" - for this you need to create a file "typo3conf/ENABLE_INSTALL_TOOL" with the content "KEEP_FILE".
 
-## Extension structure
+## 03 Extension structure
 
 ```
 EXT:myext/Classes/Controller/
@@ -129,7 +129,7 @@ $EM_CONF[$_EXTKEY] = [
 ];
 ```
 
-## Register a new admin module
+## 04 Register a new admin module
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
 
 Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
@@ -223,7 +223,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 
 Step 3) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Cache". Click the button "Flush cache" (if changed or added new actions in the controller!).
 
-## Register a new page template
+## 05 Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
 Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
@@ -322,7 +322,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 <f:vhsExtAirTable.adminPanelTools />
 ```
 
-## Register a new content element
+## 06 Register a new content element
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
 
 Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
@@ -404,7 +404,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 </div>
 ```
 
-## Additional View Helper
+## 07 Additional View Helper
 
 ### Content
 ```
@@ -468,7 +468,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewE
 />
 ```
 
-## Register View Helper
+## 08 Register View Helper
 
 Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
 
@@ -1479,6 +1479,16 @@ return [
         ]
     ]
 ];
+```
+
+## Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)
+
+### eIdAjax: _GET
+```
+```
+
+### eIdAjax: _POST
+```
 ```
 
 ## Functional development plans 
