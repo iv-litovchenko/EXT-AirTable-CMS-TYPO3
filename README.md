@@ -581,102 +581,216 @@ namespace Mynamespace\Myext\Domain\Model\[SubFolder];
 class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
 {
     /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
+     * The magic variable TYPO3
+     * Parameters are described here
      * @var array
      */
-	public static $TYPO3 = [
-		'thisIs' => 'BackendModelCrud',
-		'name' => 'New table name',
-		'description' => 'New table description',
-		'defaultListTypeRender' => '0 || 1 || 2 || 3',
-		
-		
-        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs
-        // BE -> debug -> true
-        // Example * @AirTable\Field\Position\<type>:<mytab,position>
-        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
-        // Example * @AirTable\Field\Position\1:<mytab,0> add to type "1"
-		'tabs' => [
-			'mytab' => 'My Tab (###COUNT###)',
-			'tabKeyOne' => 'Tab 1 (###COUNT###)',
-			'tabKeyTwo' => 'Tab 2 (###COUNT###)',
-			'tabKeyTtree' => 'Tab 3 (###COUNT###)'
-		],
-		'specialFields' => [
-			'pid', // A record can exist in any part of the site page tree
-			'RType' => [ // Record types similar to "doktype (pages)" and "CType (tt_content)"
-				'items' => [
-					'0' => 'Default', // ['fields']['prop_***']['position'][0] => 'tab,'; > position > 0 > props > num (structure | tab | position number) 
-					'news' => 'News',
-					'article' => 'Article',
-					'link' => 'External link'
-				]
-			],
-			#'RTypeSub', // Todo
-			'title' => [
-				'required' => 1
-			],
-			'alt_title' => [
-				'required' => 1
-			],
-			'service_note',
-			'date_create',
-			'date_update',
-			'date_start',
-			'date_end',
-			'sorting',
-			'files',
-			'thumbnail', // Image associated with the recording
-			'status', // Or 'deleted' && 'disabled',
-			'be_users_row_id', // M-1
-			'parent_row_id', // M-1
-			'category_row_id', // Categorization M-1: 
-			'category_rows', //  Categorization M-M: 
-			'tt_content_rows', // <f:content table="tx_myext_newtable" uid="1" />
-			'sys_attribute_rows',
-			'bodytext_preview',
-			'bodytext_detail',
-			'pic_preview',
-			'pic_detail',
-			'keywords',
-			'description',
-			'slug',
-			'foreign_table', // For polymorphic relations 
-			'foreign_field', // For polymorphic relations 
-			'foreign_uid', // For polymorphic relations 
-			'foreign_sortby' // For polymorphic relations 
-		],
-		'fields' => [
-			'prop_name' => [
-				'type' => 'Input',
-				'name' => 'Input',
-			]
-		]
-	];
-    
-	// Categorization
-    // For this to work
-    // 1) create a category model (TestTableCategory.php) in the current directory
-    // 2) add trait "\Litovchenko\AirTable\Domain\Model\Traits\ParentRow" to model "NewTableCategory.php"
-    use \Litovchenko\AirTable\Domain\Model\Traits\CategoryRows; // OR \CategoryRow
-    
-    /**
-     * This is an optional feature.
-     * Record types similar to "doktype (pages)" and "CType (tt_content)"
-     * @return array
-     */
-    public static function baseRTypes()
-    {
-        // Example * @AirTable\Field\Position\*:<props,0> "*" adding to all types
-        // Example * @AirTable\Field\Position\1:<props,0> add to type "1"
-        // Example * @AirTable\Field\Position\2:<props,0> add to type "2"
-        return [
-            1 => 'Type 1',
-            2 => 'Type 2',
-            3 => 'Type 3'
-        ];
-    }
+    public static $TYPO3 = [
+        'thisIs' => 'BackendModelCrud',
+        'name' => 'New table name',
+        'description' => 'New table description',
+        'defaultListTypeRender' => '0 || 1 || 2 || 3',
+        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs "BE -> debug -> true"
+        // Example 'position' => ['fields']['prop_***']['position']['type' => 'tab,position number'] add to type "1" (RType)
+        // Example 'position' => ['fields']['prop_***']['position']['*' => 'mytab,100'] "*" adding to all types
+        // Example 'position' => ['fields']['prop_***']['position']['1' => 'mytab,100'] add to type "1" (RType)
+        'tabs' => [
+            'mytab' => 'My Tab (###COUNT###)',
+            'tabKeyOne' => 'Tab 1 (###COUNT###)',
+            'tabKeyTwo' => 'Tab 2 (###COUNT###)',
+            'tabKeyTtree' => 'Tab 3 (###COUNT###)',
+        ],
+        //////////////////////////////////////
+        // Special table fields
+        //////////////////////////////////////
+        'baseFields' => [
+            'pid', // A record can exist in any part of the site page tree
+            'RType' => [
+                // Record types similar to "doktype (pages)" and "CType (tt_content)"
+                'items' => [
+                    '0' => 'Default',
+                    'news' => 'News',
+                    'article' => 'Article',
+                    'link' => 'External link',
+                    'type-1' => 'Type 1',
+                    'type-2' => 'Type 2',
+                    'type-3' => 'Type 3',
+                    // ...
+                ],
+            ],
+            #'RTypeSub', // Todo
+            'title' => [
+                'required' => 1,
+            ],
+            'alt_title' => [
+                'required' => 1,
+            ],
+            'service_note',
+            'date_create',
+            'date_update',
+            'date_start',
+            'date_end',
+            'sorting',
+            'files',
+            'thumbnail', // Image associated with the recording
+            'status', // Or 'deleted' && 'disabled',
+            'be_users_row_id', // M-1
+            'parent_row_id', // M-1
+
+            // Categorization
+            // For this to work, you need:
+            // 1) create a category model (NewTableCategory.php) in the current directory
+            // 2) add trait "\Litovchenko\AirTable\Domain\Model\Traits\ParentRow" to model "NewTableCategory.php"
+            'category_row_id', // Categorization M-1
+            // or 'category_rows', //  Categorization M-M
+
+            'tt_content_rows', // <f:content table="tx_myext_newtable" uid="1" />
+            'sys_attribute_rows',
+            'bodytext_preview',
+            'bodytext_detail',
+            'pic_preview',
+            'pic_detail',
+            'keywords',
+            'description',
+            'slug',
+            'foreign_table', // For polymorphic relations
+            'foreign_field', // For polymorphic relations
+            'foreign_uid', // For polymorphic relations
+            'foreign_sortby', // For polymorphic relations
+        ],
+        //////////////////////////////////////
+        // prop_*
+        //////////////////////////////////////
+        'dataFields' => [
+            // Input
+            'prop_nameinput' => [
+                'type' => 'Input', // || Input.Int || Input.Number || Input.Float || Input.Link || Input.Color || Input.Email || Input.Password || Input.InvisibleInt || Input.Invisible
+                'name' => 'Field Input',
+                'max' => 100,
+                'size' => 24,
+                'liveSearch' => 1,
+
+                //////////////////////////////////////
+                // General settings for all types of fields
+                //////////////////////////////////////
+                'description' => '-------Description-------',
+                'placeholder' => '-------Placeholder-------',
+                'default' => '-------Default value-------',
+                'show' => 1, // Show field in lists
+                'required' => 1, // Required to fill
+                'validationRules' => [
+                    'required' => 1, // Todo Validator
+                    'ruleName' => 1, // Todo Validator
+                ],
+                'onChangeReload' => 1, // Reload the form when the field value changes
+                'displayCond' =>
+                    'USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data', // Example
+                'exclude' => 1, // Todo
+
+                'position' => [
+                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
+                    '*' => 'media,10',
+                ],
+            ],
+            // Text
+            'prop_nametext' => [
+                'type' => 'Text', // || Text.Rte || Text.Code || Text.Table || Text.Invisible
+                'name' => 'Field Text',
+                'show' => 1,
+                'liveSearch' => 1,
+                'format' =>
+                    'css || html || javascript || php || typoscript || xml', // Text.Rte
+                'preset' => 'default || full || default || ext_myext_preset', // Text.Code
+            ],
+            // Date
+            'prop_namedate' => [
+                'type' => 'Date', // || Date.DateTime || Date.Time || Date.TimeSec || Date.Year
+                'name' => 'Field Date',
+                'show' => 1,
+            ],
+            // Flag
+            'prop_nameflag' => [
+                'type' => 'Flag',
+                'name' => 'Field Flag',
+                'show' => 1,
+                'items' => [
+                    1 => 'Checked',
+                ],
+            ],
+            // Switcher
+            'prop_nameswitcher' => [
+                'type' => 'Switcher', // || Switcher.Int
+                'name' => 'Field Switcher',
+                'show' => 1,
+                'itemsProcFunc' =>
+                    'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
+                'itemsModel' => 'Mynamespace\Myext\Domain\Model\###',
+                'itemsWhere' => ' AND table.field>5 ',
+                'items' => [
+                    0 => 'Zero',
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+            // Enum
+            'prop_nameenum' => [
+                'type' => 'Enum',
+                'name' => 'Field Enum',
+                'show' => 1,
+                'itemsProcFunc' =>
+                    'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
+                'itemsModel' => 'Mynamespace\Myext\Domain\Model\###',
+                'itemsWhere' => ' AND table.field>5 ',
+                'items' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+            // ...
+        ],
+        //////////////////////////////////////
+        // propmedia_*
+        //////////////////////////////////////
+        'mediaFields' => [
+            // Media
+            'propmedia_pics' => [
+                // 'type' => 'Media_1 || Media_1.Image || Media_1.Mix', // One
+                'type' => 'Media_M || Media_M.Image || Media_M.Mix', // Many
+                'name' => 'Field Media_1',
+                'show' => 1,
+                'maxItems' => 10,
+                'position' => [
+                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
+                    '*' => 'media,10',
+                ],
+            ],
+            // ...
+        ],
+        //////////////////////////////////////
+        // propref_*
+        //////////////////////////////////////
+        'relationalFields' => [
+            'propref_tags' => [
+                'type' => 'Rel_1To1', // || Rel_1ToM || Rel_MTo1(.Large) || Rel_MToM(.Large) || Rel_Poly_1To1 || Rel_Poly_1ToM
+                'name' => 'Field Rel_1To1',
+                'show' => 1,
+                'foreignModel' => 'Mynamespace\Myext\Domain\Model\Tag', // tx_myext_dm_tag
+                'foreignKey' => 'propref_newtable',
+                'foreignParentKey' => 'parent_id', // Only Rel_MTo1.Tree || Rel_MToM.Tree
+                'foreignWhere' => ' AND table.RType=###REC_FIELD_RType### ', // See $TCA "foreign_table_where"
+                'foreignDefaults' => [
+                    'CType' => 'image', // See $TCA "foreign_record_defaults"
+                ],
+                'position' => [
+                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
+                    '*' => 'rels,10',
+                ],
+            ],
+            // ...
+        ],
+    ];
 
     /**
      * A set of rules for context-aware validation
@@ -687,15 +801,15 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         $rules = [
             'checkInsert' => [
                 'title' => [
-                    'required' => 'MSG "required"', 
-                    'string' => 'MSG "string"', 
+                    'required' => 'MSG "required"',
+                    'string' => 'MSG "string"',
                     'max:2' => 'MSG "max"',
                     #function ($attribute, $value, $fail) {
                     #	if ($value === 'foo') {
                     #		$fail('The '.$attribute.' is invalid.');
                     #	}
                     #}
-                ]
+                ],
             ],
             'checkUpdate' => [
                 // context update...
@@ -705,107 +819,10 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
             ],
             'checkOther' => [
                 // ...
-            ]
+            ],
         ];
         return $rules;
     }
-
-    /**
-     * @AirTable\Field:<Input> || Input.Int || Input.Number || Input.Float || Input.Link || Input.Color || Input.Email || Input.Password || Input.InvisibleInt || Input.Invisible
-     * @AirTable\Field\Label:<Input>
-     * @AirTable\Field\LiveSearch:<1>
-     * @AirTable\Field\Max:<100>
-     * @AirTable\Field\Size:<24>
-     */
-    protected $prop_example_field_input;
-
-    /**
-     * @AirTable\Field:<Text> || Text.Rte || Text.Code || Text.Table || Text.Invisible
-     * @AirTable\Field\Label:<Field text>
-     * @AirTable\Field\Format:<css || html || javascript || php || typoscript || xml> // Text.Rte
-     * @AirTable\Field\Preset:<default || full || default || ext_myext_preset> // Text.Code
-     */
-    protected $prop_example_field_text;
-
-    /**
-     * @AirTable\Field:<Date> || Date.DateTime || Date.Time || Date.TimeSec || Date.Year
-     * @AirTable\Field\Label:<Field date>
-     */
-    protected $prop_example_field_date;
-
-    /**
-     * @AirTable\Field:<Media_1> || Media_1.Image || Media_1.Mix || Media_M...
-     * @AirTable\Field:<Fal_1> || Fal_1.Image || Fal_1.Mix || Fal_M... // Todo rename 
-     * @AirTable\Field\Label:<Media>
-     * @AirTable\Field\MaxItems:<10>
-     */
-    protected $propmedia_example_field_media;
-    protected $propfal_example_field_media; // Todo rename 
-
-    /**
-     * @AirTable\Field:<Flag>
-     * @AirTable\Field\Label:<Flag>
-     * @AirTable\Field\Items\1:<Checked>
-     */
-    protected $prop_example_field_flag;
-
-    /**
-     * @AirTable\Field:<Switcher> || Switcher.Int
-     * @AirTable\Field\Label:<Switcher>
-     * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
-     * @AirTable\Field\ItemsModel:<Litovchenko\AirTable\Domain\Model\Eav\SysAttributeOption>
-     * @AirTable\Field\ItemsWhere:< AND sys_attribute_option.sys_attribute_row_id=5 >
-     * @AirTable\Field\Items\0:<Zero>
-     * @AirTable\Field\Items\1:<One>
-     * @AirTable\Field\Items\2:<Two>
-     * @AirTable\Field\Items\3:<Three>
-     */
-    protected $prop_example_field_switcher;
-
-    /**
-     * @AirTable\Field:<Enum>
-     * @AirTable\Field\Label:<Enum>
-     * @AirTable\Field\ItemsProcFunc:<Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems>
-     * @AirTable\Field\ItemsModel:<Litovchenko\AirTable\Domain\Model\Eav\SysAttributeOption>
-     * @AirTable\Field\ItemsWhere:< AND sys_attribute_option.sys_attribute_row_id=5 >
-     * @AirTable\Field\Items\1:<One>
-     * @AirTable\Field\Items\2:<Two>
-     * @AirTable\Field\Items\3:<Three>
-     */
-    protected $prop_example_field_enum;
-
-    /**
-     * @AirTable\Field:<Rel_1To1>
-     * @AirTable\Field\Label:<Rel_1To1>
-     * @AirTable\Field\ForeignModel:<Mynamespace\Myext\Domain\Model\[SubFolder]\***>
-     * @AirTable\Field\ForeignKey:<***>
-     * @AirTable\Field\ForeignParentKey:<parent_id> // Only (Rel_MToM.Tree || Rel_MTo1.Tree)
-     * @AirTable\Field\ForeignWhere:< AND tx_data_category.RType=###REC_FIELD_RType### > // See "foreign_table_where"
-     * @AirTable\Field\ForeignDefaults\CType:<image> // See "foreign_record_defaults"
-     * @AirTable\Field\Show:<1>
-     */
-    protected $proptblref_[prefix]_tablename_row; // Rel_1To1, "ForeignKey": proptblref_exampletable_row_id
-    protected $proptblref_[prefix]_tablename_rows; // Rel_1ToM, "ForeignKey": proptblref_exampletable_row_id
-    protected $proptblref_[prefix]_tablename_row_id; // Rel_MTo1 || Rel_MTo1.Large || Rel_MTo1.Tree, "ForeignKey": proptblref_exampletable_rows
-    protected $proptblref_[prefix]_tablename_rows; // Rel_MToM || Rel_MToM.Large || Rel_MToM.Tree, "ForeignKey": proptblref_exampletable_rows
-    protected $proptblref_[prefix]_tablename_row; // Rel_Poly_1To1, "ForeignKey": proptblref_exampletable_row
-    protected $proptblref_[prefix]_tablename_rows; // Rel_Poly_1ToM, "ForeignKey": proptblref_exampletable_row
-    
-    /**
-     * @AirTable\Field:<Input>
-     * @AirTable\Field\Label:<Additional options for customizing the field>
-     * @AirTable\Field\Description:<-------Description------->
-     * @AirTable\Field\Placeholder:<-------Placeholder------->
-     * @AirTable\Field\Default:<-------Default value------->
-     * @AirTable\Field\Required:<1> // Required to fill
-     * @AirTable\Field\ValidationRules\Required:<1> // Todo Validator
-     * @AirTable\Field\ValidationRules\[Rule Name]:<1> // Todo Validator
-     * @AirTable\Field\Show:<1> // Show field in lists
-     * @AirTable\Field\OnChangeReload:<1> // Reload the form when the field value changes
-     * @AirTable\Field\DisplayCond:<USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data> // Example
-     * @AirTable\Field\Exclude:<1> // Todo
-     */
-    protected $prop_example_field_additional_options;
 
     /**
      * Changing the $TCA settings array
@@ -848,7 +865,6 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
      */
     public static function cmdDatabaseSeeder()
     {
-    
     }
 
     /**
@@ -860,7 +876,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         $command = 'insert || update || delete';
         if ($when == 'before') {
             //
-        } else  {
+        } else {
             //
         }
     }
