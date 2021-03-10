@@ -874,18 +874,27 @@ Step 2) If you need categorization, create a category model EXT:myext/Classes/Do
 ```php
 <?php
 namespace Mynamespace\Myext\Domain\Model\[SubFolder];
-use Litovchenko\AirTable\Domain\Model\AbstractModelCrud;
-/**
- * @AirTable\Label:<New table category name>
- * @AirTable\Description:<New table category description>
- */
-class NewTableCategory extends AbstractModelCrud
+
+class NewTableCategory extends \Litovchenko\AirTable\Domain\Model\ModelCrud
 {
-    use \Litovchenko\AirTable\Domain\Model\Traits\Title;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Disabled;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Deleted;
-    use \Litovchenko\AirTable\Domain\Model\Traits\Sorting;
-    use \Litovchenko\AirTable\Domain\Model\Traits\ParentRow;
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        'thisIs' => 'BackendModelCrud',
+        'name' => 'New category table name ',
+        'description' => 'New category table description',
+        'defaultListTypeRender' => '0 || 1 || 2 || 3',
+        'baseFields' => [
+            'title',
+            'deleted',
+            'disabled',
+            'sorting',
+            'parent_row_id',
+        ],
+    ];
 }
 ```
 
