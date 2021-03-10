@@ -1007,6 +1007,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ### Useful notes - Extbase Controller
 ```php
+// Просмотреть все функции Extbase и расширений core в папке typo3/sysext/
 class ExtbaseApi{}
 
 + mail()
