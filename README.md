@@ -1491,10 +1491,7 @@ $(function() {
 
     //*****************************************************************//
     // _GET Ajax (обновить фотографию)
-    // <f:uri.action
-    //		noCacheHash="true" 
-    //		additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|RandPhotoController|index'}"
-    // >
+    // <a href="<f:uri.action noCacheHash="true" additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|RandPhotoController|index',eIdAjaxSettings:{imgWidthBig:640,imgWidthSmall:300}}" />">Ajax link</a>
     //*****************************************************************//
     $('body').on('click', '#ext_projiv_randphotocontroller_a', function() {
         $('#ext_projiv_randphotocontroller_wrap').fadeTo("fast", 0.5);
