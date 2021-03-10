@@ -13,10 +13,21 @@
 		# Валидация формы база
 		# Валидация формы в контроллере есть модель Form
 		# Валидация формы в контроллере без модели Form
-		#*********************************************************************************************
-		# 3) FAL
-		#*********************************************************************************************
+```
+public function actionSearch($name, $email)
+{
+    $model = new DynamicModel(['name' => $name, 'email' => $email]);
+    $model->addRule(['name', 'email'], 'string', ['max' => 128])
+        ->addRule('email', 'email')
+        ->validate();
 
+    if ($model->hasErrors()) {
+        // validation fails
+    } else {
+        // validation succeeds
+    }
+}
+```
 
 if(TYPO3_AJAX_MODE === true) {
 }
@@ -25,7 +36,7 @@ if(TYPO3_AJAX_MODE === true) {
 4) if (посмотреть проверки VHS) isAjax...
 5) Убрать лишнуюю функцию @validationDataWithRules@
 
-https://www.yiiframework.com/doc/guide/2.0/en/input-validation\
+
 https://laravel.com/docs/5.1/validation#available-validation-rules\
 https://laravel.demiart.ru/ways-of-laravel-validation/
 
