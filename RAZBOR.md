@@ -13,7 +13,7 @@
 		# Валидация формы база
 		# Валидация формы в контроллере есть модель Form
 		# Валидация формы в контроллере без модели Form
-```
+		
 public function actionSearch($name, $email)
 {
     $model = new DynamicModel(['name' => $name, 'email' => $email]);
