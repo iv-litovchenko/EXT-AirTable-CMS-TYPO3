@@ -801,7 +801,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         $rules = [
             'checkInsert' => [
                 'title' => [
-					'attributeName' => 'Title',
+                    'attributeName' => 'Title',
                     'required' => 'MSG "required"',
                     'string' => 'MSG "string"',
                     'max:2' => 'MSG "max"',
