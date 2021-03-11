@@ -1513,6 +1513,7 @@ $(function() {
     // _GET Ajax (refresh random photo block)
     //*****************************************************************//
     // <f:link.action 
+    //    class="tx-myext-randphotocontroller"
     //    noCacheHash="true" 
     //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|RandPhotoController|index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
     // >
@@ -1520,8 +1521,8 @@ $(function() {
     // </f:link.action>
     // <f:uri.action ... />
     //*****************************************************************//
-    $('body').on('click', '#ext_myext_randphotocontroller_a', function() {
-        $('#ext_myext_randphotocontroller_wrap').fadeTo("fast", 0.5);
+    $('body').on('click', 'a.tx-myext-randphotocontroller', function() {
+        $('div.tx-myext-randphotocontroller-wrap').fadeTo("fast", 0.5);
         $.ajax({
             type: 'GET',
             url: "/?eIdAjax=1&eIdAjaxPath=myext|RandPhotoController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
@@ -1532,7 +1533,7 @@ $(function() {
                 }
             },
             success: function(html) {
-                $('#ext_myext_randphotocontroller_wrap').replaceWith(html);
+                $('div.tx-myext-randphotocontroller-wrap').replaceWith(html);
             }
         });
         return false;
@@ -1550,8 +1551,9 @@ $(function() {
     // _POST Ajax (feedback form)
     //*****************************************************************//
     // <f:form 
-    //    name="FeedBackForm" 
-    //    object="{FeedBackForm}" 
+    //    class="tx-myext-feedbackformcontroller" 
+    //    name="form" 
+    //    object="{form}" 
     //    noCacheHash="true" 
     //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|FeedBackFormController|index', eIdAjaxSettings:{}}"
     // >
@@ -1561,14 +1563,14 @@ $(function() {
     //    ...
     // </f:form>
     //*****************************************************************//
-    $('body').on('submit', 'form#ext_myext_feedbackformcontroller', function() {
+    $('body').on('submit', 'form.tx-myext-feedbackformcontroller', function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
             type: 'POST',
             url: "/?eIdAjax=1&eIdAjaxPath=myext|FeedBackFormController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: $(this).serializeArray(),
             success: function(html) {
-                $('#ext_myext_feedbackformcontroller_wrap').replaceWith(html);
+                $('div.tx-myext-feedbackformcontroller-wrap').replaceWith(html);
             }
         });
         return false;
