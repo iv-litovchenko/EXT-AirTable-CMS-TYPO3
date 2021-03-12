@@ -1587,14 +1587,121 @@ $(function() {
 
 ## 21 Extbase Example of working with forms
 
-### Controller (EXT:projiv/Classes/Controller/FeedBackFormController.php)
+### Controller (EXT:projiv/Classes/Controller/Widgets/FeedBackFormController.php)
+
 ```php
-===
+<?php
+namespace Litovchenko\Projiv\Controller\Widgets;
+
+class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        'thisIs' => 'FrontendWidget',
+        'name' => 'Форма обратной связи',
+        'nonСachedActions' => 'indexAction',
+        'ajaxActions' => 'indexAction',
+    ];
+
+    public function indexAction()
+    {
+        #*************************************************************
+        # Form
+        #*************************************************************
+        // if(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST()) {
+        if ($this->request->hasArgument('form')) {
+            $postArgs = $this->request->getArguments()['form'];
+            $validator = \Litovchenko\Projiv\Domain\Form\FeedBackForm::validation('default', $postArgs);
+            if ($validator->fails()) {
+                unset($postArgs['agree']);
+                $this->view->assign('form', $postArgs);
+                $this->view->assign('validationResults', ['form' => $validator]);
+                // $this->addFlashMessage('Форма содержит ошибки!', 'Ошибки в форме', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR); // ERROR
+            } else {
+                $this->view->setTemplatePathAndFilename('EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/Thanks.html');
+                $this->sendMail($postArgs);
+                // $this->addFlashMessage('Форма прошла проверку', 'Спасибо за обращение', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK); // Cool
+            }
+        }
+    }
+
+    public function sendMail($postArgs)
+    {
+        #*************************************************************
+        # Mail
+        #*************************************************************
+        $mail = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Mail\FluidEmail::class);
+        $mail->from(new \Symfony\Component\Mime\Address('robot@iv-litovchenko.ru', 'Robot Iv-Litovchenko.Ru'));
+        $mail->to(new \Symfony\Component\Mime\Address('iv-litovchenko@mail.ru', 'Ivan Litovchenko'));
+        $mail->subject('На сайте оставлена заявка');
+        $mail->format('plain');
+        $mail->setTemplate('FeedBackForm'); // EXT:projiv/Resources/Private/Templates/Email/FeedBackForm.txt
+        $mail->assignMultiple($postArgs);
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Mail\Mailer::class)->send($mail);
+        // $mail->attachFromPath('/path/to/my-document.pdf');
+    }
+}
+
 ```
 
 ### Model (EXT:projiv/Classes/Domain/Form/FeedBackForm.php)
+
 ```php
-===
+<?php
+namespace Litovchenko\Projiv\Domain\Form;
+
+class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
+{
+    /**
+     * A set of rules for context-aware validation
+     * @return array
+     */
+    public static function validationRules()
+    {
+        $rules = [
+            'default' => [
+                'name' => [
+                    'attributeName' => 'Имя',
+                    'required' => 'Как вас зовут?',
+                    'min:2' => 'Имя не менее 2 символов!',
+                    'max:5' => 'Имя не более 5 символов!',
+                    // 'custom_rule_name:parameter' => 'Ошибка (кастомный валидатор)!',
+                ],
+                'email' => [
+                    'attributeName' => 'Email',
+                    'required' => 'Поле обязательно к заполнению',
+                    'email' => 'Не правильно указан Email-адрес',
+                ],
+                'q' => [
+                    'attributeName' => 'Вопрос',
+                    'required' => 'Выберите вопрос',
+                ],
+                'message' => [
+                    'attributeName' => 'Сообщение',
+                    'required' => 'Введите сообщение',
+                    'min:10' => 'Сообщение из мене чем 10 символов малоинформативно!',
+                ],
+                'agree' => [
+                    'attributeName' => 'Согласен на обработку персональных данных',
+                    'required' => 'Необходимо принять условия',
+                ],
+            ],
+        ];
+        return $rules;
+    }
+
+    public function custom_rule_name($attribute, $value, $parameters, $validator) {
+        if ($value == 'TYPO3') {
+            return true; // Good
+        } else {
+            return false;
+        }
+    }
+}
 ```
 
 ## 22 Functional development plans 
