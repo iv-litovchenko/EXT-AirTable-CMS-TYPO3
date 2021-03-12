@@ -100,7 +100,7 @@ EXT:myext/Resources/Public/
 EXT:myext/Resources/Public/Css/Pages.Main.css
 EXT:myext/Resources/Public/Css/Widgets.FeedBackForm.css
 EXT:myext/Resources/Public/Js/Pages.Main.js
-EXT:myext/Resources/Public/Js/Widgets.FeedBackForm.css
+EXT:myext/Resources/Public/Js/Widgets.FeedBackForm.js
 EXT:myext/Resources/Public/Img/Modules/
 EXT:myext/Resources/Public/Img/Pages/
 EXT:myext/Resources/Public/Img/PagesElements/
