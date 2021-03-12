@@ -97,9 +97,14 @@ EXT:myext/Resources/Private/Templates/PagesElements/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Widgets/[*]/Index.html
 
 EXT:myext/Resources/Public/
-EXT:myext/Resources/Public/Css/
-EXT:myext/Resources/Public/Js/
-EXT:myext/Resources/Public/Img/
+EXT:myext/Resources/Public/Css/Pages.Main.css
+EXT:myext/Resources/Public/Css/Widgets.FeedBackForm.css
+EXT:myext/Resources/Public/Js/Pages.Main.js
+EXT:myext/Resources/Public/Js/Widgets.FeedBackForm.css
+EXT:myext/Resources/Public/Img/Modules/
+EXT:myext/Resources/Public/Img/Pages/
+EXT:myext/Resources/Public/Img/PagesElements/
+EXT:myext/Resources/Public/Img/Widgets/
 
 EXT:myext/ext_emconf.php
 ```
