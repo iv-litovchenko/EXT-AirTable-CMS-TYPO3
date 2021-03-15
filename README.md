@@ -1710,7 +1710,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 }
 ```
 
-### Template (EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/)
+### Template (EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/*.html)
 
 ```html
 <!-- Index.html -->
