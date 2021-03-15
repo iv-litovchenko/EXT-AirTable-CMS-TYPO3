@@ -1,5 +1,5 @@
 ```
-2) Отказатьс от "validationResults" - заменить его на "propertyErrors"
+1) Отказатьс от "validationResults" - заменить его на "propertyErrors"
 
             <  f:form.validationResults for="form.agree">
                < f: if condition="{validationResults.flattenedErrors}">
@@ -13,9 +13,10 @@
                < / f:if>
             <  / f:form.validationResults>
 			
-4) propertyErrors - правильнй массив ошибок!
+2) propertyErrors - правильнй массив ошибок!
 [nameAttr]
 [error1]
 [error2]
-5) Задокументировать!
+3) Вывод класса ошибок...?
+4) Задокументировать!
 ```
