@@ -1390,8 +1390,8 @@ public function globalScopeSorting($builder) {
 // B) Local scope (user function local scope register)
 // See example: scopePagination();
 // $rows = NewTable::active(1,2)->get();
-public function scopeActive($agr1 = 5, $arg2 = 4){
-    return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
+public function scopeActive($query, $agr1 = 5, $arg2 = 4){
+    return $query->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
 // C) Relationship (user function register)
