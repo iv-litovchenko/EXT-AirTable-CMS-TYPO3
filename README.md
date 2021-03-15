@@ -1780,7 +1780,6 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 </div>
 
 <!-- Thanks.html -->
-<f:asset.css identifier="Widgets.FeedBackForm" href="EXT:projiv/Resources/Public/Css/Widgets.FeedBackForm.css" />
 <div class="tx-projiv-feedbackformcontroller-wrap">
    <div class="alert alert-success" role="alert">
       <h3>Спасибо за Ваше обращение</h3>
