@@ -1380,7 +1380,7 @@ NewTable::refSort(); // todo
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // A) Global scope (user function global scope register)
-// See example: gScopeFlagDeleted();
+// See example: globalScopeFlagDeleted();
 // $rows = NewTable::get(); // Results sorted by default by uid field
 // $rows = NewTable::withoutGlobalScope('Sorting')->get(); // No sorting by default
 public function globalScopeSorting($builder) {
