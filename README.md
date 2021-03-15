@@ -1666,28 +1666,23 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
         $rules = [
             'default' => [
                 'name' => [
-                    'attributeName' => 'Имя',
                     'required' => 'Как вас зовут?',
                     'min:2' => 'Имя не менее 2 символов!',
                     'max:5' => 'Имя не более 5 символов!',
                     // 'custom_rule_name:parameter' => 'Ошибка (кастомный валидатор)!',
                 ],
                 'email' => [
-                    'attributeName' => 'Email',
                     'required' => 'Поле обязательно к заполнению',
                     'email' => 'Не правильно указан Email-адрес',
                 ],
                 'q' => [
-                    'attributeName' => 'Вопрос',
                     'required' => 'Выберите вопрос',
                 ],
                 'message' => [
-                    'attributeName' => 'Сообщение',
                     'required' => 'Введите сообщение',
                     'min:10' => 'Сообщение из мене чем 10 символов малоинформативно!',
                 ],
                 'agree' => [
-                    'attributeName' => 'Согласен на обработку персональных данных',
                     'required' => 'Необходимо принять условия',
                 ],
             ],
