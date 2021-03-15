@@ -13,7 +13,6 @@
                < / f:if>
             <  / f:form.validationResults>
 			
-3) Продумать название "propertyErrors"
 4) propertyErrors - правильнй массив ошибок!
 [nameAttr]
 [error1]
