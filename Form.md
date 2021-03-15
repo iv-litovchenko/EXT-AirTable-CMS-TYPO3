@@ -1,18 +1,4 @@
 ```
-1) Отказатьс от "validationResults" - заменить его на "propertyErrors"
-
-            <  f:form.validationResults for="form.agree">
-               < f: if condition="{validationResults.flattenedErrors}">
-                  <div class="alert alert-danger" role="alert">
-                     <ul class="errors">
-                        < f :for each="{validationResults.errors}" as="error">
-                           <li>{error.message}</li>
-                        < /f :for>
-                     </ul>
-                  </div>
-               < / f:if>
-            <  / f:form.validationResults>
-			
 2) propertyErrors - правильнй массив ошибок!
 [nameAttr]
 [error1]
