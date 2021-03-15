@@ -1657,6 +1657,13 @@ namespace Litovchenko\Projiv\Domain\Form;
 
 class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 {
+    public static $q = [
+        0 => '-- Выберите тему вопроса --',
+        'web' => 'Работы по сайту, создание сайта',
+        'design' => 'Графический дизайн',
+        'other' => 'Другие вопросы',
+    ];
+
     /**
      * A set of rules for context-aware validation
      * @return array
@@ -1676,11 +1683,14 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
                     'email' => 'Не правильно указан Email-адрес',
                 ],
                 'q' => [
-                    'required' => 'Выберите вопрос',
+                    'not_in:0' => 'Выберите вопрос',
                 ],
                 'message' => [
                     'required' => 'Введите сообщение',
                     'min:10' => 'Сообщение из мене чем 10 символов малоинформативно!',
+                ],
+                'phone' => [
+                    'required' => 'Укажите телефон',
                 ],
                 'agree' => [
                     'required' => 'Необходимо принять условия',
