@@ -1388,9 +1388,9 @@ public function globalScopeSorting($builder) {
 }
 
 // B) Local scope (user function local scope register)
-// See example: builderLsCustomPagination();
-// $rows = NewTable::customNameCondition(1,2)->get();
-public function builderLsCustomNameCondition($agr1 = 5, $arg2 = 4){ // builderUserLocalScope[Name]()
+// See example: scopePagination();
+// $rows = NewTable::active(1,2)->get();
+public function scopeActive($agr1 = 5, $arg2 = 4){
     return $this->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
