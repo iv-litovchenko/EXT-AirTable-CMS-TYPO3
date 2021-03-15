@@ -1620,7 +1620,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             if ($validator->fails()) {
                 unset($postArgs['agree']);
                 $this->view->assign('form', $postArgs);
-                $this->view->assign('validationResults', ['form' => $validator]);
+                $this->view->assign('formValidator', $validator);
                 // $this->addFlashMessage('Форма содержит ошибки!', 'Ошибки в форме', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR); // ERROR
             } else {
                 $this->view->setTemplatePathAndFilename('EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/Thanks.html');
@@ -1628,6 +1628,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
                 // $this->addFlashMessage('Форма прошла проверку', 'Спасибо за обращение', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK); // Cool
             }
         }
+        $this->view->assign('q', \Litovchenko\Projiv\Domain\Form\FeedBackForm::$q);
     }
 
     public function sendMail($postArgs)
@@ -1646,7 +1647,6 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         // $mail->attachFromPath('/path/to/my-document.pdf');
     }
 }
-
 ```
 
 ### Model (EXT:projiv/Classes/Domain/Form/FeedBackForm.php)
