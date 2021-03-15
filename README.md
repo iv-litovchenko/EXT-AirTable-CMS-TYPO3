@@ -1788,6 +1788,24 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 </div>
 ```
 
+### Email template (EXT:projiv/Resources/Private/Templates/Email/FeedBackForm.txt)
+
+```
+Добрый день!
+
+На сайте оставили сообщение.
+
+Имя: {name}
+Email: {email}
+Телефон: {phone}
+Вопрос: {q}
+Сообщение: {message}
+
+--
+С уважением, робот сайта
+http://iv-litovchenko.ru
+```
+
 ## 22 Functional development plans 
 
 * Маршрутизация на основе аннотаций (WW)
