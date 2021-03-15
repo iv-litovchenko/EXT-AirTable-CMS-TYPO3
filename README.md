@@ -1261,10 +1261,10 @@ $filter['join'] = ...;
 $filter['leftJoin'] = ...;
 $filter['crossJoin'] = ...;
 
-$filter['customSelectMinimize'] = true; // or false
-$filter['customWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
-$filter['customWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
-$filter['customPagination'] = [30,1]; // $pageLimit, $pageNumber
+$filter['userSelectMinimize'] = true; // or false
+$filter['userWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
+$filter['userWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
+$filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
 
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
@@ -1388,9 +1388,9 @@ public function globalScopeSorting($builder) {
 }
 
 // B) Local scope (user function local scope register)
-// See example: scopePagination();
-// $rows = NewTable::active(1,2)->get();
-public function scopeActive($query, $agr1 = 5, $arg2 = 4){
+// See example: scopeUserPagination();
+// $rows = NewTable::userActive(1,2)->get();
+public function scopeUserActive($query, $agr1 = 5, $arg2 = 4){
     return $query->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
