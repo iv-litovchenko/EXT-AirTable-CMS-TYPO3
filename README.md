@@ -1380,10 +1380,10 @@ NewTable::refSort(); // todo
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // A) Global scope (user function global scope register)
-// See example: builderGsCustomFlagDeleted();
+// See example: gScopeFlagDeleted();
 // $rows = NewTable::get(); // Results sorted by default by uid field
-// $rows = NewTable::withoutGlobalScope('customNameGlobalCondition')->get(); // No sorting by default
-public function builderGsCustomNameGlobalCondition($builder) { // builderUserGlobalScope[Name]()
+// $rows = NewTable::withoutGlobalScope('Sorting')->get(); // No sorting by default
+public function globalScopeSorting($builder) {
     $builder->orderBy('uid','Desc');
 }
 
