@@ -1710,6 +1710,84 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 }
 ```
 
+### Template (EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/)
+
+```html
+<!-- Index.html -->
+<f:asset.css identifier="Widgets.FeedBackForm" href="EXT:projiv/Resources/Public/Css/Widgets.FeedBackForm.css" />
+<div class="tx-projiv-feedbackformcontroller-wrap">
+   <div class="alert alert-info" role="alert">
+      <h3 align="center">Форма обратной связи</h3>
+      <f:form 
+         enctype="multipart/form-data"
+         class="tx-projiv-feedbackformcontroller" 
+         name="form" 
+         object="{form}" 
+         noCacheHash="true" 
+         additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|index'}"
+         asErrors="propertyErrors"
+         >
+         <div class="form-group">
+            <label class="col-form-label">Ваше имя*</label>
+            <f:if condition="{propertyErrors.name}">
+               <span class="error text-danger">{propertyErrors.name.0}</span>
+            </f:if>
+            <f:form.textfield property="name" class="form-control" />
+         </div>
+         <div class="form-group">
+            <label>Email*</label>
+            <f:if condition="{propertyErrors.email}">
+               <span class="error text-danger">{propertyErrors.email.0}</span>
+            </f:if>
+            <f:form.textfield property="email" class="form-control" placeholder="name@example.com" />
+         </div>
+         <div class="form-group">
+            <label>Контактный телефон*</label>
+            <f:if condition="{propertyErrors.phone}">
+               <span class="error text-danger">{propertyErrors.phone.0}</span>
+            </f:if>
+            <f:form.textfield property="phone" class="form-control" />
+         </div>
+         <div class="form-group">
+            <label>Вопрос*</label>
+            <f:if condition="{propertyErrors.q}">
+               <span class="error text-danger">{propertyErrors.q.0}</span>
+            </f:if>
+            <f:form.select property="q" class="form-control" options="{q}" />
+         </div>
+         <div class="form-group">
+            <label>Сообщение*</label>
+            <f:if condition="{propertyErrors.message}">
+               <span class="error text-danger">{propertyErrors.message.0}</span>
+            </f:if>
+            <f:form.textarea property="message" class="form-control" rows="3" />
+         </div>
+         <div class="form-check">
+            <label class="form-check-label">
+               <f:form.checkbox property="agree" class="form-check-input" value="1" />
+               Согласен на обработку персональных данных*...
+            </label>
+            <f:if condition="{propertyErrors.agree}">
+               <br /><span class="error text-danger">{propertyErrors.agree.0}</span>
+            </f:if>
+         </div>
+         <div class="form-group">
+            <f:form.submit class="form-control btn btn-primary" value="Отправить" />
+         </div>
+      </f:form>
+   </div>
+</div>
+
+<!-- Thanks.html -->
+<f:asset.css identifier="Widgets.FeedBackForm" href="EXT:projiv/Resources/Public/Css/Widgets.FeedBackForm.css" />
+<div class="tx-projiv-feedbackformcontroller-wrap">
+   <div class="alert alert-success" role="alert">
+      <h3>Спасибо за Ваше обращение</h3>
+      <p>В ближайшее время мы свяжемся с вами!</p>
+   </div>
+</div>
+```
+
 ## 22 Functional development plans 
 
 * Маршрутизация на основе аннотаций (WW)
