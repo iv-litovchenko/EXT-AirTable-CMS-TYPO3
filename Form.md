@@ -1,7 +1,7 @@
 ```
-1) Пересмотреть второй ассигн formValidationResults!
-$this->view->assign('form', $postArgs);
-$this->view->assign('validationResults', ['form' => $validator]);
++ 1) Пересмотреть второй ассигн formValidationResults!
++ $this->view->assign('form', $postArgs);
++ $this->view->assign('validationResults', ['form' => $validator]);
 2) Отказатьс от "validationResults" - заменить его на "propertyErrors"
 
             <  f:form.validationResults for="form.agree">
