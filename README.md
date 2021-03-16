@@ -63,7 +63,9 @@ EXT:myext/Classes/Controller/
 EXT:myext/Classes/Controller/Modules/_.txt // Name section
 EXT:myext/Classes/Controller/Modules/[*]Controller.php
 EXT:myext/Classes/Controller/Pages/[*]Controller.php
-EXT:myext/Classes/Controller/PagesElements/[*]Controller.php
+EXT:myext/Classes/Controller/PagesElements/Elements/[*]Controller.php
+EXT:myext/Classes/Controller/PagesElements/Gridelements/[*]Controller.php
+EXT:myext/Classes/Controller/PagesElements/Plugins/[*]Controller.php
 EXT:myext/Classes/Controller/Widgets/[*]Controller.php
 EXT:myext/Classes/ViewHelpers/[*]ViewHelper.php
 
@@ -94,7 +96,9 @@ EXT:myext/Resources/Private/Templates/_Layouts/
 EXT:myext/Resources/Private/Templates/_Partial/
 EXT:myext/Resources/Private/Templates/Modules/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Pages/[*]/Index.html
-EXT:myext/Resources/Private/Templates/PagesElements/[*]/Index.html
+EXT:myext/Resources/Private/Templates/PagesElements/Elements/[*]/Index.html
+EXT:myext/Resources/Private/Templates/PagesElements/Gridelements/[*]/Index.html
+EXT:myext/Resources/Private/Templates/PagesElements/Plugins/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Widgets/[*]/Index.html
 
 EXT:myext/Resources/Public/
@@ -139,11 +143,11 @@ $EM_CONF[$_EXTKEY] = [
 ## 04 Register a new admin module
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
 
-Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Modules]/NewModule1Controller.php
+Step 1) Create a class EXT:myext/Classes/Controller/Modules/NewModule1Controller.php
 
 ```php
 <?php
-namespace Mynamespace\Myext\Controller\[SubFolder - Modules];
+namespace Mynamespace\Myext\Controller\Modules;
 
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
@@ -233,11 +237,11 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Ca
 ## 05 Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
-Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - Pages]/NewPageController.php
+Step 1) Create a class EXT:myext/Classes/Controller/Pages/NewPageController.php
 
 ```php
 <?php
-namespace Mynamespace\Myext\Controller\[SubFolder - Pages];
+namespace Mynamespace\Myext\Controller\Pages;
 
 class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
@@ -332,11 +336,13 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 ## 06 Register a new content element
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
 
-Step 1) Create a class EXT:myext/Classes/Controller/[SubFolder - PagesElements]/NewElementController.php
+Step 1) Create a class EXT:myext/Classes/Controller/PagesElements/Elements/NewElementController.php
 
 ```php
 <?php
-namespace Mynamespace\Myext\Controller\[SubFolder - PagesElements];
+namespace Mynamespace\Myext\Controller\PagesElements\Elements;
+namespace Mynamespace\Myext\Controller\PagesElements\Gridelements;
+namespace Mynamespace\Myext\Controller\PagesElements\Plugins;
 
 class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
@@ -388,7 +394,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 }
 ```
 
-Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/NewElement/Index.html
+Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elements/NewElement/Index.html
 
 ```html
 <f:debug title="Debug" inline="true">{_all}</f:debug>
