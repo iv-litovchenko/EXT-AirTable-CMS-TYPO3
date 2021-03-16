@@ -488,15 +488,24 @@ Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
 ```php
 <?php
 namespace Mynamespace\Myext\ViewHelpers;
-use Litovchenko\AirTable\ViewHelpers\AbstractViewHelper;
-/**
- * @AirTable\Label:<Test Helper>
- * @AirTable\Description:<String output based on arguments >
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || boolean || array>
- * @AirTable\RegisterArguments\testArg2:<integer,req>
- */
-class HelloWorldViewHelper extends AbstractViewHelper
+
+class HelloWorldViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        'thisIs' => 'FrontendViewHelper',
+        'name' => 'Test Helper',
+        'description' => 'String output based on arguments',
+        'registerArguments' => [
+            'testArg1' => 'string,req', // integer || string || mixed || boolean || array
+            'testArg2' => 'string,req'
+        ]
+    ];
+
     public function render()
     {
         $testArg1 = $this->arguments['testArg1'];
@@ -535,18 +544,27 @@ Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestController.php
 ```php
 <?php
 namespace Mynamespace\Myext\Controller\Widgets;
-use Litovchenko\AirTable\Controller\AbstractWidgetController;
-/**
- * @AirTable\Label:<Test widget>
- * @AirTable\Description:<The widget has a controller and a template>
- * @AirTable\NonСachedActions:<indexAction> // USER_INT
- * @AirTable\AjaxActions:<indexAction> // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
- * @AirTable\RegisterArguments\testArg1:<integer || string || mixed || boolean || array>
- * @AirTable\RegisterArguments\testArg2:<string,req>
- * @AirTable\RegisterArguments\testArg3:<string,req>
- */
-class TestController extends AbstractWidgetController
+
+class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        'thisIs' => 'FrontendWidget',
+        'name' => 'Test widget',
+        'description' => 'The widget has a controller and a template',
+        'nonСachedActions' => 'indexAction', // USER_INT
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'registerArguments' => [
+            'testArg1' => 'string,req', // integer || string || mixed || boolean || array
+            'testArg2' => 'string,req',
+            'testArg3' => 'string,req'
+        ]
+    ];
+
     public function indexAction()
     {
         $this->view->assign('testArg1', $this->settings['testArg1']);
