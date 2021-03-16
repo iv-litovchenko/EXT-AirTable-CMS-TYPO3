@@ -1095,7 +1095,7 @@ if(TYPO3_AJAX_MODE === true) {
 }
 
 // if edit mode
-if(TYPO3_EDIT_MODE === true) { // todo
+if(TYPO3_EDIT_MODE === true) {
     // ...
 }
 ```
