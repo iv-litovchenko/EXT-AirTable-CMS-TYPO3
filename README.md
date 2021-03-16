@@ -1088,6 +1088,16 @@ forms
 $this->database->;
 $this->crud->query = $this->crud->query->withoutGlobalScopes();
 $this->crud->model->clearGlobalScopes();
+
+// if ajax mode
+if(TYPO3_AJAX_MODE === true) {
+    // ...
+}
+
+// if edit mode
+if(TYPO3_EDIT_MODE === true) { // todo
+    // ...
+}
 ```
 
 ### Useful notes - Fluid
