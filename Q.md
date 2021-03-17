@@ -18,7 +18,6 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 ---------
 Модели
 ---------
-* Нужно ли для существущий моделей типа страница, контент, пользователи делать отдельный массив вместо "dataFields"?
 * Доработать проверки для связей...
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
