@@ -1203,7 +1203,7 @@ $rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) {
 print "Count: " . $rowsResult['count'] . "<hr />";
 foreach ($rowsResult['get'] as $row) {
     print $row['title'] . " // ";
-    print $row['[relname]_row(s)_func']['title'] . "<br />";
+    print $row['propref_NAME']['title'] . "<br />";
 }
 
 $filter = [];
@@ -1272,15 +1272,15 @@ $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 // ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
 // ->wherePivot(), wherePivotIn()
 $filter['with.10']  = [
-    'proptblref_exampletable1_row_func' => function($q) {
-        $q->with('proptblref_exampletable_row_id_func');
+    'propref_NAMEA' => function($q) {
+        $q->with('propref_INNERNAME');
         $q->where('uid','>',0);
         $q->where('pid','>',0);
     }
 ];
-$filter['with.20'] = 'proptblref_exampletable2_rows_func.proptblref_exampletable_row_id_func';
-$filter['with.30'] = 'proptblref_exampletable3_row_id_func';
-$filter['with.40'] = 'proptblref_exampletable4_rows_func';
+$filter['with.20'] = 'propref_NAMEB.propref_INNERNAME';
+$filter['with.30'] = 'propref_NAMEC';
+$filter['with.40'] = 'propref_NAMED';
 
 // Todo -> https://github.com/Waavi/model
 // $posts = Post::whereNotRelated('author', 'name', '=', 'John')->get();
@@ -1307,7 +1307,7 @@ $rows = NewTable::recSelect('get', $filter);
 print "Count: " . $count . "<hr />";
 foreach ($rows as $row) {
     print $row['title'] . " // ";
-    print $row['[relname]_row(s)_func']['title'] . "<br />";
+    print $row['propref_NAME']['title'] . "<br />";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -1378,32 +1378,32 @@ $affectedCount = NewTable::recDelete('full');
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // RELATIONSHIPS ->withoutGLobalScopes() always!!!
-// Create and remove links between table records "[relname]_row(s)_func"
+// Create and remove links between table records
 ////////////////////////////////////////////////////////////////////////////////////////
 
-NewTable::refAttach('category_rows_func', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes() always!!!
-NewTable::refDetach('category_rows_func', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes() always!!!
-NewTable::refDetach('category_rows_func', 1, []); // detach all ->withoutGLobalScopes() always!!!
-NewTable::refCollection('category_rows_func', 1); // $relationship, $parentId ->withoutGLobalScopes() always!!!
+NewTable::refAttach('propref_NAME', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('propref_NAME', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('propref_NAME', 1, []); // detach all ->withoutGLobalScopes() always!!!
+NewTable::refCollection('propref_NAME', 1); // $relationship, $parentId ->withoutGLobalScopes() always!!!
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
- * Rel_1To1 / hasOne() / $proptblref_[prefix]_tablename_row;
- * Rel_1ToM / hasMany() / $proptblref_[prefix]_tablename_rows;
+ * Rel_1To1 / hasOne()
+ * Rel_1ToM / hasMany()
    -------------------------------------------------------------------------------------------
 
- * Rel_MTo1 / belongsTo() / $proptblref_[prefix]_tablename_row_id;
- * Rel_1To1_Inverse / belongsTo() / $proptblref_[prefix]_tablename_row_id;
- * Rel_1ToM_Inverse / belongsTo() / $proptblref_[prefix]_tablename_row_id;
+ * Rel_MTo1 / belongsTo()
+ * Rel_1To1_Inverse / belongsTo()
+ * Rel_1ToM_Inverse / belongsTo()
    -------------------------------------------------------------------------------------------
 
- * Rel_MToM / belongsToMany() / $proptblref_[prefix]_tablename_rows;
- * Rel_MToM_Inverse / belongsToMany() / $proptblref_[prefix]_tablename_rows;
+ * Rel_MToM / belongsToMany()
+ * Rel_MToM_Inverse / belongsToMany()
  * Pivot model: [Litovchenko\AirTable\Domain\Model\SysMm], pivot table: [sys_mm]
    -------------------------------------------------------------------------------------------
 
- * Rel_Poly_1To1 / morphOne() / $proptblref_[prefix]_tablename_row;
- * Rel_Poly_1ToM / morphMany() / $proptblref_[prefix]_tablename_rows;
+ * Rel_Poly_1To1 / morphOne()
+ * Rel_Poly_1ToM / morphMany()
  * Rel_Poly_MToM // todo
  * Rel_Poly_1To1_Inverse // todo
  * Rel_Poly_1ToM_Inverse // todo
@@ -1432,7 +1432,7 @@ public function scopeUserActive($query, $agr1 = 5, $arg2 = 4){
 // C) Relationship (user function register)
 // $rows = NewTable::with('customNameRelationship')->get();
 public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
-    return $this->refProvider('proptblref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
+    return $this->refProvider('propref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) Repository Pattern (getBy***)
