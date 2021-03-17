@@ -22,6 +22,7 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 > см. "SysNote"...
 > см. SysFilemounts
 > см. SysFileReference
+> см. SysFileMetadata
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
 // $rows = NewTable::with('userClients')->get();
