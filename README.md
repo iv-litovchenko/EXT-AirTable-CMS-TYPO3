@@ -314,17 +314,17 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 		<td>Hellow word {var}!</td>
 	</tr>
 	<tr>
-		<td><f:content colPos="0" /></td>
-		<td><f:content colPos="1" /></td>
+		<td><f:vhsExtAirTable.content colPos="0" /></td>
+		<td><f:vhsExtAirTable.content colPos="1" /></td>
 	</tr>
 	<tr>
-		<td><f:content colPos="2" /></td>
-		<td><f:content colPos="3" /></td>
-		<td><f:content colPos="4" /></td>
+		<td><f:vhsExtAirTable.content colPos="2" /></td>
+		<td><f:vhsExtAirTable.content colPos="3" /></td>
+		<td><f:vhsExtAirTable.content colPos="4" /></td>
 	</tr>
 	<tr>
-		<td><f:content colPos="5" /></td>
-		<td><f:content colPos="6" /></td>
+		<td><f:vhsExtAirTable.content colPos="5" /></td>
+		<td><f:vhsExtAirTable.content colPos="6" /></td>
 	</tr>
 	</table>
 
@@ -404,11 +404,11 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 	<!--If type "GridElement" // EXT:gridelements-->
 	<table border="1" width="100%">
 	<tr>
-		<td><f:content gridContainerId="{gridId}" gridColumn="1" /></td>
-		<td><f:content gridContainerId="{gridId}" gridColumn="2" /></td>
-		<td><f:content gridContainerId="{gridId}" gridColumn="3" /></td>
-		<td><f:content gridContainerId="{gridId}" gridColumn="4" /></td>
-		<td><f:content gridContainerId="{gridId}" gridColumn="5" /></td>
+		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" /></td>
+		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="2" /></td>
+		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="3" /></td>
+		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="4" /></td>
+		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="5" /></td>
 	</tr>
 	</table>
 	
