@@ -28,4 +28,34 @@ public function userClients() {
 }
 * Проверить все поля в т.ч. в стандартных моделях на соответствие новых требованиячм
 * ForeignKey - доработать "Связь на самого себя (в рамках одной таблицы) "
+* Проверить в Ext-моделях и существующих моделях:
+
+    /**
+     * This is an optional feature.
+     * Record types similar to "doktype (pages)" and "CType (tt_content)"
+     * @return array
+     */
+    #public static function baseRTypes()
+    #{
+    #    // This function is not supported for standard models!
+    #    // * @AirTable\Field\Position\*:<newtab,0>
+    #    $types = parent::baseRTypes();
+    #    $types[100] = 'New type 100';
+    #    return $types;
+    #}
+
+    /**
+     * This is an optional feature.
+     * Tabs for the edit form
+     * @return array
+     */
+    #public static function baseTabs()
+    #{
+    #    // This function is not supported for standard models!
+    #    // * @AirTable\Field\Position\*:<newtab,0>
+    #    $tabs = parent::baseTabs();
+    #    $tabs['newtab'] = 'NewTab (###COUNT###)';
+    #    return $tabs;
+    #}
+
 ```
