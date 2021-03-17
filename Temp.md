@@ -1,6 +1,6 @@
             'propref_beauthor', // M-1
             'propref_content', // <f:content table="tx_myext_newtable" uid="1" />
-            'sys_attribute_rows',
+            'propref_attributes',
 
             // Categorization
             // For this to work, you need:
