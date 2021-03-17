@@ -21,15 +21,12 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 Модели
 ---------
 * Доработать проверки для связей (что будет если не задан "foreignKey" - особенно для связей 1-M, 1-1
-> Остановился на Eav
 > см. "SysNote"...
 > см. SysFilemounts
 > см. SysFileReference
 > см. SysFileMetadata
 > см. SysFile
 > см. Pages , TtContent
-> см. DataType, Data (досравнить _TCA-OLD)
-> EAV-отдельно...
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
 // $rows = NewTable::with('userClients')->get();
