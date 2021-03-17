@@ -6,7 +6,7 @@
             // For this to work, you need:
             // 1) create a category model (NewTableCategory.php) in the current directory
             // 2) add trait "\Litovchenko\AirTable\Domain\Model\Traits\ParentRow" to model "NewTableCategory.php"
-            'parent_row_id', // M-1
+            'propref_parent', // M-1
             'category_row_id', // Categorization M-1
             // or 'category_rows', //  Categorization M-M
 			
