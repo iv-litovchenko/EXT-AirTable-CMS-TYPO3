@@ -21,6 +21,7 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 * Доработать проверки для связей (что будет если не задан "foreignKey" - 
 > см. "SysNote"...
 > см. SysFilemounts
+> см. SysFileReference
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
 // $rows = NewTable::with('userClients')->get();
