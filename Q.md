@@ -17,7 +17,7 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 ---------
 Модели
 ---------
-* EXT-модели и их префикс tx_ вместо ext_
+* Доработать проверки для связей...
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
 // $rows = NewTable::with('userClients')->get();
