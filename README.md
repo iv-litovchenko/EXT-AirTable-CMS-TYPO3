@@ -987,49 +987,24 @@ Step 2) Create class inherited from base model
 ```php
 <?php
 namespace Mynamespace\Myext\Domain\Model\Ext;
-use \Litovchenko\AirTable\Domain\Model\Content\Pages;
 
-/**
- * @AirTable\Label:<From EXT:myext>
- * @AirTable\Description:<Adding fields to the page model>
- */
-
-class ExtPages extends Pages
+class ExtSysFile extends \Litovchenko\AirTable\Domain\Model\Fal\SysFile
 {
     /**
-     * This is an optional feature.
-     * Record types similar to "doktype (pages)" and "CType (tt_content)"
-     * @return array
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
      */
-    #public static function baseRTypes()
-    #{
-    #    // This function is not supported for standard models!
-    #    // * @AirTable\Field\Position\*:<newtab,0>
-    #    $types = parent::baseRTypes();
-    #    $types[100] = 'New type 100';
-    #    return $types;
-    #}
-
-    /**
-     * This is an optional feature.
-     * Tabs for the edit form
-     * @return array
-     */
-    #public static function baseTabs()
-    #{
-    #    // This function is not supported for standard models!
-    #    // * @AirTable\Field\Position\*:<newtab,0>
-    #    $tabs = parent::baseTabs();
-    #    $tabs['newtab'] = 'NewTab (###COUNT###)';
-    #    return $tabs;
-    #}
-
-    /**
-     * @AirTable\Field:<Text>
-     * @AirTable\Field\Position\1:<extended,0>
-     * @AirTable\Field\Label:<New field>
-     */
-    protected $prop_ext_myext_new_field;
+    public static $TYPO3 = [
+        'thisIs' => 'BackendModelExtending',
+        'description' => 'From EXT:myext - adding fields to the page model',
+        'dataFields' => [
+            'prop_tx_myext_incrandphoto' => [
+                'type' => 'Flag',
+                'name' => 'New field',
+            ]
+        ]
+    ];
 
     /**
      * Changing the $TCA settings array
@@ -1042,6 +1017,7 @@ class ExtPages extends Pages
         //$configuration['columns']['field']['config'] = ...;
     }
 }
+
 ```
 
 Step 3) Go to the module "Admin Tools" > "Maintenance" > "Rebuild PHP Autoload Information". Click the button "Dump autoload".
