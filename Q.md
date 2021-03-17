@@ -27,7 +27,7 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 > см. SysFileMetadata
 > см. SysFile
 > см. Pages , TtContent
-> см. DataType, Data
+> см. DataType, Data (досравнить _TCA-OLD)
 > EAV-отдельно...
 * Убрать сложные префиксы scope, globalScope, comments(), user_rules_custom (придумать префикс для регистрации правил)
 // C) Relationship (user function register)
