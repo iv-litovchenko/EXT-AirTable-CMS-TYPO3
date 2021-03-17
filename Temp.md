@@ -1,5 +1,5 @@
             'propref_beauthor', // M-1
-            'propref_content', // <f:content table="tx_myext_newtable" uid="1" />
+            'propref_content', // <f:vhsExtAirTable.content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" />
             'propref_attributes',
 
             // Categorization
