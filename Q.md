@@ -21,7 +21,7 @@ ExtensionManagementUtility::addTypoScript('air_table', 'setup', $tsCode, 43);
 Модели
 ---------
 * Доработать проверки для связей (что будет если не задан "foreignKey" - особенно для связей 1-M, 1-1
-> Остановился на Content и Eav
+> Остановился на Eav
 > см. "SysNote"...
 > см. SysFilemounts
 > см. SysFileReference
