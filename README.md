@@ -661,16 +661,17 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
             'date_start',
             'date_end',
             'sorting',
-            'files',
-            'thumbnail', // Image associated with the recording
             'status', // Or 'deleted' && 'disabled',
             'bodytext_preview',
             'bodytext_detail',
-            'pic_preview',
-            'pic_detail',
             'keywords',
             'description',
             'slug',
+
+            'propmedia_pic_preview',
+            'propmedia_pic_detail',
+            'propmedia_files',
+            'propmedia_thumbnail', // Image associated with the recording
 
             'propref_beauthor', // M-1
             'propref_content', // <f:vhsExtAirTable.content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" />
