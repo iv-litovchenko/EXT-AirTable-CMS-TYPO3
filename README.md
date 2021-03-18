@@ -352,7 +352,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @var array
      */
     public static $TYPO3 = [
-        'thisIs' => 'FrontendContentElement',
+        'thisIs' => 'FrontendContentElement || FrontendContentGridElement || FrontendContentPlugin',
         'name' => 'Content element name',
         'description' => 'Content element description',
         'nonСachedActions' => 'indexAction', // USER_INT
