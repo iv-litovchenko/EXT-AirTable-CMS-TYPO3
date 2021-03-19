@@ -501,8 +501,8 @@ class HelloWorldViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         'name' => 'Test Helper',
         'description' => 'String output based on arguments',
         'registerArguments' => [
-            'testArg1' => 'string,req', // integer || string || mixed || boolean || array
-            'testArg2' => 'string,req'
+            'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
+            'testArg2' => ['string']
         ]
     ];
 
@@ -559,9 +559,9 @@ class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         'nonСachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'registerArguments' => [
-            'testArg1' => 'string,req', // integer || string || mixed || boolean || array
-            'testArg2' => 'string,req',
-            'testArg3' => 'string,req'
+            'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
+            'testArg2*' => ['string',640],
+            'testArg3' => ['string',480]
         ]
     ];
 
