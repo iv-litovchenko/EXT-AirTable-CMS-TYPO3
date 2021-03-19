@@ -980,7 +980,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/extending-an-existing-model.png)
 
-Step 1) Create a file EXT:myext/Classes/Domain/Model/Ext/ExtPages.php
+Step 1) Create a file EXT:myext/Classes/Domain/Model/Ext/ExtSysFile.php
 
 Step 2) Create class inherited from base model
 
@@ -998,12 +998,24 @@ class ExtSysFile extends \Litovchenko\AirTable\Domain\Model\Fal\SysFile
     public static $TYPO3 = [
         'thisIs' => 'BackendModelExtending',
         'description' => 'From EXT:myext - adding fields to the page model',
+        'tabs' => [
+            'newtab' => 'EXT:Myext New Tab (###COUNT###)'
+        ],
+        'baseFields' => [
+            'RType' => [
+                'items' => [
+                    '100' => 'New Type',
+                ]
+            ],
+        ],
         'dataFields' => [
             'prop_tx_myext_incrandphoto' => [
                 'type' => 'Flag',
                 'name' => 'New field',
             ]
-        ]
+        ],
+        'mediaFields' => [], // ...
+        'relationalFields' => [] // ...
     ];
 
     /**
