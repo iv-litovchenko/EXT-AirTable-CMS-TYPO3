@@ -754,10 +754,16 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'type' => 'Switcher', // || Switcher.Int
                 'name' => 'Field Switcher',
                 'show' => 1,
-                'itemsProcFunc' =>
-                    'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
+                'itemsProcFunc' => 'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
                 'itemsModel' => 'Mynamespace\Myext\Domain\Model\###',
-                'itemsWhere' => ' AND table.field>5 ',
+                'itemsWhere' => [
+                    'where' => [
+                        0 => 'table.field > 5'
+                    ],
+                    'orderBy' => [
+                        0 => 'table.field desc'
+                    ]
+                ],
                 'items' => [
                     0 => 'Zero',
                     1 => 'One',
@@ -770,10 +776,16 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'type' => 'Enum',
                 'name' => 'Field Enum',
                 'show' => 1,
-                'itemsProcFunc' =>
-                    'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
+                'itemsProcFunc' => 'Mynamespace\Myext\Domain\Model\[SubFolder]\NewTable->doItems',
                 'itemsModel' => 'Mynamespace\Myext\Domain\Model\###',
-                'itemsWhere' => ' AND table.field>5 ',
+                'itemsWhere' => [
+                    'where' => [
+                        0 => 'table.field > 5'
+                    ],
+                    'orderBy' => [
+                        0 => 'table.field desc'
+                    ]
+                ],
                 'items' => [
                     1 => 'One',
                     2 => 'Two',
@@ -811,7 +823,14 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'foreignModel' => 'Mynamespace\Myext\Domain\Model\Tag', // tx_myext_dm_tag
                 'foreignKey' => 'propref_newtable',
                 'foreignParentKey' => 'parent_id', // Only Rel_MTo1.Tree || Rel_MToM.Tree
-                'foreignWhere' => ' AND table.RType=###REC_FIELD_RType### ', // See $TCA "foreign_table_where"
+                'foreignWhere' => [ // See $TCA "foreign_table_where
+                    'where' => [
+                        0 => 'table.RType=###REC_FIELD_RType### '
+                    ],
+                    'orderBy' => [
+                        0 => 'table.field desc'
+                    ]
+                ],
                 'foreignDefaults' => [
                     'CType' => 'image', // See $TCA "foreign_record_defaults"
                 ],
