@@ -1285,10 +1285,10 @@ $filter['join'] = ...;
 $filter['leftJoin'] = ...;
 $filter['crossJoin'] = ...;
 
-$filter['userSelectMinimize'] = true; // or false
-$filter['userWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
-$filter['userWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
-$filter['userPagination'] = [30,1]; // $pageLimit, $pageNumber
+$filter['mySelectMinimize'] = true; // or false
+$filter['myWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
+$filter['myWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
+$filter['myPagination'] = [1,30]; // $pagePosition, $pageLimit
 
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
@@ -1406,22 +1406,22 @@ NewTable::refSort(); // todo
 // A) Global scope (user function global scope register)
 // See example: globalScopeFlagDeleted();
 // $rows = NewTable::get(); // Results sorted by default by uid field
-// $rows = NewTable::withoutGlobalScope('Sorting')->get(); // No sorting by default
-public function globalScopeSorting($builder) {
-    $builder->orderBy('uid','Desc');
+// $rows = NewTable::withoutGlobalScope('mySorting')->get(); // No sorting by default
+public function globalScopeMySorting($builder) {
+    $builder->orderBy('uid','desc');
 }
 
 // B) Local scope (user function local scope register)
-// See example: scopeUserPagination();
-// $rows = NewTable::userActive(1,2)->get();
-public function scopeUserActive($query, $agr1 = 5, $arg2 = 4){
+// See example: scopeMyPagination();
+// $rows = NewTable::myWhereActive(1,2)->get();
+public function scopeMyWhereActive($query, $agr1 = 5, $arg2 = 4){
     return $query->where('uid','>',$agr1)->where('uid','<',$arg2);
 }
 
 // C) Relationship (user function register)
-// $rows = NewTable::with('customNameRelationship')->get();
-public function builderRefCustomNameRelationship() { // builderUserRef[Name]()
-    return $this->refProvider('propref_exampletable4_rows'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
+// $rows = NewTable::with('myref_relationship')->get();
+public function myref_relationship() {
+    return $this->refProvider('propref_***'); // Rel_1To1, Rel_1ToM, Rel_MTo1...
 }
 
 // D) Repository Pattern (getBy***)
