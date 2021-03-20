@@ -1701,7 +1701,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
                     'required' => 'Как вас зовут?',
                     'min:2' => 'Имя не менее 2 символов!',
                     'max:5' => 'Имя не более 5 символов!',
-                    // 'custom_rule_name:parameter' => 'Ошибка (кастомный валидатор)!',
+                    // 'myrule_name:parameter' => 'Ошибка (кастомный валидатор)!',
                 ],
                 'email' => [
                     'required' => 'Поле обязательно к заполнению',
@@ -1725,7 +1725,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
         return $rules;
     }
 
-    public function custom_rule_name($attribute, $value, $parameters, $validator) {
+    public function myrule_name($attribute, $value, $parameters, $validator) {
         if ($value == 'TYPO3') {
             return true; // Good
         } else {
