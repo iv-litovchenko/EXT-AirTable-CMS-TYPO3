@@ -1465,17 +1465,18 @@ $context = 'checkInsert';
 $data = [];
 $data['title'] = 'My Title';
 
-$validator = NewTable::validation($context,$data); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
-// $validator = NewForm::validation($context,$data); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
-if ($validator->fails()) {
-	$messages = $validator->messages()->toArray();
-	$errors = $validator->errors();
-	$errorsAll = $validator->errors()->all();
-	print "<pre>";
-	print_r($messages);
-	print_r($errorsAll);
-	print_r($errors);
-	print "</pre>";
+$validator = NewTable::validation($context, $data); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+// $validator = NewForm::validation($context, $data); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
+if ($validator->fails())
+{
+    $messages = $validator->messages()->toArray();
+    $errors = $validator->errors();
+    $errorsAll = $validator->errors()->all();
+    print "<pre>";
+    print_r($messages);
+    print_r($errorsAll);
+    print_r($errors);
+    print "</pre>";
 }
 
 print '<hr >';
@@ -1485,24 +1486,25 @@ $data['title'] = 'My Title';
 
 $rules = [];
 $rules = [
-	'title' => [
-		'required' => 'MSG ERROR - required',
-		'min:1' => 'MSG ERROR - min',
-		'max:5' => 'MSG ERROR - max',
-	]
+    'title' => [
+        'required' => 'MSG ERROR - required',
+        'min:1' => 'MSG ERROR - min', 
+        'max:5' => 'MSG ERROR - max'
+    ]
 ];
 
 // Todo
-$validator = \Litovchenko\AirTable\Domain\Model\ModelDynamic::validation($rules,$data);
-if ($validator->fails()) {
-	$messages = $validator->messages()->toArray();
-	$errors = $validator->errors();
-	$errorsAll = $validator->errors()->all();
-	print "<pre>";
-	print_r($messages);
-	print_r($errorsAll);
-	print_r($errors);
-	print "</pre>";
+$validator = \Litovchenko\AirTable\Domain\Model\ModelDynamic::validation($rules, $data);
+if ($validator->fails())
+{
+    $messages = $validator->messages()->toArray();
+    $errors = $validator->errors();
+    $errorsAll = $validator->errors()->all();
+    print "<pre>";
+    print_r($messages);
+    print_r($errorsAll);
+    print_r($errors);
+    print "</pre>";
 }
 ```
 
