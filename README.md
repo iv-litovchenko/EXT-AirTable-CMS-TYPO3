@@ -1863,6 +1863,7 @@ http://iv-litovchenko.ru
   * https://extensions.typo3.org/extension/t3ddy/ 
   * https://extensions.typo3.org/extension/container/
 * EditIcons для меню "lib.custommenu = HMENU" (будет еще 1 класс <f:EditIconOnlyHover(Abs)> - показать кнопки только при наведении на объект)
+  * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
 ```
 # ************************
 # CUSTOM MENU
