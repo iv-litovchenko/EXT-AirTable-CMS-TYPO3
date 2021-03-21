@@ -15,7 +15,7 @@ https://www.slideshare.net/Sebobo/improving-editors-lives-with-neos-cms
 1.5. Flexform редактирвоание свойства (attr_conf)
 1.7. PostBuildConfiguration() для атрибутов
 2) на EditIconOnlyHover для страниц
-3) DataProccesing для атрибутов что бы можно было в TS - извлечь!
+3) DataProccesing для атрибутов что бы можно было в TS - извлечь! См. grid_for_gridelements_2.1.0(1)
 
 EAV связи возможно ли это?
 EAV поля дубликаты возможно ли это?
