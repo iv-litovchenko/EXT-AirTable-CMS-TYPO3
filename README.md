@@ -360,7 +360,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'fieldsExcludeList' => 'header_position,date',
         'fieldsAddList' => 'imageorient',
         'type' => 'Element || GridElement || Plugin', // Todo "Plugin routing support"
-        'cols' => '1,2,3|4,5', // If type "GridElement" // EXT:gridelements
+        'cols' => '1,2,3|4,5 || container', // If type "GridElement" // EXT:gridelements
     ];
 
     public function preview()
