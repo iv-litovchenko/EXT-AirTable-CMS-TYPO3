@@ -292,17 +292,6 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 
 ```html
 <f:debug title="Debug" inline="true">{_all}</f:debug>
-<f:asset.script identifier="jQuery" src="https://code.jquery.com/jquery-3.1.1.min.js" />
-<f:asset.script identifier="Bootstrap" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
-<f:asset.script identifier="IdentifierJs">
-    alert('hello world');
-</f:asset.script>
-
-<f:asset.css identifier="Bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
-<f:asset.css identifier="Main" href="EXT:myext/Resources/Public/Css/Main.css"  />
-<f:asset.css identifier="IdentifierCss">
-    .foo { color: black; }
-</f:asset.css>
 
 <!--Include header page template-->
 <f:vhsExtAirTable.adminPanel />
