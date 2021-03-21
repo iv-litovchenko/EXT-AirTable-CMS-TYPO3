@@ -1,13 +1,13 @@
 ```
 gridelements
+Шорткоды\
 Call to undefined relationship [customValues] on model [Litovchenko\AirTable\Domain\Model\Eav\SysAttribute]. \
  EAV & DataType, Data - Досравнить оставшиеся TCA typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD\
  PageIdContent
-Шорткоды\
+
 https://www.slideshare.net/Sebobo/improving-editors-lives-with-neos-cms
 
 ПОсмотри как у M
-
 1) на EAV
 + Используя recSelectSafe() 1.1 Баг (пересмотреть не работает ext_tabels.sql)
 1.2. Сущности - pages, tt_conent (3 шт), data
