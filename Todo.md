@@ -4,6 +4,8 @@
 Шорткоды\
 TYPO3 7 8 9 
 
+ПОсмотри как у M
+
 1) на EAV
 + Используя recSelectSafe() 1.1 Баг (пересмотреть не работает ext_tabels.sql)
 1.2. Сущности - pages, tt_conent (3 шт), data
