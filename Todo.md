@@ -3,3 +3,22 @@
  PageIdContent
 Шорткоды\
 TYPO3 7 8 9 
+
+1) на EAV
++ Используя recSelectSafe() 1.1 Баг (пересмотреть не работает ext_tabels.sql)
+1.2. Сущности - pages, tt_conent (3 шт), data
+1.3. Общие атрибуты?
+1.4. Ограничения для категорий
+1.5. Flexform редактирвоание свойства (attr_conf)
+1.7. PostBuildConfiguration() для атрибутов
+2) на EditIconOnlyHover для страниц
+
+EAV связи возможно ли это?
+EAV поля дубликаты возможно ли это?
+
+Может поможет для Flexform
+https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
+https://www.medienreaktor.de/blog/dynamic-backend-forms-in-typo3-using-flux
+
+Конфигурация сайта:
+https://t3terminal.com/blog/typo3-site-configuration/
