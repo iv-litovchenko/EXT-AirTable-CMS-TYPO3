@@ -3,7 +3,7 @@ Call to undefined relationship [customValues] on model [Litovchenko\AirTable\Dom
  EAV & DataType, Data - Досравнить оставшиеся TCA typo3conf/ext/air_table/Classes/Domain/Model/Content/_TCA-OLD\
  PageIdContent
 Шорткоды\
-TYPO3 7 8 9 
+https://www.slideshare.net/Sebobo/improving-editors-lives-with-neos-cms
 
 ПОсмотри как у M
 
