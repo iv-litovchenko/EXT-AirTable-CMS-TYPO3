@@ -1,4 +1,4 @@
-```
+```html
 {anotherdelimiter}
 
 <div style="text-align: center;" class="">
