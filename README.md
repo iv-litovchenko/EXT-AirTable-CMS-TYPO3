@@ -623,6 +623,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         // Special table fields
         //////////////////////////////////////
         'baseFields' => [
+            'uidkey',
             'pid', // A record can exist in any part of the site page tree
             'RType' => [
                 // Record types similar to "doktype (pages)" and "CType (tt_content)"
