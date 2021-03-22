@@ -1854,6 +1854,8 @@ http://iv-litovchenko.ru
 ## 22 Functional development plans 
 
 * Маршрутизация на основе аннотаций (WW)
+* pageIdContent (подхват контроллера для конкретной страницы)
+* Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
 * Блоки настроек (Craf Settings)
 * RTE https://akilli.github.io/ckeditor4-build-classic/demo/
   * (Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])
@@ -1869,6 +1871,9 @@ http://iv-litovchenko.ru
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
+* Flexform (может пригодится для атрибутов)
+https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
+https://www.medienreaktor.de/blog/dynamic-backend-forms-in-typo3-using-flux
 * EditIcons для меню "lib.custommenu = HMENU" (будет еще 1 класс <f:EditIconOnlyHover(Abs)> - показать кнопки только при наведении на объект)
   * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
 ```
