@@ -700,6 +700,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'default' => '-------Default value-------',
                 'show' => 1, // Show field in lists
                 'required' => 1, // Required to fill
+                'readOnly' => 1,
                 'validationRules' => [
                     'required' => 1, // Todo Validator
                     'ruleName' => 1, // Todo Validator
