@@ -23,3 +23,26 @@ SysAttribute.php
 	#  	return $this->refProvider('sys_value_rows');
 	# }
 	
+
+
+```
+
+```
+
+	
+    /**
+     * Custom value set (user func)
+     * It is possible to use a selection from the database
+     * return $config
+     */
+    public static function doItemsEntityType($config)
+    {
+        $itemList = [];
+		foreach($GLOBALS['ENTITY_TYPES'] as $eK => $eConf){
+			foreach($eConf['items'] as $k => $v){
+				$config['items'][] = [$eConf['label'].' | '.$GLOBALS['LANG']->sL($v[0]), $eK.'___'.$v[1]];
+			}
+		}
+        return $config;
+    }
+```
