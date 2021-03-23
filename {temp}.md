@@ -22,36 +22,6 @@ sys_value 							foreign_table_where = ORDER BY RType ASC, uid ASC
 tx_airtableexamples_dm_exampletable foreign_table_where = ORDER BY RType ASC, title ASC
 
 
-
-
-			#'entity_type' => [
-			#	'type' => 'Switcher',
-			#	'name' => 'Принадлежность (сущность)',
-			#	'itemsProcFunc' => 'Litovchenko\AirTable\Domain\Model\Eav\SysAttribute->doItemsEntityType',
-			#	'show' => 1,
-			#	'required' => 1,
-			#	'doNotCheck' => 1,
-			#	'position' => [
-			#		'*' => 'main,700'
-			#	]
-			#]
-			
-	
-    /**
-     * Custom value set (user func)
-     * It is possible to use a selection from the database
-     * return $config
-     */
-    public static function doItemsEntityType($config)
-    {
-        $itemList = [];
-		foreach($GLOBALS['ENTITY_TYPES'] as $eK => $eConf){
-			foreach($eConf['items'] as $k => $v){
-				$config['items'][] = [$eConf['label'].' | '.$GLOBALS['LANG']->sL($v[0]), $eK.'___'.$v[1]];
-			}
-		}
-        return $config;
-    }
 ```
 
 
