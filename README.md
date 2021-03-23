@@ -45,7 +45,6 @@ You can skip this step - everything is already in the "typo3conf/ext/air_table/V
 "require-dev": {
     "illuminate/database": "^5.8.36",
     "illuminate/hashing": "^5.7",
-    "javoscript/laravel-macroable-models": "1.0.4",
     "rap2hpoutre/fast-excel": "^1.5.0"
 }
 ```
