@@ -17,15 +17,6 @@ tx_airtableexamples_dm_exampletable foreign_table_where = ORDER BY RType ASC, ti
 
 
 ```
-SysAttribute.php
-	
-	# public function builderRefCustomValues(){
-	#  	return $this->refProvider('sys_value_rows');
-	# }
-	
-
-
-```
 
 ```
 
