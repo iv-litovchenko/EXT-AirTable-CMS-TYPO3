@@ -709,7 +709,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'exclude' => 1, // Todo
                 'position' => [
                     // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'media,10',
+                    '*' => 'media', // ,10
                 ],
             ],
             // Text
@@ -794,7 +794,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'maxItems' => 10,
                 'position' => [
                     // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'media,10',
+                    '*' => 'media', // ,10
                 ],
             ],
             // ...
@@ -823,7 +823,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 ],
                 'position' => [
                     // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'rels,10',
+                    '*' => 'rels', // ,10
                 ],
             ],
             // ...
