@@ -1,4 +1,11 @@
 ```
+// Todo - общие поля для всех типов сущности
+На примере страниц - будут
+показываться во всех шаблонах - будет все также как с моделями префикс tx_!
+```
+
+```
+
 tx_data								propref_beauthor		foreign_table_where = ORDER BY uid ASC 
 									propref_categories		foreign_table_where = AND tx_data_category.RType=###REC_FIELD_RType### ORDER BY RType ASC, title ASC 
 									propref_parent			foreign_table_where = AND tx_data.RType=###REC_FIELD_RType### 
