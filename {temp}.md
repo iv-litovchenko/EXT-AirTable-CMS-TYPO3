@@ -29,6 +29,19 @@ SysAttribute.php
 
 ```
 
+
+			#'entity_type' => [
+			#	'type' => 'Switcher',
+			#	'name' => 'Принадлежность (сущность)',
+			#	'itemsProcFunc' => 'Litovchenko\AirTable\Domain\Model\Eav\SysAttribute->doItemsEntityType',
+			#	'show' => 1,
+			#	'required' => 1,
+			#	'doNotCheck' => 1,
+			#	'position' => [
+			#		'*' => 'main,700'
+			#	]
+			#]
+			
 	
     /**
      * Custom value set (user func)
