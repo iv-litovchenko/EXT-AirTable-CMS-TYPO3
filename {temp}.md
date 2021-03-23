@@ -24,7 +24,7 @@ class ElementSubPagesController extends ActionController
             'attr_field1' => [
                 'type' => 'Input',
                 'name' => 'Field Input 1',
-				'items' => [
+				'items' => [ // Только для Enum, Switcher
 					'S' => '(37-38)',
 					'L' => 'L (41-42)',
 					'XL' => 'XL (43-44)',
