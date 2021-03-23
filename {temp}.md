@@ -14,3 +14,12 @@ tx_data_type_group					foreign_table_where = ORDER BY uid ASC
 sys_value 							foreign_table_where = ORDER BY RType ASC, uid ASC
 tx_airtableexamples_dm_exampletable foreign_table_where = ORDER BY RType ASC, title ASC
 ```
+
+
+```
+SysAttribute.php
+	
+	# public function builderRefCustomValues(){
+	#  	return $this->refProvider('sys_value_rows');
+	# }
+	
