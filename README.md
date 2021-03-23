@@ -706,10 +706,8 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                     'ruleName' => 1, // Todo Validator
                 ],
                 'onChangeReload' => 1, // Reload the form when the field value changes
-                'displayCond' =>
-                    'USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data', // Example
+                'displayCond' => 'USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data', // Example
                 'exclude' => 1, // Todo
-
                 'position' => [
                     // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
                     '*' => 'media,10',
@@ -721,8 +719,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'name' => 'Field Text',
                 'show' => 1,
                 'liveSearch' => 1,
-                'format' =>
-                    'css || html || javascript || php || typoscript || xml', // Text.Rte
+                'format' => 'css || html || javascript || php || typoscript || xml', // Text.Rte
                 'preset' => 'default || full || default || ext_myext_preset', // Text.Code
             ],
             // Date
