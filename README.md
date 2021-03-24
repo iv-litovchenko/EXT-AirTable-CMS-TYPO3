@@ -1854,7 +1854,7 @@ http://iv-litovchenko.ru
 * Маршрутизация на основе аннотаций (WW)
 * pageIdContent (подхват контроллера для конкретной страницы)
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
-* Блоки настроек (Craf Settings)
+  * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
 * RTE https://akilli.github.io/ckeditor4-build-classic/demo/
   * (Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])
   * (Mag) InsertWidgets
@@ -1870,6 +1870,7 @@ http://iv-litovchenko.ru
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
 * Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
+* Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) 
 * Flexform (может пригодится для атрибутов)
 https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
 https://www.medienreaktor.de/blog/dynamic-backend-forms-in-typo3-using-flux
