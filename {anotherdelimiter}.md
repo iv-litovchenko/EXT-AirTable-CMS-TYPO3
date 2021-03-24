@@ -1,5 +1,5 @@
 ```html
-{delimitersquarebracket}
+{fluidanotherdelimiter}
 
 <div style="text-align: center;" class="">
 
