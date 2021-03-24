@@ -1870,6 +1870,7 @@ http://iv-litovchenko.ru
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
 * Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
+* Default Assign (t3page, t3data, ...)
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) 
 * Flexform (может пригодится для атрибутов)
 https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
