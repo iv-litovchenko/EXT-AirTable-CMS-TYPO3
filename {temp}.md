@@ -1,17 +1,4 @@
-```
-		'cols'			=> [
-			0 => '*',
-			1 => 'text,image',
-			2 => 'text,image',
-			'--br1--' => 1,
-			3 => 'text,image',
-			4 => 'text,image',
-			5 => 'text,image',
-			'--br2--' => 1,
-			6 => 'text,image',
-			7 => 'text,image'
-		],
-```
+
 
 
 ## Задокументироват
