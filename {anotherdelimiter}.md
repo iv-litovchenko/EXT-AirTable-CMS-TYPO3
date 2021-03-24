@@ -4,7 +4,7 @@
 <div style="text-align: center;" class="">
 
 	[[[f:for each=`{{ $images }}` as=`image`]]]
-		...
+		{{{ $images }}}
 	[[[/f:for]]]
 	
 	[[f:for each=`{{ $images }}` as=`image`]]
