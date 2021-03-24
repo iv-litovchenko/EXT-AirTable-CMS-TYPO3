@@ -340,15 +340,14 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @var array
      */
     public static $TYPO3 = [
-        'thisIs' => 'FrontendContentElement || FrontendContentGridElement || FrontendContentPlugin',
+        'thisIs' => 'FrontendContentElement || FrontendContentGridelement || FrontendContentPlugin',  // Todo "Plugin routing support"
         'name' => 'Content element name',
         'description' => 'Content element description',
         'nonСachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'fieldsExcludeList' => 'header_position,date',
         'fieldsAddList' => 'imageorient',
-        'type' => 'Element || GridElement || Plugin', // Todo "Plugin routing support"
-        'cols' => '1,2,3|4,5 || container', // If type "GridElement" // EXT:gridelements
+        'cols' => '1,2,3|4,5 || container', // If type "FrontendContentGridelement" // EXT:gridelements
     ];
 
     public function preview()
@@ -369,7 +368,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         // print_r($this->settings);
         $this->view->assign('var', rand(1, 1000));
         $this->view->assign(
-            'gridId', // If type "GridElement" // EXT:gridelements
+            'gridId', // If type "FrontendContentGridelement" // EXT:gridelements
             $this->configurationManager->getContentObject()->data['uid']
         );
     }
@@ -387,9 +386,9 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 ```html
 <f:debug title="Debug" inline="true">{_all}</f:debug>
 <div style="padding: 25px; background: wheat; text-align: center;">
-	<h3>Hellow word "Element || GridElement || Plugin" {var}!</h3>
+	<h3>Hellow word "Element || Gridelement || Plugin" {var}!</h3>
 	
-	<!--If type "GridElement" // EXT:gridelements-->
+	<!--If type "FrontendContentGridelement" // EXT:gridelements-->
 	<table border="1" width="100%">
 	<tr>
 		<td><f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" /></td>
