@@ -52,14 +52,15 @@ class ElementSubPagesController extends ActionController
 
 ## Router
 ```
-На 1 действие может быть несколько маршрутов
-Возможно ли сделать staticPage - что бы писать просто <f: router="namePageSatic"> - по существу это уникальная страница в дереве страниц
-UrlConveter | получается имя роутера это pageid.controller.action .<f: page="ID" controller="tx_controller_ext..." action=""> а urlConveter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID страницы, а не маршрут) - Ищем Контроллер и действие (продумать как это визуально отображать на панелях для отладки!)
-Нужно ли делать хелпер <f:router?
+* На 1 действие может быть несколько маршрутов
+* Возможно ли сделать staticPage - что бы писать просто <f: router="namePageSatic"> - по существу это уникальная страница в дереве страниц
+* UrlConveter | получается имя роутера это pageid.controller.action .<f: page="ID" controller="tx_controller_ext..." action=""> а urlConveter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID страницы, а не маршрут) - Ищем Контроллер и действие (продумать как это визуально отображать на * панелях для отладки!)
+* Нужно ли делать хелпер <f:router?
+* RTE LinkHanldler
 
-Сделать PageesLimits
-Значения по умолчанию в функции действия ($id, $tag) как в Yii2
-CacheTags (залипание, затапливание - cHash) - нужно всегда отдавать 404-ошибку если результатов нет, т.к. cacheHash создается на каждый адрес!
+* Сделать PageesLimits
+* Значения по умолчанию в функции действия ($id, $tag) как в Yii2
+* CacheTags (залипание, затапливание - cHash) - нужно всегда отдавать 404-ошибку если результатов нет, т.к. cacheHash создается на каждый адрес!
 
 
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
@@ -68,10 +69,10 @@ https://github.com/brannow/br-toolkit/blob/master/Docs/requestRoutingMiddleware.
 https://github.com/brannow/br-toolkit/blob/master/Docs/Structure/route.md
 https://github.com/brannow/br-toolkit/blob/master/Docs/configurationHandler.md#getextensionconfiguration
 
-Меню бредкрамб (создание)
-Взаимодействие между плагинами
-Что за маршрут (проверка)
-Содержит дополнение "Это и есть PageContent"?
+* Меню и бредкрамб (их создание)
+* Взаимодействие между плагинами
+* Что за маршрут (проверка)
+* Содержит дополнение "Это и есть PageContent"?
 
 
 
