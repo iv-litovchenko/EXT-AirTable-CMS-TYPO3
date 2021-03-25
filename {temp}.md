@@ -49,3 +49,19 @@ class ElementSubPagesController extends ActionController
 
 }
 ```
+
+## Router
+```
+На 1 действие может быть несколько маршрутов
+Возможно ли сделать staticPage - что бы писать просто <f: router="namePageSatic"> - по существу это уникальная страница в дереве страниц
+UrlConveter | получается имя роутера это pageid.controller.action .<f: page="ID" controller="tx_controller_ext..." action=""> а urlConveter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID страницы, а не маршрут)
+Нужно ли делать хелпер <f:router?
+
+Сделать PageesLimits
+Значения по умолчанию в функции действия ($id, $tag) как в Yii2
+CacheTags (залипание, затапливание - cHash) - нужно всегда отдавать 404-ошибку если результатов нет, т.к. cacheHash создается на каждый адрес!
+
+
+
+
+```
