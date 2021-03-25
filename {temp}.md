@@ -54,7 +54,7 @@ class ElementSubPagesController extends ActionController
 ```
 На 1 действие может быть несколько маршрутов
 Возможно ли сделать staticPage - что бы писать просто <f: router="namePageSatic"> - по существу это уникальная страница в дереве страниц
-UrlConveter | получается имя роутера это pageid.controller.action .<f: page="ID" controller="tx_controller_ext..." action=""> а urlConveter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID страницы, а не маршрут)
+UrlConveter | получается имя роутера это pageid.controller.action .<f: page="ID" controller="tx_controller_ext..." action=""> а urlConveter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID страницы, а не маршрут) - Ищем Контроллер и действие (продумать как это визуально отображать в панели!)
 Нужно ли делать хелпер <f:router?
 
 Сделать PageesLimits
