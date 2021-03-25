@@ -67,4 +67,10 @@ https://github.com/brannow/br-toolkit/blob/master/Docs/Structure/configuration.m
 https://github.com/brannow/br-toolkit/blob/master/Docs/requestRoutingMiddleware.md
 https://github.com/brannow/br-toolkit/blob/master/Docs/Structure/route.md
 https://github.com/brannow/br-toolkit/blob/master/Docs/configurationHandler.md#getextensionconfiguration
+
+Меню бредкрамб (создание)
+Взаимодействие между плагинами
+Что за маршрут (проверка)
+Содержит дополнение "Это и есть PageContent"?
+
 ```
