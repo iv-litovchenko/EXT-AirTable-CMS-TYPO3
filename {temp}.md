@@ -73,4 +73,34 @@ https://github.com/brannow/br-toolkit/blob/master/Docs/configurationHandler.md#g
 Что за маршрут (проверка)
 Содержит дополнение "Это и есть PageContent"?
 
+
+
+<pre>
+Избавиться от cHash
+
+http://iv-litovchenko.ru/
+?tx_projiv_pagedefaultcontroller[action]=travelView
+&tx_projiv_pagedefaultcontroller[controller]=Pages\PageDefault
+&tx_projiv_pagedefaultcontroller[id]=1
+&cHash=a1c54489288cb59ddf7fa962476f8f3f
+
+
+http://iv-litovchenko.ru/
+?tx_projiv_pagedefaultcontroller[action]=travels
+&cHash=a3d7f1d8e5b26c2ad00b2a1fda9b42ad
+
+https://www.debugcn.com/en/article/36138527.html
+'FE' => [
+    'cacheHash' => [
+        'excludedParameters' => [
+            'tx_plugin_action[param1]',
+            'tx_plugin_action[param2]',
+            'tx_plugin_action[param3]',
+            'param4',
+        ],
+    ],
+]
+</pre>
+	
+
 ```
