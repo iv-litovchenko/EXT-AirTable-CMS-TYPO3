@@ -45,30 +45,6 @@ class ElementSubPagesController extends ActionController
 	
     public function indexAction()
     {
-		$filter = [];
-		$filter['orderBy'] = ['sorting']; 
-		$filter['where'] = ['pid','=',$GLOBALS['TSFE']->page['uid']];
-		$filter['with'] = 'media';
-		$rows = \Litovchenko\AirTable\Domain\Model\Content\Pages::recSelect('get',$filter);
-		$this->view->assign('rows', $rows);
-		
-		// Если проекты в стр-ве / студ. совете
-		if ($GLOBALS['TSFE']->id == 10 || $GLOBALS['TSFE']->id == 166){
-			$this->view->assign('cssWidth', 50);
-			$this->view->assign('imgWidth', 400);
-			$this->view->assign('imgHeight', 200); // 192
-		
-		// Если "Open Source проекты (2)"
-		} elseif ($GLOBALS['TSFE']->id == 177){
-			$this->view->assign('cssWidth', 100);
-			$this->view->assign('imgWidth', 840);
-			$this->view->assign('imgHeight', 0); // 192
-		
-		} else {
-			$this->view->assign('cssWidth', 25);
-			$this->view->assign('imgWidth', 200);
-			$this->view->assign('imgHeight', 200);
-		}
     }
 
 }
