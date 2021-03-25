@@ -25,7 +25,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#19-useful-settings-in-typo3conflocalconfigurationphp)
 * 20 [Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)](#20-extbase-frontend-ajax-httpyour-sitecomeidajax1)
 * 21 [Extbase Example of working with forms](#21-extbase-example-of-working-with-forms)
-* 22 [Functional development plans](#22-functional-development-plans)
+* [Functional development plans](#22-functional-development-plans)
 
 ## 01 Demo site online
 
@@ -1848,7 +1848,7 @@ http://iv-litovchenko.ru
 ...
 ```
 
-## 22 Functional development plans 
+## Functional development plans 
 
 * ~~Маршрутизация на основе аннотаций (WW)~~
 * ~~pageIdContent (подхват контроллера для конкретной страницы)~~
