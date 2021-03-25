@@ -62,6 +62,9 @@ UrlConveter | получается имя роутера это pageid.controlle
 CacheTags (залипание, затапливание - cHash) - нужно всегда отдавать 404-ошибку если результатов нет, т.к. cacheHash создается на каждый адрес!
 
 
-
-
+https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
+https://github.com/brannow/br-toolkit/blob/master/Docs/Structure/configuration.md
+https://github.com/brannow/br-toolkit/blob/master/Docs/requestRoutingMiddleware.md
+https://github.com/brannow/br-toolkit/blob/master/Docs/Structure/route.md
+https://github.com/brannow/br-toolkit/blob/master/Docs/configurationHandler.md#getextensionconfiguration
 ```
