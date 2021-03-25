@@ -1850,14 +1850,14 @@ http://iv-litovchenko.ru
 
 ## 22 Functional development plans 
 
-* ~~ Маршрутизация на основе аннотаций (WW) ~~
-* ~~ pageIdContent (подхват контроллера для конкретной страницы) ~~
+* ~~Маршрутизация на основе аннотаций (WW)~~
+* ~~pageIdContent (подхват контроллера для конкретной страницы)~~
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
   * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
-* ~~ RTE https://akilli.github.io/ckeditor4-build-classic/demo/ ~~
-  * ~~ (Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””]) ~~
-  * ~~ (Mag) InsertWidgets ~~
-  * ~~ InsertBlockTemplate (template ID) ~~
+* ~~RTE https://akilli.github.io/ckeditor4-build-classic/demo/~~
+  * ~~(Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])~~
+  * ~~(Mag) InsertWidgets~~
+  * ~~InsertBlockTemplate (template ID)~~
 * Регионы в шаблоны (показ определенных блоков по условиям)
 * <v:page.breadCrumb>, <v:menu expandAll="0" levels="2" /> для а) таблицы категорий (tx_data_category), для массива данных (аналоги: https://extensions.typo3.org/extension/nsb_cat2menu/, https://stackoverflow.com/questions/40706825/typo3-sys-category-menu
 * (Wrapper) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/)
