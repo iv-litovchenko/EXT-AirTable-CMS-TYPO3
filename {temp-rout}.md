@@ -6,13 +6,9 @@ withSwitchableControllerAction МswitchableControllerActionsзначений. Н
 [- ИНТЕРЕСНО ТЕМ, ЧТО ОН ОТДЕЛЬНУЮ СТРАНИЦУ СОЗДАЕТ - ]
 https://www.marc-willmann.de/typo3-cms/ein-eigener-route-enhancer?tx_pwcomments_pi1%5Baction%5D=new&tx_pwcomments_pi1%5BcommentToReplyTo%5D=5&tx_pwcomments_pi1%5Bcontroller%5D=Comment&cHash=2975e539da596e4b4ee1d1511de60674
 
-https://github.com/brannow/br-toolkit
-https://github.com/SvenJuergens/miniredirect/
-
 https://typo3.sascha-ende.de/docs/development/extensions-general/generate-a-link-with-an-extbase-method/
-
-
 https://thecodingmachine.github.io/splash-router/
+
 /**
  * @RoutePrefix("/example")
  * @Middleware("authMiddleware")
