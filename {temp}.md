@@ -112,7 +112,7 @@ class PageDefaultController extends ActionController
 			]
 			'/travels' => 'travels',				
 												// -> array $form = [] тоже работает!!! public function indexAction(array $form = [] TADA!!!)
-			'/travels/{num}' => 'travelView',	// -> не забудь задокументировать public function travelViewAction(float $num TADA!!! = 0) 
+			'/travels/{num}' => 'travelView',	// -> не забудь задокументировать public function travelViewAction(float $num TADA!!! = null) 
 		],
 		'dataFields' 	=> [
             'attr_pic' => [
