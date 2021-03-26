@@ -3,7 +3,8 @@
 var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
 ```
 
-### HOOKS (для залипания)
+
+### HOOKS (для залипания) - может в контроллер кодключить хук?
 ```
 $GLOBALS['TYPO3_CONF_VARS' ]['SC_OPTIONS']['tslib/class.tslib_fe.php']['isOutputting'][] = 'tx_cachecontrolheader_controller->processDirective';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['usePageCache']
@@ -19,6 +20,28 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/tslib/class.tslib_menu.php']['fil
 
 ```
 
+### Extbase Generate a link with an extbase method
+```
+$pageid = intval($GLOBALS['TSFE']->id);
+$uri = urldecode($this->uriBuilder->reset()->setTargetPageUid($pageid)->setCreateAbsoluteUri(true)->setArguments([
+    'tx_vsnearbycompanies_nearbycompanies' => [
+        'action' => 'ajax',
+        'controller' => 'Companies'
+    ],
+    'detail' => 2,
+    'type'  => 1335898899
+])->build());
+
+$cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
+
+$conf = array(
+    'parameter' => $id, // Page UID
+    'useCashHash' => false,
+    'returnLast' => 'url',
+'forceAbsoluteUrl'  =>  true
+);
+$link = $cObj->typolink_URL($conf); 
+```
 
 ## Задокументироват
 
