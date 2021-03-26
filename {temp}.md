@@ -92,5 +92,32 @@ class ElementSubPagesController extends ActionController
 }
 ```
 
-
-	
+```
+class PageDefaultController extends ActionController
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 		=> 'FrontendPage',
+		'name' 			=> 'Шаблон по умолчанию',
+		'description' 	=> 'Шаблон по умолчанию',
+		'urlManager'	=> [
+			'travelViewAction' => [
+				'/travels/{num}',
+				'/travels/dat/',
+				
+			]
+			'/travels' => 'travels',				
+												// -> array $form = [] тоже работает!!! public function indexAction(array $form = [] TADA!!!)
+			'/travels/{num}' => 'travelView',	// -> не забудь задокументировать public function travelViewAction(float $num TADA!!! = 0) 
+		],
+		'dataFields' 	=> [
+            'attr_pic' => [
+                'type' => 'Input',
+                'name' => 'Фоновое изображение!'
+            ]
+		]
+	];
