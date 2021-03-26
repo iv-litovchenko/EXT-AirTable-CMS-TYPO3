@@ -224,8 +224,9 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 
 <!--Tested only in TYPO3 v10!-->
 <!--Switching to another controller is not easy!-->
-<f:be.link route="routeExtMyext.NewModule2.Index" parameters="{test: 92}">Go to Module 2</f:be.link><br />
-<f:be.link route="routeExtMyext.NewModule3.Index" parameters="{test: 92}">Go to Module 3</f:be.link><br />
+<!--routeExt[***Ext***].Modules.[***Controller***].[***action***]-->
+<f:be.link route="routeExtMyext.Modules.NewModule2.index" parameters="{test: 92}">Go to Module 2</f:be.link><br />
+<f:be.link route="routeExtMyext.Modules.NewModule3.index" parameters="{test: 92}">Go to Module 3</f:be.link><br />
 
 <f:link.action action="edit" class="btn btn-default btn-sm">
 	Module 1 (action "Edit")
