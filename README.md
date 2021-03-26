@@ -1553,8 +1553,7 @@ $(function() {
     //*****************************************************************//
     // <f:link.action 
     //    class="tx-myext-randphotocontroller"
-    //    noCacheHash="true" 
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|RandPhotoController|index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|RandPhotoController|indexAction', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
     // >
     //    Ajax link
     // </f:link.action>
@@ -1564,7 +1563,7 @@ $(function() {
         $('div.tx-myext-randphotocontroller-wrap').fadeTo("fast", 0.5);
         $.ajax({
             type: 'GET',
-            url: "/?eIdAjax=1&eIdAjaxPath=myext|RandPhotoController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=myext|RandPhotoController|indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: {
                 eIdAjaxSettings: {
                     imgWidthBig: 640,
@@ -1593,8 +1592,7 @@ $(function() {
     //    class="tx-myext-feedbackformcontroller" 
     //    name="form" 
     //    object="{form}" 
-    //    noCacheHash="true" 
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|FeedBackFormController|index', eIdAjaxSettings:{}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|FeedBackFormController|indexAction', eIdAjaxSettings:{}}"
     // >
     //    <f:form.hidden name="eIdAjaxSettings[settingsOne]" value="1" />
     //    <f:form.hidden name="eIdAjaxSettings[settingsTwo]" value="2" />
@@ -1606,7 +1604,7 @@ $(function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
             type: 'POST',
-            url: "/?eIdAjax=1&eIdAjaxPath=myext|FeedBackFormController|index", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=myext|FeedBackFormController|indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: $(this).serializeArray(),
             success: function(html) {
                 $('div.tx-myext-feedbackformcontroller-wrap').replaceWith(html);
@@ -1746,6 +1744,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 
 ```html
 <!-- Index.html -->
+<!-- All submissions are recommended to be done via Typoscript  -->
 <f:asset.script identifier="Widgets.FeedBackForm" src="EXT:projiv/Resources/Public/Js/Widgets.FeedBackForm.js" />
 <f:asset.css identifier="Widgets.FeedBackForm" href="EXT:projiv/Resources/Public/Css/Widgets.FeedBackForm.css" />
 <div class="tx-projiv-feedbackformcontroller-wrap">
@@ -1756,8 +1755,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
          class="tx-projiv-feedbackformcontroller" 
          name="form" 
          object="{form}" 
-         noCacheHash="true" 
-         additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|index'}"
+         additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|indexAction'}"
          asErrors="propertyErrors"
          >
          <div class="form-group">
