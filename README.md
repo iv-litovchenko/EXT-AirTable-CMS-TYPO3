@@ -225,10 +225,10 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 <!--Tested only in TYPO3 v10!-->
 <!--Switching to another controller is not easy!-->
 <!--routeExt[***ExtName***].Modules.[***NameController***].[***nameAction***]-->
-<f:be.link route="routeExtMyext.Modules.NewModule2Controller.indexAction" parameters="{test: 92}">Go to Module 2</f:be.link><br />
-<f:be.link route="routeExtMyext.Modules.NewModule3Controller.indexAction" parameters="{test: 92}">Go to Module 3</f:be.link><br />
+<f:be.link route="routeExtMyext.Modules.NewModule2Controller.indexAction" parameters="{arg: 1}">Go to Module 2</f:be.link><br />
+<f:be.link route="routeExtMyext.Modules.NewModule3Controller.indexAction" parameters="{arg: 1}">Go to Module 3</f:be.link><br />
 
-<f:link.action action="edit" class="btn btn-default btn-sm">
+<f:link.action action="editAction" class="btn btn-default btn-sm">
 	Module 1 (action "Edit")
 </f:link.action>
 ```
@@ -318,6 +318,12 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 	</tr>
 	</table>
 
+	<!--Switching between actions -->
+	<f:link.action action="detailAction">Show me what's there!</f:link.action>
+	<f:link.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelsAction">--TEXT--</f:link.action>
+	<f:uri.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelViewAction" arguments="{uid:5}" />
+	<f:be.link route="routeExtMyext.Modules....><br />
+
 <!--Include footer page template-->
 <f:comment><!--<f:render partial="Footer" arguments="{_all}" />--></f:comment>
 <f:vhsExtAirTable.adminPanelTools />
@@ -402,7 +408,9 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 	</table>
 	
 	<!--If type "Plugin"-->
-	<f:link.action action="detail">Show me what's there!</f:link.action>
+	<f:link.action action="detailAction">Show me what's there!</f:link.action>
+	<f:link.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelsAction">--TEXT--</f:link.action>
+	<f:uri.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelViewAction" arguments="{uid:5}" />
 </div>
 ```
 
