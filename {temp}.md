@@ -3,7 +3,7 @@
 var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
 ```
 
-### HOOKS
+### HOOKS (для залипания)
 ```
 $GLOBALS['TYPO3_CONF_VARS' ]['SC_OPTIONS']['tslib/class.tslib_fe.php']['isOutputting'][] = 'tx_cachecontrolheader_controller->processDirective';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['usePageCache']
