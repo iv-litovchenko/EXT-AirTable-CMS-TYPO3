@@ -1,4 +1,23 @@
+### AJAX PATH
+```
+var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
+```
 
+### HOOKS
+```
+$GLOBALS['TYPO3_CONF_VARS' ]['SC_OPTIONS']['tslib/class.tslib_fe.php']['isOutputting'][] = 'tx_cachecontrolheader_controller->processDirective';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['usePageCache']
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['insertPageIncache']
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['get_cache_timeout']
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['determineId-PreProcessing']
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['determineId-PostProc'] 
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['pageLoadedFromCache']
+
+/* Collect menu tags when rendering */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/tslib/class.tslib_menu.php']['filterMenuPages'][] =  \Qbus\Autoflush\Hooks\Frontend\RegisterMenuTags::class;
+
+
+```
 
 
 ## Задокументироват
