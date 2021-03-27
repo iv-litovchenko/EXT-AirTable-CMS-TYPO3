@@ -1,4 +1,8 @@
 ### https://www.mittwald.de/fileadmin/pdf/dokus/Extbase_Fluid_Dokumentation.pdf
+### https://various.at/news/typo3-9-custom-content-elements/
+### https://various.at/news/dropzonejs-mit-typo3
+### https://various.at/news/image-upload-mit-typo3
+### https://various.at/news/typo3-data-processor
 
 
 ### AJAX PATH
