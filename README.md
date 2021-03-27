@@ -256,7 +256,7 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'name' => 'Page name',
         'description' => 'Page description',
         'disableAllHeaderCode' => '0 || 1',
-        'includeTyposcriptSource' => '', // Todo
+        'includeTyposcriptSourceTemplate' => '', // Todo (file with typoscript.ts - settings, t1.ts, t2.ts...)
         'nonCachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'urlManagerActions' => [
