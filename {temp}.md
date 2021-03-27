@@ -4,6 +4,7 @@
 ### https://various.at/news/image-upload-mit-typo3
 ### https://various.at/news/typo3-data-processor
 ### https://various.at/news/typo3-tipps-und-tricks-psr-15-mideelware-am-beispiel-mailchimp-webhook
+### https://various.at/news/grideditor-fuer-inhaltselemente
 
 
 ### AJAX PATH
