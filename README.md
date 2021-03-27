@@ -1456,10 +1456,14 @@ $affectedCount = NewTable::recDelete('full');
 // Create and remove links between table records
 ////////////////////////////////////////////////////////////////////////////////////////
 
-NewTable::refAttach('propref_NAME', 1, [3, 4]); // $relationship, $parentId, $idsToAttach ->withoutGLobalScopes() always!!!
-NewTable::refDetach('propref_NAME', 1, 4); // $relationship, $parentId, $idsToDetach ->withoutGLobalScopes() always!!!
-NewTable::refDetach('propref_NAME', 1, []); // detach all ->withoutGLobalScopes() always!!!
-NewTable::refCollection('propref_NAME', 1); // $relationship, $parentId ->withoutGLobalScopes() always!!!
+NewTable::mediaAttach('propmedia_NAME', 1, [1, 2, 3]); // sys_file_reference (insert)
+NewTable::mediaDetach('propmedia_NAME', 1, [1, 2, 3]); // sys_file_reference (delete)
+NewTable::mediaDetach('propmedia_NAME', 1, null || 'all'); // sys_file_reference (delete)
+
+NewTable::refAttach('propref_NAME', 1, [3, 4]); // $relationship, $recordId, $idsToAttach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('propref_NAME', 1, 4); // $relationship, $recordId, $idsToDetach ->withoutGLobalScopes() always!!!
+NewTable::refDetach('propref_NAME', 1, null || 'all'); // detach all ->withoutGLobalScopes() always!!!
+NewTable::refCollection('propref_NAME', 1); // $relationship, $recordId ->withoutGLobalScopes() always!!!
 NewTable::refUpdatePivot(); // todo
 NewTable::refSort(); // todo
 
