@@ -258,6 +258,19 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'disableAllHeaderCode' => '0 || 1',
         'nonСachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'urlManagerActions' => [
+            // [RU] На 1 действие может быть несколько вариантов
+            // [ENG] There can be several options for 1 action
+            '/travels' => 'travelsAction',
+            '/travels/page-{page}' => 'travelsAction',
+
+            // public function travelViewAction(float $num = null, int $star = null)
+            '/travels/{num}' => 'travelViewAction',
+            '/travels/star/{star}' => 'travelViewAction',
+
+            // public function sendFormAction(array $form = [])
+            '/form' => 'sendFormAction'
+        ],
         'fieldsExcludeList' => 'subtitle,nav_title',
         'fieldsAddList' => 'subtitle,nav_title',
         'cols' => '0,1|2,3,4|5'
@@ -348,11 +361,30 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @var array
      */
     public static $TYPO3 = [
-        'thisIs' => 'FrontendContentElement || FrontendContentGridelement || FrontendContentPlugin',  // Todo "Plugin routing support"
+        'thisIs' => 'FrontendContentElement || FrontendContentGridelement || FrontendContentPlugin',
         'name' => 'Content element name',
         'description' => 'Content element description',
         'nonСachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+	//////////////////////////////////////////////
+        // If type "FrontendContentPlugin (start)"
+	//////////////////////////////////////////////
+	'urlManagerActions' => [
+            // [RU] На 1 действие может быть несколько вариантов
+            // [ENG] There can be several options for 1 action
+            '/travels' => 'travelsAction',
+            '/travels/page-{page}' => 'travelsAction',
+
+            // public function travelViewAction(float $num = null, int $star = null)
+            '/travels/{num}' => 'travelViewAction',
+            '/travels/star/{star}' => 'travelViewAction',
+
+            // public function sendFormAction(array $form = [])
+            '/form' => 'sendFormAction'
+        ],
+	//////////////////////////////////////////////
+        // If type "FrontendContentPlugin (end)"
+	//////////////////////////////////////////////
         'fieldsExcludeList' => 'header_position,date',
         'fieldsAddList' => 'imageorient',
         'cols' => '1,2,3|4,5 || container', // If type "FrontendContentGridelement" // EXT:gridelements
