@@ -256,7 +256,7 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'name' => 'Page name',
         'description' => 'Page description',
         'disableAllHeaderCode' => '0 || 1',
-        'nonСachedActions' => 'indexAction', // USER_INT
+        'nonCachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'urlManagerActions' => [
             // [RU] На 1 действие может быть несколько вариантов
@@ -364,7 +364,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'thisIs' => 'FrontendContentElement || FrontendContentGridelement || FrontendContentPlugin',
         'name' => 'Content element name',
         'description' => 'Content element description',
-        'nonСachedActions' => 'indexAction', // USER_INT
+        'nonCachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
 	//////////////////////////////////////////////
         // If type "FrontendContentPlugin (start)"
@@ -585,7 +585,7 @@ class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         'thisIs' => 'FrontendWidget',
         'name' => 'Test widget',
         'description' => 'The widget has a controller and a template',
-        'nonСachedActions' => 'indexAction', // USER_INT
+        'nonCachedActions' => 'indexAction', // USER_INT
         'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
         'registerArguments' => [
             'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
@@ -1712,7 +1712,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public static $TYPO3 = [
         'thisIs' => 'FrontendWidget',
         'name' => 'Форма обратной связи',
-        'nonСachedActions' => 'indexAction',
+        'nonCachedActions' => 'indexAction',
         'ajaxActions' => 'indexAction',
     ];
 
