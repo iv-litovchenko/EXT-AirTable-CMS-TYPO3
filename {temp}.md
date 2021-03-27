@@ -15,6 +15,9 @@
 ### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-textstyle-und-blockstyle/
 ### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-blockformat/
 
+### https://extensions.typo3.org/extension/div2007
+### https://extensions.typo3.org/extension/migration_core
+
 ### AJAX PATH
 ```
 var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
