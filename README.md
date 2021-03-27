@@ -413,7 +413,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         );
     }
 
-    // If type "Plugin"
+    // If type "FrontendContentPlugin"
     public function detailAction()
     {
         $this->view->assign('var', rand(1, 1000));
