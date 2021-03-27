@@ -96,34 +96,3 @@ class ElementSubPagesController extends ActionController
 ```
 
 ```
-<?php
-namespace Litovchenko\Projiv\Controller\Pages;
-
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-
-class PageDefaultController extends ActionController
-{
-    /**
-     * The magic variable TYPO3 
-     * Parameters are described here 
-     * @var array
-     */
-	public static $TYPO3 = [
-		'thisIs' 		=> 'FrontendPage',
-		'name' 			=> 'Шаблон по умолчанию',
-		'description' 	=> 'Шаблон по умолчанию',
-		'urlManager'	=> [
-			// -> array $form = [] тоже работает!!! public function indexAction(array $form = [] TADA!!!)
-			// -> не забудь задокументировать public function travelViewAction(float $num TADA!!! = null) 
-			// -> На 1 действие может быть несколько ЧПУ
-			'/travels' 				=> 'travelsAction',
-			'/travels/{num}' 		=> 'travelViewAction',
-			'/travels/star/{star}'	=> 'travelViewAction',
-		],
-		'dataFields' 	=> [
-            'attr_pic' => [
-                'type' => 'Input',
-                'name' => 'Фоновое изображение!'
-            ]
-		]
-	];
