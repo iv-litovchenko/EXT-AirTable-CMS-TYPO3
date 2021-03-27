@@ -9,6 +9,12 @@
 ### https://various.at/news/typo3-indexed-search
 ### https://docs.typo3.org/m/typo3/book-extbasefluid/master/en-us/9-CrosscuttingConcerns/2-validating-domain-objects.html#validating-in-the-domain-model-with-an-own-validator-class
 
+### https://api.typo3.org/9.5/class_t_y_p_o3_1_1_c_m_s_1_1_extbase_1_1_mvc_1_1_controller_1_1_action_controller.html
+### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-standartkonfig/
+### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-standartkonfig-kurz/
+### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-textstyle-und-blockstyle/
+### https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-blockformat/
+
 ### AJAX PATH
 ```
 var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
