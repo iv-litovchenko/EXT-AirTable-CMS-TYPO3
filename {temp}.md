@@ -44,6 +44,13 @@ $conf = array(
 'forceAbsoluteUrl'  =>  true
 );
 $link = $cObj->typolink_URL($conf); 
+
+$pageUid = $this->settings['myflexformsettingpart'];
+$uriBuilder = $this->uriBuilder;
+$uri = $uriBuilder
+  ->setTargetPageUid($pageUid)
+  ->build();
+$this->redirectToURI($uri, $delay=0, $statusCode=303);
 ```
 
 ## Задокументироват
