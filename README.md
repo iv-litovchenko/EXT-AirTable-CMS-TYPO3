@@ -1204,7 +1204,45 @@ if(TYPO3_EDIT_MODE === true) {
 ### Useful notes - TypoScript
 ```
 
---
+config.noPageTitle = 1
+
+page.headerData.10 = TEXT
+page.headerData.10.wrap = <title>-- TEXT --</title>
+
+page.headerData.20 = TEXT 
+page.headerData.20.value ( 
+)
+
+page.meta.X-UA-Compatible = IE=edge
+page.meta.X-UA-Compatible.attribute = http-equiv
+page.meta.og:site_name = TYPO3
+page.meta.og:site_name.attribute = property
+page.meta.description = -- TEXT --
+page.meta.keywords = -- TEXT --
+page.meta.page-topic = -- TEXT --
+page.meta.dc.title = -- TEXT --
+page.meta.dc.description = -- TEXT --
+page.meta.abstract = -- TEXT --
+page.meta.author = -- TEXT --
+page.meta.robots = index,follow
+
+page.bodyTag = <body>
+page.bodyTagAdd = class="example"
+
+page.includeCSS.file1 = fileadmin/css/main.css
+page.includeCSS.file5 = fileadmin/css/fce.css
+
+page.includeJS.file1 = fileadmin/js/script.js
+page.includeJS.file2 = fileadmin/js/javascript.js
+page.includeJSFooter
+
+page.footerData.10 = TEXT
+page.footerData.10.value = <script src="...."></script>
+page.footerData.20 = TEXT
+page.footerData.20.value = <!-- Hello from the comment! -->
+
+# CONDITIONS
+https://www.koller-webprogramming.ch/tipps-tricks/typoscript/bedingungen/
 
 ```
 
