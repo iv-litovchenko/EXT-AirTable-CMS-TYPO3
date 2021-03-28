@@ -1016,6 +1016,8 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 $recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
 SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id;
+SysFile::cmdCreate('', '-- CONTENT --'); // Todo...
+SysFile::cmdUpdate('', '-- NEW CONTENT --', 'overwrite'); // Todo...
 SysFile::cmdExists($recordId); // return true || false;
 SysFile::cmdRename($recordId,'new-name5.jpg');
 SysFile::cmdCopy($recordId,'fileadmin/new-name5.jpg', 'rename || replace || cancel');
