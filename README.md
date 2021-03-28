@@ -1011,7 +1011,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Fal\SysFile;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileReference;
-\Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage;
+\Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage; // Todo - https://laravel.su/docs/5.0/filesystem (Working with directories "SysFileStorage")
 \Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
 
 $recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
