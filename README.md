@@ -1011,13 +1011,13 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Fal\SysFile;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileMetadata;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileReference;
-\Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage; // Todo - https://laravel.su/docs/5.0/filesystem (Working with directories "SysFileStorage")
+\Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
 
 $recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
 $image = $this->request->getArgument('form')['image']; // <f:form.upload property="image" />
-SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id;
-SysFile::cmdUpload($image,'fileadmin/ftpupload/8/'); // return $id;
+SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id; ! Registering a file if the file was added via FTP 
+SysFile::cmdUpload($image,'fileadmin/ftpupload/8/', 'rename || replace || cancel'); // return $id;
 SysFile::cmdCreate('', '-- CONTENT --'); // Todo...
 SysFile::cmdUpdate('', '-- NEW CONTENT --', 'overwrite'); // Todo...
 SysFile::cmdExists($recordId); // return true || false;
@@ -1027,6 +1027,12 @@ SysFile::cmdMove($recordId, 'fileadmin/ftpupload/7/', 'rename || replace || canc
 SysFile::cmdReplace($recordId); // Todo...
 SysFile::cmdDownload($recordId); // Todo...
 SysFile::cmdDelete($recordId);
+
+// Todo - https://laravel.su/docs/5.0/filesystem (Working with directories "SysFileStorage")
+SysFileStorage::cmdDirCreate;
+SysFileStorage::cmdDirRename;
+SysFileStorage::cmdDirDelete;
+...
 
 \Litovchenko\AirTable\Domain\Model\SysMm; // All links of type "Rel_MToM" are stored here
 \Litovchenko\AirTable\Domain\Model\SysNote;
