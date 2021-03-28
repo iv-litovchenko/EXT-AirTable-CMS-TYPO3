@@ -1575,9 +1575,10 @@ if($is === true) {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // VALIDATION
-// v1) ModelCrud::validation($context,$data); // see "public static function validationRules()"
-// v2) ModelForm::validation($context,$data); // see "public static function validationRules()"
-// v3) ModelDynamic::validation($rules,$data); // Todo
+// v1) ModelCrud::validation($context, $data); // see "public static function validationRules()"
+// v2) ModelForm::validation($context, $data); // see "public static function validationRules()"
+// v3) \Litovchenko\AirTable\Validation\Validator::validation($rules, $data);
+// v4) \Mynamespace\Myext\Validation\ValidatorName::validation($context, $data);
 ////////////////////////////////////////////////////////////////////////////////////////
 
 $context = 'checkInsert';
@@ -1600,9 +1601,6 @@ if ($validator->fails())
 
 print '<hr >';
 
-$data = [];
-$data['title'] = 'My Title';
-
 $rules = [];
 $rules = [
     'title' => [
@@ -1612,8 +1610,11 @@ $rules = [
     ]
 ];
 
-// Todo
-$validator = \Litovchenko\AirTable\Domain\Model\ModelDynamic::validation($rules, $data);
+// $data = $this->request->getArgument('form');
+$data = []; 
+$data['title'] = 'My Title';
+
+$validator = \Litovchenko\AirTable\Validation\Validator::validation($rules, $data);
 if ($validator->fails())
 {
     $messages = $validator->messages()->toArray();
