@@ -1027,6 +1027,8 @@ SysFile::cmdMove($recordId, 'fileadmin/ftpupload/7/', 'rename || replace || canc
 SysFile::cmdReplace($recordId); // Todo...
 SysFile::cmdDownload($recordId); // Todo...
 SysFile::cmdDelete($recordId);
+SysFile::getPathById(1774);
+SysFile::getIdByPath('fileadmin/ftpupload/6/look.com.ua-74892.jpg');
 
 // Todo - https://laravel.su/docs/5.0/filesystem (Working with directories "SysFileStorage")
 SysFileStorage::cmdDirCreate;
