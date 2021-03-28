@@ -1015,7 +1015,9 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
 
 $recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
+$image = $this->request->getArgument('form')['image']; // <f:form.upload property="image" />
 SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id;
+SysFile::cmdUpload($image,'fileadmin/ftpupload/8/'); // return $id;
 SysFile::cmdCreate('', '-- CONTENT --'); // Todo...
 SysFile::cmdUpdate('', '-- NEW CONTENT --', 'overwrite'); // Todo...
 SysFile::cmdExists($recordId); // return true || false;
@@ -1421,6 +1423,7 @@ $rows = \Litovchenko\AirTable\Domain\Model\Content\Data::recSelect('get',$filter
 ////////////////////////////////////////////////////////////////////////////////////////
 
 $data = [];
+$data['uid'] = uniqid('NEW_'); // :)
 $data['title'] = '-- TITLE --';
 $insertId = NewTable::recInsert($data);
 
