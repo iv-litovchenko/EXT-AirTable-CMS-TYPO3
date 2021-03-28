@@ -1014,6 +1014,16 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 \Litovchenko\AirTable\Domain\Model\Fal\SysFileStorage;
 \Litovchenko\AirTable\Domain\Model\Fal\SysFilemounts;
 
+$recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
+SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id;
+SysFile::cmdExists($recordId); // return true || false;
+SysFile::cmdRename($recordId,'new-name5.jpg');
+SysFile::cmdCopy($recordId,'fileadmin/new-name5.jpg', 'rename || replace || cancel');
+SysFile::cmdMove($recordId, 'fileadmin/ftpupload/7/', 'rename || replace || cancel');
+SysFile::cmdReplace($recordId); // Todo...
+SysFile::cmdDownload($recordId); // Todo...
+SysFile::cmdDelete($recordId);
+
 \Litovchenko\AirTable\Domain\Model\SysMm; // All links of type "Rel_MToM" are stored here
 \Litovchenko\AirTable\Domain\Model\SysNote;
 \Litovchenko\AirTable\Domain\Model\SysRedirect;
