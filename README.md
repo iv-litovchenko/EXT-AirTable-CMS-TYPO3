@@ -2004,7 +2004,7 @@ http://iv-litovchenko.ru
 * Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
 * Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
-* FAL:  Конвертация массива файлов with() в объекы FAL при выборке? 
+* FAL:  Конвертация массива файлов with() в объекы FAL при выборке (скорее всего сделаем свой обработчик)? 
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/UsingFal/Frontend.html
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
