@@ -1720,8 +1720,8 @@ $(function() {
     $('body').on('click', 'a.tx-myext-randphotocontroller', function() {
         $('div.tx-myext-randphotocontroller-wrap').fadeTo("fast", 0.5);
         $.ajax({
-            type: 'GET',
             url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.RandPhotoController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
+            type: 'GET',
             data: {
                 eIdAjaxSettings: {
                     imgWidthBig: 640,
@@ -1761,9 +1761,11 @@ $(function() {
     $('body').on('submit', 'form.tx-myext-feedbackformcontroller', function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
-            type: 'POST',
             url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.FeedBackFormController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
-            data: $(this).serializeArray(),
+            type: 'POST',
+            data: new FormData( this ), // $(this).serializeArray(), // <-- <f:form enctype="multipart/form-data" ...>
+            processData: false,
+            contentType: false,
             success: function(html) {
                 $('div.tx-myext-feedbackformcontroller-wrap').replaceWith(html);
             }
@@ -1811,15 +1813,16 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
                 $this->view->assign('formErrors', $validator->errors()->toArray());
                 // $this->addFlashMessage('Форма содержит ошибки!', 'Ошибки в форме', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR); // ERROR
             } else {
+                $fileUploadedId = \Litovchenko\AirTable\Domain\Model\Fal\SysFile::cmdUpload($postArgs['file'],'fileadmin/ftpupload/FeedBackForm');
                 $this->view->setTemplatePathAndFilename('EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/Thanks.html');
-                $this->sendMail($postArgs);
+                $this->sendMail($postArgs, $fileUploadedId);
                 // $this->addFlashMessage('Форма прошла проверку', 'Спасибо за обращение', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK); // Cool
             }
         }
         $this->view->assign('q', \Litovchenko\Projiv\Domain\Form\FeedBackForm::$q);
     }
 
-    public function sendMail($postArgs)
+    public function sendMail($postArgs, $fileUploadedId)
     {
         #*************************************************************
         # Mail
@@ -1831,6 +1834,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         $mail->format('plain');
         $mail->setTemplate('FeedBackForm'); // EXT:projiv/Resources/Private/Templates/Email/FeedBackForm.txt
         $mail->assignMultiple($postArgs);
+        $mail->assign('filepath', \Litovchenko\AirTable\Domain\Model\Fal\SysFile::getPathById($fileUploadedId));
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Mail\Mailer::class)->send($mail);
         // $mail->attachFromPath('/path/to/my-document.pdf');
     }
@@ -1861,24 +1865,36 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
         $rules = [
             'default' => [
                 'name' => [
+                    'name' => '-- NAME --',
                     'required' => 'Как вас зовут?',
                     'min:2' => 'Имя не менее 2 символов!',
                     'max:5' => 'Имя не более 5 символов!',
                     // 'myrule_name:parameter' => 'Ошибка (кастомный валидатор)!',
                 ],
                 'email' => [
+                    'name' => '-- NAME --',
                     'required' => 'Поле обязательно к заполнению',
                     'email' => 'Не правильно указан Email-адрес',
                 ],
+                'phone' => [
+                    'name' => '-- NAME --',
+                    'required' => 'Укажите телефон',
+                ],
                 'q' => [
+                    'name' => '-- NAME --',
                     'not_in:0' => 'Выберите вопрос',
                 ],
                 'message' => [
+                    'name' => '-- NAME --',
                     'required' => 'Введите сообщение',
                     'min:10' => 'Сообщение из мене чем 10 символов малоинформативно!',
                 ],
-                'phone' => [
-                    'required' => 'Укажите телефон',
+                'file' => [
+                    'name' => '-- NAME --',
+                    // 'required' => 'Поле не заполнено',
+                    'file' => 'К загрузке допускаются только файлы',
+                    'max:25480' => 'Максимальный размер файла 10Мб', // max:10240 = max 10 MB. + три нуля "000"
+                    // 'mimes:png,jpg,jpeg,gif' => 'должно быть форматом jpg,jpeg,png,gif', // doc,pdf,docx,txt,zip,jpeg,jpg,png
                 ],
                 'agree' => [
                     'required' => 'Необходимо принять условия',
@@ -1950,6 +1966,13 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
             </f:if>
             <f:form.textarea property="message" class="form-control" rows="3" />
          </div>
+         <div class="form-group">
+            <label>Прикрепить файл (до 25 Мб.)</label>
+            <f:if condition="{errors.file}">
+               <span class="error text-danger">{errors.file.0}</span>
+            </f:if>
+            <f:form.upload property="file" class="form-control" />
+         </div>
          <div class="form-check">
             <label class="form-check-label">
                <f:form.checkbox property="agree" class="form-check-input" value="1" />
@@ -1987,6 +2010,7 @@ Email: {email}
 Телефон: {phone}
 Вопрос: {q}
 Сообщение: {message}
+Прикрепленный файл: http://iv-litovchenko.ru/{filepath}
 
 --
 С уважением, робот сайта
