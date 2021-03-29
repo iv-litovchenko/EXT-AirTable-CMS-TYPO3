@@ -25,37 +25,6 @@ var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
 ```
 
 
-
-### Extbase Generate a link with an extbase method
-```
-$pageid = intval($GLOBALS['TSFE']->id);
-$uri = urldecode($this->uriBuilder->reset()->setTargetPageUid($pageid)->setCreateAbsoluteUri(true)->setArguments([
-    'tx_vsnearbycompanies_nearbycompanies' => [
-        'action' => 'ajax',
-        'controller' => 'Companies'
-    ],
-    'detail' => 2,
-    'type'  => 1335898899
-])->build());
-
-$cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
-
-$conf = array(
-    'parameter' => $id, // Page UID
-    'useCashHash' => false,
-    'returnLast' => 'url',
-'forceAbsoluteUrl'  =>  true
-);
-$link = $cObj->typolink_URL($conf); 
-
-$pageUid = $this->settings['myflexformsettingpart'];
-$uriBuilder = $this->uriBuilder;
-$uri = $uriBuilder
-  ->setTargetPageUid($pageUid)
-  ->build();
-$this->redirectToURI($uri, $delay=0, $statusCode=303);
-```
-
 ## Задокументироват
 
 ```
