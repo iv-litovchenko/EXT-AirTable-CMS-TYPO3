@@ -2010,7 +2010,7 @@ Email: {email}
 Телефон: {phone}
 Вопрос: {q}
 Сообщение: {message}
-Прикрепленный файл: http://iv-litovchenko.ru/{filepath}
+Прикрепленный файл: {filepath}
 
 --
 С уважением, робот сайта
