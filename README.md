@@ -1763,7 +1763,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             if ($validator->fails()) {
                 unset($postArgs['agree']);
                 $this->view->assign('form', $postArgs);
-                $this->view->assign('formValidator', $validator);
+                $this->view->assign('formErrors', $validator->errors()->toArray());
                 // $this->addFlashMessage('Форма содержит ошибки!', 'Ошибки в форме', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR); // ERROR
             } else {
                 $this->view->setTemplatePathAndFilename('EXT:projiv/Resources/Private/Templates/Widgets/FeedBackForm/Thanks.html');
@@ -1869,40 +1869,39 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
          name="form" 
          object="{form}" 
          additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|indexAction'}"
-         asErrors="propertyErrors"
          >
          <div class="form-group">
             <label class="col-form-label">Ваше имя*</label>
-            <f:if condition="{propertyErrors.name}">
-               <span class="error text-danger">{propertyErrors.name.0}</span>
+            <f:if condition="{errors.name}">
+               <span class="error text-danger">{errors.name.0}</span>
             </f:if>
             <f:form.textfield property="name" class="form-control" />
          </div>
          <div class="form-group">
             <label>Email*</label>
-            <f:if condition="{propertyErrors.email}">
-               <span class="error text-danger">{propertyErrors.email.0}</span>
+            <f:if condition="{errors.email}">
+               <span class="error text-danger">{errors.email.0}</span>
             </f:if>
             <f:form.textfield property="email" class="form-control" placeholder="name@example.com" />
          </div>
          <div class="form-group">
             <label>Контактный телефон*</label>
-            <f:if condition="{propertyErrors.phone}">
-               <span class="error text-danger">{propertyErrors.phone.0}</span>
+            <f:if condition="{errors.phone}">
+               <span class="error text-danger">{errors.phone.0}</span>
             </f:if>
             <f:form.textfield property="phone" class="form-control" />
          </div>
          <div class="form-group">
             <label>Вопрос*</label>
-            <f:if condition="{propertyErrors.q}">
-               <span class="error text-danger">{propertyErrors.q.0}</span>
+            <f:if condition="{errors.q}">
+               <span class="error text-danger">{errors.q.0}</span>
             </f:if>
             <f:form.select property="q" class="form-control" options="{q}" />
          </div>
          <div class="form-group">
             <label>Сообщение*</label>
-            <f:if condition="{propertyErrors.message}">
-               <span class="error text-danger">{propertyErrors.message.0}</span>
+            <f:if condition="{errors.message}">
+               <span class="error text-danger">{errors.message.0}</span>
             </f:if>
             <f:form.textarea property="message" class="form-control" rows="3" />
          </div>
@@ -1911,8 +1910,8 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
                <f:form.checkbox property="agree" class="form-check-input" value="1" />
                Согласен на обработку персональных данных*...
             </label>
-            <f:if condition="{propertyErrors.agree}">
-               <br /><span class="error text-danger">{propertyErrors.agree.0}</span>
+            <f:if condition="{errors.agree}">
+               <br /><span class="error text-danger">{errors.agree.0}</span>
             </f:if>
          </div>
          <div class="form-group">
