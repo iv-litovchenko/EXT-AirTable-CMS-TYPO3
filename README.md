@@ -20,7 +20,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * 14 [Export records Xls|Csv (module)](#14-export-records-xlscsv-module)
 * 15 [Import records Xls|Csv (module)](#15-import-records-xlscsv-module)
 * 16 [Useful functions (Extbase, Fluid, TS)](#16-useful-functions-extbase-fluid-ts)
-* 17 [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)](#17-database-queries-select-insert-update-delete-relationships-eloquent-orm)
+* 17 [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#17-database-queries-select-insert-update-delete-relationships-eloquent-orm)
 * 17.2 [VALIDATION (Laravel)](#validation-laravel)
 * 18 [Frontend editing](#18-frontend-editing)
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#19-useful-settings-in-typo3conflocalconfigurationphp)
