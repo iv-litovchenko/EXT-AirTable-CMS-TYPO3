@@ -880,7 +880,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
     public static function validationRules($params = [])
     {
         $rules = [
-            'checkInsert' => [
+            'checkPreInsert' => [
                 'title' => [
                     'required' => 'MSG "required"',
                     'string' => 'MSG "string"',
@@ -892,10 +892,10 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                     #}
                 ],
             ],
-            'checkUpdate' => [
+            'checkPreUpdate' => [
                 // context update...
             ],
-            'checkDelete' => [
+            'checkPreDelete' => [
                 // context delete...
             ],
             'checkOther' => [
