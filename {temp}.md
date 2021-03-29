@@ -87,3 +87,7 @@ class ElementSubPagesController extends ActionController
 }
 
 
+https://docs.evo.im/04_extras/pagebuilder.html
+https://github.com/mnoskov/pagebuilder/blob/master/assets/plugins/pagebuilder/config/text.php.sample
+https://github.com/mnoskov/pagebuilder/blob/master/assets/plugins/pagebuilder/config/text.php.sample
+https://www.youtube.com/watch?v=yov7y-OXubo&t=4s
