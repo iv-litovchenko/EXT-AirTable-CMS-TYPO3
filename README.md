@@ -876,7 +876,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
      * A set of rules for context-aware validation
      * @return array
      */
-    public static function validationRules()
+    public static function validationRules($params = [])
     {
         $rules = [
             'checkInsert' => [
@@ -1613,33 +1613,33 @@ $rules = [];
 $rules = [
     'title' => [
         'name' => '--- NAME ---',
-		'bail' => true, // Stop on first error 
+        'bail' => true, // Stop on first error 
         'required' => 'MSG ERROR - required',
         'min:1' => 'MSG ERROR - min', 
         'max:5' => 'MSG ERROR - max',
-		'custom_rule:p1,p2,p3..' => 'MSG ERROR - my rule'
+        'custom_rule:p1,p2,p3..' => 'MSG ERROR - my rule'
     ],
     'image' => [
-		'name' => '--- ONE IMAGE ---', // <f:form.upload property="image" />
-		'required' => 'MSG ERROR - required',
-		// 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
-		'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
-		'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
-		'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif'
+        'name' => '--- ONE IMAGE ---', // <f:form.upload property="image" />
+        'required' => 'MSG ERROR - required',
+        // 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+        'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+        'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
+        'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif'
     ],
     'images' => [
         'name' => '--- MANY IMAGES ---', // <f:form.upload property="images" multiple="true" />
-		'required' => 'MSG ERROR - required',
+        'required' => 'MSG ERROR - required',
         'min:3' => 'MSG ERROR - min', 
         'max:5' => 'MSG ERROR - max',
     ],
     'images.*' => [
         'required' => 'MSG ERROR - required',
-		// 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
-		'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
-		'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
-		'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif',
-		'dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000' => 'MSG ERROR - dimensions'
+        // 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+        'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+        'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
+        'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif',
+        'dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000' => 'MSG ERROR - dimensions'
     ]
 	// ...
 ];
@@ -1844,7 +1844,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
      * A set of rules for context-aware validation
      * @return array
      */
-    public static function validationRules()
+    public static function validationRules($params = [])
     {
         $rules = [
             'default' => [
