@@ -2070,6 +2070,7 @@ http://iv-litovchenko.ru
   * б) для массива данных
   * Аналоги: https://extensions.typo3.org/extension/nsb_cat2menu/, https://stackoverflow.com/questions/40706825/typo3-sys-category-menu)
   * Во многих CMS меню создается отдельно
+  * ItemsProcFunc MENU
 * (Wrapper) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/)
 * (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html)
 * Permissions backend user (non admin!) for root page id (pid)=0;
