@@ -19,11 +19,13 @@
 ### https://extensions.typo3.org/extension/div2007
 ### https://extensions.typo3.org/extension/migration_core
 
-### AJAX PATH
+## Todo
 ```
-var link = '/?eIdAjax=1&eIdAjaxPath=projiv|FeedBackFormController|indexAction';
+Hash CacheTags (залипание, затапливание cHash - сделать панель другого цвета когда есть дин. аргументы) - нужно всегда отдавать ошибку, если нет результатов, т.к. cacheHash создаться на каждый адрес - также продумать для USER_INT
+RTE (linkHandler)
+Та проблема с бублями Pages/Default.php, Widgets/Defaul.php, PagesElements/Elements/Default.php
+Содержит дополнение это и есть PageIdContent
 ```
-
 
 ## Задокументироват
 
