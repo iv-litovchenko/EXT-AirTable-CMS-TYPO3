@@ -1575,56 +1575,89 @@ if($is === true) {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // VALIDATION
-// v1) ModelCrud::validation($context = 'default', $data = []); // see "public static function validationRules()"
-// v2) ModelForm::validation($context = 'default', $data = []); // see "public static function validationRules()"
-// v3) \Litovchenko\AirTable\Validation\Validator::validation($rules = [], $data = []);
-// v4) \Mynamespace\Myext\Validation\ValidatorName::validation($context = 'default', $data = []); // see "public static function validationRules()"
+// v1) ModelCrud::validator($data=[], $context='default', $params=[], called_class()); // see "public static function validationRules($params=[])"
+// v2) ModelForm::validator($data=[], $context='default', $params=[], called_class()); // see "public static function validationRules($params=[])"
+// v3) \Litovchenko\AirTable\Validation\Validator::validator($data = [], $rules=[]);
+// v4) MyValidatorName extends \Litovchenko\AirTable\Validation\Validator
 ////////////////////////////////////////////////////////////////////////////////////////
 
-$context = 'checkInsert';
+// ----------------
+// v1, v2
+// ----------------
+
 $data = [];
 $data['title'] = 'My Title';
 
-$validator = NewTable::validation($context, $data); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
-// $validator = NewForm::validation($context, $data); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
-if ($validator->fails())
+$validator = NewTable::validator($data, 'checkInsert'); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+$validator = NewForm::validator($data, 'checkInsert'); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
+if ($validator->passes()) { } //ok
+if ($validator->fails()) // error
 {
-    $messages = $validator->messages()->toArray();
-    $errors = $validator->errors();
-    $errorsAll = $validator->errors()->all();
-    print "<pre>";
-    print_r($messages);
-    print_r($errorsAll);
-    print_r($errors);
-    print "</pre>";
+    if ($validator->errors()->has('email')) {} // Check has error field
+    $validator->errors()->add('field', 'Something is wrong with this field!'); // Add error
+    $validator->errors()->toArray();
+    $validDataAr = $validator->valid(); // Valid data
+    $invalidDataAr = $validator->invalid(); // Invalid data
 }
 
 print '<hr >';
 
-$rules = [];
-$rules = [
-    'title' => [
-        'required' => 'MSG ERROR - required',
-        'min:1' => 'MSG ERROR - min', 
-        'max:5' => 'MSG ERROR - max'
-    ]
-];
+// ----------------
+// v3, v4
+// ----------------
 
 // $data = $this->request->getArgument('form');
 $data = []; 
 $data['title'] = 'My Title';
+$rules = [];
+$rules = [
+    'title' => [
+        'name' => '--- NAME ---',
+		'bail' => true, // Stop on first error 
+        'required' => 'MSG ERROR - required',
+        'min:1' => 'MSG ERROR - min', 
+        'max:5' => 'MSG ERROR - max',
+		'custom_rule:p1,p2,p3..' => 'MSG ERROR - my rule'
+    ],
+    'image' => [
+		'name' => '--- ONE IMAGE ---', // <f:form.upload property="image" />
+		'required' => 'MSG ERROR - required',
+		// 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+		'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+		'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
+		'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif'
+    ],
+    'images' => [
+        'name' => '--- MANY IMAGES ---', // <f:form.upload property="images" multiple="true" />
+		'required' => 'MSG ERROR - required',
+        'min:3' => 'MSG ERROR - min', 
+        'max:5' => 'MSG ERROR - max',
+    ],
+    'images.*' => [
+        'required' => 'MSG ERROR - required',
+		// 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+		'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
+		'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
+		'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif',
+		'dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000' => 'MSG ERROR - dimensions'
+    ]
+	// ...
+];
 
-$validator = \Litovchenko\AirTable\Validation\Validator::validation($rules, $data);
-if ($validator->fails())
+$validator = \Litovchenko\AirTable\Validation\Validator::validator($data, $rules);
+$validator->addExtension('custom_rule', function($attribute, $value, $parameters)
 {
-    $messages = $validator->messages()->toArray();
-    $errors = $validator->errors();
-    $errorsAll = $validator->errors()->all();
-    print "<pre>";
-    print_r($messages);
-    print_r($errorsAll);
-    print_r($errors);
-    print "</pre>";
+    // return $value == $parameters[0];
+    return true; // or false
+});
+if ($validator->passes()) { } //ok
+if ($validator->fails()) // error
+{
+    if ($validator->errors()->has('email')) {} // Check has error field
+    $validator->errors()->add('field', 'Something is wrong with this field!'); // Add error
+    $validator->errors()->toArray();
+    $validDataAr = $validator->valid(); // Valid data
+    $invalidDataAr = $validator->invalid(); // Invalid data
 }
 ```
 
@@ -1759,7 +1792,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         // if(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST()) {
         if ($this->request->hasArgument('form')) {
             $postArgs = $this->request->getArguments()['form'];
-            $validator = \Litovchenko\Projiv\Domain\Form\FeedBackForm::validation($postArgs, 'default');
+            $validator = \Litovchenko\Projiv\Domain\Form\FeedBackForm::validator($postArgs, 'default');
             if ($validator->fails()) {
                 unset($postArgs['agree']);
                 $this->view->assign('form', $postArgs);
