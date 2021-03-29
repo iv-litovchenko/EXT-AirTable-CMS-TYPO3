@@ -1594,8 +1594,8 @@ if($is === true) {
 $data = [];
 $data['title'] = 'My Title';
 
-$validator = NewTable::validator($data, 'checkInsert'); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
-$validator = NewForm::validator($data, 'checkInsert'); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
+$validator = NewTable::validator($data, 'checkPreInsert'); // class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+$validator = NewForm::validator($data, 'checkPreInsert'); // class NewForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
 if ($validator->passes()) { } //ok
 if ($validator->fails()) // error
 {
