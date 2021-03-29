@@ -258,7 +258,7 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'disableAllHeaderCode' => '0 || 1',
         'includeTyposcriptSourceTemplate' => '', // Todo (file with typoscript.ts - settings, t1.ts, t2.ts...)
         'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
         'urlManagerActions' => [
             // [RU] На 1 действие может быть несколько вариантов
             // [ENG] There can be several options for 1 action
@@ -366,7 +366,7 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'name' => 'Content element name',
         'description' => 'Content element description',
         'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
 	//////////////////////////////////////////////
         // If type "FrontendContentPlugin (start)"
 	//////////////////////////////////////////////
@@ -587,7 +587,7 @@ class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         'name' => 'Test widget',
         'description' => 'The widget has a controller and a template',
         'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|*** - See "Ajax-Frontend"
+        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
         'registerArguments' => [
             'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
             'testArg2*' => ['string',640],
@@ -1666,7 +1666,7 @@ $(function() {
     //*****************************************************************//
     // <f:link.action 
     //    class="tx-myext-randphotocontroller"
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|RandPhotoController|indexAction', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Myext.Widgets.RandPhotoController.indexAction', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
     // >
     //    Ajax link
     // </f:link.action>
@@ -1676,7 +1676,7 @@ $(function() {
         $('div.tx-myext-randphotocontroller-wrap').fadeTo("fast", 0.5);
         $.ajax({
             type: 'GET',
-            url: "/?eIdAjax=1&eIdAjaxPath=myext|RandPhotoController|indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.RandPhotoController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: {
                 eIdAjaxSettings: {
                     imgWidthBig: 640,
@@ -1705,7 +1705,7 @@ $(function() {
     //    class="tx-myext-feedbackformcontroller" 
     //    name="form" 
     //    object="{form}" 
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'myext|FeedBackFormController|indexAction', eIdAjaxSettings:{}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Myext.Widgets.FeedBackFormController.indexAction', eIdAjaxSettings:{}}"
     // >
     //    <f:form.hidden name="eIdAjaxSettings[settingsOne]" value="1" />
     //    <f:form.hidden name="eIdAjaxSettings[settingsTwo]" value="2" />
@@ -1717,7 +1717,7 @@ $(function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
             type: 'POST',
-            url: "/?eIdAjax=1&eIdAjaxPath=myext|FeedBackFormController|indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.FeedBackFormController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
             data: $(this).serializeArray(),
             success: function(html) {
                 $('div.tx-myext-feedbackformcontroller-wrap').replaceWith(html);
@@ -1759,7 +1759,7 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         // if(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST()) {
         if ($this->request->hasArgument('form')) {
             $postArgs = $this->request->getArguments()['form'];
-            $validator = \Litovchenko\Projiv\Domain\Form\FeedBackForm::validation('default', $postArgs);
+            $validator = \Litovchenko\Projiv\Domain\Form\FeedBackForm::validation($postArgs, 'default');
             if ($validator->fails()) {
                 unset($postArgs['agree']);
                 $this->view->assign('form', $postArgs);
@@ -1868,7 +1868,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
          class="tx-projiv-feedbackformcontroller" 
          name="form" 
          object="{form}" 
-         additionalParams="{eIdAjax:1,eIdAjaxPath:'projiv|FeedBackFormController|indexAction'}"
+         additionalParams="{eIdAjax:1,eIdAjaxPath:'Myext.Widgets.FeedBackFormController.indexAction'}"
          >
          <div class="form-group">
             <label class="col-form-label">Ваше имя*</label>
@@ -2013,6 +2013,7 @@ http://iv-litovchenko.ru
   * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
+* Ajax link helper - <f:link.action action="ajaxExtPages.Widgets.RandPhotoController.indexAction" additionalParams="{eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}">Ajax link</f:link.action>
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
 * Flexform (может пригодится для атрибутов)
 https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
