@@ -18,6 +18,7 @@
 
 ### https://extensions.typo3.org/extension/div2007
 ### https://extensions.typo3.org/extension/migration_core
+### Поковыряй https://nextras.org/orm/docs/4.0/ (рекурсивные функции очень интересно удаление рекурсивно)
 
 ## Todo
 ```
