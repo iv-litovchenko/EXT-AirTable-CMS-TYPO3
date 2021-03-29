@@ -1651,11 +1651,17 @@ $rules = [
 ];
 
 $validator = \Litovchenko\AirTable\Validation\Validator::validator($data, $rules);
-$validator->addExtension('custom_rule', function($attribute, $value, $parameters)
+$validator->addExtension('custom_rule', function($attribute, $value, $parameters) // or "public function custom_rule_name($attribute, $value, $parameters, $validator) {}
 {
     // return $value == $parameters[0];
-    return true; // or false
+    // return true; // or false
+    if ($value == 'TYPO3') {
+        return true; // Good
+    } else {
+        return false;
+    }
 });
+
 if ($validator->passes()) { } //ok
 if ($validator->fails()) // error
 {
