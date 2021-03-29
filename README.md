@@ -21,6 +21,7 @@ A set of tools for creating your site based on class annotations. Works in versi
 * 15 [Import records Xls|Csv (module)](#15-import-records-xlscsv-module)
 * 16 [Useful functions (Extbase, Fluid, TS)](#16-useful-functions-extbase-fluid-ts)
 * 17 [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)](#17-database-queries-select-insert-update-delete-relationships-validation-eloquent-orm)
+* 17.2 []()
 * 18 [Frontend editing](#18-frontend-editing)
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#19-useful-settings-in-typo3conflocalconfigurationphp)
 * 20 [Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)](#20-extbase-frontend-ajax-httpyour-sitecomeidajax1)
@@ -1269,7 +1270,7 @@ https://www.koller-webprogramming.ch/tipps-tricks/typoscript/bedingungen/
 
 ```
 
-## 17 Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS, VALIDATION (Eloquent ORM)
+## 17 Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)
 
 ```php
 <?php
@@ -1572,7 +1573,12 @@ $is = NewTable::recIsPublished($recordId); // If use \Litovchenko\AirTable\Domai
 if($is === true) {
     echo 'Yes';
 }
+```
 
+### VALIDATION (Eloquent ORM)
+
+```php
+<?php
 ////////////////////////////////////////////////////////////////////////////////////////
 // VALIDATION
 // v1) ModelCrud::validator($data=[], $context='default', $params=[], called_class()); // see "public static function validationRules($params=[])"
