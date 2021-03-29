@@ -1641,7 +1641,7 @@ $rules = [
         'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif',
         'dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000' => 'MSG ERROR - dimensions'
     ]
-	// ...
+    // ... ... ...
 ];
 
 $validator = \Litovchenko\AirTable\Validation\Validator::validator($data, $rules);
