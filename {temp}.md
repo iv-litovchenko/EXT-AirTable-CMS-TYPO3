@@ -35,6 +35,7 @@ RTE (linkHandler)
 * Оставляем ли Gridelements?
 * Для сеток придется добавить insertTab - когда нет RTYPES...
 * https://typo3-package.slavlee.de/features/flexible-4-column-grid/
+* https://www.slavlee.de/slavlee-package
 
 В доку - получается имя роутера это pageId.controller.action а url.Converter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID-страницы, а не маршрут). Ищем контроллер и действие. Продумать как можно выводить список маршрутов на панелях для отладки - RouterList).
 ```
