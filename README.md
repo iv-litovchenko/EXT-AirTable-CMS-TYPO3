@@ -510,6 +510,10 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
   styleRight="10" <!--only for newIconAbs-->
   styleBottom="10" <!--only for newIconAbs-->
 />
+
+<f:vhsExtAirTable.editIconsForMenu uidPattern="elem_*" styleDirection="left">
+  <v:page.menu expandAll="0" levels="2" substElementUid="1" />
+</f:vhsExtAirTable.editIconsForMenu>
 ```
 
 ## 08 Register View Helper
