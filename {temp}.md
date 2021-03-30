@@ -20,25 +20,7 @@
 ### https://extensions.typo3.org/extension/migration_core
 ### Поковыряй https://nextras.org/orm/docs/4.0/ (рекурсивные функции очень интересно удаление рекурсивно)
 
-## Todo
-```
-https://github.com/franzholz/patchcache/blob/master/Classes/Core/View/Routing/PageRouter.php Hash CacheTags (залипание, затапливание cHash - сделать панель другого цвета когда есть дин. аргументы) - нужно всегда отдавать ошибку, если нет результатов, т.к. cacheHash создаться на каждый адрес - также продумать для USER_INT 
-RTE (linkHandler)
-Та проблема с бублями Pages/Default.php, Widgets/Defaul.php, PagesElements/Elements/Default.php
-Содержит дополнение это и есть PageIdContent?
-Редактор меню и текущей страницы...
-Сетки, контейнеры с настройками (PageSettings, TtContentSettings), Как в бутстрап...
-* Дочерние элементы (как в N)
-* cols-аннотация что писать когда контейнер?
-* При редактировании придется обновлять всю сетку
-* Bug - New Top когда есть контент - смотри "333" "444"
-* Оставляем ли Gridelements?
-* Для сеток придется добавить insertTab - когда нет RTYPES...
-* https://typo3-package.slavlee.de/features/flexible-4-column-grid/
-* https://www.slavlee.de/slavlee-package
 
-В доку - получается имя роутера это pageId.controller.action а url.Converter просто преобразует в красивый ЧПУ (как со страницами, что бы сделать ссылку мы ищем ID-страницы, а не маршрут). Ищем контроллер и действие. Продумать как можно выводить список маршрутов на панелях для отладки - RouterList).
-```
 
 ## Задокументироват
 
