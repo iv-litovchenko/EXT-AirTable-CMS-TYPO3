@@ -2064,6 +2064,7 @@ http://iv-litovchenko.ru
   * ~~(Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])~~
   * ~~(Mag) InsertWidgets~~
   * ~~InsertBlockTemplate (template ID)~~
+  * https://codecanyon.net/item/slavlee-shortcodes/20172526
 * Регионы в шаблоны (показ определенных блоков по условиям)
 * Хлебные крошки, <v:page.breadCrumb>, меню <v:menu expandAll="0" levels="2" /> для 
   * а) таблицы категорий (tx_data_category), произвольных таблиц
