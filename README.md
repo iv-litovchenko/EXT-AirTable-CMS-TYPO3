@@ -181,7 +181,7 @@ class NewModule1Controller extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             'key2' => 'Name Two',
             'key3' => 'Name Three',
         ],
-        'ajaxActions' => 'indexAction', // Todo
+        'ajaxActions' => 'index', // Todo
         'section' => 'web || file || user || help || content || tools || ext || unseen || sec_ext_myext',
         'position' => '100'
     ];
@@ -225,11 +225,11 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Modules/NewModule1
 
 <!--Tested only in TYPO3 v10!-->
 <!--Switching to another controller is not easy!-->
-<!--routeExt[***ExtName***].Modules.[***NameController***].[***nameAction***]-->
-<f:be.link route="routeExtMyext.Modules.NewModule2Controller.indexAction" parameters="{arg: 1}">Go to Module 2</f:be.link><br />
-<f:be.link route="routeExtMyext.Modules.NewModule3Controller.indexAction" parameters="{arg: 1}">Go to Module 3</f:be.link><br />
+<!--Ext.[***extension***].Modules.[***controller***].[***action***]-->
+<f:be.link route="Ext.Myext.Modules.NewModule2.index" parameters="{arg: 1}">Go to Module 2</f:be.link><br />
+<f:be.link route="Ext.Myext.Modules.NewModule3.index" parameters="{arg: 1}">Go to Module 3</f:be.link><br />
 
-<f:link.action action="editAction" class="btn btn-default btn-sm">
+<f:link.action action="edit" class="btn btn-default btn-sm">
 	Module 1 (action "Edit")
 </f:link.action>
 ```
@@ -258,8 +258,8 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'description' => 'Page description',
         'disableAllHeaderCode' => '0 || 1',
         'includeTyposcriptSourceTemplate' => '', // Todo (file with typoscript.ts - settings, t1.ts, t2.ts...)
-        'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
+        'nonCachedActions' => 'index', // USER_INT
+        'ajaxActions' => 'index', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
         'urlManagerActions' => [
             // [RU] На 1 действие может быть несколько вариантов
             // [ENG] There can be several options for 1 action
@@ -334,10 +334,10 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Inde
 	</table>
 
 	<!--Switching between actions -->
-	<f:link.action action="detailAction">Show me what's there!</f:link.action>
-	<f:link.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelsAction">--TEXT--</f:link.action>
-	<f:uri.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelViewAction" arguments="{uid:5}" />
-	<f:be.link route="routeExtMyext.Modules....><br />
+	<f:link.action action="detail">Show me what's there!</f:link.action>
+	<f:link.action pageUid="1" route="Ext.Myext.Pages.Default.travels">--TEXT--</f:link.action>
+	<f:uri.action pageUid="1" route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
+	<f:be.link route="Ext.Myext.Modules.ModuleName.action" ....><br />
 
 <!--Include footer page template-->
 <f:comment><!--<f:render partial="Footer" arguments="{_all}" />--></f:comment>
@@ -366,8 +366,8 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'thisIs' => 'FrontendContentElement || FrontendContentGridelement || FrontendContentPlugin',
         'name' => 'Content element name',
         'description' => 'Content element description',
-        'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
+        'nonCachedActions' => 'index', // USER_INT
+        'ajaxActions' => 'index', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
 	//////////////////////////////////////////////
         // If type "FrontendContentPlugin (start)"
 	//////////////////////////////////////////////
@@ -443,8 +443,8 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 	
 	<!--If type "Plugin"-->
 	<f:link.action action="detailAction">Show me what's there!</f:link.action>
-	<f:link.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelsAction">--TEXT--</f:link.action>
-	<f:uri.action pageUid="1" action="routeExtMyext.Pages.DefaultController.travelViewAction" arguments="{uid:5}" />
+	<f:link.action pageUid="1" route="Ext.Myext.Pages.Default.travels">--TEXT--</f:link.action>
+	<f:uri.action pageUid="1" route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
 </div>
 ```
 
@@ -591,8 +591,8 @@ class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         'thisIs' => 'FrontendWidget',
         'name' => 'Test widget',
         'description' => 'The widget has a controller and a template',
-        'nonCachedActions' => 'indexAction', // USER_INT
-        'ajaxActions' => 'indexAction', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=***|***|***|*** - See "Ajax-Frontend"
+        'nonCachedActions' => 'index', // USER_INT
+        'ajaxActions' => 'index', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
         'registerArguments' => [
             'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
             'testArg2*' => ['string',640],
@@ -1715,7 +1715,7 @@ $(function() {
     //*****************************************************************//
     // <f:link.action 
     //    class="tx-myext-randphotocontroller"
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Myext.Widgets.RandPhotoController.indexAction', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Ext.Myext.Widgets.RandPhoto.index', eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}"
     // >
     //    Ajax link
     // </f:link.action>
@@ -1724,7 +1724,7 @@ $(function() {
     $('body').on('click', 'a.tx-myext-randphotocontroller', function() {
         $('div.tx-myext-randphotocontroller-wrap').fadeTo("fast", 0.5);
         $.ajax({
-            url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.RandPhotoController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=Ext.Myext.Widgets.RandPhoto.index", //  EXT:myext | Classes/Controllers/... | indexAction()
             type: 'GET',
             data: {
                 eIdAjaxSettings: {
@@ -1754,7 +1754,7 @@ $(function() {
     //    class="tx-myext-feedbackformcontroller" 
     //    name="form" 
     //    object="{form}" 
-    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Myext.Widgets.FeedBackFormController.indexAction', eIdAjaxSettings:{}}"
+    //    additionalParams="{eIdAjax:1, eIdAjaxPath:'Ext.Myext.Widgets.FeedBackForm.index', eIdAjaxSettings:{}}"
     // >
     //    <f:form.hidden name="eIdAjaxSettings[settingsOne]" value="1" />
     //    <f:form.hidden name="eIdAjaxSettings[settingsTwo]" value="2" />
@@ -1765,7 +1765,7 @@ $(function() {
     $('body').on('submit', 'form.tx-myext-feedbackformcontroller', function() {
         $(this).find(':submit').attr("disabled", true); // input submit
         $.ajax({
-            url: "/?eIdAjax=1&eIdAjaxPath=Myext.Widgets.FeedBackFormController.indexAction", //  EXT:myext | Classes/Controllers/... | indexAction()
+            url: "/?eIdAjax=1&eIdAjaxPath=Ext.Myext.Widgets.FeedBackForm.index", //  EXT:myext | Classes/Controllers/... | indexAction()
             type: 'POST',
             data: new FormData( this ), // $(this).serializeArray(), // <-- <f:form enctype="multipart/form-data" ...>
             processData: false,
@@ -1798,8 +1798,8 @@ class FeedBackFormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public static $TYPO3 = [
         'thisIs' => 'FrontendWidget',
         'name' => 'Форма обратной связи',
-        'nonCachedActions' => 'indexAction',
-        'ajaxActions' => 'indexAction',
+        'nonCachedActions' => 'index',
+        'ajaxActions' => 'index',
     ];
 
     public function indexAction()
@@ -1933,7 +1933,7 @@ class FeedBackForm extends \Litovchenko\AirTable\Domain\Form\ModelForm
          class="tx-projiv-feedbackformcontroller" 
          name="form" 
          object="{form}" 
-         additionalParams="{eIdAjax:1,eIdAjaxPath:'Myext.Widgets.FeedBackFormController.indexAction'}"
+         additionalParams="{eIdAjax:1,eIdAjaxPath:'Ext.Myext.Widgets.FeedBackForm.index'}"
          >
          <div class="form-group">
             <label class="col-form-label">Ваше имя*</label>
@@ -2096,7 +2096,7 @@ http://iv-litovchenko.ru
   * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
-* Ajax link helper - <f:link.action action="ajaxExtPages.Widgets.RandPhotoController.indexAction" additionalParams="{eIdAjaxSettings: {imgWidthBig:640,imgWidthSmall:300}}">Ajax link</f:link.action>
+* Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
 * Flexform (может пригодится для атрибутов)
 https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
