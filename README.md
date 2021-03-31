@@ -512,7 +512,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 />
 
 <f:vhsExtAirTable.editIconsForMenu uidPattern="elem_*" styleDirection="left">
-  <v:page.menu expandAll="0" levels="2" substElementUid="1" />
+  <v:page.menu expandAll="0" levels="2" substElementUid="1" /> <!-- <li id="elem_id(page id)"><!-- INSERT EDIT ICON--><a href=""></a></li> -->
 </f:vhsExtAirTable.editIconsForMenu>
 ```
 
