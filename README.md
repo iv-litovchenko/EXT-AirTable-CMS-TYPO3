@@ -2072,6 +2072,7 @@ http://iv-litovchenko.ru
   * TinyMCE
   * Linkhandler
 * Регионы в шаблоны (показ определенных блоков по условиям)
+* Oops an error occurred. Code: 2021033121411590d9c6a5 - упростить работу с ошибками, контест "ДевелопменТ" (config.contentObjectExceptionHandler = 1)
 * Хлебные крошки, <v:page.breadCrumb>, меню <v:menu expandAll="0" levels="2" /> для 
   * а) таблицы категорий (tx_data_category), произвольных таблиц
   * б) для массива данных
