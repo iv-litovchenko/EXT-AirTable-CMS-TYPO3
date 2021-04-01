@@ -1,5 +1,4 @@
 ```
-+ http://maru-consulting.com/typo3conf/Documentation/typo3cms.extensions.core/default/pdf/manual.core-8.7.pdf
 + https://www.mittwald.de/fileadmin/pdf/dokus/Extbase_Fluid_Dokumentation.pdf
 
 https://docs.typo3.org/m/typo3/book-extbasefluid/master/en-us/9-CrosscuttingConcerns/2-validating-domain-objects.html#validating-in-the-domain-model-with-an-own-validator-class
@@ -134,4 +133,52 @@ var initDropzone = function() {
         });
     }
 };
+```
+
+```
+lib.contentElement = COA
+lib.contentElement {
+	10 =< lib.stdheader
+}
+
+tt_content.myce =< lib.contentElement
+tt_content.myce {
+	templateName = Generic
+	20 =< plugin.myContent
+}
+
+<f:cObjecttyposcriptObjectPath="tt_content.{data.CType}.20" data="ãÑ{data}" table="tt_content" />
+
+tt_content.stdWrap.innerWrap.cObject.key.field = frame_class
+tt_content.stdWrap.innerWrap.cObject.ruler-before =< tt_content.stdWrap.innerWrap.cObject.defaul
+tt_content.stdWrap.innerWrap.cObject.ruler-before.20.10.value = csc-frame csc-frame-ruler-before
+
+- Configuration/TypoScript
+| - ContentElement
+| | - Bullets.txt
+| | - Div.txt
+| | - Header.txt
+| | - Html.txt
+| | - Image.txt
+| | - List.txt
+| | - MenuAbstract.txt
+| | - MenuCategorizedContent.txt
+| | - MenuCategorizedPages.txt
+| | - MenuPages.txt
+| | - Shortcut.txt
+| | - Table.txt
+| | - Text.txt
+| | - Textmedia.txt
+| | - Textpic.txt
+| | - Uploads.txt
+| - ContentElementPartials
+| | - Menu.txt
+| - Helper
+| | - ParseFunc.txt
+| | - StandardHeader.txt
+| | - StylesContent.txt
+| - Styling
+| | - setup.txt
+| - constants.txt
+| - setup.txt
 ```
