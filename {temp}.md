@@ -193,4 +193,31 @@ mod.web_layout.tt_content.preview.list.example = EXT:site_mysite/Resources/Priva
 • BackendUtility::getFlexFormDS()
 • GeneralUtility::resolveSheetDefInDS()
 • GeneralUtility::resolveAllSheetsInDS()
+
+extbase.controllerExtensionName
+extbase.pluginName
+extbase.controllerName
+extbase.controllerActionName
+
+lib.flexformContent = CONTENT
+lib.flexformContent {
+	table = tt_content
+	select {
+		pidInList = this
+	}
+	renderObj = COA 
+	renderObj {
+		10 = TEXT
+		10 {
+			data = flexform: pi_flexform:settings.categories
+		}
+	}
+}
+
+RecyclerUtility::getRecordPath
+ExtensionManagementUtility::siteRelPath()
+GeneralUtility::getFileAbsFileName()
+PathUtility::getAbsoluteWebPath()
+GeneralUtility::getFileAbsFileName())
+ExtensionManagementUtility::extPath()
 ```
