@@ -254,4 +254,24 @@ $resolver = $view->getRenderingContext()->getViewHelperResolver();
 $resolver->registerNamespace('news', 'GeorgRinger\News\ViewHelpers');
 $resolver->extendNamespace('f', 'My\Extension\ViewHelpers')
 $resolver->setNamespaces(array('f' =>array('TYPO3Fluid\\Fluid\\ViewHelpers',
+
+$formToken = \TYPO3\CMS\Core\FormProtection\FormProtectionFactory::get()->getFormProtection()->generateToken('news', 'edit', $uid);
+if($dataHasBeenSubmitted && \TYPO3\CMS\Core\FormProtection\FormProtectionFactory::get()->
+validateToken(\TYPO3\CMS\Core\Utility\GeneralUtility::_POST('formToken'),'User setup','edit')) 
+{
+
+// Processes the data.}
+else{
+
+// Create a flash message for the invalid token or just discard thisrequest.
+}
+
+if(TYPO3_MODE === 'BE')
+{
+	//  implement the\TYPO3\CMS\Recordlist\Browser\ElementBrowserInterface
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ElementBrowsers'][<identifier>] = \Vendor\Ext\TheClass::class;
+}
+
+
+$this->moduleTemplate->addFlashMessage('I am a message body', 'Title',ãÑ\TYPO3\CMS\Core\Messaging\AbstractMessage::OK,true);
 ```
