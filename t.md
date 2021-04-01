@@ -1,4 +1,5 @@
 ```
+1) Можно ли сделать Дата процессор - это и будут defaultAssign... https://docs.typo3.org/typo3cms/extensions/content_rendering_core/2.0.0/AddingYourOwnContentElements/Index.html
 1) 
 // Заменить xClass?
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typolinkProcessing']['typolinkModifyParameterForPageLinks'][] = \Your\Namespace\Hooks\MyBeautifulHook::class;
