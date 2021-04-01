@@ -557,4 +557,53 @@ BasicFileUtility::findTempFolder()
 ExtendedFileUtility::findRecycler() h
 
 
+///////////// В класс модули в документацию...
+
+### Adding a button
+$openInNewWindowButton = $this->moduleTemplate->getDocHeaderComponent()
+->getButtonBar()
+->makeLinkButton()
+->setHref('#')
+->setTitle($this->getLanguageService()->sL('LLL:EXT:lang/locallang_core.xlf:ãÑlabels.openInNewWindow',TRUE))
+->setIcon($this->iconFactory->getIcon('actions-window-open', Icon::SIZE_SMALL))
+->setOnClick($aOnClick);
+$this->moduleTemplate->getDocHeaderComponent()->getButtonBar()->addButton($openInNewWindowButton, ButtonBar::BUTTON_POSITION_RIGHT);
+
+### Adding a menu with menu items
+$languageMenu = $this->moduleTemplate->getDocHeaderComponent()->
+getModuleMenuRegistry()->makeMenu()
+->setIdentifier('_langSelector')
+->setLabel($this->getLanguageService()->sL('LLL:EXT:lang/locallang_general.xlf:ãÑLGL.language',TRUE));
+
+$menuItem = $languageMenu->makeMenuItem()
+->setTitle($lang['title'] . $newTranslation)
+->setHref($href);
+if((int)$lang['uid'] === $currentLanguage) {
+	$menuItem->setActive(TRUE);
+}
+$languageMenu->addMenuItem($menuItem);
+$this->moduleTemplate->getDocHeaderComponent()->getModuleMenuRegistry()->addMenu($languageMenu);
+
+### ButtonBar Hook
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Backend\Template\Components\ButtonBar']['getButtonsHook']['MyExt'] = \MyVendor\MyExt\Hooks\ButtonBarHook::class . '->getButtons';
+class ButtonBarHook{
+/**
+	*Get buttons
+	*
+	* @param array $params
+	*@param ButtonBar $buttonBar
+	*@return array
+*/
+public functiongetButtons(array$params, ButtonBar $buttonBar) {
+$buttons = $params['buttons'];
+$iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+$button = $buttonBar->makeLinkButton();
+$button->setIcon($iconFactory->getIcon('my-custom-icon', Icon::SIZE_SMALL));
+$button->setTitle('My custom docHeader button');
+$button->setOnClick('alert("Hook works");return false;');
+$buttons[ButtonBar::BUTTON_POSITION_LEFT][1][] = $button;
+return$buttons;
+}
+}
+
 ```
