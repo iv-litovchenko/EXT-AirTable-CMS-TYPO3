@@ -15,6 +15,7 @@ https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konf
 https://www.koller-webprogramming.ch/tipps-tricks/typo3-extension-pibase/arbeiten-mit-sessions/
 
 https://api.typo3.org/9.5/class_t_y_p_o3_1_1_c_m_s_1_1_extbase_1_1_mvc_1_1_controller_1_1_action_controller.html
+https://api.typo3.org/master/class_t_y_p_o3_1_1_c_m_s_1_1_backend_1_1_utility_1_1_backend_utility.html
 https://extensions.typo3.org/extension/div2007
 https://extensions.typo3.org/extension/migration_core
 Поковыряй https://nextras.org/orm/docs/4.0/ (рекурсивные функции очень интересно удаление рекурсивно)
