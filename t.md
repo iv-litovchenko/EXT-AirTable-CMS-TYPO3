@@ -15,4 +15,5 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 5) Пагинация
 6) Убрать кнопку удалить (сделать вкл., выкл контента на Ajax)
 7) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
+8) Wizard
 ```
