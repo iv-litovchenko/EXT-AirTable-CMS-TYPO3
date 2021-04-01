@@ -6,5 +6,9 @@ public functionmodifyPageLinkConfiguration(array $linkConfiguration, array $link
    $linkConfiguration['additionalParams'] .= $pageRow['myAdditionalParamsField'];
    return $linkConfiguration;
 }
-2) Иконка с vorot
+2) Иконка редактирования с ворот? с vorot
+
+3) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
+
+4) Em_Conf?
 ```
