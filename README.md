@@ -1344,6 +1344,50 @@ page {
 # CONDITIONS
 https://www.koller-webprogramming.ch/tipps-tricks/typoscript/bedingungen/
 
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+lib.stdheader {
+	10 {
+		1.dataWrap = <h1>|</h1>
+		1.dataWrap.insertData = 1
+	}
+
+	stdWrap {
+		dataWrap >
+	}
+}
+
+tt_content {
+	stdWrap {
+		innerWrap >
+		dataWrap >
+		prefixComment >
+	}
+
+	default {
+		prefixComment >
+	}
+
+	text {
+		stdWrap.outerWrap = <div class="text">|</div>
+	}
+
+	textpic { }
+
+	image { }
+
+	media { }
+
+	stdWrap {
+		innerWrap {
+		}
+
+		outerWrap {
+		}
+	}
+
+}
+
 ```
 
 ## 17 Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)
