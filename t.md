@@ -17,3 +17,11 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 7) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 8) Wizard
 ```
+
+```
+Посмотри что делает переменная $moduleName?
+/***The name of the module
+**@var string*/
+protected $moduleName = 'file_list';
+
+/***Constructor*/
