@@ -1,6 +1,5 @@
 ```
 http://maru-consulting.com/typo3conf/Documentation/typo3cms.extensions.core/default/pdf/manual.core-8.7.pdf
-https://www.mittwald.de/fileadmin/pdf/dokus/Extbase_Fluid_Dokumentation.pdf
 
 https://docs.typo3.org/m/typo3/book-extbasefluid/master/en-us/9-CrosscuttingConcerns/2-validating-domain-objects.html#validating-in-the-domain-model-with-an-own-validator-class
 https://various.at/news/typo3-9-custom-content-elements/
