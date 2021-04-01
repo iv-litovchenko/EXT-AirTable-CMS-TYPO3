@@ -1125,6 +1125,11 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 ## 16 Useful functions (Extbase, Fluid, TS) 
 
+### Useful notes - Hooks
+```php
+
+```
+
 ### Useful notes - Extbase Controller
 ```php
 // Просмотреть все функции Extbase и расширений core в папке typo3/sysext/
@@ -1268,6 +1273,7 @@ if(TYPO3_EDIT_MODE === true) {
 <f:variablename="myvariable" value="My variable's content"/>
 {f:variable(name: 'myvariable', value: 'My variable\'s content')}
 {myoriginalvariable -> f:variable.set(name: 'mynewvariable')}
+
 ```
 
 ### Useful notes - TypoScript
