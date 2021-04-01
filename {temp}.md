@@ -274,4 +274,31 @@ if(TYPO3_MODE === 'BE')
 
 
 $this->moduleTemplate->addFlashMessage('I am a message body', 'Title',ãÑ\TYPO3\CMS\Core\Messaging\AbstractMessage::OK,true);
+
+// Place this in your ext_localconf.php file$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['urlProcessing']['urlHandlers']['myext_myidentifier']['handler'] =\Company\MyExt\MyUrlHandler::class;
+class MyUrlHandler implements\TYPO3\CMS\Frontend\Http\UrlHandlerInterface {}
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['urlProcessing']['urlProcessors']['myext_myidentifier']['processor']= \Company\MyExt\MyUrlProcessor::class;
+class MyUrlProcessor implements\TYPO3\CMS\Frontend\Http\UrlProcessorInterface {}
+
+\TYPO3\CMS\Core\Resource\ResourceStorage::dumpFileContents()
+
+
+
+$signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
+$signalSlotDispatcher->connect(\TYPO3\CMS\Linkvalidator\LinkAnalyzer::class,'beforeAnalyzeRecord',\Vendor\Package\Slots\RecordAnalyzerSlot::class,'beforeAnalyzeRecord');
+
+
+namespaceVendor\Package\Slots;
+use TYPO3\CMS\Linkvalidator\LinkAnalyzer;
+class RecordAnalyzerSlot{
+	/***Receives a signal before the record is analyzed**
+	@param array $results Array of broken links*@param array $record Record to analyse
+	*@param string $table Table name of the record*@param array $fields Array of fields
+	to analyze*@param LinkAnalyzer $parentObject Parent object*@return array*/
+	public functionbeforeAnalyzeRecord($results, $record, $table, $fields,
+	LinkAnalyzer $parentObject) 
+	{// Processing herereturn array($results,$record);
+	}
+}
 ```
