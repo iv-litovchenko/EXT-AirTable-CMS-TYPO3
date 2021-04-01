@@ -328,4 +328,6 @@ BackendUserAuthentication->checkCLIuser()
 •IconUtility::getSpriteIconForRecord()
 •IconUtility::getSpriteIconForResource()
 •IconUtility::getSpriteIconClasses()
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_cacheStore']
 ```
