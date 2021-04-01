@@ -517,4 +517,44 @@ class Foo{
 	$classValue = $service->getClassTagValue('Foo', 'SomeClassAnnotation');
 }
 
+
+$signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
+$signalSlotDispatcher->connect(
+\TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
+'getSystemInformation',
+\Vendor\Extension\SystemInformation\Item::class,'getItem'
+);
+
+class Item{
+public functiongetItem() 
+	{
+return array(array(
+	'title' => 'The title shown on hover',
+	'value' => 'Description shown in the list',
+	'status' => SystemInformationHookInterface::STATUS_OK,'count' => 4,'icon' =>
+	\TYPO3\CMS\Backend\Utility\IconUtility::ãÑgetSpriteIcon('extensions-example-information-icon')));
+ }
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['someExt']['someHook'][<some id>] = ['handler' => someClass::class,'runBefore' => [ <some other ID> ],'runAfter' => [ ... ],...];
+$hooks = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['someExt']['someHook'];$sortedHooks = GeneralUtility:makeInstance(DependencyOrderingService::class)->ãÑorderByDependencies($hooks , 'runBefore', 'runAfter');
+
+
+FileRepository::findByUid()
+ FileRepository::addToIndex() 
+ FileRepository::findByFolder() 
+ FileRepository::findOneByFileObject
+ FileRepository::findByContentHash()  
+ FileRepository::update() 
+ 
+ ResourceStorage::getFolder()
+  ResourceStorage::getFileInfoByIdentifier()
+  ResourceStorage::getFilesInFolder()
+  ResourceStorage::getFoldersInFolder()
+BasicFileUtility::getTotalFileInfo()  
+$GLOBALS[’BE_USER’]->getFileStorages()
+BasicFileUtility::findTempFolder() 
+ExtendedFileUtility::findRecycler() h
+
+
 ```
