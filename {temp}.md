@@ -76,3 +76,62 @@ class ElementSubPagesController extends ActionController
     }
 
 }
+
+```
+
+## FAL DRAG ZONE
+```
+https://www.dropzonejs.com/
+page.includeJSFooter.tx_vablog_dropzone = EXT:va_blog/Resources/Public/JavaScript/dropzone.js
+<div class="dropzone" data-url="{f:uri.action(action: 'imageupload', controller: 'News', pluginName: 'vablog', pageType:'{settings.ajax.upload}')}"></div>
+
+
+public function imageuploadAction() {
+        try {
+            $imageUploader = new \ImageUploader();
+            $uniqueFilename = $this->generateUniqueFilename();
+            $imageUploader->setPath($this->settings['newsImageUploadFolderFileadmin']);
+            $imageUploader->upload($_FILES['file'], $uniqueFilename);
+            $ext = \Chilischarf\ChiliNews\Utility\ImageUtility::getExtension($_FILES['file']["name"]);
+        }
+        catch (\Exception $e) {
+            return json_encode(['success' => FALSE]);
+        }
+        return json_encode(
+            [
+                'success' => TRUE,
+                'filename' => $uniqueFilename . '.' . $ext,
+                'path' => $this->settings['newsImageUploadFolderFileadmin']
+            ]
+        );
+    }
+
+var initDropzone = function() {
+    if(jQuery('.dropzone').length) {
+        Dropzone.autoDiscover = false;
+ 
+        jQuery('.dropzone').each(function () {
+            var $this = jQuery(this);
+ 
+            $this.dropzone({
+                url: $this.attr('data-url'),
+                acceptedFiles: 'image/*',
+                dictDefaultMessage: 'Bilder hochladen',
+                dictFallbackMessage: 'Ihr Browser wird leider nicht unterstützt',
+                dictFileTooBig: 'Die Datei ist zu groß',
+                dictInvalidFileType: 'Es werden nur Bilder unterstützt',
+                dictResponseError: 'Es werden leider ein Fehler aufgetreten. Code: {{statusCode}}',
+                createImageThumbnails: false,
+                previewTemplate: '........',
+                success: function (file, responseText) {
+                    var response = JSON.parse(responseText);
+ 
+                    if (response['success'] == true) {
+                        .............
+                    }
+                }
+            });
+        });
+    }
+};
+```
