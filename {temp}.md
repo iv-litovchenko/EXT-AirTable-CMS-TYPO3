@@ -312,5 +312,20 @@ $this->controllerContext->getFlashMessageQueue($queueIdentifier);
 
 $resourceStorage->copyFile($file, $targetFolder, 'target-file-name',DuplicationBehavior::RENAME);
 
+###
+BackendUserAuthentication->checkCLIuser()
+constTYPO3_cliKey
+constTYPO3_cliInclude
+$GLOBALS['MCONF']['name']
+$GLOBALS['temp_cliScriptPath']
+$GLOBALS['temp_cliKey']
+BackendUserAuthentication->checkCLIuser()
 
+•IconUtility::skinImg()
+•IconUtility::getIcon()
+•IconUtility::getSpriteIcon()
+•IconUtility::getSpriteIconForFile()
+•IconUtility::getSpriteIconForRecord()
+•IconUtility::getSpriteIconForResource()
+•IconUtility::getSpriteIconClasses()
 ```
