@@ -1256,7 +1256,11 @@ if(TYPO3_EDIT_MODE === true) {
 *********************
 * Other
 *********************
-<f:format.date format="d.m.Y H:i">1265798455</f:format.date>	
+<f:format.date format="d.m.Y H:i">1265798455</f:format.date>
+<f:variablename="myvariable">My variable's content</f:variable>
+<f:variablename="myvariable" value="My variable's content"/>
+{f:variable(name: 'myvariable', value: 'My variable\'s content')}
+{myoriginalvariable -> f:variable.set(name: 'mynewvariable')}
 ```
 
 ### Useful notes - TypoScript
