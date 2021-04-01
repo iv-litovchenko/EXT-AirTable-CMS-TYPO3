@@ -373,4 +373,8 @@ tt_content.image.20 {
 	</li>
 	</f:for>
 </ul>
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile('extension_name', 
+'Configuration/PageTS/myPageTSconfigFile.txt', 
+'My specialãÑconfig');
 ```
