@@ -301,4 +301,12 @@ class RecordAnalyzerSlot{
 	{// Processing herereturn array($results,$record);
 	}
 }
+
+FlashMessageQueue::getAllMessages($severity);
+FlashMessageQueue::getAllMessagesAndFlush($severity);
+FlashMessageQueue::removeAllFlashMessagesFromSession($severity);
+FlashMessageQueue::clear($severity);
+$this->controllerContext->getFlashMessageQueue($queueIdentifier);
+<f:flashMessagesqueueIdentifier="myQueue" />
+
 ```
