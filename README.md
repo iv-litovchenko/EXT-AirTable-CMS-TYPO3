@@ -1021,7 +1021,7 @@ Step 4) Go to the module "Admin Tools" > "Maintenance" > "Analyze Database Struc
 
 $recordId = 1774; // or path: "fileadmin/ftpupload/6/look.com.ua-74892.jpg"
 $image = $this->request->getArgument('form')['image']; // <f:form.upload property="image" />
-SysFile::cmdAdd('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id; ! Registering a file if the file was added via FTP 
+SysFile::cmdAddToIndex('fileadmin/ftpupload/6/look.com.ua-74892.jpg'); // return $id; ! Registering a file if the file was added via FTP 
 SysFile::cmdUpload($image,'fileadmin/ftpupload/8/', 'rename || replace || cancel'); // return $id;
 SysFile::cmdCreate('', '-- CONTENT --'); // Todo...
 SysFile::cmdUpdate('', '-- NEW CONTENT --', 'overwrite'); // Todo...
