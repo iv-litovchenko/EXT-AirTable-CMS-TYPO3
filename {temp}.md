@@ -377,4 +377,18 @@ tt_content.image.20 {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile('extension_name', 
 'Configuration/PageTS/myPageTSconfigFile.txt', 
 'My specialãÑconfig');
+
+\TYPO3\CMS\Backend\Utility::countVersionsOfRecordsOnPage()
+\TYPO3\CMS\Workspaces\Service\WorkspaceService::hasPageRecordVersions()
+\TYPO3\CMS\Backend\Utility::countVersionsOfRecordsOnPage()
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class)
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['indexed_search']['pi1_hooks']['getResultRows_SQLpointer'] = '&Acme\\MyExtension\\Hooks\\MysqlFulltextIndexHook';
+<?php 
+namespace\Acme\MyExtension\Hooks; 
+class MysqlFulltextIndexHook implements \TYPO3\CMS\Core\Core\SingletonInterface {...}
+
+/**@var $userSettingsController \TYPO3\CMS\Backend\Controller\UserSettingsController*/
+$userSettingsController = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Controller\UserSettingsController::class);
+$state = $userSettingsController->process('get', 'BackendComponents.States.' .$stateId);
 ```
