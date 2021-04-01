@@ -439,4 +439,81 @@ SWFOBJECT()
 QTOBJECT()
 SVG()
 $cObj->cObjGetSingle('SVG', $conf);
+
+
+myobj = TEXT
+myobj.value = <a href="/" class="myclass">MyText</a>
+myobj.HTMLparser.tags.a.fixAttrib.class {
+	userFunc = Tx\MyExt\Myclass->htmlUserFuncuserFunc.myparam = test1
+}
+
+function htmlUserFunc(array $params, HtmlParser $htmlParser) {
+	// $params['attributeValue'] contains the current attribute value "myclass".
+	// $params['myparam'] is set to "test" in the current example.
+}
+
+
+$lockFactory = GeneralUtility::makeInstance(LockFactory::class);
+$locker = $lockFactory->createLocker('someId');
+$locker->acquire() ||die('ups, lock couldn\'t be acquired. That should never happen.');
+$locker->release();
+
+$lockFactory = GeneralUtility::makeInstance(LockFactory::class);
+$locker = $lockFactory->createLocker('someId',LockingStrategyInterface::LOCK_CAPABILITY_SHARED | LockingStrategyInterface::LOCK_CAPABILITY_NOBLOCK);
+try{
+	$result = $locker->acquire(LockingStrategyInterface::LOCK_CAPABILITY_SHARED | LockingStrategyInterface::LOCK_CAPABILITY_NOBLOCK);
+
+} catch(LockAcquireWouldBlockException $e) {
+	// some process owns the lock, let's do something else meanwhile
+}
+if($result) {
+	$locker->release();
+}
+
+
+$view = GeneralUtility::makeInstance(StandaloneView::class);
+$view->setLayoutRootPaths($layoutPaths);
+$view->setPartialRootPaths($partialPaths);
+$view->setTemplateRootPaths($templatePaths);
+try{$view->setTemplate($templateName);
+}  catch(InvalidTemplateResourceException $e) {
+// no template $templateName found in given $templatePathsexit($e->getMessage());
+}
+$content = $view->render();
+
+$view = GeneralUtility::makeInstance(StandaloneView::class);
+$view->setLayoutRootPaths(array(GeneralUtility::getFileAbsFileName('EXT:my_ãÑextension/Resources/Private/Layouts')));
+$view->setPartialRootPaths(array(GeneralUtility::getFileAbsFileName('EXT:my_ãÑextension/Resources/Private/Partials')));
+$view->setTemplateRootPaths(array(GeneralUtility::getFileAbsFileName('EXT:my_ãÑextension/Resources/Private/Templates')));
+$view->setLayoutRootPaths(array(GeneralUtility::getFileAbsFileName('EXT:my_ãÑextension/Resources/Private/Layouts')))
+$view->setTemplate('Email/Notification');
+$emailBody = $view->render();
+
+$view = $this->objectManager->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
+$view->setFormat('html');
+$view->setTemplatePathAndFileName(ExtensionManagementUtility::extPath('myExt').'Resources/Private/Templates/Email.html');
+
+<f:mediafile="{file}" additionalConfig="{showinfo:1}" />
+$rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
+$rendererRegistry->registerRendererClass('MyCompany\\MySpecialMediaFile\\Rendering\\MySpecialMediaFileRenderer');
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['myvideo'] =ãÑ\MyCompany\Myextension\Helpers\MyVideoHelper::class;
+$rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::ãÑgetInstance();
+$rendererRegistry->registerRendererClass(\MyCompany\Myextension\Rendering\MyVideoRenderer::class);// Register an custom mime-type for your videos
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['myvideoãÑ'] = 'video/myvideo';// Register your custom file extension as allowed media file
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',myvideo';
+
+// Register your own online custom youtube helper class
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['youtube'] =ãÑ\MyCompany\Myextension\Helpers\YouTubeHelper::class;
+
+/**
+ * @SomeClassAnnotation A value
+ */
+class Foo{
+	$service =new\TYPO3\CMS\Extbase\Reflection\ReflectionService();
+	$classValues = $service->getClassTagsValues('Foo');
+	$classValue = $service->getClassTagValue('Foo', 'SomeClassAnnotation');
+}
+
 ```
