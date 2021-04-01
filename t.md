@@ -20,6 +20,10 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 ```
 
 ```
+А)
+ClassLoader::getAliasesForClassName()
+
+Б)
 Посмотри что делает переменная $moduleName?
 /***The name of the module
 **@var string*/
