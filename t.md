@@ -19,12 +19,6 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 7.2 - Переименовать функцию add -> addToIndex()
 9) Wizard
 10) 91 страница
-```
-
-```
-А)
-ClassLoader::getAliasesForClassName()
-
 
 
 
