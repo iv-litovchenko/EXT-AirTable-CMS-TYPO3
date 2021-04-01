@@ -2,8 +2,8 @@
 http://maru-consulting.com/typo3conf/Documentation/typo3cms.extensions.core/default/pdf/manual.core-8.7.pdf
 https://www.mittwald.de/fileadmin/pdf/dokus/Extbase_Fluid_Dokumentation.pdf
 https://www.koller-webprogramming.ch/tipps-tricks/typo3-extension-pibase/arbeiten-mit-sessions/
-https://various.at/news/typo3-9-custom-content-elements/
 
+https://various.at/news/typo3-9-custom-content-elements/
 https://various.at/news/typo3-data-processor
 https://various.at/news/typo3-tipps-und-tricks-psr-15-mideelware-am-beispiel-mailchimp-webhook
 https://various.at/news/grideditor-fuer-inhaltselemente
