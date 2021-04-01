@@ -193,6 +193,7 @@ mod.web_layout.tt_content.preview.list.example = EXT:site_mysite/Resources/Priva
 • BackendUtility::getFlexFormDS()
 • GeneralUtility::resolveSheetDefInDS()
 • GeneralUtility::resolveAllSheetsInDS()
+• GeneralUtility::flushOutputBuffers()
 
 extbase.controllerExtensionName
 extbase.pluginName
