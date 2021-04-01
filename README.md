@@ -442,7 +442,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 	</table>
 	
 	<!--If type "Plugin"-->
-	<f:link.action action="detailAction">Show me what's there!</f:link.action>
+	<f:link.action action="detail">Show me what's there!</f:link.action>
 	<f:link.action pageUid="1" route="Ext.Myext.Pages.Default.travels">--TEXT--</f:link.action>
 	<f:uri.action pageUid="1" route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
 </div>
@@ -1227,6 +1227,32 @@ if(TYPO3_EDIT_MODE === true) {
    ---
 </f:comment>
 
+*********************
+* Links
+*********************
+
+<!-- Backend module-->
+<f:be.link route="web_ts || Ext.Myext.Modules.NewModule2.index" parameters="{id: 92}">Go to module</f:be.link>
+
+<!-- Page -->
+<f:link.page pageUid="123" additionalParams="{foo:bar}">Klick me!</f:link.page>
+
+<!-- Action -->
+<f:link.action action="index" arguments="{page:1}">-- Link --</f:link.action>
+<f:link.action action="edit" class="btn btn-default btn-sm">-- Link --</f:link.action>
+
+<!-- 
+   Tested only in TYPO3 v10!
+   Switching to another controller is not easy!
+   Route name: Ext.[***extension***].[***subfolder***].[***controller***].[***action***]
+   Имя роутера - это pageId.controller.action. urlConverter преобразует в ЧПУ (как со страницами,
+   что бы сделать ссылку, мы ищем ID-страницы, а не маршрут. Здесь же ищем контроллер и действие.
+   // Todo: RouterList (продумать вывод списка маршрутов для отдалки)
+-->
+<f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.index"> --TEXT-- </f:link.action>
+<f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.travels"> --TEXT-- </f:link.action>
+<f:uri.action route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
+	
 ```
 
 ### Useful notes - TypoScript
