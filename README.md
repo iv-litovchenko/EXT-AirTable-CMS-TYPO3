@@ -1279,42 +1279,67 @@ if(TYPO3_EDIT_MODE === true) {
 ### Useful notes - TypoScript
 ```
 
-config.noPageTitle = 1
+page = PAGE
+page {
+	typeNum = 0
 
-page.headerData.10 = TEXT
-page.headerData.10.wrap = <title>-- TEXT --</title>
+	config {
+		noPageTitle = 1
+	}
 
-page.headerData.20 = TEXT 
-page.headerData.20.value ( 
-)
+	headTag (
+    	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<script type="text/javascript" src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/jquery-2.0.3.min.js"></script>
+		<script src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/modernizr.js"></script>
+		<!--[if lte IE 9]>
+		<script type="text/javascript" src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/html5shiv.js"></script>
+		<![endif]-->
+	)
+	
+	headerData.10 = TEXT
+	headerData.10.wrap = <title>-- TEXT --</title>
+	headerData.20 = TEXT 
+	headerData.20.value ( 
+		
+	)
+	
+	meta { 
+		X-UA-Compatible = IE=edge
+		X-UA-Compatible.attribute = http-equiv
+		og:site_name = TYPO3
+		og:site_name.attribute = property
+		description = -- TEXT --
+		keywords = -- TEXT --
+		page-topic = -- TEXT --
+		dc.title = -- TEXT --
+		dc.description = -- TEXT --
+		abstract = -- TEXT --
+		author = -- TEXT --
+		robots = index,follow
+	}
 
-page.meta.X-UA-Compatible = IE=edge
-page.meta.X-UA-Compatible.attribute = http-equiv
-page.meta.og:site_name = TYPO3
-page.meta.og:site_name.attribute = property
-page.meta.description = -- TEXT --
-page.meta.keywords = -- TEXT --
-page.meta.page-topic = -- TEXT --
-page.meta.dc.title = -- TEXT --
-page.meta.dc.description = -- TEXT --
-page.meta.abstract = -- TEXT --
-page.meta.author = -- TEXT --
-page.meta.robots = index,follow
+	bodyTag = <body>
+	bodyTagAdd = class="example"
 
-page.bodyTag = <body>
-page.bodyTagAdd = class="example"
+	includeCSS {
+		main = EXT:myext/Resources/Public/Css/print.css
+		print = EXT:myext/Resources/Public/Css/print.css
+		print.media = print
+	}
 
-page.includeCSS.file1 = fileadmin/css/main.css
-page.includeCSS.file5 = fileadmin/css/fce.css
+	includeJS {}
+	includeJSFooter {
+		main = EXT:myext/Resources/Public/Javascript/main.js
+		bootstrap = EXT:myext/Resources/Public/Javascript/...js
+	}
 
-page.includeJS.file1 = fileadmin/js/script.js
-page.includeJS.file2 = fileadmin/js/javascript.js
-page.includeJSFooter
-
-page.footerData.10 = TEXT
-page.footerData.10.value = <script src="...."></script>
-page.footerData.20 = TEXT
-page.footerData.20.value = <!-- Hello from the comment! -->
+	footerData.10 = TEXT
+	footerData.10.value = <script src="...."></script>
+	footerData.20 = TEXT
+	footerData.20.value = <!-- Hello from the comment! -->
+}
 
 # CONDITIONS
 https://www.koller-webprogramming.ch/tipps-tricks/typoscript/bedingungen/
