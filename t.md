@@ -9,6 +9,7 @@ public functionmodifyPageLinkConfiguration(array $linkConfiguration, array $link
 2) Иконка редактирования с ворот? с vorot
 
 3) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
+$iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
 
 4) Em_Conf?
 ```
