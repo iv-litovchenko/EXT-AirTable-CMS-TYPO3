@@ -153,6 +153,9 @@ tt_content.stdWrap.innerWrap.cObject.key.field = frame_class
 tt_content.stdWrap.innerWrap.cObject.ruler-before =< tt_content.stdWrap.innerWrap.cObject.defaul
 tt_content.stdWrap.innerWrap.cObject.ruler-before.20.10.value = csc-frame csc-frame-ruler-before
 
+• CSS Styled Content= EXT:css_styled_content/Configuration/TypoScript/
+• Fluid Styled Content= EXT:fluid_styled_content/Configuration/TypoScript/
+
 - Configuration/TypoScript
 | - ContentElement
 | | - Bullets.txt
