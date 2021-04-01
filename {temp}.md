@@ -309,4 +309,8 @@ FlashMessageQueue::clear($severity);
 $this->controllerContext->getFlashMessageQueue($queueIdentifier);
 <f:flashMessagesqueueIdentifier="myQueue" />
 
+
+$resourceStorage->copyFile($file, $targetFolder, 'target-file-name',DuplicationBehavior::RENAME);
+
+
 ```
