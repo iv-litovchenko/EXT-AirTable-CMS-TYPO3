@@ -1254,6 +1254,13 @@ if(TYPO3_EDIT_MODE === true) {
 <f:uri.action route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
 
 *********************
+* Form
+*********************
+<f:form.checkboxproperty="cms" multiple="1" value="TYPO3" />
+<f:form.checkboxproperty="cms" multiple="1" value="Word Press" />
+<f:form.checkboxproperty="cms" multiple="1" value="Drupal" />
+
+*********************
 * Other
 *********************
 <f:format.date format="d.m.Y H:i">1265798455</f:format.date>
