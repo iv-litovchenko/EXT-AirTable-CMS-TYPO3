@@ -241,4 +241,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['interceptors']
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Frontend\Plugin\AbstractPlugin::class]
 ['pi_list_browseresults'][1463475262] =\Vendor\ExtensionKey\Hook\ResultBrowserHook::class
+
+$uriBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Routing\UriBuilder::class);
+$path = $uriBuilder->buildUriFromRoute('ajax_myroute');
 ```
