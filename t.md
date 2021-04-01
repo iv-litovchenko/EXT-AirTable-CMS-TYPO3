@@ -7,7 +7,6 @@ public functionmodifyPageLinkConfiguration(array $linkConfiguration, array $link
    $linkConfiguration['additionalParams'] .= $pageRow['myAdditionalParamsField'];
    return $linkConfiguration;
 }
-2) Иконка редактирования с ворот? с vorot
 
 3) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
@@ -16,10 +15,7 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 5) Пагинация
 6) Убрать кнопку удалить (сделать вкл., выкл контента на Ajax)
 7) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
-7.2 - Переименовать функцию add -> addToIndex()
 9) Wizard
-10) 91 страница
-
 
 
 <?php
