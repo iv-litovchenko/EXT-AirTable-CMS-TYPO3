@@ -410,6 +410,7 @@ $rows = $pageRepository->getMenu(array(2, 3));
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Type\File\FileInfo::class]['mimeTypeGuessers']
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['countVersionsOfRecordsOnPage'][] = 'My\Package\HookClass->hookMethod';
 
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['EXAMPLE'] = Acme\MyExtension\ContentObject\ExampleContentObject::class
 FLOWPLAYER()
 TEXT()
 CLEARGIF()
