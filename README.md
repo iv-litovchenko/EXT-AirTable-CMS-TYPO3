@@ -1252,7 +1252,11 @@ if(TYPO3_EDIT_MODE === true) {
 <f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.index"> --TEXT-- </f:link.action>
 <f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.travels"> --TEXT-- </f:link.action>
 <f:uri.action route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
-	
+
+*********************
+* Other
+*********************
+<f:format.date format="d.m.Y H:i">1265798455</f:format.date>	
 ```
 
 ### Useful notes - TypoScript
