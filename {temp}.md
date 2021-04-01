@@ -395,4 +395,48 @@ class MysqlFulltextIndexHook implements \TYPO3\CMS\Core\Core\SingletonInterface 
 /**@var $userSettingsController \TYPO3\CMS\Backend\Controller\UserSettingsController*/
 $userSettingsController = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Controller\UserSettingsController::class);
 $state = $userSettingsController->process('get', 'BackendComponents.States.' .$stateId);
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Frontend\Page\PageRepository::class]['init']
+implement  \TYPO3\CMS\Frontend\Page\PageRepositoryInitHookInterface
+
+$fileIdentifier = '/tmp/foo.html';
+$fileInfo = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Type\File\FileInfo::class,$fileIdentifier);
+echo$fileInfo->getMimeType();
+
+$pageRepository = new\TYPO3\CMS\Frontend\Page\PageRepository();
+$pageRepository->init(false);
+$rows = $pageRepository->getMenu(array(2, 3));
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Type\File\FileInfo::class]['mimeTypeGuessers']
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['countVersionsOfRecordsOnPage'][] = 'My\Package\HookClass->hookMethod';
+
+FLOWPLAYER()
+TEXT()
+CLEARGIF()
+COBJ_ARRAY()
+USER()
+FILE()
+FILES()
+IMAGE()
+IMG_RESOURCE()
+IMGTEXT()
+CONTENT()
+RECORDS()
+HMENU()
+CTABLE()
+OTABLE()
+COLUMNS()
+HRULER()
+CASEFUNC()
+LOAD_REGISTER()
+FORM()
+SEARCHRESULT()
+TEMPLATE()
+FLUIDTEMPLATE()
+MULTIMEDIA()
+MEDIA()
+SWFOBJECT()
+QTOBJECT()
+SVG()
+$cObj->cObjGetSingle('SVG', $conf);
 ```
