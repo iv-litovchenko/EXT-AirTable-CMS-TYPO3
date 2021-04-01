@@ -9,11 +9,11 @@ public functionmodifyPageLinkConfiguration(array $linkConfiguration, array $link
 }
 
 3) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
-$iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
+$iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
 
 4) Em_Conf (посмотреть как это описывается в WW)?
 5) Пагинация
-6) Убрать кнопку удалить (сделать вкл., выкл контента на Ajax)
 7) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 9) Wizard
 
