@@ -2212,6 +2212,7 @@ http://iv-litovchenko.ru
   * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
+* Em_Conf.php + ext_conf_template.txt = One file "Package.txt(.php)"
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
 * Flexform (может пригодится для атрибутов)
