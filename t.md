@@ -13,4 +13,5 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 
 4) Em_Conf (посмотреть как это описывается в WW)?
 5) Пагинация
+6) Убрать кнопку удалить (сделать вкл., выкл контента на Ajax)
 ```
