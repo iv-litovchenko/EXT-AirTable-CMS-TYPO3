@@ -12,4 +12,5 @@ public functionmodifyPageLinkConfiguration(array $linkConfiguration, array $link
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
 
 4) Em_Conf (посмотреть как это описывается в WW)?
+5) Пагинация
 ```
