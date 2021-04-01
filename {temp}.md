@@ -20,7 +20,15 @@
 ### https://extensions.typo3.org/extension/migration_core
 ### Поковыряй https://nextras.org/orm/docs/4.0/ (рекурсивные функции очень интересно удаление рекурсивно)
 
-
+## Любой объект можно переделать!
+```
+config {
+    tx_extbase {
+        objects {
+            TYPO3\CMS\Extbase\Mvc\View\NotFoundView.className = TYPO3\CMS\FrontendEditing\Mvc\View\NotFoundView
+        }
+    }
+```
 
 ## Задокументироват
 
