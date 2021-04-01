@@ -330,4 +330,47 @@ BackendUserAuthentication->checkCLIuser()
 •IconUtility::getSpriteIconClasses()
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_cacheStore']
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_cacheStore']
+\TYPO3\CMS\Backend\Utility\BackendUtility::getModuleUrl('new_content_element')
+
+
+tt_content.image.20 = FLUIDTEMPLATE
+tt_content.image.20 {
+	file = EXT:myextension/Resources/Private/Templates/ContentObjects/Image.html
+	dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+	dataProcessing.10 {
+		references.fieldName = image
+		references.table = tt_content
+		files = 21,42
+		collections = 13,14
+		folders = 1:introduction/images/,1:introduction/posters/
+		folders.recursive = 1
+		sorting = description
+		sorting.direction = descending
+		as = myfiles
+		
+	dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
+	dataProcessing.20 {
+		filesProcessedDataKey = files
+		numberOfColumns.field = imagecols
+		equalMediaWidth.field = imagewidth
+		maxGalleryWidth = 1000
+		maxGalleryWidthInText = 1000
+		columnSpacing = 0
+		borderEnabled.field = imageborder
+		borderWidth = 0
+		borderPadding = 10
+		equalMediaHeight.field = imageheight
+		mediaOrientation.field = imageorient
+		as = gallery
+	}
+		
+<ul>
+	<f:for each="{myfiles}" as="file">
+	<li><ahref="{file.publicUrl}">
+		{file.name}</a>
+	</li>
+	</f:for>
+</ul>
 ```
