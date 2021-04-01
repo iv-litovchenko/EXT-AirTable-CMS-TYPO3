@@ -1,6 +1,5 @@
 ```
 1) Можно ли сделать Дата процессор - это и будут defaultAssign... https://docs.typo3.org/typo3cms/extensions/content_rendering_core/2.0.0/AddingYourOwnContentElements/Index.html
-
 2) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
 $iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
