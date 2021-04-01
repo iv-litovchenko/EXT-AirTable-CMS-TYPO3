@@ -1745,16 +1745,18 @@ $rules = [
         'max:5' => 'MSG ERROR - max',
         'custom_rule:p1,p2,p3..' => 'MSG ERROR - my rule'
     ],
+    // <f:form.upload property="image" />
     'image' => [
-        'name' => '--- ONE IMAGE ---', // <f:form.upload property="image" />
+        'name' => '--- ONE IMAGE ---',
         'required' => 'MSG ERROR - required',
         // 'file' => 'MSG ERROR - only file', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
         'image' => 'MSG ERROR - only image', // new \Symfony\Component\HttpFoundation\File\UploadedFile();
         'max:100' => 'MSG ERROR - max size', // max:10240 = max 10 MB. three zero "000"
         'mimes:png,jpg,jpeg,gif' => 'MSG ERROR - png,jpg,jpeg,gif'
     ],
+    // <f:form.upload property="images" multiple="true" />
     'images' => [
-        'name' => '--- MANY IMAGES ---', // <f:form.upload property="images" multiple="true" />
+        'name' => '--- MANY IMAGES ---',
         'required' => 'MSG ERROR - required',
         'min:3' => 'MSG ERROR - min', 
         'max:5' => 'MSG ERROR - max',
@@ -1780,6 +1782,12 @@ $validator->addExtension('custom_rule', function($attribute, $value, $parameters
     } else {
         return false;
     }
+});
+
+// ??? addRule() ??? // Todo
+// ??? validate() ??? // Todo
+$v->sometimes('VAT', 'required|max:50', function ($input) {
+    return $input->account_type == 'business';
 });
 
 if ($validator->passes()) { } //ok
