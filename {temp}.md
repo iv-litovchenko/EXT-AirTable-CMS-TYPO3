@@ -220,4 +220,25 @@ GeneralUtility::getFileAbsFileName()
 PathUtility::getAbsoluteWebPath()
 GeneralUtility::getFileAbsFileName())
 ExtensionManagementUtility::extPath()
+
+linkHandler
+t3://page?uid=13
+t3://page?alias=myfunkyalias
+t3://page?uid=13&type=3
+t3://page?uid=1313&my=param&will=get&added=here
+t3://page?alias=myfunkyalias#c123
+t3://page?uid=13&type=3#c123
+t3://page?uid=13&type3?my=param&will=get&added=here#c123
+t3://file?identifier=folder/myfile.jpg
+t3://file?uid=13
+t3://folder?identifier=fileadmin
+t3://folder?storage=1&identifier=myfolder
+t3://file?uid=134&renderAs=png
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['expressionNodeTypes'][]
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['preProcessors'][]
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['interceptors']
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Frontend\Plugin\AbstractPlugin::class]
+['pi_list_browseresults'][1463475262] =\Vendor\ExtensionKey\Hook\ResultBrowserHook::class
 ```
