@@ -4,8 +4,6 @@
 2) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
 $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
 $iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
-
-3) Em_Conf (посмотреть как это описывается в WW)?
 4) Пагинация
 5) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 6) Wizard для страниц...
