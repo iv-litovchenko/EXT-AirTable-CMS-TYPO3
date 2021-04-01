@@ -18,6 +18,7 @@ $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);$iconRegistry-
 7) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 7.2 - Переименовать функцию add -> addToIndex()
 9) Wizard
+10) 91 страница
 ```
 
 ```
