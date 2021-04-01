@@ -189,4 +189,8 @@ tt_content.stdWrap.innerWrap.cObject.ruler-before.20.10.value = csc-frame csc-fr
 | - setup.txt
 
 mod.web_layout.tt_content.preview.list.example = EXT:site_mysite/Resources/Private/ãÑTemplates/Preview/ExamplePlugin.html
+
+• BackendUtility::getFlexFormDS()
+• GeneralUtility::resolveSheetDefInDS()
+• GeneralUtility::resolveAllSheetsInDS()
 ```
