@@ -15,6 +15,7 @@ https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konf
 https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-standartkonfig-kurz/
 https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-textstyle-und-blockstyle/
 https://www.koller-webprogramming.ch/tipps-tricks/typo3-inhaltselemente/rte-konfig-blockformat/
+https://www.koller-webprogramming.ch/tipps-tricks/typo3-extension-pibase/arbeiten-mit-sessions/
 
 https://extensions.typo3.org/extension/div2007
 https://extensions.typo3.org/extension/migration_core
