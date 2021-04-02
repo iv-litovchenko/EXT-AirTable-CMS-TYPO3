@@ -1049,6 +1049,13 @@ SysFileStorage::cmdDirDelete;
 \Litovchenko\AirTable\Domain\Model\Users\BeUsers;
 \Litovchenko\AirTable\Domain\Model\Users\FeGroups;
 \Litovchenko\AirTable\Domain\Model\Users\FeUsers;
+
+// Other table
+$filter = [];
+$filter['select'] = ['id','identifier','tag'];
+$filter['from'] = ['cache_pages_tags'];
+$rows = \Litovchenko\AirTable\Domain\Model\DynamicModelCrud::recSelect('get',$filter); // Any tables 
+// $rows = DB::table('cache_pages_tags'); // use Illuminate\Database\Capsule\Manager as DB; 
 ```
 
 ## 12 Extending an existing model
@@ -2221,6 +2228,7 @@ http://iv-litovchenko.ru
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
 * Em_Conf.php + ext_conf_template.txt = One file "Package.txt(.php)"
+* Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
 * Flexform (может пригодится для атрибутов)
