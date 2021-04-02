@@ -1192,6 +1192,7 @@ $GLOBALS['TSFE']->pageRenderer->addCssFile('/_css.css'); // addCssInlineBlock
 $GLOBALS['TSFE']->set_cache(); // Проверили все параметры - разрешаем кэширование страниц (+1 экземпляр) - Альтернатива "cHash"
 $GLOBALS['TSFE']->set_cache_timeout_default(300);
 $GLOBALS['TSFE']->addCacheTags(['myTag_travelsAction']); // If you need to manually reset the cache 
+$GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo 
 // $GLOBALS['TSFE']->setPageNotFoundAndExit(' Msg // Todo '); // throw new \Exception('Invalid data'); // $this->throwStatus(404, 'FE', 'Msg');
 ```
 
