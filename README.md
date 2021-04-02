@@ -1175,6 +1175,24 @@ if(TYPO3_AJAX_MODE === true) {
 if(TYPO3_EDIT_MODE === true) {
     // ...
 }
+
+// Виртуальные страницы
+// $titleProvider = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\Litovchenko\AirTable\PageRender\ExtensionsPageTitleProvider::class);
+// $titleProvider->setTitle("Title from controller action");
+$GLOBALS['TSFE']->pageRenderer->setTitle('Hellow word!'); // "Title from controller action" // $this->objectManager->get(\TYPO3\CMS\Core\Page\PageRenderer::class)->setTitle('My title');
+$GLOBALS['TSFE']->pageRenderer->setMetaTag('name','description','content description');
+$GLOBALS['TSFE']->pageRenderer->setMetaTag('name','keywords','content keywords');
+$GLOBALS['TSFE']->pageRenderer->addHeaderData('<script>alert(1);</script>'); // addFooterData
+$GLOBALS['TSFE']->pageRenderer->addJsFile('/_js.js', 'text/javascript', false); // addJsFile // addJsFooterFile // addJsInlineCode // addJsFooterInlineCode
+$GLOBALS['TSFE']->pageRenderer->addCssFile('/_css.css'); // addCssInlineBlock
+		
+// set_cache() нужно устанавливать после проверки нужных параметров, в противном случае это может привести к затоплению БД
+// http://site.com/router/page/(1-10000....)
+// таким способом генерируются кэшированные виртуальные страницы
+$GLOBALS['TSFE']->set_cache(); // Проверили все параметры - разрешаем кэширование страниц (+1 экземпляр) - Альтернатива "cHash"
+$GLOBALS['TSFE']->set_cache_timeout_default(300);
+$GLOBALS['TSFE']->addCacheTags(['myTag_travelsAction']); // If you need to manually reset the cache 
+// $GLOBALS['TSFE']->setPageNotFoundAndExit(' Msg // Todo '); // throw new \Exception('Invalid data'); // $this->throwStatus(404, 'FE', 'Msg');
 ```
 
 ### Useful notes - Fluid
