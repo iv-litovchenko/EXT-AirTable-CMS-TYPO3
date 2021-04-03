@@ -3,8 +3,7 @@
 2) Шорткоды передать
 3) Многостраничники плагин VS pagecontent
 4) Остановился на разработке каталога (Пагинация , Хлеб крошки)
-5) TS Include
-6) Пересмотреть Tabs, Position
+5) Пересмотреть Tabs, Position
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
