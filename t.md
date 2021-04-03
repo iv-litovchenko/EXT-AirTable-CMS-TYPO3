@@ -5,6 +5,7 @@
 4) Wizard для страниц...
 5) Шорткоды передать
 6) Остановился на разработке каталога
+7) Многостраничники плагин VS pagecontent
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
