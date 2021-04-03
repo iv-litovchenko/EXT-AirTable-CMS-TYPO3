@@ -7,6 +7,7 @@
 6) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 7) TS Include
 8) Пересмотреть Tabs, Position
+9) Шаблон для страницы не задан.
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
