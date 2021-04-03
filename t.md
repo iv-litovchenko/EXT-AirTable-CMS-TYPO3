@@ -1,14 +1,10 @@
 ```
 1) Можно ли сделать Дата процессор - это и будут defaultAssign... https://docs.typo3.org/typo3cms/extensions/content_rendering_core/2.0.0/AddingYourOwnContentElements/Index.html
-2) <core:iconidentifier="my-icon-identifier" /> (переделать авторегистрацию иконок)
-$iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-$iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
-4) Пагинация
-5) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
-6) Wizard для страниц...
-7) Constructor
-8) Шорткоды передать
-9) Остановился на разработке каталога
+2) Пагинация
+3) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
+4) Wizard для страниц...
+5) Шорткоды передать
+6) Остановился на разработке каталога
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
