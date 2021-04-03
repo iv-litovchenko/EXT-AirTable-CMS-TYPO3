@@ -7,6 +7,8 @@ $iconRegistry->registerFileExtension('log', 'icon-identiifer-for-log-files');
 5) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 6) Wizard для страниц...
 7) Constructor
+8) Шорткоды передать
+9) Остановился на разработке каталога
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
