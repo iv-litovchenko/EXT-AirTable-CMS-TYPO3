@@ -1,5 +1,4 @@
 ```
-1) Можно ли сделать Дата процессор - это и будут defaultAssign... https://docs.typo3.org/typo3cms/extensions/content_rendering_core/2.0.0/AddingYourOwnContentElements/Index.html
 2) getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 3) Wizard для страниц...
 4) Шорткоды передать
