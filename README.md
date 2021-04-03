@@ -2244,6 +2244,7 @@ http://iv-litovchenko.ru
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
   * <f:for each="{orderItems.files}" as="file"><f:image src="{file.uid}" treatIdAsReference="1" /></f:for>
   * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
+  * getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
 * Em_Conf.php + ext_conf_template.txt = One file "Package.txt(.php)"
