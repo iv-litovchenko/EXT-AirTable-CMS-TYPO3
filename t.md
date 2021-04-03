@@ -6,7 +6,7 @@
 5) Многостраничники плагин VS pagecontent
 6) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 7) Include
-8) Пересмотреть Tags, Position
+8) Пересмотреть Tabs, Position
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
