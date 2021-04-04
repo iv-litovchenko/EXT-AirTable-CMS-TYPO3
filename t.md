@@ -1,8 +1,9 @@
 ```
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
-2) Шорткоды передать
-3) Для страницы #253 не задан шаблон
-4) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
+2) Секции
+3) Шорткоды передать
+4) Для страницы #253 не задан шаблон
+5) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
 
