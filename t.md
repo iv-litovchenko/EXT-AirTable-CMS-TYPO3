@@ -4,7 +4,37 @@
 3) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
-4) Вставить до
+
+
+site_package/
+site_package/Configuration
+site_package/Configuration/TCA
+site_package/Configuration/TCA/Overrides
+site_package/Configuration/TCA/Overrides/sys_template.php
+site_package/Configuration/TypoScript
+site_package/Configuration/TypoScript/constants.typoscript
+site_package/Configuration/TypoScript/setup.typoscript
+site_package/ext_emconf.php
+site_package/ext_icon.png
+site_package/Resources
+site_package/Resources/Private
+site_package/Resources/Private/Layouts
+site_package/Resources/Private/Layouts/Page
+site_package/Resources/Private/Layouts/Page/Default.html
+site_package/Resources/Private/Partials
+site_package/Resources/Private/Partials/Page
+site_package/Resources/Private/Partials/Page/Jumbotron.html
+site_package/Resources/Private/Templates
+site_package/Resources/Private/Templates/Page
+site_package/Resources/Private/Templates/Page/Default.html
+site_package/Resources/Public
+site_package/Resources/Public/Css
+site_package/Resources/Public/Css/website.css
+site_package/Resources/Public/Images/
+site_package/Resources/Public/Images/logo.png
+site_package/Resources/Public/JavaScript
+site_package/Resources/Public/JavaScript/website.js
+
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
