@@ -2,11 +2,34 @@
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 2) Шорткоды передать
 3) Для страницы #253 не задан шаблон
-4)  <v:condition.type.isInteger value="{settings.stringAsInteger}" then="SUCCESS - {settings.stringAsInteger}" else="FAILED - {settings.stringAsInteger}" />
-5) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
+4) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
 
+
+
+-----------------
+<f:section name="HeaderAssets">
+  <title>Super title from fluid</title>
+  fewfefewfewfew
+  fewfefewfewfewefew
+</f:section>
+
+
+<f:render partial="Page.Header" arguments="{_all}" />
+	
+	<f:vhsExtAirTable.content colPos="0" />
+
+<f:render partial="Page.Footer" arguments="{_all}" />
+
+
+<f:section name="FooterAssets">
+  <title>Super title from fluid</title>
+  fewfefewfewfew
+  fewfefewfewfewefew
+</f:section>
+
+------------------
 
 
 Зарегистрируйте  flux как плагин контента.
