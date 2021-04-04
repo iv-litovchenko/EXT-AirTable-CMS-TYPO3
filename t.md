@@ -4,6 +4,14 @@
 4) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 5) Пересмотреть Tabs, Position
 
+* FAL:  Конвертация массива файлов with() в объекы FAL при выборке (скорее всего сделаем свой обработчик)? 
+  * Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
+  * https://laravel.com/docs/8.x/eloquent-mutators 
+  * https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/UsingFal/Frontend.html
+  * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
+  * <f:for each="{orderItems.files}" as="file"><f:image src="{file.uid}" treatIdAsReference="1" /></f:for>
+  * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
+
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
 
