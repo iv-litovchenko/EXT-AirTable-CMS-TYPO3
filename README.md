@@ -2236,15 +2236,8 @@ http://iv-litovchenko.ru
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
-* FAL:  Конвертация массива файлов with() в объекы FAL при выборке (скорее всего сделаем свой обработчик)? 
-  * Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
-  * https://laravel.com/docs/8.x/eloquent-mutators 
-  * https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/UsingFal/Frontend.html
-  * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
-  * <f:for each="{orderItems.files}" as="file"><f:image src="{file.uid}" treatIdAsReference="1" /></f:for>
-  * <f:for each="{juchgasse.bimagesingle}" as="image"><f:image src="{image.originalResource.publicUrl}" width="200" /></f:for>
-  * getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
+* getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 * Default Assign (t3page, t3data, ...)
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
