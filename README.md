@@ -2228,14 +2228,13 @@ http://iv-litovchenko.ru
   * б) для массива данных
   * Аналоги: https://extensions.typo3.org/extension/nsb_cat2menu/, https://stackoverflow.com/questions/40706825/typo3-sys-category-menu)
   * Во многих CMS меню создается отдельно
-  * ItemsProcFunc MENU
+  * ItemsProcFunc MENU special = userfunction special.userFunc = Vendor\MyExtension\Userfuncs\CustomMenu->makeMenuArray
+  * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
 * (Wrapper PageElements/Wrapper/Wrap1Controller.php) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/)
 * (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html)
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
-* Page template (with controller), url-path (LinkHandler) for tx_data (Similar to WW post templates)
-* Pages VS TxData (Maybe it's kindred spirits like in WW)???
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
 * FAL:  Конвертация массива файлов with() в объекы FAL при выборке (скорее всего сделаем свой обработчик)? 
   * Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
@@ -2247,30 +2246,9 @@ http://iv-litovchenko.ru
   * getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * Default Assign (t3page, t3data, ...)
-* Em_Conf.php + ext_conf_template.txt = One file "Package.txt(.php)"
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
 * Flexform (может пригодится для атрибутов)
 https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
 https://www.medienreaktor.de/blog/dynamic-backend-forms-in-typo3-using-flux
-* EditIcons для меню "lib.custommenu = HMENU" (будет еще 1 класс <f:EditIconOnlyHover(Abs)> - показать кнопки только при наведении на объект)
-  * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
-```
-# ************************
-# CUSTOM MENU
-# ************************
-lib.custommenu = HMENU
-lib.custommenu {
-   # special = userfunction
-   # special.userFunc = Vendor\MyExtension\Userfuncs\CustomMenu->makeMenuArray
-
-   1 = TMENU
-   1.wrap = <ul class="level-1">|</ul>
-   1.NO = 1
-   1.NO {
-      wrapItemAndSub = <li>|</li>
-	  wrapItemAndSub.stdWrap.editPanel = 1
-	  wrapItemAndSub.stdWrap.editPanel.tableName = pages
-   }
-```
