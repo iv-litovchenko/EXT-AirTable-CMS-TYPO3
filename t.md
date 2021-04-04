@@ -6,6 +6,29 @@
 5) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
+
+
+
+Зарегистрируйте  flux как плагин контента.
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'FluidTYPO3.Flux',
+    'Content',
+    [
+        'Content' => 'render, error',
+    ]
+);
+
+Добавьте TS для нового CTYPE
+
+tt_content.flux_2columns = USER
+tt_content.flux_2columns {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = FluidTYPO3
+    extensionName = Flux
+    pluginName = Content
+}
+
  
 
 
