@@ -659,11 +659,13 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         // Example 'position' => ['fields']['prop_***']['position']['type' => 'tab,position number'] add to type "1" (RType)
         // Example 'position' => ['fields']['prop_***']['position']['*' => 'mytab,100'] "*" adding to all types
         // Example 'position' => ['fields']['prop_***']['position']['1' => 'mytab,100'] add to type "1" (RType)
-        'tabs' => [
-            'mytab' => 'My Tab (###COUNT###)',
-            'tabKeyOne' => 'Tab 1 (###COUNT###)',
-            'tabKeyTwo' => 'Tab 2 (###COUNT###)',
-            'tabKeyTtree' => 'Tab 3 (###COUNT###)',
+        'formSettings' => [
+            'tabs' => [
+                'mytab' => 'My Tab (###COUNT###)',
+                'tabKeyOne' => 'Tab 1 (###COUNT###)',
+                'tabKeyTwo' => 'Tab 2 (###COUNT###)',
+                'tabKeyTtree' => 'Tab 3 (###COUNT###)',
+            ],
         ],
         //////////////////////////////////////
         // Special table fields
@@ -1080,16 +1082,18 @@ class ExtSysFile extends \Litovchenko\AirTable\Domain\Model\Fal\SysFile
     public static $TYPO3 = [
         'thisIs' => 'BackendModelExtending',
         'description' => 'From EXT:myext - adding fields to the page model',
-        'tabs' => [
-            'newtab' => 'EXT:Myext New Tab (###COUNT###)'
-        ],
-        'baseFields' => [
-            'RType' => [
-                'items' => [
-                    '100' => 'New Type',
-                ]
-            ],
-        ],
+        // 'formSettings' => [
+        //     'tabs' => [
+        //         'newtab' => 'EXT:Myext New Tab (###COUNT###)'
+        //     ],
+        // ],
+        // 'baseFields' => [
+        //     'RType' => [
+        //         'items' => [
+        //             '100' => 'New Type',
+        //         ]
+        //     ],
+        // ],
         'dataFields' => [
             'prop_tx_myext_incrandphoto' => [
                 'type' => 'Flag',
