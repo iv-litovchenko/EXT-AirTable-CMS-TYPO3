@@ -1,11 +1,10 @@
 ```
-2) Шорткоды передать
-4) Остановился на разработке каталога (Пагинация , Хлеб крошки)
-
-* FAL:  Конвертация массива файлов with() в объекы FAL при выборке (скорее всего сделаем свой обработчик)? 
-  * Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
+1) Шорткоды передать
+2) Остановился на разработке каталога (Пагинация , Хлеб крошки)
+3) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
+4) Вставить до
 
 <?php
 namespace Litovchenko\Projiv\Controller\PagesElements\Elements;
