@@ -2,6 +2,8 @@
 
 A set of tools for creating your site based on class annotations. Works in versions TYPO3 v9, v10. The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway.
 
+![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/Iv-Litovchenko.Ru-Edit-Buttons.png.png)
+
 ## Table of content
 
 * 01 [Demo site online](#01-demo-site-online)
