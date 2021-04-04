@@ -655,11 +655,8 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
         'name' => 'New table name',
         'description' => 'New table description',
         'defaultListTypeRender' => '0 || 1 || 2 || 3',
-        // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs "BE -> debug -> true"
-        // Example 'position' => ['fields']['prop_***']['position']['type' => 'tab,position number'] add to type "1" (RType)
-        // Example 'position' => ['fields']['prop_***']['position']['*' => 'mytab,100'] "*" adding to all types
-        // Example 'position' => ['fields']['prop_***']['position']['1' => 'mytab,100'] add to type "1" (RType)
         'formSettings' => [
+            // Turn on the setting in "LocalConfiguration.php" to see the names of columns and tabs "BE -> debug -> true"
             'tabs' => [
                 'mytab' => 'My Tab (###COUNT###)',
                 'tabKeyOne' => 'Tab 1 (###COUNT###)',
@@ -719,7 +716,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
             // For this to work, you need:
             // 1) create a category model (NewTableCategory.php) in the current directory
             // 2) add trait "\Litovchenko\AirTable\Domain\Model\Traits\ParentRow" to model "NewTableCategory.php"
-	    'propref_parent', // M-1
+            'propref_parent', // M-1
             'propref_category', // Categorization M-1
             // or 'propref_categories', //  Categorization M-M
 
@@ -756,10 +753,18 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 'onChangeReload' => 1, // Reload the form when the field value changes
                 'displayCond' => 'USER:Litovchenko\AirTable\Domain\Model\Content\Data->isVisibleDisplayConditionMatcher:tx_data', // Example
                 'exclude' => 1, // Todo
-                'position' => [
-                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'media', // ,10
-                ],
+
+                // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
+                // Example 'position' => ['fields']['prop_***']['position'][][type|tab|position'] add to type "1" (RType)
+                // Example 'position' => ['fields']['prop_***']['position'][]['*|mytab|100'] "*" adding to all types
+                // Example 'position' => ['fields']['prop_***']['position'][]['1|mytab|100'] add to type "1" (RType)
+                'position' => '*|props|10', // '<RType>|<Tab>|<Num>'
+                // 'position' => [
+                    // '*|props|10',
+                    // 'news|props|10',
+                    // 'article|props|10',
+                    // ...
+                // ],
             ],
             // Text
             'prop_nametext' => [
@@ -839,12 +844,9 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 // 'type' => 'Media_1 || Media_1.Image || Media_1.Mix', // One
                 'type' => 'Media_M || Media_M.Image || Media_M.Mix', // Many
                 'name' => 'Field Media_1',
+                'position' => '*|media|10', // '<RType>|<Tab>|<Num>' ("RType")
                 'show' => 1,
                 'maxItems' => 10,
-                'position' => [
-                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'media', // ,10
-                ],
             ],
             // ...
         ],
@@ -855,6 +857,7 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
             'propref_tags' => [
                 'type' => 'Rel_1To1', // || Rel_1ToM || Rel_MTo1(.Large) || Rel_MToM(.Large) || Rel_Poly_1To1 || Rel_Poly_1ToM
                 'name' => 'Field Rel_1To1',
+                'position' => '*|rels|10', // '<RType>|<Tab>|<Num>' ("RType")
                 'show' => 1,
                 'foreignModel' => 'Mynamespace\Myext\Domain\Model\Tag', // tx_myext_dm_tag
                 'foreignKey' => 'propref_newtable',
@@ -869,10 +872,6 @@ class NewTable extends \Litovchenko\AirTable\Domain\Model\ModelCrud
                 ],
                 'foreignDefaults' => [
                     'CType' => 'image', // See $TCA "foreign_record_defaults"
-                ],
-                'position' => [
-                    // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
-                    '*' => 'rels', // ,10
                 ],
             ],
             // ...
@@ -1098,6 +1097,14 @@ class ExtSysFile extends \Litovchenko\AirTable\Domain\Model\Fal\SysFile
             'prop_tx_myext_incrandphoto' => [
                 'type' => 'Flag',
                 'name' => 'New field',
+                // Required parameter - if typing of records ("RType") and (or) "tabs" is defined
+                // 'position' => '*|props|10', // '<RType>|<Tab>|<Num>'
+                // 'position' => [
+                    // '*|props|10',
+                    // 'news|props|10',
+                    // 'article|props|10',
+                    // ...
+                // ],
             ]
         ],
         'mediaFields' => [], // ...
