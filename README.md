@@ -2209,9 +2209,8 @@ http://iv-litovchenko.ru
 
 ## Functional development plans 
 
-* ~~Маршрутизация на основе аннотаций (WW)~~
-  * [идея] - staticPage <f:router="namePageStatic">, уникальная страница в дереве страниц, либо без дерева страниц
-* ~~pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?")~~
+* [идея] - staticPage <f:router="namePageStatic">, уникальная страница в дереве страниц, либо без дерева страниц
+* pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
   * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
 * ~~RTE https://akilli.github.io/ckeditor4-build-classic/demo/~~
