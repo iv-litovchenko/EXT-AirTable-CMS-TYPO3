@@ -150,3 +150,13 @@ class ElementSubPagesController extends ActionController
 		<flux:field.relation name="relation" table="tt_content" />
 		<flux:field.MultiRelation name="MultiRelation" table="tt_content" />
 		<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
+		
+		
+		
+		
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] = [
+    'templateRootPaths' => ['EXT:test_provider_extension/Resources/Private/OverrideTemplates'],
+];
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('test_provider_extension', 'Resources/Private/Partials');
+
