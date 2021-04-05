@@ -266,3 +266,45 @@ flux:pipe.flashMessage
 flux:pipe.typeConverter
 
 <flux:pipe.typeConverter direction="$1" targetType="$2" typeConverter="$3" />
+
+
+
+
+    <v:page.header name="defaultHeader">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </v:page.header>
+    <v:asset.style path="EXT:rico_provider/Resources/Public/Fonts/font-awesome-4.7.0/css/font-awesome.css" name="font-awesome" />
+    <v:asset.style external="1" path="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" name="bootstrap-css" />
+    <v:asset.style name="custom-css" path="EXT:rico_provider_oxid/Resources/Public/Css/custom.css" />
+    <v:asset.script standalone="1" external="1" path="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" name="jquery" />
+    <v:asset.script standalone="0" dependencies="jquery" name="searchbox-js">
+        jQuery(document).ready(function($) {
+            $('.clearme').click(function() {
+                $('.ke_search_sword').val('').change();
+            });
+        });
+    </v:asset.script>
+    <v:asset.script dependencies="jquery" name="stickyheader-js">
+        $(function() {
+        //caches a jQuery object containing the header element
+            var header = $("header.header");
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                if (scroll >= 100) {
+                    header.addClass("sticky");
+                } else {
+                    header.removeClass("sticky");
+                }
+            });
+        });
+    </v:asset.script>
+    <v:asset.script name="cookie-notice" dependencies="jquery">
+        if(document.cookie.indexOf('hideCookieNotice=1') != -1){
+            jQuery('#cookieNotice').hide();
+        }
+        else{
+            jQuery('#cookieNotice .close').show();
+        }
+    </v:asset.script>
+	
+	
