@@ -160,3 +160,109 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] 
 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('test_provider_extension', 'Resources/Private/Partials');
 
+
+
+≡
+Form
+
+    ≡
+    
+    Container
+    Content
+    Data
+    Render
+    Variable 
+	
+
+<flux:*>
+
+
+flux:grid
+
+<flux:grid />
+
+flux:outlet
+
+<flux:outlet${1: enabled="1"} />
+
+flux:variable
+
+<flux:variable name="$1" />
+
+<flux:content.*>
+flux:content.get
+
+<flux:content.get area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
+
+flux:content.render
+
+<flux:content.render area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
+
+
+
+
+
+flux:form.container
+
+<flux:form.container name="$1" label="$2" />
+
+flux:form.content
+
+<flux:form.content name="$1" label="$2" />
+
+flux:form.data
+
+<flux:form.data table="$1" field="$2" uid="$3" record="${4:{foo: 'bar'}}" as="$5" />
+
+
+
+
+flux:form.render
+
+<flux:form.render form="$1" />
+
+
+
+
+flux:form.variable
+
+<flux:form.variable name="$1" value="$2" />
+
+<flux:grid.*>
+flux:grid.column
+
+<flux:grid.column name="$1" label="$2" colPos="$3"${5: colspan="$4"}${7: rowspan="$6"}${9: style="$8"} />
+
+flux:grid.row
+
+<flux:grid.row name="$1" label="$2" />
+
+<flux:outlet.*>
+flux:outlet.argument
+
+<flux:outlet.argument name="$1" type="$2" />
+
+flux:outlet.form
+
+<flux:outlet.form name="$1" action="$2" controller="$3" extensionName="$4" pluginName="$5" pageUid="$6" />
+
+flux:outlet.validate
+
+<flux:outlet.validate type="$1"${3: options="$2"} />
+
+<flux:pipe.*>
+flux:pipe.controller
+
+<flux:pipe.controller direction="$1" action="$2" controller="$3" extensionName="$4" />
+
+flux:pipe.email
+
+<flux:pipe.email direction="$1" body="$2" bodySection="$3" subject="$4" recipient="$5" sender="$6" />
+
+flux:pipe.flashMessage
+
+<flux:pipe.flashMessage direction="$1" message="$2" title="'$3'" severity="$4"${5: storeInSession="1"} />
+
+flux:pipe.typeConverter
+
+<flux:pipe.typeConverter direction="$1" targetType="$2" typeConverter="$3" />
