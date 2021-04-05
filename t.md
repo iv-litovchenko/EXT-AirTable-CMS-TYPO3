@@ -130,3 +130,23 @@ class ElementSubPagesController extends ActionController
     }
 
 }
+
+		<flux:field.controllerActions name="controllerActions" label="controllerActions"   
+		extensionName="extensionName"
+		controllerExtensionName="controllerExtensionName" 
+		pluginName="pluginName" controllerName="controllerName" actions="{foo: 'bar'}" />
+		< flux:field.custom name="$1" label="$2"${4: default="$3"}${5: required="1"}${6: requestUpdate="1"}${7: clear="1"}${9: userFunc="${8:FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}"} />
+		< flux:field.userFunc name="$1" label="$2"${5: extensionName="$4"} userFunc="$6" />
+			
+		<flux:field.DateTime name="DateTime" label="DateTime"  required="1" clear="1" />
+		<flux:field.text name="text" label="text"  required="1" clear="1" />
+		<flux:field.none name="none" label="none"  required="1" clear="1" />
+		<flux:field.checkbox name="settings.checkbox" label="checkbox" default="0" />
+		<flux:field.select name="settings.select" label="select" items="left,right" default="left" emptyOption="2"/>
+		<flux:field.radio name="settings.radio" label="radio" items="left,right" default="left" emptyOption="2"/>
+		<flux:field.file name="file" label="file" useFalRelation="1" />
+		<flux:field.inline.fal name="inline.fal" label="inline.fal" collapseAll="1" expandSingle="1" allowedExtensions="jpg,jpeg,png,svg" />
+		<flux:field.inline name="inline" table="tt_content" />
+		<flux:field.relation name="relation" table="tt_content" />
+		<flux:field.MultiRelation name="MultiRelation" table="tt_content" />
+		<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
