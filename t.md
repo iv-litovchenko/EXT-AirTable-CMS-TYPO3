@@ -87,60 +87,6 @@ site_package/Resources/Public/JavaScript/website.js
 
 
 
-		<flux:field.controllerActions name="controllerActions" label="controllerActions"   
-		extensionName="extensionName"
-		controllerExtensionName="controllerExtensionName" 
-		pluginName="pluginName" controllerName="controllerName" actions="{foo: 'bar'}" />
-		< flux:field.custom name="$1" label="$2"${4: default="$3"}${5: required="1"}${6: requestUpdate="1"}${7: clear="1"}${9: userFunc="${8:FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}"} />
-		< flux:field.userFunc name="$1" label="$2"${5: extensionName="$4"} userFunc="$6" />
-		
-		<flux:form.sheet name="options2" label="Twe">
-			<flux:field.DateTime name="DateTime2" label="DateTime"  clear="1" />
-		</flux:form.sheet>
-		<flux:field.DateTime name="DateTime" label="DateTime"  required="1" clear="1" />
-		<flux:field.input name="url" required="1" />
-		<flux:field.text name="text" label="text"  required="1" clear="1" />
-		<flux:field.none name="none" label="none"  required="1" clear="1" />
-		<flux:field.checkbox name="settings.checkbox" label="checkbox" default="0" />
-		<flux:field.select name="settings.select" label="select" items="left,right" default="left" emptyOption="2"/>
-		<flux:field.radio name="settings.radio" label="radio" items="left,right" default="left" emptyOption="2"/>
-		<flux:field.file name="file" label="file" useFalRelation="1" />
-		<flux:field.inline.fal name="inline.fal" label="inline.fal" collapseAll="1" expandSingle="1" allowedExtensions="jpg,jpeg,png,svg" />
-		<flux:field.inline name="inline" table="tt_content" />
-		<flux:field.relation name="relation" table="tt_content" />
-		<flux:field.MultiRelation name="MultiRelation" table="tt_content" />
-		<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
-		
-		Можно вот так конфиг передавать
- <flux:field type="input" exclude="0"
-                    config="{size: 3, eval: 'trim, int', default: 1}"
-                    name="settings.activeItemIndex"
-                    label="LLL:EXT:flux_elements/Resources/Private/Language/locallang.xlf:flux.accordion.activeItemIndex"
-        />
-		
-		
-		
-		
-		 <!--Почему не работает (поддержка исключена)???-->
-				<flux:form.container name="settings.name" label="Name">
-					<flux:field.input name="firstname" label="First name"/>
-					<flux:field.input name="lastname" label="Last name"/>
-				</flux:form.container>
-				
-				<flux:form.section name="settings.sectionObjectAsClass2" label="Telephone numbers 2">
-					<flux:form.object name="custom">
-						<flux:field.input name="propertyFoo" default="Foo" label="Property value: Foo" />
-						<flux:field.input name="propertyBar" default="Bar" label="Property value: Bar" />
-						<flux:field.input name="propertyBar2" default="Bar2" label="Property value: Bar" />
-					</flux:form.object>
-					<flux:form.object name="mobile" label="Mobile">
-						<flux:field.input name="number"/>
-					</flux:form.object>
-					<flux:form.object name="landline" label="Landline">
-						<flux:field.input name="number"/>
-					</flux:form.object>
-				</flux:form.section>
-		
 		
 		
 		
