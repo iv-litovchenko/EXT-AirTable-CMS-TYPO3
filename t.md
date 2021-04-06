@@ -95,6 +95,7 @@ site_package/Resources/Public/JavaScript/website.js
 		< flux:field.userFunc name="$1" label="$2"${5: extensionName="$4"} userFunc="$6" />
 			
 		<flux:field.DateTime name="DateTime" label="DateTime"  required="1" clear="1" />
+		<flux:field.input name="url" required="1" />
 		<flux:field.text name="text" label="text"  required="1" clear="1" />
 		<flux:field.none name="none" label="none"  required="1" clear="1" />
 		<flux:field.checkbox name="settings.checkbox" label="checkbox" default="0" />
