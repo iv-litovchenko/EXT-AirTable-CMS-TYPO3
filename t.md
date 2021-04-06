@@ -130,22 +130,10 @@ flux:content.get
 flux:content.render
 <flux:content.render area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
 
-
-flux:form.content
-<flux:form.content name="$1" label="$2" />
-
 flux:form.render
 <flux:form.render form="$1" />
 
 
-<flux:grid.*>
-flux:grid.column
-
-<flux:grid.column name="$1" label="$2" colPos="$3"${5: colspan="$4"}${7: rowspan="$6"}${9: style="$8"} />
-
-flux:grid.row
-
-<flux:grid.row name="$1" label="$2" />
 
 <flux:outlet.*>
 flux:outlet.argument
