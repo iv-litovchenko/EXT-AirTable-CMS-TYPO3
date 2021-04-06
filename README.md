@@ -1318,10 +1318,10 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 
 <!-- Поля -->
 <flux:field type="input" exclude="0" config="{size: 3, eval: 'trim, int', default: 1}" /> <!-- Можно конфигурацию передавать так-->
-<flux:field.DateTime name="DateTime" label="DateTime" required="1" clear="1" />
-<flux:field.input name="url" required="1" />
-<flux:field.text name="text" label="text"  required="1" clear="1" />
-<flux:field.none name="none" label="none"  required="1" clear="1" />
+<flux:field.DateTime name="DateTime" label="DateTime" required="0" clear="1" />
+<flux:field.input name="url" required="0" />
+<flux:field.text name="text" label="text" required="0" clear="1" />
+<flux:field.none name="none" label="none" required="0" clear="1" />
 <flux:field.checkbox name="settings.checkbox" label="checkbox" default="0" />
 <flux:field.select name="settings.select" label="select" items="left,right" default="left" emptyOption="2"/>
 <flux:field.radio name="settings.radio" label="radio" items="left,right" default="left" emptyOption="2"/>
