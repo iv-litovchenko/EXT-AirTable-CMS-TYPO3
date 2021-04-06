@@ -93,7 +93,10 @@ site_package/Resources/Public/JavaScript/website.js
 		pluginName="pluginName" controllerName="controllerName" actions="{foo: 'bar'}" />
 		< flux:field.custom name="$1" label="$2"${4: default="$3"}${5: required="1"}${6: requestUpdate="1"}${7: clear="1"}${9: userFunc="${8:FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}"} />
 		< flux:field.userFunc name="$1" label="$2"${5: extensionName="$4"} userFunc="$6" />
-			
+		
+		<flux:form.sheet name="options2" label="Twe">
+			<flux:field.DateTime name="DateTime2" label="DateTime"  clear="1" />
+		</flux:form.sheet>
 		<flux:field.DateTime name="DateTime" label="DateTime"  required="1" clear="1" />
 		<flux:field.input name="url" required="1" />
 		<flux:field.text name="text" label="text"  required="1" clear="1" />
