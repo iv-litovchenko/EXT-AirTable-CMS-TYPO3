@@ -100,40 +100,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core
 
 
 
-flux:outlet
-<flux:outlet${1: enabled="1"} />
-
-<flux:outlet.*>
-flux:outlet.argument
-
-<flux:outlet.argument name="$1" type="$2" />
-
-flux:outlet.form
-
-<flux:outlet.form name="$1" action="$2" controller="$3" extensionName="$4" pluginName="$5" pageUid="$6" />
-
-flux:outlet.validate
-
-<flux:outlet.validate type="$1"${3: options="$2"} />
-
-<flux:pipe.*>
-flux:pipe.controller
-
-<flux:pipe.controller direction="$1" action="$2" controller="$3" extensionName="$4" />
-
-flux:pipe.email
-
-<flux:pipe.email direction="$1" body="$2" bodySection="$3" subject="$4" recipient="$5" sender="$6" />
-
-flux:pipe.flashMessage
-
-<flux:pipe.flashMessage direction="$1" message="$2" title="'$3'" severity="$4"${5: storeInSession="1"} />
-
-flux:pipe.typeConverter
-
-<flux:pipe.typeConverter direction="$1" targetType="$2" typeConverter="$3" />
-
-
 
 
     <v:page.header name="defaultHeader">
