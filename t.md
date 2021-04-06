@@ -19,28 +19,6 @@ GeneralUtility::xml2array
    <flux:content.render area="mycontentB" /> <!-- CONTENT -->
    
 6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
-  * https://laravel.com/docs/8.x/eloquent-mutators 
-  * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
-	/**
-	 * Converts fields containing file references to get direct access to them
-	 * See also class FrontendContentAdapterService
-	 *
-	 * @param array $row
-	 * @return array
-	 */
-	protected function convertFileReferences(array $row) {
-		$table = 'tt_content';
-		$migrateFieldNames = array('image', 'media');
-
-		/** @var $fileRepository \TYPO3\CMS\Core\Resource\FileRepository */
-		$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
-		foreach ($migrateFieldNames as $migrateFieldName) {
-			$files = $fileRepository->findByRelation($table, $migrateFieldName, isset($row['_LOCALIZED_UID']) ? intval($row['_LOCALIZED_UID']) : intval($row['uid']));
-			$row[$migrateFieldName] = $files;
-		}
-		return $row;
-	}
-
 
 -----------------
 <f:section name="HeaderAssets">
