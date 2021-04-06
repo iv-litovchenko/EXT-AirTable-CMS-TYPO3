@@ -1,6 +1,5 @@
 ```
-<v:content.render contentUids="{0: _item.uid}"/>
-<v:content.render contentUids="{0: _item.uid}"/>
+\\==
 
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -10,7 +9,16 @@ GeneralUtility::xml2array
 2) Секции HeaderAssets FooterAssets + посмотреть как там отправляются Assents
 3) Шорткоды передать
 4) Для страницы #253 не задан шаблон
-5) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
+5) Хелпер выборки контента с оберткой кнопок "Добавить сверху содержимое".
+<f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" />
+<v:content.render contentUids="{0: _item.uid}"/>
+<v:content.render contentUids="{0: _item.uid}"/>
+
+   <!-- Варианты как получить контент-->
+   <v:content.render column="1" /> <!-- PAGE -->
+   <flux:content.render area="mycontentB" /> <!-- CONTENT -->
+   
+6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
   * https://laravel.com/docs/8.x/eloquent-mutators 
   * protected function defineEntity(ClassDefinition $class) { $class->property($this->engine)->asObject(Engine::class); }
 	/**
