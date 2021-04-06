@@ -1337,7 +1337,13 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
       <flux:field.relation name="relation" table="tt_content" />
       <flux:field.MultiRelation name="MultiRelation" table="tt_content" />
       <flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
-      <flux:field.custom name="" label="" requestUpdate="1" userFunc="FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}" />
+      <flux:field.custom name="custom" label="" requestUpdate="1" userFunc="FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}" />
+      <flux:field.custom displayCond="REC:NEW:true" name="custom"> <!-- displayCond="FIELD:parentRec.uid:>:1" -->
+         <div class="alert alert-info" role="alert">
+            <h2>Hellow Word.</h2>
+            <p>--- TEXT ---</p>
+         </div>
+      </flux:field.custom>
       <flux:field.userFunc name="" label="" extensionName="" userFunc="" />
       <flux:field.controllerActions name="" label="" extensionName="" controllerExtensionName="" pluginName="" controllerName="" actions="{foo: 'bar'}" />
 
