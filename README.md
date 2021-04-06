@@ -459,12 +459,6 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 <f:vhsExtAirTable.content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
 ```
 
-### Object
-```
-<f:vhsExtAirTable.object setup="lib.tx_myext.menu" />
-<f:vhsExtAirTable.object setup="lib.tx_myext.breadCrumb" />
-```
-
 ### Marker
 ```
 <!--Input, Text, Text.Rte, Text.Code.Html, Text.Code.TypoScript-->
