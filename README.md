@@ -1307,6 +1307,53 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 {f:variable(name: 'myvariable', value: 'My variable\'s content')}
 {myoriginalvariable -> f:variable.set(name: 'mynewvariable')}
 
+*********************
+* Flux forms
+*********************
+
+<!-- Вкладки -->		
+<flux:form.sheet name="options2" label="Twe">
+   <!-- Поля -->
+</flux:form.sheet>
+
+<!-- Поля -->
+<flux:field type="input" exclude="0" config="{size: 3, eval: 'trim, int', default: 1}" /> <!-- Можно конфигурацию передавать так-->
+<flux:field.DateTime name="DateTime" label="DateTime" required="1" clear="1" />
+<flux:field.input name="url" required="1" />
+<flux:field.text name="text" label="text"  required="1" clear="1" />
+<flux:field.none name="none" label="none"  required="1" clear="1" />
+<flux:field.checkbox name="settings.checkbox" label="checkbox" default="0" />
+<flux:field.select name="settings.select" label="select" items="left,right" default="left" emptyOption="2"/>
+<flux:field.radio name="settings.radio" label="radio" items="left,right" default="left" emptyOption="2"/>
+<flux:field.file name="file" label="file" useFalRelation="1" />
+<flux:field.inline.fal name="inline.fal" label="inline.fal" collapseAll="1" expandSingle="1" allowedExtensions="jpg,jpeg,png,svg" />
+<flux:field.inline name="inline" table="tt_content" />
+<flux:field.relation name="relation" table="tt_content" />
+<flux:field.MultiRelation name="MultiRelation" table="tt_content" />
+<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
+
+<flux:field.custom name="" label="" requestUpdate="1" userFunc="FluidTYPO3\\Flux\\UserFunction\\HtmlOutput->renderField}" />
+<flux:field.userFunc name="" label="" extensionName="" userFunc="" />
+<flux:field.controllerActions name="" label="" extensionName="" controllerExtensionName="" pluginName="" controllerName="" actions="{foo: 'bar'}" />
+
+<!-- Поддержка исключена!!! -->
+<flux:form.container name="settings.name" label="Name">
+   <!-- Поля -->
+</flux:form.container>
+
+<!-- Секции -->
+<flux:form.section name="settings.sectionObjectAsClass2" label="Telephone numbers 2">
+   <flux:form.object name="custom">
+      <!-- Поля -->
+   </flux:form.object>
+   <flux:form.object name="mobile" label="Mobile">
+      <!-- Поля -->
+   </flux:form.object>
+   <flux:form.object name="landline" label="Landline">
+      <!-- Поля -->
+   </flux:form.object>
+</flux:form.section>
+
 ```
 
 ### Useful notes - TypoScript
