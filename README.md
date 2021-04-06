@@ -2247,7 +2247,3 @@ http://iv-litovchenko.ru
 * Default Assign (t3page, t3data, ...)
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
-* Flexform (новый конфиг "Table" см. AirTableFieldConfig.xml) - https://coding.musikinsnetz.de/typo3-extbase-fluid/general/flexform-use-section-for-indefinitely-repeatable-form-fields/
-* Flexform (может пригодится для атрибутов)
-https://www.medienreaktor.de/blog/dynamische-backend-formulare-in-typo3-mit-flux
-https://www.medienreaktor.de/blog/dynamic-backend-forms-in-typo3-using-flux
