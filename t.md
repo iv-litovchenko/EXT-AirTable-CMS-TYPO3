@@ -112,6 +112,28 @@ site_package/Resources/Public/JavaScript/website.js
 		<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
 		
 		
+		 <!--Почему не работает (поддержка исключена)???-->
+				<flux:form.container name="settings.name" label="Name">
+					<flux:field.input name="firstname" label="First name"/>
+					<flux:field.input name="lastname" label="Last name"/>
+				</flux:form.container>
+				
+				<flux:form.section name="settings.sectionObjectAsClass2" label="Telephone numbers 2">
+					<flux:form.object name="custom">
+						<flux:field.input name="propertyFoo" default="Foo" label="Property value: Foo" />
+						<flux:field.input name="propertyBar" default="Bar" label="Property value: Bar" />
+						<flux:field.input name="propertyBar2" default="Bar2" label="Property value: Bar" />
+					</flux:form.object>
+					<flux:form.object name="mobile" label="Mobile">
+						<flux:field.input name="number"/>
+					</flux:form.object>
+					<flux:form.object name="landline" label="Landline">
+						<flux:field.input name="number"/>
+					</flux:form.object>
+				</flux:form.section>
+		
+		
+		
 		
 		
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] = [
