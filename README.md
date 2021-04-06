@@ -1317,12 +1317,12 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 
    <flux:form id="mycontentelement" label="My Content Element" description=" -- -- "  extensionName="Vendor.Extension">
 
-	  <!-- Вкладки -->		
+      <!-- Вкладки -->		
       <flux:form.sheet name="options2" label="Twe">
          <!-- Поля -->
       </flux:form.sheet>
 
-	  <!-- Поля -->
+      <!-- Поля -->
       <flux:field type="input" exclude="0" config="{size: 3, eval: 'trim, int', default: 1}" /><!-- Можно конфигурацию передавать так-->
       <flux:field.DateTime name="DateTime" label="DateTime" required="0" clear="1" />
       <flux:field.input name="url" required="0" />
@@ -1341,12 +1341,12 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
       <flux:field.userFunc name="" label="" extensionName="" userFunc="" />
       <flux:field.controllerActions name="" label="" extensionName="" controllerExtensionName="" pluginName="" controllerName="" actions="{foo: 'bar'}" />
 
-	  <!-- Поддержка исключена!!! -->
+      <!-- Поддержка исключена!!! -->
       <flux:form.container name="settings.name" label="Name">
          <!-- Поля -->
       </flux:form.container>
 
-	  <!-- Секции -->
+      <!-- Секции -->
       <flux:form.section name="settings.sectionObjectAsClass2" label="Telephone numbers 2">
          <flux:form.object name="custom">
             <!-- Поля -->
@@ -1359,7 +1359,7 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
          </flux:form.object>
       </flux:form.section>
 	  
-      <!--Примеры табов/аккордионов-->
+      <!-- Примеры табов/аккордионов -->
       <flux:form.sheet name="tabs">
          <flux:form.section name="tabs">
             <flux:form.object name="tab">
@@ -1377,13 +1377,13 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 	  
    </flux:form>
    
-   <!--Однострочная сетка (использовать либо это, либо <flux:grid>)-->
+   <!-- 1 Строчная сетка (использовать либо это, либо <flux:grid>) -->
    <flux:form.content name="content.{iteration.index}" label="Tab {iteration.cycle}" />
    <flux:form.content name="mycontent.1" label="mycontent1" />
    <flux:form.content name="mycontent.2" label="mycontent2" />
    <flux:form.content name="mycontent.3" label="mycontent3" />
    
-   <!--Произвольные сетки-->
+   <!-- Произвольные сетки -->
    <flux:grid>
       <flux:grid.row>
          <flux:grid.column name="mycontentA" label="mycontentA" colPos="0">
@@ -1396,7 +1396,17 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
          <flux:grid.column name="mycontentC" label="mycontentC" colPos="2" colspan="2" rowspan="1" style="width: 300px; height: 300px;" />
       </flux:grid.row>
    </flux:grid>
-   
+
+   <!-- Не задокументированное (дополнительные варианты создания колонок) -->
+   <flux:form.section name="columns" gridMode="rows || cols">
+      <flux:form.object name="column" label="Column" contentContainer="1" />
+   </flux:form.section>
+   <flux:form.section name="columns">
+      <flux:form.object name="column" label="Column">
+         <flux:form.object.columnPosition />
+      </flux:form.object>
+   </flux:form.section>
+
 </f:section>
 
 <f:section name="Preview">
@@ -1412,7 +1422,7 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
    <v:content.render column="1" /> <!-- PAGE -->
    <flux:content.render area="mycontentB" /> <!-- CONTENT -->
 
-   <!--Примеры табов/аккордионов-->
+   <!-- Примеры табов/аккордионов -->
    <div class="flux grid01Tabs">
       <f:render section="Tabs" arguments="{_all}" />
       <div class="tabs-content" data-tabs-content="tabs-{record.uid}">
