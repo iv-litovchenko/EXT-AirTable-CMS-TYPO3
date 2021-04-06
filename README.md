@@ -1317,6 +1317,12 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 
    <flux:form id="mycontentelement" label="My Content Element" description=" -- -- "  extensionName="Vendor.Extension">
 
+      <!-- Настройки формы -->	
+      <flux:form.option name="static" value="0" /> <!--1 когда форма польностью статичкаа и будет работать при кэшировании-->
+      <flux:form.option.icon value="EXT:myext/Resources/Public/Icons/Module-Icon-Backup.png" />
+      <flux:form.option.group value="special" /> <!-- Wizard group -->
+      <flux:form.option.sorting value="1" /> <!-- Wizard sort ??? -->
+
       <!-- Вкладки -->		
       <flux:form.sheet name="options2" label="Twe">
          <!-- Поля -->
