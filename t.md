@@ -99,28 +99,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core
 
 
 
-≡
-Form
 
-    ≡
-    
-    Container
-    Content
-    Data
-    Render
-    Variable 
-	
-
-<flux:*>
-
-
-flux:grid
-<flux:grid />
 flux:outlet
 <flux:outlet${1: enabled="1"} />
-
-flux:variable
-<flux:variable name="$1" />
 
 <flux:content.*>
 flux:content.get
