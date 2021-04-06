@@ -1,4 +1,11 @@
 ```
+<v:content.render contentUids="{0: _item.uid}"/>
+<v:content.render contentUids="{0: _item.uid}"/>
+
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+GeneralUtility::xml2array
+
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 2) Секции HeaderAssets FooterAssets + посмотреть как там отправляются Assents
 3) Шорткоды передать
