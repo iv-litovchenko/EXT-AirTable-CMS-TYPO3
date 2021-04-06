@@ -111,6 +111,15 @@ site_package/Resources/Public/JavaScript/website.js
 		<flux:field.MultiRelation name="MultiRelation" table="tt_content" />
 		<flux:field.tree.category name="tree.category" label="tree.category" showThumbs="0" expandAll="1" />
 		
+		Можно вот так конфиг передавать
+ <flux:field type="input" exclude="0"
+                    config="{size: 3, eval: 'trim, int', default: 1}"
+                    name="settings.activeItemIndex"
+                    label="LLL:EXT:flux_elements/Resources/Private/Language/locallang.xlf:flux.accordion.activeItemIndex"
+        />
+		
+		
+		
 		
 		 <!--Почему не работает (поддержка исключена)???-->
 				<flux:form.container name="settings.name" label="Name">
