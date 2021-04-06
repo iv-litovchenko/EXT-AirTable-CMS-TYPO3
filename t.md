@@ -115,15 +115,11 @@ Form
 
 
 flux:grid
-
 <flux:grid />
-
 flux:outlet
-
 <flux:outlet${1: enabled="1"} />
 
 flux:variable
-
 <flux:variable name="$1" />
 
 <flux:content.*>
@@ -132,38 +128,15 @@ flux:content.get
 <flux:content.get area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
 
 flux:content.render
-
 <flux:content.render area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
 
 
-
-
-
-flux:form.container
-
-<flux:form.container name="$1" label="$2" />
-
 flux:form.content
-
 <flux:form.content name="$1" label="$2" />
 
-flux:form.data
-
-<flux:form.data table="$1" field="$2" uid="$3" record="${4:{foo: 'bar'}}" as="$5" />
-
-
-
-
 flux:form.render
-
 <flux:form.render form="$1" />
 
-
-
-
-flux:form.variable
-
-<flux:form.variable name="$1" value="$2" />
 
 <flux:grid.*>
 flux:grid.column
