@@ -103,19 +103,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core
 flux:outlet
 <flux:outlet${1: enabled="1"} />
 
-<flux:content.*>
-flux:content.get
-
-<flux:content.get area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
-
-flux:content.render
-<flux:content.render area="$1"${3: limit="$2"}${5: offset="$4"}${7: order="'${6:sorting}'"}${9: sortDirection="'${8:ASC}'"}${11: as="$10"}${13: loadRegister="$12"}${15: render="${14:1}"} />
-
-flux:form.render
-<flux:form.render form="$1" />
-
-
-
 <flux:outlet.*>
 flux:outlet.argument
 
