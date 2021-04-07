@@ -29,6 +29,23 @@ https://fluidtypo3.org/documentation/templating-manual/advanced-provider-extensi
   <title>Super title from fluid</title>
   fewfefewfewfew
   fewfefewfewfewefew
+  
+   <v:page.header.meta name="keywords" content="{page.keywords}" />
+ <v:page.header.meta name="description" content="{page.description}" />
+ <v:page.header.meta name="og:title" content="{page.title}" />
+ <v:page.header.meta name="og:type" content="article" />
+ <v:page.header.meta name="og:url" content="{v:page.absoluteUrl()}" />
+ <v:page.header.meta name="og:description" content="{page.description}" />
+ <v:page.header.meta name="apple-mobile-web-app-capable" content="yes" />
+
+	< v:asset.style path="{f:uri.resource(path: 'CSS/style.css')}" group="fluidcontentyoutube" name="style" />
+ 
+ < f:cObject typoscriptObjectPath="lib.default_menu" />
+	< f:cObject typoscriptObjectPath="lib.default_content" />
+	
+	<p>{value}</p>
+	<p>< f:link.action action="standard" arguments="{value: 'A value'}">Pass value to controller< /f:link.action></p>
+	
 </f:section>
 
 
