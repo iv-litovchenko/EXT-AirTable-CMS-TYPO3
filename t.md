@@ -138,7 +138,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core
 
 
 
-
+<v:asset.style path="{f:uri.resource(path: 'CSS/style.css')}" group="fluidcontentyoutube" name="style" />
 
     <v:page.header name="defaultHeader">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
