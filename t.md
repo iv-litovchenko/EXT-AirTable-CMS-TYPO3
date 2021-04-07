@@ -6,14 +6,7 @@ https://www.aemka.de/news/fluid-content-inhaltselemente-ohne-extfluidcontent.htm
 https://fluidtypo3.org/library/code-examples.html?tx_fluidshare_display%5Baction%5D=display&tx_fluidshare_display%5Bcontroller%5D=Gist&tx_fluidshare_display%5Bgist%5D=1&cHash=cefb368f64b6984abcfd0934b6ff3edd
 
 
-\FluidTYPO3\Flux\Core::registerTemplateAsContentType(
-  'AEMKA.Template', 
-  'EXT:template/Resources/Private/Templates/Content/SomeElement.html'
-);
-\FluidTYPO3\Flux\Core::registerTemplateAsContentType(
-  'AEMKA.Template', 
-  'EXT:template/Resources/Private/Templates/Content/AnotherElement.html'
-);
+
 
 
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
