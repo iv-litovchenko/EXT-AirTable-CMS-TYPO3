@@ -2,6 +2,10 @@
 // Todo
 // Бесконечные
 // Разрешенные дочерние элементы для вложенных (по типу формы)?
+
+1) Все элементы идут от  extends \FluidTYPO3\Flux\Controller\AbstractFluxController
+2) Дейтвие по умолчанию default()
+
 $fluxGrids = [
 			'Row|One' => [
 				'Column|1|Auto',
