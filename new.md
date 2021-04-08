@@ -6,10 +6,6 @@
 <f:vhsExtAirTable.content colPos="0" /> <!--Get page content (colPos=0)-->
 <flux:content.render area="mycontentB" WRAP="isContent"=true />
 
-3) Дейтвие по умолчанию default()
-
-
-
 Почему не переключается действие для страницы и плагина?
 Почему не отображаются сетки для страницы.
 
