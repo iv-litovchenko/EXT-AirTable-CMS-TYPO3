@@ -1,6 +1,6 @@
 # EXT: AirTable (CMS TYPO3)
 
-A set of tools for creating your site based on class annotations (nowadays magic variable $ TYPO3 = []). Works in versions TYPO3 v10 (not tested in other versions for a long time). The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway.
+A set of tools for creating your site based on class annotations (nowadays magic variable $ TYPO3 = []). Works in versions TYPO3 v10 (not tested in other versions for a long time). The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. Основная задача данного расширения - одинаково струрированный контент на проекте. [RU]
 
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/Iv-Litovchenko.Ru-Edit-Buttons.png)
 
