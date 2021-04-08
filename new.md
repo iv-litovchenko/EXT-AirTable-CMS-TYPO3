@@ -6,6 +6,7 @@
 1) Все элементы идут от  extends \FluidTYPO3\Flux\Controller\AbstractFluxController
 2) Дейтвие по умолчанию default()
 
+$fluxSyntax = 'short';
 $fluxGrids = [
 			'Row|One' => [
 				'Column|1|Auto',
