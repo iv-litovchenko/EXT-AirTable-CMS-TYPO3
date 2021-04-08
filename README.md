@@ -2392,7 +2392,7 @@ http://iv-litovchenko.ru
   * Во многих CMS меню создается отдельно
   * ItemsProcFunc MENU special = userfunction special.userFunc = Vendor\MyExtension\Userfuncs\CustomMenu->makeMenuArray
   * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
-* (Wrapper PageElements/Wrapper/Wrap1Controller.php) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/), tt_content.stdWrap.outerWrap.cObject
+* (Wrapper PageElements/Wrapper/Wrap1Controller.php) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/), tt_content.stdWrap.outerWrap.cObject, также смотреть расширение: https://extensions.typo3.org/extension/view/
 * (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html)
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
