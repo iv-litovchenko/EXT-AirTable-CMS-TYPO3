@@ -2398,6 +2398,7 @@ http://iv-litovchenko.ru
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
 * Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
+* Сопоставление полей модели и Flux-полей (за основу взять config - flux-полей)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * getFileByHash () для загрузки файлов (что бы файл не пропадал!)
 * ~~Default Assign (t3page, t3data, ...)~~
