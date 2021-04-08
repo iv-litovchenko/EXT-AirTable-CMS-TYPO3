@@ -62,6 +62,15 @@ https://fluidtypo3.org/documentation/templating-manual/advanced-provider-extensi
   fewfefewfewfewefew
 </f:section>
 
+
+<f:section name="HeaderAssets">
+    <!-- zusätzliche Inhalte im <head> -->
+</f:section>
+ 
+<f:section name="FooterAssets">
+    <!-- zusätzliche Inhalte vor </body> -->
+</f:section>
+
 ------------------
 
 
