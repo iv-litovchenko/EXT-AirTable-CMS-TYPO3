@@ -1,7 +1,6 @@
 ```
 https://jsonformatter.org/php-formatter
 
-// Todo
 // Дочерние элементы как в Н (на примре формы)
 // Бесконечные - это контенер - как его описать?
 // Разрешенные дочерние элементы для вложенных (по типу формы)? - active для флекс "лампочка" 
@@ -11,22 +10,13 @@ https://jsonformatter.org/php-formatter
 <f:vhsExtAirTable.content colPos="0" /> <!--Get page content (colPos=0)-->
 <flux:content.render area="mycontentB" WRAP="isContent"=true />
 
-
 attrubutes.shheet1.
 attr_
-
-
-
-+ https://gist.github.com/cedricziel/7384595
-+ https://www.aemka.de/news/fluid-content-inhaltselemente-ohne-extfluidcontent.html
-+ https://fluidtypo3.org/library/code-examples.html?tx_fluidshare_display%5Baction%5D=display&tx_fluidshare_display%5Bcontroller%5D=Gist&tx_fluidshare_display%5Bgist%5D=1&cHash=cefb368f64b6984abcfd0934b6ff3edd
 
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 2) Шорткоды передать
 3) Хелпер выборки контента с оберткой кнопок "Добавить сверху содержимое".
 6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
-
-
 
 if (TYPO3_MODE == 'FE') {
 			// $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['includeStaticTypoScriptSources'][] = \FluidTYPO3\Flux\Backend\TableConfigurationPostProcessor::class . '->processData';
