@@ -58,26 +58,6 @@ site_package/Configuration/TCA/Overrides/sys_template.php
 site_package/Configuration/TypoScript
 site_package/Configuration/TypoScript/constants.typoscript
 site_package/Configuration/TypoScript/setup.typoscript
-site_package/ext_emconf.php
-site_package/ext_icon.png
-site_package/Resources
-site_package/Resources/Private
-site_package/Resources/Private/Layouts
-site_package/Resources/Private/Layouts/Page
-site_package/Resources/Private/Layouts/Page/Default.html
-site_package/Resources/Private/Partials
-site_package/Resources/Private/Partials/Page
-site_package/Resources/Private/Partials/Page/Jumbotron.html
-site_package/Resources/Private/Templates
-site_package/Resources/Private/Templates/Page
-site_package/Resources/Private/Templates/Page/Default.html
-site_package/Resources/Public
-site_package/Resources/Public/Css
-site_package/Resources/Public/Css/website.css
-site_package/Resources/Public/Images/
-site_package/Resources/Public/Images/logo.png
-site_package/Resources/Public/JavaScript
-site_package/Resources/Public/JavaScript/website.js
 
 		
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] = [
