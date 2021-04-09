@@ -10,10 +10,8 @@ https://fluidtypo3.org/documentation/templating-manual/advanced-provider-extensi
 
 
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
-2) Секции HeaderAssets FooterAssets + посмотреть как там отправляются Assents
-3) Шорткоды передать
-4) Для страницы #253 не задан шаблон
-5) Хелпер выборки контента с оберткой кнопок "Добавить сверху содержимое".
+2) Шорткоды передать
+3) Хелпер выборки контента с оберткой кнопок "Добавить сверху содержимое".
 <f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" />
 <v:content.render contentUids="{0: _item.uid}"/>
 <v:content.render contentUids="{0: _item.uid}"/>
