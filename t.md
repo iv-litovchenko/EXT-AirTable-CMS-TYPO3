@@ -24,55 +24,6 @@ https://fluidtypo3.org/documentation/templating-manual/advanced-provider-extensi
    
 6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
 
------------------
-<f:section name="HeaderAssets">
-  <title>Super title from fluid</title>
-  fewfefewfewfew
-  fewfefewfewfewefew
-  
-   <v:page.header.meta name="keywords" content="{page.keywords}" />
- <v:page.header.meta name="description" content="{page.description}" />
- <v:page.header.meta name="og:title" content="{page.title}" />
- <v:page.header.meta name="og:type" content="article" />
- <v:page.header.meta name="og:url" content="{v:page.absoluteUrl()}" />
- <v:page.header.meta name="og:description" content="{page.description}" />
- <v:page.header.meta name="apple-mobile-web-app-capable" content="yes" />
-
-	< v:asset.style path="{f:uri.resource(path: 'CSS/style.css')}" group="fluidcontentyoutube" name="style" />
- 
- < f:cObject typoscriptObjectPath="lib.default_menu" />
-	< f:cObject typoscriptObjectPath="lib.default_content" />
-	
-	<p>{value}</p>
-	<p>< f:link.action action="standard" arguments="{value: 'A value'}">Pass value to controller< /f:link.action></p>
-	
-</f:section>
-
-
-<f:render partial="Page.Header" arguments="{_all}" />
-	
-	<f:vhsExtAirTable.content colPos="0" />
-
-<f:render partial="Page.Footer" arguments="{_all}" />
-
-
-<f:section name="FooterAssets">
-  <title>Super title from fluid</title>
-  fewfefewfewfew
-  fewfefewfewfewefew
-</f:section>
-
-
-<f:section name="HeaderAssets">
-    <!-- zusätzliche Inhalte im <head> -->
-</f:section>
- 
-<f:section name="FooterAssets">
-    <!-- zusätzliche Inhalte vor </body> -->
-</f:section>
-
-------------------
-
 
 Зарегистрируйте  flux как плагин контента.
 
@@ -94,14 +45,10 @@ tt_content.flux_2columns {
     pluginName = Content
 }
 
-AbstractFluxController
-Prev
-
 if (TYPO3_MODE == 'FE') {
 			// $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['includeStaticTypoScriptSources'][] = \FluidTYPO3\Flux\Backend\TableConfigurationPostProcessor::class . '->processData';
 		}
  
-
 
 site_package/
 site_package/Configuration
@@ -132,11 +79,6 @@ site_package/Resources/Public/Images/logo.png
 site_package/Resources/Public/JavaScript
 site_package/Resources/Public/JavaScript/website.js
 
-
-
-		
-		
-		
 		
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] = [
     'templateRootPaths' => ['EXT:test_provider_extension/Resources/Private/OverrideTemplates'],
@@ -145,45 +87,5 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('test_provider_extension', 'Resources/Private/Partials');
 
 
-
-
-<v:asset.style path="{f:uri.resource(path: 'CSS/style.css')}" group="fluidcontentyoutube" name="style" />
-
-    <v:page.header name="defaultHeader">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </v:page.header>
-    <v:asset.style path="EXT:rico_provider/Resources/Public/Fonts/font-awesome-4.7.0/css/font-awesome.css" name="font-awesome" />
-    <v:asset.style external="1" path="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" name="bootstrap-css" />
-    <v:asset.style name="custom-css" path="EXT:rico_provider_oxid/Resources/Public/Css/custom.css" />
-    <v:asset.script standalone="1" external="1" path="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" name="jquery" />
-    <v:asset.script standalone="0" dependencies="jquery" name="searchbox-js">
-        jQuery(document).ready(function($) {
-            $('.clearme').click(function() {
-                $('.ke_search_sword').val('').change();
-            });
-        });
-    </v:asset.script>
-    <v:asset.script dependencies="jquery" name="stickyheader-js">
-        $(function() {
-        //caches a jQuery object containing the header element
-            var header = $("header.header");
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-                if (scroll >= 100) {
-                    header.addClass("sticky");
-                } else {
-                    header.removeClass("sticky");
-                }
-            });
-        });
-    </v:asset.script>
-    <v:asset.script name="cookie-notice" dependencies="jquery">
-        if(document.cookie.indexOf('hideCookieNotice=1') != -1){
-            jQuery('#cookieNotice').hide();
-        }
-        else{
-            jQuery('#cookieNotice .close').show();
-        }
-    </v:asset.script>
-	
+    
 	
