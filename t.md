@@ -6,14 +6,6 @@
 1) Остановился на разработке каталога (Пагинация , Хлеб крошки)
 2) Шорткоды передать
 3) Хелпер выборки контента с оберткой кнопок "Добавить сверху содержимое".
-<f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" />
-<v:content.render contentUids="{0: _item.uid}"/>
-<v:content.render contentUids="{0: _item.uid}"/>
-
-   <!-- Варианты как получить контент-->
-   <v:content.render column="1" /> <!-- PAGE -->
-   <flux:content.render area="mycontentB" /> <!-- CONTENT -->
-   
 6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
 
 
