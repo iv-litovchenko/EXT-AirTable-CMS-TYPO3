@@ -95,8 +95,8 @@ EXT:myext/Resources/Private/
 // Rename template path to -> 
 // EXT:myext/Resources/Private/Templates/Pages.Page404.Index.html
 // EXT:myext/Resources/Private/Templates/Pages.PageDefault.Index.html
-EXT:myext/Resources/Private/Templates/_Layouts/
-EXT:myext/Resources/Private/Templates/_Partial/
+EXT:myext/Resources/Private/Layouts/
+EXT:myext/Resources/Private/Partials/
 EXT:myext/Resources/Private/Templates/Modules/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Pages/[*]/Index.html
 EXT:myext/Resources/Private/Templates/PagesElements/Elements/[*]/Index.html
