@@ -1,6 +1,5 @@
 ```
-https://stackoverflow.com/questions/58094445/typo3-8-7-backend-fields-for-a-custom-content-element-are-not-rendered
-https://fluidtypo3.org/documentation/templating-manual/advanced-provider-extensions/custom-flux-providers/use-cases-for-providers.html
+
 + https://gist.github.com/cedricziel/7384595
 + https://www.aemka.de/news/fluid-content-inhaltselemente-ohne-extfluidcontent.html
 + https://fluidtypo3.org/library/code-examples.html?tx_fluidshare_display%5Baction%5D=display&tx_fluidshare_display%5Bcontroller%5D=Gist&tx_fluidshare_display%5Bgist%5D=1&cHash=cefb368f64b6984abcfd0934b6ff3edd
