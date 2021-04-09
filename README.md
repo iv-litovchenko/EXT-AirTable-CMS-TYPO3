@@ -1206,6 +1206,38 @@ $GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo
 ### Useful notes - Fluid
 ```html
 *********************
+* Assets
+*********************
+<f:section name="HeaderAssets">
+    <!-- zusätzliche Inhalte im <head> -->
+</f:section>
+
+<v:page.header name="defaultHeader">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</v:page.header>
+<v:page.header.meta name="keywords" content="{page.keywords}" />
+<v:page.header.meta name="description" content="{page.description}" />
+<v:page.header.meta name="og:title" content="{page.title}" />
+<v:page.header.meta name="og:type" content="article" />
+<v:page.header.meta name="og:url" content="{v:page.absoluteUrl()}" />
+<v:page.header.meta name="og:description" content="{page.description}" />
+<v:page.header.meta name="apple-mobile-web-app-capable" content="yes" />
+<v:asset.style path="{f:uri.resource(path: 'CSS/style.css')}" group="fluidcontentyoutube" name="style" />
+<v:asset.style path="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" name="bootstrap-css" external="1" />
+<v:asset.style path="EXT:rico_provider/Resources/Public/Fonts/font-awesome-4.7.0/css/font-awesome.css" name="font-awesome" />
+<v:asset.style path="EXT:rico_provider_oxid/Resources/Public/Css/custom.css" name="custom-css" />
+<v:asset.script standalone="1" external="1" path="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" name="jquery" />
+<v:asset.script standalone="0" dependencies="jquery" name="searchbox-js">
+$(function() {
+    $(window).scroll(function() { });
+});	
+</v:asset.script>
+
+<f:section name="FooterAssets">
+    <!-- zusätzliche Inhalte vor </body> -->
+</f:section>
+
+*********************
 * Info
 *********************
 
