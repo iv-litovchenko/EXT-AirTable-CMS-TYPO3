@@ -1,4 +1,23 @@
 ```
+```
+https://jsonformatter.org/php-formatter
+
+// Todo
+// Дочерние элементы как в Н (на примре формы)
+// Бесконечные - это контенер - как его описать?
+// Разрешенные дочерние элементы для вложенных (по типу формы)? - active для флекс "лампочка" 
+// Дублирование полей в флекс-форм загрузка группы полей @
+// Картинки...
+
+<f:vhsExtAirTable.content colPos="0" /> <!--Get page content (colPos=0)-->
+<flux:content.render area="mycontentB" WRAP="isContent"=true />
+
+
+attrubutes.shheet1.
+attr_
+
+
+
 + https://gist.github.com/cedricziel/7384595
 + https://www.aemka.de/news/fluid-content-inhaltselemente-ohne-extfluidcontent.html
 + https://fluidtypo3.org/library/code-examples.html?tx_fluidshare_display%5Baction%5D=display&tx_fluidshare_display%5Bcontroller%5D=Gist&tx_fluidshare_display%5Bgist%5D=1&cHash=cefb368f64b6984abcfd0934b6ff3edd
