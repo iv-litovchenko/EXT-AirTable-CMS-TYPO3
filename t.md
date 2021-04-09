@@ -17,25 +17,6 @@
 6) FAL + "_func" Отказаться от постфиксов "_func", сделать также алиас для uid_local_func as file
 
 
-Зарегистрируйте  flux как плагин контента.
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'FluidTYPO3.Flux',
-    'Content',
-    [
-        'Content' => 'render, error',
-    ]
-);
-
-Добавьте TS для нового CTYPE
-
-tt_content.flux_2columns = USER
-tt_content.flux_2columns {
-    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    vendorName = FluidTYPO3
-    extensionName = Flux
-    pluginName = Content
-}
 
 if (TYPO3_MODE == 'FE') {
 			// $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['includeStaticTypoScriptSources'][] = \FluidTYPO3\Flux\Backend\TableConfigurationPostProcessor::class . '->processData';
@@ -56,7 +37,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] 
     'templateRootPaths' => ['EXT:test_provider_extension/Resources/Private/OverrideTemplates'],
 ];
 
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['atoms']['test'][] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('test_provider_extension', 'Resources/Private/Partials');
 
 
     
