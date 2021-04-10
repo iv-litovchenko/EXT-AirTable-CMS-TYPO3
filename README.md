@@ -1704,6 +1704,13 @@ $filter['whereNested'] = function($query){
     $query->where('title', 'like', '1');
 };
 
+// Todo
+// whereDate() // ->whereDate('created_at', date('Y-m-d'))
+// whereMonth() // ->whereMonth('created_at', '05')
+// whereDay() // ->whereDay('created_at', '05')
+// whereYear() // ->whereYear('created_at', '05')
+// whereTime() // ->whereTime('created_at', '=', '1:20:45')
+
 $filter['inRandomOrder'] = false; // true
 $filter['orderBy.10'] = ['uid','desc'];
 $filter['orderBy.20'] = ['title','desc'];
