@@ -7,9 +7,6 @@ https://jsonformatter.org/php-formatter
 // Дублирование полей в флекс-форм загрузка группы полей @
 // Картинки...
 
-<f:vhsExtAirTable.content colPos="0" /> <!--Get page content (colPos=0)-->
-<flux:content.render area="mycontentB" WRAP="isContent"=true />
-
 attrubutes.shheet1.
 attr_
 
