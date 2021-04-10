@@ -467,8 +467,8 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 <!--Media_1, Media_M-->
 <f:vhsExtAirTable.markerMedia uid="45" as="row || rows">
   <f:for each="{rows}" as="row" key="itemkey">
-    <a href="<f:uri.image src='{row.uid_local}' />">
-      {itemkey+1}.<f:image src="{row.uid_local}" alt="alt text" width="100" /><br />
+    <a href="<f:uri.image src='{row.file.uid}' />">
+      {itemkey+1}.<f:image src="{row.file.uid}" alt="alt text" width="100" /><br />
     </a>
   </f:for>
 </f:vhsExtAirTable.markerMedia>
@@ -1251,8 +1251,8 @@ $(function() {
 * Partial
 *********************
 
-<f:render partial="Missing" optional="1" default="Partial 1 not found" />
-<f:render partial="AlsoMissing" optional="1">
+<f:render partial="Pages/Missing.html" optional="1" default="Partial 1 not found" />
+<f:render partial="Pages/AlsoMissing.html" optional="1">
    Partial 2 not found
 </f:render>
 
@@ -1282,9 +1282,9 @@ $(function() {
 *********************
 
 <f:for each="{rows}" as="row" key="itemkey">
-   <a href="<f:uri.image src='{row.uid_local}' />">
+   <a href="<f:uri.image src='{row.file.uid}' />">
       {itemkey+1}.
-      <f:image src="{row.uid_local}" alt="alt text" width="100" />
+      <f:image src="{row.file.uid}" alt="alt text" width="100" />
       <br />
    </a>
 </f:for>
@@ -1324,6 +1324,12 @@ $(function() {
 <f:uri.action route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
 
 *********************
+* Image, resource
+*********************
+
+<f:uri.image src="{row.propmedia_thumbnail.file.uid}" />
+
+*********************
 * Form
 *********************
 <f:form.checkboxproperty="cms" multiple="1" value="TYPO3" />
@@ -1333,11 +1339,13 @@ $(function() {
 *********************
 * Other
 *********************
+<f:format.html parseFuncTSPath="lib.parseFunc">{bodytext}</f:format.html>
 <f:format.date format="d.m.Y H:i">1265798455</f:format.date>
 <f:variablename="myvariable">My variable's content</f:variable>
 <f:variablename="myvariable" value="My variable's content"/>
 {f:variable(name: 'myvariable', value: 'My variable\'s content')}
 {myoriginalvariable -> f:variable.set(name: 'mynewvariable')}
+
 
 *********************
 * Flux forms
@@ -2424,8 +2432,8 @@ http://iv-litovchenko.ru
    <!--Processing-->
    [f:for each=`{{ $images }}` as=`image`]
    <div class="tx-myext-gallery-item">
-      <a href="[f:uri.image src=`{{ $image.uid_local }}` /]" data-fancybox="gallery">
-      <img src="[f:uri.image src=`{{ $image.uid_local }}` width=`272` height=`300c` /]">
+      <a href="[f:uri.image src=`{{ $image.file.uid }}` /]" data-fancybox="gallery">
+      <img src="[f:uri.image src=`{{ $image.file.uid }}` width=`272` height=`300c` /]">
       </a>
    </div>
    [/f:for]
