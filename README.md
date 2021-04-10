@@ -1051,7 +1051,7 @@ SysFileStorage::cmdDirDelete;
 $filter = [];
 $filter['select'] = ['id','identifier','tag'];
 $filter['from'] = ['cache_pages_tags'];
-$rows = \Litovchenko\AirTable\Domain\Model\DynamicModelCrud::recSelect('get',$filter); // Any tables 
+$rows = \Litovchenko\AirTable\Domain\Model\DynamicModelCrud::recSelect($filter)->get(); // Any tables 
 // $rows = DB::table('cache_pages_tags'); // use Illuminate\Database\Capsule\Manager as DB; 
 ```
 
@@ -1621,26 +1621,25 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // SELECT
-// NewTable::recSelect('medthod', $id || $filter || $callback, $pluck = null); // return result
+// NewTable::recSelect($id || $filter || $callback, $pluck = null)->medthod(); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
 
 $recordId = 7;
-$rowFirst = NewTable::recSelect('first', $recordId);
-$rowExists = NewTable::recSelect('exists', $recordId); // ->exists() (if), ->doesntExist() (if)
-$rowsCount = NewTable::recSelect('count'); // count
-$rowsGet = NewTable::recSelect('get'); // all
-$obj = NewTable::recSelect('obj',[])->...->get(); // return obj (to create subqueries)
-$sql = NewTable::recSelect('obj',[])->toSql();
-$dd = NewTable::recSelect('obj',[])->dd(); // debugging
-$dump = NewTable::recSelect('obj',[])->dump(); // debugging
+$rowFirst = NewTable::recSelect($recordId)->first();
+$rowExists = NewTable::recSelect($recordId)->exists(); // ->exists() (if), ->doesntExist() (if)
+$rowsCount = NewTable::recSelect([])->count(); // count
+$rowsGet = NewTable::recSelect([])->get(); // all
+$obj = NewTable::recSelect([])->...->get(); // return obj (to create subqueries)
+$sql = NewTable::recSelect([])->toSql();
+$dd = NewTable::recSelect([])->dd(); // debugging
+$dump = NewTable::recSelect([])->dump(); // debugging
 
 $limit = 10;
-$rowsResult = NewTable::recSelect('count,get', function ($q) use ($limit) { 
+$rowsResult = NewTable::recSelect(function ($q) use ($limit) { 
     $q->limit($limit); 
-});
+})->get();
 
-print "Count: " . $rowsResult['count'] . "<hr />";
-foreach ($rowsResult['get'] as $row) {
+foreach ($rowsResult as $row) {
     print $row['title'] . " // ";
     print $row['propref_NAME']['title'] . "<br />";
 }
@@ -1729,7 +1728,7 @@ $filter['with.40'] = 'propref_NAMED';
 // WaaviModel::whereNotRelated($relationshipName, $column, $operator, $value);
 // WaaviModel::orWhereNotRelated($relationshipName, $column, $operator, $value);
 
-// ->unionAll() // $subQ = NewTable::recSelect('obj', $filter);
+// ->unionAll() // $subQ = NewTable::recSelect($filter);
 $filter['union'] = ...;
 $filter['join'] = ...;
 $filter['leftJoin'] = ...;
@@ -1765,7 +1764,8 @@ $filter['orWhereAttribute'] = ['attr_color', '#eeeeee'];
 $filter['orWhereAttribute'] = ['attr_color', '#3d0d0d'];
 $filter['orderByAttribute'] = ['attr_color', 'desc'];
 
-$rows = \Litovchenko\AirTable\Domain\Model\Content\Data::recSelect('get',$filter);
+$rows = \Litovchenko\AirTable\Domain\Model\Content\Data::recSelect($filter)->get();
+$count = \Litovchenko\AirTable\Domain\Model\Content\Data::recSelect($filter)->count();
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // INSERT
