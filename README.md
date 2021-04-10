@@ -1710,6 +1710,18 @@ $filter['whereNested'] = function($query){
 // whereDay() // ->whereDay('created_at', '05')
 // whereYear() // ->whereYear('created_at', '05')
 // whereTime() // ->whereTime('created_at', '=', '1:20:45')
+// protected $dates = [‘edited_at’];
+// The following are the comparison functions of Carbon.
+eq() - equals
+ne() - not equals
+gt() - greater than
+gte() - greater than or equals
+lt() - less than
+lte() - less than or equals
+Example:
+if($model->edited_at->gt($model->created_at)){
+// edited at is newer than created at
+}
 
 $filter['inRandomOrder'] = false; // true
 $filter['orderBy.10'] = ['uid','desc'];
