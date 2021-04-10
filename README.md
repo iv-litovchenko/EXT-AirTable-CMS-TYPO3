@@ -1657,7 +1657,7 @@ $filter['withoutGlobalScope'] = 'FlagDeleted';
 
 $filter['distinct'] = 'title';
 $filter['select'] = ['uid','title', 'uid as aliasID'];
-$filter['addSelect'] = ['pid','date_create'];
+$filter['addSelect'] = ['pid','date_create']; // selectRaw()
 
 $filter['whereUid'] = 1; // dynamic field name
 $filter['wherePid'] = 1; // dynamic field name
@@ -1720,7 +1720,8 @@ $filter['limit'] = 3;
 $filter['offset'] = 0;
 $filter['having'] = ['aliasID', '>', 0]; // orHaving, havingRaw
 
-// ->with(), ->has(), ->whereHas(), ->doesntHave(), ->whereDoesntHave(), ->withCount()
+// ->with(), ->has(), ->whereHas(), orWhereHas()
+// ->doesntHave(), ->whereDoesntHave(), ->withCount()
 // ->wherePivot(), wherePivotIn()
 $filter['with.10']  = [
     'propref_NAMEA' => function($q) {
@@ -1760,6 +1761,11 @@ foreach ($rows as $row) {
     print $row['title'] . " // ";
     print $row['propref_NAME']['title'] . "<br />";
 }
+
+...->encrypt('id')->get();
+...->exclude('id', 'email')->get();
+...->addScope('active')->get();
+...->addScope('formatDate', 'd-m-Y')->get();
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // SELECT EAV 
