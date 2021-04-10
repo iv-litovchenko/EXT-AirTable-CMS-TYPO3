@@ -1621,7 +1621,7 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // SELECT
-// NewTable::recSelect('medthod', $id || $filter || $callback)->medthod(); // return result
+// NewTable::recSelect('medthod', $id || $filter || $callback, $pluck = null); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
 
 Model::find(numeric); returns a object
