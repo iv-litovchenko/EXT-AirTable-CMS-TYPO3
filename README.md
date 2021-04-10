@@ -1621,8 +1621,13 @@ use Mynamespace\Myext\Domain\Model\NewTable;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // SELECT
-// NewTable::recSelect($id || $filter || $callback, $pluck = null)->medthod(); // return result
+// NewTable::recSelect($id || $filter || $callback)->medthod(); // return result
 ////////////////////////////////////////////////////////////////////////////////////////
+
+Model::find(numeric); returns a object
+Model::whereId(numeric)->first(); returns a object
+Model::whereId(numeric)->get(); - returns a collection
+Model::whereId(numeric); - returns a builder
 
 $recordId = 7;
 $rowFirst = NewTable::recSelect($recordId)->first();
