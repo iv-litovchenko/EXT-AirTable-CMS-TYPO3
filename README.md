@@ -1925,9 +1925,10 @@ public function myref_relationship() {
 }
 
 // D) Repository Pattern (getBy***)
-// Todo 
-// $result_1 = NewTable::getById(230,'title'); // $id, $fields
-// $result_2 = NewTable::getByList('title'); // $fields...
+// Todo
+// Лучше использовать recSelect() + ...->addScope('active');
+// --- $result_1 = NewTable::getById(230,'title'); // $id, $fields
+// --- $result_2 = NewTable::getByList('title'); // $fields...
 
 // E) Nested Set
 // Todo 
