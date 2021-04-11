@@ -2444,7 +2444,7 @@ http://iv-litovchenko.ru
 ## Functional development plans 
 
 * [идея] - staticPage <f:router="namePageStatic">, уникальная страница в дереве страниц, либо без дерева страниц
-* pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent
+* ~~pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent~~
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
   * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
 * ~~RTE https://akilli.github.io/ckeditor4-build-classic/demo/~~
@@ -2464,7 +2464,9 @@ http://iv-litovchenko.ru
   * ItemsProcFunc MENU special = userfunction special.userFunc = Vendor\MyExtension\Userfuncs\CustomMenu->makeMenuArray
   * https://gist.github.com/mawo/f3a49058c3f4fb666c5162d8b77f1ceb
 * (Wrapper PageElements/Wrapper/Wrap1Controller.php) Обертка-контроллер для элементов содержимого (styles.templates.layoutRootPath = EXT:/Resources/Private/Layouts/), tt_content.stdWrap.outerWrap.cObject, также смотреть расширение: https://extensions.typo3.org/extension/view/
-* (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html)
+* (Overriding) Переопределение шаблонов стандартных элементов содержимого, дополнительные шаблоны (Overriding templates of standard content elements (using the "layout" field) - EXT:fluidcontent_core, https://kronova.net/tutorials/typo3/extbase-fluid/additional-headers-in-fluid-styled-content.html) $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['paths']['test_provider_extension'] = [
+ 'templateRootPaths' => ['EXT:test_provider_extension/Resources/Private/OverrideTemplates'],
+];
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
