@@ -23,6 +23,7 @@
 4) Общие атрибуты
 5) Ограничения для категорий
 6) PostBuilConfiguration
+7) FlexForm insert, update + mutator (setPiFlexForm).
 
 
 
