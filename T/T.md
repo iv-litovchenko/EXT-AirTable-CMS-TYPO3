@@ -1,8 +1,7 @@
 [...]
 ```
-Переименовать DefaultAction... >>> indexAction
+Page Provider...
 Название атрибутов attrubutes.sheet1 attr_ префикс...
-
 Структура элементов контента и страниц (как ее оставляем)... + Не забудь проверить Link router
 
 Как в N
