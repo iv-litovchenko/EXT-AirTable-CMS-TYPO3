@@ -452,11 +452,11 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 
 ## 07 Additional View Helper
 
-### Content
+### Get content (Xclass)
 ```
-<f:vhsExtAirTable.content colPos="2" /> <!--Page content-->
-<f:vhsExtAirTable.content gridContainerId="{gridId}" gridColumn="1" /> <!--Gridelements content-->
-<f:vhsExtAirTable.content model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!--Record content-->
+<v:content.render column="0" editIconWrapper="1" /> <!-- Page content colPos-->
+<v:content.render model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" editIconWrapper="1" /> <!-- Record content // Todo -->
+<flux:content.render area="1" editIconWrapper="1" /> <!-- Gridelements content colPos -->
 ```
 
 ### Marker
