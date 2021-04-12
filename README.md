@@ -2480,3 +2480,4 @@ http://iv-litovchenko.ru
 * ~~Default Assign (t3page, t3data, ...)~~
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
+* Для страниц и элементов содержимого добавить поддержку вложенности... Нужно будет писать исправленный путь в "AnnotationRegistrationExtTables.php" к файлу Index.php $provider->setTemplatePathAndFilename('EXT:'.$extensionKey.'/Resources/Private/Templates/Pages/'.$nameclassWithoutControllerPostfix.'/Index.html');
