@@ -36,4 +36,3 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.Creati
 
 https://jsonformatter.org/php-formatter
 Хороший префикс для рашсирений site_package/
-Todo-Для страниц и элементов содержимого добавить вложенность... Нужно будет писать исправленный путь в "AnnotationRegistrationExtTables" к файлу Index.php $provider->setTemplatePathAndFilename('EXT:'.$extensionKey.'/Resources/Private/Templates/Pages/'.$nameclassWithoutControllerPostfix.'/Index.html');
