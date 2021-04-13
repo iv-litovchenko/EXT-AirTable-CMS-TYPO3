@@ -1713,6 +1713,12 @@ $filter['whereNested'] = function($query){
 };
 
 // Todo
+// ->where('created_at', '=', date('Y-m-d')); 
+// $q->whereDay('created_at', '=', date('d'));
+// $q->whereMonth('created_at', '=', date('m'));
+// $q->whereYear('created_at', '=', date('Y'));
+// $q->where(DB::raw("DATE(created_at) = '".date('Y-m-d')."'"));
+ 
 // whereDate() // ->whereDate('created_at', date('Y-m-d'))
 // whereMonth() // ->whereMonth('created_at', '05')
 // whereDay() // ->whereDay('created_at', '05')
