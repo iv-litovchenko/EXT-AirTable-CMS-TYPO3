@@ -2481,3 +2481,11 @@ http://iv-litovchenko.ru
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Для страниц и элементов содержимого добавить поддержку вложенности... Нужно будет писать исправленный путь в "AnnotationRegistrationExtTables.php" к файлу Index.php $provider->setTemplatePathAndFilename('EXT:'.$extensionKey.'/Resources/Private/Templates/Pages/'.$nameclassWithoutControllerPostfix.'/Index.html');
+* Product provider (EAV):
+1) Product provider (Опыт магазинов - продукты проанализировать)...
+2) Выборка with + keyBy (вместо select)
+3) Eav-связи
+4) Общие атрибуты
+5) Ограничения для категорий
+6) PostBuilConfiguration
+7) FlexForm insert, update + mutator (setPiFlexForm).
