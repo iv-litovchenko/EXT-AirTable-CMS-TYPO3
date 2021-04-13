@@ -1411,7 +1411,7 @@ $(function() {
          </flux:form.object>
       </flux:form.section>
 	  
-      <!-- Примеры табов/аккордионов -->
+      <!-- Примеры табов/аккордионов (бесконечное количество секций) -->
       <flux:form.sheet name="tabs">
          <flux:form.section name="tabs">
             <flux:form.object name="tab">
