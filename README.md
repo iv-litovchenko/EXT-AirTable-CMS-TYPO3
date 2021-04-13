@@ -2450,6 +2450,7 @@ http://iv-litovchenko.ru
 
 ## Functional development plans 
 
+* Доработать 2 TV-поля для связей TV.tvref_... на базе двух вариантов конфигов field.tree.category (выбор категории) & field.tree (выбор страницы) (по существу это денормализованные типы связей - продумать как их можно выбирать через Laravel).
 * [идея] - staticPage <f:router="namePageStatic">, уникальная страница в дереве страниц, либо без дерева страниц
 * ~~pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent~~
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
