@@ -2478,6 +2478,9 @@ http://iv-litovchenko.ru
      * - `plugin.tx_yourext.view.templateRootPath` and siblings.
      * - `plugin.tx_yourext.view.templateRootPaths` and siblings.
      * - `plugin.tx_yourext.view.overlays.otherextension.templateRootPath` and siblings.
+     * https://jweiland.net/video-anleitungen/typo3/typo3-projekte-verwalten/fluid-styled-content-templates-anpassen.html
+     * https://github.com/sebkln/basetemplate8
+
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
