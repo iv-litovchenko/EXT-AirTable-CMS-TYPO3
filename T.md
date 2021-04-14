@@ -75,3 +75,6 @@ TCEFORM {
         imagewidth.disabled = 1
     }
 }
+
+
+->whereRowValues(['column1', 'column2'], '=', ['foo', 'bar']);
