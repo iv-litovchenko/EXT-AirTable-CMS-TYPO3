@@ -1,7 +1,7 @@
 ```
 В доку
 Свойства это внешние, атрибуты внутренние
-->whereRowValues(['column1', 'column2'], '=', ['foo', 'bar']);
+->whereRowValues(['column1', 'column2'], '=', ['foo', 'bar']); // orWhereRowValues()
 {f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
 {f:if(condition: item.current, then: ' active')}
 Понравилась идея делать для upload files - прямоугольник
