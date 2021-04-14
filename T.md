@@ -6,19 +6,7 @@
 {f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
 {f:if(condition: item.current, then: ' active')}
 Понравилась идея делать для upload files - прямоугольник
-
-
-forPage
-
-
-
-				
-				// Если нет аннотаций Flux-пропускаем - не создаем провайдер...
-				// $annotationFluxFields = BaseUtility::getClassAnnotationValueNew($class,'AirTable\FluxFields');
-				// if(empty($annotationFluxFields)){
-				// 	continue;
-				// }
-
+forPage $page, $perPage;
 ---------------
 
 TCEFORM
