@@ -8,7 +8,16 @@
 Понравилась идея делать для upload files - прямоугольник
 
 
+forPage
 
+
+
+				
+				// Если нет аннотаций Flux-пропускаем - не создаем провайдер...
+				// $annotationFluxFields = BaseUtility::getClassAnnotationValueNew($class,'AirTable\FluxFields');
+				// if(empty($annotationFluxFields)){
+				// 	continue;
+				// }
 
 ---------------
 
