@@ -10,6 +10,18 @@ forPage $page, $perPage;
 ->whereRowValues(['column1', 'column2'], '=', ['foo', 'bar']);
 
 
+---------
+https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
+https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
+1) Шорткоды
+2) Пагинация
+3) Хлебные крошшки
+4) Хороший префикс site_package/
+5) Flux-капикатор
+
+
+---------------
+
 https://blog.t3bootstrap.de/2020/04/typo3-overridechildtca-mittels-tsconfig/
 
 Array
