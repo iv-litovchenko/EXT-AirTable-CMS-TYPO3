@@ -8,7 +8,7 @@
 {f:if(condition: item.current, then: ' active')}
 Понравилась идея делать для upload files - прямоугольник
 Сделать загрузку items@ для select-ов из файла /typo3conf/ext/ext/Configuration/Items/Item.txt [Список значений]
-
+Разобраться как работает: <flux:field.controllerActions name="switchableControllerActions"> - очень актуально что бы не плодить большое кол-во плагинов одного типа группы (как новости). Способ ограничения полей смотреть в расширении News (файл "public_html\typo3conf\ext\news\Classes\Backend\FormDataProvider\NewsFlexFormManipulation.php")
 
 ---------
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
@@ -16,7 +16,6 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.Provid
 1) Шорткоды
 2) Flux-капикатор
 3) Pagination
-4) Flex-form switchaction
 
 
 ---------------
