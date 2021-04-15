@@ -10,6 +10,8 @@
 Сделать загрузку items@ для select-ов из файла /typo3conf/ext/ext/Configuration/Items/Item.txt [Список значений]
 Разобраться как работает: <flux:field.controllerActions name="switchableControllerActions"> - очень актуально что бы не плодить большое кол-во плагинов одного типа группы (как новости). Способ ограничения полей смотреть в расширении News (файл "public_html\typo3conf\ext\news\Classes\Backend\FormDataProvider\NewsFlexFormManipulation.php") getSwitchableControllerActions ($extensionName, $pluginName) http://man.hubwiz.com/docset/TYPO3.docset/Contents/Resources/Documents/class_t_y_p_o3_1_1_c_m_s_1_1_extbase_1_1_configuration_1_1_frontend_configuration_manager.html
 
+ laravel enum table
+
 ---------
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
