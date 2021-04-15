@@ -15,8 +15,6 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.Creati
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
 1) Шорткоды
 2) Flux-капикатор
-3) Pagination
-
 
 ---------------
 
