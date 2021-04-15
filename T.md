@@ -7,16 +7,14 @@
 {f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
 {f:if(condition: item.current, then: ' active')}
 Понравилась идея делать для upload files - прямоугольник
+Сделать загрузку items@ для select-ов из файла /typo3conf/ext/ext/Configuration/Items/Item.txt [Список значений]
 
 
 ---------
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
 1) Шорткоды
-2) Пагинация
-3) Хлебные крошшки
-4) Хороший префикс site_package/
-5) Flux-капикатор
+2) Flux-капикатор
 
 
 ---------------
