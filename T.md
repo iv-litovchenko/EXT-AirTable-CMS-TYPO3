@@ -13,6 +13,9 @@
  laravel enum table
  Шоркоды - доработать алгоритм замены (1) перед заменой делать предварительно проверку есть ли плейсхолдеры [f: 2) если нет USER_INT-объектов - записывать в кэш страницы).]
 
+cd demo.iv-litovchenko.ru/public_html/typo3conf/ext/
+ln -s /home/i/ilitovfa/iv-litovchenko.ru/public_html/typo3conf/ext/flux  /home/i/ilitovfa/demo.iv-litovchenko.ru/public_html/typo3conf/ext/
+
 ---------
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
