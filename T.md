@@ -20,27 +20,11 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.Provid
 
 https://blog.t3bootstrap.de/2020/04/typo3-overridechildtca-mittels-tsconfig/
 
-Array
-(
-    [class] => 
-    [attributes.attr_hellow1] => Element
-    [attributes.attr_hellow2] => 
-    [attributes.attr_hellow3] => 
-    [TV.tv_hellow1] => Sheet 1
-    [TV.tv_hellow2] => 
-    [TV.tv_hellow3] => Sheet 2
-    [TV.tvmedia_image] => 4
-    [bild] => 1
-    [settings.falimage] => 1
-    [settings.sectionObjectAsClass2.60774705990f4289921309.mobile.TV.tv_hellow4] => Hellow (1) [TV.tv_hellow4] Mobile
-    [settings.sectionObjectAsClass2.60774705990f4289921309.mobile.TV.tv_hellow5] => Hellow (1) [TV.tv_hellow4] Mobile 3
-    [settings.sectionObjectAsClass2.6077470f67fd4317382563.landline.TV.tv_hellow4] => Hellow (1) [TV.tv_hellow4]
-    [settings.sectionObjectAsClass2.6077470f67fd4317382563.landline.TV.tv_hellow5] => 
-    [field1] => 
-    [field2] => 
-    [field3] => 
-)
 
+1) addData
+2) flex-frontend get
+3) Список что показать?
+4) Какое название оставляет attributes?
 
 
 
