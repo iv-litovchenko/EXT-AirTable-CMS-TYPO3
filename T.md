@@ -28,6 +28,14 @@ https://blog.t3bootstrap.de/2020/04/typo3-overridechildtca-mittels-tsconfig/
 
 
 
+				/*
+					/ ** @var \TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools $flexFormTools * /
+					// $flexFormTools = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\FlexForm\\FlexFormTools');
+					// $fieldArray['pi_flexform'] = $flexFormTools->flexArray2Xml($flexformData, TRUE);
+				*/
+			   
+
+
 
  typo3/sysext/backend/Classes/Form/FormDataProvider/TcaFlexFetch.php deleted
 100644 → 0
