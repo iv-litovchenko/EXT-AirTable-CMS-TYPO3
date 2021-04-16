@@ -23,7 +23,6 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.Provid
 
 1) addData
 2) Список что показать?
-3) Какое название оставляет attributes?
 
 
 
