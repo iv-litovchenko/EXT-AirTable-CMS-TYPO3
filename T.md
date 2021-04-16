@@ -22,9 +22,8 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.Provid
 ---------------
 
 1) addData
-2) flex-frontend get
-3) Список что показать?
-4) Какое название оставляет attributes?
+2) Список что показать?
+3) Какое название оставляет attributes?
 
 
 
