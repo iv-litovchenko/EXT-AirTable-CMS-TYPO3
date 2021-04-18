@@ -1,6 +1,17 @@
 ```
 В доку
 Свойства это внешние, атрибуты внутренние
+Сокрашенная форма записи в атрибутах
+
+	<f:for each="{images}" as="image">
+		<div style="float: left; width: 33.3%;" class="">
+			<a href="{f:uri.image(src:image.file.uid)}" data-fancybox="gallery">
+				<img src="{f:uri.image(src:image.file.uid, width:272, height:'300c')}">
+			</a>
+		</div>
+	</f:for>
+	
+
 ->whereRowValues(['column1', 'column2'], '=', ['foo', 'bar']); // orWhereRowValues()
 ->where created_at between (new DateTime("2021-01-13"))->getTimestamp() and (new DateTime("2021-01-14"))->getTimestamp()
 ->forPage() $page, $perPage;
@@ -21,7 +32,6 @@ https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.Creati
 https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
 ---------------
 
-1) addData
 2) Список что показать?
 
 
