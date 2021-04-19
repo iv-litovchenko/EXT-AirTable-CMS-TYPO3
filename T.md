@@ -14,15 +14,6 @@
 cd demo.iv-litovchenko.ru/public_html/typo3conf/ext/
 ln -s /home/i/ilitovfa/iv-litovchenko.ru/public_html/typo3conf/ext/flux  /home/i/ilitovfa/demo.iv-litovchenko.ru/public_html/typo3conf/ext/
 
----------
-https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.2.CreatingTemplateFiles/3.2.1.CommonFileStructure.md
-https://github.com/FluidTYPO3/documentation/blob/rewrite/3.Templating/3.1.ProviderExtension/3.1.5.ConfigurationFiles.md
----------------
-
-2) Список что показать?
-
-
-
 				/*
 					/ ** @var \TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools $flexFormTools * /
 					// $flexFormTools = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\FlexForm\\FlexFormTools');
