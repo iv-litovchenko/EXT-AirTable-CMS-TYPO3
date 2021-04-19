@@ -2465,11 +2465,18 @@ http://iv-litovchenko.ru
   * Генерацию ext_tables.sql делать всегда при изменении файлов моделей 
 * Сопоставление полей модели и Flux-полей (за основу взять config - flux-полей)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
-* getFileByHash () для загрузки файлов (что бы файл не пропадал!)
+* getFileByHash () для загрузки файлов (что бы файл не пропадал!). Понравилась идея делать для upload files - прямоугольник
 * ~~Default Assign (t3page, t3data, ...)~~
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Для страниц и элементов содержимого добавить поддержку вложенности... Нужно будет писать исправленный путь в "AnnotationRegistrationExtTables.php" к файлу Index.php $provider->setTemplatePathAndFilename('EXT:'.$extensionKey.'/Resources/Private/Templates/Pages/'.$nameclassWithoutControllerPostfix.'/Index.html');
+* Шоркоды - доработать алгоритм замены (1) перед заменой делать предварительно проверку есть ли плейсхолдеры [f: 2) если нет USER_INT-объектов - записывать в кэш страницы).]
+* Flux
+  * Создать связь (->with('fluxSettings') + keyBy)
+  * Визуально вывести в списках, что бы можно было просмотреть значения атрибутов
+  * Сделать загрузку items@ для select-ов из файла /typo3conf/ext/ext/Configuration/Items/Item.txt [Список значений]
+  * Laravel enum table (выборка денормализованных связей M-M, без промежуточной таблицы)
+  * Разобраться как работает: <flux:field.controllerActions name="switchableControllerActions"> - очень актуально что бы не плодить большое кол-во плагинов одного типа группы (как новости). Способ ограничения полей смотреть в расширении News (файл "public_html\typo3conf\ext\news\Classes\Backend\FormDataProvider\NewsFlexFormManipulation.php") getSwitchableControllerActions ($extensionName, $pluginName) http://man.hubwiz.com/docset/TYPO3.docset/Contents/Resources/Documents/class_t_y_p_o3_1_1_c_m_s_1_1_extbase_1_1_configuration_1_1_frontend_configuration_manager.html
 * Product provider (EAV):
 1) Product provider (Опыт магазинов - продукты проанализировать)...
 2) Выборка with + keyBy (вместо select)
