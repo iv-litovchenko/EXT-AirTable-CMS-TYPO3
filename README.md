@@ -1247,6 +1247,9 @@ $(function() {
    </f:then>
 </f:if>
 
+{f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
+{f:if(condition: item.current, then: ' active')}
+
 *********************
 * Partial
 *********************
@@ -1328,6 +1331,8 @@ $(function() {
 *********************
 
 <f:uri.image src="{row.propmedia_thumbnail.file.uid}" />
+<a href="{f:uri.image(src:image.file.uid)}" data-fancybox="gallery"> </a>
+<img src="{f:uri.image(src:image.file.uid, width:272, height:'300c')}">
 
 *********************
 * Form
@@ -1693,6 +1698,8 @@ $values = [
     ['type_b', 1],
     ['type_c', 1],
 ];
+
+$filter['whereRowValues'] = [['column1', 'column2'],'=',['foo', 'bar']]; // orWhereRowValues()
 $filter['whereInMultiple'] = ['morphable_type', 'morphable_id'], $values]; // ->whereNotInMultiple()
 $filter['whereIn'] = ['uid',[1,2,3,4,5,6,7,8,9,10]]; // ->orWhereIn(), ->whereNotIn(), ->orWhereNotIn()
 $filter['whereNull'] = 'keywords'; // ->orWhereNull(), ->whereNotNull(), ->orWhereNotNull()
@@ -1713,6 +1720,7 @@ $filter['whereNested'] = function($query){
 };
 
 // Todo
+// ->where created_at between (new DateTime("2021-01-13"))->getTimestamp() and (new DateTime("2021-01-14"))->getTimestamp()
 // ->where('created_at', '=', date('Y-m-d')); 
 // $q->whereDay('created_at', '=', date('d'));
 // $q->whereMonth('created_at', '=', date('m'));
@@ -1777,7 +1785,7 @@ $filter['crossJoin'] = ...;
 $filter['mySelectMinimize'] = true; // or false
 $filter['myWhereFlagDeletedIn'] = [0,1]; // 0, 1, [0,1]
 $filter['myWhereFlagDisabledIn'] = [0,1]; // 0, 1, [0,1]
-$filter['myPagination'] = [1,30]; // $pagePosition, $pageLimit
+$filter['myPagination'] = [1,30]; // $pagePosition, $pageLimit, // ->forPage($page, $perPage);
 
 $count = NewTable::recSelect('count', $filter);
 $rows = NewTable::recSelect('get', $filter);
