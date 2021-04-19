@@ -90,11 +90,6 @@ EXT:myext/Configuration/TypoScript/IncFrontend/constants.ts
 EXT:myext/Configuration/TypoScript/IncFrontend/setup.ts
 
 EXT:myext/Resources/Private/
-
-// Todo
-// Rename template path to -> 
-// EXT:myext/Resources/Private/Templates/Pages.Page404.Index.html
-// EXT:myext/Resources/Private/Templates/Pages.PageDefault.Index.html
 EXT:myext/Resources/Private/Layouts/
 EXT:myext/Resources/Private/Partials/
 EXT:myext/Resources/Private/Templates/Modules/[*]/Index.html
@@ -105,14 +100,9 @@ EXT:myext/Resources/Private/Templates/PagesElements/Plugins/[*]/Index.html
 EXT:myext/Resources/Private/Templates/Widgets/[*]/Index.html
 
 EXT:myext/Resources/Public/
-EXT:myext/Resources/Public/Css/Pages.Main.css
-EXT:myext/Resources/Public/Css/Widgets.FeedBackForm.css
-EXT:myext/Resources/Public/Js/Pages.Main.js
-EXT:myext/Resources/Public/Js/Widgets.FeedBackForm.js
-EXT:myext/Resources/Public/Img/Modules/
-EXT:myext/Resources/Public/Img/Pages/
-EXT:myext/Resources/Public/Img/PagesElements/
-EXT:myext/Resources/Public/Img/Widgets/
+EXT:myext/Resources/Public/Css/
+EXT:myext/Resources/Public/Javascript/
+EXT:myext/Resources/Public/Images/
 
 EXT:myext/ext_emconf.php
 ```
@@ -280,15 +270,6 @@ class NewPageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         'cols' => '0,1|2,3,4|5'
     ];
 
-    public function preview()
-    {
-        // Todo - \Litovchenko\AirTable\Hooks\PageLayoutView\PageLayoutHeaderHook
-        $itemContent .= '
-        <p class="text-center">
-        <span title="'.$row['title'] . '" class="btn btn-default">' . $row['title'] .'</span>
-        </p>';
-    }
-
     public function indexAction()
     {
         // typo3conf/ext/myext/Configuration/TypoScript/IncFrontend/constants.ts
@@ -370,10 +351,10 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         'description' => 'Content element description',
         'nonCachedActions' => 'index', // USER_INT
         'ajaxActions' => 'index', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
-	//////////////////////////////////////////////
+        //////////////////////////////////////////////
         // If type "FrontendContentPlugin (start)"
-	//////////////////////////////////////////////
-	'urlManagerActions' => [
+        //////////////////////////////////////////////
+        'urlManagerActions' => [
             // [RU] На 1 действие может быть несколько вариантов
             // [ENG] There can be several options for 1 action
             '/travels' => 'travelsAction',
@@ -386,22 +367,13 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             // public function sendFormAction(array $form = [])
             '/form' => 'sendFormAction'
         ],
-	//////////////////////////////////////////////
+        //////////////////////////////////////////////
         // If type "FrontendContentPlugin (end)"
-	//////////////////////////////////////////////
+        //////////////////////////////////////////////
         'fieldsExcludeList' => 'header_position,date',
         'fieldsAddList' => 'imageorient',
         'cols' => '1,2,3|4,5 || container', // If type "FrontendContentGridelement" // EXT:gridelements
     ];
-
-    public function preview()
-    {
-        // Todo - Litovchenko\AirTable\Hooks\PageLayoutView\NewContentElementPreviewRenderer;
-        $itemContent .= '
-        <p class="text-center">
-        <span title="'.$row['header'] . '" class="btn btn-default">' . $row['header'] .'</span>
-        </p>';
-    }
 
     public function indexAction()
     {
@@ -411,10 +383,6 @@ class NewElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         // plugin.tx_myext_newelementcontroller.settings.myTwoSetting = 100
         // print_r($this->settings);
         $this->view->assign('var', rand(1, 1000));
-        $this->view->assign(
-            'gridId', // If type "FrontendContentGridelement" // EXT:gridelements
-            $this->configurationManager->getContentObject()->data['uid']
-        );
     }
 
     // If type "FrontendContentPlugin"
@@ -1199,7 +1167,7 @@ $GLOBALS['TSFE']->pageRenderer->addCssFile('/_css.css'); // addCssInlineBlock
 $GLOBALS['TSFE']->set_cache(); // Проверили все параметры - разрешаем кэширование страниц (+1 экземпляр) - Альтернатива "cHash"
 $GLOBALS['TSFE']->set_cache_timeout_default(300);
 $GLOBALS['TSFE']->addCacheTags(['myTag_travelsAction']); // If you need to manually reset the cache 
-$GLOBALS['TSFE']->AddBreadcrumbItem(); // Todo 
+$GLOBALS['TSFE']->addBreadcrumbItem(); // Todo 
 // $GLOBALS['TSFE']->setPageNotFoundAndExit(' Msg // Todo '); // throw new \Exception('Invalid data'); // $this->throwStatus(404, 'FE', 'Msg');
 ```
 
