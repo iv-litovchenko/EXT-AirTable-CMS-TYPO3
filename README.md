@@ -1611,17 +1611,9 @@ http://iv-litovchenko.ru
 * Permissions backend user (non admin!) for root page id (pid)=0;
 * Create new content element "WizardItems" for root page id (pid)=0;
 * Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
-* [Оптимизация] Синяя молния (пересмотреть в SqlController.php затирку всей таблицы ::truncate() на альтернативный алгоритм)
-  * Оптимизировать генерацию TCA (сохранять сгенерированную TCA-в кэш), всегда будут вызываться только функции postBuildConfiguration() всех моделей
-  * Генерацию ext_tables.sql делать всегда при изменении файлов моделей 
-* Сопоставление полей модели и Flux-полей (за основу взять config - flux-полей)
 * FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
 * getFileByHash () для загрузки файлов (что бы файл не пропадал!). Понравилась идея делать для upload files - прямоугольник
-* ~~Default Assign (t3page, t3data, ...)~~
-* Валидация аргументов роутера
-* Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
 * Шоркоды - доработать алгоритм замены (1) перед заменой делать предварительно проверку есть ли плейсхолдеры [f: 2) если нет USER_INT-объектов - записывать в кэш страницы).]
-
 * Flux
   * Создать связь (->with('fluxSettings') + keyBy)
   * Визуально вывести в списках, что бы можно было просмотреть значения атрибутов
