@@ -135,6 +135,5 @@
 
 <!--Tested only in TYPO3 v10!-->
 <!--Switching to another controller is not easy!-->
-<!--Ext.[***extension***].Modules.[***controller***].[***action***]-->
-<f:be.link route="Ext.Myext.Modules.NewModule2.index" parameters="{arg: 1}">Go to Module 2</f:be.link><br />
-<f:be.link route="Ext.Myext.Modules.NewModule3.index" parameters="{arg: 1}">Go to Module 3</f:be.link><br />
+<!--Ext.[***extension***].Modules || Pages || Plugins.[***controller***].[***action***]-->
+<f:link.action action="Ext.AirTable.Modules.Import.step2">444 Go to Module</f:link.action><br />
