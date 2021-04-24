@@ -26,7 +26,6 @@ A set of tools for creating your site based on class annotations (nowadays magic
 * 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#19-useful-settings-in-typo3conflocalconfigurationphp)
 * 20 [Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)](#20-extbase-frontend-ajax-httpyour-sitecomeidajax1)
 * 21 [Extbase Example of working with forms](#21-extbase-example-of-working-with-forms)
-* [Fluid: Alternative template syntax](#fluid-alternative-template-syntax)
 * [Functional development plans](#functional-development-plans)
 
 ## 01 Demo site online
@@ -1573,30 +1572,6 @@ http://iv-litovchenko.ru
 ...
 ...
 ...
-```
-
-## Fluid: Alternative template syntax 
-
-```html
-{fluidanotherdelimiter}
-
-<div class="tx-myext-gallery-wrap">
-
-   <!--Ignore processing [[f: ... =``]] {{{$ var }}}-->
-   [[f:for each=`{{{ $images }}}` as=`image`]]
-   {{{ $image }}}
-   [[/f:for]]
-
-   <!--Processing-->
-   [f:for each=`{{ $images }}` as=`image`]
-   <div class="tx-myext-gallery-item">
-      <a href="[f:uri.image src=`{{ $image.file.uid }}` /]" data-fancybox="gallery">
-      <img src="[f:uri.image src=`{{ $image.file.uid }}` width=`272` height=`300c` /]">
-      </a>
-   </div>
-   [/f:for]
-
-</div>
 ```
 
 ## Functional development plans 
