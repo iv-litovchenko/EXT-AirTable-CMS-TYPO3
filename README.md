@@ -1620,9 +1620,8 @@ http://iv-litovchenko.ru
 * ~~Default Assign (t3page, t3data, ...)~~
 * Валидация аргументов роутера
 * Ajax link helper - <f:link.action route="Ext.Pages.Widgets.RandPhoto.index" eIdAjax="true" eIdAjaxSettings(или eIdAjaxParams?)="{imgWidthBig:640,imgWidthSmall:300}">Ajax link</f:link.action>
-* Для страниц и элементов содержимого добавить поддержку вложенности... Нужно будет писать исправленный путь в "AnnotationRegistrationExtTables.php" к файлу Index.php $provider->setTemplatePathAndFilename('EXT:'.$extensionKey.'/Resources/Private/Templates/Pages/'.$nameclassWithoutControllerPostfix.'/Index.html');
 * Шоркоды - доработать алгоритм замены (1) перед заменой делать предварительно проверку есть ли плейсхолдеры [f: 2) если нет USER_INT-объектов - записывать в кэш страницы).]
-* Ассеты (пересмотреть ассеты для шаблонов страниц - без TS): disableAllHeaderCode=1, pageRendererTemplateFile=EXT:core/Resources/Private/Templates/PageRenderer.html. Для подключения скриптов сделать вставки в шаблонах ###HEADERDATA###, ###FOOTERDATA### и другие. 
+
 * Flux
   * Создать связь (->with('fluxSettings') + keyBy)
   * Визуально вывести в списках, что бы можно было просмотреть значения атрибутов
