@@ -229,14 +229,8 @@ Step 3) Go to the module "Admin Tools" > "Maintenance" > "Flush TYPO3 and PHP Ca
 ## 05 Register a new page template
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
 
-Step 1) Create a class EXT:myext/Classes/Controller/Pages/NewPageController.php
-Step 2) Create template EXT:myext/Resources/Private/Templates/Pages/NewPage/Index.html
-
 ## 06 Register a new content element
 ![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
-
-Step 1) Create a class EXT:myext/Classes/Controller/PagesElements/Elements/NewElementController.php
-Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elements/NewElement/Index.html
 
 ## 07 Additional View Helper
 
@@ -302,120 +296,7 @@ Step 2) Create template EXT:myext/Resources/Private/Templates/PagesElements/Elem
 
 ## 08 Register View Helper
 
-Step 1) Create a class EXT:myext/Classes/ViewHelpers/HelloWorldViewHelper.php
-
-```php
-<?php
-namespace Mynamespace\Myext\ViewHelpers;
-
-class HelloWorldViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
-{
-    /**
-     * The magic variable TYPO3
-     * Parameters are described here
-     * @var array
-     */
-    public static $TYPO3 = [
-        'thisIs' => 'FrontendViewHelper',
-        'name' => 'Test Helper',
-        'description' => 'String output based on arguments',
-        'registerArguments' => [
-            'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
-            'testArg2' => ['string']
-        ]
-    ];
-
-    public function render()
-    {
-        $testArg1 = $this->arguments['testArg1'];
-        $testArg2 = $this->arguments['testArg2'];
-        return 'Hello world - ' . $testArg1 . ',' . $testArg2;
-    }
-}
-```
-
-Step 2) How to use?
-
-```html
-<f:debug title="Debug" inline="true">{_all}</f:debug>
-...
-...
-...
-<h3>My View Helper</h3>
-<h4>String:</h4>
-<u>
-   <f:vhsExtMyext.HelloWorld testArg1='100' testArg2='200' />
-</u>
-<h4>Condition:</h4>
-<f:if condition="{f:vhsExtMyext.HelloWorld(testArg1:'100', testArg2:'200')}">
-   <f:then>YES</f:then>
-   <f:else>NO</f:else>
-</f:if>
-...
-...
-...
-```
-
 ## 09 Register Widget (Component - View Helper with controller and template)
-
-Step 1) Create a class EXT:myext/Classes/Controller/Widgets/TestController.php
-
-```php
-<?php
-namespace Mynamespace\Myext\Controller\Widgets;
-
-class TestController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-{
-    /**
-     * The magic variable TYPO3
-     * Parameters are described here
-     * @var array
-     */
-    public static $TYPO3 = [
-        'thisIs' => 'FrontendWidget',
-        'name' => 'Test widget',
-        'description' => 'The widget has a controller and a template',
-        'nonCachedActions' => 'index', // USER_INT
-        'ajaxActions' => 'index', // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
-        'registerArguments' => [
-            'testArg1*' => ['string','Default value','Description'], // integer || string || mixed || boolean || array
-            'testArg2*' => ['string',640],
-            'testArg3' => ['string',480]
-        ]
-    ];
-
-    public function indexAction()
-    {
-        $this->view->assign('testArg1', $this->settings['testArg1']);
-        $this->view->assign('testArg2', $this->settings['testArg2']);
-        $this->view->assign('testArg3', $this->settings['testArg3']);
-    }
-}
-```
-
-Step 2) Create template EXT:myext/Resources/Private/Templates/Widgets/Test/Index.html
-
-```html
-<f:debug title="Debug" inline="true">{_all}</f:debug>
-
-My Widget (Result): <br />
-{testArg1}, {testArg2}, {testArg3}
-```
-
-Step 3) How to use?
-
-```html
-...
-...
-...
-<h3>My Widget (Initialization):</h3>
-<u>
-   <f:wgsExtMyext.Test testArg1="100" testArg2="200" testArg3="300" />
-</u>
-...
-...
-...
-```
 
 ## 10 Register a new model (CRUD)
 
