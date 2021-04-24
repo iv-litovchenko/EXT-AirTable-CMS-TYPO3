@@ -28,23 +28,6 @@ A set of tools for creating your site based on class annotations (nowadays magic
 * 21 [Extbase Example of working with forms](#21-extbase-example-of-working-with-forms)
 * [Functional development plans](#functional-development-plans)
 
-## 01 Demo site online
-
-Coming soon! // Todo
-
-## 02 How to install?
-
-## 03 Extension structure
-
-## 04 Register a new admin module
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-admin-module.png)
-
-## 05 Register a new page template
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-page-template-1.png)
-
-## 06 Register a new content element
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-register-a-new-content-element.png)
-
 ## 07 Additional View Helper
 
 ### Get content (Xclass)
@@ -106,35 +89,6 @@ Coming soon! // Todo
   <v:page.menu expandAll="0" levels="2" substElementUid="1" /> <!-- <li id="elem_id(page id)"><!-- INSERT EDIT ICON--><a href=""></a></li> -->
 </f:vhsExtAirTable.editIconsForMenu>
 ```
-
-## 08 Register View Helper
-
-## 09 Register Widget (Component - View Helper with controller and template)
-
-## 10 Register a new model (CRUD)
-
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-crud.png)
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-crud-with-category.png)
-
-## 11 Standard CRUD-models registered in the system for working with records
-
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/typo3-standard-crud-models.png)
-
-## 12 Extending an existing model
-
-![Image alt](https://github.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/raw/main/Img/extending-an-existing-model.png)
-
-## 13 List records (module)
-
-- // todo
-
-## 14 Export records Xls|Csv (module)
-
-- // todo
-
-## 15 Import records Xls|Csv (module)
-
-- // todo
 
 ## 16 Useful functions (Extbase, Fluid, TS) 
 
