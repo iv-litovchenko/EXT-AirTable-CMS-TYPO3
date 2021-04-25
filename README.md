@@ -1,5 +1,11 @@
 # EXT: AirTable (CMS TYPO3)
 
+## CMS TYPO3 #1. Демо-сайт. Начало разработки
+[![Watch the video](https://img.youtube.com/vi/5LqxpCbRNXw/maxresdefault.jpg)](https://youtu.be/5LqxpCbRNXw)
+
+## CMS TYPO3 #2. Настройка сайта
+[![Watch the video](https://img.youtube.com/vi/CZAhgC9YXsM/maxresdefault.jpg)](https://youtu.be/CZAhgC9YXsM)
+
 A set of tools for creating your site based on class annotations (nowadays magic variable $ TYPO3 = []). Works in versions TYPO3 v10 (not tested in other versions for a long time). The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. Основная задача данного расширения - одинаково струрированный контент на проекте. [RU]
 
 ## Table of content
