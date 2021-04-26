@@ -264,7 +264,7 @@ $(function() {
 *********************
 
 <!-- Backend module-->
-<f:be.link route="web_ts || Ext.Myext.Modules.NewModule2.index" parameters="{id: 92}">Go to module</f:be.link>
+<f:be.link route="web_ts" parameters="{id: 92}">Go to module</f:be.link>
 
 <!-- Page -->
 <f:link.page pageUid="123" additionalParams="{foo:bar}">Klick me!</f:link.page>
@@ -281,9 +281,10 @@ $(function() {
    что бы сделать ссылку, мы ищем ID-страницы, а не маршрут. Здесь же ищем контроллер и действие.
    // Todo: RouterList (продумать вывод списка маршрутов для отдалки)
 -->
-<f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.index"> --TEXT-- </f:link.action>
-<f:link.action pageUid="1 || self" route="Ext.Myext.Pages.Default.travels"> --TEXT-- </f:link.action>
-<f:uri.action route="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
+<f:link.action pageUid="1 || self" action="Ext.Myext.Pages.Default.index"> --TEXT-- </f:link.action>
+<f:link.action pageUid="1 || self" action="Ext.Myext.Plugins.Default.travels"> --TEXT-- </f:link.action>
+<f:link.action action="Ext.AirTable.Modules.Import.step2">444 Go to Module</f:link.action><br />
+<f:uri.action action="Ext.Myext.Pages.Default.travelView" arguments="{uid:5}" />
 
 *********************
 * Image, resource
