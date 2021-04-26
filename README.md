@@ -1028,37 +1028,3 @@ http://iv-litovchenko.ru
 ```
 
 ## Functional development plans 
-
-* Создать 2 TV-поля для денормализованных связей TV.tvref_ M-1, M-M... на базе двух вариантов конфигов (по существу это денормализованные типы связей - продумать как их можно выбирать через Laravel). Очень актуально особенно для выбора страниц. Сейчас есть field.tree.category (выбор категории) & field.tree (выбор страницы).
-* Оптимизировать генерацию TCA (сохранять сгенерированную TCA-в кэш), всегда будут вызываться только функции postBuildConfiguration() всех моделей
-* Найти ту настройку для моделей TCA, где пишется ЧПУ ассоциирующееся с таблицей (моделью)
-* [идея] - staticPage <f:router="namePageStatic">, уникальная страница в дереве страниц, либо без дерева страниц
-* ~~pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent~~
-* Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
-  * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
-
-* Регионы в шаблоны (показ определенных блоков по условиям)
-* Oops an error occurred. Code: 2021033121411590d9c6a5 - упростить работу с ошибками, контест "ДевелопменТ" (config.contentObjectExceptionHandler = 1)
-
-
-
-* Permissions backend user (non admin!) for root page id (pid)=0;
-* Create new content element "WizardItems" for root page id (pid)=0;
-* Splitting records into storages (analogous to folders in the tree of pages and EXT:tt_news)
-* FAL: Категоризация файлов (коллекции) - идея добавить в D+ модуль фильтрации по тэгам - мои файлы, общие файлы, файлы таблиц
-* getFileByHash () для загрузки файлов (что бы файл не пропадал!). Понравилась идея делать для upload files - прямоугольник
-* Шоркоды - доработать алгоритм замены (1) перед заменой делать предварительно проверку есть ли плейсхолдеры [f: 2) если нет USER_INT-объектов - записывать в кэш страницы).]
-* Flux
-  * Создать связь (->with('fluxSettings') + keyBy)
-  * Визуально вывести в списках, что бы можно было просмотреть значения атрибутов
-  * Сделать загрузку items@ для select-ов из файла /typo3conf/ext/ext/Configuration/Items/Item.txt [Список значений]
-  * Laravel enum table (выборка денормализованных связей M-M, без промежуточной таблицы)
-  * Разобраться как работает: <flux:field.controllerActions name="switchableControllerActions"> - очень актуально что бы не плодить большое кол-во плагинов одного типа группы (как новости). Способ ограничения полей смотреть в расширении News (файл "public_html\typo3conf\ext\news\Classes\Backend\FormDataProvider\NewsFlexFormManipulation.php") getSwitchableControllerActions ($extensionName, $pluginName) http://man.hubwiz.com/docset/TYPO3.docset/Contents/Resources/Documents/class_t_y_p_o3_1_1_c_m_s_1_1_extbase_1_1_configuration_1_1_frontend_configuration_manager.html
-* Product provider (EAV):
-1) Product provider (Опыт магазинов - продукты проанализировать)...
-2) Выборка with + keyBy (вместо select)
-3) Eav-связи
-4) Общие атрибуты
-5) Ограничения для категорий
-6) PostBuilConfiguration
-7) FlexForm insert, update + mutator (setPiFlexForm).
