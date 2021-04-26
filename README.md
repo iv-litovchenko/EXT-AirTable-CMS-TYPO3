@@ -1036,13 +1036,7 @@ http://iv-litovchenko.ru
 * ~~pageIdContent (подхват контроллера для конкретной страницы, "может это содержит дополнение?") Многостраничники плагины VS pagecontent~~
 * Конфигурация сайта: https://t3terminal.com/blog/typo3-site-configuration/
   * Блоки настроек (Craf Settings) - ExtConf -> SiteConf -> ThemesConf
-* ~~RTE https://akilli.github.io/ckeditor4-build-classic/demo/~~
-  * ~~(Mag) InsertVaribles (он же плайсхолдер, чанк, сниппет, шорткод [bb], [bb] [/bb], [bb arg=””])~~
-  * ~~(Mag) InsertWidgets~~
-  * ~~InsertBlockTemplate (template ID)~~
-  * https://codecanyon.net/item/slavlee-shortcodes/20172526
-  * TinyMCE
-  * Linkhandler
+
 * Регионы в шаблоны (показ определенных блоков по условиям)
 * Oops an error occurred. Code: 2021033121411590d9c6a5 - упростить работу с ошибками, контест "ДевелопменТ" (config.contentObjectExceptionHandler = 1)
 
