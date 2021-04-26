@@ -133,9 +133,4 @@
 ----
 
 
-<f:be.link route="web_ts" parameters="{id: 92}">Go to web_ts</f:be.link><br />
 
-<!--Tested only in TYPO3 v10!-->
-<!--Switching to another controller is not easy!-->
-<!--Ext.[***extension***].Modules || Pages || Plugins.[***controller***].[***action***]-->
-<f:link.action action="Ext.AirTable.Modules.Import.step2">444 Go to Module</f:link.action><br />
