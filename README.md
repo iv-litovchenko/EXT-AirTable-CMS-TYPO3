@@ -8,47 +8,6 @@
 
 A set of tools for creating your site based on class annotations (nowadays magic variable $ TYPO3 = []). Works in versions TYPO3 v10 (not tested in other versions for a long time). The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. Основная задача данного расширения - одинаково струрированный контент на проекте. [RU]
 
-## 07 Additional View Helper
-
-### For administrator 
-```
-<f:vhsExtAirTable.adminPanel isFooter="0 || 1" />
-<f:vhsExtAirTable.adminPanelTools />
-
-<f:vhsExtAirTable.adminInfobox title="Infobox" type="warning || info || error"> --- site admin content  --- </f:vhsExtAirTable.adminInfobox>
-<f:vhsExtAirTable.editWrap> --- site content --- </f:vhsExtAirTable.editWrap>
-
-<f:vhsExtAirTable.editIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" recordId="100" title="Edit" />
-<f:vhsExtAirTable.editIconInline model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
-<f:vhsExtAirTable.editIconCenter model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
-<f:vhsExtAirTable.editIconAbs model="Pages || TtContent || Data || Model" recordId="100" title="Edit" />
-
-<f:vhsExtAirTable.newIcon model="Litovchenko\AirTable\Domain\Model\Content\Pages" pid="200" title="New" />
-<f:vhsExtAirTable.newIconInline model="Pages || TtContent || Data || Model" pid="200" title="New" />
-<f:vhsExtAirTable.newIconCenter model="Pages || TtContent || Data || Model" pid="200" title="New" />
-<f:vhsExtAirTable.newIconAbs model="Pages || TtContent || Data || Model" pid="200" title="New" />
-
-<!--editIcon & newIcon options-->
-<f:vhsExtAirTable.editIcon ...
-  defaultFieldsForNewRecord="{title:'New record',nav_title:'New record'}"
-  copyFieldsForNewRecord="header,CType"
-  editFieldsOnly="header,CType"
-  hideNewIcon="1"
-  hideDisableIcon="1"
-  hideDeletedIcon="1"
-  hideBufferIcon="1"
-  allowedIcons=Edit,New,Deleted,Disabled" <!--todo-->
-  styleLeft="10" <!--only for newIconAbs-->
-  styleTop="10" <!--only for newIconAbs-->
-  styleRight="10" <!--only for newIconAbs-->
-  styleBottom="10" <!--only for newIconAbs-->
-/>
-
-<f:vhsExtAirTable.editIconsForMenu uidPattern="elem_*" styleDirection="left">
-  <v:page.menu expandAll="0" levels="2" substElementUid="1" /> <!-- <li id="elem_id(page id)"><!-- INSERT EDIT ICON--><a href=""></a></li> -->
-</f:vhsExtAirTable.editIconsForMenu>
-```
-
 ## 16 Useful functions (Extbase, Fluid, TS) 
 
 ### Useful notes - Hooks
