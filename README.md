@@ -10,13 +10,6 @@ A set of tools for creating your site based on class annotations (nowadays magic
 
 ## 07 Additional View Helper
 
-### Get content (Xclass)
-```
-<f:vhsExtAirTable.content.page column="2" /> <!-- Page content -->
-<f:vhsExtAirTable.content.record model="Mynamespace\Myext\Domain\Model\NewTable" uid="2" /> <!-- Record content // Todo -->
-<f:vhsExtAirTable.content.grid area="2" /> <!-- Gridelements content -->
-```
-
 ### For administrator 
 ```
 <f:vhsExtAirTable.adminPanel isFooter="0 || 1" />
