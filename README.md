@@ -17,21 +17,6 @@ A set of tools for creating your site based on class annotations (nowadays magic
 <f:vhsExtAirTable.content.grid area="2" /> <!-- Gridelements content -->
 ```
 
-### Marker
-```
-<!--Input, Text, Text.Rte, Text.Code.Html, Text.Code.TypoScript-->
-<f:vhsExtAirTable.marker uid="3" />
-
-<!--Media_1, Media_M-->
-<f:vhsExtAirTable.markerMedia uid="45" as="row || rows">
-  <f:for each="{rows}" as="row" key="itemkey">
-    <a href="<f:uri.image src='{row.file.uid}' />">
-      {itemkey+1}.<f:image src="{row.file.uid}" alt="alt text" width="100" /><br />
-    </a>
-  </f:for>
-</f:vhsExtAirTable.markerMedia>
-```
-
 ### For administrator 
 ```
 <f:vhsExtAirTable.adminPanel isFooter="0 || 1" />
