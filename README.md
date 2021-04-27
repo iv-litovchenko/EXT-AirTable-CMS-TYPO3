@@ -8,32 +8,6 @@
 
 A set of tools for creating your site based on class annotations (nowadays magic variable $ TYPO3 = []). Works in versions TYPO3 v10 (not tested in other versions for a long time). The design for this extension is presented in a minimum viable product format (MVP). Rather, it is a concept for developing websites based on a single standard. Some ideas are still underway. Основная задача данного расширения - одинаково струрированный контент на проекте. [RU]
 
-## Table of content
-
-* 01 [Demo site online](#01-demo-site-online)
-* 02 [How to install?](#02-how-to-install)
-* 03 [Extension structure](#03-extension-structure)
-* 04 [Register a new admin module](#04-register-a-new-admin-module)
-* 05 [Register a new page template](#05-register-a-new-page-template)
-* 06 [Register a new content element](#06-register-a-new-content-element)
-* 07 [Additional View Helper](#07-additional-view-helper)
-* 08 [Register View Helper](#08-register-view-helper)
-* 09 [Register Widget (Component - View Helper with controller and template)](#09-register-widget-component---view-helper-with-controller-and-template)
-* 10 [Register a new model (CRUD)](#10-register-a-new-model-crud)
-* 11 [Standard CRUD-models registered in the system for working with records](#11-standard-crud-models-registered-in-the-system-for-working-with-records)
-* 12 [Extending an existing model](#12-extending-an-existing-model)
-* 13 [List records (module)](#13-list-records-module)
-* 14 [Export records Xls|Csv (module)](#14-export-records-xlscsv-module)
-* 15 [Import records Xls|Csv (module)](#15-import-records-xlscsv-module)
-* 16 [Useful functions (Extbase, Fluid, TS)](#16-useful-functions-extbase-fluid-ts)
-* 17 [Database queries: SELECT, INSERT, UPDATE, DELETE, RELATIONSHIPS (Eloquent ORM)](#17-database-queries-select-insert-update-delete-relationships-eloquent-orm)
-* 17.2 [VALIDATION (Laravel)](#validation-laravel)
-* 18 [Frontend editing](#18-frontend-editing)
-* 19 [Useful settings in "typo3conf/LocalConfiguration.php"](#19-useful-settings-in-typo3conflocalconfigurationphp)
-* 20 [Extbase Frontend AJAX (http://your-site.com/?eIdAjax=1)](#20-extbase-frontend-ajax-httpyour-sitecomeidajax1)
-* 21 [Extbase Example of working with forms](#21-extbase-example-of-working-with-forms)
-* [Functional development plans](#functional-development-plans)
-
 ## 07 Additional View Helper
 
 ### Get content (Xclass)
