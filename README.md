@@ -149,15 +149,7 @@ $(function() {
     <!-- zusätzliche Inhalte vor </body> -->
 </f:section>
 
-*********************
-* Info
-*********************
 
-<f:if condition="{v:page.info(field: 'uid')} == '21'">
-   <f:then>
-      Shows only if page ID equals 21.
-   </f:then>
-</f:if>
 ```
 
 ### Useful notes - TypoScript
