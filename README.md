@@ -44,6 +44,7 @@ A set of tools for creating your site based on class annotations (nowadays magic
   hideDisableIcon="1"
   hideDeletedIcon="1"
   hideBufferIcon="1"
+  allowedIcons=Edit,New,Deleted,Disabled" <!--todo-->
   styleLeft="10" <!--only for newIconAbs-->
   styleTop="10" <!--only for newIconAbs-->
   styleRight="10" <!--only for newIconAbs-->
