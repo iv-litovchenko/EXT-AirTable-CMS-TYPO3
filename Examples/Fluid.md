@@ -195,7 +195,7 @@ $(function() {
   hideDisableIcon="1"
   hideDeletedIcon="1"
   hideBufferIcon="1"
-  allowedIcons=Edit,New,Deleted,Disabled" <!--todo-->
+  allowedIcons="Edit,New,Deleted,Disabled" <!--todo-->
   styleLeft="10" <!--only for newIconAbs-->
   styleTop="10" <!--only for newIconAbs-->
   styleRight="10" <!--only for newIconAbs-->
