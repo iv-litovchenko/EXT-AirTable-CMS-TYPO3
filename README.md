@@ -11,5 +11,5 @@
 
 # sitedemo
 CMS-TYPO3-sitedemo
-http://demo.iv-litovchenko.ru/
+http://demo.iv-litovchenko.ru/\
 https://github.com/iv-litovchenko/sitedemo
