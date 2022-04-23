@@ -1,0 +1,29 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model\Traits\Specific;
+
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+class BelongsToManyKeyBy extends BelongsToMany
+{
+    /**
+     * Build model dictionary keyed by the relation's foreign key.
+     *
+     * @param  \Illuminate\Database\Eloquent\Collection  $results
+     * @return array
+     */
+    protected function buildDictionary(Collection $results)
+    {
+        // First we will build a dictionary of child models keyed by the foreign key
+        // of the relation so that we will easily and quickly match them to their
+        // parents without having a possibly slow inner loops for every models.
+        $dictionary = [];
+        foreach ($results as $result) {
+			// $dictionary[$result->{$this->accessor}->{$this->foreignPivotKey}][5] = $result;
+            $dictionary[$result->{$this->accessor}->{$this->foreignPivotKey}][$result->uid] = $result;
+        }
+        return $dictionary;
+    }
+}

@@ -1,0 +1,68 @@
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        "thisIs" => "FrontendPage",
+        "name" => "###NAME###",
+        "description" => "###DESCRIPTION###",
+        "disableAllHeaderCode" => 0,
+        "includeTyposcriptSourceTemplate" => "", // Todo (file with typoscript.ts - settings, t1.ts, t2.ts...)
+        "nonCachedActions" => "", // USER_INT
+        "ajaxActions" => "", // http://your-site.com/?eIdAjax=1&eIdAjaxPath=Ext.***.***.***.*** - See "Ajax-Frontend"
+        "urlManagerActions" => [
+            // [RU] На 1 действие может быть несколько вариантов
+            // [ENG] There can be several options for 1 action
+            "/" => "index",
+            "/travels" => "travelList",
+            "/travels/page/{page}" => "travelList",
+            "/travels/{id}" => "travelView",
+            "/travels/star/{star}" => "travelView",
+        ],
+        "fieldsExcludeList" => "subtitle,nav_title",
+        "fieldsAddList" => "subtitle,nav_title",
+        "fluxSyntax" => "short,default",
+        "fluxFields" => [
+            // Field -> Type|Name|Label|Func:Arg|Func:Arg...
+            // Without Sheets
+            "Sheet|sheet1|-- NAME(1) --|-- DESCRIPTION --" => [
+                "Input|attr_field1|-- NAME --|required:1",
+                "Input|attr_field2|-- NAME --",
+                "Input|attr_field3|-- NAME --",
+                "Section|attr_phones|-- NAME --" => [
+                    "SectionObject|sec1|-- NAME(1) --" => [
+                        "Input|field1|-- NAME --|required:1",
+                        "Input|field2|-- NAME --",
+                        "Input|field3|-- NAME --",
+                    ],
+                    // ...
+                ],
+            ],
+            "Sheet|sheet2|-- NAME(2) --|-- DESCRIPTION --" => [
+                "Input|field1|-- NAME --|required:1",
+                "Input|field2|-- NAME --",
+                "Input|field3|-- NAME --",
+            ],
+            // Without Sheets
+            // 'Input|settings.pageClass|-- NAME --|default:some-css-class',
+            // 'Input|settings.pageBgFon|-- NAME --',
+            // 'Input|settings.pageHeader|-- NAME --'
+        ],
+        "fluxGrids" => [
+            "Row|One" => [
+                "Column|0|Auto",
+                "Column|1|Auto",
+                "Column|2|Auto",
+                "Column|3|Auto|RowSpan:2",
+            ],
+            "Row|Two" => [
+                "Column|4|Auto|ColSpan:2", 
+                "Column|5|Auto"
+            ],
+            // 'Row|Tthree' => [
+            //     'Column|6|Auto|ColSpan:4',
+            //     'Column|7|Auto'
+            // ],
+        ],
+    ];

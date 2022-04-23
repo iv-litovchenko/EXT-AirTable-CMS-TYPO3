@@ -1,0 +1,6 @@
+// See: "User TSconfig reference" 
+// https://docs.typo3.org/m/typo3/reference-tsconfig/master/en-us/UserTsconfig/Index.html
+
+// options.pageTree.backgroundColor.1 = orange
+// options.pageTree.backgroundColor.2 = #AFAFAF
+// options.pageTree.backgroundColor.3 = rgba(0, 255, 0, 0.1)

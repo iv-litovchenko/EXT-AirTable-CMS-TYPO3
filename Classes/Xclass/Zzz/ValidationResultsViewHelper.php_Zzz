@@ -1,0 +1,69 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+
+/*
+<f:form.validationResults for="form.name">
+   <f:if condition="{validationResults.flattenedErrors}">
+      <div class="alert alert-danger" role="alert">
+         <ul class="errors">
+            <f:for each="{validationResults.errors}" as="error">
+               <li>{error.message}</li>
+            </f:for>
+         </ul>
+      </div>
+   </f:if>
+</f:form.validationResults>
+*/
+
+class ValidationResultsViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\ValidationResultsViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'TYPO3\CMS\Fluid\ViewHelpers\Form\ValidationResultsViewHelper'
+	];
+	
+    /**
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
+     * @return mixed
+     */
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    {
+		$variableProvider = $renderingContext->getVariableProvider();
+		if (true === $variableProvider->exists('validationResults')) {
+			$validator = $variableProvider->get('validationResults');
+			foreach($validator as $kForm => $validator){
+				if($validator->fails()){
+					// Set Form Errors manually  - get results from property mapper and add new errors
+					$controllerContext = $renderingContext->getcontrollerContext();
+					$validationResults = $controllerContext->getRequest()->getOriginalRequestMappingResults();
+					$formObjectName = $kForm; // form || FormFeedBack???	
+					$errorsAll = $validator->failed();
+					foreach($errorsAll as $kError => $vErrors){
+						if(!$validationResults->forProperty($formObjectName)->forProperty($kError)->hasErrors()){
+							#print $validator->errors()->get($kError)->getAttribute();
+							foreach ($validator->errors()->get($kError) as $message){
+								// \TYPO3\CMS\Extbase\Error\Error -> __construct (string $message, int $code, array $arguments=[], string $title='')
+								// ->forProperty('begin')->setTypeConverterOption(DateTimeConverter::class, DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'd.m.Y');
+								$title = $validator->getDisplayableAttribute($kError); // ->getAttributeList($values)
+								$validationResults->forProperty($formObjectName)->forProperty($kError)->addError(new \TYPO3\CMS\Extbase\Error\Error($title.'>'.$message,hexdec(crc32($kError)),[],'-- TITLE --')); // Add validation errors
+							}
+						}
+					}
+					$controllerContext->getRequest()->setOriginalRequestMappingResults($validationResults);
+				}
+			}
+		}
+        return parent::renderStatic($arguments, $renderChildrenClosure, $renderingContext);
+    }
+}

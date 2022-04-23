@@ -1,0 +1,24 @@
+// See: "Page TSconfig Reference" 
+// https://docs.typo3.org/m/typo3/reference-tsconfig/master/en-us/PageTsconfig/Index.html
+
+// Page > Properties > Resources > PageTS field
+RTE {
+    default {
+    }
+}
+
+// TCEFORM.tt_content {
+//     header_layout {
+//         altLabels {
+//             1 = :: h1 ::
+//             2 = :: h2 ::
+//             3 = :: h3 ::
+//             4 = :: h4 ::
+//             5 = :: h5 ::
+//         }
+//     }
+// }
+
+// user.tx_###EXTKEY2### {
+// 	background = 1.png;
+// }

@@ -1,0 +1,12 @@
+// See: "TypoScript template reference"
+// https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/
+
+plugin.tx_###EXTKEY2### {
+	settings {
+		# cat=plugin.tx_###EXTKEY2###/basic/b1; type=int+; label=Constant
+		defaultBackground = 1.png
+		
+		width = 480
+		height = 270
+	}
+}

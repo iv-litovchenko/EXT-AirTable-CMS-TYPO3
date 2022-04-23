@@ -1,0 +1,16 @@
+<f:debug title="Debug" inline="true">{_all}</f:debug>
+<h1>Module 1</h1>
+
+<h2>Hellow word {var}!</h2>
+
+<f:be.link route="web_ts" parameters="{id: 92}">Go to web_ts</f:be.link><br />
+
+<!--Tested only in TYPO3 v10!-->
+<!--Switching to another controller is not easy!-->
+<!--Ext.[***extension***].Modules.[***controller***].[***action***]-->
+<f:be.link route="Ext.Myext.Modules.NewModule2.index" parameters="{arg: 1}">Go to Module 2</f:be.link><br />
+<f:be.link route="Ext.Myext.Modules.NewModule3.index" parameters="{arg: 1}">Go to Module 3</f:be.link><br />
+
+<f:link.action action="edit" class="btn btn-default btn-sm">
+	Module 1 (action "Edit")
+</f:link.action>

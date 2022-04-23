@@ -1,0 +1,16 @@
+################################################
+# AdditionalSetup/300_page.meta.typoscript
+################################################
+
+# page.meta.description 				= -- TEXT --
+# page.meta.keywords 					= -- TEXT --
+# page.meta.X-UA-Compatible 			= IE=edge
+# page.meta.X-UA-Compatible.attribute 	= http-equiv
+# page.meta.og:site_name 				= -- TEXT --
+# page.meta.og:site_name.attribute 		= property
+# page.meta.page-topic 					= -- TEXT --
+# page.meta.dc.title 					= -- TEXT --
+# page.meta.dc.description 				= -- TEXT --
+# page.meta.abstract 					= -- TEXT --
+# page.meta.author 						= -- TEXT --
+# page.meta.robots 						= index,follow

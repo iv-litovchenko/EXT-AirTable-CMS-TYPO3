@@ -1,0 +1,72 @@
+<h1>Элементы системы, конструктор заготовок</h1>
+<f:if condition="{successful}">
+   <f:be.infobox title="Выполнено!" state="0">
+      Действие успешно выполнено. Созданы следующие файлы:
+	  <f:for each="{successfulList}" as="item" key="itemkey">
+	  <li style="margin-bottom: 5px;">{item}</li>
+	  </f:for>
+	  <p>Не забуьте сбросить кэш, обновить список классов, а также проверить, что расширение установлено!</p>
+   </f:be.infobox>
+</f:if>
+<f:be.infobox title="Рекомендации к именованию расширений, контроллеров, моделей, таблиц, колонок" state="-1">
+   <ul>
+   <li style="margin-bottom: 5px;">В названии ключа расширения "typo3conf/ext/&#60extname&#62;/" не рекомендуется использовать символ "_": myext_test (no), myexttest (yes).</li>
+   <li style="margin-bottom: 5px;">Названиезвание класса модели дается в единственном числе: Posts (no), Post (yes);</li>
+   <li style="margin-bottom: 5px;">Название таблицы дается в единственном числе: "tx_&#60;extname&#62_md_&#60;tablename&#62" на основе названия класса модели;</li>
+   <li style="margin-bottom: 5px;">Колонки обычного типа содержат префикс "&#60;prop_[name]&#62;".</li>
+   <li style="margin-bottom: 5px;">Колонки ссылочного типа (содержащие связи) содержат префикс "&#60;propref_[name]&#62;".</li>
+   <li style="margin-bottom: 5px;">Колонки ссылочного типа (содержащие внешние ключи, обратные-реверсивные связи) содержат префикс "&#60;proprefinv_[name]&#62;".</li>
+   <li style="margin-bottom: 5px;">Колонки файлового (медийного типа) содержат префикс "&#60;propmedia_[name]&#62;".</li>
+   <li style="margin-bottom: 5px;">Связи возвращяющие множественные данные рекомендуется называть во множественном числе (добавляется "s|es").</li>
+   <li style="margin-bottom: 5px;">Классы создаются в расширениях, в которых есть параметр "$EM_CONF[$_EXTKEY]['autoload']['psr-4']".</li>
+   <li style="margin-bottom: 5px;">Имя ключа расширения "test1" должно совпадать со вторым сегментом рабочей области (Company\Test1).</li>
+</f:be.infobox>
+<div role="tabpanel">
+   <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+	  <f:for each="{entity}" as="item" key="itemkey">
+	  <f:if condition="{item._constuctor}">
+      <li role="presentation" class="t3js-tabmenu-item <f:if condition="{active}=={itemkey}">active</f:if>">
+         <a href="#tab-{itemkey}" title="" aria-controls="tab-{itemkey}" role="tab" data-toggle="tab">{item._constuctor.nametab}</a>
+      </li>
+	  </f:if>
+	  </f:for>
+   </ul>
+   <div class="tab-content">
+	  <f:for each="{entity}" as="item" key="itemkey">
+	  <f:if condition="{item._constuctor}">
+      <div role="tabpanel" class="tab-pane <f:if condition="{active}=={itemkey}">active</f:if>" id="tab-{itemkey}">
+         <div class="panel panel-tab">
+            <div class="panel-body">
+               <h2>{item._constuctor.name}</h2>
+               <f:form name="form_{itemkey}" object="{form_{itemkey}}">
+				  <f:if condition="{itemkey} != 'Extension'">
+				  <div class="form-group">
+				     <label class="col-form-label">Расширение</label>
+				     <f:form.select property="extkey" class="form-control" options="{extensions}" />
+                  </div>
+				  </f:if>
+                  <div class="form-group">
+				     <f:for each="{item._constuctor.formelements}" as="input" key="inputkey">
+					   <label class="col-form-label">
+					   <f:if condition="{errors.{inputkey}}">
+					      <f:then><span class="error text-danger">{input}*</span></f:then>
+					      <f:else><span class="">{input}*</span></f:else>
+					   </f:if>
+					   </label>
+					   <f:form.textfield property="{inputkey}" type="text" class="form-control" placeholder="{input}" style="margin-bottom: 15px;" />
+                     </f:for>
+                     <!--<i style="color: gray">Путь создания файлов: .../<br />-->
+                  </div>
+				  <f:form.textfield property="_type" type="hidden" value="{itemkey}" />
+				  <f:form.submit class="btn btn-success" value="Создать" />
+               </f:form>
+            </div>
+         </div>
+      </div>
+	  </f:if>
+	  </f:for>
+   </div>
+</div>
+{content_Ext -> f:format.raw()}
+<br />
+<br />

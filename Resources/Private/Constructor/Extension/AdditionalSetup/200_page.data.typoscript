@@ -1,0 +1,10 @@
+################################################
+# AdditionalSetup/200_page.data.typoscript
+################################################
+
+# page.headerData.10 = TEXT 
+# page.headerData.10.value ( 
+# 	<!-- Hello from the comment! -->
+# )
+# page.footerData.10 = TEXT
+# page.footerData.10.value = <!-- Hello from the comment! -->

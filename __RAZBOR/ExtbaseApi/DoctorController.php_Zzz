@@ -1,0 +1,190 @@
+<?php
+	<table border="1">
+		<tr><td colspan="2" bgcolor="gray">Config</td>
+		<tr><td>SiteConfig</td><td>{SiteConfig.websiteTitle}</td></tr>
+		<tr><td>DataRow</td><td>{DataRow.title}</td></tr>
+		<tr><td>DataRowFlexForm</td><td>{DataRowFlexForm.field_1}</td></tr>
+		<tr><td>Settings</td><td>{Settings}</td></tr>
+		<tr><td>PagesTSconfig</td><td>{PagesTSconfig.user.tx_air_table_examples.background}</td></tr>
+		<tr><td>TSconfig</td><td>{TSconfig.plugin.tx_air_table_examples.settings.defaultBackground}</td></tr>
+		
+		<tr><td colspan="2" bgcolor="gray">Request</td>
+		<tr><td>reqExt</td><td>{reqExt}</td></tr>
+		<tr><td>reqPlugin</td><td>{reqPlugin}</td></tr>
+		<tr><td>reqController</td><td>{reqController}</td></tr>
+		<tr><td>reqAction</td><td>{reqAction}</td></tr>
+	</table>
+	
+namespace Litovchenko\AirTableExamples\Controller\Pages;
+
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use Litovchenko\AirTable\Controller\AbstractPageDataTypeController;
+
+/**
+ * @AirTable\Label:<Шаблон по умолчанию>
+ * @AirTable\Description:<Шаблон по умолчанию>
+ * @AirTable\DisableAllHeaderCode:<0>
+ * @AirTable\NonСachedActions:<>
+ * @AirTable\EidAjaxActions:<>
+ * @AirTable\Cols:<0,1|2,3,4|5>
+ */
+class DoctorController extends AbstractPageDataTypeController
+{	
+	/**
+	* @Flow\Inject
+	* @var BlogRepository
+	*/
+	#protected $blogRepository;
+
+	/**
+	* @Flow\Inject
+	* @var PostRepository
+	*/
+	#protected $postRepository;
+
+	/**
+	* @param ViewInterface $view
+	* @return void
+	*/
+	#protected function initializeView(ViewInterface $view) {
+	#	// $blog = $this->blogRepository->findActive();
+	#	// $this->view->assign('blog', $blog);
+	#}
+	
+	# initializeAction()
+	# initialize[ActionName]()
+	# initializeView()
+
+	/**
+	* Index action
+	*
+	* @return string HTML code
+	*/
+    public function indexAction() 
+	{
+		// ! Работает!
+		// $this->view->setTemplatePathAndFilename('EXT:air_table_examples/Resources/Private/Templates/Pages/TestPage/Index.2.html');
+		
+		
+		// View API (\TYPO3\CMS\Extbase\Mvc\View\ViewInterface)
+		// $this->view->assign($key,$value); // Assign $value to key $key in view
+		// $this->view->assignMultiple(array $values);//  Assign array $values view - use key of array element for key in view
+		// $this->view->initializeView(); // Initializing the concrete view implementation
+		// $this->view->render();
+		
+		// Cache Api
+		#$cacheIdentifier = 'Test_1'; // $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']
+		#$cacheManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Cache\CacheManager::class)->getCache('extbase');
+		#$cacheContent = $cacheManager->get($cacheIdentifier);
+		#if ($cacheContent) {
+		#	print $cacheContent;
+		#} else {
+		#	$cacheManager->set(
+		#		$cacheIdentifier,
+		#		'123',
+		#		array(), // тэги кэша (оставляем пустыми)
+		#		5 // время жизни кэша в секундах - lifetime
+		#	);
+		#}
+		
+		#print $cacheContent;
+		#exit();
+		
+		
+		#$this->controllerContext->getRequest().
+		#$cookie = new Cookie('myCounter', 1);
+		#$this->response->setCookie($cookie);
+		
+		#$httpRequest = $this->request->getHttpRequest();
+		#if ($httpRequest->hasCookie('myCounter')) {
+		#$cookie = $httpRequest->getCookie('myCounter');
+		#} else {
+		#$cookie = new Cookie('myCounter', 1);
+		#}
+		#$this->view->assign('counter', $cookie->getValue());
+		#$cookie->setValue((integer)$cookie->getValue() + 1);
+		#$this->response->setCookie($cookie);
+		#}
+		#$cookie->expire();
+
+
+		#$headers = $this->request->getHttpRequest()->getHeaders();
+		#print "<pre>";
+		#print_r($headers);
+		#exit();
+		
+		// $headers->setCacheControlDirective('max-age', 3600);
+		
+		
+		
+		#$templateRootPath = $this->resolveView()->getTemplateRootPaths();
+		#$templateRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($templateRootPath[0]);
+		#print $templateRootPath;
+		#exit();
+		
+		
+		#$id = GeneralUtility::_GP('id');
+		#$requestData = $this->request->getArguments();
+		#$cObjData = $this->request->getContentObjectData();
+		
+		#$ext = get???
+		#$plugin = get???
+		#$params[
+		#	'a' => 123
+		#];
+		#$this->uriBuilder->uriFor('two', $params, 'Controller', $ext , $plugin);
+		
+	
+#$uri = 'http://www.google.de/';
+#$this->redirectToUri($uri);
+		
+		# $this->view->assign('getControllerExtensionName', $this->request->getControllerExtensionName());
+		# $this->view->assign('getTemplateRootPaths', $this->view->getTemplateRootPaths());
+		
+		#$variable = $this->request->getArgument('variable');
+		#if($this->request->hasArgument('variable')){
+		#// get the request variable
+		#}
+		
+		//----------------------------------------------------------------------------------------
+		# $this->addJsFile('EXT:air_table_examples/Resources/Public/Css/Test.js');
+		# $this->addJsFooterFile('EXT:air_table_examples/Resources/Public/Css/TestFooter.js');
+		# $this->addCssFile('EXT:air_table_examples/Resources/Public/Css/Test.css');
+		# $this->addCssInlineBlock('default', '* { color: red !important;} ');
+		//----------------------------------------------------------------------------------------
+		
+		// Настройки сайта...
+		$SiteConfig = $this->getSiteConfig();
+		# \TYPO3\CMS\Core\Utility\DebugUtility::debug($SiteConfig);
+		
+		// Запиьс в БД (страница / элемента содержимого)
+		$DataRow = $this->getDataRow();
+		# \TYPO3\CMS\Core\Utility\DebugUtility::debug($DataRow);
+		
+		// PagesTSconfig
+		$PagesTSconfig = $this->getPagesTSconfig();
+		# \TYPO3\CMS\Core\Utility\DebugUtility::debug($PagesTSconfig['user']['tx_air_table_examples']);
+		
+		// TSconfig
+		$TSconfig = $this->getTSconfig();
+		# \TYPO3\CMS\Core\Utility\DebugUtility::debug($TSconfig);
+		
+		$this->view->assign('SiteConfig', $SiteConfig);
+		$this->view->assign('DataRow', $DataRow);
+		$this->view->assign('DataRowFlexForm', $DataRowFlexForm);
+		$this->view->assign('Settings', $this->settings);
+		$this->view->assign('PagesTSconfig', $PagesTSconfig);
+		$this->view->assign('TSconfig', $TSconfig);
+		
+		// $this->view->assign('reqArg -> id', $this->request->getArgument('few'));
+		$this->view->assign('reqExt', $this->extensionName);
+		$this->view->assign('reqPlugin', $this->request->getPluginName());
+		$this->view->assign('reqController', $this->request->getControllerName());
+		$this->view->assign('reqAction', $this->request->getControllerActionName());
+    }
+	
+    public function twoAction() 
+	{
+    }
+	
+}

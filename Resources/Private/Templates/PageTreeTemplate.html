@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ padding: 30px 20px 30px 20px;
+ border-top: solid 1px #fff;
+ background: #fff url(/typo3conf/ext/air_table/Resources/Public/Admin/PageTree/pattern1.png) 0 0 repeat-x;
+ font: 14px/normal Tahoma, Arial, Helvetica, sans-serif;
+}
+
+ul,
+ul li,
+ul ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+ul {
+ position: relative;
+}
+
+ul li {
+ vertical-align: middle;
+}
+
+ul {
+}
+
+	ul li input {
+	 display: block;
+	 padding: 7px 12px;
+	 border-style: solid;
+	 border-width: 1px 1px 1px 0;
+	 border-color: #fff #d9d9d9 #d9d9d9;
+	 background-color: #f6f6f6;
+	 color: #000;
+	}
+	
+	ul li {
+		display: block;
+		background: #f9de8e;
+	}
+	
+	ul li a {
+	 display: block;
+	 padding: 7px 12px;
+	 border-style: solid;
+	 border-width: 1px 1px 1px 0;
+	 border-color: #fff #d9d9d9 #d9d9d9;
+	 background-color: #f6f6f6;
+	 text-decoration: none;
+	 color: #000;
+	}
+	
+	ul li a:hover {
+	 background-color: #bdbdbd;
+	 color: #000;
+	}
+	
+	ul li a.active {
+	 background-color: #a6df6d;
+	 color: #000;
+	}
+
+	ul ul {
+	 margin-top: 1px;
+	}
+
+		ul ul li {
+		 margin-left: 15px;
+		 font-weight: normal;
+		}
+
+ul *.haschildren a {
+ background-image: url(/typo3conf/ext/air_table/Resources/Public/Admin/PageTree/nav-arrow-down.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+ul *.haschildren, {
+ background-image: url(/typo3conf/ext/air_table/Resources/Public/Admin/PageTree/nav-arrow-right.png);
+}
+
+
+</style>
+
+</head>
+<body>
+
+<f:vhsExtAirTable.object setup="lib.tx_airtable.pageTree" />
+<f:vhsExtAirTable.object setup="lib.menu" />
+<li><input type="text" placeholder="Поиск страниц"></li> [id=22] [Ссылка, Страница...]
+
+</body>
+</html>

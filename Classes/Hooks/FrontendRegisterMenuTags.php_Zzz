@@ -1,0 +1,93 @@
+<?php
+// /* Collect menu tags when rendering */
+// $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/tslib/class.tslib_menu.php']['filterMenuPages'][] =  \Qbus\Autoflush\Hooks\Frontend\RegisterMenuTags::class;
+
+namespace Qbus\Autoflush\Hooks\Frontend;
+
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Frontend\ContentObject\Menu\AbstractMenuContentObject;
+use TYPO3\CMS\Frontend\ContentObject\Menu\AbstractMenuFilterPagesHookInterface;
+
+/**
+ * RegisterMenuTags
+ *
+ * @author Benjamin Franzke <bfr@qbus.de>
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ */
+class RegisterMenuTags implements AbstractMenuFilterPagesHookInterface, SingletonInterface
+{
+    /**
+     * @var array
+     */
+    protected $tags = array();
+
+    /**
+     * Register tags for rendered menu's.
+     *
+     * Using the processFilter since thats the only available hook.
+     *
+     * @param  array                     $data        Array of menu items
+     * @param  array                     $banUidArray Array of page uids which are to be excluded
+     * @param  bool                      $spacer      If set, then the page is a spacer.
+     * @param  AbstractMenuContentObject $obj         The menu object
+     * @return bool                      Returns TRUE if the page can be safely included.
+     */
+    public function processFilter(
+        array &$data,
+        array $banUidArray,
+        $spacer,
+        AbstractMenuContentObject $obj
+    ) {
+        $criterion = $this->getMenuCriterion($data);
+
+        switch ($criterion) {
+        case 'pid':
+            if (!isset($data['pid'])) {
+                return true;
+            }
+            $tag = 'menu_pid_' . $data['pid'];
+            if (!in_array($tag, $this->tags)) {
+                $GLOBALS['TSFE']->addCacheTags(array($tag));
+                $this->tags[] = $tag;
+            }
+            break;
+        }
+
+        /* Always return true since we do not want to influence menu rendering */
+        return true;
+    }
+
+    /**
+     * getMenuCriterion – Return the property that identifies the menu rendering
+     *
+     * @param  array  $conf
+     * @return string
+     */
+    public function getMenuCriterion($conf)
+    {
+        if (isset($conf['special'])) {
+            switch ($conf['special']) {
+            case 'directory':
+            case 'browse':
+            case 'rootline':
+                return 'pid';
+
+            case 'list':
+            case 'updated':
+                return 'uid';
+
+            case 'categories':
+                return 'category';
+
+            case 'keywords':
+                return 'keywords';
+
+            case 'language':
+                return 'language';
+            }
+        }
+
+        /* If no special is given, it's a pid-based rendering */
+        return 'pid';
+    }
+}

@@ -1,0 +1,14 @@
+<?php
+namespace Litovchenko\AirTable\ViewHelpers;
+
+/**
+ * @AirTable\Label:<LinkIcon>
+ * @AirTable\RegisterArguments\href:<string,req>
+ * @AirTable\RegisterArguments\title:<string>
+ */
+
+class LinkIconViewHelper extends \Litovchenko\AirTable\ViewHelpers\EditIconViewHelper
+{
+	public $cssClass = 'Block'; // Block, Abs, Inline, Center
+	public $panelType = 'link';
+}

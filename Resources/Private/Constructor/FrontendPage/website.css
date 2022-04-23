@@ -1,0 +1,6 @@
+table { background: #fff; border: black 1px solid; clear: left; }
+ul.cssmenu  { list-style: none; margin: 0; padding: 0; }
+ul.cssmenu li { display: block; padding: 3px; border-bottom: black 1px solid; }
+ul.cssmenu li li { background: #eee; padding: 5px; margin-left: 10px; border-bottom: black 1px solid; }
+ul.cssbreadcrumb  { list-style: none; margin: 0; padding: 0; margin-bottom: 10px; border-bottom: black 1px solid; }
+ul.cssbreadcrumb li { list-style: none; background: #fff; padding: 3px; display: inline-block;  }

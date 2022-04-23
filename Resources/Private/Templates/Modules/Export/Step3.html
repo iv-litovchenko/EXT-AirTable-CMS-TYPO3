@@ -1,0 +1,45 @@
+
+		<h1>Экспорт / Результаты экспорта</h1>
+		<f:render partial="Modules/InfoExport" />
+
+					<div role="tabpanel">
+				  <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-1" title="" aria-controls="tab-1" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 1. Выбор таблицы</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-2" title="" aria-controls="tab-2" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 2. Параметры экспорта</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item active">
+					  <a href="#tab-3" title="" aria-controls="tab-3" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 3. Результаты экспорта</a>
+					</li>
+				  </ul>
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab-3">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+							<h3>Выгружено {count} записи(ей)</h3>
+							<f:if condition="{fileContent}">
+								<pre style="background: #32383e; color: wheat; border: 0; border-top-left-radius: 0px;">{fileContent -> f:format.raw()}</pre><br />
+							</f:if>
+							<a href="{pathFolder}{file}" class="btn btn-success btn-sm">
+								Скачать {file}
+							</a>
+							<!--
+							<br />
+							<code>{pathFolder}{file}</code>
+							-->
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+	
+
+	<f:link.action action="index" class="btn btn-default btn-sm">
+		Завершить
+	</f:link.action>
+
+	<br />
+	<br />
+	<br />

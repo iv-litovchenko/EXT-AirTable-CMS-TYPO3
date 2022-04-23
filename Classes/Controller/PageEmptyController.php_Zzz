@@ -1,0 +1,35 @@
+<?php
+namespace Litovchenko\AirTable\Controller;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+
+class PageEmptyController
+{
+    /**
+     * The magic variable TYPO3
+     * Parameters are described here
+     * @var array
+     */
+    public static $TYPO3 = [
+        "thisIs" => "FrontendPage",
+        "name" => "Empty",
+        "fieldsAddList" => "subtitle,nav_title",
+        "fluxSyntax" => "short,default",
+        "fluxFields" => [
+			'Input|display_without_parameters|No parameters!|default:The record has no parameters!'
+		],
+        "fluxGrids" => [
+            "Row|0" => [
+                "Column|0|0"
+            ],
+		],
+	];
+	
+    public function indexAction(?string $value = null)
+    {
+    }
+	
+}
+
+

@@ -1,0 +1,112 @@
+
+	<h1>Импорт / Результаты импорта</h1>
+	<f:render partial="Modules/InfoImport" />
+			<div class="result">
+
+				<div role="tabpanel">
+				  <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item  disabled">
+					  <a href="#tab-1" title="" aria-controls="tab-1" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 1. Выбор таблицы</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-2" title="" aria-controls="tab-2" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 2. Загрузка данных</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-3" title="" aria-controls="tab-3" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 3. Соответствие полей</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item active">
+					  <a href="#tab-4" title="" aria-controls="tab-4" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 4. Результаты импорта</a>
+					</li>
+				  </ul>
+				  
+
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab-4">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+						
+		<div style=''>
+
+				
+		   
+		   <div class="panel panel-default">
+							  <table class="table table-striped table-hover">
+								<thead>
+								  <tr>
+									<th colspan="2">Результаты импорта данных в таблицу "{table}":</th>
+								  </tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td width='50%' align='left'>Добавлено новых записей</td>
+									<td align=''>
+										<b>{strInsert -> f:format.raw()}</b>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Обновлено существующих записей</td>
+									<td align=''>
+										<b>{strUpdate -> f:format.raw()}</b>, из них проигнорировано: <b>{strNoUpdate -> f:format.raw()}</b> (указанный "uid" не найден в базе данных)
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Удалено существующих записей</td>
+									<td align=''>
+										<b>{strDelete -> f:format.raw()}</b>, из них проигнорировано: <b>{strNoDelete -> f:format.raw()}</b> (указанный "uid" не найден в базе данных)
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Нет данных для обновления (пустая строка)</td>
+									<td align=''>
+										<b>{strEmpty -> f:format.raw()}</b>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Ошибок</td>
+									<td align=''>
+										<b>{strErrorTransaction -> f:format.raw()}</b>
+									</td>
+								 </tr>
+								</tbody>
+								</table>
+
+								<table class="table table-striped table-hover">
+								<thead>
+								  <tr>
+									<th colspan="3" style="border-top: 1px solid #ccc;">Результаты обработки строк:</th>
+								  </tr>
+								</thead>
+								<tbody>
+									{content -> f:format.raw()}
+									<tr>
+									<td colspan="3">Обработано строк: <b>{strCount-> f:format.raw()}</b></td>
+								 </tr>
+								</tbody>
+								 </table>
+								 
+								 
+								</div>
+
+				
+
+
+							
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+
+		
+				
+	<f:link.action action="index" class="btn btn-default btn-sm">
+		Завершить
+	</f:link.action>
+
+
+	<br />
+	<br />
+	<br />

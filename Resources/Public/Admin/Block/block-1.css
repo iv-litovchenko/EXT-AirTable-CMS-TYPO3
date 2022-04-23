@@ -1,0 +1,45 @@
+.tagWrapBlock {
+	display: block;
+	width: 100%;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+.tagWrapBlockLabel {
+	display: block;
+	background-image: url(bg-fon-label.png); 
+	height: 26px; 
+	line-height: 24px !important; 
+	border-radius: 5px 5px 0 0; 
+	border-right: black 1px solid;
+	padding-right: 10px; 
+	text-shadow: 0px 0px 5px black, 0 0 5px white;
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white; 
+}
+.tagWrapBlockIcon {
+	display: block;
+	float: left;
+	padding: 0px !important;
+	background-image: url(bg-fon-icon.png); 
+	border-left: black 1px solid; 
+	border-radius: 5px 0 0 5px; 
+	height: 26px !important; 
+	margin-right: 8px !important;
+}
+.tagWrapBlockIcon img {
+	margin: 0 !important;
+	margin-top: -3px !important;
+	padding: 0px 8px 0 10px !important;
+	vertical-align: middle;
+}
+.tagWrapBlockText {
+	display: block;
+	clear: left;
+	background-image: url(bg-fon-messege.png);
+	border-radius: 0 0 5px 5px;
+	padding: 15px; 
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}

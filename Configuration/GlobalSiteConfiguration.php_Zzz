@@ -1,0 +1,52 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model;
+
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+/*
+<?php
+	// Experimental example to add a new field to the site configuration
+
+	// Configure a new simple required input field to site
+	$GLOBALS['SiteConfiguration']['site']['columns']['myNewField'] = [
+		'label' => 'A new custom field',
+		'config' => [
+			'type' => 'input',
+			'eval' => 'required',
+		],
+	];
+	// And add it to showitem
+	$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = str_replace(
+		'base,',
+		'base, myNewField, ',
+		$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem']
+	);
+*/
+
+/**
+ * @AirTable\Label:<Конфигуратор сайта (виртуальная модель)>
+ * @AirTable\Description:<Регистрация модели в системе>
+ */
+
+class GlobalSiteConfiguration
+{
+	/**
+	 * @AirTable\Field:<Input>
+	 * @AirTable\Field\Show:<1>
+	 */
+	protected $title;
+	
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		#print "<pre>";
+		#print_r($GLOBALS['SiteConfiguration']);
+		#exit();
+		
+	}
+}
+?>

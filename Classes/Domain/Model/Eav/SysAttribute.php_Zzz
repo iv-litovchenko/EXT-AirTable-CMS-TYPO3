@@ -1,0 +1,119 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model\Eav;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+class SysAttribute extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'BackendModelCrud',
+		'keyInDatabase' => 'sys_attribute',
+		'name' => 'Атрибуты',
+		'baseFields' => [
+			'uidkey' => ['readOnly' => 1],
+			'pid',
+			'RType' => ['readOnly' => 1],
+			'title' => ['readOnly' => 1],
+			'sorting' => ['readOnly' => 1]
+		],
+		'dataFields' => [
+			'prop_configuration_path' => [
+				'type' => 'Text',
+				'name' => 'Конфигурация атрибута (путь)',
+				'readOnly' => 1,
+				'show' => 1,
+				'position' => '0|props|500'
+			]
+		],
+		'relationalFields' => [
+			'propref_entity' => [
+				'type' => 'Rel_Mto1',
+				'name' => 'Сущность',
+				'foreignModel' => 'Litovchenko\AirTable\Domain\Model\Eav\SysEntity',
+				'foreignKey' => 'proprefinv_attribute',
+				'show' => 1,
+				'readOnly' => 1,
+				'position' => '0|rels|1000'
+			],
+			'propref_options' => [
+				'type' => 'Rel_1toM',
+				'name' => 'Eav атрибуты (опции)',
+				'foreignModel' => 'Litovchenko\AirTable\Domain\Model\Eav\SysAttributeOption',
+				'foreignKey' => 'proprefinv_attribute',
+				'show' => 1,
+				'readOnly' => 1,
+				'position' => '0|rels|1000'
+			],
+			'proprefinv_values' => [
+				'type' => 'Rel_Mto1_Inverse',
+				'name' => 'Кто использует?',
+				'foreignModel' => 'Litovchenko\AirTable\Domain\Model\Eav\SysValue',
+				'foreignKey' => 'propref_attribute',
+				'readOnly' => 1,
+				'position' => '*|rels|2000'
+			],
+		]
+	];
+	
+    /**
+     * This is an optional feature.
+     * Record types similar to "doktype (pages)" and "CType (tt_content)"
+     * @return array
+     */
+    public static function baseRTypes()
+    {
+		$listTypes = [];
+		$classes = BaseUtility::getLoaderClasses2();
+		foreach($classes['BackendField'] as $class) {
+			$annotationLabel = BaseUtility::getClassAnnotationValueNew($class,'AirTable\Label');
+			$annotationSubTypes = BaseUtility::getClassAnnotationValueNew($class,'AirTable\SubTypes');
+			$annotationIncEav = BaseUtility::getClassAnnotationValueNew($class,'AirTable\IncEav');
+			if($annotationIncEav != 1){
+				continue;
+			}
+			if(!empty($annotationSubTypes)){
+				$className = end(explode("\\",$class)); // $listTypes['--div'.$k.'--'] = $className;
+				$listTypes[$className] = $className;
+				foreach($annotationSubTypes as $kS => $vS){
+					$listTypes[$className.'.'.$vS] = $className.'.'.$vS; // ." // ".$annotationLabel
+				}
+			} else {
+				$className = end(explode("\\",$class));
+				$listTypes[$className] = $className; // ." // ".$annotationLabel
+			}
+		}
+		return $listTypes;
+    }
+	
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		$configuration['ctrl']['readOnly'] = 1;
+	}
+	
+	/**
+	* Условие по умолчанию (записи для сущности)
+	* @return query
+	*/
+    public static function globalScopeEntityTypeDefault($builder)
+    {
+		if(TYPO3_MODE === 'BE'){
+			$class = get_called_class();
+			$table = BaseUtility::getTableNameFromClass($class);
+			$sysEavAttrSelected = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('sysEavAttrSelected');
+			if(isset($sysEavAttrSelected)){
+				$builder->where($table.'.propref_entity', '=', $sysEavAttrSelected);
+			}
+		}
+	}
+	
+}
+?>

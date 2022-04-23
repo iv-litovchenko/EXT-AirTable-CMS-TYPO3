@@ -1,0 +1,61 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+use TYPO3\CMS\Extbase\Mvc\Controller\ControllerContext;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+
+class TemplatePaths extends \TYPO3\CMS\Fluid\View\TemplatePaths
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => 'Смена путей для шаблонов элементов содержимого типа "элемент и сетка"',
+		'object' => 'TYPO3\CMS\Fluid\View\TemplatePaths'
+	];
+	
+    /**
+     * Resolve the template path and filename for the given action. If $actionName
+     * is NULL, looks into the current request.
+     *
+     * @param string $controller
+     * @param string $action Name of the action. If NULL, will be taken from request.
+     * @return string Full path to template
+     * @throws InvalidTemplateResourceException
+     */
+    public function getTemplateSource($controller = 'Default', $action = 'Default')
+    {
+		$paths = $this->getTemplateRootPaths();
+		if(isset($paths['getTemplateSourceHook'])){
+			// PAGES -> Пока отказался от этого!!!
+			#if(strstr($controller,'Pages\\')){
+			#	// Pages/Temp
+			#	// index
+			#	$controller = explode('\\',$controller);
+			#	$controller = end($controller);
+			#	if($action == 'index'){
+			#		return parent::getTemplateSource('Pages', lcfirst($controller));
+			#	} else {
+			#		return parent::getTemplateSource('Pages', lcfirst($controller).'.'.ucfirst($action));
+			#	}
+			#
+			// PAGESELEMENTS/ELEMENTS
+			if(strstr($controller,'PagesElements\Elements') || strstr($controller,'PagesElements\Gridelements')){
+				// PagesElements\Elements\ElementName
+				// PagesElements\Elements
+				$controller = explode('\\',$controller);
+				unset($controller[2]);
+				$controller = implode('\\',$controller);
+				return parent::getTemplateSource($controller, $action);
+			}
+		}
+		return parent::getTemplateSource($controller, $action);
+	}
+}

@@ -1,0 +1,68 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
+
+class TcaCheckboxItems extends \TYPO3\CMS\Backend\Form\FormDataProvider\TcaCheckboxItems implements FormDataProviderInterface
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'TYPO3\CMS\Backend\Form\FormDataProvider\TcaCheckboxItems'
+	];
+	
+    /**
+     * Replace markers in a where clause from TCA foreign_table_where
+     *
+     * ###REC_FIELD_[field name]###
+     * ###THIS_UID### - is current element uid (zero if new).
+     * ###CURRENT_PID### - is the current page id (pid of the record).
+     * ###SITEROOT###
+     * ###PAGE_TSCONFIG_ID### - a value you can set from Page TSconfig dynamically.
+     * ###PAGE_TSCONFIG_IDLIST### - a value you can set from Page TSconfig dynamically.
+     * ###PAGE_TSCONFIG_STR### - a value you can set from Page TSconfig dynamically.
+     *
+     * @param array $result Result array
+     * @param string $foreignTableName Name of foreign table
+     * @param string $localFieldName Current handle field name
+     * @return array Query parts with keys WHERE, ORDERBY, GROUPBY, LIMIT
+     */
+    protected function processForeignTableClause(array $result, $foreignTableName, $localFieldName)
+    {
+        # $foreignTableClause = '';
+        # $foreignTableClause = ' ' . $foreignTableClause;
+        # $foreignTableClauseArray = [
+        #     'WHERE' => '',
+        #     'GROUPBY' => '',
+        #     'ORDERBY' => '',
+        #     'LIMIT' => '',
+        # ];
+        if (!empty($result['processedTca']['columns'][$localFieldName]['config']['foreign_table_where'])
+            && is_array($result['processedTca']['columns'][$localFieldName]['config']['foreign_table_where'])
+        ) {
+            $tempString = '';
+            $temp = $result['processedTca']['columns'][$localFieldName]['config']['foreign_table_where'];
+			if(isset($temp['where'])){
+				$tempString .= ' AND ' . implode(' AND ', $temp['where']) . ' ';
+			}
+			if(isset($temp['groupBy'])){
+				//
+			}
+			if(isset($temp['orderBy'])){
+				$tempString .= ' ORDER BY ' . implode(' AND ', $temp['orderBy']) . ' ';
+			}
+			if(isset($temp['limit'])){
+				//
+			}
+			// print $tempString; // ORDER BY RType ASC, title ASC 
+			$result['processedTca']['columns'][$localFieldName]['config']['foreign_table_where'] = $tempString;
+		}
+		return parent::processForeignTableClause($result, $foreignTableName, $localFieldName);
+    }
+}

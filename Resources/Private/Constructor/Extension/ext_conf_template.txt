@@ -1,0 +1,6 @@
+# cat=basic; type=string; label=EXT:###EXTKEY2### settings (string)
+testString =
+
+# cat=basic; type=boolean; label=EXT:###EXTKEY2### settings (boolean)
+testBoolean = 0
+

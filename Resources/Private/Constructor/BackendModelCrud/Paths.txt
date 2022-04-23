@@ -1,0 +1,5 @@
+Classes/
+Classes/Domain/
+Classes/Domain/Model/
+Model.php Classes/Domain/Model/###KEY###.php
+ModelCategory.php Classes/Domain/Model/###KEY###Category.php

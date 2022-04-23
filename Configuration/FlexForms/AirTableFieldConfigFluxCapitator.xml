@@ -1,0 +1,42 @@
+                        <T3DataStructure>
+                            <sheets>
+                                <sSection>
+                                    <ROOT>
+                                        <TCEforms>
+                                            <sheetTitle>section</sheetTitle>
+                                        </TCEforms>
+                                        <type>array</type>
+                                        <el>
+                                          
+                                                            <input_1>
+                                                                <TCEforms>
+                                                                    <label>Название параметра</label>
+                                                                    <config>
+                                                                        <type>input</type>
+                                                                    </config>
+                                                                </TCEforms>
+                                                            </input_1>
+                                                            <input_2>
+                                                                <TCEforms>
+                                                                    <label>Значение параметра</label>
+                                                                    <config>
+                                                                        <type>input</type>
+                                                                    </config>
+                                                                </TCEforms>
+                                                            </input_2>
+                                                            <input_3>
+                                                                <TCEforms>
+                                                                    <label>Значение параметра</label>
+                                                                    <config>
+                                                                        <type>input</type>
+                                                                        <config>
+																			<readOnly>1</readOnly>
+																		</config>
+                                                                    </config>
+                                                                </TCEforms>
+                                                            </input_3>
+                                        </el>
+                                    </ROOT>
+                                </sSection>
+                            </sheets>
+                        </T3DataStructure>

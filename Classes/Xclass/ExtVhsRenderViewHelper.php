@@ -1,0 +1,207 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+class ExtVhsRenderViewHelper extends \FluidTYPO3\Vhs\ViewHelpers\Content\RenderViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'FluidTYPO3\Vhs\ViewHelpers\Content\RenderViewHelper'
+	];
+	
+    /**
+     * Arguments initialization
+     *
+     * @throws \TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+     */
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('editIconsEnable', 'boolean', '', false, 1);
+		$this->registerArgument('ajaxContentById', 'boolean', '', false, 0);
+	}
+	
+    /**
+     * Render method
+     *
+     * @return string
+     */
+    public function render()
+    {
+		/*
+			Array
+			(
+				[column] => 0
+				[order] => sorting
+				[sortDirection] => ASC
+				[pageUid] => 0
+				[contentUids] => 
+				[sectionIndexOnly] => 
+				[loadRegister] => 
+				[render] => 1
+				[hideUntranslated] => 
+				[limit] => 
+				[slide] => 0
+				[slideCollect] => 0
+				[slideCollectReverse] => 
+				[as] => 
+				[editIcon] => 
+			)
+		*/
+		
+		// v(0) - eIdAjaxContentById
+		if ($this->arguments['ajaxContentById'] == 1) {
+			if (!empty($GLOBALS['BE_USER'])) {
+				return parent::render();
+			}
+			return '';
+		}
+		
+		if ($this->arguments['pageUid'] == null || $this->arguments['pageUid'] == 'self') {
+			$pid = $GLOBALS['TSFE']->id;
+		} else {
+			$pid = intval($this->arguments['pageUid']);
+		}
+		
+		$colPos = intval($this->arguments['column']);
+		$emptyId = 'emptyColPos_'.$colPos;
+		$getContent = parent::render();
+		return self::wrap(
+			$this->arguments['editIconsEnable'],
+			$emptyId,
+			$getContent,
+			'Контент страницы',
+			'pid: ' . $pid . ', colPos: ' . $colPos,
+			['pid' => $pid, 'colPos' => $colPos]
+		);
+    }
+	
+	public static function wrap($editIconsEnable, $emptyId, $getContent, $label, $info, $params = []) 
+	{
+		$srcAdmPath = '/typo3conf/ext/air_table/Resources/Public/Admin/';
+		if(trim($getContent) == ''){
+			$getContent = '<tagContentEmpty class="tagContentEmpty" id="'.$emptyId.'_empty" 
+				style="
+					display: block; height: 60px; 
+					background: #eee url('.$srcAdmPath.'/emptyContent-20.png);
+					border-left: gold 3px solid;
+				">
+			</tagContentEmpty>';
+		}
+		
+		$topContainer = '';
+		$newIcon = '';
+		$moveIcon = '';
+		$newIconBottom = '';
+		if($GLOBALS['BE_USER']->uc['phptemplate_mode_editing'] == 2 && $editIconsEnable == 1)
+		{
+			// Контейнер для вставки сверху...
+			$topContainer = '
+				<tagContentTop id="'.$emptyId.'_wrap" style="display: block;">
+				<!--'.$emptyId.'_wrap-->
+				</tagContentTop>
+			';
+			
+			// Добавить содержимое сверху
+			$newIcon = new \Litovchenko\AirTable\ViewHelpers\NewIconW100ViewHelper;
+			$newIcon->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			$newIcon->title = '';
+			$newIcon->panelType = 'newRecord_tt_content';
+			$newIcon->hideHoverInfo = 0;
+			$newIcon->hoverInfoNewLine = 0;
+			$newIcon->defaultFieldsForNewRecord = [
+				'uid' 			=> $params['pid'],
+				'pid' 			=> $params['pid'],
+				'colPos' 		=> $params['colPos'],
+				// 'foreign_table' => $foreignTable,
+				// 'foreign_field' => $foreignField,
+				// 'foreign_uid' 	=> $foreignUid,
+			];
+			if(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('gridelements')){
+				$newIcon->copyFieldsForNewRecord['tx_gridelements_container'] = $gridContainerId;
+				$newIcon->copyFieldsForNewRecord['tx_gridelements_container'] = $gridColumn;
+			}
+			$newIconContent = $newIcon->processOutput();
+			
+			// Переместить содержимое наверх
+			$moveIcon = new \Litovchenko\AirTable\ViewHelpers\EditIconCenterViewHelper;
+			$moveIcon->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			$moveIcon->title = 'Переместить сюда';
+			$moveIcon->recordId = 0;
+			$moveIcon->panelType = 'moveRecord_tt_content';
+			$moveIcon->hideHoverInfo = 1;
+			$moveIcon->hoverInfoNewLine = 1;
+			$moveIcon->changeFieldsForMoveRecord = [
+				'uid' 			=> $GLOBALS['BE_USER']->uc['isMoveRecord_tt_content_varible']['uid'], // это Id перемещяемой записи
+				'uidAfter'		=> $params['pid'], // это Id страницы в начало которой разместить
+				'pid'			=> $params['pid'],
+				'colPos' 		=> $params['colPos'],
+				// 'foreign_table' => $foreignTable,
+				// 'foreign_field' => $foreignField,
+				// 'foreign_uid' 	=> $foreignUid,
+			];
+			if(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('gridelements')){
+				$moveIcon->copyFieldsForNewRecord['tx_gridelements_container'] = $gridContainerId;
+				$moveIcon->copyFieldsForNewRecord['tx_gridelements_container'] = $gridColumn;
+			}
+			$moveIconContent = $moveIcon->processOutput();
+			
+			// Добавить содержимое снизу (// Todo)
+			#$newIconBottom = new \Litovchenko\AirTable\ViewHelpers\NewIconCenterViewHelper;
+			#$newIconBottom->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			#$newIconBottom->title = $GLOBALS['LANG']->sL('LLL:EXT:air_table/Resources/Private/Language/Localling.EditAdmin.xml:plugins.pageContent.addTheContentsOfTheBottom');
+			#$newIconBottom->title = $newIconBottom->title.' // Todo';
+			#$newIconBottom->panelType = 'newRecord_tt_content';
+			#$newIconBottom->hoverInfoNewLine = 1;
+			#$newIconBottom->defaultFieldsForNewRecord = [
+			#	'pid' 			=> $pid=='root'?0:$pid,
+			#	'colPos' 		=> $colPos,
+			#	'tx_gridelements_container' => $gridContainerId,
+			#	'tx_gridelements_columns' => $gridColumn,
+			#	'foreign_table' => $foreignTable,
+			#	'foreign_field' => $foreignField,
+			#	'foreign_uid' 	=> $foreignUid,
+			#];
+			#$newIconButtomContent = $newIconBottom->processOutput();
+		}
+		
+		// При условии, что включена шестеренка (настройки)
+		// Для contentById пропускаем
+		if ($GLOBALS['BE_USER']->uc['phptemplate_checkOption'] == 1) {
+			$addCssClass = '';
+			return "
+				<tagWrapTtContentElement class='tagWrapTtContentElement'>
+					<!--TYPO3_NOT_SEARCH_begin-->
+					<tagEditIcon_wrap class='phptemplate_tagEditIcon_wrap_block'>
+					<tagEditIcon class='phptemplate_tagEditIcon' style='border: black 1px solid;'>
+					<nobr>
+						<tagEditIconA class='tagEditIconA'>
+						<tagEditIconImg class='tagEditIconImg' style='background-image: url(".$srcAdmPath."isPageContentIcon.png);'></tagEditIconImg>
+						</tagEditIconA>ContentViewHelper (".$label.")&nbsp;
+						<tagEditIconSpan class='phptemplate_tagEditIconSpan ".$addCssClass."'>
+							".$info."
+						</tagEditIconSpan>
+					</nobr>
+					</tagEditIcon>
+					</tagEditIcon_wrap>
+					<tagEditIcon_br style='clear: left;'></tagEditIcon_br>
+					<!--TYPO3_NOT_SEARCH_end-->
+					<tagWrapTtContentElement_dashed_Top		class='tagWrapTtContentElement_dashed_Top'></tagWrapTtContentElement_dashed_Top>
+					<tagWrapTtContentElement_dashed_Right	class='tagWrapTtContentElement_dashed_Right'></tagWrapTtContentElement_dashed_Right>
+					<tagWrapTtContentElement_dashed_Bottom	class='tagWrapTtContentElement_dashed_Bottom'></tagWrapTtContentElement_dashed_Bottom>
+					<tagWrapTtContentElement_dashed_Left	class='tagWrapTtContentElement_dashed_Left'></tagWrapTtContentElement_dashed_Left>
+					" . $newIconContent.$topContainer.$moveIconContent.$getContent.$newIconButtomContent . "
+				</tagWrapTtContentElement>
+			";
+		} else {
+			return $newIconContent.$topContainer.$moveIconContent.$getContent.$newIconButtomContent;
+		}
+	}
+	
+}

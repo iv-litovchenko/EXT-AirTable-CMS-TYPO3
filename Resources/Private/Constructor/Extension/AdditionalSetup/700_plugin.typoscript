@@ -1,0 +1,13 @@
+################################################
+# AdditionalSetup/700_plugin.typoscript
+################################################
+
+// plugin.tx_<extensionkey>...
+// plugin.tx_<extensionkey>_<pluginname>....
+plugin.tx_###EXTKEY2### {
+	settings {
+		defaultBackground = {$plugin.tx_###EXTKEY2###.settings.defaultBackground}
+		width = {$plugin.tx_###EXTKEY2###.settings.width}
+		height = {$plugin.tx_###EXTKEY2###.settings.height}
+	}
+}

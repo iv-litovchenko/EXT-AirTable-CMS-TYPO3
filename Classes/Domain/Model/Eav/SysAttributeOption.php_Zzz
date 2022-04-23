@@ -1,0 +1,49 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model\Eav;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+class SysAttributeOption extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'BackendModelCrud',
+		'keyInDatabase' => 'sys_attribute_option',
+		'name' => 'Атрибуты (опции)',
+		'baseFields' => [
+			'uidkey' => ['readOnly' => 1],
+			'pid' => ['readOnly' => 1],
+			'title' => ['readOnly' => 1],
+			'sorting' => ['readOnly' => 1]
+		],
+		'dataFields' => [],
+		'relationalFields' => [
+			'proprefinv_attribute' => [
+				'type' => 'Rel_1ToM_Inverse',
+				'name' => 'Атрибут',
+				'foreignModel' => 'Litovchenko\AirTable\Domain\Model\Eav\SysAttribute',
+				'foreignKey' => 'propref_options',
+				'show' => 1,
+				'readOnly' => 1,
+				'position' => '0|rels|1000'
+			]
+		]
+	];
+	
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		$configuration['ctrl']['readOnly'] = 1;
+		$configuration['ctrl']['label_alt'] = 'propref_option_value';
+		$configuration['ctrl']['label_alt_force'] = 1;
+	}
+	
+}
+?>

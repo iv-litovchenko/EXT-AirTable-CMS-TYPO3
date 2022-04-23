@@ -1,0 +1,27 @@
+{
+    "name": "litovchenko/air_table",
+    "type": "typo3-cms-extension",
+    "autoload": {
+        "psr-4": {
+            "Litovchenko\\AirTable\\": "Classes/"
+        }
+    },
+    "require-dev": {
+        "illuminate/database": "7.30.4",
+        "illuminate/validation": "7.30.4",
+        "illuminate/events": "7.30.4",
+        "intervention/validation": "dev-master",
+        "rap2hpoutre/fast-excel": "^1.5.0",
+        "javoscript/laravel-macroable-models": "1.0.4",
+        "chelout/laravel-relationship-events": "1.4.0"
+    },
+    "authors": [
+        {
+            "name": "Ivan Litovcheno",
+            "email": "i-litovan@yandex.ru"
+        }
+    ],
+    "config": {
+        "vendor-dir": "Vendor"
+    }
+}

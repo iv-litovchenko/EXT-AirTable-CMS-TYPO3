@@ -1,0 +1,41 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model\Fields;
+use Litovchenko\AirTable\Domain\Model\Fields\Text;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+/**
+ * @AirTable\Label:<Пользовательское поле>
+ */
+class UserFunction extends Text
+{
+    /**
+     * @return string
+     */
+    public static function parameterFunction($class, $property, $keyAnnotation, $value)
+    {
+        return $value;
+    }
+	
+    /**
+     * @return array
+     */
+    public static function parameterArguments($class, $property, $keyAnnotation, $value)
+    {
+		$keyRealName = end(explode('\\',$keyAnnotation));
+        return [$keyRealName => $value];
+    }
+	
+    /**
+     * @modify array
+     */
+    public static function buildConfiguration($model, $table, $field)
+    {
+		parent::buildConfiguration($model,$table,$field);
+		
+		$Function = BaseUtility::getClassFieldAnnotationValueNew($model,$field,'AirTable\Field\Function');
+		$Arguments = BaseUtility::getClassFieldAnnotationValueNew($model,$field,'AirTable\Field\Arguments');
+		$GLOBALS['TCA'][$table]['columns'][$field]['config']['type'] = 'user';
+		$GLOBALS['TCA'][$table]['columns'][$field]['config']['userFunc'] = $Function;
+		$GLOBALS['TCA'][$table]['columns'][$field]['config']['parameters'] = $Arguments;
+	}
+}

@@ -1,0 +1,65 @@
+	public function initializeArguments()
+	{
+		/**
+		 * @param string $name Name of the argument
+		 * @param string $type Type of the argument
+		 * @param string $description Description of the argument
+		 * @param bool $required If TRUE, argument is required. Defaults to FALSE.
+		 * @param mixed $defaultValue Default value of argument
+		 * $this->registerArgument('TestArg', 'integer', 'description', true);
+		 */
+		 
+		// A) ViewHelpers
+		// TYPO3\CMS\Fluid\ViewHelpers\VhsExtAirTable\AdminPanelViewHelper
+		// TYPO3\CMS\Fluid\ViewHelpers\VhsExtAirTable\VhsInfoViewHelper
+		// TYPO3\CMS\Fluid\ViewHelpers\VhsExtAirTable\ContentViewHelper
+		$class = get_class();
+		if(stristr($class,'TYPO3\CMS\Fluid\ViewHelpers\VhsExt'))
+		{
+		}
+		
+		// B) Widget
+		// TYPO3\CMS\Fluid\ViewHelpers\WgsExtProjiv\RandPhotoViewHelper
+		// TYPO3\CMS\Fluid\ViewHelpers\WgsExtProjiv\FeedBackFormViewHelper
+		$class = get_class();
+		if(stristr($class,'TYPO3\CMS\Fluid\ViewHelpers\WgsExt'))
+		{
+			$extName = current(explode('\\',str_replace('TYPO3\CMS\Fluid\ViewHelpers\\','',$class)));
+			$class = $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces.AirTable'][$extName][$class];
+		}
+
+		// Регистрация аргументов
+		$registerArguments = \Litovchenko\AirTable\Utility\BaseUtility::getClassAnnotationValueNew($class,'AirTable\RegisterArguments');
+		if(!empty($registerArguments)>0){
+			foreach($registerArguments as $k => $v){
+				if(strstr($k,'*')){
+					$name = str_replace('*','',$k);
+					$required = true;
+				} else {
+					$name = $k;
+					$required = false;
+				}
+				
+				$type = 'string';
+				if(isset($v[0])){
+					$type = $v[0];
+				}
+				
+				$defaultValue = null;
+				if(isset($v[1])){
+					$defaultValue = $v[1];
+				}
+				
+				$description = '';
+				if(isset($v[2])){
+					$description = $v[2];
+				}
+				
+				// registerArgument( string $name, string $type, string $description, boolean $required = false, mixed $defaultValue = null )
+				// $this->registerArgument($name, $type, $description, $required, $defaultValue
+				$this->registerArgument($name, $type, $description, $required, $defaultValue);
+			}
+		}
+		
+		parent::initializeArguments();
+	}

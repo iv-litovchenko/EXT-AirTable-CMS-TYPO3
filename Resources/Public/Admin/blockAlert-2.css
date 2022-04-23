@@ -1,0 +1,11 @@
+.tagWrapBlockAlert {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 7px 7px 7px 34px;
+	background: white url(blockAlert_icon.png) 9px 5px no-repeat;
+	border: black 1px solid;
+	border-radius: 5px;
+	font-size: 10px !important;
+	color: black !important;
+}

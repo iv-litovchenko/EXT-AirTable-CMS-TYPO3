@@ -1,0 +1,17 @@
+<T3DataStructure>
+   <ROOT>
+      <type>array</type>
+      <el>
+         <display_without_parameters>
+            <TCEforms>
+               <label>No parameters!</label>
+               <config>
+                  <type>input</type>
+                  <readOnly>input</readOnly>
+                  <default>The record has no parameters!</default>
+               </config>
+            </TCEforms>
+         </display_without_parameters>
+      </el>
+   </ROOT>
+</T3DataStructure>

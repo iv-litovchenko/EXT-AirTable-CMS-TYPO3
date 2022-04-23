@@ -1,0 +1,21 @@
+Classes/
+Classes/Controller/
+Classes/Controller/PagesElements/
+Classes/Controller/PagesElements/Elements/
+Resources/
+Resources/Public/
+Resources/Public/Css/
+Resources/Public/Images/
+Resources/Public/JavaScript/
+Resources/Private/
+Resources/Private/Templates/
+Resources/Private/Templates/PagesElements/
+Resources/Private/Templates/PagesElements/Elements/
+Resources/Private/Templates/PagesElements/Elements/###KEY###/
+Resources/Private/Layouts/
+Resources/Private/Layouts/PagesElements/
+Resources/Private/Partials/
+Resources/Private/Partials/PagesElements/
+Controller.php Classes/Controller/PagesElements/Elements/###KEY###Controller.php
+Index.html Resources/Private/Templates/PagesElements/Elements/###KEY###/Index.html
+Layout.html Resources/Private/Layouts/PagesElements/Default.html

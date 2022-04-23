@@ -1,0 +1,106 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/AirTable/AirTable/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default" />
+
+<f:section name="content">
+	<h1>Функции</h1>
+	
+	<pre>
+	
+1 Вывести в модуль "Накопители" ошибки по полям что бы было видно что они есть (+также создать глобально проверку поля >64 символов) и на наличие других ошибок!
+
+	Пересчитать связи к записи...
+	(Пересчитать кол-во связей которые обращены к записи)
+	
+		
+	</pre>
+	
+			<div class="result">
+				<div role="tabpanel">
+				  <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item <f:if condition='{tab_active} < 1'>active</f:if>">
+					  <f:link.action action="index" additionalParams="{tab_active:'0'}">
+						Проверка полей таблиц
+					  </f:link.action>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item <f:if condition='{tab_active} == 2'>active</f:if>">
+					  <f:link.action action="index" additionalParams="{tab_active:'2'}">
+						Проверка файлов
+					  </f:link.action>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item <f:if condition='{tab_active} == 3'>active</f:if>">
+					  <f:link.action action="index" additionalParams="{tab_active:'3'}">
+						Поиск дубликатов
+					  </f:link.action>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item <f:if condition='{tab_active} == 4'>active</f:if>">
+					  <f:link.action action="index" additionalParams="{tab_active:'4'}">
+						Дамп
+					  </f:link.action>
+					</li>
+				  </ul>
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane <f:if condition='{tab_active} < 1'>active</f:if>" id="tab-1">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+							<div class="panel panel-default">
+							  <table class="table table-striped table-hover" width="100%">
+								<thead>
+								<tr>
+									<th>Вид проверки</th>
+									<th>Таблица(ы)</th>
+									<th>Колонка(и)</th>
+									<th style="white-space: normal;">ID записей использующих ссылки на не существующие записи</th>
+									<th>Количество</th>
+								</tr>
+								</thead>
+								<tbody>
+								{contentTab2.GOOD -> f:format.raw()}
+								{contentTab2.PID_Kill -> f:format.raw()}
+								{contentTab2.Rel_1to1 -> f:format.raw()}
+								{contentTab2.Rel_1to1_duplicate -> f:format.raw()}
+								{contentTab2.Rel_1toM -> f:format.raw()}
+								{contentTab2.REL_Mto1 -> f:format.raw()}
+								{contentTab2.REL_MtoM -> f:format.raw()}
+								{contentTab2.REL_Morph -> f:format.raw()}
+								{contentTab2.UPLOAD -> f:format.raw()}
+								{contentTab2.FAL -> f:format.raw()}
+								</tbody>
+								</table>
+							</div>
+						</div>
+					  </div>
+					</div>
+					<div role="tabpanel" class="tab-pane <f:if condition='{tab_active} == 1'>active</f:if>" id="tab-2">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+							{contentTab1 -> f:format.raw()}
+						</div>
+					  </div>
+					</div>
+					<div role="tabpanel" class="tab-pane <f:if condition='{tab_active} == 2'>active</f:if>" id="tab-2">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+							<div class="panel panel-default">
+							{contentTab3 -> f:format.raw()}
+							</div>
+						</div>
+					  </div>
+					</div>
+					<div role="tabpanel" class="tab-pane <f:if condition='{tab_active} == 3'>active</f:if>" id="tab-2">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+							<div class="panel panel-default">
+							 {contentTab4 -> f:format.raw()}
+							</div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+</f:section>
+</html>

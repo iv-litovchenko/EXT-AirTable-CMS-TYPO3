@@ -1,0 +1,11 @@
+// Record types similar to "doktype (pages)" and "CType (tt_content)"
+                'items' => [
+                    '0' => 'Default',
+                    'news' => 'News',
+                    'article' => 'Article',
+                    'link' => 'External link',
+                    'type-1' => 'Type 1',
+                    'type-2' => 'Type 2',
+                    'type-3' => 'Type 3',
+                    // ...
+                ],

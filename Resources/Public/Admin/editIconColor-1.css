@@ -1,0 +1,197 @@
+/*
+.phptemplate_tagEditIcon_wrap_center {
+	position: relative !important; z-index: 1000;
+	display: inline-block !important; 
+	margin: 0 auto !important;
+}
+*/
+
+/* Вариант 1 */
+.phptemplate_tagEditIcon_wrap_block:hover .tagEditIconA { display: inline-block !important; }
+.phptemplate_tagEditIcon_wrap_block:hover { z-index: 1005; }
+.phptemplate_tagEditIcon_wrap_block {
+	position: relative !important; z-index: 1000;
+	display: block !important; 
+	/* height: 26px; */
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+/*
+	margin-top: 8px;
+	margin-bottom: 8px;
+*/
+}
+	.phptemplate_tagEditIcon_wrap_block .phptemplate_tagEditIcon {
+		display: inline-block !important; 
+	}
+
+/* Вариант 2 */
+.phptemplate_tagEditIcon_wrap_inline:hover .tagEditIconA { display: inline-block !important; }
+.phptemplate_tagEditIcon_wrap_inline:hover { z-index: 1005; }
+.phptemplate_tagEditIcon_wrap_inline {
+	position: relative !important; z-index: 1000;
+	display: inline-block !important; 
+	/* height: 26px; */
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+/*
+	margin-top: 8px;
+	margin-bottom: 8px;
+*/
+}	
+	.phptemplate_tagEditIcon_wrap_inline .phptemplate_tagEditIcon {
+		display: block !important; 
+	}
+
+/* Вариант 3 */
+.phptemplate_tagEditIcon_wrap_absolute:hover .tagEditIconA { display: inline-block !important; }
+.phptemplate_tagEditIcon_wrap_absolute:hover { z-index: 1005; }
+.phptemplate_tagEditIcon_wrap_absolute {
+	position: relative !important; z-index: 1000;
+	display: block !important;
+	border: red 0px solid;
+}
+	.phptemplate_tagEditIcon_wrap_absolute .phptemplate_tagEditIcon {
+		display: block !important; 
+		position: absolute !important;
+		/* left: 0; top: 0; */
+	}
+	
+
+/* Вариант 4 */
+.phptemplate_tagEditIcon_wrap_center:hover .tagEditIconA { display: inline-block !important; }
+.phptemplate_tagEditIcon_wrap_center:hover { z-index: 1005; }
+.phptemplate_tagEditIcon_wrap_center {
+	position: relative !important; z-index: 1000;
+	display: inline-block !important; 
+	/* height: 26px; */
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+/*
+	margin-top: 8px;
+	margin-bottom: 8px;
+*/
+}
+	.phptemplate_tagEditIcon_wrap_center .phptemplate_tagEditIcon {
+		display: block !important; 
+	}
+	
+/* Вариант 5 */
+.phptemplate_tagEditIcon_wrap_w100:hover .tagEditIconA { display: inline-block !important; }
+.phptemplate_tagEditIcon_wrap_w100:hover { z-index: 1005; }
+.phptemplate_tagEditIcon_wrap_w100 {
+	position: relative !important; z-index: 1000;
+	display: block !important; 
+	/* height: 26px; */
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+/*
+	margin-top: 8px;
+	margin-bottom: 8px;
+*/
+}
+	.phptemplate_tagEditIcon_wrap_w100 .phptemplate_tagEditIcon {
+		display: block !important; 
+	}
+
+.phptemplate_tagEditIcon {
+	/* display: block; */
+	opacity: 0.70 !important; 
+	
+	padding-left: 10px;
+	padding-right: 2px;
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	/* height: 20px !important; */
+	border-radius: 3px !important; 
+	background: #383838 !important; 
+
+	white-space: nowrap !important; 
+	word-wrap: normal !important;
+	
+	text-align: left !important;
+	line-height: 18px !important;
+	font-family: Verdana !important; 
+	font-weight: normal !important;
+	font-size: 10px !important;
+	color: white !important; 
+}
+	.phptemplate_tagEditIcon * {
+		font-size: 10px !important;
+	}
+
+.phptemplate_tagEditIcon:hover { 
+	opacity: 1 !important;
+}	
+.phptemplate_tagEditIcon .phptemplate_tagEditIconSpan { 
+	display: none !important; 
+	margin-right: 8px !important;
+	color: #bbb !important; 
+}
+.phptemplate_tagEditIcon:hover .phptemplate_tagEditIconSpan { 
+	display: inline-block !important; 
+	vertical-align: top !important;
+}
+.phptemplate_tagEditIcon:hover .phptemplate_tagEditIconSpan.hoverInfoNewLine { 
+	clear: left !important;
+	display: block !important; 
+	vertical-align: top !important;
+}
+.tagEditIconImg {
+	display: inline-block !important;
+	overflow: hidden !important;
+	
+	width: 16px !important; 
+	height: 17px !important;
+	
+	background-repeat: no-repeat !important;
+	background-position: 0 1px;
+	vertical-align: top !important;
+}
+.tagEditIconA {
+	min-height: 16px !important; 
+	min-width: 16px !important;
+	cursor: pointer;
+	margin: 0 !important;
+	padding: 0 !important;
+	margin-right: 8px !important;
+	background: none !important;
+	
+	text-decoration: none !important;
+	line-height: 18px !important;
+	font-family: Verdana !important; 
+	font-size: 10px !important;
+	color: white !important; 
+}
+
+/* Визуальная обертка для элементов контента */
+.tagWrapTtContentElement { display: block; position: relative; min-height: 32px; margin-bottom: 15px; }
+.tagWrapTtContentElement.vInline { display: inline-block; }
+
+/*
+.tagWrapTtContentElement:hover { background: #c6e7f4; }
+.tagWrapTtContentElement:hover .tagWrapTtContentElement:hover { background: #ffa9a9; }
+.tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover { background: #ff7c7c; }
+.tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover { background: #ff5050; }
+.tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover .tagWrapTtContentElement:hover { background: #ff2e2e; }
+*/
+
+.tagWrapTtContentElement .tagWrapTtContentElement_dashed_Top		{ display: block; position: absolute; z-index: 1000; top: 0; left: 0; right: 0; height: 3px; background: url(tagTtContentWrapContentElement_bg.png); }
+.tagWrapTtContentElement .tagWrapTtContentElement_dashed_Right		{ display: block; position: absolute; z-index: 1000; top: 0; bottom: 0; right: 0; width: 3px; background: url(tagTtContentWrapContentElement_bg.png); }
+.tagWrapTtContentElement .tagWrapTtContentElement_dashed_Bottom		{ display: block; position: absolute; z-index: 1000; bottom: 0; left: 0; right: 0; height: 3px; background: url(tagTtContentWrapContentElement_bg.png); }
+.tagWrapTtContentElement .tagWrapTtContentElement_dashed_Left		{ display: block; position: absolute; z-index: 1000; top: 0; left: 0; bottom: 0; width: 3px; background: url(tagTtContentWrapContentElement_bg.png); }
+
+.tagWrapTtContentElement:hover > .tagWrapTtContentElement_dashed_Top		{ border-top: #00ADEE 2px solid; }
+.tagWrapTtContentElement:hover > .tagWrapTtContentElement_dashed_Right		{ border-right: #00ADEE 2px solid; }
+.tagWrapTtContentElement:hover > .tagWrapTtContentElement_dashed_Bottom		{ border-bottom: #00ADEE 2px solid; }
+.tagWrapTtContentElement:hover > .tagWrapTtContentElement_dashed_Left		{ border-left: #00ADEE 2px solid; }
+.tagWrapTtContentElement:hover .tagWrapTtContentElement_dashed_Top,
+.tagWrapTtContentElement:hover .tagWrapTtContentElement_dashed_Right,
+.tagWrapTtContentElement:hover .tagWrapTtContentElement_dashed_Bottom,
+.tagWrapTtContentElement:hover .tagWrapTtContentElement_dashed_Left {
+	/* background: url(tagTtContentWrapContentElement_bg_hover.png) !important; */
+}

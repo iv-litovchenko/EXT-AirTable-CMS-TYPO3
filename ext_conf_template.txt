@@ -1,0 +1,8 @@
+# cat=basic/enable/01; type=boolean; label=Enable PHP log errors (php_errors.log)
+enablePhpLogErrors = 0
+
+# cat=basic/enable/01; type=boolean; label=Enable memcached - localhost 11211 (useCachingFramework)
+enableMemcached = 1
+
+# cat=basic/enable/01; type=int; label=JPG Quality (0-100)
+jpgQuality = 85

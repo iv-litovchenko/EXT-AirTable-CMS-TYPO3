@@ -1,0 +1,83 @@
+{namespace f=TYPO3\Fluid\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="PagesElements/Default.html" />
+
+<f:comment>
+   <!--
+      *********************
+      * ###PATH###
+      *********************
+   -->
+</f:comment>
+
+<f:section name="Configuration">
+
+	<!-- Dynamic Attributes - template variables (TV) -->
+	<flux:form id="###SIGNATURE###">
+		<flux:field.input name="settings.hellow1" label="Hellow (1)" />
+		<flux:field.input name="settings.hellow2" label="Hellow (2)" />
+		<flux:field.input name="settings.hellow3" label="Hellow (3)" />
+		<flux:field.inline.fal name="settings.media.images" label="Hellow (Image)" allowedExtensions="gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg" multiple="true" maxItems="10" required="false" />
+	</flux:form>
+	
+	<flux:grid>
+		<flux:grid.row>
+			<flux:grid.column label="#1" colPos="1" />
+			<flux:grid.column label="#2" colPos="2" />
+			<flux:grid.column label="#3" colPos="3" />
+		</flux:grid.row>
+		<flux:grid.row>
+			<flux:grid.column label="#4" colPos="4" colspan="3" rowspan="0" style="height: 300px;" />
+		</flux:grid.row>
+	</flux:grid>
+
+</f:section>
+
+<f:section name="Preview">
+
+	<p>YouTube: {https://www.youtube.com/}</p>
+	<p>{settings.hellow1}</p>
+	<v:content.resources.fal field="settings.media.images" as="images" record="{record}">
+		<f:for each="{images}" as="image">
+			<f:if condition="{image}">
+				<f:image src="{image.id}" treatIdAsReference="1" maxWidth="100" maxHeight="50" title="{image.title}" alt="{image.alternative}" crop="{image.crop}" />
+			</f:if>
+		</f:for>
+	</v:content.resources.fal>
+
+</f:section>
+
+<f:section name="HeaderAssets">
+
+</f:section>
+
+<f:section name="Main">
+	
+	<div style="background: wheat;">
+
+		<!-- <img src="{f:uri.resource(path: 'Images/example.png')}"> -->
+		<h3>Hellow word "Gridelement" - var: {var}!</h3>
+		<p>Flux dynamic var: {settings.hellow1}</p>
+
+		<table border="1" width="100%">
+		<tr>
+			<td width="33%" valign="top"><flux:content.render area="1" editIconsEnable="true" /></td>
+			<td width="33%" valign="top"><flux:content.render area="2" editIconsEnable="true" /></td>
+			<td width="33%" valign="top"><flux:content.render area="3" editIconsEnable="true" /></td>
+		</tr>
+		<tr>
+			<td colspan="3" valign="top"><flux:content.render area="4" editIconsEnable="true" /></td>
+		</tr>
+		</table>
+
+	</div>
+
+	<f:comment><f:debug title="Debug" inline="true">{_all}</f:debug></f:comment>
+
+</f:section>
+
+<f:section name="FooterAssets">
+
+</f:section>

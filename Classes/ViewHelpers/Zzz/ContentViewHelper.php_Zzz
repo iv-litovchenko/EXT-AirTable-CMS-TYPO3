@@ -1,0 +1,448 @@
+<?php
+namespace Litovchenko\AirTable\ViewHelpers;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+/**
+ * <f:content pid="_self" colPos="0"/>
+ * <f:content gridContainerId="" gridColumn="" />
+ * <f:content model="" uid="" />
+ 
+38: # Clear out any constants in this reserved room!
+39: styles.content >
+40: 
+41: # get content
+42: styles.content.get = CONTENT
+43: styles.content.get {
+44: 	table = tt_content
+45: 	select.orderBy = sorting
+46: 	select.where = colPos=0
+47: 	select.languageField = sys_language_uid
+48: }
+49: 
+50: # get content, left
+51: styles.content.getLeft < styles.content.get
+52: styles.content.getLeft.select.where = colPos=1
+53: 
+54: # get content, right
+55: styles.content.getRight < styles.content.get
+56: styles.content.getRight.select.where = colPos=2
+57: 
+58: # get content, margin
+59: styles.content.getBorder < styles.content.get
+60: styles.content.getBorder.select.where = colPos=3
+61: 
+62: # get news
+63: styles.content.getNews < styles.content.get
+64: styles.content.getNews.select.pidInList = {$styles.content.getNews.newsPid}
+65: 
+66: # Edit page object:
+67: styles.content.editPanelPage = COA
+68: styles.content.editPanelPage {
+69: 	10 = EDITPANEL
+70: 	10 {
+71: 		allow = toolbar,move,hide
+72: 		label.data = LLL:EXT:css_styled_content/pi1/locallang.xml:eIcon.page
+73: 		label.wrap = |&nbsp;<b>%s</b>
+74: 	}
+75: }
+76: 
+77: 
+78: 
+
+10 = CONTENT
+10 {
+	table = tt_content
+		
+	# uidInList = 0
+	select.pidInList = 0
+	select.uidInList = 455,459,457,456
+	select.orderBy = FIND_IN_SET(uid, '455,459,457,456')
+		
+	# select.pidInList = root
+	# select.uidInList = 457
+	# select.orderBy=sorting
+	# wrap= <div class="header">|</div>
+}
+	
+20 = CONTENT
+20 {
+	table = tt_content
+	select.where = pid = 0
+	select.andWhere = record_parent_table="tx_specialist"
+	select.andWhere = record_parent_uid=22
+		
+	# select.pidInList = root
+	# select.uidInList = 457
+	# select.orderBy=sorting
+	# wrap= <div class="header">|</div>
+}
+ */
+
+class ContentViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 			=> 'FrontendViewHelper',
+		'name'				=> 'Content',
+		'description' 		=> 'Хелпер для вывода содержимого страницы / сетки / записи',
+		'registerArguments' => [
+			'pid' 				=> ['integer',null],
+			'colPos' 			=> ['integer',null],
+			'gridContainerId'	=> ['integer',0],
+			'gridColumn' 		=> ['integer',0],
+			'model' 			=> ['string',null],
+			'uid' 				=> ['integer',0]
+		]
+	];
+	
+    /**
+     * @var boolean
+     */
+    protected $escapeChildren = false;
+
+    /**
+     * @var boolean
+     */
+    protected $escapeOutput = false;
+	
+    /**
+     * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+     */
+    protected $contentObject;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+     */
+    protected $configurationManager;
+	
+    /**
+     * @var string
+     */
+	public $scenarioType = 'page';
+	
+    /**
+     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
+     * @return void
+     */
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    {
+        $this->configurationManager = $configurationManager;
+        $this->contentObject = $configurationManager->getContentObject();
+    }
+	
+    public function render()
+    {		
+		$where = [];
+		
+		// v(0) - eIdAjaxContentById
+		if ($GLOBALS['BE_USER'] && $this->arguments['model'] == null && $this->arguments['uid'] > 0) {
+			$scenarioType = 'contentById';
+			$tsConf = array(
+				'table' => 'tt_content',
+				'select.' => array(
+					'uidInList' => $this->arguments['uid'],
+					'pidInList' => 0,
+					'languageField' => 'sys_language_uid',
+				)
+			);
+			
+		} else {
+			
+			// v(1)
+			if ($this->arguments['pid'] == null || $this->arguments['pid'] == 'self') {
+				$scenarioType = 'pageContent';
+				$pid = $GLOBALS['TSFE']->id;
+			} else {
+				$scenarioType = 'pageContent';
+				$pid = intval($this->arguments['pid']);
+			}
+			
+			if (isset($this->arguments['colPos'])) {
+				$colPos = intval($this->arguments['colPos']);
+				$where[] = ' colPos='.$colPos.' '; // не обяательно для выборки
+				$emptyId = 'emptyColPos_'.$colPos;
+			}
+			
+			// (v2) EXT:gridelements
+			if(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('gridelements')){
+				
+				#if ($this->templateVariableContainer->exists("contentObjectData")) {
+				#	$contentObjectData = $this->templateVariableContainer->get("contentObjectData");
+				#	$uid = 'AAA'.$contentObjectData['uid'];
+				#} else {
+				#	$uid = 'BBB'.$this->configurationManager->getContentObject()->data['uid'];
+				#}
+				
+				if ($this->arguments['gridContainerId'] > 0) {
+					// $gridContainerId = Yii::$app->params['typo3']['data']['uid'];
+					$where[] = ' tx_gridelements_container='.intval($this->arguments['gridContainerId']).' ';
+					$gridContainerId = $this->arguments['gridContainerId'];
+					$colPos = -1;
+					if($this->arguments['gridColumn'] !== null) {
+						$where[] = ' tx_gridelements_columns='.intval($this->arguments['gridColumn']).' ';
+						$gridColumn = $this->arguments['gridColumn'];
+						$colPos = -1;
+					}
+					$scenarioType = 'gridContent';
+					$emptyId = 'emptyGridPos_'.$this->arguments['gridContainerId'].'_'.$this->arguments['gridColumn'];
+				}
+				
+			}
+			
+			// (v3) TtContentRows
+			if ($this->arguments['model'] != '') {
+				$scenarioType = 'recordContent';
+				if(class_exists($this->arguments['model'])){
+					$emptyId = 'emptyModelPos_'.md5($this->arguments['table']);
+					$table = BaseUtility::getTableNameFromClass($this->arguments['model']);
+					$class = $this->arguments['model'];
+					$colPos = 0;
+					$foreignTable = $table;
+					$foreignField = 'propref_content';
+					$where[] = ' foreign_table="'.$table.'" ';
+					$where[] = ' foreign_field="propref_content" ';
+					if ($this->arguments['uid'] > 0) {
+						$foreignUid = intval($this->arguments['uid']);
+						$where[] = ' foreign_uid='.intval($this->arguments['uid']).' ';
+						$row = $class::getModel()->select('pid')->where('uid','=',$this->arguments['uid'])->first();
+						if(is_object($row)){
+							$r = $row->toArray();
+							$pid = $row['pid'];
+							if($pid == 0){
+								$pid = 'root';
+							}
+						}
+					}
+				} else {
+					$table = '?';
+				}
+			}
+			
+			$srcAdmPath = '/typo3conf/ext/air_table/Resources/Public/Admin/';
+			$tsConf = array(
+				'table' => 'tt_content',
+				'select.' => array(
+					'pidInList' => $pid,
+					'orderBy' => 'sorting',
+					'where' => implode(' AND ', $where),
+					'languageField' => 'sys_language_uid',
+				),
+				'stdWrap.' => array (
+					'ifEmpty.' => array ( 
+						'cObject' => 'TEXT',
+						'cObject.' => array (
+							'value' => '
+								<tagContentEmpty class="tagContentEmpty" id="'.$emptyId.'_empty" 
+									style="
+										display: block; height: 60px; 
+										background: #eee url('.$srcAdmPath.'/emptyContent-20.png);
+										border-left: gold 3px solid;
+								">
+								</tagContentEmpty>
+								<!--###CONTENT###NOT###FOUND###-->
+							'
+						)
+					)
+				)
+			);
+			
+			// Удаляем содержимое в процессе наполнения...
+			if(!$GLOBALS['BE_USER']) {
+				// unset($tsConf['stdWrap.']);
+			}
+			
+		}
+		
+		// Нужно для вывода кнопки снизу
+		// $tsConfMd5 = md5(serialize($tsConf));
+
+		$topContainer = '';
+		$newIcon = '';
+		$newButtomIcon = '';
+		$moveIcon = '';
+		if($GLOBALS['BE_USER']->uc['phptemplate_mode_editing'] == 2 && $scenarioType != 'contentById')
+		{
+			// Контейнер для вставки сверху...
+			$topContainer = '
+				<tagContentTop id="'.$emptyId.'_wrap" style="display: block;">
+				<!--'.$emptyId.'_wrap-->
+				</tagContentTop>
+			';
+			
+			// Добавить содержимое сверху
+			$newIcon = new \Litovchenko\AirTable\ViewHelpers\NewIconW100ViewHelper;
+			$newIcon->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			if ($scenarioType == 'gridContent') {
+				// $newIcon->title = '';
+				// $newIcon->title = "GridColPos: ".$gridColumn;
+				
+			} elseif($scenarioType == 'recordContent') {
+				// $newIcon->title = "Model: ".$this->arguments['model'];
+				
+			} else {
+				// $newIcon->title = $GLOBALS['LANG']->sL('LLL:EXT:air_table/Resources/Private/Language/Localling.EditAdmin.xml:plugins.pageContent.addTheContentsOfTheTop');
+				// $newIcon->title = "ColPos: ".$colPos;
+			}
+			$newIcon->title = '';
+			$newIcon->panelType = 'newRecord_tt_content';
+			$newIcon->hideHoverInfo = 0;
+			$newIcon->hoverInfoNewLine = 0;
+			$newIcon->defaultFieldsForNewRecord = [
+				'uid' 			=> $pid=='root'?0:$pid,
+				'pid' 			=> $pid=='root'?0:$pid,
+				'colPos' 		=> $colPos,
+				'tx_gridelements_container' => $gridContainerId,
+				'tx_gridelements_columns' => $gridColumn,
+				'foreign_table' => $foreignTable,
+				'foreign_field' => $foreignField,
+				'foreign_uid' 	=> $foreignUid,
+			];
+			$newIconContent = $newIcon->processOutput();
+			
+			// Переместить содержимое наверх
+			$moveIcon = new \Litovchenko\AirTable\ViewHelpers\EditIconCenterViewHelper;
+			$moveIcon->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			$moveIcon->title = 'Переместить сюда';
+			$moveIcon->recordId = 0;
+			$moveIcon->panelType = 'moveRecord_tt_content';
+			$moveIcon->hideHoverInfo = 1;
+			$moveIcon->hoverInfoNewLine = 1;
+			$moveIcon->changeFieldsForMoveRecord = [
+				'uid' 			=> $GLOBALS['BE_USER']->uc['isMoveRecord_tt_content_varible']['uid'], // это Id перемещяемой записи
+				'uidAfter' 		=> $pid=='root'?0:$pid, // это Id страницы в начало которой разместить
+				'pid' 			=> $pid=='root'?0:$pid,
+				'colPos' 		=> $colPos,
+				'tx_gridelements_container' => $gridContainerId,
+				'tx_gridelements_columns' => $gridColumn,
+				'foreign_table' => $foreignTable,
+				'foreign_field' => $foreignField,
+				'foreign_uid' 	=> $foreignUid,
+			];
+			$moveIconContent = $moveIcon->processOutput();
+			
+			// Добавить содержимое снизу (// Todo)
+			#$newIconBottom = new \Litovchenko\AirTable\ViewHelpers\NewIconCenterViewHelper;
+			#$newIconBottom->model = 'Litovchenko\AirTable\Domain\Model\Content\TtContent';
+			#$newIconBottom->title = $GLOBALS['LANG']->sL('LLL:EXT:air_table/Resources/Private/Language/Localling.EditAdmin.xml:plugins.pageContent.addTheContentsOfTheBottom');
+			#$newIconBottom->title = $newIconBottom->title.' // Todo';
+			#$newIconBottom->panelType = 'newRecord_tt_content';
+			#$newIconBottom->hoverInfoNewLine = 1;
+			#$newIconBottom->defaultFieldsForNewRecord = [
+			#	'pid' 			=> $pid=='root'?0:$pid,
+			#	'colPos' 		=> $colPos,
+			#	'tx_gridelements_container' => $gridContainerId,
+			#	'tx_gridelements_columns' => $gridColumn,
+			#	'foreign_table' => $foreignTable,
+			#	'foreign_field' => $foreignField,
+			#	'foreign_uid' 	=> $foreignUid,
+			#];
+			#$newIconButtomContent = $newIconBottom->processOutput();
+		}
+		
+		// Получаем содержимое (страницы)
+		$getContent = $GLOBALS['TSFE']->cObj->cObjGetSingle("CONTENT", $tsConf);
+		
+		// Если пустое содержимое - удаляем кнопку добавить снизу
+		#if(strstr($getContent,'###CONTENT###NOT###FOUND###')){
+		#	$newIconButtomContent = '';
+		#}
+		
+		# $templateVariableContainer = $this->renderingContext->getVariableProvider();
+		# $templateVariableContainer->add('fff', 'efewfe'); // EXT:gridelements (test)
+		# $uid = $templateVariableContainer->get('fff');
+		$output = $this->wrap(
+			# '[[['.$uid.']]]'. // EXT:gridelements (test)
+			$newIconContent.$topContainer.$moveIconContent.$getContent.$newIconButtomContent,
+			$scenarioType,
+			$pid,
+			$colPos,
+			$gridContainerId,
+			$gridColumn,
+			$foreignTable,
+			$foreignField,
+			$foreignUid
+		);
+		# $templateVariableContainer->remove('fff');
+		return $output;
+    }
+	
+	public function wrap($content, $scenarioType, $pid, $colPos, $gridContainerId, $gridColumn, $foreignTable, $foreignField, $foreignUid) 
+	{
+		// При условии, что включена шестеренка (настройки)
+		// Для contentById пропускаем
+		if ($GLOBALS['BE_USER']->uc['phptemplate_checkOption'] == 1 && $scenarioType != 'contentById') {
+			$srcAdmPath = '/typo3conf/ext/air_table/Resources/Public/Admin/';
+			switch($scenarioType){
+				case 'contentById':
+					$addCssClass = '';
+					$label = "контент 1 записи";
+					$info = "uid: ".$pid;
+				break;
+				case 'pageContent':
+					$addCssClass = '';
+					$label = "контент страницы";
+					$info = "pid: ".$pid.", colPos: ".$colPos;
+				break;
+				case 'gridContent':
+					$addCssClass = 'hoverInfoNewLine';
+					$label = "контент сетки-контейнера";
+					$info = "
+						pid: ".$pid."<br />
+						colPos: ".$colPos."<br />
+						tx_gridelements_container: ".$gridContainerId."<br />
+						tx_gridelements_columns: ".$gridColumn."
+					";
+				break;
+				case 'recordContent':
+					$addCssClass = 'hoverInfoNewLine';
+					$label = 'контент записи';
+					$info = "
+						pid: ".$pid."<br />
+						colPos: ".$colPos."<br />
+						foreign_table: ".$foreignTable."<br />
+						foreign_field: ".$foreignField."<br />
+						foreign_uid: ".$foreignUid."
+					";
+				break;
+			}
+			return "
+				<tagWrapTtContentElement class='tagWrapTtContentElement'>
+					<!--TYPO3_NOT_SEARCH_begin-->
+					<tagEditIcon_wrap class='phptemplate_tagEditIcon_wrap_block'>
+					<tagEditIcon class='phptemplate_tagEditIcon' style='border: black 1px solid;'>
+					<nobr>
+						<tagEditIconA class='tagEditIconA'>
+						<tagEditIconImg class='tagEditIconImg' style='background-image: url(".$srcAdmPath."isPageContentIcon.png);'></tagEditIconImg>
+						</tagEditIconA>ContentViewHelper (".$label.")&nbsp;
+						<tagEditIconSpan class='phptemplate_tagEditIconSpan ".$addCssClass."'>
+							".$info."
+						</tagEditIconSpan>
+					</nobr>
+					</tagEditIcon>
+					</tagEditIcon_wrap>
+					<tagEditIcon_br style='clear: left;'></tagEditIcon_br>
+					<!--TYPO3_NOT_SEARCH_end-->
+					<tagWrapTtContentElement_dashed_Top		class='tagWrapTtContentElement_dashed_Top'></tagWrapTtContentElement_dashed_Top>
+					<tagWrapTtContentElement_dashed_Right	class='tagWrapTtContentElement_dashed_Right'></tagWrapTtContentElement_dashed_Right>
+					<tagWrapTtContentElement_dashed_Bottom	class='tagWrapTtContentElement_dashed_Bottom'></tagWrapTtContentElement_dashed_Bottom>
+					<tagWrapTtContentElement_dashed_Left	class='tagWrapTtContentElement_dashed_Left'></tagWrapTtContentElement_dashed_Left>
+					" . $content . "
+				</tagWrapTtContentElement>
+			";
+		} else {
+			return $content;
+		}
+	}
+	
+}

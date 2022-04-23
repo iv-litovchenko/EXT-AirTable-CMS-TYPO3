@@ -1,0 +1,101 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model\Eav;
+
+class SysValue extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'BackendModelCrud',
+		'keyInDatabase' => 'sys_value',
+		'name' => 'Атрибуты (значения)',
+		'formSettings' => [
+			'tabs' => [
+				'duplicates' => 'Дубликаты ключей для удобной фильтрации'
+			]
+		],
+		'baseFields' => [
+			'pid',
+			'sorting'
+		],
+		'dataFields' => [
+			'prop_value' => [
+				'type' => 'Text',
+				'name' => 'Атрибут (значение)',
+				'show' => 1,
+				'required' => 0,
+				'liveSearch' => 1,
+				'doNotCheck' => 1,
+				'position' => '0|main|2'
+			],
+			'prop_entity' => [ // аналог foreign_uid
+				'type' => 'Input.Number',
+				'name' => 'Сущность (ID)',
+				'description' => 'Запись с которой связано значение',
+				'show' => 1,
+				'readOnly' => 0,
+				'position' => '0|main|5'
+			],
+			#'prop_duplicate_entity_uidkey' => [
+			#	'type' => 'Input',
+			#	'name' => 'Ключ сущности (дубликат с таблицы sys_entity)',
+			#	'description' => 'Записывается в TCEmainHook.php',
+			#	'show' => 1,
+			#	'readOnly' => 1,
+			#	'position' => [
+			#		0 => 'duplicates,100'
+			#	]
+			#],
+			#'prop_duplicate_attribute_uidkey' => [
+			#	'type' => 'Input',
+			#	'name' => 'Ключ характеристики (дубликат с таблицы sys_attribute)',
+			#	'description' => 'Записывается в TCEmainHook.php',
+			#	'show' => 1,
+			#	'readOnly' => 1,
+			#	'position' => [
+			#		0 => 'duplicates,200'
+			#	]
+			#],
+		],
+		'relationalFields' => [
+			'propref_attribute' => [
+				'type' => 'Rel_Mto1',
+				'name' => 'Атрибут (ID)',
+				'foreignModel' => 'Litovchenko\AirTable\Domain\Model\Eav\SysAttribute',
+				'foreignKey' => 'proprefinv_values',
+				'foreignWhere' => [ // See $TCA "foreign_table_where
+					#'where' => [
+					#	0 => ' sys_attribute.propref_entity = 12124008 '
+                    #],
+					#'orderBy' => [
+					#	0 => ' table.field desc '
+					#]
+				],
+				'show' => 1,
+				'required' => 1,
+				'readOnly' => 0,
+				'position' => '0|main|1'
+			],
+		]
+	];
+	
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		$configuration['ctrl']['label'] = 'prop_value';
+		$configuration['columns']['uid']['config']['type'] = 'passthrough';
+		$configuration['types'][0]['showitem'] = 'prop_value,propref_attribute,prop_entity';
+		
+		// tt_content -> types -> bullets -> columnsOverrides -> bodytext -> config
+		//columnsOverrides
+	}
+	
+}
+?>

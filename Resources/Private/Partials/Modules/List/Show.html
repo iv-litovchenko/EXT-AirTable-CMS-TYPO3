@@ -1,0 +1,9 @@
+
+		<h1>
+			<!--<f:link.action action="index">Таблицы</f:link.action> / -->
+			{h1Content -> f:format.raw()} / Просмотр записей<br />
+			<code style="background: #ffffff; color: #c1c1c1;">{modelName -> f:format.raw()}</code>
+		</h1>
+		<div class="result">
+			{recordContent -> f:format.raw()}
+		</div>

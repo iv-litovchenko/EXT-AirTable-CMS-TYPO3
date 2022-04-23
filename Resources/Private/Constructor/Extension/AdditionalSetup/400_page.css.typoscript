@@ -1,0 +1,7 @@
+################################################
+# AdditionalSetup/400_page.css.typoscript
+################################################
+
+# page.includeCSS.main 			= EXT:###EXTKEY###/Resources/Public/Css/print.css
+# page.includeCSS.print 		= EXT:###EXTKEY###/Resources/Public/Css/print.css
+# page.includeCSS.print.media 	= print

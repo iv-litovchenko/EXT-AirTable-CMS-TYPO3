@@ -1,0 +1,54 @@
+{namespace f=TYPO3\Fluid\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:comment>
+   <!--
+      *********************
+      * ###PATH###
+      *********************
+      * Template varibles
+      *********************
+      @ tmplShowSlider -> show slider 
+      @ tmplShowBreadcrumb -> show breadCrumb
+      @ varible1
+      @ varible2
+      @ varible3
+   -->
+</f:comment>
+
+<f:vhsExtAirTable.AdminPanel />
+<table width="800" border="1" align="center">
+<tr>
+	<td colspan="2">
+		<f:link.page pageUid="{v:page.info(field: 'uid')}">
+			<img src="{f:uri.resource(path: 'Images/logo.png')}" width="100">My site #{v:page.info(field: 'uid')}
+		</f:link.page>
+	</td>
+</tr>
+<tr>
+	<td width="30%" valign="top">
+		<f:vhsExtAirTable.editIconsForMenu uidPattern="elem_*" styleDirection="left">
+			<v:page.menu expandAll="0" levels="2" class="cssmenu" substElementUid="1" />
+		</f:vhsExtAirTable.editIconsForMenu>
+	</td>
+	<td width="70%" valign="top">
+		<f:if condition="{tmplShowBreadcrumb} == '1'">
+			<v:page.breadCrumb class="cssbreadcrumb" classActive="" classCurrent="active" />
+		</f:if>
+
+		<!-- Action content (start) -->
+		<f:render section="Main" />
+		<!-- Action content (end) -->
+
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		Powered by TYPO3 v10, «Mysite»© 
+		<f:format.date date="now" format="Y" />
+		<f:render partial="Pages/Copyright.html" arguments="{_all}" />
+	</td>
+</tr>
+</table>
+<f:vhsExtAirTable.AdminPanelTools />

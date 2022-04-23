@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="plugins.adminPanel.backend">Backend</label>
+            <label index="plugins.adminPanel.exit">Exit</label>
+            <label index="plugins.adminPanel.exitConfirm">Leave?</label>
+            <label index="plugins.adminPanel.modEditOn">on</label>
+            <label index="plugins.adminPanel.modEditOff">off</label>
+            <label index="plugins.adminPanel.resetThePageCache">Reset the page cache</label>
+            <label index="plugins.adminPanel.clearCache_allConfirm">Reset all caches?</label>
+            <label index="plugins.adminPanel.pageColorType-1">Normal page</label>
+            <label index="plugins.adminPanel.pageColorType-2">Virtual page with cHash</label>
+            <label index="plugins.adminPanel.pageColorType-3">Virtual page without amount cHash</label>
+            <label index="plugins.editIcon.unableToEstablishTheRepository">Das Repository zum Erstellen des Datensatzes konnte nicht ermittelt werden.</label>
+			<label index="plugins.newIcon.addNote">Add note</label>
+            <label index="plugins.pageContent.addTheContentsOfTheBottom">Add the contents of the bottom</label>
+            <label index="plugins.pageContent.addTheContentsOfTheTop">Add the contents of the top</label>
+            <label index="plugins.pageContentRecordInline.addTheContentsOfTheTop">Add the contents of the container</label>
+            <label index="plugins.contentInTheProcessOfFilling">Content in the process of filling!</label>
+            <label index="hooks.moveHere">Move here</label>
+        </languageKey>
+        <languageKey index="ru" type="array">
+            <label index="plugins.adminPanel.backend">Админка</label>
+            <label index="plugins.adminPanel.exit">Выход</label>
+            <label index="plugins.adminPanel.exitConfirm">Выходим?</label>
+            <label index="plugins.adminPanel.modEditOn">вкл</label>
+            <label index="plugins.adminPanel.modEditOff">выкл</label>
+            <label index="plugins.adminPanel.resetThePageCache">Сбросить кэш страницы</label>
+            <label index="plugins.adminPanel.clearCache_allConfirm">Сбросить все кэши?</label>
+            <label index="plugins.adminPanel.pageColorType-1">Обычная страница</label>
+            <label index="plugins.adminPanel.pageColorType-2">Виртуальная страница с cHash</label>
+            <label index="plugins.adminPanel.pageColorType-3">Виртуальная страница без суммы cHash</label>
+            <label index="plugins.editIcon.unableToEstablishTheRepository">Не удалось определить хранилище для создания записи!</label>
+			<label index="plugins.newIcon.addNote">Добавить заметку</label>
+            <label index="plugins.pageContent.addTheContentsOfTheBottom">Добавить содержимое снизу</label>
+            <label index="plugins.pageContent.addTheContentsOfTheTop">Добавить содержимое сверху</label>
+            <label index="plugins.pageContentRecordInline.addTheContentsOfTheTop">Добавить содержимое в контейнер сверху</label>
+            <label index="plugins.contentInTheProcessOfFilling">Содержимое в процессе наполнения!</label>
+            <label index="hooks.moveHere">Переместить сюда</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="plugins.adminPanel.backend">Backend</label>
+            <label index="plugins.adminPanel.exit">Abfahrt</label>
+            <label index="plugins.adminPanel.exitConfirm">Zu verlassen?</label>
+            <label index="plugins.adminPanel.modEditOn">inc</label>
+            <label index="plugins.adminPanel.modEditOff">weg</label>
+            <label index="plugins.adminPanel.resetThePageCache">Setzen Sie den Seiten-Cache</label>
+            <label index="plugins.adminPanel.clearCache_allConfirm">Setzen Sie alle Caches?</label>
+            <label index="plugins.adminPanel.pageColorType-1">Normal Page</label>
+            <label index="plugins.adminPanel.pageColorType-2">Die virtuelle Seite mit cHash</label>
+            <label index="plugins.adminPanel.pageColorType-3">Virtuelle Seite ohne Menge cHash</label>
+            <label index="plugins.editIcon.unableToEstablishTheRepository">Could not determine the repository to create the record!</label>
+			<label index="plugins.newIcon.addNote">Notiz hinzufügen</label>
+            <label index="plugins.pageContent.addTheContentsOfTheBottom">Fügen Sie unten Inhalte hinzu </label>
+            <label index="plugins.pageContent.addTheContentsOfTheTop">Geben Sie den Inhalt der Spitze</label>
+            <label index="plugins.pageContentRecordInline.addTheContentsOfTheTop">Den Inhalt des Behälters</label>
+            <label index="plugins.contentInTheProcessOfFilling">Inhalt in den Prozess der Füllung!</label>
+            <label index="hooks.moveHere">Hierhin ziehen</label>
+        </languageKey>
+    </data>
+</T3locallang>

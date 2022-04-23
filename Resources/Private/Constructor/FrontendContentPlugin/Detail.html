@@ -1,0 +1,25 @@
+{namespace f=TYPO3\Fluid\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="PagesElements/Default.html" />
+
+<f:comment>
+   <!--
+      *********************
+      * ###PATH###
+      *********************
+   -->
+</f:comment>
+
+<f:section name="Main">
+
+	<div style="padding: 25px; background: wheat; text-align: center;">
+
+		<p>Hellow detail page action "{record_id}"!</p>
+		<f:link.action action="index">-- back to "index" action --</f:link.action>
+
+	</div>
+	<f:comment><f:debug title="Debug" inline="true">{_all}</f:debug></f:comment>
+
+</f:section>

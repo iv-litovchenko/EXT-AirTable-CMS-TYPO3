@@ -1,0 +1,65 @@
+<?php
+namespace Litovchenko\AirTable\ViewHelpers;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+class VhsInfoViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 			=> 'FrontendViewHelper',
+		'name' 				=> 'VhsInfo',
+		'registerArguments' => [
+			'msg' => ['string']
+		]
+	];
+	
+    /**
+     * @var boolean
+     */
+    protected $escapeChildren = false;
+
+    /**
+     * @var boolean
+     */
+    protected $escapeOutput = false;
+	
+    public function render()
+    {
+		if($GLOBALS['BE_USER']->uc['phptemplate_checkOption'] == 1){
+			$srcAdmPath = '/typo3conf/ext/air_table/Resources/Public/Admin/';
+			$content = '';
+			return "
+				<tagWrapTtContentElement class=''>
+					<!--TYPO3_NOT_SEARCH_begin-->
+					<tagEditIcon_wrap class='phptemplate_tagEditIcon_wrap_absolute'>
+					<tagEditIcon class='phptemplate_tagEditIcon' style='border: black 1px solid;'>
+					<nobr>
+						<tagEditIconA class='tagEditIconA'>
+						<tagEditIconImg class='tagEditIconImg' style='background-image: url(".$srcAdmPath."isExtbaseObject.svg);'></tagEditIconImg>
+						</tagEditIconA>Vhs: &lt;".$this->arguments['msg']."&gt;&nbsp; 
+						<tagEditIconSpan class='phptemplate_tagEditIconSpan hoverInfoNewLine'>
+							<!---->
+						</tagEditIconSpan>
+					</nobr>
+					</tagEditIcon>
+					</tagEditIcon_wrap>
+					<tagEditIcon_br style='clear: left;'></tagEditIcon_br>
+					<!--TYPO3_NOT_SEARCH_end-->
+					<!--" . $content . "-->
+				</tagWrapTtContentElement>
+			";
+		} else {
+			return  '';
+		}
+    }
+}

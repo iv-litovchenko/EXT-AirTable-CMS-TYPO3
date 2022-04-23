@@ -1,0 +1,48 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model;
+
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+/*
+<?php
+    // Add extra fields to User Settings (field is defined for TCA too in Configuration/TCA/Overrides/be_users.php)
+    // IMPORTANT: We need to define a dependency on sysext:setup to ensure that the loading order is correct and
+    // the configuration is properly applied.
+    $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_examples_mobile'] = [
+        'label' => 'LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:be_users.tx_examples_mobile',
+        'type' => 'input',
+        'table' => 'be_users',
+    ];
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToUserSettings(
+        'fewfewfew',
+        'after:email'
+    );
+*/
+
+/**
+ * @AirTable\Label:<Конфигуратор сайта (виртуальная модель)>
+ * @AirTable\Description:<Регистрация модели в системе>
+ */
+
+class GlobalUserSettings
+{
+	/**
+	 * @AirTable\Field:<Input>
+	 * @AirTable\Field\Show:<1>
+	 */
+	protected $title;
+	
+	/**
+	* Переопределение массива настроек таблицы
+	* @configuration (TCA array)
+	* @return array
+	*/
+    public static function postBuildConfiguration(&$configuration = [])
+    {
+		#print "<pre>";
+		#print_r($GLOBALS['SiteConfiguration']);
+		#exit();
+		
+	}
+}
+?>

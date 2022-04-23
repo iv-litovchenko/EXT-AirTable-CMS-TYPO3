@@ -1,0 +1,147 @@
+<?php
+namespace Litovchenko\AirTable\Controller\Modules;
+
+use TYPO3\CMS\Backend\Template\Components\ButtonBar;
+use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
+use TYPO3\CMS\Backend\View\BackendTemplateView;
+use TYPO3\CMS\Core\FormProtection\FormProtectionFactory;
+use TYPO3\CMS\Core\Imaging\Icon;
+use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\HttpUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
+use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
+use Illuminate\Database\Capsule\Manager as DB;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+class BackupController extends ActionController
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 		=> 'BackendModule',
+		'name' 			=> 'Резервное копирование',
+		'description' 	=> 'Создание резервной копии базы данных и файловых данных',
+		'access' 		=> 'admin',
+		'section'		=> 'content',
+		'position'		=> '61'
+	];
+	
+    /**
+     * TsConfig configuration
+     *
+     * @var array
+     */
+    protected $tsConfiguration = [];
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+     */
+    protected $configurationManager;
+
+    /**
+     * Function will be called before every other action
+     *
+     */
+    public function initializeAction()
+    {
+        parent::initializeAction();
+    }
+
+    /**
+     * BackendTemplateContainer
+     *
+     * @var BackendTemplateView
+     */
+    protected $view;
+
+    /**
+     * @var IconFactory
+     */
+    public $iconFactory;
+
+    /**
+     * Backend Template Container
+     *
+     * @var BackendTemplateView
+     */
+    protected $defaultViewObjectName = BackendTemplateView::class;
+
+    /**
+     * Set up the doc header properly here
+     *
+     * @param ViewInterface $view
+     */
+    protected function initializeView(ViewInterface $view)
+    {
+        $this->iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+		
+        /** @var BackendTemplateView $view */
+        parent::initializeView($view);
+        $view->getModuleTemplate()->getDocHeaderComponent()->setMetaInformation([]);
+		
+		$this->createMenu();
+		$this->createButtons();
+    }
+
+    /**
+     * Create menu
+     *
+     */
+    protected function createMenu()
+    {
+    }
+
+    /**
+     * Create the panel of buttons
+     *
+     */
+    protected function createButtons()
+    {
+        // (+) Кнопка обновить
+        $buttonBar = $this->view->getModuleTemplate()->getDocHeaderComponent()->getButtonBar();
+		$refreshButton = $buttonBar->makeLinkButton()
+            ->setHref(GeneralUtility::getIndpEnv('REQUEST_URI'))
+            ->setTitle('Обновить')
+            ->setIcon($this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL));
+        $buttonBar->addButton($refreshButton, ButtonBar::BUTTON_POSITION_RIGHT);
+    }
+	
+    /**
+     * Main action for administration
+     */
+    public function indexAction()
+    {
+    }
+	
+    /**
+     * Main action for administration
+     */
+    public function doAction()
+    {
+		$connection = \Litovchenko\AirTable\Utility\EloquentUtility::getDefaultConnection();
+		print "<pre>";
+		print_r($connection);
+		exit();
+		
+		$getArgs = [];
+		$uriBuilder = $this->controllerContext->getUriBuilder();
+		$redirectUrl = $uriBuilder->setArguments($getArgs)->uriFor('index', []);
+		\TYPO3\CMS\Core\Utility\HttpUtility::redirect($redirectUrl);
+		
+		// _backup_
+		#$tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
+		#foreach($tables as $table){
+		#	echo $table.'<br />';
+		#}
+		#print "<br />";
+		#exit();
+    }
+
+}

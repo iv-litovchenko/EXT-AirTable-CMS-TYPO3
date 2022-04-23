@@ -1,0 +1,17 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+class PageRepository extends \TYPO3\CMS\Core\Domain\Repository\PageRepository 
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'TYPO3\CMS\Core\Domain\Repository\PageRepository'
+	];
+}

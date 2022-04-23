@@ -1,0 +1,44 @@
+################################################
+# AdditionalSetup/800_content.typoscript
+################################################
+
+# lib.stdheader {
+# 	10 {
+# 		1.dataWrap = <h1>|</h1>
+# 		1.dataWrap.insertData = 1
+# 	}
+# 
+# 	stdWrap {
+# 		dataWrap >
+# 	}
+# }
+
+# tt_content {
+# 	stdWrap {
+# 		innerWrap >
+# 		dataWrap >
+# 		prefixComment >
+# 	}
+# 
+# 	default {
+# 		prefixComment >
+# 	}
+# 
+# 	text {
+# 		stdWrap.outerWrap = <div class="text">|</div>
+# 	}
+# 
+# 	textpic { }
+# 
+# 	image { }
+# 
+# 	media { }
+# 
+# 	stdWrap {
+# 		innerWrap {
+# 		}
+# 
+# 		outerWrap {
+# 		}
+# 	}
+# }

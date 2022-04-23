@@ -1,0 +1,66 @@
+# typo3/sysext/rte_ckeditor/Configuration/RTE/Default.yaml
+
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.CKEditor.com/#!/api/CKEditor.config
+
+editor:
+  externalPlugins:
+    widget: { resource: "EXT:air_table/Resources/Public/CKEditor/Plugins/widget/plugin.js" }
+    myplugin: { resource: "EXT:air_table/Resources/Public/CKEditor/Plugins/myplugin/plugin.js" }
+  config:
+    skin: "moono"
+    contentsCss: "EXT:air_table/Resources/Public/Css/rte.css"
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
+    stylesSet:
+      - { name: "bgcolor-pink", element: ['p', 'div'] , attributes: { class: "???bgcolor button pink"} }
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+    extraPlugins:
+      - about
+      - cloudservices
+      - colorbutton
+      - colordialog
+      - copyformatting
+      - devtools
+      - dialog
+      - dialogadvtab
+      - div
+      - divarea
+      - docprops
+      - find
+      - font
+      - indentblock
+      - justify
+      - lineutils
+      - link
+      - liststyle
+      - magicline
+      - mentions
+      - panelbutton
+      - pastefromgdocs
+      - pastefromlibreoffice
+      - pastefromword
+      - placeholder
+      - showblocks
+      - smiley
+      - specialchar
+      - stylesheetparser
+      - table
+      - templates
+      - uicolor
+      - widget
+      - widgetselection
+      - wordcount
+    removePlugins:
+      - image
+    removeButtons:
+      - Anchor

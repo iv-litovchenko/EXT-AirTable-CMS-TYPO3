@@ -1,0 +1,7 @@
+################################################
+# AdditionalSetup/500_page.js.typoscript
+################################################
+
+# page.includeJS {}
+# page.includeJSFooter.main = EXT:###EXTKEY###/Resources/Public/Javascript/main.js
+# page.includeJSFooter.bootstrap = EXT:###EXTKEY###/Resources/Public/Javascript/...js

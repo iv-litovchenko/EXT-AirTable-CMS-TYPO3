@@ -1,0 +1,9 @@
+################################################
+# AdditionalSetup/600_lib.typoscript
+################################################
+
+lib.tx_###EXTKEY2###.test = TEXT
+lib.tx_###EXTKEY2###.test.value = :: 123 ::
+
+lib.tx_###EXTKEY2###.menu = TEXT
+lib.tx_###EXTKEY2###.menu.value = :: 12345 ::

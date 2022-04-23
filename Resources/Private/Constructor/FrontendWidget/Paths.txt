@@ -1,0 +1,15 @@
+Classes/
+Classes/Controller/
+Classes/Controller/Widgets/
+Resources/
+Resources/Private/
+Resources/Private/Templates/
+Resources/Private/Templates/Widgets/
+Resources/Private/Templates/Widgets/###KEY###/
+Resources/Private/Layouts/
+Resources/Private/Layouts/Widgets/
+Resources/Private/Partials/
+Resources/Private/Partials/Widgets/
+Controller.php Classes/Controller/Widgets/###KEY###Controller.php
+Index.html Resources/Private/Templates/Widgets/###KEY###/Index.html
+Layout.html Resources/Private/Layouts/Widgets/Default.html

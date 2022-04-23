@@ -1,0 +1,32 @@
+{namespace f=TYPO3\Fluid\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Widgets/Default.html" />
+
+<f:comment>
+   <!--
+      *********************
+      * ###PATH###
+      *********************
+   -->
+</f:comment>
+
+<f:section name="HeaderAssets">
+
+</f:section>
+
+<f:section name="Main">
+
+	<b>Hellow my widget!</b>
+
+	My Widget (Result): <br />
+	{testArg1}, {testArg2}, {testArg3}
+
+	<f:comment><f:debug title="Debug" inline="true">{_all}</f:debug></f:comment>
+
+</f:section>
+
+<f:section name="FooterAssets">
+
+</f:section>

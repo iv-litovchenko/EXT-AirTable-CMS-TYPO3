@@ -1,0 +1,28 @@
+
+<f:section name="HeaderAssets">
+
+<style>
+	body {
+		background: url('/typo3conf/ext/air_table/Resources/Public/Img/TemplateNotFound.jpg') center center no-repeat fixed;
+		background-size: cover;
+	}
+</style>
+
+</f:section>
+
+<f:vhsExtAirTable.AdminPanel />
+<div style="margin: 15%; border: #cccccc 0px solid;">
+	<h1 align="center" style="color: #f6f8f4;">Для страницы #{data.uid} не задан шаблон</h1>
+	<div style="text-align: center;">
+		<f:vhsExtAirTable.EditIcon 
+			model="Pages" 
+			recordId="{data.uid}" 
+			title="Установить шаблон"
+			editFieldsOnly="title,nav_title,tx_fed_page_controller_action" 
+			hideNewIcon="1" 
+			hideDisableIcon="1" 
+			hideDeletedIcon="1" 
+			hideHoverInfo="1"
+		/>
+	</div>
+</div>

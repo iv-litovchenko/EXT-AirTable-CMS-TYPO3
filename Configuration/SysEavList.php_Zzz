@@ -1,0 +1,87 @@
+<?php
+return [
+	'entity.pages.ext.air_table.prop.input' => [
+		'@AirTable\Field' => 'Input',
+		'@AirTable\Field\Label' => 'Название Input',
+		'@AirTable\Field\Description' => 'Название Input',
+	],
+	'entity.pages.ext.air_table.prop.text' => [
+		'@AirTable\Field' => 'Text',
+		'@AirTable\Field\Label' => 'Название Text',
+	],
+	'entity.pages.ext.air_table.prop.date' => [
+		'@AirTable\Field' => 'Date',
+		'@AirTable\Field\Label' => 'Название Date',
+	],
+	'entity.pages.ext.air_table.prop.flag' => [
+		'@AirTable\Field' => 'Flag',
+		'@AirTable\Field\Label' => 'Название Flag',
+	],
+	'entity.pages.ext.air_table.prop.enum' => [
+		'@AirTable\Field' => 'Enum',
+		'@AirTable\Field\Label' => 'Название Enum',
+		'@AirTable\Field\Items\1' => 'Value 1',
+		'@AirTable\Field\Items\2' => 'Value 2',
+		'@AirTable\Field\Items\3' => 'Value 3',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'entity.pages.ext.air_table.prop.switcher' => [
+		'@AirTable\Field' => 'Switcher',
+		'@AirTable\Field\Label' => 'Название Switcher',
+		'@AirTable\Field\Items\0' => '-- SELECTED VALUE --',
+		'@AirTable\Field\Items\1' => 'Value 1',
+		'@AirTable\Field\Items\2' => 'Value 2',
+		'@AirTable\Field\Items\3' => 'Value 3',
+		'@AirTable\Field\ReadOnly' => 0
+	],
+	'media_1' => [
+		'@AirTable\Field' => 'Media_1',
+		'@AirTable\Field\Label' => 'Название Media_1 22'
+	],
+	'entity.pages.ext.air_table.prop.media' => [
+		'@AirTable\Field' => 'Media_M',
+		'@AirTable\Field\Label' => 'Название Media_M 2'
+	],
+	'entity.pages.ext.air_table.prop.tx_marker_row' => [
+		'@AirTable\Field' => 'Rel_1To1',
+		'@AirTable\Field\Label' => 'Название Rel_1To1',
+		'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+		'@AirTable\Field\ForeignKey' => 'sys_eav_attr_row_id',
+		'@AirTable\Field\DoNotCheck' => 0,
+	],
+	'entity.pages.ext.air_table.prop.tx_marker_rows' => [
+		'@AirTable\Field' => 'Rel_1ToM',
+		'@AirTable\Field\Label' => 'Название Rel_1ToM',
+		'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+		'@AirTable\Field\ForeignKey' => 'sys_eav_attr_row_id',
+		'@AirTable\Field\DoNotCheck' => 0,
+	],
+	#'entity.pages.ext.air_table.prop.tx-marker-row-id' => [
+	#	'@AirTable\Field' => 'Rel_MTo1',
+	#	'@AirTable\Field\Label' => 'Название Rel_MTo1',
+	#	'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+	#	'@AirTable\Field\ForeignKey' => 'sys_eav_attr_rows',
+	#	'@AirTable\Field\DoNotCheck' => 0,
+	#],
+	'entity.pages.ext.air_table.prop.tx-marker-rows' => [
+		'@AirTable\Field' => 'Rel_MToM',
+		'@AirTable\Field\Label' => 'Название Rel_MToM',
+		'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+		'@AirTable\Field\ForeignKey' => 'sys_eav_attr_rows',
+		'@AirTable\Field\DoNotCheck' => 0,
+	],
+	'entity.pages.ext.air_table.prop.p11-tx-marker-rows' => [
+		'@AirTable\Field' => 'Rel_Poly_1To1',
+		'@AirTable\Field\Label' => 'Название Rel_Poly_1To1 2',
+		'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+		'@AirTable\Field\ForeignKey' => 'sys_eav_attr_row',
+		'@AirTable\Field\DoNotCheck' => 1,
+	],
+	'entity.pages.ext.air_table.prop.p1m-tx-marker-rows' => [
+		'@AirTable\Field' => 'Rel_Poly_1ToM',
+		'@AirTable\Field\Label' => 'Название Rel_Poly_1ToM 2',
+		'@AirTable\Field\ForeignModel' => 'Litovchenko\AirTable\Domain\Model\Content\Marker',
+		'@AirTable\Field\ForeignKey' => 'sys_eav_attr_row',
+		'@AirTable\Field\DoNotCheck' => 1,
+	],
+];

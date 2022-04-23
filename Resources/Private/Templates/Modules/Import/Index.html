@@ -1,0 +1,34 @@
+
+		<h1>Импорт</h1>
+		<f:render partial="Modules/InfoImport" />
+		<div class="result">
+			<div role="tabpanel">
+				<ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item  active">
+						<a href="#tab-1" title="" aria-controls="tab-1" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 1. Выбор таблицы</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+						<a href="#tab-2" title="" aria-controls="tab-2" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 2. Загрузка данных</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+						<a href="#tab-3" title="" aria-controls="tab-3" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 3. Соответствие полей</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+						<a href="#tab-4" title="" aria-controls="tab-4" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 4. Результаты импорта</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab-1">
+						<div class="panel panel-tab">
+							<div class="panel-body">
+								{content -> f:format.raw()}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<br />
+	<br />
+	<br />

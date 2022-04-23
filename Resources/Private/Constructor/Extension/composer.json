@@ -1,0 +1,31 @@
+{
+    "comments": [
+        {
+            "command.cd": "cd sitename.ru/public_html/typo3conf/ext/###EXTKEY2###/",
+            "command.update": "/usr/local/php-cgi/7.0/bin/php -d memory_limit=-1 /usr/local/bin/composer update --ignore-platform-reqs"
+        }
+    ],
+    "name": "###NAMESPACE_1.STRTOLOWER###/###NAMESPACE_2.STRTOLOWER###",
+    "type": "typo3-cms-extension",
+    "description": "###DESCRIPTION###",
+    "homepage": "http://typo3.org/",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "authors": [
+        {
+            "name": "###AUTHOR###",
+            "email": "###EMAIL###"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "###NAMESPACE_1###\\###NAMESPACE_2###\\": "Classes/"
+        }
+    },
+    "config": {
+        "vendor-dir": "Vendor"
+    },
+    "require": {
+        "vendor/package": "1.3.2"
+    }
+}

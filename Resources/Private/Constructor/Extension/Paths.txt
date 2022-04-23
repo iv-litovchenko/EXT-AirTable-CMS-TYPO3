@@ -1,0 +1,44 @@
+Classes/
+Classes/Command/
+Classes/Controller/
+Classes/Domain/
+Classes/Domain/Model/
+Classes/Service/
+Classes/Utility/
+Classes/ViewHelpers/
+Configuration/
+Configuration/TypoScript/
+Configuration/TypoScript/IncBackend/
+Configuration/TypoScript/IncFrontend/
+Configuration/TypoScript/IncFrontend/AdditionalSetup/
+Resources/
+Resources/Private/
+Resources/Private/Layouts/
+Resources/Private/Partials/
+Resources/Private/Templates/
+Resources/Public/
+Resources/Public/Css/
+Resources/Public/JavaScript/
+Resources/Public/Images/
+Resources/Public/Icons/
+Resources/Public/Libraries/
+Vendor/
+ext_icon.gif ext_icon.gif
+ext_emconf.php ext_emconf.php
+ext_localconf.php ext_localconf.php
+ext_tables.php ext_tables.php
+ext_conf_template.txt ext_conf_template.txt
+composer.json composer.json
+.gitignore .gitignore
+Page.tsconfig Configuration/TypoScript/IncBackend/Page.tsconfig
+User.tsconfig Configuration/TypoScript/IncBackend/User.tsconfig
+constants.typoscript Configuration/TypoScript/IncFrontend/constants.typoscript
+setup.typoscript Configuration/TypoScript/IncFrontend/setup.typoscript
+AdditionalSetup/100_page.config.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/100_page.config.typoscript
+AdditionalSetup/200_page.data.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/200_page.data.typoscript
+AdditionalSetup/300_page.meta.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/300_page.meta.typoscript
+AdditionalSetup/400_page.css.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/400_page.css.typoscript
+AdditionalSetup/500_page.js.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/500_page.js.typoscript
+AdditionalSetup/600_lib.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/600_lib.typoscript
+AdditionalSetup/700_plugin.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/700_plugin.typoscript
+AdditionalSetup/800_content.typoscript Configuration/TypoScript/IncFrontend/AdditionalSetup/800_content.typoscript

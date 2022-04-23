@@ -1,0 +1,28 @@
+Classes/
+Classes/Controller/
+Classes/Controller/Pages/
+Configuration/
+Configuration/TypoScript/
+Configuration/TypoScript/IncFrontend/
+Configuration/TypoScript/IncFrontend/Assets/
+Resources/
+Resources/Public/
+Resources/Public/Css/
+Resources/Public/Images/
+Resources/Public/JavaScript/
+Resources/Private/
+Resources/Private/Templates/
+Resources/Private/Templates/Pages/
+Resources/Private/Templates/Pages/###KEY###/
+Resources/Private/Layouts/
+Resources/Private/Layouts/Pages/
+Resources/Private/Partials/
+Resources/Private/Partials/Pages/
+Controller.php Classes/Controller/Pages/###KEY###Controller.php
+Index.html Resources/Private/Templates/Pages/###KEY###/Index.html
+Detail.html Resources/Private/Templates/Pages/###KEY###/Detail.html
+Layout.html Resources/Private/Layouts/Pages/Default.html
+Partial.html Resources/Private/Partials/Pages/Copyright.html
+logo.png Resources/Public/Images/logo.png
+website.css Resources/Public/Css/website.css
+website.js Resources/Public/JavaScript/website.js

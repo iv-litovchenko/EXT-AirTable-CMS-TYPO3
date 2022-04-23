@@ -1,0 +1,70 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+class ActionLinkViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Link\ActionViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'TYPO3\CMS\Fluid\ViewHelpers\Link\ActionViewHelper'
+	];
+	
+    /**
+     * Arguments initialization
+     *
+     * @throws \TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+     */
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('route', 'string', 'The name of the route');
+	}
+	
+    /**
+     * @return string Rendered link
+     */
+    public function render()
+    {
+		// <f:link.action route="routeExtProjiv.Pages.PageDefaultController.travelViewAction" arguments="{num:5}">--TEXT--</f:link.action>
+        // <f:link.action action="travelViewAction" arguments="{num:5}">--TEXT--</f:link.action>
+		// <f:link.action 
+		// 		action="travelView" 
+		// 		extensionName="Projiv" 
+		// 		pluginName="PagesPageDefaultController"
+		// 		controller="Pages\PageDefault"
+		// 		arguments="{num:5}"
+		// >
+		//	-- TEXT --
+		// </f:link.action>
+		
+		$this->arguments['action'] = preg_replace('/Action$/is','',$this->arguments['action']);
+		if(!empty($this->arguments['route'])){
+			preg_match('/Ext\.([^\.]*)\.([^\.]*).([^\.]*).([^\.]*)/is',$this->arguments['route'], $matches);
+			$this->arguments['extensionName'] = $matches[1];
+			$this->arguments['pluginName'] = $matches[2].'_'.$matches[3].'Controller';
+			if($matches[2] == 'Pages') {
+				$this->arguments['controller'] = $matches[2].'\\'.$matches[3];
+			} elseif($matches[2] == 'Plugins') {
+				$this->arguments['controller'] = 'PagesElements\\'.$matches[2].'\\'.$matches[3];
+			}
+			$this->arguments['action'] = preg_replace('/Action$/is','',$matches[4]);
+			
+			#print "<prE>";
+			#print_r($this->arguments);
+			#print "</pre>";
+			#exit();
+					
+			#print "<pre>";
+			#print_r($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['extbase']['extensions']);
+			#exit();
+		}
+		
+        return parent::render();
+    }
+}

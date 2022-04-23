@@ -1,0 +1,14 @@
+<?php
+namespace Litovchenko\AirTable\ViewHelpers;
+
+/**
+ * @AirTable\Label:<ActionIconViewHelper>
+ * @AirTable\RegisterArguments\action:<string,req>
+ * @AirTable\RegisterArguments\title:<string>
+ */
+
+class ActionIconViewHelper extends \Litovchenko\AirTable\ViewHelpers\EditIconViewHelper
+{
+	public $cssClass = 'Block'; // Block, Abs, Inline, Center
+	public $panelType = 'action'; // Event
+}

@@ -1,0 +1,94 @@
+<?php
+namespace Litovchenko\AirTable\ViewHelpers;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+
+class ObjectViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' 			=> 'FrontendViewHelper',
+		'name' 				=> 'Object',
+		'registerArguments' => [
+			'setup*' => ['string']
+		]
+	];
+	
+    /**
+     * @var boolean
+     */
+    protected $escapeChildren = false;
+
+    /**
+     * @var boolean
+     */
+    protected $escapeOutput = false;
+	
+    public function render()
+    {
+		$temp = explode('.', $this->arguments['setup']);
+		$object = $GLOBALS['TSFE']->tmpl->setup[$temp[0]."."][$temp[1]];
+		$object_ar = $GLOBALS['TSFE']->tmpl->setup[$temp[0]."."][$temp[1]."."];
+		
+		$pathSegments = GeneralUtility::trimExplode('.', $this->arguments['setup']);
+        $lastSegment = array_pop($pathSegments);
+		
+		$ObjectManager = GeneralUtility::makeInstance(ObjectManager::class)->get(ConfigurationManagerInterface::class);
+        $setup = $ObjectManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
+        foreach ($pathSegments as $segment) {
+            if (!array_key_exists($segment . '.', $setup)) {
+                throw new \Exception(
+                    'TypoScript object path "' . $this->arguments['setup'] . '" does not exist',
+                    1253191023
+                );
+            }
+            $setup = $setup[$segment . '.'];
+        }
+		
+		$cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+		return $this->wrap($cObj->cObjGetSingle($setup[$lastSegment], $setup[$lastSegment.'.']), $this->arguments['setup']);
+    }
+	
+	public function wrap($content, $setup) 
+	{	
+		// При условии, что включена шестеренка (настройки)
+		if ($GLOBALS['BE_USER']->uc['phptemplate_checkOption'] == 1) {
+			$srcAdmPath = '/typo3conf/ext/air_table/Resources/Public/Admin/';
+			return "
+				<tagWrapTtContentElement class='tagWrapTtContentElement'>
+					<!--TYPO3_NOT_SEARCH_begin-->
+					<tagEditIcon_wrap class='phptemplate_tagEditIcon_wrap_absolute'>
+					<tagEditIcon class='phptemplate_tagEditIcon' style='border: black 1px solid;'>
+					<nobr>
+						<tagEditIconA class='tagEditIconA'>
+						<tagEditIconImg class='tagEditIconImg' style='background-image: url(".$srcAdmPath."isTyposcriptObjectPathIcon.png);'></tagEditIconImg>
+						</tagEditIconA>ObjectViewHelper (TS-объект)&nbsp;
+						<tagEditIconSpan class='phptemplate_tagEditIconSpan'>
+							".$setup."
+						</tagEditIconSpan>
+					</nobr>
+					</tagEditIcon>
+					</tagEditIcon_wrap>
+					<tagEditIcon_br style='clear: left;'></tagEditIcon_br>
+					<!--TYPO3_NOT_SEARCH_end-->
+					<tagWrapTtContentElement_dashed_Top		class='tagWrapTtContentElement_dashed_Top'></tagWrapTtContentElement_dashed_Top>
+					<tagWrapTtContentElement_dashed_Right	class='tagWrapTtContentElement_dashed_Right'></tagWrapTtContentElement_dashed_Right>
+					<tagWrapTtContentElement_dashed_Bottom	class='tagWrapTtContentElement_dashed_Bottom'></tagWrapTtContentElement_dashed_Bottom>
+					<tagWrapTtContentElement_dashed_Left	class='tagWrapTtContentElement_dashed_Left'></tagWrapTtContentElement_dashed_Left>
+					" . $content . "
+				</tagWrapTtContentElement>
+			";
+		} else {
+			return $content;
+		}
+	}
+}

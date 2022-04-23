@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-09-22T17:04:19Z" product-name="air_table">
+        <header/>
+        <body>
+            <trans-unit id="cache.title">
+                <source>Refresh existing data</source>
+            </trans-unit>
+            <trans-unit id="cache.description">
+                <source>Update file in folder EXT:air_table/ext_tables.sql, Data (DataType, DataTypeGroup), Entity-Attribute-Value (EAV)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

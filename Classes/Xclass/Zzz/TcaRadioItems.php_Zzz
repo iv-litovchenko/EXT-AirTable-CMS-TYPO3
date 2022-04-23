@@ -1,0 +1,19 @@
+<?php
+namespace Litovchenko\AirTable\Xclass;
+
+use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
+
+class TcaRadioItems extends \Litovchenko\AirTable\Xclass\TcaCheckboxItems implements FormDataProviderInterface
+{
+    /**
+     * The magic variable TYPO3 
+     * Parameters are described here 
+     * @var array
+     */
+	public static $TYPO3 = [
+		'thisIs' => 'Xclass',
+		'name' => '',
+		'description' => '',
+		'object' => 'TYPO3\CMS\Backend\Form\FormDataProvider\TcaRadioItems'
+	];
+}

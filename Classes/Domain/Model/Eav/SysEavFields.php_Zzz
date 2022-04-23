@@ -1,0 +1,11 @@
+<?php
+namespace Litovchenko\AirTable\Domain\Model;
+use Litovchenko\AirTable\Utility\BaseUtility;
+
+/**
+ * @AirTable\Label:<Характеристика (список полей)>
+ */
+class SysEavFields extends \Litovchenko\AirTable\Domain\Model\ModelCrud
+{
+}
+?>

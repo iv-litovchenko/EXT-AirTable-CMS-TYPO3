@@ -1,0 +1,175 @@
+
+	<h1>Импорт / Загрузка данных</h1>
+	<f:render partial="Modules/InfoImport" />
+		   <f:form enctype="multipart/form-data" action="step2" addQueryString="1">
+		   
+			<div class="result">
+
+				<div role="tabpanel">
+				  <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item  disabled">
+					  <a href="#tab-1" title="" aria-controls="tab-1" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 1. Выбор таблицы</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item active">
+					  <a href="#tab-2" title="" aria-controls="tab-2" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 2. Загрузка данных</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-3" title="" aria-controls="tab-3" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 3. Соответствие полей</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-4" title="" aria-controls="tab-4" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 4. Результаты импорта</a>
+					</li>
+				  </ul>
+				  
+
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab-2">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+	
+		   
+		   	<f:if condition="{contentError}">
+				<f:be.infobox title="Ошибка загрузки данных" state="2">
+					{contentError -> f:format.raw()}
+				</f:be.infobox>
+				</f:if>
+		   
+
+							  <table class="table table-striped table-hover">
+								<thead>
+								  <tr>
+									<th colspan="2" style="text-align: center;">Основные параметры импорта данных</th>
+								  </tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td width='50%' align='left'>Модель</td>
+									<td align='right'>
+										<input type='text' class="form-control btn-sm" style='width:100%;' value='{model}' disabled>
+										<input type='hidden' class="form-control btn-sm" name='model' value='{model}'>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Таблица для импорта данных</td>
+									<td align='right'>
+										<input type='text' class="form-control btn-sm" style='width:100%;' value='{table}' disabled>
+										<input type='hidden' class="form-control btn-sm" name='table' value='{table}'>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Ограничения для импорта записей. <br />По умолчанию производится загрузка всех данных</td>
+									<td align='right'>
+										<div class="alert alert-danger" role="alert">
+											<label class="btn btn-default btn-sm" style="margin: 0; margin-bottom: 0px; padding: 0 7px 0 7px; width: 100%; text-align: left; cursor: pointer;">
+												<input type="checkbox" name="params[]" value="recycler" class="btn btn-default btn-sm" style="margin-top: 0px;" disabled>
+												Очистить таблицу перед началом импорта данных (Beta)
+											</label>
+										</div>
+										<label class="btn btn-default btn-sm" style="margin: 0; margin-bottom: 10px; padding: 0 7px 0 7px; width: 100%; text-align: left; cursor: pointer;">
+											<input type="checkbox" name="params[]" value="transaction" class="btn btn-default btn-sm" style="margin-top: 0px;" disabled>
+											Не производить вставку данных, если существуют схожие данные (Beta)
+										</label>
+										<!--
+										<label class="btn btn-default btn-sm" style="margin: 0; margin-bottom: 10px; padding: 0 7px 0 7px; width: 100%; text-align: left; cursor: pointer;">
+											<input type="checkbox" name="params[]" value="transaction" class="btn btn-default btn-sm" style="margin-top: 0px;" disabled checked>
+											Использовать транзакции
+										</label>
+										-->
+										<label class="btn btn-default btn-sm" style="margin: 0; margin-bottom: 0px; padding: 0 7px 0 7px; width: 100%; text-align: left; cursor: pointer;">
+											<input type="checkbox" value="recycler" class="btn btn-default btn-sm" style="margin-top: 0px;" disabled <f:if condition="{recycler}"> checked </f:if>>
+											Загружать удаленные записи (корзина записей)
+										</label>
+										<!--
+										<select class="form-control btn-sm">
+											<option value="0">Выгрузить все записи таблицы</option>
+										</select>
+										-->
+									</td>
+								 </tr>
+
+								<tr>
+									<td width='50%' align='left'>Формат загрузки</td>
+									<td align='right'>
+										<select class="form-control btn-sm" name="format" onchange="if(confirm('Изменить формат импорта?')){ this.form.submit(); } return false;">
+											<option value=".xlsx" <f:if condition="{format} == '.xlsx'"> selected </f:if> >.xlsx</option>
+											<option value=".csv" <f:if condition="{format} == '.csv'"> selected </f:if> >.csv</option>
+										</select>
+									</td>
+								 </tr>
+								 <tr class="xlsx-format" <f:if condition="{format} == '.csv'"> style="display: none;" </f:if> >
+									<td width='50%' align='left'>Файл</td>
+									<td align='left'>
+									
+											<label for="file" style="width: 100%; margin: 0;" onclick="fileUpload();">
+											<div class="">
+											<span style="float: left;">
+												<button class="btn btn-default btn-sm" type="button" style="margin-right: -2px;">Выбрать</button>
+											</span>
+											<input type="text" class="form-control btn-sm" id="info" readonly="" style="width: 50%; background: #fff;" placeholder="Выбранный файл..">
+											</div><!-- /input-group -->
+											</label>
+											
+											<input type="file" style="display: none;" onchange="fileChange();" name="filename" id="file">
+									</td>
+								 </tr>
+								<tr class="xlsx-format" <f:if condition="{format} == '.csv'"> style="display: none;" </f:if> >
+									<td width='50%' align='left'>№ вкладки в файле</td>
+									<td align='right'>
+										<input type='text' class="form-control btn-sm" style='width:100%;' value='1' disabled>
+									</td>
+								 </tr>
+								 <tr class="csv-format" <f:if condition="{format} != '.csv'"> style="display: none;" </f:if>  >
+									<td colspan="2">
+										<textarea name="csv_content" class="form-control btn-sm" 
+										style="width: 100%; min-height: 300px; background: #32383e; color: wheat; border: 0; border-top-left-radius: 0px;"
+										placeholder="Данные для импорта в виде строки"></textarea>
+<div style="padding: 5px; background: #ffc107;">Образец CSV-строки:<br /><i>uid,pid,title<br />
+0,0,"Новая запись"</i></div>
+									</td>
+								</tr>
+								
+								 <!--
+								 <tr>
+									<td width='50%' align='left'>Комментарий к импорту</td>
+									<td align='left'>
+										<f:form.textarea property="firstName" rows="5" cols="50" disabled="1" />
+										</td>
+								</tr>
+								-->
+								</tbody>
+								 </table>
+								 
+								 
+<!--
+<label class="btn btn-primary" for="my-file-selector">
+    <input id="my-file-selector" type="file" multiple="multiple" style="display:none"
+        onchange="$('#upload-file-info').html(
+            (this.files.length > 1) ? this.files.length + ' files' : this.files[0].name)">                     
+    Files&hellip;
+</label>
+<span class='label label-info' id="upload-file-info"></span>
+-->
+
+							
+					
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+
+		
+				
+	<f:link.action action="index" class="btn btn-default btn-sm">
+		Отмена
+	</f:link.action>
+	
+			<f:form.submit value="Загрузить данные" class="btn btn-primary btn-sm" style="float: right;" />
+		
+				</f:form>
+
+	<br />
+	<br />
+	<br />

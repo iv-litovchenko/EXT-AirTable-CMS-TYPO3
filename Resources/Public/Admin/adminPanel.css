@@ -1,0 +1,422 @@
+.tagAdminPanel_GET {
+	display: block;
+	padding: 5px 15px 5px 15px; 
+	background: black; 
+	white-space: pre;
+	color: white;
+}
+
+.tagAdminPanelBody {
+	position: fixed !important;
+	display: none;
+	top: 0 !important; 
+	right: 0 !important; 
+	bottom: 0 !important; 
+	left: 0 !important; 
+	z-index: 1000000 !important;
+	background: #040404;
+	opacity: 0.8;
+}
+.tagAdminPanelIframeWrap {
+	position: fixed !important;
+	display: none;
+	top: 50% !important; 
+	left: 50% !important; 
+	width: 800px !important;
+	height: 600px !important;
+	transform: translate(-50%, -50%);
+	z-index: 1000001 !important;
+	color: #212424 !important;
+	background: #eee !important;
+}
+.tagAdminPanelIframeClose {
+	position: absolute !important;
+	top: 0px !important;
+	right: 15px !important;
+	height: 50px !important;
+	background: #383838 url(adminPanel_bg.png);
+	font-weight: bold !important;
+	line-height: 50px !important;
+	font-size: 15px !important;
+	color: #FFEB9E !important;
+	cursor: pointer;
+}
+.tagAdminPanelIframeTitle {
+	display: block;
+	height: 50px !important;
+	padding-left: 15px;
+	background: #383838 url(adminPanel_bg.png);
+	font-weight: bold !important;
+	line-height: 50px !important;
+	font-size: 15px !important;
+	color: #FFEB9E !important;
+}
+.tagAdminPanelIframe {
+	width: 800px !important;
+	height: 600px !important;
+	background: #eee !important;
+	border: #383838 1px solid !important;
+}
+
+.phptemplate_tagAdminPanelContainer {
+	position: relative; display: block; height: 50px;
+}
+
+/* Стиль если панель добавлена сверху */
+.phptemplate_tagAdminPanel {
+	display: block !important; 
+	position: fixed; top: 0; left: 0; z-index: 10000000000;
+	overflow: hidden;
+	
+	width: 100% !important;
+	height: 50px !important;
+	background: #383838 url(PAGE_pageId.png);
+	border-bottom: #383838 1px solid;
+	/* border-top: black 2px solid; */
+	/* url(/typo3/sysext/t3skin/images/backgrounds/topbar.png) */
+	
+}
+/* Стиль если панель добавлена снизу */
+.phptemplate_tagAdminPanel_addedToFooter {
+	display: block !important; 
+	position: fixed; bottom: 0; left: 0; z-index: 10000000000;
+	overflow: hidden;
+	
+	width: 100% !important;
+	height: 50px !important;
+	background: #383838 url(PAGE_pageId.png);
+	border-top: #383838 1px solid;
+	/* border-bottom: black 2px solid; */
+	/* url(/typo3/sysext/t3skin/images/backgrounds/topbar.png) */
+	
+}
+.virtual_page {
+	background: #09C url(PAGE_pageId_Vp.png) bottom center !important;
+	
+}
+.phptemplate_leftContainer {
+	display: block !important; 
+	position: absolute;
+	top: 12px; left: 16px;
+	overflow: hidden;
+}
+.phptemplate_rightContainer {
+	display: block; 
+	position: absolute;
+	top: 0px; left: 120px; right: 0;
+}
+
+	@media (max-width: 1300px) 	{ 
+		#tagAdminPanel_buttonContainer_UserName { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(1) { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(2) { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(3) { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(4) { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(5) { display: none; } 
+		.tagAdminPanel_buttonContainer:nth-child(6) { display: none; }
+	}
+	
+.tagAdminPanel_container {
+	position: relative;
+	float: right; 
+	display: block;
+	height: 35px;
+	
+	margin-right: 12px;
+	padding-left: 8px;
+	padding-top: 13px;
+	
+	line-height: 24px; 
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}
+.tagAdminPanel_buttonContainer {
+	position: relative;
+	float: right; 
+	display: block;
+	/* height: 24px; */
+	
+	margin-top: 12px;
+	margin-right: 12px;
+	
+	background: #494949 url(adminPanel_bg_buttonContainer.png); 
+	border-radius: 3px;
+	border: black 1px solid;
+	
+	line-height: 24px; 
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	cursor: pointer !important; 
+	color: white !important; 
+}
+.tagAdminPanel_buttonContainer:hover .tagAdminPanel_hoverContent {
+	display: block !important;
+}
+
+.tagAdminPanel_buttonContainer:hover {
+	background: #DADADA url(adminPanel_bg_buttonContainer_hover.png) !important;
+	/* url(/typo3/sysext/t3skin/images/backgrounds/button-hover.png); */
+}
+.tagAdminPanel_buttonContainer img {
+	vertical-align: middle !important;
+	border: 0 !important;
+	margin-top: -2px;
+	max-height: 16px;
+	border: 0;
+}
+.tagAdminPanel_a {
+	display: block;
+	height: 24px;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	
+    text-shadow: 0px 0px 5px black, 0 0 5px white !important;
+	text-decoration: none !important;
+	line-height: 24px !important;
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}
+.tagAdminPanel_buttonContainer_wrapClearCache {
+	position: relative; 
+	display: block; 
+	float: right;
+	
+	margin-top: 12px;
+	margin-right: 12px;
+	padding: 0;
+	
+	border-radius: 3px;
+	border: black 1px solid;
+}
+.tagAdminPanel_buttonContainer_wrapClearCache:hover .tagAdminPanel_buttonContainer { display: block !important; }
+.tagAdminPanel_buttonContainer_wrapClearCache:hover .tagAdminPanel_buttonContainer:first-child  { border-radius: 2px 2px 0 0; }
+.tagAdminPanel_buttonContainer_wrapClearCache:hover .tagAdminPanel_buttonContainer:last-child  { border-radius: 0 0 2px 2px; }
+
+.tagAdminPanel_buttonContainer_wrapClearCache .tagAdminPanel_buttonContainer {
+	float: none;
+	border: none;
+	margin: 0;
+	border-radius: 2px;
+}
+.tagAdminPanel_avatar {
+	position: absolute; 
+	left: 0px; top: 10px;
+	width: 32px; height: 32px; 
+	padding: 1px;
+		
+	border: 1px solid #585858;
+	border-radius: 30px;								
+	
+	box-shadow: 0px 0px 10px #ccc; 
+	background-color: #232324; 
+}
+.tagAdminPanel_iconBeUser {
+	position: absolute; 
+	left: 40px; top: 17px;
+}
+.tagAdminPanel_wrapUserName {
+	padding-left: 0px !important; 
+	padding-left: 52px !important;
+	
+	font-weight: bold !important;
+	line-height: 25px !important;
+	font-size: 12px !important;
+	color: #FFEB9E !important;
+}
+.tagAdminPanel_buttonSwitchModeIcon {
+	position: relative;
+	float: right; 
+	display: block;
+	height: 24px;
+	padding-left: 30px; 
+	background: url(editIcon.png) no-repeat 8px 4px;
+}
+.tagAdminPanel_buttonSwitchMode {
+	position: relative;
+	float: right; 
+	display: block;
+	height: 24px;
+
+	padding-left: 3px;
+	padding-right: 3px;
+	
+	background: #494949; 
+	border: black 1px solid;
+	border-top: 0;
+	border-bottom: 0;
+	
+	line-height: 24px; 
+	cursor: pointer !important; 
+}
+.tagAdminPanel_buttonSwitchMode:hover {
+	background: #DADADA url(adminPanel_bg_buttonContainer_hover.png) !important;
+	/* url(/typo3/sysext/t3skin/images/backgrounds/button-hover.png); */
+	color: red !important;
+}
+/* Стиль если панель добавлена сверху */
+.tagAdminPanel_pageColorIformer {
+	position: fixed; 
+	bottom: 25px; right: 25px; 
+	z-index: 1000010;
+	opacity: 0.5;
+	
+	padding: 5px 10px 5px 10px; 
+					
+	background-color: #585858;
+	border: #262626 1px solid;
+	
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}
+/* Стиль если панель добавлена снизу */
+.tagAdminPanel_pageColorIformer_addedToFooter {
+	position: fixed; 
+	top: 25px; right: 25px; 
+	z-index: 1000010;
+	opacity: 0.5;
+	
+	padding: 5px 10px 5px 10px; 
+					
+	background-color: #585858;
+	border: #262626 1px solid;
+	
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}
+
+.tagAdminPanel_pageColorIformer_label {
+	text-decoration: none !important;
+}
+.tagAdminPanel_pageColorIformer pre {
+	padding: 0 !important; 
+	margin: 0 !important;
+	
+	border: 0 !important;
+	background: none !important;
+	overflow: auto !important;
+	
+	font-family: Verdana !important; 
+	font-size: 11px !important;
+	color: white !important; 
+}
+
+/* Визуальная обертка для вставки объектов tsObj */
+.tagInfoObjectWrap {
+	position: relative !important; z-index: 1000000000;
+}
+.tagInfoObjectB { font-weight: bold; }
+.tagInfoObject {
+	position: absolute !important;
+	display: block !important; 
+	opacity: 0.80 !important; 
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 20px !important;
+	border: #121313 2px solid;
+	border-radius: 5px !important; 
+	background: #7d7e7e !important; 
+
+	white-space: nowrap !important; 
+	word-wrap: normal !important;
+	
+	line-height: 18px !important;
+	font-family: Verdana !important; 
+	font-size: 10px !important;
+	color: white !important; 
+}
+.tagInfoObject:hover { 
+	opacity: 0.3 !important;
+}
+#typo3-previewInfo,
+#typo3-preview-info {
+	display: none;
+}
+
+.tagAdminPanel_hoverContent {
+	position: absolute !important;
+	top: 24px; left: -1px;
+	display: none !important;
+	background: linear-gradient(to bottom, #08131f, #08131f 10px, #363f49 100px, #363f49 100%) !important;
+	border-radius: 3px;
+	border-radius: 0 0 3px 3px;
+	border: black 1px solid;
+	width: 300px !important;
+	max-height: 450px !important;
+	overflow-y: auto !important;
+}
+
+.tagAdminPanel_DataWrap {
+	display: block !important; 
+}
+
+.tagAdminPanel_newDataGroup {
+	display: block !important; 
+	height: 26px !important;
+	line-height: 24px; 
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	background: #313131 !important;
+	text-shadow: none !important;
+	background: #DADADA url(adminPanel_bg_buttonContainer_hover.png) !important;
+}
+
+.tagAdminPanel_newDataGroup * {
+	text-shadow: none !important;
+}
+
+.tagAdminPanel_newData {
+	display: block !important;
+	background: #79a548 !important;
+	height: 26px !important;
+}
+
+.tagAdminPanel_newData:hover {
+	background: #79a548 !important;
+}
+
+.tagAdminPanel_newDataLeft {
+	float: left !important;
+	display: block !important;
+	padding: 0px 5px 0 10px !important;
+	line-height: 24px;
+	white-space: nowrap; 
+}
+
+.tagAdminPanel_newDataLeft a {
+	display: block !important;
+	height: 24px;
+}
+
+.tagAdminPanel_newDataRight {
+	float: right !important;
+	display: block !important;
+	padding: 0px 10px 0 5px !important;
+	line-height: 24px;
+	white-space: nowrap; 
+}
+
+.tagAdminPanel_newDataClear {
+	clear: both !important;
+}
+
+.tagAdminPanel_DataAllCount {
+	display: block !important;
+	background: #DADADA url(adminPanel_bg_buttonContainer_hover.png) !important;
+	height: 26px !important;
+	line-height: 24px !important; 
+	padding: 0px 10px 0 10px !important;
+}
+
+.tagAdminPanel_buttonContainer_page_info .phptemplate_tagEditIcon {
+	opacity: 1 !important;
+	border: black 1px solid !important;
+	background: #816797 !important;
+	text-shadow: 0px 0px 5px black, 0 0 5px white !important;
+	color: white !important;
+}

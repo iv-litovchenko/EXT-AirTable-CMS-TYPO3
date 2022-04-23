@@ -1,0 +1,5 @@
+// See: "TypoScript template reference"
+// https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/
+// https://www.koller-webprogramming.ch/tipps-tricks/typoscript/bedingungen/
+
+<INCLUDE_TYPOSCRIPT: source="DIR:./AdditionalSetup" extensions="typoscript">

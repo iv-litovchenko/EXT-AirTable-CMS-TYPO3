@@ -1,0 +1,145 @@
+
+	<h1>Импорт / Соответствие полей</h1>
+	<f:render partial="Modules/InfoImport" />
+			<f:form enctype="multipart/form-data" action="step3Process" addQueryString="1">
+			<div class="result">
+
+				<div role="tabpanel">
+				  <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-tab" data-store-last-tab="1">
+					<li role="presentation" class="t3js-tabmenu-item  disabled">
+					  <a href="#tab-1" title="" aria-controls="tab-1" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 1. Выбор таблицы</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-2" title="" aria-controls="tab-2" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 2. Загрузка данных</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item active">
+					  <a href="#tab-3" title="" aria-controls="tab-3" role="tab" data-toggle="tab class="nav-link" data-bs-toggle="tab"">Шаг 3. Соответствие полей</a>
+					</li>
+					<li role="presentation" class="t3js-tabmenu-item disabled">
+					  <a href="#tab-4" title="" aria-controls="tab-4" role="tab" data-toggle="tab" class="nav-link" data-bs-toggle="tab">Шаг 4. Результаты импорта</a>
+					</li>
+				  </ul>
+				  
+
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab-3">
+					  <div class="panel panel-tab">
+						<div class="panel-body">
+						
+		
+		   
+		   	<f:if condition="{contentError}">
+				<f:be.infobox title="Ошибки при импорте данных" state="2">
+					{contentError -> f:format.raw()}
+				</f:be.infobox>
+				</f:if>
+				
+
+		   
+							  <table class="table table-striped table-hover">
+								<thead>
+								  <tr>
+									<th colspan="2" style="text-align: center;">Основные параметры импорта данных</th>
+								  </tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td width='50%' align='left'>Модель</td>
+									<td align='right'>
+										<input type='text' class="form-control btn-sm" style='width:100%;' value='{model}' disabled>
+										<input type='hidden' class="form-control btn-sm" name='model' value='{model}'>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Таблица для импорта данных</td>
+									<td align='right'>
+										<input type='text' class="form-control btn-sm" style='width:100%;' value='{table}' disabled>
+										<input type='hidden' class="form-control btn-sm" name='table' value='{table}'>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Файл (загруженный)</td>
+									<td align='right'>
+										<input type='text'  class="form-control  btn-sm" style='width:100%;' value='{file}' disabled>
+									</td>
+								 </tr>
+								<tr>
+									<td width='50%' align='left'>Количество строк в файле</td>
+									<td align='right'>
+										<input type='text'  class="form-control  btn-sm" style='width:100%;' value='{countRows}' disabled>
+									</td>
+								 </tr>
+								 </tbody>
+								 </table>
+								 
+								 <f:if condition="{countError} == 0">
+								 <table class="table table-striped table-hover">
+								<thead>
+								  <tr>
+									<th colspan="3" style="text-align: center;">Список доступных колонок для импорта</th>
+								  </tr>
+								  <tr>
+									<th width='40%' style="text-align: right;">Название колонки</th>
+									<th width='20%'>
+									<label class="btn btn-default btn-sm" style="margin: 0; margin-bottom: 0px; padding: 0 7px 0 7px; width: 100%; text-align: left; cursor: pointer;">
+										<input type="checkbox" onClick="toggleCheckboxes(this,'columns[]');" class="btn btn-default btn-sm" style="margin-top: 0px;">
+										Отметить все / снять отметку со всех
+									</label>
+									</th>
+									<th width='40%'>Поле в БД системы</th>
+								 </tr>
+						<tr>
+							<td colspan="3">
+								<div class="form-control-clearable">
+									<input id="filteTagImport" type="text" class="form-control t3js-upgradeDocs-fulltext-search t3js-clearable" placeholder="Введите название колонки">
+									<script> 
+										var inputFilter = document.querySelector('#filteTagImport');
+										inputFilter.addEventListener('keyup', function (e) {
+											// console.log('Value:', input.value);
+											tagFilterSelection('filteTagImport',inputFilter.value);
+										});
+									</script>
+								</div>
+							</td>
+						</tr>
+								</thead>
+									{content -> f:format.raw()}
+								 </table>
+								 </f:if>
+								 
+								 
+								 
+							
+
+
+							
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+
+		
+				
+	<f:link.action action="step2" class="btn btn-default  btn-sm" addQueryString="1">
+		К загрузке данных
+	</f:link.action>
+	
+		<f:if condition="{contentError}==''">
+			<f:then>
+				<f:form.submit value="Импортировать данные" class="btn btn-success btn-sm" style="float: right;" />
+			</f:then>
+			 <f:else>
+				<f:form.submit value="Импортировать данные (не доступно)" class="btn btn-success btn-sm disabled" style="float: right;" />
+			 </f:else>
+		</f:if>
+		
+		
+	</f:form>
+
+
+	<br />
+	<br />
+	<br />
