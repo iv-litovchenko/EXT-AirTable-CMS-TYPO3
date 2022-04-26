@@ -20,3 +20,10 @@
 
 ## CMS TYPO3 #7. Шаблон элемента содержимого
 [![Watch the video](https://img.youtube.com/vi/_8NZj77-mUg/mqdefault.jpg)](https://youtu.be/_8NZj77-mUg)
+
+## CMS TYPO3 #8. Модели, CRUD // Todo
+![CRUD](https://raw.githubusercontent.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/master/Documentation/typo3-crud.png)
+
+![CRUD](https://raw.githubusercontent.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/master/Documentation/typo3-crud-with-category.png)
+
+![CRUD](https://raw.githubusercontent.com/iv-litovchenko/EXT-AirTable-CMS-TYPO3/master/Documentation/typo3-standard-crud-models.png)
